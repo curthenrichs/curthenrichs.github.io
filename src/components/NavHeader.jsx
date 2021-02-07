@@ -9,70 +9,61 @@ const { Title, Text } = Typography;
 
 function NavHeader(props) {
 
-  const { width, narrowWidth } = props;
+  const { width } = props;
 
-  let title = (
-    <Title level={2} style={{color: "#fff"}}>Curt Henrichs</Title>
+  const title = (
+    <Title level={2}><a href="/" style={{color: "#fff"}}>Curt Henrichs</a></Title>
   );
 
-  let menu = (
-    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} style={{width: "100%"}}>
-      <Menu.Item key="1">Home</Menu.Item>
-      <Menu.Item key="2">Experience</Menu.Item>
-      <Menu.Item key="3">Projects</Menu.Item>
-      <Menu.Item key="4">Contact</Menu.Item>
-    </Menu>
+  const dividerOne = (
+    <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
   );
 
-  let resumeBtn = (
-    <Menu theme="dark" mode="horizontal" style={{width: "100%"}}>
-      <Menu.Item key="5">
-        <a href="/content/resume.pdf" target="_blank" rel="noopener noreferrer">
-          Resume
-        </a>
-      </Menu.Item>
-    </Menu>
+  const menuItems = [
+    <Menu.Item key="1">Home</Menu.Item>,
+    <Menu.Item key="2">Experience</Menu.Item>,
+    <Menu.Item key="3">Projects</Menu.Item>,
+    <Menu.Item key="4">Contact</Menu.Item>
+  ];
+
+  const dividerTwo = (
+    <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
   );
 
-  let headerLayout = null;
+  const resumeBtn = (
+    <Menu.Item key="5">
+      <a href="/docs/resume.pdf">
+        Resume
+      </a>
+    </Menu.Item>
+  );
 
-
-  if ( width >= narrowWidth) {
-    headerLayout = (
-      <Row align="bottom" wrap={false}>
-        <Col flex="200px">
-          {title}
-        </Col>
-        <Col flex="40px">
-          <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
-        </Col>
-        <Col flex="365px">
-          {menu}
-        </Col>
-        <Col flex="5px">
-          <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
-        </Col>
-        <Col flex="50px">
-          {resumeBtn}
-        </Col>
-      </Row>
-    );
-
-  } else {
-    headerLayout = (
-      <Row align="bottom" wrap={false}>
-        <Col flex="200px">
-          {title}
-        </Col>
-        <Col flex="20px">
-          <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
-        </Col>
-        <Col flex="auto">
-          {menu}
-        </Col>
-      </Row>
-    );
+  // Produce renderable list as a funciton of width for conditional divider append
+  let renderList = [];
+  if (width >= 500) {
+    renderList.push(dividerOne);
   }
+  renderList = [
+    ...renderList,
+    ...menuItems
+  ];
+  if (width >= 800) {
+    renderList.push(dividerTwo);
+  }
+  renderList.push(resumeBtn);
+
+  const headerLayout = (
+    <Row align="bottom" wrap={false}>
+      <Col flex="200px">
+        {title}
+      </Col>
+      <Col flex="auto">
+        <Menu theme="dark" mode="horizontal" style={{width: "100%"}}>
+          {renderList}
+        </Menu>
+      </Col>
+    </Row>
+  );
 
   return headerLayout;
 }
