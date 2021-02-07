@@ -1,0 +1,17 @@
+.sect {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.sect-inner {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.type-a {
+  background-color: inherit !important;
+}
+
+.type-b {
+ background-color: #E8E8E8 !important;
+}
