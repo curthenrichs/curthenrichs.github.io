@@ -58,7 +58,7 @@ class App extends React.Component {
         scroller.scrollTo('sect-projects', {
           duration: 500,
           smooth: true,
-          offset: 0
+          offset: -65
         });
         break;
       case "3":

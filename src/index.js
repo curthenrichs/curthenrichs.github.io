@@ -6,8 +6,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 import App from './App';
-import ProjectPage from './pages/ProjectPage'
-import NotFoundPage from './pages/NotFoundPage'
+import NotFoundPage from './NotFoundPage'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -15,7 +14,6 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/" component={App} exact />
-        <Route path="/project/:name" component={ProjectPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

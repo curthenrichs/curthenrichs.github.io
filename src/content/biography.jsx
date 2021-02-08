@@ -1,5 +1,5 @@
 const data = {
-  "biography": "I am a Graduate student studying Computer Science at the University of Wisconsin Madison. Currently, I am working as a research assistant in the Human Computer Interaction Lab. My research interests focus on how humans can effectively utilize collaborative robots within the manufacturing industry. I am currently working on software tools to address the programming skills gap of robot operators within small and medium sized enterprises. I am seeking a full-time engineering position in industry after I graduate.",
+  "biography": "I am a Graduate student studying Computer Science at the University of Wisconsin Madison. Currently, I am working as a research assistant in the Human Computer Interaction Lab. My research interests focus on how humans can effectively utilize collaborative robots within the manufacturing industry. I am currently working on software tools to address the programming skills gap of robot operators within small and medium sized enterprises. I am seeking a full-time engineering position after graduation.",
   "interests": [
     "Human-Robot Interaction",
     "Mixed-Reality Interfaces",
@@ -7,6 +7,7 @@ const data = {
     "Software Development",
     "Embedded System Development",
     "Computer Vision",
+    "Artificial Intelligence",
     "Hobby Robotics"
   ],
   "education": [
