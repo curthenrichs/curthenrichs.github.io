@@ -13,7 +13,7 @@ function Copyright(props) {
       <br/>
       <Text>Created with Reactjs and Ant Design</Text>
       <br/>
-      <Text>Icons from Ant Design and Font Awesome</Text>
+      <Text>Icons from Ant Design, Font Awesome, and Simple Icons</Text>
     </React.Fragment>
   );
 }
