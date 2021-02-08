@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SimpleHeader from '../components/SimpleHeader';
-import Copyright from '../components/Copyright';
+import SimpleHeader from './components/SimpleHeader';
+import Copyright from './components/Copyright';
 
 import { Result, Button, Layout } from 'antd';
 
@@ -21,8 +21,8 @@ function NotFoundPage(props) {
         <Result
           status="404"
           title="404"
-          subTitle="I am afraid I did not create such a page."
-          extra={<Button type="primary" href="/">Go Back to Home</Button>}
+          subTitle="Apologies, but I don't know what you are looking for."
+          extra={<Button type="primary" href="/">Take Me Back to the Main Page</Button>}
         />
       </Content>
 
