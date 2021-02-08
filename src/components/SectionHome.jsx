@@ -1,16 +1,15 @@
 import React from 'react';
 
-import DefaultImg from '../content/DefaultImg';
+import DefaultImg from './DefaultImg';
 import SocialTray from './SocialTray';
 
-import Icon from '@ant-design/icons';
+import { GraduateCap } from '../content/customIcons';
 import { CaretRightOutlined, GlobalOutlined, EnvironmentOutlined } from '@ant-design/icons';
 
 import { Row, Col } from 'antd';
 import { Typography, Image } from 'antd';
 
 import data from '../content/biography';
-import { ReactComponent as GraduateCapIcon } from '../icons/graduation-cap-solid.svg'
 
 const { Title, Text, Link } = Typography;
 
@@ -60,7 +59,7 @@ function Education(props) {
       <div style={{padding: '0 20px', fontSize: '16px'}}>
         {data.education.map((education, idx) => (
           <React.Fragment>
-            <Icon component={GraduateCapIcon} />
+            <GraduateCap />
             &nbsp;
             <Text>{education.title}, {education.year}</Text>
             <br/>
