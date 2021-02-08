@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Row, Col } from 'antd';
 import { Typography , Menu, Divider } from 'antd';
@@ -9,10 +10,10 @@ const { Title, Text } = Typography;
 
 function NavHeader(props) {
 
-  const { width } = props;
+  const { width, callback, selected } = props;
 
   const title = (
-    <Title level={2}><a href="/" style={{color: "#fff"}}>Curt Henrichs</a></Title>
+    <Title level={2} style={{overflow: 'hidden'}}><Link to="/" style={{color: "#fff"}}>Curt Henrichs</Link></Title>
   );
 
   const dividerOne = (
@@ -21,9 +22,8 @@ function NavHeader(props) {
 
   const menuItems = [
     <Menu.Item key="1">Home</Menu.Item>,
-    <Menu.Item key="2">Experience</Menu.Item>,
-    <Menu.Item key="3">Projects</Menu.Item>,
-    <Menu.Item key="4">Contact</Menu.Item>
+    <Menu.Item key="2">Projects</Menu.Item>,
+    <Menu.Item key="3">Contact</Menu.Item>
   ];
 
   const dividerTwo = (
@@ -31,7 +31,7 @@ function NavHeader(props) {
   );
 
   const resumeBtn = (
-    <Menu.Item key="5">
+    <Menu.Item key="4">
       <a href="/docs/resume.pdf">
         Resume
       </a>
@@ -47,7 +47,7 @@ function NavHeader(props) {
     ...renderList,
     ...menuItems
   ];
-  if (width >= 800) {
+  if (width >= 700) {
     renderList.push(dividerTwo);
   }
   renderList.push(resumeBtn);
@@ -58,7 +58,7 @@ function NavHeader(props) {
         {title}
       </Col>
       <Col flex="auto">
-        <Menu theme="dark" mode="horizontal" style={{width: "100%"}}>
+        <Menu theme="dark" mode="horizontal" style={{width: "100%"}} onSelect={callback} defaultSelectedKeys={[selected]}>
           {renderList}
         </Menu>
       </Col>
