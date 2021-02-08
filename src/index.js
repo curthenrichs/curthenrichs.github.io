@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import 'antd/dist/antd.css';
 import './index.css';
+
 import App from './App';
+import ProjectPage from './pages/ProjectPage'
+import NotFoundPage from './pages/NotFoundPage'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={App} exact />
+        <Route path="/project/:name" component={Project} />
+        <Route path="*" component={NotFoundPage} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

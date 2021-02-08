@@ -1,5 +1,5 @@
 const data = {
-  "biography": "I am a Graduate student studying Computer Science at the University of Wisconsin Madison. Currently, I am working as a research assistant in the People and Robots Lab. My professional / research interests focus on how humans can effectively utilize collaborative robots within the manufacturing industry. My personal interests include software and embedded system development, computer vision, and engaging in the Maker community.",
+  "biography": "I am a Graduate student studying Computer Science at the University of Wisconsin Madison. Currently, I am working as a research assistant in the Human Computer Interaction Lab. My research interests focus on how humans can effectively utilize collaborative robots within the manufacturing industry. I am currently working on software tools to address the programming skills gap of robot operators within small and medium sized enterprises. I am seeking a full-time engineering position in industry after I graduate.",
   "interests": [
     "Human-Robot Interaction",
     "Mixed-Reality Interfaces",
@@ -12,15 +12,17 @@ const data = {
   "education": [
     {
       "title": "Master of Science in Computer Science",
-      "year": "2021",
+      "year": "(Expected) 2021",
       "school": "University of Wisconsin - Madison",
-      "link": "https://www.cs.wisc.edu/"
+      "link": "https://www.cs.wisc.edu/",
+      "address": "1210 W Dayton St, Madison, WI 53706"
     },
     {
       "title": "Bachelor of Science in Computer Engineering",
       "year": "2018",
       "school": "Milwaukee School of Engineering",
-      "link": "https://www.msoe.edu/academics/undergraduate-degrees/engineering/computer-engineering/"
+      "link": "https://www.msoe.edu/academics/undergraduate-degrees/engineering/computer-engineering/",
+      "address": "1025 N Broadway, Milwaukee, WI 53202"
     }
   ]
 };
