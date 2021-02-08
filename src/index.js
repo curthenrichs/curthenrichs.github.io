@@ -15,7 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/" component={App} exact />
-        <Route path="/project/:name" component={Project} />
+        <Route path="/project/:name" component={ProjectPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
