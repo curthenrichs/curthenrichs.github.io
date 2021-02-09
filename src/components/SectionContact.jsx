@@ -22,9 +22,9 @@ function Details(props) {
       </div>
       <br/>
       <div style={{fontSize: '40px'}} className="social-tray">
-        <Link href={data.github.link} target="_blank"><GithubFilled /></Link>
+        <Link href={data.github.link} target="_blank" rel="noopener noreferrer"><GithubFilled /></Link>
         &nbsp;
-        <Link href={data.linkedin.link} target="_blank"><LinkedinFilled /></Link>
+        <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer"><LinkedinFilled /></Link>
       </div>
     </div>
   );

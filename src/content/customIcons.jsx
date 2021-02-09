@@ -2,7 +2,6 @@ import Icon from '@ant-design/icons';
 
 import { ReactComponent as AngularIcon } from '../icons/angular.svg';
 import { ReactComponent as ArduinoIcon } from '../icons/arduino.svg';
-import { ReactComponent as AtmelIcon } from '../icons/atmel_logo.svg';
 import { ReactComponent as CPPIcon } from '../icons/cplusplus.svg';
 import { ReactComponent as CSharpIcon } from '../icons/csharp.svg';
 import { ReactComponent as GitIcon } from '../icons/git.svg';
@@ -23,10 +22,6 @@ function Angular(props) {
 
 function Arduino(props) {
   return (<Icon component={ArduinoIcon} />);
-}
-
-function Atmel(props) {
-  return (<Icon component={AtemlIcon} />);
 }
 
 function CPlusPlus(props) {
@@ -85,7 +80,6 @@ function Unity(props) {
 const IconLookupFromName = {
   "angular": Angular,
   "arduino": Arduino,
-  "atmel": Atmel,
   "cplusplus": CPlusPlus,
   "csharp": CSharp,
   "git": Git,
@@ -105,7 +99,6 @@ const IconLookupFromName = {
 export {
   Angular,
   Arduino,
-  Atmel,
   CPlusPlus,
   CSharp,
   Git,
@@ -119,7 +112,6 @@ export {
   React,
   ROS,
   Unity,
-  UniversalRobots,
 
   IconLookupFromName
 };

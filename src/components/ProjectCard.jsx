@@ -50,8 +50,15 @@ class ProjectCard extends React.Component {
 
     return (
       <React.Fragment>
-        <div onClick={this.openModalCallback} >
-          <Card title={title} bordered={false} style={{textAlign: 'center'}} hoverable={true} extra={icon}>
+        <div onClick={this.openModalCallback}>
+          <Card
+            title={title}
+            bordered={true}
+            style={{textAlign: 'center'}}
+            hoverable={true}
+            extra={icon}
+            className="type-c"
+          >
             <Image
             style={{borderRadius: '35%'}}
               preview={false}
@@ -69,6 +76,7 @@ class ProjectCard extends React.Component {
           width={width}
           visible={visible}
           closeCallback={this.closeModalCallback}
+          className="type-c"
         />
       </React.Fragment>
     );

@@ -32,7 +32,7 @@ function NavHeader(props) {
 
   const resumeBtn = (
     <Menu.Item key="4">
-      <a href="/docs/resume.pdf">
+      <a href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
         Resume
       </a>
     </Menu.Item>
