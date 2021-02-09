@@ -6,7 +6,9 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 import App from './App';
-import NotFoundPage from './NotFoundPage'
+import NotFoundPage from './NotFoundPage';
+import IconLicensesPage from './IconLicensesPage';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -14,6 +16,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/" component={App} exact />
+        <Route path="/icon-licenses" component={IconLicensesPage} exact />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

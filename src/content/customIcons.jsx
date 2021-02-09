@@ -1,4 +1,5 @@
 import Icon from '@ant-design/icons';
+import { WarningOutlined } from '@ant-design/icons';
 
 import { ReactComponent as AngularIcon } from '../icons/angular.svg';
 import { ReactComponent as ArduinoIcon } from '../icons/arduino.svg';
@@ -8,6 +9,7 @@ import { ReactComponent as GitIcon } from '../icons/git.svg';
 import { ReactComponent as GraduateCapIcon } from '../icons/graduation-cap-solid.svg';
 import { ReactComponent as JavaIcon } from '../icons/java.svg';
 import { ReactComponent as LinuxIcon } from '../icons/linux.svg';
+import { ReactComponent as RobotIcon } from '../icons/mechanical-arm.svg';
 import { ReactComponent as MicrochipIcon } from '../icons/microchip-solid.svg';
 import { ReactComponent as MicrosoftIcon } from '../icons/microsoft.svg';
 import { ReactComponent as NodeJSIcon } from '../icons/node-dot-js.svg';
@@ -48,6 +50,10 @@ function Linux(props) {
   return (<Icon component={LinuxIcon} />);
 }
 
+function Robot(props) {
+  return (<Icon component={RobotIcon} />);
+}
+
 function Microchip(props) {
   return (<Icon component={MicrochipIcon} />);
 }
@@ -76,24 +82,32 @@ function Unity(props) {
   return (<Icon component={UnityIcon} />);
 }
 
-
-const IconLookupFromName = {
-  "angular": Angular,
-  "arduino": Arduino,
-  "cplusplus": CPlusPlus,
-  "csharp": CSharp,
-  "git": Git,
-  "graduatecap": GraduateCap,
-  "java": Java,
-  "linux": Linux,
-  "microchip": Microchip,
-  "microsoft": Microsoft,
-  "nodejs": NodeJS,
-  "python": Python,
-  "react": React,
-  "ros": ROS,
-  "unity": Unity
+const lookup = {
+  "angular": <Angular />,
+  "arduino": <Arduino />,
+  "cplusplus": <CPlusPlus />,
+  "csharp": <CSharp />,
+  "git": <Git />,
+  "graduatecap": <GraduateCap />,
+  "java": <Java />,
+  "linux": <Linux />,
+  "microchip": <Microchip />,
+  "microsoft": <Microsoft />,
+  "nodejs": <NodeJS />,
+  "python": <Python />,
+  "react": <React />,
+  "robot": <Robot />,
+  "ros": <ROS />,
+  "unity": <Unity />
 };
+
+const handler = {
+  get: function(target, name) {
+    return target.hasOwnProperty(name) ? target[name] : <WarningOutlined />
+  }
+};
+
+const IconLookupFromName = new Proxy(lookup, handler);
 
 
 export {
@@ -110,6 +124,7 @@ export {
   NodeJS,
   Python,
   React,
+  Robot,
   ROS,
   Unity,
 

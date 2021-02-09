@@ -42,10 +42,10 @@ function Interests(props) {
       <Title level={4}>Interest</Title>
       <div style={{padding: '0 20px', fontSize: '16px'}}>
         {data.interests.map((interest, idx) => (
-          <React.Fragment>
+          <div key={idx}>
             <CaretRightOutlined /> <Text>{interest}</Text>
             <br/>
-          </React.Fragment>
+          </div>
         ))}
       </div>
     </React.Fragment>
@@ -58,7 +58,7 @@ function Education(props) {
       <Title level={4}>Education</Title>
       <div style={{padding: '0 20px', fontSize: '16px'}}>
         {data.education.map((education, idx) => (
-          <React.Fragment>
+          <div key={idx}>
             <GraduateCap />
             &nbsp;
             <Text>{education.title}, {education.year}</Text>
@@ -68,7 +68,7 @@ function Education(props) {
             &nbsp;
             <Link href={`https://www.google.com/maps/search/?api=1&query=${education.address.replace(" ","+").replace(",","%2C").replace("|","%7C")}`} target="_blank" rel="noopener noreferrer"><EnvironmentOutlined /></Link>
             <br/>
-          </React.Fragment>
+          </div>
         ))}
       </div>
     </React.Fragment>
