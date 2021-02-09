@@ -5,7 +5,7 @@ import DefaultImg from './DefaultImg';
 import { GetMarkdownPathFromName } from '../content/projects'
 
 import { Modal, Button } from 'antd';
-import { Image } from 'antd';
+import { Image, Divider } from 'antd';
 
 
 class ProjectModal extends React.Component {
@@ -30,9 +30,13 @@ class ProjectModal extends React.Component {
     let windowWidth = 0.8 * width;
     windowWidth = (width < 800) ? 0.95 * width : 0.8 * width;
 
+    const renderers = {
+      link: (props) => (<a href={props.href} target="_blank" rel="noopener noreferrer">{props.children}</a>)
+    }
+
     return (
       <Modal
-        title={digest.title}
+        title={`${digest.title} ~ ${digest.brief}`}
         centered
         visible={visible}
         width={windowWidth}
@@ -40,13 +44,16 @@ class ProjectModal extends React.Component {
         onCancel={closeCallback}
         footer={null}
       >
-        <Image
-        style={{borderRadius: '35%'}}
-          preview={false}
-          src={digest.img}
-          fallback={DefaultImg}
-        />
-        <ReactMarkdown source={markdown} />
+        <div style={{textAlign: 'center'}}>
+          <Image
+          style={{borderRadius: '35%'}}
+            preview={false}
+            src={digest.img}
+            fallback={DefaultImg}
+          />
+        </div>
+        <Divider />
+        <ReactMarkdown source={markdown} renderers={renderers}/>
       </Modal>
     );
   }

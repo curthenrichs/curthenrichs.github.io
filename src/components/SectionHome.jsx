@@ -29,7 +29,7 @@ function BioDigest(props) {
         <br/>
         <Text type="secondary">Research Assistant <br/> Human Robot Interaction</Text>
         <br/>
-        <Link href="http://hci.cs.wisc.edu/" target="_blank">UW Madison - HCI Lab</Link>
+        <Link href="http://hci.cs.wisc.edu/" target="_blank" rel="noopener noreferrer">UW Madison - HCI Lab</Link>
       </div>
       <SocialTray />
     </div>
@@ -64,9 +64,9 @@ function Education(props) {
             <Text>{education.title}, {education.year}</Text>
             <br/>
             <Text type="secondary" style={{padding: '0 30px'}}>{education.school}</Text>
-            <Link href={education.link} target="_blank"><GlobalOutlined /></Link>
+            <Link href={education.link} target="_blank" rel="noopener noreferrer"><GlobalOutlined /></Link>
             &nbsp;
-            <Link href={`https://www.google.com/maps/search/?api=1&query=${education.address.replace(" ","+").replace(",","%2C").replace("|","%7C")}`} target="_blank"><EnvironmentOutlined /></Link>
+            <Link href={`https://www.google.com/maps/search/?api=1&query=${education.address.replace(" ","+").replace(",","%2C").replace("|","%7C")}`} target="_blank" rel="noopener noreferrer"><EnvironmentOutlined /></Link>
             <br/>
           </React.Fragment>
         ))}

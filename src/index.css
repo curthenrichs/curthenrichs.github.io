@@ -35,11 +35,15 @@ code {
 }
 
 .type-a {
-  background-color: inherit !important;
+  background-color: #f5f5f5 !important;
 }
 
 .type-b {
  background-color: #E8E8E8 !important;
+}
+
+.type-c {
+  background-color: #fafafa !important;
 }
 
 #sect-contact {

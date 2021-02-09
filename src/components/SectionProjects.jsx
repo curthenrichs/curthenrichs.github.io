@@ -16,6 +16,8 @@ function SectionProjects(props) {
   return (
     <div>
       <Title>Projects</Title>
+      <br/>
+      <br/>
       <Row gutter={[24, 24]}>
         {data.map((entry, idx) => (
           <Col flex="auto" xs={24} xl={8}>
