@@ -18,9 +18,9 @@ function SectionProjects(props) {
       <Title>Projects</Title>
       <br/>
       <br/>
-      <Row gutter={[24, 24]}>
+      <Row gutter={[24, 24]} justify="center" align="middle">
         {data.map((entry, idx) => (
-          <Col flex="auto" xs={24} xl={8}>
+          <Col flex="auto" xs={24} xl={8} key={idx}>
             <ProjectCard
               digest={entry}
               width={width}

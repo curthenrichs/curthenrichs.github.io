@@ -25,12 +25,10 @@ class ProjectCard extends React.Component {
   }
 
   openModalCallback() {
-    console.log("Open Modal Callback called");
     this.setState({ visible: true });
   };
 
   closeModalCallback() {
-    console.log("Close Modal Callback called");
     this.setState({ visible: false });
   };
 

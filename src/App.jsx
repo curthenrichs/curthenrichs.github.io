@@ -93,7 +93,8 @@ class App extends React.Component {
           <ScrollElement name="sect-skills" id="sect-skills" style={{ textAlign: 'center'}} className="sect type-a">
             <div className="sect-inner">
               <Title level={3}>Skills</Title>
-              <SectionSkills />
+              <br/>
+              <SectionSkills width={width * 0.8} />
             </div>
           </ScrollElement>
 

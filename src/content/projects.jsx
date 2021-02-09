@@ -53,14 +53,14 @@ const ProjectDigests = [
   },
   {
     "title": "Expert View Dashboard",
-    "brief": "If only operators could see what an expert sees when developing cobot applications.",
+    "brief": "Training tool for cobot operators.",
     "img": "/img/evd.png",
     "type": "Research",
     "project": "evd"
   },
   {
     "title": "Task Interdependence and pRAD",
-    "brief": "Two experiments using a UR3e to better understand how operators interact with cobots.",
+    "brief": "Experiments to better understand how operators interact with cobots.",
     "img": "/img/iter.png",
     "type": "Research",
     "project": "iter"
