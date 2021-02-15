@@ -11,6 +11,7 @@ import { Typography, Image } from 'antd';
 const { Text } = Typography;
 
 
+
 class ProjectCard extends React.Component {
 
   constructor(props) {
@@ -58,7 +59,9 @@ class ProjectCard extends React.Component {
             className="type-c"
           >
             <Image
-            style={{borderRadius: '35%'}}
+              style={{borderRadius: '35%'}}
+              height={250}
+              width={250}
               preview={false}
               src={img}
               fallback={DefaultImg}
