@@ -1,5 +1,5 @@
 const data = {
-  "biography": "I am a Graduate student studying Computer Science at the University of Wisconsin Madison. Currently, I am working as a research assistant in the Human Computer Interaction Lab. My research interests focus on how humans can effectively utilize collaborative robots within the manufacturing industry. I am currently working on software tools to address the programming skills gap of robot operators within small and medium sized enterprises. I am seeking a full-time engineering position after graduation.",
+  "biography": "I am a Graduate student studying Computer Science at the University of Wisconsin Madison. Currently, I am working as a research assistant in the People and Robots Lab (formerly HCI lab). My research interests focus on how humans can effectively utilize collaborative robots within the manufacturing industry. I am currently working on software tools to address the programming skills gap of robot operators within small and medium sized enterprises. I am seeking a full-time engineering position after graduation.",
   "interests": [
     "Human-Robot Interaction",
     "Mixed-Reality Interfaces",
@@ -25,7 +25,15 @@ const data = {
       "link": "https://www.msoe.edu/academics/undergraduate-degrees/engineering/computer-engineering/",
       "address": "1025 N Broadway, Milwaukee, WI 53202"
     }
-  ]
+  ],
+  "name": "Curt Henrichs",
+  "employment": {
+    "position": "Research Assistant",
+    "field": "Human Robot Interaction",
+    "link": "http://hci.cs.wisc.edu/",
+    "place": "UW Madison - People and Robots Lab"
+  },
+  "img": "/img/bio-main.png"
 };
 
 export default data;

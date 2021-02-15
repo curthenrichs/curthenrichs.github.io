@@ -21,15 +21,15 @@ function BioDigest(props) {
       style={{borderRadius: '35%'}}
         width={250}
         preview={false}
-        src="/img/bio-main.png"
+        src={data["img"]}
         fallback={DefaultImg}
       />
       <div style={{fontSize: '18px'}}>
-        <Text style={{fontSize: '20px'}} strong>Curt Henrichs</Text>
+        <Text style={{fontSize: '20px'}} strong>{data["name"]}</Text>
         <br/>
-        <Text type="secondary">Research Assistant <br/> Human Robot Interaction</Text>
+        <Text type="secondary">{data["employment"]["position"]} <br/> {data["employment"]["field"]}</Text>
         <br/>
-        <Link href="http://hci.cs.wisc.edu/" target="_blank" rel="noopener noreferrer">UW Madison - HCI Lab</Link>
+        <Link href={data["employment"]["link"]} target="_blank" rel="noopener noreferrer">{data["employment"]["place"]}</Link>
       </div>
       <SocialTray />
     </div>
