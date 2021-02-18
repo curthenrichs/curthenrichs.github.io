@@ -41,9 +41,11 @@ function SectionSkills(props) {
   const { width } = props;
   const skillsCopy = data.skills.slice();
 
-  const totalSpace = (210) * skillsCopy.length;
+
+  const tileSize = 240;
+  const totalSpace = tileSize * skillsCopy.length;
   const rows = Math.ceil(totalSpace / width);
-  const items = Math.ceil(Math.floor(totalSpace / rows) / (210));
+  const items = Math.ceil(Math.floor(totalSpace / rows) / tileSize);
   const span = Math.floor(24 / items);
 
   const newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));

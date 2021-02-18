@@ -1,0 +1,46 @@
+.nav-bar {
+  color: #8f8f8f;
+  text-align: center;
+}
+
+.nav-bar-divider {
+  border-left: 1px solid #8f8f8f;
+}
+
+.nav-bar-btn:hover {
+  background-color: #1890ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-bar-btn-selected {
+  background-color: #40a9ff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-bar-ext-link:hover {
+  background-color: #1890ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-bar-dropdown:hover {
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-bar-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.nav-bar-dropdown:hover .nav-bar-dropdown-content {
+  display: block;
+  cursor: pointer;
+}

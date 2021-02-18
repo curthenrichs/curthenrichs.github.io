@@ -1,71 +1,101 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Row, Col } from 'antd';
-import { Typography , Menu, Divider } from 'antd';
+import { Menu as MenuIcon } from '../content/customIcons';
 
-const { SubMenu } = Menu;
+import { Row, Col } from 'antd';
+import { Typography, Divider } from 'antd';
+
+import "./NavHeader.css";
+
 const { Title, Text } = Typography;
+
 
 
 function NavHeader(props) {
 
   const { width, callback, selected } = props;
 
-  const title = (
-    <Title level={2} style={{overflow: 'hidden'}}><Link to="/" style={{color: "#fff"}}>Curt Henrichs</Link></Title>
+  const homeBtn = (
+    <div className={`nav-bar nav-bar-btn ${selected == "home-btn" ? "nav-bar-btn-selected" : ""}`} id="home-btn" onClick={callback}>
+      Home
+    </div>
   );
-
-  const dividerOne = (
-    <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
+  const projectsBtn = (
+    <div className={`nav-bar nav-bar-btn ${selected == "projects-btn" ? "nav-bar-btn-selected" : ""}`} id="projects-btn" onClick={callback}>
+      Projects
+    </div>
   );
-
-  const menuItems = [
-    <Menu.Item key="1">Home</Menu.Item>,
-    <Menu.Item key="2">Projects</Menu.Item>,
-    <Menu.Item key="3">Contact</Menu.Item>
-  ];
-
-  const dividerTwo = (
-    <Divider type="vertical" style={{borderLeft: '1px solid #8f8f8f'}}/>
+  const contactBtn = (
+    <div className={`nav-bar nav-bar-btn ${selected == "contact-btn" ? "nav-bar-btn-selected" : ""}`} id="contact-btn" onClick={callback}>
+      Contact
+    </div>
   );
-
   const resumeBtn = (
-    <Menu.Item key="4">
-      <a href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
-        Resume
-      </a>
-    </Menu.Item>
+    <div className="nav-bar nav-bar-ext-link" id="resume-btn" onClick={callback}>
+      Resume
+    </div>
   );
 
-  // Produce renderable list as a funciton of width for conditional divider append
-  let renderList = [];
-  if (width >= 500) {
-    renderList.push(dividerOne);
+  let contents = null;
+  if ( width >= 950 ) {
+    contents = (
+      <React.Fragment>
+        <Col flex="25px">
+          <Divider className="nav-bar nav-bar-divider" type="vertical"/>
+        </Col>
+        <Col flex="150px">
+          {homeBtn}
+        </Col>
+        <Col flex="150px">
+          {projectsBtn}
+        </Col>
+        <Col flex="150px">
+          {contactBtn}
+        </Col>
+        <Col flex="25px">
+          <Divider className="nav-bar nav-bar-divider" type="vertical"/>
+        </Col>
+        <Col flex="150px">
+          {resumeBtn}
+        </Col>
+      </React.Fragment>
+    );
+  } else {
+    contents = (
+      <Col flex="auto">
+        <Row justify="end">
+          <Col flex="100px">
+            <div className="nav-bar nav-bar-dropdown" id="collapsed-menu">
+              <div style={{fontSize: '30px'}}>
+                <MenuIcon/>
+              </div>
+              <div className="nav-bar nav-bar-dropdown-content">
+                {homeBtn}
+                {projectsBtn}
+                {contactBtn}
+                {resumeBtn}
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Col>
+    );
   }
-  renderList = [
-    ...renderList,
-    ...menuItems
-  ];
-  if (width >= 700) {
-    renderList.push(dividerTwo);
-  }
-  renderList.push(resumeBtn);
 
-  const headerLayout = (
+
+  return (
     <Row align="bottom" wrap={false}>
       <Col flex="200px">
-        {title}
+        <Title level={2} style={{overflow: 'hidden'}}>
+          <Link to="/" style={{color: "#fff"}}>Curt Henrichs</Link>
+        </Title>
       </Col>
-      <Col flex="auto">
-        <Menu theme="dark" mode="horizontal" style={{width: "100%"}} onSelect={callback} defaultSelectedKeys={[selected]}>
-          {renderList}
-        </Menu>
-      </Col>
+
+      {contents}
+
     </Row>
   );
-
-  return headerLayout;
 }
 
 export default NavHeader;

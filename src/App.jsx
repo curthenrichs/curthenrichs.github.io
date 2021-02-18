@@ -1,5 +1,6 @@
 import React from 'react';
 
+import InDevelopmentModal from './components/InDevelopmentModal'
 import NavHeader from './components/NavHeader';
 import SectionHome from './components/SectionHome';
 import SectionSkills from './components/SectionSkills';
@@ -21,15 +22,43 @@ class App extends React.Component {
     super(props);
     this.state = {
       width: window.innerWidth,
-      navItemSelected: '1'
+      height: window.innerHeight,
+      navItemSelected: 'home-btn'
     };
+
+    this.handleResize = this.handleResize.bind(this);
+    this.trackScrolling = this.trackScrolling.bind(this);
   }
 
-  handleResize = (e) => {
-    this.setState({width: window.innerWidth });
+  handleResize(e) {
+    this.setState({width: window.innerWidth, height: window.innerHeight });
+  };
+
+  trackScrolling(e) {
+
+    const { height } = this.state;
+
+    const contactSection = document.getElementById("sect-contact").getBoundingClientRect();
+    if (contactSection.top <= height*0.66) {
+      this.setState({navItemSelected: 'contact-btn'});
+      return;
+    }
+
+    const projectsSection = document.getElementById("sect-projects").getBoundingClientRect();
+    if (projectsSection.top <= height*0.66) {
+      this.setState({navItemSelected: 'projects-btn'});
+      return;
+    }
+
+    const homeSection = document.getElementById("sect-home").getBoundingClientRect();
+    if (homeSection.top <= height*0.66) {
+      this.setState({navItemSelected: 'home-btn'});
+      return;
+    }
   };
 
   componentDidMount() {
+    document.addEventListener("scroll", this.trackScrolling)
     window.addEventListener("resize", this.handleResize);
 
     scroller.scrollTo('sect-home', {
@@ -40,34 +69,40 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
+    document.removeEventListener("scroll", this.trackScrolling)
     window.addEventListener("resize", this.handleResize);
   }
 
-  handleNavBarCallback = (e) => {
-    this.setState({navItemSelected: e.key});
 
-    switch (e.key) {
-      case "1":
-        scroller.scrollTo('sect-home', {
-          duration: 500,
-          smooth: true,
-          offset: -100
-        });
-        break;
-      case "2":
-        scroller.scrollTo('sect-projects', {
-          duration: 500,
-          smooth: true,
-          offset: -65
-        });
-        break;
-      case "3":
-        scroller.scrollTo('sect-contact', {
-          duration: 500,
-          smooth: true,
-          offset: 0
-        });
-        break;
+  handleNavBarCallback = (e) => {
+
+    if (e.target.id != "resume-btn") {
+      switch (e.target.id) {
+        case "home-btn":
+          scroller.scrollTo('sect-home', {
+            duration: 500,
+            smooth: true,
+            offset: -100
+          });
+          break;
+        case "projects-btn":
+          scroller.scrollTo('sect-projects', {
+            duration: 500,
+            smooth: true,
+            offset: -65
+          });
+          break;
+        case "contact-btn":
+          scroller.scrollTo('sect-contact', {
+            duration: 500,
+            smooth: true,
+            offset: 0
+          });
+          break;
+      }
+
+    } else {
+      window.open("/docs/resume.pdf");
     }
   }
 
@@ -84,6 +119,8 @@ class App extends React.Component {
 
         <Content style={{ padding: '20px 0 0 0', marginTop: 64 }}>
 
+          <InDevelopmentModal />
+
           <ScrollElement name="sect-home" id="sect-home" className="sect type-a">
             <div className="sect-inner">
               <SectionHome width={width} />
@@ -94,7 +131,7 @@ class App extends React.Component {
             <div className="sect-inner">
               <Title level={3}>Skills</Title>
               <br/>
-              <SectionSkills width={width * 0.8} />
+              <SectionSkills width={width} />
             </div>
           </ScrollElement>
 

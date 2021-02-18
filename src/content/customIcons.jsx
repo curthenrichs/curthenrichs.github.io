@@ -11,11 +11,13 @@ import { ReactComponent as JavaIcon } from '../icons/java.svg';
 import { ReactComponent as LinuxIcon } from '../icons/linux.svg';
 import { ReactComponent as RobotIcon } from '../icons/mechanical-arm.svg';
 import { ReactComponent as MicrochipIcon } from '../icons/microchip-solid.svg';
+import { ReactComponent as MenuIcon } from '../icons/menu.svg';
 import { ReactComponent as MicrosoftIcon } from '../icons/microsoft.svg';
 import { ReactComponent as NodeJSIcon } from '../icons/node-dot-js.svg';
 import { ReactComponent as PythonIcon } from '../icons/python.svg';
 import { ReactComponent as ReactIcon } from '../icons/react.svg';
 import { ReactComponent as ROSIcon } from '../icons/ros.svg';
+import { ReactComponent as SketchIcon } from '../icons/sketch.svg';
 import { ReactComponent as UnityIcon } from '../icons/unity.svg';
 
 function Angular(props) {
@@ -54,6 +56,10 @@ function Robot(props) {
   return (<Icon component={RobotIcon} />);
 }
 
+function Menu(props) {
+  return (<Icon component={MenuIcon} />);
+}
+
 function Microchip(props) {
   return (<Icon component={MicrochipIcon} />);
 }
@@ -78,6 +84,10 @@ function ROS(props) {
   return (<Icon component={ROSIcon} />);
 }
 
+function Sketch(props) {
+  return (<Icon component={SketchIcon} />);
+}
+
 function Unity(props) {
   return (<Icon component={UnityIcon} />);
 }
@@ -91,6 +101,7 @@ const lookup = {
   "graduatecap": <GraduateCap />,
   "java": <Java />,
   "linux": <Linux />,
+  "menu": <Menu />,
   "microchip": <Microchip />,
   "microsoft": <Microsoft />,
   "nodejs": <NodeJS />,
@@ -98,6 +109,7 @@ const lookup = {
   "react": <React />,
   "robot": <Robot />,
   "ros": <ROS />,
+  "sketch": <Sketch />,
   "unity": <Unity />
 };
 
@@ -119,6 +131,7 @@ export {
   GraduateCap,
   Java,
   Linux,
+  Menu,
   Microchip,
   Microsoft,
   NodeJS,
@@ -126,6 +139,7 @@ export {
   React,
   Robot,
   ROS,
+  Sketch,
   Unity,
 
   IconLookupFromName

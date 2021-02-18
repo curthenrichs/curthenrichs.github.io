@@ -80,7 +80,7 @@ function BioDetail(props) {
   const { width } = props;
 
   let innerLayout = null;
-  if (width >= 910) {
+  if (width >= 950) {
     innerLayout = (
       <Row>
         <Col flex="auto">
