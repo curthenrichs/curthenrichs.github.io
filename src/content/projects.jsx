@@ -136,12 +136,12 @@ const ProjectImageCarousel = {
   ],
   "hobby": [
     {
-      "img": "/img/hobby-robots.png",
-      "caption": "Hobby Robots in a group photo."
-    },
-    {
       "img": "/img/hobby-taltosoid.jpg",
       "caption": "First version of Taltosoid - the supernumerary robotic finger."
+    },
+    {
+      "img": "/img/hobby-robots.jpg",
+      "caption": "Some of my older robots in a group photo."
     },
     {
       "img": "/img/hobby-leds.jpg",
