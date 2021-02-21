@@ -1,4 +1,7 @@
 # Expert-View Dashboard
-Expert-View Dashboard is a learning environment for cobot operators to experience what Experts would think about when developing an application.
+Expert-View Dashboard is a learning environment for cobot operators to experience
+a simulation of expert thought while developing an application. We operationalize
+this by
 
-At the time of writing this the two repositories are private. Please get in contact with me for the code.
+At the time of writing, the repository is private. Please contact me
+directly for the source code if interested.

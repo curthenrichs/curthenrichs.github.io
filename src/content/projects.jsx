@@ -53,7 +53,7 @@ const ProjectDigests = [
   },
   {
     "title": "Expert View Dashboard",
-    "brief": "Training tool for cobot operators.",
+    "brief": "Training tool for operators to program cobots.",
     "img": "/img/teaser-evd.png",
     "type": "Research",
     "project": "evd"
@@ -74,14 +74,14 @@ const ProjectDigests = [
   },
   {
     "title": "Hobby Projects",
-    "brief": "Personal robot and home automation projects.",
-    "img": "/img/teaser-hobby.png",
+    "brief": "Personal robot, embedded systems, and home automation projects.",
+    "img": "/img/teaser-hobby.jpg",
     "type": "Personal",
     "project": "hobby"
   },
   {
-    "title": "Misc.",
-    "brief": "Miscellaneous projects that do not fit into other topics.",
+    "title": "Misc. Projects",
+    "brief": "Miscellaneous projects that have shaped my experiences.",
     "img": "/img/teaser-misc.png",
     "type": "Personal",
     "project": "misc"
@@ -135,7 +135,18 @@ const ProjectImageCarousel = {
     }
   ],
   "hobby": [
-
+    {
+      "img": "/img/hobby-robots.png",
+      "caption": "Hobby Robots in a group photo."
+    },
+    {
+      "img": "/img/hobby-taltosoid.jpg",
+      "caption": "First version of Taltosoid - the supernumerary robotic finger."
+    },
+    {
+      "img": "/img/hobby-leds.jpg",
+      "caption": "LEDs being controlled by lighting effects interface back when I was at MSOE."
+    }
   ],
   "misc": [
 
