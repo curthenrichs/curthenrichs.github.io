@@ -59,3 +59,7 @@ code {
 .layout {
   min-height: 100vh;
 }
+
+.ant-layout-header {
+  padding: 0 0 0 50px !important;
+}
