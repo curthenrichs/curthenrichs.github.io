@@ -96,7 +96,7 @@ const ProjectImageCarousel = {
     },
     {
       "img": "/img/authr-task.png",
-      "caption": "Authr task view allows user to drag-and-drop therbligs into tasks."
+      "caption": "Authr task view allows user to drag-and-drop Therbligs into tasks."
     },
     {
       "img": "/img/authr-sim.png",
@@ -137,7 +137,7 @@ const ProjectImageCarousel = {
   "hobby": [
     {
       "img": "/img/hobby-taltosoid.jpg",
-      "caption": "First version of Taltosoid - the supernumerary robotic finger."
+      "caption": "First version of Taltosoid - A supernumerary robotic finger."
     },
     {
       "img": "/img/hobby-robots.jpg",
@@ -145,7 +145,7 @@ const ProjectImageCarousel = {
     },
     {
       "img": "/img/hobby-leds.jpg",
-      "caption": "LEDs being controlled by lighting effects interface back when I was at MSOE."
+      "caption": "LEDs being controlled by lighting effects interface, back when I was at MSOE."
     }
   ],
   "misc": [

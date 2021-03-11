@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import DefaultImg from './DefaultImg';
 import SocialTray from './SocialTray';
@@ -75,42 +76,63 @@ function Education(props) {
   );
 }
 
-function BioDetail(props) {
+class BioDetail extends React.Component {
 
-  const { width } = props;
+  constructor(props) {
+    super(props);
 
-  let innerLayout = null;
-  if (width >= 950) {
-    innerLayout = (
-      <Row>
-        <Col flex="auto">
-          <Interests />
-        </Col>
-        <Col flex="auto">
-          <Education />
-        </Col>
-      </Row>
-    );
-  } else {
-    innerLayout = (
-      <div>
-        <Interests />
-        <br/>
-        <Education />
-      </div>
-    );
+    this.state = {
+      markdown: ''
+    };
   }
 
+  componentWillMount() {
+    const path = data.biographyMarkdownPath;
+    fetch(path).then(res => res.text()).then(text => this.setState({ markdown: text}));
+  }
+
+  render() {
+
+    const { markdown } = this.state;
+    const { width } = this.props;
+
+    let innerLayout = null;
+    if (width >= 950) {
+      innerLayout = (
+        <Row>
+          <Col flex="auto">
+            <Interests />
+          </Col>
+          <Col flex="auto">
+            <Education />
+          </Col>
+        </Row>
+      );
+    } else {
+      innerLayout = (
+        <div>
+          <Interests />
+          <br/>
+          <Education />
+        </div>
+      );
+    }
+
     return (
-    <React.Fragment>
-      <Title level={3}>Biography</Title>
-      <Text style={{fontSize: '16px'}}>{data.biography}</Text>
-      <br/>
-      <br/>
-      {innerLayout}
-    </React.Fragment>
-  );
+      <React.Fragment>
+        <Title level={3}>Biography</Title>
+        <div style={{fontSize: '16px'}}>
+          <ReactMarkdown source={markdown}/>
+        </div>
+        <br/>
+        <br/>
+        {innerLayout}
+      </React.Fragment>
+    );
+  }
 }
+
+
 
 function SectionHome(props) {
 
