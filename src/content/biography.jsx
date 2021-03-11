@@ -4,8 +4,8 @@ const data = {
     "Human-Robot Interaction",
     "Mixed-Reality Interfaces",
     "Collaborative Robotics",
-    "Software Development",
     "Embedded System Development",
+    "Software Development",
     "Computer Vision",
     "Artificial Intelligence",
     "Hobby Robotics"
@@ -30,7 +30,7 @@ const data = {
   "employment": {
     "position": "Research Assistant",
     "field": "Human Robot Interaction",
-    "link": "http://hci.cs.wisc.edu/",
+    "link": "https://peopleandrobots.wisc.edu/",
     "place": "UW Madison - People and Robots Lab"
   },
   "img": "/img/bio-main.png"
