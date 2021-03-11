@@ -1,5 +1,6 @@
 # Personal-Website
-Development repo for my personal resume website using React and Ant Design.
+Development repo for my personal resume website using React and Ant Design. Check
+it out at [curthenrichs.github.io](https://curthenrichs.github.io/).
 
 For this project I am using [Ant Design](https://ant.design/), primarily for the
 clean, simplistic visual style it offers.
