@@ -81,7 +81,7 @@ const ProjectDigests = [
   },
   {
     "title": "Misc. Projects",
-    "brief": "Miscellaneous projects that have shaped my experiences.",
+    "brief": "Miscellaneous projects that have sharpened my development experience.",
     "img": "/img/teaser-misc.png",
     "type": "Personal",
     "project": "misc"
@@ -149,7 +149,18 @@ const ProjectImageCarousel = {
     }
   ],
   "misc": [
-
+    {
+      "img": "/img/misc-comp-vision.png",
+      "caption": "ITER computer vision spinoff detects magnetic blocks in 3D space using AR markers."
+    },
+    {
+      "img": "/img/misc-gan-learning.gif",
+      "caption": "Sprite GAN learning body armor."
+    },
+    {
+      "img": "/img/misc-gan-single.gif",
+      "caption": "Sprite GAN learning body armor - single example."
+    }
   ]
 }
 
