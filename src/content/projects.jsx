@@ -81,7 +81,7 @@ const ProjectDigests = [
   },
   {
     "title": "Misc. Projects",
-    "brief": "Miscellaneous projects that have sharpened my development experience.",
+    "brief": "Projects that have further shaped my experience.",
     "img": "/img/teaser-misc.png",
     "type": "Personal",
     "project": "misc"
