@@ -6,8 +6,8 @@ particiapnt in the makerspace at my internship and also engaged in making at
 univeristy. My goal after COVID, when we all are able to more safely socialize, is
 to again be active with a local maker group.
 
-I have several hobby projects on my [Github](https://github.com/curthenrichs?tab=repositories). A fair number of them are just simple
-microcontroller robots.
+I have several hobby projects on my [Github](https://github.com/curthenrichs?tab=repositories).
+A fair number of them are just simple microcontroller robots.
 
 My current project is a robot called [YAM](https://github.com/curthenrichs/YAM). My goal is to continue learning
 about robotic subsystems as I implement various components. The platform consists of
