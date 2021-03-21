@@ -54,7 +54,7 @@ const ProjectDigests = [
   {
     "title": "Expert View Dashboard",
     "brief": "Training tool for operators to program cobots.",
-    "img": "/img/teaser-evd.png",
+    "img": "/img/teaser-evd.jpg",
     "type": "Research",
     "project": "evd"
   },
@@ -104,7 +104,10 @@ const ProjectImageCarousel = {
     }
   ],
   "evd": [
-
+    {
+      "img": "/img/evd-authoring-ui.jpg",
+      "caption": "Expert View Dashboard's authoring interface (still in development)."
+    }
   ],
   "iter": [
     {

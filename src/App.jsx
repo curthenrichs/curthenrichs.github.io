@@ -4,6 +4,7 @@ import InDevelopmentModal from './components/InDevelopmentModal'
 import NavHeader from './components/NavHeader';
 import SectionHome from './components/SectionHome';
 import SectionSkills from './components/SectionSkills';
+import InfoButton from './components/InfoButton';
 import SectionProjects from './components/SectionProjects';
 import SectionContact from './components/SectionContact';
 import Copyright from './components/Copyright';
@@ -110,6 +111,8 @@ class App extends React.Component {
 
     const { width, navItemSelected } = this.state;
 
+    //<InDevelopmentModal />
+
     return (
       <Layout className="layout">
 
@@ -119,19 +122,18 @@ class App extends React.Component {
 
         <Content style={{ padding: '20px 0 0 0', marginTop: 64 }}>
 
-          <InDevelopmentModal />
-
           <ScrollElement name="sect-home" id="sect-home" className="sect type-a">
             <div className="sect-inner">
               <SectionHome width={width} />
             </div>
           </ScrollElement>
 
-          <ScrollElement name="sect-skills" id="sect-skills" style={{ textAlign: 'center'}} className="sect type-a">
-            <div className="sect-inner">
+          <ScrollElement name="sect-skills" id="sect-skills" style={{ textAlign: 'center' }} className="sect type-a">
+            <div className="sect-inner" style={{ position: 'relative' }}>
               <Title level={3}>Skills</Title>
               <br/>
               <SectionSkills width={width} />
+              <InfoButton width={width} style={{position: 'absolute', top: '-2px', right: '30px'}} />
             </div>
           </ScrollElement>
 
