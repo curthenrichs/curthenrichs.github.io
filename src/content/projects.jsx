@@ -53,7 +53,7 @@ const ProjectDigests = [
   },
   {
     "title": "Expert View Dashboard",
-    "brief": "Training tool for operators to program cobots.",
+    "brief": "Training and authoring tool for operators to modify their cobot's programs.",
     "img": "/img/teaser-evd.jpg",
     "type": "Research",
     "project": "evd"
