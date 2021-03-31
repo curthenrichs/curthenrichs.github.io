@@ -1,15 +1,15 @@
-import Biography from './biography.md';
+import Biography from './markdown/Biography.md';
 
 const data = {
   "biographyMarkdownPath": Biography,
   "interests": [
     "Human-Robot Interaction",
-    "Mixed-Reality Interfaces",
     "Collaborative Robotics",
     "Embedded System Development",
     "Software Development",
     "Computer Vision",
     "Artificial Intelligence",
+    "Mixed-Reality Interfaces",
     "Hobby Robotics"
   ],
   "education": [

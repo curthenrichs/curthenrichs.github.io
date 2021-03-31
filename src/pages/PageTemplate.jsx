@@ -41,7 +41,7 @@ class PageTemplate extends Component {
 
     let newItem = activeNavItem;
 
-    for (let key in sections) {
+    for (let key in sections.slice().reverse()) {
       const entry = sections[key];
 
       if (entry.navItem) {
@@ -80,7 +80,7 @@ class PageTemplate extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("scroll", this.trackScrolling)
-    window.addEventListener("resize", this.handleResize);
+    window.removeEventListener("resize", this.handleResize);
   }
 
 

@@ -2,6 +2,8 @@ import React from 'react';
 
 import PageTemplate from './PageTemplate';
 
+import SectionHome from '../components/sections/ResumeHome'
+import SectionResume from '../components/sections/Resume'
 import SectionContact from '../components/sections/Contact';
 
 
@@ -21,12 +23,12 @@ const ResumePage = (props) => {
           {
             id: 'embedded-btn',
             flexPx: 150,
-            content: 'Embedded Systems'
+            content: 'Embedded'
           },
           {
             id: 'software-btn',
             flexPx: 150,
-            content: 'Software Engineering'
+            content: 'Software'
           },
           {
             id: 'contact-btn',
@@ -48,13 +50,14 @@ const ResumePage = (props) => {
             route: '/courses'
           }
         ],
-        collapseWidth: 950
+        collapseWidth: 1500
       }}
       sections={[
         {
           name: 'sect-home',
+          navItem: 'override',
           sectionType: 'type-a',
-          content: (<div><br /><br /></div>)
+          content: (<SectionHome />)
         },
         {
           name: 'sect-robotics',
@@ -63,9 +66,14 @@ const ResumePage = (props) => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: -60
           },
-          content: (<div>Resume for Robotics Engineering and Human Robot Interaction</div>)
+          content: (
+            <SectionResume
+              title="Robotics Engineer and Human-Robot Interaction Designer"
+              id="robotics"
+            />
+          )
         },
         {
           name: 'sect-embedded',
@@ -74,9 +82,14 @@ const ResumePage = (props) => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: -60
           },
-          content: (<div>Resume for Embedded Systems Engineering</div>)
+          content: (
+            <SectionResume
+              title="Embedded Systems Engineer and Firmware Developer"
+              id="embedded"
+            />
+          )
         },
         {
           name: 'sect-software',
@@ -85,9 +98,14 @@ const ResumePage = (props) => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: -60
           },
-          content: (<div>Resume for Software Engineering</div>)
+          content: (
+            <SectionResume
+              title="Software Engineer and Computer Scientist"
+              id="software"
+            />
+          )
         },
         {
           name: 'sect-contact',

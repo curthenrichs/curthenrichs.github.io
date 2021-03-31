@@ -5,11 +5,12 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './index.css';
 
-import RootPage from './pages/RootPage';
+import MainPage from './pages/MainPage';
 import ResumePage from './pages/ResumePage';
 import CoursesPage from './pages/CoursesPage';
 import NotFoundPage from './pages/NotFoundPage';
 import IconLicensesPage from './pages/IconLicensesPage';
+import NotFoundNoRoutingPage from './pages/NotFoundNoRoutingPage';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -17,10 +18,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={RootPage} exact />
+        <Route path="/" component={MainPage} exact />
         <Route path="/icon-licenses" component={IconLicensesPage} exact />
         <Route path="/resumes" component={ResumePage} exact />
         <Route path="/courses" component={CoursesPage} exact />
+        <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

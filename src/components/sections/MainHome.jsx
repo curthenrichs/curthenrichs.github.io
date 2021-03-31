@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, Fragment } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import DefaultImg from '../DefaultImg';
@@ -38,7 +38,7 @@ const BioDigest = (props) => {
 
 const Interests = (props) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Title level={4}>Interest</Title>
       <div style={{padding: '0 20px', fontSize: '16px'}}>
         {data.interests.map((interest, idx) => (
@@ -48,14 +48,14 @@ const Interests = (props) => {
           </div>
         ))}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
 
 const Education = (props) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Title level={4}>Education</Title>
       <div style={{padding: '0 20px', fontSize: '16px'}}>
         {data.education.map((education, idx) => (
@@ -72,7 +72,7 @@ const Education = (props) => {
           </div>
         ))}
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
@@ -117,7 +117,7 @@ const BioDetail = (props) => {
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Title level={3}>Biography</Title>
       <div style={{fontSize: '16px'}}>
         <ReactMarkdown source={markdown}/>
@@ -125,7 +125,7 @@ const BioDetail = (props) => {
       <br/>
       <br/>
       {innerLayout}
-    </React.Fragment>
+    </Fragment>
   );
 };
 

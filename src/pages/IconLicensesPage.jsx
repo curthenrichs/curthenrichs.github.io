@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import PageTemplate from './PageTemplate';
 
@@ -17,7 +17,7 @@ const IconLicensesPage = (props) => {
           name: 'sect-icons',
           sectionType: 'type-a',
           content: (
-            <React.Fragment>
+            <Fragment>
 
               <h2>Icons</h2>
               <h3>Ant Design Icons</h3>
@@ -74,14 +74,14 @@ const IconLicensesPage = (props) => {
                 <li>unity.svg</li>
               </ul>
 
-            </React.Fragment>
+            </Fragment>
           )
         },
         {
           name: 'sect-favicon',
           sectionType: 'type-a',
           content: (
-            <React.Fragment>
+            <Fragment>
               <h2>Favicon</h2>
               <p>This favicon was generated using the following:</p>
               <ul>
@@ -91,7 +91,7 @@ const IconLicensesPage = (props) => {
                 <li>Font License: SIL Open Font License, 1.1 (<a href="http://scripts.sil.org/OFL">http://scripts.sil.org/OFL</a>)</li>
               </ul>
 
-            </React.Fragment>
+            </Fragment>
           )
         },
         {
@@ -99,11 +99,11 @@ const IconLicensesPage = (props) => {
           sectionType: 'type-a',
           style: { paddingTop: '3em' },
           content: (
-            <React.Fragment>
+            <Fragment>
               <div style={{textAlign: 'center'}}>
                 <Button type="primary" href="/">Take Me Back to the Main Page</Button>
               </div>
-            </React.Fragment>
+            </Fragment>
           )
         }
       ]}

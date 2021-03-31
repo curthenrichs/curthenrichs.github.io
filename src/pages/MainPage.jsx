@@ -2,14 +2,14 @@ import React from 'react';
 
 import PageTemplate from './PageTemplate';
 
-import SectionHome from '../components/sections/Home';
+import SectionHome from '../components/sections/MainHome';
 import SectionSkills from '../components/sections/Skills';
 import SectionProjects from '../components/sections/Projects';
 import SectionPublications from '../components/sections/Publications';
 import SectionContact from '../components/sections/Contact';
 
 
-const RootPage = (props) => {
+const MainPage = (props) => {
   return (
     <PageTemplate
       header={{
@@ -112,4 +112,4 @@ const RootPage = (props) => {
 };
 
 
-export default RootPage;
+export default MainPage;
