@@ -1,18 +1,13 @@
 import React from 'react';
 
-import { ProjectDigests as data } from '../content/projects';
-import ProjectCard from './ProjectCard';
+import { ProjectDigests as data } from '../../content/projects';
+import ProjectCard from '../ProjectCard';
 
-import { Typography } from 'antd';
-import { Row, Col } from 'antd';
-
+import { Row, Col, Typography } from 'antd';
 const { Title } = Typography;
 
 
-function SectionProjects(props) {
-
-  const { width } = props;
-
+const SectionProjects = (props) => {
   return (
     <div>
       <Title>Projects</Title>
@@ -20,16 +15,16 @@ function SectionProjects(props) {
       <br/>
       <Row gutter={[24, 24]} justify="center" align="middle">
         {data.map((entry, idx) => (
-          <Col flex="auto" xs={24} xl={8} key={idx}>
+          <Col flex="auto" key={idx} style={{height: '100%'}}>
             <ProjectCard
               digest={entry}
-              width={width}
             />
           </Col>
         ))}
       </Row>
     </div>
   );
-}
+};
+
 
 export default SectionProjects;

@@ -44,3 +44,8 @@
   display: block;
   cursor: pointer;
 }
+
+.nav-bar-text {
+  color: #8f8f8f;
+  font-size: 14px;
+}

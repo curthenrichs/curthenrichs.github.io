@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Typography , Divider } from 'antd';
-
 const { Text, Title } = Typography;
 
 
-function Copyright(props) {
+const Copyright = (props) => {
   return (
     <React.Fragment>
       <Divider type="horizontal" />
@@ -17,6 +16,7 @@ function Copyright(props) {
       <Text>Icon attribution <Link to="/icon-licenses">here</Link></Text>
     </React.Fragment>
   );
-}
+};
+
 
 export default Copyright;
