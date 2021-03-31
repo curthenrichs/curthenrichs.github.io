@@ -2,6 +2,7 @@ import React from 'react';
 
 import PageTemplate from './PageTemplate';
 
+import SectionHome from '../components/sections/CoursesHome';
 import SectionContact from '../components/sections/Contact';
 
 
@@ -14,14 +15,14 @@ const CoursesPage = (props) => {
         pageName: 'Courses',
         innerButtons: [
           {
-            id: 'masters-btn',
+            id: 'home-btn',
             flexPx: 150,
-            content: 'Master\'s Degree'
+            content: 'Philosophy'
           },
           {
-            id: 'bachelors-btn',
+            id: 'courses-btn',
             flexPx: 150,
-            content: 'Bachelor\'s Degree'
+            content: 'Courses'
           },
           {
             id: 'contact-btn',
@@ -43,30 +44,30 @@ const CoursesPage = (props) => {
             route: '/resumes'
           }
         ],
-        collapseWidth: 950
+        collapseWidth: 1500
       }}
       sections={[
         {
-          name: 'sect-masters',
-          navItem: 'masters-btn',
-          sectionType: 'type-b',
+          name: 'sect-home',
+          navItem: 'home-btn',
+          sectionType: 'type-a',
           scrollProperties: {
             duration: 500,
             smooth: true,
             offset: -100
           },
-          content: (<div>Master of Science in Computer Science</div>)
+          content: (<SectionHome/>)
         },
         {
-          name: 'sect-bachelors',
-          navItem: 'bachelors-btn',
+          name: 'sect-courses',
+          navItem: 'courses-btn',
           sectionType: 'type-b',
           scrollProperties: {
             duration: 500,
             smooth: true,
             offset: -100
           },
-          content: (<div>Bachelor of Science in Computer Engineering</div>)
+          content: (<div>List all of the courses here</div>)
         },
         {
           name: 'sect-contact',

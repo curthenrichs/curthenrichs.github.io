@@ -1,10 +1,10 @@
 
-import AuthrProject from './projects/Authr.md';
-import ITERProject from './projects/ITER.md';
-import EvDProject from './projects/EvD.md';
-import InternshipProject from './projects/Internship.md';
-import HobbyProject from './projects/Hobby.md';
-import MiscProject from './projects/Misc.md'
+import AuthrProject from './markdown/Authr.md';
+import ITERProject from './markdown/ITER.md';
+import EvDProject from './markdown/EvD.md';
+import InternshipProject from './markdown/Internship.md';
+import HobbyProject from './markdown/Hobby.md';
+import MiscProject from './markdown/Misc.md'
 
 
 const GetMarkdownPathFromName = (name) => {

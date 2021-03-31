@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { Menu as MenuIcon } from '../../content/customIcons';
@@ -89,12 +89,12 @@ const NavHeader = (props) => {
     if ( width >= collapseWidth ) {
 
       contents = (
-        <React.Fragment>
+        <Fragment>
           <Col flex="25px"><NavDivider /></Col>
           {innerBtns}
           <Col flex="25px"><NavDivider /></Col>
           {pageBtns}
-        </React.Fragment>
+        </Fragment>
       );
 
     } else {
@@ -109,6 +109,7 @@ const NavHeader = (props) => {
                 </div>
                 <div className="nav-bar nav-bar-dropdown-content">
                   {innerBtns}
+                  <Divider />
                   {pageBtns}
                 </div>
               </div>

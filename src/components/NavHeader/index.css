@@ -7,6 +7,11 @@
   border-left: 1px solid #8f8f8f;
 }
 
+.nav-bar-divider .horizontal {
+  border-left-style: none;
+  border-bottom: 1px solid #8f8f8f;
+}
+
 .nav-bar-btn:hover {
   background-color: #1890ff;
   color: #fff;

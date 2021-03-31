@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 import DefaultImg from './DefaultImg';
 import ProjectModal from './ProjectModal';
@@ -25,7 +25,7 @@ const ProjectCard = (props) => {
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div onClick={() => { setVisible(true); }} style={{style}}>
         <Card
           title={title}
@@ -57,7 +57,7 @@ const ProjectCard = (props) => {
         closeCallback={() => { setVisible(false); }}
         className="type-c"
       />
-    </React.Fragment>
+    </Fragment>
   );
 };
 
