@@ -9,7 +9,7 @@ const PublicationCard = (props) => {
 
   let color = undefined;
   switch (status.toLowerCase()) {
-    case 'final':
+    case 'published':
       color = "green";
       break;
     case 'in review':
