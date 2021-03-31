@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { GithubFilled, MailOutlined, LinkedinFilled } from '@ant-design/icons';
-
-import { Typography } from 'antd';
-
 import data from '../content/contact';
 
+import { GithubFilled, MailOutlined, LinkedinFilled } from '@ant-design/icons';
+import { Typography } from 'antd';
 const { Link } = Typography;
 
 
-function SocialTray(props) {
+const SocialTray = (props) => {
 
   return (
     <div className="social-tray" style={{fontSize: '30px'}}>
@@ -20,6 +18,7 @@ function SocialTray(props) {
       <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer"><LinkedinFilled /></Link>
     </div>
   );
-}
+};
+
 
 export default SocialTray

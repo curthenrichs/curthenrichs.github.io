@@ -1,21 +1,19 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import DefaultImg from './DefaultImg';
-import SocialTray from './SocialTray';
+import DefaultImg from '../DefaultImg';
+import SocialTray from '../SocialTray';
 
-import { GraduateCap } from '../content/customIcons';
+import data from '../../content/biography';
+import { WidthContext } from '../../contexts';
+
+import { GraduateCap } from '../../content/customIcons';
 import { CaretRightOutlined, GlobalOutlined, EnvironmentOutlined } from '@ant-design/icons';
-
-import { Row, Col } from 'antd';
-import { Typography, Image } from 'antd';
-
-import data from '../content/biography';
-
+import { Row, Col, Typography, Image, Button } from 'antd';
 const { Title, Text, Link } = Typography;
 
 
-function BioDigest(props) {
+const BioDigest = (props) => {
   return (
     <div style={{textAlign: 'center'}}>
       <Image
@@ -35,9 +33,10 @@ function BioDigest(props) {
       <SocialTray />
     </div>
   );
-}
+};
 
-function Interests(props) {
+
+const Interests = (props) => {
   return (
     <React.Fragment>
       <Title level={4}>Interest</Title>
@@ -51,15 +50,16 @@ function Interests(props) {
       </div>
     </React.Fragment>
   );
-}
+};
 
-function Education(props) {
+
+const Education = (props) => {
   return (
     <React.Fragment>
       <Title level={4}>Education</Title>
       <div style={{padding: '0 20px', fontSize: '16px'}}>
         {data.education.map((education, idx) => (
-          <div key={idx}>
+          <div key={idx} style={{ paddingBottom: '10px'}}>
             <GraduateCap />
             &nbsp;
             <Text>{education.title}, {education.year}</Text>
@@ -74,69 +74,65 @@ function Education(props) {
       </div>
     </React.Fragment>
   );
-}
+};
 
-class BioDetail extends React.Component {
 
-  constructor(props) {
-    super(props);
+const BioDetail = (props) => {
 
-    this.state = {
-      markdown: ''
+  const [markdown, setMarkdown] = useState('');
+  useEffect(() => {
+    const path =  data.biographyMarkdownPath;
+    const abortController = new AbortController();
+
+    fetch(path, { signal: abortController.signal})
+      .then(res => res.text())
+      .then(text => setMarkdown(text));
+
+    return () => {
+      abortController.abort();
     };
-  }
+  });
 
-  componentWillMount() {
-    const path = data.biographyMarkdownPath;
-    fetch(path).then(res => res.text()).then(text => this.setState({ markdown: text}));
-  }
-
-  render() {
-
-    const { markdown } = this.state;
-    const { width } = this.props;
-
-    let innerLayout = null;
-    if (width >= 950) {
-      innerLayout = (
-        <Row>
-          <Col flex="auto">
-            <Interests />
-          </Col>
-          <Col flex="auto">
-            <Education />
-          </Col>
-        </Row>
-      );
-    } else {
-      innerLayout = (
-        <div>
+  let innerLayout = null;
+  const width = useContext(WidthContext);
+  if (width >= 950) {
+    innerLayout = (
+      <Row>
+        <Col flex="auto">
           <Interests />
-          <br/>
+        </Col>
+        <Col flex="auto">
           <Education />
-        </div>
-      );
-    }
-
-    return (
-      <React.Fragment>
-        <Title level={3}>Biography</Title>
-        <div style={{fontSize: '16px'}}>
-          <ReactMarkdown source={markdown}/>
-        </div>
+        </Col>
+      </Row>
+    );
+  } else {
+    innerLayout = (
+      <div>
+        <Interests />
         <br/>
-        <br/>
-        {innerLayout}
-      </React.Fragment>
+        <Education />
+      </div>
     );
   }
-}
+
+  return (
+    <React.Fragment>
+      <Title level={3}>Biography</Title>
+      <div style={{fontSize: '16px'}}>
+        <ReactMarkdown source={markdown}/>
+      </div>
+      <br/>
+      <br/>
+      {innerLayout}
+    </React.Fragment>
+  );
+};
 
 
+const SectionHome = (props) => {
 
-function SectionHome(props) {
-
-  const { width } = props;
+  const width = useContext(WidthContext);
 
   let layout = null;
   if (width >= 1500) {
@@ -162,6 +158,7 @@ function SectionHome(props) {
   }
 
   return layout;
-}
+};
+
 
 export default SectionHome;

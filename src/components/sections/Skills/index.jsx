@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-import data from '../content/skills';
-import { IconLookupFromName } from '../content/customIcons';
-import './SectionSkills.css';
+import InfoButton from '../../InfoButton';
 
+import data from '../../../content/skills';
+import { WidthContext } from '../../../contexts';
+
+import './index.css';
+
+import { IconLookupFromName } from '../../../content/customIcons';
 import { DownCircleOutlined, UpCircleOutlined } from '@ant-design/icons';
-
-import { Row, Col } from 'antd';
-import { Typography, Progress, Button, Tooltip } from 'antd';
-
-const { Text } = Typography;
+import { Row, Col, Typography, Progress, Button, Tooltip } from 'antd';
+const { Text, Title } = Typography;
 
 
-function SkillTile(props) {
+const SkillTile = (props) => {
 
   const { skill } = props;
 
@@ -36,10 +37,10 @@ function SkillTile(props) {
       />
     </div>
   )
-}
+};
 
 
-function ExpandButton(props) {
+const ExpandButton = (props) => {
 
   const { type, callback, visible } = props;
 
@@ -47,26 +48,25 @@ function ExpandButton(props) {
   const icon = (shouldExpand) ? <DownCircleOutlined /> : <UpCircleOutlined />;
   const text = (shouldExpand) ? "Expand" : "Collapse";
 
+  let content = null;
   if (visible) {
-    return (
+    content = (
       <Tooltip title={text}>
         <Button type="primary" shape="round" icon={icon} size="large" onClick={() => callback(shouldExpand)}/>
       </Tooltip>
     );
-  } else {
-    return null;
   }
 
-}
+  return content;
+};
 
 
-function SectionSkills(props) {
+const SectionSkills = (props) => {
 
   const [expand, setExpand] = useState(false);
+  const width = useContext(WidthContext);
 
-  const { width } = props;
   const skillsCopy = data.skills.slice();
-
 
   const tileSize = 240;
   const totalSpace = tileSize * skillsCopy.length;
@@ -84,6 +84,10 @@ function SectionSkills(props) {
 
   return (
     <React.Fragment>
+      <Title level={3}>Skills</Title>
+
+      <br/>
+
       {newData.map((row, idx) => (
         <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 2 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
           {row.map((entry, idx) => (
@@ -95,10 +99,38 @@ function SectionSkills(props) {
       ))}
 
       {shouldCollapse ? <br /> : null}
+
       <ExpandButton visible={shouldCollapse} type={expand ? 'collapse' : 'expand'} callback={setExpand} />
+
+      <InfoButton style={{position: 'absolute', top: '-2px', right: '30px'}}>
+        <p>
+          I selected these specific technical skills to be representative of my
+          development experiences and to highlight areas I am interested in
+          continuing into the future. Obviously, I had to be selective lest the
+          list be so long and boring that any reader would just navigate away.
+        </p>
+
+        <p>
+          As for my rating, the scales should be read as percent. Though I am keeping
+          this intentionally vague to suggest the subjective nature of these values. It
+          is probably better to do comparison across skills rather than trying to
+          determine the exact level. If you are interested in proof of proficiency then
+          look at my projects section. Hopefully this gives a more complete perspective
+          of my skills.
+        </p>
+
+        <p>
+          Note: It might be interesting to see these skills naturally emerge from
+          tagging both my courses and projects. When I find some free time, it
+          might be a good weekend project.
+        </p>
+      </InfoButton>
+
     </React.Fragment>
   );
 
-}
+  return null;
+};
+
 
 export default SectionSkills;

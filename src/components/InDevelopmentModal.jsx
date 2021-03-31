@@ -1,34 +1,36 @@
 import React, { useState } from 'react';
 
 import { Sketch as SketchIcon } from '../content/customIcons';
+
 import { Modal, Button } from 'antd';
+
 
 const InDevelopmentModal = () => {
 
-  const [isModalVisible, setIsModalVisible] = useState(true);
-
-  const handleClose = () => {
-    setIsModalVisible(false);
-  };
+  const [visible, setVisible] = useState(true);
 
   return (
     <Modal
       title="Under Development"
       centered
-      visible={isModalVisible}
-      onOk={handleClose}
-      onCancel={handleClose}
-      footer={[<Button key="okay" type="primary" onClick={handleClose}>Okay</Button>]}
+      visible={visible}
+      onOk={() => { setVisible(false); }}
+      onCancel={() => { setVisible(false); }}
+      footer={[
+        <Button key="okay" type="primary" onClick={() => { setVisible(false); }}>
+          Okay
+        </Button>
+      ]}
     >
       <div style={{textAlign: "center"}}>
         <div style={{fontSize: "100px"}}>
           <SketchIcon />
         </div>
-        <p>Website is under development - content is not final.</p>
+        <p>Website is under development - Content is not final.</p>
       </div>
     </Modal>
   );
-}
+};
 
 
 export default InDevelopmentModal;
