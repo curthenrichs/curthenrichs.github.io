@@ -109,6 +109,11 @@ const data = {
       "name": "MongoDB",
       "progress": 30,
       "icon": "mongodb"
+    },
+    {
+      "name": "Fusion 360",
+      "progress": 30,
+      "icon": "fusion360"
     }
   ]
 };

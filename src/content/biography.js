@@ -33,7 +33,7 @@ const data = {
     "position": "Research Assistant",
     "field": "Human Robot Interaction",
     "link": "https://peopleandrobots.wisc.edu/",
-    "place": "UW Madison - People and Robots Lab"
+    "place": "UW Madison - People and Robots Lab (formerly HCI Lab)"
   },
   "img": "/img/bio-main.png"
 };
