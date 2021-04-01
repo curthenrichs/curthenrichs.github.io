@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.cfea5e99.chunk.css",
-    "main.js": "/static/js/main.ff8cad0e.chunk.js",
-    "main.js.map": "/static/js/main.ff8cad0e.chunk.js.map",
+    "main.js": "/static/js/main.031869f9.chunk.js",
+    "main.js.map": "/static/js/main.031869f9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7baa1a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.7baa1a17.js.map",
     "static/css/2.1eba1ac0.chunk.css": "/static/css/2.1eba1ac0.chunk.css",
@@ -15,7 +15,7 @@
     "static/css/main.cfea5e99.chunk.css.map": "/static/css/main.cfea5e99.chunk.css.map",
     "static/js/2.5674ea12.chunk.js.LICENSE.txt": "/static/js/2.5674ea12.chunk.js.LICENSE.txt",
     "static/media/Authr.5a9b033d.md": "/static/media/Authr.5a9b033d.md",
-    "static/media/Biography.33a156a0.md": "/static/media/Biography.33a156a0.md",
+    "static/media/Biography.2b5044f5.md": "/static/media/Biography.2b5044f5.md",
     "static/media/CoursesDescription.d5d92be8.md": "/static/media/CoursesDescription.d5d92be8.md",
     "static/media/EvD.808865fa.md": "/static/media/EvD.808865fa.md",
     "static/media/Hobby.8101c7a8.md": "/static/media/Hobby.8101c7a8.md",
@@ -25,17 +25,24 @@
     "static/media/ResumeDescription.5981b5b9.md": "/static/media/ResumeDescription.5981b5b9.md",
     "static/media/angular.235e5463.svg": "/static/media/angular.235e5463.svg",
     "static/media/arduino.ed036a70.svg": "/static/media/arduino.ed036a70.svg",
+    "static/media/atlassian.fa96520c.svg": "/static/media/atlassian.fa96520c.svg",
     "static/media/cplusplus.0f4700ff.svg": "/static/media/cplusplus.0f4700ff.svg",
     "static/media/csharp.578dfa51.svg": "/static/media/csharp.578dfa51.svg",
     "static/media/git.fbde76a6.svg": "/static/media/git.fbde76a6.svg",
     "static/media/graduation-cap-solid.af8ffce9.svg": "/static/media/graduation-cap-solid.af8ffce9.svg",
     "static/media/java.065b0007.svg": "/static/media/java.065b0007.svg",
+    "static/media/javascript.c981b611.svg": "/static/media/javascript.c981b611.svg",
+    "static/media/keras.ce34d5ec.svg": "/static/media/keras.ce34d5ec.svg",
     "static/media/linux.a8b1bae8.svg": "/static/media/linux.a8b1bae8.svg",
+    "static/media/matlab.226f5d4e.svg": "/static/media/matlab.226f5d4e.svg",
     "static/media/mechanical-arm.9bd46a27.svg": "/static/media/mechanical-arm.9bd46a27.svg",
     "static/media/menu.de21b81a.svg": "/static/media/menu.de21b81a.svg",
     "static/media/microchip-solid.ddabd144.svg": "/static/media/microchip-solid.ddabd144.svg",
     "static/media/microsoft.61cfa7e9.svg": "/static/media/microsoft.61cfa7e9.svg",
+    "static/media/mongodb.7ca038ec.svg": "/static/media/mongodb.7ca038ec.svg",
     "static/media/node-dot-js.351cbfb3.svg": "/static/media/node-dot-js.351cbfb3.svg",
+    "static/media/overleaf.cd284847.svg": "/static/media/overleaf.cd284847.svg",
+    "static/media/project.819e8c25.svg": "/static/media/project.819e8c25.svg",
     "static/media/python.bf900dfe.svg": "/static/media/python.bf900dfe.svg",
     "static/media/react.0c61afcf.svg": "/static/media/react.0c61afcf.svg",
     "static/media/ros.049e8b9e.svg": "/static/media/ros.049e8b9e.svg",
@@ -47,6 +54,6 @@
     "static/css/2.1eba1ac0.chunk.css",
     "static/js/2.5674ea12.chunk.js",
     "static/css/main.cfea5e99.chunk.css",
-    "static/js/main.ff8cad0e.chunk.js"
+    "static/js/main.031869f9.chunk.js"
   ]
 }
