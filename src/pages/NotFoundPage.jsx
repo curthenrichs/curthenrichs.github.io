@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PageTemplate from './PageTemplate';
+import ReturnHomeButton from '../components/ReturnHomeButton';
 
 import { Result, Button } from 'antd';
 
@@ -21,7 +22,7 @@ const NotFoundPage = (props) => {
               status="404"
               title="404"
               subTitle="Apologies, but I don't know what you are looking for."
-              extra={<Button type="primary" href="/">Take Me Back to the Main Page</Button>}
+              extra={<ReturnHomeButton />}
             />
           )
         }

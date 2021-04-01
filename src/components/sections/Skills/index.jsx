@@ -77,9 +77,9 @@ const SectionSkills = (props) => {
   let expandButton = null;
   let newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));
 
-  const shouldCollapse = newData.length > 3;
+  const shouldCollapse = newData.length > 2;
   if (shouldCollapse && !expand) {
-    newData = newData.splice(0,3);
+    newData = newData.splice(0,2);
   }
 
   return (
@@ -89,7 +89,7 @@ const SectionSkills = (props) => {
       <br/>
 
       {newData.map((row, idx) => (
-        <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 2 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
+        <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 1 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
           {row.map((entry, idx) => (
             <Col span={span} key={idx}>
               <SkillTile skill={entry}/>

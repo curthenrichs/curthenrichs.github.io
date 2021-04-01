@@ -43,12 +43,14 @@ const ResumePage = (props) => {
             content: 'Main Page',
             route: '/'
           },
+          /*
           {
             id: 'courses-btn',
             flexPx: 150,
             content: 'Courses',
             route: '/courses'
           }
+          */
         ],
         collapseWidth: 1500
       }}
@@ -70,7 +72,7 @@ const ResumePage = (props) => {
           },
           content: (
             <SectionResume
-              title="Robotics Engineer and Human-Robot Interaction Designer"
+              title="Robotics Engineer / Human-Robot Interaction Designer"
               id="robotics"
             />
           )
@@ -86,7 +88,7 @@ const ResumePage = (props) => {
           },
           content: (
             <SectionResume
-              title="Embedded Systems Engineer and Firmware Developer"
+              title="Embedded Systems Engineer"
               id="embedded"
             />
           )
@@ -102,7 +104,7 @@ const ResumePage = (props) => {
           },
           content: (
             <SectionResume
-              title="Software Engineer and Computer Scientist"
+              title="Software Engineer"
               id="software"
             />
           )
