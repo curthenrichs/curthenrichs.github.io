@@ -3,6 +3,7 @@ import React from 'react';
 import PageTemplate from './PageTemplate';
 
 import SectionHome from '../components/sections/CoursesHome';
+import SectionCourses from '../components/sections/Courses';
 import SectionContact from '../components/sections/Contact';
 
 
@@ -56,7 +57,7 @@ const CoursesPage = (props) => {
             smooth: true,
             offset: -100
           },
-          content: (<SectionHome/>)
+          content: (<SectionHome />)
         },
         {
           name: 'sect-courses',
@@ -67,7 +68,7 @@ const CoursesPage = (props) => {
             smooth: true,
             offset: -100
           },
-          content: (<div>List all of the courses here</div>)
+          content: (<SectionCourses />)
         },
         {
           name: 'sect-contact',

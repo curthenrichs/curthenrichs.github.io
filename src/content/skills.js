@@ -74,6 +74,41 @@ const data = {
       "name": "Angular",
       "progress": 45,
       "icon": "angular"
+    },
+    {
+      "name": "Javascript",
+      "progress": 50,
+      "icon": "javascript"
+    },
+    {
+      "name": "Keras",
+      "progress": 40,
+      "icon": "keras"
+    },
+    {
+      "name": "MATLAB",
+      "progress": 30,
+      "icon": "matlab"
+    },
+    {
+      "name": "Relaxed-IK",
+      "progress": 50,
+      "icon": "robot"
+    },
+    {
+      "name": "Latex / Overleaf",
+      "progress": 30,
+      "icon": "overleaf"
+    },
+    {
+      "name": "Trello / Jira",
+      "progress": 30,
+      "icon": "atlassian"
+    },
+    {
+      "name": "MongoDB",
+      "progress": 30,
+      "icon": "mongodb"
     }
   ]
 };

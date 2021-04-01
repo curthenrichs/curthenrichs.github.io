@@ -20,6 +20,14 @@ import { ReactComponent as ROSIcon } from '../icons/ros.svg';
 import { ReactComponent as SketchIcon } from '../icons/sketch.svg';
 import { ReactComponent as UnityIcon } from '../icons/unity.svg';
 
+import { ReactComponent as JavascriptIcon } from '../icons/javascript.svg';
+import { ReactComponent as KerasIcon } from '../icons/keras.svg';
+import { ReactComponent as MongoDBIcon } from '../icons/mongodb.svg';
+import { ReactComponent as OverleafIcon } from '../icons/overleaf.svg';
+import { ReactComponent as ProjectIcon } from '../icons/project.svg';
+import { ReactComponent as MatlabIcon } from '../icons/matlab.svg';
+import { ReactComponent as AtlassianIcon } from '../icons/atlassian.svg';
+
 function Angular(props) {
   return (<Icon component={AngularIcon} />);
 }
@@ -92,6 +100,36 @@ function Unity(props) {
   return (<Icon component={UnityIcon} />);
 }
 
+
+function Javascript(props) {
+  return (<Icon component={JavascriptIcon} />);
+}
+
+function Keras(props) {
+  return (<Icon component={KerasIcon} />);
+}
+
+function MongoDB(props) {
+  return (<Icon component={MongoDBIcon} />);
+}
+
+function Overleaf(props) {
+  return (<Icon component={OverleafIcon} />);
+}
+
+function Project(props) {
+  return (<Icon component={ProjectIcon} />);
+}
+
+function Matlab(props) {
+  return (<Icon component={MatlabIcon} />);
+}
+
+function Atlassian(props) {
+  return (<Icon component={AtlassianIcon} />);
+}
+
+
 const lookup = {
   "angular": <Angular />,
   "arduino": <Arduino />,
@@ -110,12 +148,19 @@ const lookup = {
   "robot": <Robot />,
   "ros": <ROS />,
   "sketch": <Sketch />,
-  "unity": <Unity />
+  "unity": <Unity />,
+  "javascript": <Javascript />,
+  "keras": <Keras />,
+  "mongodb": <MongoDB />,
+  "overleaf": <Overleaf />,
+  "project": <Project />,
+  "matlab": <Matlab />,
+  "atlassian": <Atlassian />
 };
 
 const handler = {
   get: function(target, name) {
-    return target.hasOwnProperty(name) ? target[name] : <WarningOutlined />
+    return target.hasOwnProperty(name.toLowerCase()) ? target[name] : <WarningOutlined />
   }
 };
 
@@ -141,6 +186,14 @@ export {
   ROS,
   Sketch,
   Unity,
+
+  Javascript,
+  Keras,
+  MongoDB,
+  Overleaf,
+  Project,
+  Matlab,
+  Atlassian,
 
   IconLookupFromName
 };

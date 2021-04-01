@@ -25,7 +25,7 @@ const data = [
   },
   {
     "title": "Expert View Dashboard: Training Novice Operators to Think Like Cobot Experts",
-    "reference": "Henrichs, C., & Mutlu, B. (In Progress). Expert View Dashboard: Training Novice Operators to Think Like Cobot Experts.",
+    "reference": "Henrichs, C., Siebert-Evenstone, A., & Mutlu, B. (In Progress). Expert View Dashboard: Training Novice Operators to Think Like Cobot Experts.",
     "link": null,
     "status": "In Progress"
   }
