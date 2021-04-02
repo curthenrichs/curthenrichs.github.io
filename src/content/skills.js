@@ -8,17 +8,20 @@ const data = {
     {
       "name": "Atmel",
       "progress": 70,
-      "icon": "microchip"
+      "icon": "microchip",
+      "hover": "C Programming"
     },
     {
       "name": "Linux",
       "progress": 70,
-      "icon": "linux"
+      "icon": "linux",
+      "hover": "Ubuntu / Debian Family"
     },
     {
       "name": "ROS",
       "progress": 80,
-      "icon": "ros"
+      "icon": "ros",
+      "hover": "ROS 1"
     },
     {
       "name": "C/C++",
@@ -48,7 +51,8 @@ const data = {
     {
       "name": "Universal Robots",
       "progress": 70,
-      "icon": "robot"
+      "icon": "robot",
+      "hover": "Among other platforms"
     },
     {
       "name": "Unity",
@@ -113,7 +117,18 @@ const data = {
     {
       "name": "Fusion 360",
       "progress": 30,
-      "icon": "fusion360"
+      "icon": "autodesk"
+    },
+    {
+      "name": "VHDL",
+      "progress": 30,
+      "icon": "microchip"
+    },
+    {
+      "name": "Assembly",
+      "progress": 30,
+      "icon": "microchip",
+      "hover": "(NIOS, MIPS, ARM)"
     }
   ]
 };

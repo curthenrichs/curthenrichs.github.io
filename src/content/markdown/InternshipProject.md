@@ -1,4 +1,4 @@
-# Internship
+ # Internship
 I worked as an intern at Dedicated Computing for three summers. Through this
 opportunity I was able to work on several projects with the R&D team. On this
 team I experienced agile development and frequent code reviews. I gained experince
@@ -72,4 +72,4 @@ on a low-power RF mesh network. Specifically, I had several nodes with light,
 temperature, humidity sensors connected to Teensy microcontrollers. Additionally,
 there was a master node that aggregated the data on the mesh network and pumped
 it to a phone connected over bluetooth (bluetooth UART communicating with a
-native wrapped web app). 
+native wrapped web app).

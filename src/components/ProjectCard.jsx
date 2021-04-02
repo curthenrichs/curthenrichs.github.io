@@ -3,6 +3,7 @@ import React, { useState, Fragment } from 'react';
 import DefaultImg from './DefaultImg';
 import ProjectModal from './ProjectModal';
 
+import { GraduateCap } from '../content/customIcons';
 import { ExperimentFilled, ToolFilled, StarFilled } from '@ant-design/icons';
 import { Card, Typography, Image } from 'antd';
 const { Text } = Typography;
@@ -16,12 +17,19 @@ const ProjectCard = (props) => {
   const [visible, setVisible] = useState(false);
 
   let icon = null;
-  if (type == "Research") {
-    icon = (<ExperimentFilled />);
-  } else if (type == "Internship") {
-    icon = (<ToolFilled />);
-  } else if (type == "Personal") {
-    icon = (<StarFilled />);
+  switch (type.toLowerCase()) {
+    case "research":
+      icon = (<ExperimentFilled />);
+      break;
+    case "internship":
+      icon = (<ToolFilled />);
+      break;
+    case "personal":
+      icon = (<StarFilled />);
+      break;
+    case "coursework":
+      icon = (<GraduateCap />);
+      break;
   }
 
   return (

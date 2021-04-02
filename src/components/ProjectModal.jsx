@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React, { useContext } from 'react';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 import DefaultImg from './DefaultImg';
 import { WidthContext } from '../contexts';
+import MarkdownContent from './MarkdownContent';
 import { ProjectImageCarousel, GetMarkdownPathFromName } from '../content/projects';
 
 import { Modal, Button, Divider, Image } from 'antd';
@@ -38,28 +38,6 @@ const ProjectModal = (props) => {
   const width = useContext(WidthContext);
   const modalWidth = (width > 1111) ? 1000 : width * 0.9;
 
-  const renderers = {
-    link: (props) => (
-      <a href={props.href} target="_blank" rel="noopener noreferrer">
-        {props.children}
-      </a>
-    )
-  }
-
-  const [markdown, setMarkdown] = useState('');
-  useEffect(() => {
-    const path = GetMarkdownPathFromName(project);
-    const abortController = new AbortController();
-    
-    fetch(path, { signal: abortController.signal})
-      .then(res => res.text())
-      .then(text => setMarkdown(text));
-
-    return () => {
-      abortController.abort();
-    };
-  });
-
   return (
     <Modal
       title={`${digest.title}`}
@@ -74,7 +52,9 @@ const ProjectModal = (props) => {
         <ImageCarousel options={ProjectImageCarousel[project]}/>
       </div>
       <Divider />
-      <ReactMarkdown source={markdown} renderers={renderers}/>
+      <MarkdownContent
+        markdownPath={GetMarkdownPathFromName(project)}
+      />
     </Modal>
   );
 };

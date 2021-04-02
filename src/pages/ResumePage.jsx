@@ -10,7 +10,6 @@ import SectionContact from '../components/sections/Contact';
 const ResumePage = (props) => {
   return (
     <PageTemplate
-      inDevelopment
       header={{
         simple: false,
         pageName: 'Resume',

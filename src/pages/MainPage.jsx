@@ -73,6 +73,7 @@ const MainPage = (props) => {
           sectionType: 'type-a',
           style: { textAlign: 'center' },
           scrollProperties: null,
+          notApplyInnerSection: true,
           content: (<SectionSkills/>)
         },
         {

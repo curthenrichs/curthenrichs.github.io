@@ -18,24 +18,26 @@ const SkillTile = (props) => {
   const { skill } = props;
 
   return (
-    <div style={{ width: 150 }}>
-      <div style={{fontSize: '50px'}}>
-        {IconLookupFromName[skill.icon]}
+    <Tooltip title={skill.hover}>
+      <div style={{ width: 150, margin: 'auto' }}>
+        <div style={{fontSize: '50px'}}>
+          {IconLookupFromName[skill.icon]}
+        </div>
+        <div style={{fontSize: '20px'}}>
+          <Text type="secondary">
+            {skill.name}
+          </Text>
+        </div>
+        <Progress
+          type="line"
+          percent={skill.progress}
+          size="small"
+          showInfo={false}
+          trailColor="#E8E8E8"
+          status="active"
+        />
       </div>
-      <div style={{fontSize: '20px'}}>
-        <Text type="secondary">
-          {skill.name}
-        </Text>
-      </div>
-      <Progress
-        type="line"
-        percent={skill.progress}
-        size="small"
-        showInfo={false}
-        trailColor="#E8E8E8"
-        status="active"
-      />
-    </div>
+    </Tooltip>
   )
 };
 
@@ -77,6 +79,16 @@ const SectionSkills = (props) => {
   let expandButton = null;
   let newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));
 
+  const tilePad = 50;
+  // @ 500 - 50px
+  // @ 600 - 20px
+  // @ 700 - 45px
+  // @ 1300 - 45px
+  // @ 1500 - 65px
+
+  // < 520px
+
+
   const shouldCollapse = newData.length > 2;
   if (shouldCollapse && !expand) {
     newData = newData.splice(0,2);
@@ -88,21 +100,27 @@ const SectionSkills = (props) => {
 
       <br/>
 
-      {newData.map((row, idx) => (
-        <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 1 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
-          {row.map((entry, idx) => (
-            <Col span={span} key={idx}>
-              <SkillTile skill={entry}/>
-            </Col>
+      <div>
+          {newData.map((row, idx) => (
+            <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 1 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
+              {row.map((entry, idx) => (
+                <Col span={span} key={idx}>
+                  <SkillTile skill={entry}/>
+                </Col>
+              ))}
+            </Row>
           ))}
-        </Row>
-      ))}
 
-      {shouldCollapse ? <br /> : null}
+          {shouldCollapse ? <br /> : null}
+      </div>
 
       <ExpandButton visible={shouldCollapse} type={expand ? 'collapse' : 'expand'} callback={setExpand} />
 
-      <InfoButton style={{position: 'absolute', top: '-2px', right: '30px'}}>
+
+      <InfoButton
+        style={{position: 'absolute', top: '-2px', right: '30px'}}
+        tooltipProps={{placement:"left", title:"Curious about these skills?"}}
+      >
         <p>
           I selected these specific technical skills to be representative of my
           development experiences and to highlight areas I am interested in
