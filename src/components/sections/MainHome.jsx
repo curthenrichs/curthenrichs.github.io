@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect, Fragment } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React, { useContext, Fragment } from 'react';
 
 import DefaultImg from '../DefaultImg';
 import SocialTray from '../SocialTray';
 
 import data from '../../content/biography';
 import { WidthContext } from '../../contexts';
+import MarkdownContent from '../MarkdownContent';
 
 import { GraduateCap } from '../../content/customIcons';
 import { CaretRightOutlined, GlobalOutlined, EnvironmentOutlined } from '@ant-design/icons';
@@ -79,20 +79,6 @@ const Education = (props) => {
 
 const BioDetail = (props) => {
 
-  const [markdown, setMarkdown] = useState('');
-  useEffect(() => {
-    const path =  data.biographyMarkdownPath;
-    const abortController = new AbortController();
-
-    fetch(path, { signal: abortController.signal})
-      .then(res => res.text())
-      .then(text => setMarkdown(text));
-
-    return () => {
-      abortController.abort();
-    };
-  });
-
   let innerLayout = null;
   const width = useContext(WidthContext);
   if (width >= 950) {
@@ -120,7 +106,9 @@ const BioDetail = (props) => {
     <Fragment>
       <Title level={3}>Biography</Title>
       <div style={{fontSize: '16px'}}>
-        <ReactMarkdown source={markdown}/>
+        <MarkdownContent
+          markdownPath={data.biographyMarkdownPath}
+        />
       </div>
       <br/>
       <br/>

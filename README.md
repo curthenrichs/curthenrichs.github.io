@@ -5,10 +5,6 @@ it out at [curthenrichs.github.io](https://curthenrichs.github.io/).
 For this project I am using [Ant Design](https://ant.design/), primarily for the
 clean, simplistic visual style it offers.
 
-I went with a single-page design in order to keep the user engaged with content
-exploration. My intent is to make it easy for employers / recruiters to quickly
-find out what is important to me professionally.
-
 ## Local Build
 To build and test locally, first clone this repo and navigate to the root project
 directory. Then run:
@@ -36,6 +32,7 @@ This project is structured such that I should be able to merely update the conte
 files. I broke the content down by section on the webpage.
 
 - biography
+  - Biography
 - skills
 - projects
   - Authr
@@ -43,7 +40,7 @@ files. I broke the content down by section on the webpage.
   - ITER
   - Internship
   - Hobby
-  - Misc
+  - ComputerVision
 - contact
 
 If adding projects (I advise multiples of nine) then simply update the projects

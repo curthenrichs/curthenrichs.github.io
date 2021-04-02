@@ -1,10 +1,12 @@
 
-import AuthrProject from './markdown/Authr.md';
-import ITERProject from './markdown/ITER.md';
-import EvDProject from './markdown/EvD.md';
-import InternshipProject from './markdown/Internship.md';
-import HobbyProject from './markdown/Hobby.md';
-import MiscProject from './markdown/Misc.md'
+import AuthrProject from './markdown/AuthrProject.md';
+import ITERProject from './markdown/ITERProject.md';
+import EvDProject from './markdown/EvDProject.md';
+import InternshipProject from './markdown/InternshipProject.md';
+import HobbyProject from './markdown/HobbyProject.md';
+import ComputerVisionProject from './markdown/VisionMLProject.md';
+import EmbeddedProject from './markdown/EmbeddedProject.md';
+import HCIProject from './markdown/HCIProject.md';
 
 
 const GetMarkdownPathFromName = (name) => {
@@ -26,8 +28,14 @@ const GetMarkdownPathFromName = (name) => {
     case "hobby":
       retVal = HobbyProject;
       break;
-    case "misc":
-      retVal = MiscProject;
+    case "vision":
+      retVal = ComputerVisionProject;
+      break;
+    case "embedded":
+      retVal = EmbeddedProject;
+      break;
+    case "hci":
+      retVal = HCIProject;
       break;
   }
 
@@ -40,7 +48,9 @@ const Projects = [
   "evd",
   "internship",
   "hobby",
-  "misc"
+  "vision",
+  "embedded",
+  "hci"
 ];
 
 const ProjectDigests = [
@@ -80,11 +90,25 @@ const ProjectDigests = [
     "project": "hobby"
   },
   {
-    "title": "Misc. Projects",
-    "brief": "Projects that have further shaped my experience.",
-    "img": "/img/teaser-misc.png",
-    "type": "Personal",
-    "project": "misc"
+    "title": "Computer Vision and ML Projects",
+    "brief": "Various computer vision and machine learning projects from coursework.",
+    "img": "/img/teaser-computer-vision.png",
+    "type": "Coursework",
+    "project": "vision"
+  },
+  {
+    "title": "Embedded System Projects.",
+    "brief": "Various embedded systems projects from my undergrad coursework.",
+    "img": "/img/teaser-embedded.png",
+    "type": "Coursework",
+    "project": "embedded"
+  },
+  {
+    "title": "HCI and Data Visualization.",
+    "brief": "A few HCI and data visualization course projects.",
+    "img": "/img/teaser-hci.png",
+    "type": "Coursework",
+    "project": "hci"
   }
 ]
 
@@ -151,18 +175,33 @@ const ProjectImageCarousel = {
       "caption": "LEDs being controlled by lighting effects interface, back when I was at MSOE."
     }
   ],
-  "misc": [
+  "vision": [
     {
-      "img": "/img/misc-comp-vision.png",
+      "img": "/img/computer-vision-iter.png",
       "caption": "ITER computer vision spinoff detects magnetic blocks in 3D space using AR markers."
     },
     {
-      "img": "/img/misc-gan-learning.gif",
+      "img": "/img/computer-vision-gan-learning.gif",
       "caption": "Sprite GAN learning body armor."
     },
     {
-      "img": "/img/misc-gan-single.gif",
+      "img": "/img/computer-vision-gan-single.gif",
       "caption": "Sprite GAN learning body armor - single example."
+    }
+  ],
+  "embedded": [
+    {
+      "img": "/img/embedded-networking.png",
+      "caption": "Networking one project hardware where I am using a Cypress SOC."
+    },
+    {
+      "img": "/img/embedded-tracking.png",
+      "caption": "Embedded Systems III course project. Uses camera to track face on NIOS soft-core processor."
+    }
+  ],
+  "hci": [
+    {
+
     }
   ]
 }

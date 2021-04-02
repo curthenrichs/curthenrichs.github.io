@@ -26,7 +26,15 @@ support for arbitary objects. I am approaching this space as a human-robot inter
 shared-control problem instead of as a direct control problem (commonly found in the
 literature).
 
-I have dabbled a bit in LED lighting control for home automation. I have previously
-written a RESTful LED lightstrip control service that ran on an ESP8266 microcontroller
+I have dabbled a bit in LED lighting control within the home automation space. I wrote a RESTful LED lightstrip control service that ran on an ESP8266 microcontroller
 ([repo](https://github.com/curthenrichs/LED-Service)), along with some simple automation effects for a different lightstrip in
 my old apartment ([repo](https://github.com/curthenrichs/LED-Automation-Effects)).
+
+In order to learn the new Universal Robots ROS driver, I created a small [side-project](https://github.com/curthenrichs/ur3e_real_time_motion_playground)
+that made use of my colleagues' real-time controllers ([Relaxed-IK](https://github.com/uwgraphics/relaxed_ik) and [Lively-IK](https://github.com/Wisc-HCI/lively_ik)). The
+goal of this project was to serve as a reference for both myself and others for how
+our lab could interact with the new driver.
+
+I also got inspired to retro-fit a 2D web fluid visualization ([repo](https://github.com/curthenrichs/planner_fluid_visualization)) to express robot
+end-effector position and orientation. It had no real-world value but was
+enjoyable to write.

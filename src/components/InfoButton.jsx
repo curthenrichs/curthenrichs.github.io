@@ -8,7 +8,7 @@ import { Button, Tooltip, Modal } from 'antd';
 
 const InfoButton = (props) => {
 
-  const { style, children } = props;
+  const { style, children, tooltipProps } = props;
 
   const [visible, setVisible] = useState(false);
 
@@ -17,7 +17,7 @@ const InfoButton = (props) => {
 
   return (
     <div style={style}>
-      <Tooltip placement="left" title="Curious about these skills?">
+      <Tooltip {...tooltipProps} >
         <Button type="primary" shape="circle" icon={<QuestionOutlined />}
           onClick={() => { setVisible(true); }}
         />
