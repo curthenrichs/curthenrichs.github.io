@@ -62,3 +62,7 @@ All images are provided in public and should be added there.
 
 Icon SVGs should be added to the icons directory and the Ant Wrapper written in
 customIcons (within content directory).
+
+## Notes
+Thanks to this [repo](https://github.com/rafgraph/spa-github-pages) hard refreshes are
+managed when deployed on Github Pages.
