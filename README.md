@@ -31,22 +31,34 @@ npm run deploy
 This project is structured such that I should be able to merely update the content
 files. I broke the content down by section on the webpage.
 
-- biography
-  - Biography
-- skills
-- projects
-  - Authr
-  - EvD
-  - ITER
-  - Internship
-  - Hobby
-  - ComputerVision
-- contact
+- Main Page
+  - biography
+    - Biography (markdown)
+  - skills
+    - customIcons
+    - And add icons to icon directory
+  - projects
+    - Authr (markdown)
+    - EvD (markdown)
+    - ITER (markdown)
+    - Internship (markdown)
+    - Hobby (markdown)
+    - VisionML (markdown)
+    - Embedded (markdown)
+    - HCI (markdown)
+  - publications
+  - contact
+- Resume Page
+  - resumes
+    - ResumeDescription
+- Courses Page
+  - courses
+    - CoursesDescription
 
-If adding projects (I advise multiples of nine) then simply update the projects
-content and add a markdown page with the writeup.
+If adding projects then simply update the projects content and add a markdown
+page with the writeup.
 
-All images are provided publically and should be added there.
+All images are provided in public and should be added there.
 
 Icon SVGs should be added to the icons directory and the Ant Wrapper written in
 customIcons (within content directory).
