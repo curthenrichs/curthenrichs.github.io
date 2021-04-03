@@ -97,16 +97,16 @@ const ProjectDigests = [
     "project": "vision"
   },
   {
-    "title": "Embedded System Projects.",
+    "title": "Embedded System Projects",
     "brief": "Various embedded systems projects from my undergrad coursework.",
-    "img": "/img/teaser-embedded.png",
+    "img": "/img/teaser-embedded.jpg",
     "type": "Coursework",
     "project": "embedded"
   },
   {
-    "title": "HCI and Data Visualization.",
+    "title": "HCI and Data Visualization",
     "brief": "A few HCI and data visualization course projects.",
-    "img": "/img/teaser-hci.png",
+    "img": "/img/teaser-hci.jpg",
     "type": "Coursework",
     "project": "hci"
   }
@@ -191,17 +191,34 @@ const ProjectImageCarousel = {
   ],
   "embedded": [
     {
-      "img": "/img/embedded-networking.png",
+      "img": "/img/embedded-networking.jpg",
       "caption": "Networking one project hardware where I am using a Cypress SOC."
     },
     {
-      "img": "/img/embedded-tracking.png",
-      "caption": "Embedded Systems III course project. Uses camera to track face on NIOS soft-core processor."
+      "img": "/img/embedded-treadmill.jpg",
+      "caption": "Embedded Systems IV course project. Firmware implementation for a treadmill on a Cypress SOC."
+    },
+    {
+      "img": "/img/embedded-tracking.jpg",
+      "caption": "Embedded Systems III course project. Uses camera to track hand on NIOS soft-core processor."
+    },
+    {
+      "img": "/img/embedded-pcb.jpg",
+      "caption": "Embedded Systems III homework. I implemented a Atmel microcontroller PCB in Eagle."
     }
   ],
   "hci": [
     {
-
+      "img": "/img/hci-hifi-mockup.jpg",
+      "caption": "High fidelity mockup of my Universal Robots teach pendant redesign in Adobe XD."
+    },
+    {
+      "img": "/img/hci-vis-overview.jpg",
+      "caption": "Overview interactive visualization of Amazon product categories created by Plotly in Python."
+    },
+    {
+      "img": "/img/hci-vis-detail.jpg",
+      "caption": "Detail interactive visualization of Amazon product categories created by Plotly in Python."
     }
   ]
 }
