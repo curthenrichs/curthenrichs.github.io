@@ -79,16 +79,6 @@ const SectionSkills = (props) => {
   let expandButton = null;
   let newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));
 
-  const tilePad = 50;
-  // @ 500 - 50px
-  // @ 600 - 20px
-  // @ 700 - 45px
-  // @ 1300 - 45px
-  // @ 1500 - 65px
-
-  // < 520px
-
-
   const shouldCollapse = newData.length > 2;
   if (shouldCollapse && !expand) {
     newData = newData.splice(0,2);
@@ -100,19 +90,19 @@ const SectionSkills = (props) => {
 
       <br/>
 
-      <div>
-          {newData.map((row, idx) => (
-            <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 1 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
-              {row.map((entry, idx) => (
-                <Col span={span} key={idx}>
-                  <SkillTile skill={entry}/>
-                </Col>
-              ))}
-            </Row>
-          ))}
-
-          {shouldCollapse ? <br /> : null}
+      <div style={{paddingLeft: '12px', paddingRight: '12px'}}>
+        {newData.map((row, idx) => (
+          <Row gutter={[24,24]} justify="center" key={idx} className={`${ (idx >= 1 && shouldCollapse && !expand) ? 'fade-out' : '' }`}>
+            {row.map((entry, idx) => (
+              <Col span={span} key={idx}>
+                <SkillTile skill={entry}/>
+              </Col>
+            ))}
+          </Row>
+        ))}
       </div>
+
+      {shouldCollapse ? <br /> : null}
 
       <ExpandButton visible={shouldCollapse} type={expand ? 'collapse' : 'expand'} callback={setExpand} />
 
