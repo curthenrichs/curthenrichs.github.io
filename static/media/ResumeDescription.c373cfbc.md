@@ -18,4 +18,5 @@ I am interested and have experience in three areas of work:
 
 &nbsp;
 
-Each resume below has been tailored for its respective area.
+Please review my resumes below. Each has been tailored for its respective area
+of interest.

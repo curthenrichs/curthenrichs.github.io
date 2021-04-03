@@ -1,8 +1,8 @@
-# Internship
+ # Internship
 I worked as an intern at Dedicated Computing for three summers. Through this
 opportunity I was able to work on several projects with the R&D team. On this
 team I experienced agile development and frequent code reviews. I gained experince
-developing software that had end-users, in contrast to my coursework.
+developing software that had end-users, in contrast to my undergrad coursework.
 
 ## Matrix Storage
 Matrix Storage was the first project I worked on when I was hired as an intern.
@@ -55,3 +55,21 @@ extend his automated BIOS configuration test code for this system. That codebase
 provided a JSON interface that acted as a domain specfic language. My job was to
 provide the low-level primitives to start/stop recording sensor values and to
 control the test loads being applied.
+
+## Maker Space
+Dedicated Computing had a maker space set aside on the manufacturing shop floor
+where employees could go to work on personal projects after work. My manager /
+mentor very much encouraged interns to work hard and play hard. I worked on a
+few personal projects there.
+
+First was a medium sized mobile robot with an ESP8266 as its controller. I
+wrote a simple javascript app that provided a touch-based joystick to the user
+for them to drive the robot around. I also started exploring 3D printing with
+this project; making many failed motor mount prototypes.
+
+I also worked on a project with my mentor to collect environment sensor data
+on a low-power RF mesh network. Specifically, I had several nodes with light,
+temperature, humidity sensors connected to Teensy microcontrollers. Additionally,
+there was a master node that aggregated the data on the mesh network and pumped
+it to a phone connected over bluetooth (bluetooth UART communicating with a
+native wrapped web app).
