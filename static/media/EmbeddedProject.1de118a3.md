@@ -1,12 +1,12 @@
 # Undergrad Embedded Systems Projects
 During my time in undergrad, I worked on several projects that helped develop my
-firmware development skills.
+firmware development skills. All of these projects are available [here](https://github.com/curthenrichs/Undergrad-Embedded-Projects).
 
 ## Networking One - Term Project
 I worked in a team of three to develop an embedded device that can communicate
 on a networking protocol defined for the course. We selected a Cypress Mixed-Signal
-SOC. Our implementation was interrupt based, where we built an interrupt callback
-scheme to handle the protocol.
+SOC to develop against. Our implementation was interrupt based. Specifically we
+built an interrupt callback scheme to handle the protocol.
 
 ## Embedded Systems IV - Term Project
 For this project, we were tasked with developing the firmware for a treadmill.

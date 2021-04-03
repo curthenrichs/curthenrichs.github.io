@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.77b14ac6.chunk.css",
-    "main.js": "/static/js/main.a28e78c9.chunk.js",
-    "main.js.map": "/static/js/main.a28e78c9.chunk.js.map",
+    "main.js": "/static/js/main.33388496.chunk.js",
+    "main.js.map": "/static/js/main.33388496.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7baa1a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.7baa1a17.js.map",
     "static/css/2.1eba1ac0.chunk.css": "/static/css/2.1eba1ac0.chunk.css",
@@ -17,7 +17,7 @@
     "static/media/AuthrProject.5a9b033d.md": "/static/media/AuthrProject.5a9b033d.md",
     "static/media/Biography.4cf716d1.md": "/static/media/Biography.4cf716d1.md",
     "static/media/CoursesDescription.d5d92be8.md": "/static/media/CoursesDescription.d5d92be8.md",
-    "static/media/EmbeddedProject.6d9ef2fe.md": "/static/media/EmbeddedProject.6d9ef2fe.md",
+    "static/media/EmbeddedProject.1de118a3.md": "/static/media/EmbeddedProject.1de118a3.md",
     "static/media/EvDProject.abdba263.md": "/static/media/EvDProject.abdba263.md",
     "static/media/HCIProject.8139a9cd.md": "/static/media/HCIProject.8139a9cd.md",
     "static/media/HobbyProject.0587decf.md": "/static/media/HobbyProject.0587decf.md",
@@ -57,6 +57,6 @@
     "static/css/2.1eba1ac0.chunk.css",
     "static/js/2.fd7a3ffe.chunk.js",
     "static/css/main.77b14ac6.chunk.css",
-    "static/js/main.a28e78c9.chunk.js"
+    "static/js/main.33388496.chunk.js"
   ]
 }
