@@ -19,7 +19,13 @@ const SectionResume = (props) => {
           data={Resumes[id].src}
           type="application/pdf"
           style={{minHeight: '100vh', width: '90%' }}
-        ></object>
+        >
+          <p>
+          Your web browser doesn't have a PDF plugin.
+          <a href={Resumes[id].src}>Click here to
+          download the PDF to your device.</a>
+          </p>
+        </object>
       </div>
 
     </Fragment>

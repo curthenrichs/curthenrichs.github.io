@@ -16,7 +16,7 @@ const ImageCarousel = (props) => {
   const { options } = props;
 
   return (
-    <Carousel autoPlay infiniteLoop>
+    <Carousel autoPlay infiniteLoop interval={5000} emulateTouch className="carousel">
       {options.map((entry, idx) => (
         <div key={idx} style={{display: 'flex', justifyContent: 'center'}}>
           <img
