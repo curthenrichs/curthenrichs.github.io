@@ -63,6 +63,16 @@ All images are provided in public and should be added there.
 Icon SVGs should be added to the icons directory and the Ant Wrapper written in
 customIcons (within content directory).
 
-## Notes
+## Acknowledgements
 Thanks to this [repo](https://github.com/rafgraph/spa-github-pages) hard refreshes are
 managed when deployed on Github Pages.
+
+Thank you [Ant Design](https://ant.design/) for the amazing framework. I really
+love the design language that is provided out of the box.
+
+And thanks to all other technical libraries and code developers / teams who have
+made this possible. I truly am standing on the shoulders of giants.
+
+## Notes
+My resume and cover letter design files are in the root's docs directory. This is
+to make my life easier when updating my profile in the future.
