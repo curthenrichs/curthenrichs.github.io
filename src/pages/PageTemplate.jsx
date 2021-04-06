@@ -5,7 +5,7 @@ import NavHeader from '../components/NavHeader';
 import Copyright from '../components/Copyright';
 import InDevelopmentModal from '../components/InDevelopmentModal'
 
-import { WidthContext } from '../contexts';
+import { WidthContext, HeightContext } from '../contexts';
 
 import { Typography, Layout } from 'antd';
 const { Text, Title } = Typography;
@@ -86,55 +86,57 @@ class PageTemplate extends Component {
 
   render() {
     const { header, sections, inDevelopment } = this.props;
-    const { width, activeNavItem } = this.state;
+    const { width, height, activeNavItem } = this.state;
 
     return (
       <WidthContext.Provider value={width}>
+        <HeightContext.Provider value={height}>
 
-        <Layout className="layout">
+          <Layout className="layout">
 
-          <Header className="header-style" >
-            <NavHeader
-              {...header}
-              callback={(e) => {
-                for (let key in sections) {
-                  const entry = sections[key];
+            <Header className="header-style" >
+              <NavHeader
+                {...header}
+                callback={(e) => {
+                  for (let key in sections) {
+                    const entry = sections[key];
 
-                  if (entry.navItem === e.target.id) {
-                    scroller.scrollTo(entry.name, entry.scrollProperties);
+                    if (entry.navItem === e.target.id) {
+                      scroller.scrollTo(entry.name, entry.scrollProperties);
+                    }
                   }
-                }
-              }}
-              selected={activeNavItem}
-            />
-          </Header>
+                }}
+                selected={activeNavItem}
+              />
+            </Header>
 
-          <Content style={{ padding: '20px 0 0 0', marginTop: 64 }}>
+            <Content style={{ padding: '20px 0 0 0', marginTop: 64 }}>
 
-            {sections.map((entry) => (
-              <ScrollElement
-                key={entry.name}
-                name={entry.name}
-                id={entry.name}
-                style={entry.style}
-                className={`sect ${entry.sectionType}`}
-              >
-                <div className={`${entry.notApplyInnerSection ? '' : "sect-inner"}`} style={{ position: 'relative' }}>
-                  {entry.content}
-                </div>
-              </ScrollElement>
-            ))}
+              {sections.map((entry) => (
+                <ScrollElement
+                  key={entry.name}
+                  name={entry.name}
+                  id={entry.name}
+                  style={entry.style}
+                  className={`sect ${entry.sectionType}`}
+                >
+                  <div className={`${entry.notApplyInnerSection ? '' : "sect-inner"}`} style={{ position: 'relative' }}>
+                    {entry.content}
+                  </div>
+                </ScrollElement>
+              ))}
 
-          </Content>
+            </Content>
 
-          <Footer style={{ textAlign: 'center'}}>
-            <Copyright />
-          </Footer>
+            <Footer style={{ textAlign: 'center'}}>
+              <Copyright />
+            </Footer>
 
-          {inDevelopment ? <InDevelopmentModal /> : undefined}
+            {inDevelopment ? <InDevelopmentModal /> : undefined}
 
-        </Layout>
+          </Layout>
 
+        </HeightContext.Provider>
       </WidthContext.Provider>
     );
   }
