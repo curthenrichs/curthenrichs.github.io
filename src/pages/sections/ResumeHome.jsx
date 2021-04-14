@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import MarkdownContent from '../MarkdownContent';
+import MarkdownContent from '../../components/MarkdownContent';
 import { ResumeDescriptionPath } from '../../content/resumes';
 
 import { Typography } from 'antd';

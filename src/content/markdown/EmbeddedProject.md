@@ -8,11 +8,16 @@ on a networking protocol defined for the course. We selected a Cypress Mixed-Sig
 SOC to develop against. Our implementation was interrupt based. Specifically we
 built an interrupt callback scheme to handle the protocol.
 
+I programmed the ISR-based networking protocol, one teammate handled user input /
+control, and the third teammate focused on testing and external documentation.
+
 ## Embedded Systems IV - Term Project
 For this project, we were tasked with developing the firmware for a treadmill.
 This system tracks the heart rate of the user in order to adjust treadmill warnings
 and motor speed based on a set of fitness profiles. The user interacts with the
 device through capacitive touch buttons and a LCD character display.
+
+This was an individual project.
 
 ## Embedded Systems III - Term Project
 This was a rather fun project where we had to develop a system that tracked the
@@ -30,7 +35,11 @@ to run a simple vision solution on a very much computationally underpowered
 processor. The solution was a bit hacky but it did teach me the trade-offs in
 elegance, performance, and code clarity.
 
+This was an individual project.
+
 ## Embedded Systems III - Board Layout
 Lastly in my embedded three course, I had my first foray into board layout. I
 created a microcontroller breakout board for an Atmel Mega. This is a skill that
 I have not developed further but would be interested in learning more about.
+
+This was an individual assignment.

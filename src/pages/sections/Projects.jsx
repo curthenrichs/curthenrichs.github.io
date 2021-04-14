@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ProjectDigests as data } from '../../content/projects';
-import ProjectCard from '../ProjectCard';
+import ProjectCard from '../../components/ProjectCard';
 
 import { Row, Col, Typography } from 'antd';
 const { Title } = Typography;

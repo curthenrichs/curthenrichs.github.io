@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PublicationCard from '../PublicationCard';
+import PublicationCard from '../../components/PublicationCard';
 
 import data from '../../content/publications';
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 import PageTemplate from './PageTemplate';
 
-import SectionHome from '../components/sections/ResumeHome'
-import SectionResume from '../components/sections/Resume'
-import SectionContact from '../components/sections/Contact';
+import SectionHome from './sections/ResumeHome'
+import SectionResume from './sections/Resume'
+import SectionContact from './sections/Contact';
 
 
 const ResumePage = (props) => {

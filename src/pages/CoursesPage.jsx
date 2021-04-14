@@ -2,9 +2,9 @@ import React from 'react';
 
 import PageTemplate from './PageTemplate';
 
-import SectionHome from '../components/sections/CoursesHome';
-import SectionCourses from '../components/sections/Courses';
-import SectionContact from '../components/sections/Contact';
+import SectionHome from './sections/CoursesHome';
+import SectionCourses from './sections/Courses';
+import SectionContact from './sections/Contact';
 
 
 const CoursesPage = (props) => {

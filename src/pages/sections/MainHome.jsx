@@ -1,11 +1,11 @@
 import React, { useContext, Fragment } from 'react';
 
-import DefaultImg from '../DefaultImg';
-import SocialTray from '../SocialTray';
+import DefaultImg from '../../components/DefaultImg';
+import SocialTray from '../../components/SocialTray';
+import MarkdownContent from '../../components/MarkdownContent';
 
 import data from '../../content/biography';
 import { WidthContext } from '../../contexts';
-import MarkdownContent from '../MarkdownContent';
 
 import { GraduateCap } from '../../content/customIcons';
 import { CaretRightOutlined, GlobalOutlined, EnvironmentOutlined } from '@ant-design/icons';
