@@ -26,7 +26,7 @@ const data = {
     {
       "name": "C/C++",
       "progress": 70,
-      "icon": "cplusplus"
+      "icon": "c"
     },
     {
       "name": "Python",

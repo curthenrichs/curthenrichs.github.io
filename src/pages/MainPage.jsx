@@ -2,11 +2,11 @@ import React from 'react';
 
 import PageTemplate from './PageTemplate';
 
-import SectionHome from '../components/sections/MainHome';
-import SectionSkills from '../components/sections/Skills';
-import SectionProjects from '../components/sections/Projects';
-import SectionPublications from '../components/sections/Publications';
-import SectionContact from '../components/sections/Contact';
+import SectionHome from './sections/MainHome';
+import SectionSkills from './sections/Skills';
+import SectionProjects from './sections/Projects';
+import SectionPublications from './sections/Publications';
+import SectionContact from './sections/Contact';
 
 
 const MainPage = (props) => {

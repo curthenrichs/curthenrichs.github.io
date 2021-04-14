@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
-import SectionIconLicenses from '../components/sections/IconLicenses';
-import SectionFaviconLicenses from '../components/sections/FaviconLicenses'
+import SectionIconLicenses from './sections/IconLicenses';
+import SectionFaviconLicenses from './sections/FaviconLicenses'
 import ReturnHomeButton from '../components/ReturnHomeButton';
 
 import PageTemplate from './PageTemplate';

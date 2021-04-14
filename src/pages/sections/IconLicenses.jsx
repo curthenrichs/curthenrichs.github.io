@@ -61,6 +61,7 @@ const SectionIconLicenses = (props) => {
         <li>overleaf.svg</li>
         <li>mongodb.svg</li>
         <li>atlassian.svg</li>
+        <li>c,svg</li>
       </ul>
 
       <h3>Others</h3>

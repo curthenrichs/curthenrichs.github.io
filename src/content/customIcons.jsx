@@ -29,6 +29,8 @@ import { ReactComponent as MatlabIcon } from '../icons/matlab.svg';
 import { ReactComponent as AtlassianIcon } from '../icons/atlassian.svg';
 import { ReactComponent as AutodeskIcon } from '../icons/autodesk.svg';
 
+import { ReactComponent as CIcon } from '../icons/c.svg';
+
 function Angular(props) {
   return (<Icon component={AngularIcon} />);
 }
@@ -134,6 +136,10 @@ function Autodesk(props) {
   return (<Icon component={AutodeskIcon} />);
 }
 
+function C(props) {
+  return (<Icon component={CIcon} />);
+}
+
 
 const lookup = {
   "angular": <Angular />,
@@ -161,7 +167,8 @@ const lookup = {
   "project": <Project />,
   "matlab": <Matlab />,
   "atlassian": <Atlassian />,
-  "autodesk": <Autodesk />
+  "autodesk": <Autodesk />,
+  'c': <C />
 };
 
 const handler = {
@@ -201,6 +208,8 @@ export {
   Matlab,
   Atlassian,
   Autodesk,
+
+  C,
 
   IconLookupFromName
 };

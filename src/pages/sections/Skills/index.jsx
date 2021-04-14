@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import InfoButton from '../../InfoButton';
+import InfoButton from '../../../components/InfoButton';
 
 import data from '../../../content/skills';
 import { WidthContext } from '../../../contexts';
