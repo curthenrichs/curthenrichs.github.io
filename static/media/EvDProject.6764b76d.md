@@ -25,7 +25,6 @@ EvD is composed of three primary subsystems divided by their implementation tech
 
 ### ROS Backend
 
-
 ## Authoring Web App
 The authoring app exposes an expert checklist, tabbed by expert frames. The
 checklist has a set of tiles that the user must work through to confrim the
