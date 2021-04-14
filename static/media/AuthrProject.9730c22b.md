@@ -1,5 +1,5 @@
 # Authr
-Authr is a project I collaborated on with the goal of enabling engineers to
+Authr is a project I worked on with the goal of enabling engineers to
 develop collaborative tasks with better allocations for the agents involved. We
 already have an extensive writeup on [Github](https://github.com/Wisc-HCI/authr)
 regarding the technical development. Additionaly, checkout the paper
@@ -16,7 +16,7 @@ the workspace. ToF's are critical for allocation in order to accurately allocate
 agents to specific Therblgs.
 
 Second, the project provides a data server that maintained the plan being designed.
-My responsibility was to assist in implementing the rules that maintained  the data
+My responsibility was to assist in implementing the rules that maintained the data
 structure's relationships as users added/modified/deleted agents, things, destinations,
 therbligs, macros, and tasks.
 
