@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.61b11f04.chunk.css",
-    "main.js": "/static/js/main.4b38082a.chunk.js",
-    "main.js.map": "/static/js/main.4b38082a.chunk.js.map",
+    "main.css": "/static/css/main.faecf1d3.chunk.css",
+    "main.js": "/static/js/main.cbfaa863.chunk.js",
+    "main.js.map": "/static/js/main.cbfaa863.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7baa1a17.js",
     "runtime-main.js.map": "/static/js/runtime-main.7baa1a17.js.map",
     "static/css/2.1eba1ac0.chunk.css": "/static/css/2.1eba1ac0.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.ea2ac138.chunk.js.map": "/static/js/3.ea2ac138.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.1eba1ac0.chunk.css.map": "/static/css/2.1eba1ac0.chunk.css.map",
-    "static/css/main.61b11f04.chunk.css.map": "/static/css/main.61b11f04.chunk.css.map",
+    "static/css/main.faecf1d3.chunk.css.map": "/static/css/main.faecf1d3.chunk.css.map",
     "static/js/2.fd7a3ffe.chunk.js.LICENSE.txt": "/static/js/2.fd7a3ffe.chunk.js.LICENSE.txt",
     "static/media/AuthrProject.9730c22b.md": "/static/media/AuthrProject.9730c22b.md",
     "static/media/Biography.37356e5a.md": "/static/media/Biography.37356e5a.md",
@@ -36,7 +36,7 @@
     "static/media/graduation-cap-solid.af8ffce9.svg": "/static/media/graduation-cap-solid.af8ffce9.svg",
     "static/media/java.065b0007.svg": "/static/media/java.065b0007.svg",
     "static/media/javascript.c981b611.svg": "/static/media/javascript.c981b611.svg",
-    "static/media/keras.ce34d5ec.svg": "/static/media/keras.ce34d5ec.svg",
+    "static/media/keras.4e3ff9a1.svg": "/static/media/keras.4e3ff9a1.svg",
     "static/media/linux.a8b1bae8.svg": "/static/media/linux.a8b1bae8.svg",
     "static/media/matlab.226f5d4e.svg": "/static/media/matlab.226f5d4e.svg",
     "static/media/mechanical-arm.9bd46a27.svg": "/static/media/mechanical-arm.9bd46a27.svg",
@@ -49,7 +49,7 @@
     "static/media/project.819e8c25.svg": "/static/media/project.819e8c25.svg",
     "static/media/python.bf900dfe.svg": "/static/media/python.bf900dfe.svg",
     "static/media/react.0c61afcf.svg": "/static/media/react.0c61afcf.svg",
-    "static/media/ros.049e8b9e.svg": "/static/media/ros.049e8b9e.svg",
+    "static/media/ros.2b3d7037.svg": "/static/media/ros.2b3d7037.svg",
     "static/media/sketch.94c50742.svg": "/static/media/sketch.94c50742.svg",
     "static/media/unity.c65a3beb.svg": "/static/media/unity.c65a3beb.svg"
   },
@@ -57,7 +57,7 @@
     "static/js/runtime-main.7baa1a17.js",
     "static/css/2.1eba1ac0.chunk.css",
     "static/js/2.fd7a3ffe.chunk.js",
-    "static/css/main.61b11f04.chunk.css",
-    "static/js/main.4b38082a.chunk.js"
+    "static/css/main.faecf1d3.chunk.css",
+    "static/js/main.cbfaa863.chunk.js"
   ]
 }
