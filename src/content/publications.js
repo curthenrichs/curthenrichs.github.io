@@ -13,8 +13,8 @@ const data = [
   },
   {
     "title": "Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management",
-    "reference": "Henrichs, C., Zhao, F., & Mutlu, B. (2021). Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management.",
-    "link": null,
+    "reference": "Henrichs, C., Zhao, F., & Mutlu, B. (2021, August). Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management. In 2021 30th IEEE International Conference on Robot & Human Interactive Communication (RO-MAN) (pp. 264-271). IEEE.",
+    "link": "https://ieeexplore.ieee.org/document/9515519",
     "status": "Published"
   },
   {
