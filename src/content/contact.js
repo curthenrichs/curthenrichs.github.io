@@ -18,7 +18,7 @@ const data = {
   },
   "location": {
     "link": null,
-    "text": "Madison, Wisconsin, USA"
+    "text": "Dublin, California, USA"
   }
 };
 

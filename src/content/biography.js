@@ -3,19 +3,17 @@ import Biography from './markdown/Biography.md';
 const data = {
   "biographyMarkdownPath": Biography,
   "interests": [
+    "Embedded Systems",
+    "Software Development",
     "Human-Robot Interaction",
     "Collaborative Robotics",
-    "Embedded System Development",
-    "Software Development",
     "Computer Vision",
-    "Artificial Intelligence",
-    "Mixed-Reality Interfaces",
     "Hobby Robotics"
   ],
   "education": [
     {
       "title": "Master of Science in Computer Science",
-      "year": "(Expected) 2021",
+      "year": "2021",
       "school": "University of Wisconsin - Madison",
       "link": "https://www.cs.wisc.edu/",
       "address": "1210 W Dayton St, Madison, WI 53706"
@@ -30,10 +28,10 @@ const data = {
   ],
   "name": "Curt Henrichs",
   "employment": {
-    "position": "Research Assistant",
-    "field": "Human Robot Interaction",
-    "link": "https://peopleandrobots.wisc.edu/",
-    "place": "UW Madison - People and Robots Lab (formerly HCI Lab)"
+    "position": "Firmware Engineer",
+    "field": "Electron Microscopy",
+    "link": "https://www.ides-inc.com/",
+    "place": "Integrated Dynamic Electron Solutions (IDES)"
   },
   "img": "/img/bio-main.png"
 };
