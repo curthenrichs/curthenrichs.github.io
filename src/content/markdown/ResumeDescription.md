@@ -10,10 +10,10 @@ another engineer interacting with the code base. Regardless, what is important
 to me is that I am, in some capacity, adding value when I develop a system.
 
 
-I am interested and have experience in three areas of work:
-- Robotics
+I am interested and have experience in these areas of work:
 - Embedded Systems
-- Software
+- Human-Robot Interaction
+- Software Development
 
 &nbsp;
 

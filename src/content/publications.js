@@ -13,21 +13,15 @@ const data = [
   },
   {
     "title": "Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management",
-    "reference": "Henrichs, C., Zhao, F., & Mutlu, B. (In Review). Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management.",
+    "reference": "Henrichs, C., Zhao, F., & Mutlu, B. (2021). Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management.",
     "link": null,
-    "status": "In Review"
+    "status": "Published"
   },
   {
     "title": "Human Robot Collaboration for Enhancing Work Activities",
     "reference": "Lui, L., Schoen, A., Henrichs, C., Zhang, Y., Li, J., Mutlu, B., & Radwin, R. (In Review). Human Robot Collaboration for Enhancing Work Activities.",
     "link": null,
     "status": "In Review"
-  },
-  {
-    "title": "Expert View Dashboard: Training Novice Operators to Think Like Cobot Experts",
-    "reference": "Henrichs, C., Siebert-Evenstone, A., & Mutlu, B. (In Progress). Expert View Dashboard: Training Novice Operators to Think Like Cobot Experts.",
-    "link": null,
-    "status": "In Progress"
   }
 ];
 

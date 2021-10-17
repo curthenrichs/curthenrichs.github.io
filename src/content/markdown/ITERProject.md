@@ -10,8 +10,7 @@ timeline based interface and a simple timer interface for comparision with
 the pRAD signal. The operator is responsible for two tasks; inspecting a magnetic
 block toy house being constructed by the robot and a secondary sorting task.
 
-I was the lead experimenter/author on this project. Our paper is currently in
-peer-review. Please contact me for a pre-print if interested.
+I was the lead experimenter/author on this project. Our paper is [here]()
 
 ## Task Interdependence
 The objective of the task interdependence experiment is to investigate three strategies
