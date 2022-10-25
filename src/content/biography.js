@@ -33,14 +33,14 @@ const data = {
       "position": "Senior Embedded Systems Engineer",
       "field": "Electron Microscopy",
       "link": "https://www.ides-inc.com/",
-      "place": "Integrated Dynamic Electron Solutions (IDES)",
+      "place": "Integrated Dynamic Electron Solutions",
       "time": "2022"
     },
     {
         "position": "Firmware Engineer",
         "field": "Electron Microscopy",
         "link": "https://www.ides-inc.com/",
-        "place": "Integrated Dynamic Electron Solutions (IDES)",
+        "place": "Integrated Dynamic Electron Solutions",
         "time": "2021"
     },
     {

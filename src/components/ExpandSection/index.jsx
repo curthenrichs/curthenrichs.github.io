@@ -1,16 +1,9 @@
-import React, { useState, useContext } from 'react';
-
-import InfoButton from '../../../components/InfoButton';
-
-import data from '../../../content/skills';
-import { WidthContext } from '../../../contexts';
+import React, { useState } from 'react';
 
 import './index.css';
 
-import { IconLookupFromName } from '../../../content/customIcons';
 import { DownCircleOutlined, UpCircleOutlined } from '@ant-design/icons';
-import { Row, Col, Typography, Progress, Button, Tooltip } from 'antd';
-const { Text, Title } = Typography;
+import { Button, Tooltip } from 'antd';
 
 
 const ExpandButton = (props) => {
@@ -25,7 +18,13 @@ const ExpandButton = (props) => {
     if (visible) {
         content = (
             <Tooltip title={text}>
-                <Button type="primary" shape="round" icon={icon} size="large" onClick={() => callback(shouldExpand)}/>
+                <Button 
+                    type="primary" 
+                    shape="round" 
+                    icon={icon} 
+                    size="large"
+                    onClick={() => callback(shouldExpand)}
+                />
             </Tooltip>
         );
     }
@@ -36,23 +35,33 @@ const ExpandButton = (props) => {
 const ExpandSection = (props) => {
 
     const [expand, setExpand] = useState(false);
-    const { shouldCollapse, children } = props;
+    const { centerButton, insertBreak, style, generator } = props;
+    const { shouldCollapse, children } = generator(expand);
 
     return (
-      <React.Fragment>
+        <div style={(centerButton) ? { position: 'relative' } : {}}>
 
-        <div className={`${ (shouldCollapse && !expand) ? 'fade-out' : '' }`}>
+            <div style={style}>
+                {children.map((child, idx) => {
+                    return React.cloneElement(child, {
+                        key: idx,
+                        className: (((idx + 1) >= children.length) && shouldCollapse && !expand) ? 'fade-out' : '' 
+                    });
+                })}
+            </div>
 
+            {(shouldCollapse && insertBreak) ? <br /> : null}
+
+            <div style={(centerButton) ? { textAlign: 'center'} : {}}>
+                <ExpandButton 
+                    visible={shouldCollapse} 
+                    type={expand ? 'collapse' : 'expand'} 
+                    callback={setExpand}
+                />
+            </div>
         </div>
-        {children}
-  
-        {shouldCollapse ? <br /> : null}
-  
-        <ExpandButton visible={shouldCollapse} type={expand ? 'collapse' : 'expand'} callback={setExpand} />
-  
-      </React.Fragment>
     );
-  };
+};
   
   
   export default ExpandSection;

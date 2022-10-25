@@ -1,0 +1,91 @@
+import React, { useContext } from 'react';
+
+import data from '../../content/skills';
+import { WidthContext } from '../../contexts';
+import ExpandSection from '../../components/ExpandSection';
+
+import { IconLookupFromName } from '../../content/customIcons';
+import { Row, Col, Typography, Progress, Tooltip } from 'antd';
+const { Text, Title } = Typography;
+
+
+const SkillTile = (props) => {
+
+  const { skill } = props;
+
+  return (
+    <Tooltip title={skill.hover}>
+      <div style={{ width: 150, margin: 'auto' }}>
+        <div style={{fontSize: '50px'}}>
+          {IconLookupFromName[skill.icon]}
+        </div>
+        <div style={{fontSize: '20px'}}>
+          <Text type="secondary">
+            {skill.name}
+          </Text>
+        </div>
+        <Progress
+          type="line"
+          percent={skill.progress}
+          size="small"
+          showInfo={false}
+          trailColor="#E8E8E8"
+          status="active"
+        />
+      </div>
+    </Tooltip>
+  )
+};
+
+
+const SectionSkills = (props) => {
+
+    const width = useContext(WidthContext);
+
+  return (
+    <React.Fragment>
+      <Title level={3}>Skills</Title>
+
+      <br/>
+
+    <ExpandSection
+        insertBreak={true}
+        style={{paddingLeft: '12px', paddingRight: '12px'}} 
+        generator={(expand) => {
+            const skillsCopy = data.skills.slice();
+
+            const tileSize = 240;
+            const totalSpace = tileSize * skillsCopy.length;
+            const rows = Math.ceil(totalSpace / (width * 0.95));
+            const items = Math.ceil(Math.floor(totalSpace / rows) / tileSize);
+            const span = Math.floor(24 / items);
+
+            let newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));
+
+            const shouldCollapse = newData.length > 2;
+            if (shouldCollapse && !expand) {
+                newData = newData.splice(0,2);
+            }
+
+            return {
+                shouldCollapse,
+                children: newData.map((row, idx) => (
+                    <Row gutter={[24,24]} justify="center" key={idx}>
+                        {row.map((entry, idx) => (
+                            <Col span={span} key={idx}>
+                                <SkillTile skill={entry}/>
+                            </Col>
+                        ))}
+                    </Row>
+                ))
+            };
+        }}
+    />
+        
+
+    </React.Fragment>
+  );
+};
+
+
+export default SectionSkills;
