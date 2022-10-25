@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useState, useContext, Fragment } from 'react';
 
 import DefaultImg from '../../components/DefaultImg';
 import SocialTray from '../../components/SocialTray';
@@ -7,8 +7,8 @@ import ExpandSection from '../../components/ExpandSection';
 
 import data from '../../content/biography';
 import { WidthContext } from '../../contexts';
-import { CaretRightOutlined } from '@ant-design/icons';
-import { Row, Col, Typography, Image } from 'antd';
+import { CaretRightOutlined, DownloadOutlined } from '@ant-design/icons';
+import { Row, Col, Typography, Image, Button } from 'antd';
 
 const { Title, Text, Link } = Typography;
 const LAYOUT_WIDTH_DIGEST_INLINE = 1500;
@@ -16,10 +16,12 @@ const NUM_ABBREVIATED_INTERESTS = 3;
 
 
 const BioDigest = (props) => {
+    const [size, setSize] = useState('large');
+
   return (
     <div style={{textAlign: 'center'}}>
       <Image
-      style={{borderRadius: '35%'}}
+        style={{borderRadius: '35%'}}
         width={250}
         preview={false}
         src={data["img"]}
@@ -33,6 +35,10 @@ const BioDigest = (props) => {
         <Link href={data["employment"][data["currentEmploymentIndex"]]["link"]} target="_blank" rel="noopener noreferrer">{data["employment"][data["currentEmploymentIndex"]]["place"]}</Link>
       </div>
       <SocialTray />
+      <br/>
+      <Button type="primary" href="/docs/resume.pdf" download icon={<DownloadOutlined />} size={size} >
+        Download Resume
+      </Button>
     </div>
   );
 };
