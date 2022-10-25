@@ -8,6 +8,8 @@ import SectionProjects from './sections/Projects';
 import SectionPublications from './sections/Publications';
 import SectionContact from './sections/Contact';
 
+import contactData from '../content/contact';
+
 
 const MainPage = (props) => {
   return (
@@ -42,7 +44,8 @@ const MainPage = (props) => {
             id: 'resume-btn',
             flexPx: 150,
             content: 'Resume',
-            route: '/resume'
+            route: contactData.resume.link,
+            isLink: true
           }
         ],
         collapseWidth: 1500

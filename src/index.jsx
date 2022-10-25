@@ -6,7 +6,6 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 import MainPage from './pages/MainPage';
-import ResumePage from './pages/ResumePage';
 import CoursesPage from './pages/CoursesPage';
 import NotFoundPage from './pages/NotFoundPage';
 import IconLicensesPage from './pages/IconLicensesPage';
@@ -20,7 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" component={MainPage} exact />
         <Route path="/icon-licenses" component={IconLicensesPage} exact />
-        <Route path="/resumes" component={ResumePage} exact />
+        <Route path="/resume" component={NotFoundPage} exact />
         <Route path="/courses" component={CoursesPage} exact />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />

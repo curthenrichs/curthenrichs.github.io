@@ -19,6 +19,10 @@ const data = {
   "location": {
     "link": null,
     "text": "Dublin, California, USA"
+  },
+  "resume": {
+    "link": "/docs/resume.pdf",
+    "text": null
   }
 };
 

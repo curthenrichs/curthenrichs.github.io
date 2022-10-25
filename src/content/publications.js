@@ -19,9 +19,21 @@ const data = [
   },
   {
     "title": "Human Robot Collaboration for Enhancing Work Activities",
-    "reference": "Lui, L., Schoen, A., Henrichs, C., Zhang, Y., Li, J., Mutlu, B., & Radwin, R. (In Review). Human Robot Collaboration for Enhancing Work Activities.",
-    "link": null,
-    "status": "In Review"
+    "reference": "Liu, L., Schoen, A. J., Henrichs, C., Li, J., Mutlu, B., Zhang, Y., & Radwin, R. G. (2022). Human Robot Collaboration for Enhancing Work Activities. Human Factors, 00187208221077722.",
+    "link": "https://journals.sagepub.com/doi/10.1177/00187208221077722",
+    "status": "Published"
+  },
+  {
+    "title": "CoFrame: A System for Training Novice Cobot Programers",
+    "reference": "Schoen, A., White, N. T., Henrichs, C., Siebert-Evenstone, A., Shaffer, D. W., & Mutlu, B. (2022, March). CoFrame: A System for Training Novice Cobot Programmers. In HRI (pp. 185-194).",
+    "link": "https://dl.acm.org/doi/abs/10.5555/3523760.3523788",
+    "status": "Published"
+  },
+  {
+    "title": "Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope",
+    "reference": "Reed, B. W., Bloom, R. S., Eyzaguirre, G., Henrichs, C., Moghadam, A. A., & Masiel, D. J. (2022). Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope. Microscopy and Microanalysis, 28(S1), 2230-2231.",
+    "link": "https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/electrostatic-switching-for-spatiotemporal-dose-control-in-a-transmission-electron-microscope/C814A631FCD8F968290E892CA0D11A1D",
+    "status": "Published"
   }
 ];
 

@@ -15,7 +15,7 @@ const SkillTile = (props) => {
 
   return (
     <Tooltip title={skill.hover}>
-      <div style={{ width: 150, margin: 'auto' }}>
+      <div style={{ width: 150}}>
         <div style={{fontSize: '50px'}}>
           {IconLookupFromName[skill.icon]}
         </div>
@@ -54,11 +54,15 @@ const SectionSkills = (props) => {
         generator={(expand) => {
             const skillsCopy = data.skills.slice();
 
-            const tileSize = 240;
+            const tileSize = 250;
             const totalSpace = tileSize * skillsCopy.length;
-            const rows = Math.ceil(totalSpace / (width * 0.95));
+            let rows = Math.ceil(totalSpace / (width * 0.80));
+            if (rows < 2) rows = 2;
             const items = Math.ceil(Math.floor(totalSpace / rows) / tileSize);
-            const span = Math.floor(24 / items);
+            let span = Math.floor(24 / items);
+            if (span < 1) span = 1;
+
+            console.log(span)
 
             let newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));
 

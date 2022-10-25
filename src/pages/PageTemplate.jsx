@@ -7,8 +7,7 @@ import InDevelopmentModal from '../components/InDevelopmentModal'
 
 import { WidthContext, HeightContext } from '../contexts';
 
-import { Typography, Layout } from 'antd';
-const { Text, Title } = Typography;
+import { Layout } from 'antd';
 const { Header, Footer, Content } = Layout;
 
 
