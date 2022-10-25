@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 
 import data from '../../content/skills';
 import { WidthContext } from '../../contexts';
@@ -14,26 +14,28 @@ const SkillTile = (props) => {
   const { skill } = props;
 
   return (
-    <Tooltip title={skill.hover}>
-      <div style={{ width: 150}}>
-        <div style={{fontSize: '50px'}}>
-          {IconLookupFromName[skill.icon]}
+    <Fragment>
+        <div style={{ width: 150, margin: '0 auto'}}>
+            <Tooltip title={skill.hover}>
+                <div style={{fontSize: '50px'}}>
+                    {IconLookupFromName[skill.icon]}
+                </div>
+                <div style={{fontSize: '20px'}}>
+                    <Text type="secondary">
+                        {skill.name}
+                    </Text>
+                </div>
+                <Progress
+                    type="line"
+                    percent={skill.progress}
+                    size="small"
+                    showInfo={false}
+                    trailColor="#E8E8E8"
+                    status="active"
+                />
+            </Tooltip>
         </div>
-        <div style={{fontSize: '20px'}}>
-          <Text type="secondary">
-            {skill.name}
-          </Text>
-        </div>
-        <Progress
-          type="line"
-          percent={skill.progress}
-          size="small"
-          showInfo={false}
-          trailColor="#E8E8E8"
-          status="active"
-        />
-      </div>
-    </Tooltip>
+    </Fragment>
   )
 };
 
