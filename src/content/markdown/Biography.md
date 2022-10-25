@@ -1,3 +1,6 @@
+
+
+
 Hello, I am a firmware engineer at IDES, a company focused on time resolved electron microscopy. 
 My work spans from the mundane (board bringup and minor EDA for variant ICs) to the intellectually
 stimulating (embedded software engineering) with plenty of QA and small batch manufacturing mixed in. 

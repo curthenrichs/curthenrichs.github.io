@@ -105,39 +105,8 @@ const SectionSkills = (props) => {
       {shouldCollapse ? <br /> : null}
 
       <ExpandButton visible={shouldCollapse} type={expand ? 'collapse' : 'expand'} callback={setExpand} />
-
-
-      <InfoButton
-        style={{position: 'absolute', top: '-2px', right: '30px'}}
-        tooltipProps={{placement:"left", title:"Curious about these skills?"}}
-      >
-        <p>
-          I selected these specific technical skills to be representative of my
-          development experiences and to highlight areas I am interested in
-          continuing into the future. Obviously, I had to be selective lest the
-          list be so long and boring that any reader would just navigate away.
-        </p>
-
-        <p>
-          As for my rating, the scales should be read as percent. Though I am keeping
-          this intentionally vague to suggest the subjective nature of these values. It
-          is probably better to do comparison across skills rather than trying to
-          determine the exact level. If you are interested in proof of proficiency then
-          look at my projects section. Hopefully this gives a more complete perspective
-          of my skills.
-        </p>
-
-        <p>
-          Note: It might be interesting to see these skills naturally emerge from
-          tagging both my courses and projects. When I find some free time, it
-          might be a good weekend project.
-        </p>
-      </InfoButton>
-
     </React.Fragment>
   );
-
-  return null;
 };
 
 

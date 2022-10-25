@@ -38,19 +38,11 @@ const MainPage = (props) => {
           }
         ],
         pageButtons: [
-          /*
-          {
-            id: 'courses-btn',
-            flexPx: 150,
-            content: 'Courses',
-            route: '/courses'
-          },
-          */
           {
             id: 'resume-btn',
             flexPx: 150,
             content: 'Resume',
-            route: '/resumes'
+            route: '/resume'
           }
         ],
         collapseWidth: 1500

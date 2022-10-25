@@ -8,13 +8,13 @@ const data = {
     "link": "https://www.linkedin.com/in/curt-henrichs/",
     "text": null
   },
+  "twitter": {
+    "link": "https://twitter.com/curt_henrichs",
+    "text": "@curt_henrichs"
+  },
   "email": {
     "link": "mailto:curthenrichs@gmail.com",
     "text": "curthenrichs@gmail.com"
-  },
-  "telephone": {
-    "link": "tel:+1262-422-7274",
-    "text": "+1 262-422-7274"
   },
   "location": {
     "link": null,
