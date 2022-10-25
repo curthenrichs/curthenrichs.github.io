@@ -9,7 +9,7 @@ const Copyright = (props) => {
   return (
     <Fragment>
       <Divider type="horizontal" />
-      <Text strong>Curt Henrichs © 2021</Text>
+      <Text strong>Curt Henrichs © 2022</Text>
       <br/>
       <Text>Created with Reactjs and Ant Design</Text>
       <br/>

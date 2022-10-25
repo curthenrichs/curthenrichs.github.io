@@ -2,8 +2,8 @@ import React from 'react';
 
 import data from '../../content/contact';
 
-import { PhoneFilled, MailOutlined, EnvironmentFilled, GithubFilled, LinkedinFilled } from '@ant-design/icons';
-import { Row, Col, Typography } from 'antd';
+import { TwitterOutlined, MailOutlined, EnvironmentFilled, GithubFilled, LinkedinFilled } from '@ant-design/icons';
+import { Typography } from 'antd';
 const { Title, Text, Link } = Typography;
 
 
@@ -19,8 +19,6 @@ const SectionContact = (props) => {
         <div style={{fontSize: '20px', display: 'inline-block', textAlign: 'left'}} className="contact-details">
           <MailOutlined /> <Link href={data.email.link}>{data.email.text}</Link>
           <br/>
-          <PhoneFilled /> <Link href={data.telephone.link}>{data.telephone.text}</Link>
-          <br/>
           <EnvironmentFilled /> <Text>{data.location.text}</Text>
         </div>
         <br/>
@@ -28,6 +26,8 @@ const SectionContact = (props) => {
           <Link href={data.github.link} target="_blank" rel="noopener noreferrer"><GithubFilled /></Link>
           &nbsp;
           <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer"><LinkedinFilled /></Link>
+          &nbsp;
+          <Link href={data.twitter.link}><TwitterOutlined /></Link>
         </div>
       </div>
 

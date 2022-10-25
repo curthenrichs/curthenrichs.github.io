@@ -15,19 +15,9 @@ const ResumePage = (props) => {
         pageName: 'Resume',
         innerButtons: [
           {
-            id: 'robotics-btn',
+            id: 'resume-btn',
             flexPx: 150,
-            content: 'Robotics'
-          },
-          {
-            id: 'embedded-btn',
-            flexPx: 150,
-            content: 'Embedded'
-          },
-          {
-            id: 'software-btn',
-            flexPx: 150,
-            content: 'Software'
+            content: 'Resume'
           },
           {
             id: 'contact-btn',
@@ -41,15 +31,7 @@ const ResumePage = (props) => {
             flexPx: 150,
             content: 'Main Page',
             route: '/'
-          },
-          /*
-          {
-            id: 'courses-btn',
-            flexPx: 150,
-            content: 'Courses',
-            route: '/courses'
           }
-          */
         ],
         collapseWidth: 1500
       }}
@@ -61,25 +43,9 @@ const ResumePage = (props) => {
           content: (<SectionHome />)
         },
         {
-          name: 'sect-robotics',
-          navItem: 'robotics-btn',
+          name: 'sect-resume',
+          navItem: 'resume-btn',
           sectionType: 'type-b',
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -60
-          },
-          content: (
-            <SectionResume
-              title="Robotics Engineer / Human-Robot Interaction Designer"
-              id="robotics"
-            />
-          )
-        },
-        {
-          name: 'sect-embedded',
-          navItem: 'embedded-btn',
-          sectionType: 'type-a',
           scrollProperties: {
             duration: 500,
             smooth: true,
@@ -88,36 +54,9 @@ const ResumePage = (props) => {
           content: (
             <SectionResume
               title="Embedded Systems Engineer"
-              id="embedded"
+              id="resume"
             />
           )
-        },
-        {
-          name: 'sect-software',
-          navItem: 'software-btn',
-          sectionType: 'type-b',
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -60
-          },
-          content: (
-            <SectionResume
-              title="Software Engineer"
-              id="software"
-            />
-          )
-        },
-        {
-          name: 'sect-contact',
-          navItem: 'contact-btn',
-          sectionType: 'type-a',
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: 0
-          },
-          content: (<SectionContact/>)
         }
       ]}
     />
