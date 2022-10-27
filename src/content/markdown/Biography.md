@@ -1,14 +1,15 @@
+Hello, I'm Curt, an embedded engineer currently working on peripherals for time-resolved transmission electron microscopy.
+My work spans from the mundane (board bringup, minor EDA in response to the parts shortage, and firmware maintenance) to the 
+intellectually stimulating (FPGA / SOC firmware development) with plenty of small batch manufacturing and QA mixed in. My 
+firmware work tends to be within Xilinx and Microchip / Atmel ecosystems though I have dabbled with others.
 
+Back in graduate school I studied *Computer Science* with a focus on how humans can effectively utilize collaborative robots 
+within the manufacturing context. My time as a grad student and research assistant at UW - Madison balances my *Computer 
+Engineering* undergraduate degree from MSOE. With both a rigorous engineering background and a human-centered research 
+perspective I can bring unique insights into the embedded system development process.
 
+I am passionate about building real things for real people, whether it be robots, embedded devices, or software tools.
+In my free time one can find me tinkering with hobby robotics / home-automation projects or curled up reading a good 
+non-fiction book. 
 
-Hello, I am a firmware engineer at IDES, a company focused on time resolved electron microscopy. 
-My work spans from the mundane (board bringup and minor EDA for variant ICs) to the intellectually
-stimulating (embedded software engineering) with plenty of QA and small batch manufacturing mixed in. 
-Our embedded platforms center around Xilinx Zynq and Microchip ATMEGA.
-
-In graduate school I studied Computer Science with a focus on how humans can effectively
-utilize collaborative robots within the manufacturing context. My time as a graduate student and research 
-assistant at UW - Madison in the People and Robots Lab balances my Computer Engineering undergraduate 
-degree from MSOE.
-
-I am passionate about building real things for real people, whether it be robotics, embedded devices, or software tools.
+If you would like to chat feel free to DM me on Twitter / Linkedin.

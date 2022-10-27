@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageTemplate from './PageTemplate';
+import PageTemplate from '../components/PageTemplate';
 import ReturnHomeButton from '../components/ReturnHomeButton';
 
 import { Result, Button } from 'antd';

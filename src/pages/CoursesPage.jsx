@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageTemplate from './PageTemplate';
+import PageTemplate from '../components/PageTemplate';
 
 import SectionHome from './sections/CoursesHome';
 import SectionCourses from './sections/Courses';

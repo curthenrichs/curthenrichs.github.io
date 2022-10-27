@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageTemplate from './PageTemplate';
+import PageTemplate from '../components/PageTemplate';
 
 import SectionHome from './sections/MainHome';
 import SectionSkills from './sections/Skills';
@@ -58,13 +58,13 @@ const MainPage = (props) => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: -100,
           },
           content: (<SectionHome/>)
         },
         {
           name: 'sect-skills',
-          navItem: null,
+          navItem: 'home-btn',
           sectionType: 'type-a',
           style: { textAlign: 'center' },
           scrollProperties: null,
@@ -78,7 +78,7 @@ const MainPage = (props) => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -60
+            offset: -100
           },
           content: (<SectionProjects/>)
         },
@@ -89,7 +89,7 @@ const MainPage = (props) => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -80
+            offset: -100
           },
           content: (<SectionPublications/>)
         },

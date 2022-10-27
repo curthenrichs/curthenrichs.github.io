@@ -10,7 +10,7 @@ const { Title } = Typography;
 const SectionProjects = (props) => {
   return (
     <div>
-      <Title>Projects</Title>
+      <Title>Notable Projects</Title>
       <br/>
       <br/>
       <Row gutter={[24, 24]} justify="center" align="middle">
