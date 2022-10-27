@@ -8,8 +8,8 @@ const data = {
     "Human-Robot Interaction",
     "Collaborative Robotics",
     "Home Automation",
-    "Hobby Robotics (MAKER)",
-    "Computer Vision",
+    "Hobby Robotics",
+    "Computer Vision / ML",
   ],
   "education": [
     {

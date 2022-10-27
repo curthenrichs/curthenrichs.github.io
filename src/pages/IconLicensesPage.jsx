@@ -4,7 +4,7 @@ import SectionIconLicenses from './sections/IconLicenses';
 import SectionFaviconLicenses from './sections/FaviconLicenses'
 import ReturnHomeButton from '../components/ReturnHomeButton';
 
-import PageTemplate from './PageTemplate';
+import PageTemplate from '../components/PageTemplate';
 
 import { Result, Button } from 'antd';
 

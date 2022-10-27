@@ -146,16 +146,16 @@ const NavHeader = (props) => {
     }
 
     return (
-    <Row align="bottom" wrap={false}>
-    <Col flex="200px">
-    <Title level={2} style={{overflow: 'hidden'}}>
-    <Link to="/" style={{color: "#fff"}}>Curt Henrichs</Link>
-    </Title>
-    </Col>
+        <Row align="bottom" wrap={false}>
+            <Col flex="200px">
+                <Title level={2} style={{overflow: 'hidden'}}>
+                    <Link to="/" style={{color: "#fff"}}>Curt Henrichs</Link>
+                </Title>
+            </Col>
 
-    {contents}
+            {contents}
 
-    </Row>
+        </Row>
     );
 };
 
