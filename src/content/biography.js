@@ -44,7 +44,7 @@ const data = {
         "time": "2021"
     },
     {
-        "position": "Research Assistant",
+        "position": "Graduate Research Assistant",
         "field": "Human-Robot Interaction",
         "link": "https://peopleandrobots.wisc.edu/",
         "place": "University of Wisconsin - Madison, HCI Lab",

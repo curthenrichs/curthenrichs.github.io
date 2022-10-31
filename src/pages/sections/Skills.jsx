@@ -64,8 +64,6 @@ const SectionSkills = (props) => {
             let span = Math.floor(24 / items);
             if (span < 1) span = 1;
 
-            console.log(span)
-
             let newData = new Array(rows).fill().map(_ => skillsCopy.splice(0,items));
 
             const shouldCollapse = newData.length > 2;
