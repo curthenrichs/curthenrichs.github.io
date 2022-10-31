@@ -3,19 +3,20 @@ const data = {
     {
       "name": "Arduino",
       "progress": 99,
-      "icon": "arduino"
+      "icon": "arduino",
+      "hover": "Uno, ESP, Teensy"
     },
     {
-      "name": "Atmel",
+      "name": "Microchip-Atmel",
       "progress": 70,
       "icon": "microchip",
-      "hover": "C Programming"
+      "hover": "AVR, SAM"
     },
     {
       "name": "Linux",
       "progress": 70,
       "icon": "linux",
-      "hover": "Ubuntu / Debian Family"
+      "hover": "Ubuntu / Debian"
     },
     {
       "name": "ROS",
@@ -26,109 +27,122 @@ const data = {
     {
       "name": "C/C++",
       "progress": 70,
-      "icon": "c"
+      "icon": "c",
+      "hover": "Mostly baremetal C"
     },
     {
       "name": "Python",
       "progress": 80,
-      "icon": "python"
+      "icon": "python",
+      "hover": "Grad School & Robotics"
     },
     {
       "name": "Java",
       "progress": 60,
-      "icon": "java"
+      "icon": "java",
+      "hover": "Coursework"
     },
     {
       "name": "Nodejs",
       "progress": 50,
-      "icon": "nodejs"
+      "icon": "nodejs",
+      "hover": "Automation Servers"
     },
     {
       "name": "Git",
       "progress": 55,
-      "icon": "git"
+      "icon": "git",
+      "hover": "gitlab (work) & github (personal)"
     },
     {
       "name": "Universal Robots",
       "progress": 70,
       "icon": "robot",
-      "hover": "Among other platforms"
+      "hover": "UR5, UR3e"
     },
     {
       "name": "Unity",
       "progress": 60,
-      "icon": "unity"
+      "icon": "unity",
+      "hover": "Game Dev. & Hololens"
     },
     {
       "name": "CSharp",
       "progress": 60,
-      "icon": "csharp"
+      "icon": "csharp",
+      "hover": "Game Dev. & Hololens"
     },
     {
       "name": "Hololens",
       "progress": 50,
-      "icon": "microsoft"
+      "icon": "microsoft",
+      "hover": "AR Robotics GUI"
     },
     {
       "name": "React",
       "progress": 50,
-      "icon": "react"
+      "icon": "react",
+      "hover": "Robotics GUIs & Automation Dashboards"
     },
     {
       "name": "Angular",
       "progress": 45,
-      "icon": "angular"
+      "icon": "angular",
+      "hover": "Robotics GUIs"
     },
     {
       "name": "Javascript",
       "progress": 50,
-      "icon": "javascript"
+      "icon": "javascript",
+      "hover": "Web (various)"
     },
     {
       "name": "Keras",
       "progress": 40,
-      "icon": "keras"
+      "icon": "keras",
+      "hover": "ML Coursework"
     },
     {
       "name": "MATLAB",
       "progress": 30,
-      "icon": "matlab"
+      "icon": "matlab",
+      "hover": "Coursework"
     },
     {
-      "name": "Relaxed-IK",
+      "name": "Motion Planning",
       "progress": 50,
-      "icon": "robot"
+      "icon": "robot",
+      "hover": "MoveIT, Relaxed-IK / Lively-TK"
     },
     {
       "name": "Latex / Overleaf",
       "progress": 30,
-      "icon": "overleaf"
+      "icon": "overleaf",
+      "hover": "Coursework & Research"
     },
     {
-      "name": "Trello / Jira",
+      "name": "Atlassian",
       "progress": 30,
-      "icon": "atlassian"
+      "icon": "atlassian",
+      "hover": "Trello, Jira, Confluence"
     },
     {
       "name": "MongoDB",
       "progress": 30,
-      "icon": "mongodb"
+      "icon": "mongodb",
+      "hover": "Web (various)"
     },
     {
-      "name": "Fusion 360",
+      "name": "FPGA / SOC",
       "progress": 30,
-      "icon": "autodesk"
-    },
-    {
-      "name": "VHDL",
-      "progress": 30,
-      "icon": "microchip"
+      "icon": "microchip",
+      "hover": "Verilog, VHDL for Intel Cyclone and Xilinx Zynq"
     },
     {
       "name": "Assembly",
       "progress": 30,
       "icon": "microchip",
-      "hover": "(NIOS, MIPS, ARM)"
+      "hover": "NIOS, MIPS, ARM"
     }
   ]
 };

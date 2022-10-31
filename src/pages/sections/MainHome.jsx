@@ -92,7 +92,7 @@ const Education = (props) => {
                         shouldCollapse: abbreviate,
                         children: list.map((education, idx) => (
                             <div key={idx} style={{ paddingBottom: '10px'}}>
-                                {education.time}&nbsp;-&nbsp;
+                                <Text strong={true}>{education.time}</Text>&nbsp;-&nbsp;
                                 <Text>{education.title}</Text>
                                 <br/>
                                 <Text style={{padding: '0 30px'}} type="secondary" >{education.school}</Text>
@@ -124,7 +124,7 @@ const Career = (props) => {
                         shouldCollapse: abbreviate,
                         children: list.map((job, idx) => (
                             <div key={idx} style={{ paddingBottom: '10px'}}>
-                                {job.time}&nbsp;-&nbsp;
+                                <Text strong={true}>{job.time}</Text>&nbsp;-&nbsp;
                                 <Text>{job.position}</Text>
                                 <br/>
                                 <Text style={{padding: '0 30px'}} type="secondary">{job.place}</Text>

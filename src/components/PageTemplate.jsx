@@ -68,7 +68,6 @@ class PageTemplate extends Component {
 
         return {...acc, [entry.navItem]: {area, point}};
     }, {});
-    console.log(data);
 
     // Find best area match
     let nextChoice = [activeNavItem];
