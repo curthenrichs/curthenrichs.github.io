@@ -1,12 +1,10 @@
-import React from 'react';
-
-import PageTemplate from '../components/PageTemplate';
-import ReturnHomeButton from '../components/ReturnHomeButton';
-
-import { Result, Button } from 'antd';
+import React from "react";
+import PageTemplate from "../components/PageTemplate";
+import ReturnHomeButton from "../components/ReturnHomeButton";
+import { Result } from "antd";
 
 
-const NotFoundPage = (props) => {
+const NotFoundPage = () => {
   return (
     <PageTemplate
       header={{
@@ -15,8 +13,8 @@ const NotFoundPage = (props) => {
       }}
       sections={[
         {
-          name: 'sect-results',
-          sectionType: 'type-a',
+          name: "sect-results",
+          sectionType: "type-a",
           content: (
             <Result
               status="404"

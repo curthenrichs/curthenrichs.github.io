@@ -1,11 +1,12 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-
-import { Typography , Divider } from 'antd';
-const { Text, Title } = Typography;
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
+import { Typography , Divider } from "antd";
 
 
-const Copyright = (props) => {
+const { Text } = Typography;
+
+
+const Copyright = () => {
   return (
     <Fragment>
       <Divider type="horizontal" />

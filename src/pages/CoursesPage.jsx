@@ -1,57 +1,55 @@
-import React from 'react';
-
-import PageTemplate from '../components/PageTemplate';
-
-import SectionHome from './sections/CoursesHome';
-import SectionCourses from './sections/Courses';
-import SectionContact from './sections/Contact';
+import React from "react";
+import PageTemplate from "../components/PageTemplate";
+import SectionHome from "./sections/CoursesHome";
+import SectionCourses from "./sections/Courses";
+import SectionContact from "./sections/Contact";
 
 
-const CoursesPage = (props) => {
+const CoursesPage = () => {
   return (
     <PageTemplate
       inDevelopment
       header={{
         simple: false,
-        pageName: 'Courses',
+        pageName: "Courses",
         innerButtons: [
           {
-            id: 'home-btn',
+            id: "home-btn",
             flexPx: 150,
-            content: 'Philosophy'
+            content: "Philosophy"
           },
           {
-            id: 'courses-btn',
+            id: "courses-btn",
             flexPx: 150,
-            content: 'Courses'
+            content: "Courses"
           },
           {
-            id: 'contact-btn',
+            id: "contact-btn",
             flexPx: 150,
-            content: 'Contact'
+            content: "Contact"
           }
         ],
         pageButtons: [
           {
-            id: 'main-btn',
+            id: "main-btn",
             flexPx: 150,
-            content: 'Main Page',
-            route: '/'
+            content: "Main Page",
+            route: "/"
           },
           {
-            id: 'resume-btn',
+            id: "resume-btn",
             flexPx: 150,
-            content: 'Resume',
-            route: '/resumes'
+            content: "Resume",
+            route: "/resumes"
           }
         ],
         collapseWidth: 1500
       }}
       sections={[
         {
-          name: 'sect-home',
-          navItem: 'home-btn',
-          sectionType: 'type-a',
+          name: "sect-home",
+          navItem: "home-btn",
+          sectionType: "type-a",
           scrollProperties: {
             duration: 500,
             smooth: true,
@@ -60,9 +58,9 @@ const CoursesPage = (props) => {
           content: (<SectionHome />)
         },
         {
-          name: 'sect-courses',
-          navItem: 'courses-btn',
-          sectionType: 'type-b',
+          name: "sect-courses",
+          navItem: "courses-btn",
+          sectionType: "type-b",
           scrollProperties: {
             duration: 500,
             smooth: true,
@@ -71,9 +69,9 @@ const CoursesPage = (props) => {
           content: (<SectionCourses />)
         },
         {
-          name: 'sect-contact',
-          navItem: 'contact-btn',
-          sectionType: 'type-a',
+          name: "sect-contact",
+          navItem: "contact-btn",
+          sectionType: "type-a",
           scrollProperties: {
             duration: 500,
             smooth: true,

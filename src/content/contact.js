@@ -1,4 +1,3 @@
-
 const data = {
   "github": {
     "link": "https://github.com/curthenrichs",
@@ -25,5 +24,6 @@ const data = {
     "text": null
   }
 };
+
 
 export default data;

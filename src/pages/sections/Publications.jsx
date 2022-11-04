@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
+import PublicationCard from "../../components/PublicationCard";
+import data from "../../content/publications";
+import { Typography } from "antd";
 
-import PublicationCard from '../../components/PublicationCard';
 
-import data from '../../content/publications';
-
-import { Typography } from 'antd';
 const { Title } = Typography;
 
 
-const SectionPublications = (props) => {
+const SectionPublications = () => {
   return (
     <div>
       <Title>Publications</Title>
@@ -23,9 +22,9 @@ const SectionPublications = (props) => {
           link={entry.link}
           status={entry.status}
           style={{
-            paddingBottom: '1em',
-            maxWidth: '1200px',
-            margin: 'auto'
+            paddingBottom: "1em",
+            maxWidth: "1200px",
+            margin: "auto"
           }}
         />
       ))}

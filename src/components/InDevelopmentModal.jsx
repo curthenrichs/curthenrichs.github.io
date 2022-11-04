@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-
-import { Sketch as SketchIcon } from '../content/customIcons';
-
-import { Modal, Button } from 'antd';
+import React, { useState } from "react";
+import { Sketch as SketchIcon } from "../content/customIcons";
+import { Modal, Button } from "antd";
 
 
 const InDevelopmentModal = () => {

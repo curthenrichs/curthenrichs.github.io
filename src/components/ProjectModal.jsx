@@ -1,14 +1,10 @@
-import React, { useContext } from 'react';
-
+import React, { useContext } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-
-import DefaultImg from './DefaultImg';
-import { WidthContext } from '../contexts';
-import MarkdownContent from './MarkdownContent';
-import { ProjectImageCarousel, GetMarkdownPathFromName } from '../content/projects';
-
-import { Modal, Button, Divider, Image } from 'antd';
+import { Carousel } from "react-responsive-carousel";
+import { WidthContext } from "../contexts";
+import MarkdownContent from "./MarkdownContent";
+import { ProjectImageCarousel, GetMarkdownPathFromName } from "../content/projects";
+import { Modal, Divider } from "antd";
 
 
 const ImageCarousel = (props) => {
@@ -18,10 +14,11 @@ const ImageCarousel = (props) => {
   return (
     <Carousel autoPlay infiniteLoop interval={5000} emulateTouch className="carousel">
       {options.map((entry, idx) => (
-        <div key={idx} style={{display: 'flex', justifyContent: 'center'}}>
+        <div key={idx} style={{display: "flex", justifyContent: "center"}}>
           <img
             src={entry["img"]}
-            style={{maxHeight: '500px', maxWidth: '800px'}}
+            style={{maxHeight: "500px", maxWidth: "800px"}}
+            alt={entry["alt"]}
           />
           <p className="legend">{entry["caption"]}</p>
         </div>
@@ -48,8 +45,10 @@ const ProjectModal = (props) => {
       onCancel={closeCallback}
       footer={null}
     >
-      <div style={{textAlign: 'center'}}>
-        <ImageCarousel options={ProjectImageCarousel[project]}/>
+      <div style={{textAlign: "center"}}>
+        <ImageCarousel 
+          options={ProjectImageCarousel[project]}
+        />
       </div>
       <Divider />
       <MarkdownContent

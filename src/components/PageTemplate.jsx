@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Element as ScrollElement, scroller} from "react-scroll";
+import NavHeader from "./NavHeader";
+import Copyright from "./Copyright";
+import InDevelopmentModal from "./InDevelopmentModal";
+import { WidthContext, HeightContext } from "../contexts";
+import { Layout } from "antd";
 
-import NavHeader from './NavHeader';
-import Copyright from './Copyright';
-import InDevelopmentModal from './InDevelopmentModal'
 
-import { WidthContext, HeightContext } from '../contexts';
-
-import { Layout } from 'antd';
 const { Header, Footer, Content } = Layout;
 
 
@@ -17,7 +16,7 @@ class PageTemplate extends Component {
     super(props);
 
     const { sections } = this.props;
-    const initNavItem = sections.length ? sections[0].navItem : '';
+    const initNavItem = sections.length ? sections[0].navItem : "";
 
     this.state = {
       width: window.innerWidth,
@@ -30,80 +29,86 @@ class PageTemplate extends Component {
     this.trackScrolling = this.trackScrolling.bind(this);
   }
 
-  handleResize(e) {
+  handleResize() {
     this.setState({width: window.innerWidth, height: window.innerHeight });
-  };
+  }
 
-  trackScrolling(e) {
+  trackScrolling() {
     const { sections } = this.props;
     const { height, clickedNavItem, activeNavItem } = this.state;
     const intersectPoint = height * 1; //TODO some scalar [0 to 1 depending on where it is in the global screen]
 
     // Generate area and intersection data
     const data = sections.reduce((acc, entry) => {
-        let area, point;
+      let area, point;
 
-        if (!entry.navItem) {
-            area = -1; // No nav item then give it failing score
-            point = false;
+      if (!entry.navItem) {
+        area = -1; // No nav item then give it failing score
+        point = false;
 
-        } else {
-            const { top, bottom } = document.getElementById(entry.name).getBoundingClientRect();
+      } else {
+        const { top, bottom } = document.getElementById(entry.name).getBoundingClientRect();
 
-            if (top > height || bottom < 0) {               // section not in viewport
-                area = 0; 
-            } else if (top < 0 && bottom > height) {        // section within viewport (and larger than viewport)
-                area = (bottom - top) / height;
-            } else if (top < 0) {                           // section partialy within viewport
-                area = (bottom - 0) / height;    
-            } else if (bottom > height) {                   // section partialy within viewport
-                area = (height - top) / height;
-            } else {                                        // section fully within viewport
-                area = 1;
-            }
-
-            // section contains interestion point - used for tie break
-            point = intersectPoint > top && intersectPoint < bottom; 
+        if (top > height || bottom < 0) {               // section not in viewport
+          area = 0; 
+        } else if (top < 0 && bottom > height) {        // section within viewport (and larger than viewport)
+          area = (bottom - top) / height;
+        } else if (top < 0) {                           // section partialy within viewport
+          area = (bottom - 0) / height;    
+        } else if (bottom > height) {                   // section partialy within viewport
+          area = (height - top) / height;
+        } else {                                        // section fully within viewport
+          area = 1;
         }
 
-        return {...acc, [entry.navItem]: {area, point}};
+        // section contains interestion point - used for tie break
+        point = intersectPoint > top && intersectPoint < bottom; 
+      }
+
+      return { 
+        ...acc, 
+        [entry.navItem]: {
+          area, 
+          point
+        }
+      };
     }, {});
 
     // Find best area match
     let nextChoice = [activeNavItem];
     let nextArea = data[activeNavItem].area;
     for (let key of Object.keys(data)) {
-        if (data[key].area > nextArea) {
-            nextChoice = [key];
-            nextArea = data[key].area;
-        } else if (data[key].area == nextArea && !nextChoice.includes(key)) {
-            nextChoice.push(key);
-        }
+      if (data[key].area > nextArea) {
+        nextChoice = [key];
+        nextArea = data[key].area;
+      } else if (data[key].area == nextArea && !nextChoice.includes(key)) {
+        nextChoice.push(key);
+      }
     }
 
     // Select nav item
     let newNavItem;
     if (nextChoice.length > 1) {
-        if (clickedNavItem != null && nextChoice.includes(clickedNavItem)) {
-            newNavItem = clickedNavItem;
+      if (clickedNavItem != null && nextChoice.includes(clickedNavItem)) {
+        newNavItem = clickedNavItem;
+      } else {
+        //iterate through data for point intersect
+        const intersect = Object.keys(data).map((key) => ({key, point: data[key].point})).filter(({point}) => (point));
+        if (intersect.length < 1) {         // Failed - select current nav itme
+          newNavItem = activeNavItem;
         } else {
-            //iterate through data for point intersect
-            const intersect = Object.keys(data).map((key) => ({key, point: data[key].point})).filter(({point}) => (point));
-            if (intersect.length < 1) {         // Failed - select current nav itme
-                newNavItem = activeNavItem;
-            } else {
-                newNavItem = intersect[0].key;
-            }
+          newNavItem = intersect[0].key;
         }
+      }
     } else {
-        newNavItem = nextChoice[0];
+      newNavItem = nextChoice[0];
     }
 
     this.setState({activeNavItem: newNavItem});
-  };
+  }
 
   componentDidMount() {
-    document.addEventListener("scroll", this.trackScrolling)
+    document.addEventListener("scroll", this.trackScrolling);
     window.addEventListener("resize", this.handleResize);
 
     const { sections } = this.props;
@@ -126,7 +131,7 @@ class PageTemplate extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener("scroll", this.trackScrolling)
+    document.removeEventListener("scroll", this.trackScrolling);
     window.removeEventListener("resize", this.handleResize);
   }
 
@@ -157,7 +162,7 @@ class PageTemplate extends Component {
               />
             </Header>
 
-            <Content style={{ padding: '20px 0 0 0', marginTop: 64 }}>
+            <Content style={{ padding: "20px 0 0 0", marginTop: 64 }}>
 
               {sections.map((entry) => (
                 <ScrollElement
@@ -167,7 +172,7 @@ class PageTemplate extends Component {
                   style={entry.style}
                   className={`sect ${entry.sectionType}`}
                 >
-                  <div className={`${entry.notApplyInnerSection ? '' : "sect-inner"}`} style={{ position: 'relative' }}>
+                  <div className={`${entry.notApplyInnerSection ? "" : "sect-inner"}`} style={{ position: "relative" }}>
                     {entry.content}
                   </div>
                 </ScrollElement>
@@ -175,7 +180,7 @@ class PageTemplate extends Component {
 
             </Content>
 
-            <Footer style={{ textAlign: 'center'}}>
+            <Footer style={{ textAlign: "center"}}>
               <Copyright />
             </Footer>
 

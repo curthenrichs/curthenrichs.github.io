@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import 'antd/dist/antd.css';
-import './index.css';
+import "antd/dist/antd.css";
+import "./index.css";
 
-import MainPage from './pages/MainPage';
-import CoursesPage from './pages/CoursesPage';
-import NotFoundPage from './pages/NotFoundPage';
-import IconLicensesPage from './pages/IconLicensesPage';
-import NotFoundNoRoutingPage from './pages/NotFoundNoRoutingPage';
+import MainPage from "./pages/MainPage";
+import CoursesPage from "./pages/CoursesPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import IconLicensesPage from "./pages/IconLicensesPage";
+import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,7 +26,7 @@ ReactDOM.render(
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

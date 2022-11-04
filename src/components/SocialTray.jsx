@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
+import data from "../content/contact";
+import { GithubFilled, MailOutlined, LinkedinFilled, TwitterOutlined } from "@ant-design/icons";
+import { Typography } from "antd";
 
-import data from '../content/contact';
 
-import { GithubFilled, MailOutlined, LinkedinFilled, TwitterOutlined } from '@ant-design/icons';
-import { Typography } from 'antd';
 const { Link } = Typography;
 
 
-const SocialTray = (props) => {
+const SocialTray = () => {
 
   return (
-    <div className="social-tray" style={{fontSize: '30px'}}>
+    <div className="social-tray" style={{fontSize: "30px"}}>
       <Link href={data.github.link} target="_blank" rel="noopener noreferrer"><GithubFilled /></Link>
       &nbsp;
       <Link href={data.email.link} target="_blank" rel="noopener noreferrer"><MailOutlined /></Link>
@@ -23,4 +23,4 @@ const SocialTray = (props) => {
 };
 
 
-export default SocialTray
+export default SocialTray;

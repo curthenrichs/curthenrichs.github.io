@@ -1,49 +1,46 @@
-import React from 'react';
-
-import PageTemplate from '../components/PageTemplate';
-
-import SectionHome from './sections/MainHome';
-import SectionSkills from './sections/Skills';
-import SectionProjects from './sections/Projects';
-import SectionPublications from './sections/Publications';
-import SectionContact from './sections/Contact';
-
-import contactData from '../content/contact';
+import React from "react";
+import PageTemplate from "../components/PageTemplate";
+import SectionHome from "./sections/MainHome";
+import SectionSkills from "./sections/Skills";
+import SectionProjects from "./sections/Projects";
+import SectionPublications from "./sections/Publications";
+import SectionContact from "./sections/Contact";
+import contactData from "../content/contact";
 
 
-const MainPage = (props) => {
+const MainPage = () => {
   return (
     <PageTemplate
       header={{
         simple: false,
-        pageName: 'Main',
+        pageName: "Main",
         innerButtons: [
           {
-            id: 'home-btn',
+            id: "home-btn",
             flexPx: 150,
-            content: 'Home'
+            content: "Home"
           },
           {
-            id: 'projects-btn',
+            id: "projects-btn",
             flexPx: 150,
-            content: 'Projects'
+            content: "Projects"
           },
           {
-            id: 'publications-btn',
+            id: "publications-btn",
             flexPx: 150,
-            content: 'Publications'
+            content: "Publications"
           },
           {
-            id: 'contact-btn',
+            id: "contact-btn",
             flexPx: 150,
-            content: 'Contact'
+            content: "Contact"
           }
         ],
         pageButtons: [
           {
-            id: 'resume-btn',
+            id: "resume-btn",
             flexPx: 150,
-            content: 'Resume',
+            content: "Resume",
             route: contactData.resume.link,
             isLink: true
           }
@@ -52,9 +49,9 @@ const MainPage = (props) => {
       }}
       sections={[
         {
-          name: 'sect-home',
-          navItem: 'home-btn',
-          sectionType: 'type-a',
+          name: "sect-home",
+          navItem: "home-btn",
+          sectionType: "type-a",
           scrollProperties: {
             duration: 500,
             smooth: true,
@@ -63,18 +60,18 @@ const MainPage = (props) => {
           content: (<SectionHome/>)
         },
         {
-          name: 'sect-skills',
-          navItem: 'home-btn',
-          sectionType: 'type-a',
-          style: { textAlign: 'center' },
+          name: "sect-skills",
+          navItem: "home-btn",
+          sectionType: "type-a",
+          style: { textAlign: "center" },
           scrollProperties: null,
           notApplyInnerSection: true,
           content: (<SectionSkills/>)
         },
         {
-          name: 'sect-projects',
-          navItem: 'projects-btn',
-          sectionType: 'type-b',
+          name: "sect-projects",
+          navItem: "projects-btn",
+          sectionType: "type-b",
           scrollProperties: {
             duration: 500,
             smooth: true,
@@ -83,9 +80,9 @@ const MainPage = (props) => {
           content: (<SectionProjects/>)
         },
         {
-          name: 'sect-publications',
-          navItem: 'publications-btn',
-          sectionType: 'type-b',
+          name: "sect-publications",
+          navItem: "publications-btn",
+          sectionType: "type-b",
           scrollProperties: {
             duration: 500,
             smooth: true,
@@ -94,9 +91,9 @@ const MainPage = (props) => {
           content: (<SectionPublications/>)
         },
         {
-          name: 'sect-contact',
-          navItem: 'contact-btn',
-          sectionType: 'type-a',
+          name: "sect-contact",
+          navItem: "contact-btn",
+          sectionType: "type-a",
           scrollProperties: {
             duration: 500,
             smooth: true,

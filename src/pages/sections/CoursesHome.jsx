@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
+import MarkdownContent from "../../components/MarkdownContent";
+import { CoursesDescriptionPath } from "../../content/courses";
+import { Typography } from "antd";
 
-import MarkdownContent from '../../components/MarkdownContent';
-import { CoursesDescriptionPath } from '../../content/courses';
 
-import { Typography } from 'antd';
 const { Title } = Typography;
 
 
-const SectionHome = (props) => {
+const SectionHome = () => {
 
   return (
     <Fragment>
@@ -15,7 +15,7 @@ const SectionHome = (props) => {
       <Title>Educational Philosophy</Title>
       <br />
 
-      <div style={{ maxWidth: '1000px'}}>
+      <div style={{ maxWidth: "1000px"}}>
         <MarkdownContent
           markdownPath={CoursesDescriptionPath}
         />

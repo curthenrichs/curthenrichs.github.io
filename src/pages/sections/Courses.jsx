@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from "react";
 
 
-const SectionCourses = (props) => {
+const SectionCourses = () => {
   return (<div>Display courses here!</div>);
 };
 
