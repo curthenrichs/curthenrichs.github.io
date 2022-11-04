@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
+import { Result } from "antd";
 
-import { Result } from 'antd';
 
-
-const NotFoundNoRoutingPage = (props) => {
+const NotFoundNoRoutingPage = () => {
   return (
     <Result
       status="404"

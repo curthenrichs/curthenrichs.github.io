@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 
-const SectionIconLicenses = (props) => {
+const SectionIconLicenses = () => {
   return (
     <Fragment>
 

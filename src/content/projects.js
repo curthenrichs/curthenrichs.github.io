@@ -1,46 +1,47 @@
 
-import AuthrProject from './markdown/AuthrProject.md';
-import ITERProject from './markdown/ITERProject.md';
-import EvDProject from './markdown/EvDProject.md';
-import InternshipProject from './markdown/InternshipProject.md';
-import HobbyProject from './markdown/HobbyProject.md';
-import ComputerVisionProject from './markdown/VisionMLProject.md';
-import EmbeddedProject from './markdown/EmbeddedProject.md';
-import HCIProject from './markdown/HCIProject.md';
+import AuthrProject from "./markdown/AuthrProject.md";
+import ITERProject from "./markdown/ITERProject.md";
+import EvDProject from "./markdown/EvDProject.md";
+import InternshipProject from "./markdown/InternshipProject.md";
+import HobbyProject from "./markdown/HobbyProject.md";
+import ComputerVisionProject from "./markdown/VisionMLProject.md";
+import EmbeddedProject from "./markdown/EmbeddedProject.md";
+import HCIProject from "./markdown/HCIProject.md";
 
 
 const GetMarkdownPathFromName = (name) => {
   let retVal = null;
 
   switch (name) {
-    case "authr":
-      retVal = AuthrProject;
-      break;
-    case "iter":
-      retVal = ITERProject;
-      break;
-    case "evd":
-      retVal = EvDProject;
-      break;
-    case "internship":
-      retVal = InternshipProject;
-      break;
-    case "hobby":
-      retVal = HobbyProject;
-      break;
-    case "vision":
-      retVal = ComputerVisionProject;
-      break;
-    case "embedded":
-      retVal = EmbeddedProject;
-      break;
-    case "hci":
-      retVal = HCIProject;
-      break;
+  case "authr":
+    retVal = AuthrProject;
+    break;
+  case "iter":
+    retVal = ITERProject;
+    break;
+  case "evd":
+    retVal = EvDProject;
+    break;
+  case "internship":
+    retVal = InternshipProject;
+    break;
+  case "hobby":
+    retVal = HobbyProject;
+    break;
+  case "vision":
+    retVal = ComputerVisionProject;
+    break;
+  case "embedded":
+    retVal = EmbeddedProject;
+    break;
+  case "hci":
+    retVal = HCIProject;
+    break;
   }
 
   return retVal;
 };
+
 
 const Projects = [
   "authr",
@@ -52,6 +53,7 @@ const Projects = [
   "embedded",
   "hci"
 ];
+
 
 const ProjectDigests = [
   {
@@ -110,118 +112,143 @@ const ProjectDigests = [
     "type": "Coursework",
     "project": "hci"
   }
-]
+];
+
 
 const ProjectImageCarousel = {
   "authr": [
     {
       "img": "/img/authr-setup.png",
+      "alt": "",
       "caption": "Authr setup view allows user to define Agents, Things, and Destinations."
     },
     {
       "img": "/img/authr-task.png",
+      "alt": "",
       "caption": "Authr task view allows user to drag-and-drop Therbligs into tasks."
     },
     {
       "img": "/img/authr-sim.png",
+      "alt": "",
       "caption": "Authr simulation view allows user to inspect the program constructed."
     }
   ],
   "evd": [
     {
       "img": "/img/evd-authoring-ui.jpg",
+      "alt": "",
       "caption": "Expert View Dashboard's authoring interface (still in development)."
     }
   ],
   "iter": [
     {
       "img": "/img/iter-seq-task.png",
+      "alt": "",
       "caption": "Participant constructs wooden block structure with the robot."
     },
     {
       "img": "/img/iter-displays.png",
+      "alt": "",
       "caption": "Evaluated two interface widgets for communicating pRAD."
     },
     {
       "img": "/img/iter-workspace.png",
+      "alt": "",
       "caption": "Sketch of participant's workspace for the two experiments."
     }
   ],
   "internship": [
     {
       "img": "/img/internship-oled-covered.jpg",
+      "alt": "",
       "caption": "Custom OLED node ID display that fits within 3.5\" bay."
     },
     {
       "img": "/img/internship-oled.jpg",
+      "alt": "",
       "caption": "OLED display has two capacitive touch buttons, USB serial interface, and multi-page screen."
     },
     {
       "img": "/img/internship-fan.jpg",
+      "alt": "",
       "caption": "Custom fan controller with a SAMD Atmel microcontroller."
     }
   ],
   "hobby": [
     {
       "img": "/img/hobby-taltosoid.jpg",
+      "alt": "",
       "caption": "First version of Taltosoid - A supernumerary robotic finger."
     },
     {
       "img": "/img/hobby-robots.jpg",
+      "alt": "",
       "caption": "Some of my older robots in a group photo."
     },
     {
       "img": "/img/hobby-leds.jpg",
+      "alt": "",
       "caption": "LEDs being controlled by lighting effects interface, back when I was at MSOE."
     }
   ],
   "vision": [
     {
       "img": "/img/computer-vision-iter.png",
+      "alt": "",
       "caption": "ITER computer vision spinoff detects magnetic blocks in 3D space using AR markers."
     },
     {
       "img": "/img/computer-vision-gan-learning.gif",
+      "alt": "",
       "caption": "Sprite GAN learning body armor."
     },
     {
       "img": "/img/computer-vision-gan-single.gif",
+      "alt": "",
       "caption": "Sprite GAN learning body armor - single example."
     }
   ],
   "embedded": [
     {
       "img": "/img/embedded-networking.jpg",
+      "alt": "",
       "caption": "Networking one project hardware where I am using a Cypress SOC."
     },
     {
       "img": "/img/embedded-treadmill.jpg",
+      "alt": "",
       "caption": "Embedded Systems IV course project. Firmware implementation for a treadmill on a Cypress SOC."
     },
     {
       "img": "/img/embedded-tracking.jpg",
+      "alt": "",
       "caption": "Embedded Systems III course project. Uses camera to track hand on NIOS soft-core processor."
     },
     {
       "img": "/img/embedded-pcb.jpg",
+      "alt": "",
       "caption": "Embedded Systems III homework. I implemented a Atmel microcontroller PCB in Eagle."
     }
   ],
   "hci": [
     {
       "img": "/img/hci-hifi-mockup.jpg",
+      "alt": "",
       "caption": "High fidelity mockup of my Universal Robots teach pendant redesign in Adobe XD."
     },
     {
       "img": "/img/hci-vis-overview.jpg",
+      "alt": "",
       "caption": "Overview interactive visualization of Amazon product categories created by Plotly in Python."
     },
     {
       "img": "/img/hci-vis-detail.jpg",
+      "alt": "",
       "caption": "Detail interactive visualization of Amazon product categories created by Plotly in Python."
     }
   ]
-}
+};
+
 
 export {
   Projects,

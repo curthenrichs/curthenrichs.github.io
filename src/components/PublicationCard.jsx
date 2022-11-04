@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
+import { Card, Typography, Tag } from "antd";
 
-import { Card, Typography, Tag } from 'antd';
+
 const { Text } = Typography;
+
 
 const PublicationCard = (props) => {
 
@@ -9,23 +11,30 @@ const PublicationCard = (props) => {
 
   let color = undefined;
   switch (status.toLowerCase()) {
-    case 'published':
-      color = "green";
-      break;
-    case 'in review':
-      color = "geekblue";
-      break;
-    case 'in progress':
-      color = "gold";
-      break;
-    default: break;
+  case "published":
+    color = "green";
+    break;
+  case "in review":
+    color = "geekblue";
+    break;
+  case "in progress":
+    color = "gold";
+    break;
+  default: break;
   }
 
   return (
     <div
+      role="button"
+      tabIndex="0"
       style={style}
       onClick={() => {
         if (link) {
+          window.open(link);
+        }
+      }}
+      onKeyPress={(event) => {
+        if (event.key === "Enter" && link) {
           window.open(link);
         }
       }}
@@ -36,8 +45,8 @@ const PublicationCard = (props) => {
         hoverable={true}
         className="type-c"
         style={{
-          paddingLeft: '3em',
-          paddingRight: '2em'
+          paddingLeft: "3em",
+          paddingRight: "2em"
         }}
       >
         <Text>{reference}</Text>
@@ -48,5 +57,6 @@ const PublicationCard = (props) => {
     </div>
   );
 };
+
 
 export default PublicationCard;

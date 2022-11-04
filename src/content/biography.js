@@ -1,4 +1,5 @@
-import Biography from './markdown/Biography.md';
+import Biography from "./markdown/Biography.md";
+
 
 const data = {
   "biographyMarkdownPath": Biography,
@@ -37,31 +38,30 @@ const data = {
       "time": "2022"
     },
     {
-        "position": "Firmware Engineer",
-        "field": "Electron Microscopy",
-        "link": "https://www.ides-inc.com/",
-        "place": "Integrated Dynamic Electron Solutions",
-        "time": "2021"
+      "position": "Firmware Engineer",
+      "field": "Electron Microscopy",
+      "link": "https://www.ides-inc.com/",
+      "place": "Integrated Dynamic Electron Solutions",
+      "time": "2021"
     },
     {
-        "position": "Graduate Research Assistant",
-        "field": "Human-Robot Interaction",
-        "link": "https://peopleandrobots.wisc.edu/",
-        "place": "University of Wisconsin - Madison, HCI Lab",
-        "time": "2019"
+      "position": "Graduate Research Assistant",
+      "field": "Human-Robot Interaction",
+      "link": "https://peopleandrobots.wisc.edu/",
+      "place": "University of Wisconsin - Madison, HCI Lab",
+      "time": "2019"
     },
     {
-        "position": "R&D Software Engineering Intern",
-        "field": "Storage / Compute",
-        "link": "https://www.dedicatedcomputing.com/",
-        "place": "Dedicated Computing",
-        "time": "2016"
+      "position": "R&D Software Engineering Intern",
+      "field": "Storage / Compute",
+      "link": "https://www.dedicatedcomputing.com/",
+      "place": "Dedicated Computing",
+      "time": "2016"
     }
   ],
   "currentEmploymentIndex": 0,
   "img": "/img/bio-main.png"
 };
-
 
 
 export default data;

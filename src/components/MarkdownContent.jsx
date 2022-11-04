@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React, { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 
 const MarkdownContent = (props) => {
@@ -12,17 +12,17 @@ const MarkdownContent = (props) => {
         {props.children}
       </a>
     )
-  }
+  };
 
-  const [markdown, setMarkdown] = useState('');
+  const [markdown, setMarkdown] = useState("");
   useEffect(() => {
     const abortController = new AbortController();
 
     fetch(markdownPath, { signal: abortController.signal})
       .then(res => res.text())
       .then(text => setMarkdown(text))
-      .catch(ex => {
-        setMarkdown('');
+      .catch(() => {
+        setMarkdown("");
       });
 
     return () => {

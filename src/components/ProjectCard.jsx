@@ -1,11 +1,11 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment } from "react";
+import DefaultImg from "./DefaultImg";
+import ProjectModal from "./ProjectModal";
+import { GraduateCap } from "../content/customIcons";
+import { ExperimentFilled, ToolFilled, StarFilled } from "@ant-design/icons";
+import { Card, Typography, Image } from "antd";
 
-import DefaultImg from './DefaultImg';
-import ProjectModal from './ProjectModal';
 
-import { GraduateCap } from '../content/customIcons';
-import { ExperimentFilled, ToolFilled, StarFilled } from '@ant-design/icons';
-import { Card, Typography, Image } from 'antd';
 const { Text } = Typography;
 
 
@@ -18,42 +18,52 @@ const ProjectCard = (props) => {
 
   let icon = null;
   switch (type.toLowerCase()) {
-    case "research":
-      icon = (<ExperimentFilled />);
-      break;
-    case "internship":
-      icon = (<ToolFilled />);
-      break;
-    case "personal":
-      icon = (<StarFilled />);
-      break;
-    case "coursework":
-      icon = (<GraduateCap />);
-      break;
+  case "research":
+    icon = (<ExperimentFilled />);
+    break;
+  case "internship":
+    icon = (<ToolFilled />);
+    break;
+  case "personal":
+    icon = (<StarFilled />);
+    break;
+  case "coursework":
+    icon = (<GraduateCap />);
+    break;
   }
 
   return (
     <Fragment>
-      <div onClick={() => { setVisible(true); }} style={{style}}>
+      <div 
+        role="button"
+        tabIndex="0"
+        onClick={() => { setVisible(true); }} 
+        onKeyPress={(event) => {
+          if (event.key === "Enter") {
+            setVisible(true);
+          }
+        }} 
+        style={{style}}
+      >
         <Card
           title={title}
           bordered={true}
           style={{
-            textAlign: 'center'
+            textAlign: "center"
           }}
           hoverable={true}
           extra={icon}
           className="type-c"
         >
           <Image
-            style={{borderRadius: '35%'}}
+            style={{borderRadius: "35%"}}
             height={250}
             width={250}
             preview={false}
             src={img}
             fallback={DefaultImg}
           />
-          <div style={{fontSize: '14px'}}>
+          <div style={{fontSize: "14px"}}>
             <Text>{brief}</Text>
           </div>
         </Card>

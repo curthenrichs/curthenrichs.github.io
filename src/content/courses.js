@@ -1,5 +1,8 @@
-import CoursesDescription from './markdown/CoursesDescription.md';
+import CoursesDescription from "./markdown/CoursesDescription.md";
+
+
 const CoursesDescriptionPath = CoursesDescription;
+
 
 const Courses = {
   "Master's Degree": [
@@ -14,7 +17,8 @@ const Courses = {
   ]
 };
 
+
 export {
   CoursesDescriptionPath,
   Courses
-}
+};
