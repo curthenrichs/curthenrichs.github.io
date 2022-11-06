@@ -2,7 +2,6 @@
 import AuthrProject from "./markdown/AuthrProject.md";
 import ITERProject from "./markdown/ITERProject.md";
 import EvDProject from "./markdown/EvDProject.md";
-import InternshipProject from "./markdown/InternshipProject.md";
 import HobbyProject from "./markdown/HobbyProject.md";
 import ComputerVisionProject from "./markdown/VisionMLProject.md";
 import EmbeddedProject from "./markdown/EmbeddedProject.md";
@@ -21,9 +20,6 @@ const GetMarkdownPathFromName = (name) => {
     break;
   case "evd":
     retVal = EvDProject;
-    break;
-  case "internship":
-    retVal = InternshipProject;
     break;
   case "hobby":
     retVal = HobbyProject;
@@ -47,7 +43,6 @@ const Projects = [
   "authr",
   "iter",
   "evd",
-  "internship",
   "hobby",
   "vision",
   "embedded",
@@ -76,13 +71,6 @@ const ProjectDigests = [
     "img": "/img/teaser-iter.png",
     "type": "Research",
     "project": "iter"
-  },
-  {
-    "title": "Dedicated Computing Internship",
-    "brief": "A brief discussion of several projects I worked on during my internship.",
-    "img": "/img/teaser-internship.jpg",
-    "type": "Internship",
-    "project": "internship"
   },
   {
     "title": "Hobby Projects",
@@ -155,23 +143,6 @@ const ProjectImageCarousel = {
       "img": "/img/iter-workspace.png",
       "alt": "",
       "caption": "Sketch of participant's workspace for the two experiments."
-    }
-  ],
-  "internship": [
-    {
-      "img": "/img/internship-oled-covered.jpg",
-      "alt": "",
-      "caption": "Custom OLED node ID display that fits within 3.5\" bay."
-    },
-    {
-      "img": "/img/internship-oled.jpg",
-      "alt": "",
-      "caption": "OLED display has two capacitive touch buttons, USB serial interface, and multi-page screen."
-    },
-    {
-      "img": "/img/internship-fan.jpg",
-      "alt": "",
-      "caption": "Custom fan controller with a SAMD Atmel microcontroller."
     }
   ],
   "hobby": [
