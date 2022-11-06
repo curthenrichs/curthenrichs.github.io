@@ -14,16 +14,15 @@ const SectionPublications = () => {
       <br/>
       <br/>
 
-      {data.map((entry, i) => (
+      {data.map((entry, idx) => (
         <PublicationCard
-          key={i}
+          key={idx}
           title={entry.title}
           reference={entry.reference}
           link={entry.link}
           status={entry.status}
           style={{
             paddingBottom: "1em",
-            maxWidth: "1200px",
             margin: "auto"
           }}
         />

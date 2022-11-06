@@ -1,36 +1,19 @@
 import React, { useState, Fragment } from "react";
 import DefaultImg from "./DefaultImg";
-import ProjectModal from "./ProjectModal";
-import { GraduateCap } from "../content/customIcons";
-import { ExperimentFilled, ToolFilled, StarFilled } from "@ant-design/icons";
+import CareerModal from "./CareerModal";
+import { ToolFilled } from "@ant-design/icons";
 import { Card, Typography, Image } from "antd";
 
 
 const { Text } = Typography;
 
 
-const ProjectCard = (props) => {
+const CareerCard = (props) => {
 
   const { digest, style } = props;
-  const { title, brief, img, project, type } = digest;
+  const { title, brief, img, job } = digest;
 
   const [visible, setVisible] = useState(false);
-
-  let icon = null;
-  switch (type.toLowerCase()) {
-  case "research":
-    icon = (<ExperimentFilled />);
-    break;
-  case "internship":
-    icon = (<ToolFilled />);
-    break;
-  case "personal":
-    icon = (<StarFilled />);
-    break;
-  case "coursework":
-    icon = (<GraduateCap />);
-    break;
-  }
 
   return (
     <Fragment>
@@ -52,7 +35,7 @@ const ProjectCard = (props) => {
             textAlign: "center"
           }}
           hoverable={true}
-          extra={icon}
+          extra={(<ToolFilled />)}
           className="type-c"
         >
           <Image
@@ -68,8 +51,8 @@ const ProjectCard = (props) => {
           </div>
         </Card>
       </div>
-      <ProjectModal
-        project={project}
+      <CareerModal
+        job={job}
         digest={digest}
         visible={visible}
         closeCallback={() => { setVisible(false); }}
@@ -80,4 +63,4 @@ const ProjectCard = (props) => {
 };
 
 
-export default ProjectCard;
+export default CareerCard;

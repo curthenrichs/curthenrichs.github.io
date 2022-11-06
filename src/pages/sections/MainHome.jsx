@@ -11,7 +11,6 @@ import { Row, Col, Typography, Image, Button } from "antd";
 
 const { Title, Text, Link } = Typography;
 const LAYOUT_WIDTH_DIGEST_INLINE = 1500;
-//const NUM_ABBREVIATED_INTERESTS = 3;
 
 
 const BioDigest = () => {

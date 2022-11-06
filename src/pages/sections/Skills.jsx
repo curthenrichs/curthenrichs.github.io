@@ -39,12 +39,6 @@ const SkillTile = (props) => {
   );
 };
 
-//import { scroller} from "react-scroll";
-// scrollProperties = {
-//     duration: 500,
-//     smooth: true,
-//     offset: -100
-//   };
 
 const SectionSkills = () => {
 

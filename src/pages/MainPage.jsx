@@ -2,6 +2,7 @@ import React from "react";
 import PageTemplate from "../components/PageTemplate";
 import SectionHome from "./sections/MainHome";
 import SectionSkills from "./sections/Skills";
+import SectionCareer from "./sections/Career";
 import SectionProjects from "./sections/Projects";
 import SectionPublications from "./sections/Publications";
 import SectionContact from "./sections/Contact";
@@ -19,6 +20,11 @@ const MainPage = () => {
             id: "home-btn",
             flexPx: 150,
             content: "Home"
+          },
+          {
+            id: "career-btn",
+            flexPx: 150,
+            content: "Career"
           },
           {
             id: "projects-btn",
@@ -67,6 +73,17 @@ const MainPage = () => {
           scrollProperties: null,
           notApplyInnerSection: true,
           content: (<SectionSkills/>)
+        },
+        {
+          name: "sect-career",
+          navItem: "career-btn",
+          sectionType: "type-b",
+          scrollProperties: {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+          },
+          content: (<SectionCareer/>)
         },
         {
           name: "sect-projects",
