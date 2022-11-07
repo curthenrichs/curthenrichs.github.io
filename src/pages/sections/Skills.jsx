@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import data from "../../content/skills";
 import { WidthContext } from "../../contexts";
 import ExpandSection from "../../components/ExpandSection";
-import { IconLookupFromName } from "../../content/customIcons";
+import { IconLookupFromName } from "../../components/CustomIcons";
 import { Row, Col, Typography, Progress, Tooltip } from "antd";
 
 
@@ -11,23 +11,23 @@ const { Text, Title } = Typography;
 
 const SkillTile = (props) => {
 
-  const { skill } = props;
+  const { name, percent, icon, hover, id } = props;
 
   return (
     <Fragment>
-      <div style={{ width: 150, margin: "0 auto"}}>
-        <Tooltip title={skill.hover}>
+      <div style={{ width: 150, margin: "0 auto"}} id={id}>
+        <Tooltip title={hover}>
           <div style={{fontSize: "50px"}}>
-            {IconLookupFromName[skill.icon]}
+            {IconLookupFromName[icon]}
           </div>
           <div style={{fontSize: "20px"}}>
             <Text type="secondary">
-              {skill.name}
+              {name}
             </Text>
           </div>
           <Progress
             type="line"
-            percent={skill.progress}
+            percent={percent}
             size="small"
             showInfo={false}
             trailColor="#E8E8E8"
@@ -54,7 +54,7 @@ const SectionSkills = () => {
         insertBreak={true}
         style={{paddingLeft: "12px", paddingRight: "12px"}} 
         generator={(expand) => {
-          const skillsCopy = data.skills.slice();
+          const skillsCopy = data.slice();
 
           const tileSize = 250;
           const totalSpace = tileSize * skillsCopy.length;
@@ -77,7 +77,13 @@ const SectionSkills = () => {
               <Row gutter={[24,24]} justify="center" key={idx}>
                 {row.map((entry, idx) => (
                   <Col span={span} key={idx}>
-                    <SkillTile skill={entry}/>
+                    <SkillTile
+                      id={entry._id}
+                      name={entry.name}
+                      percent={entry.percent}
+                      icon={entry.icon}
+                      hover={entry.hover}
+                    />
                   </Col>
                 ))}
               </Row>

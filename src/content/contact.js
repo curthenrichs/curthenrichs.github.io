@@ -21,7 +21,7 @@ const data = {
   },
   "resume": {
     "link": "/docs/resume.pdf",
-    "text": null
+    "text": "Resume"
   }
 };
 

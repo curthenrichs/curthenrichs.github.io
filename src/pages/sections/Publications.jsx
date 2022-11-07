@@ -17,6 +17,7 @@ const SectionPublications = () => {
       {data.map((entry, idx) => (
         <PublicationCard
           key={idx}
+          id={entry._id}
           title={entry.title}
           reference={entry.reference}
           link={entry.link}
