@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useContext } from "react";
-import DefaultImg from "./DefaultImg";
-import { Row, Col, Card, Image, Tooltip } from "antd";
+import ThumbnailImage from "./ThumbnailImage";
+import { Row, Col, Card, Tooltip } from "antd";
 import ItemModalTemplate from "./ItemModalTemplate";
 import { WidthContext } from "../contexts";
 
@@ -32,17 +32,6 @@ const ItemCardTemplate = (props) => {
   const { id, style, title, icon, img, brief, long, skills, children } = props;
   const width = useContext(WidthContext);
 
-  const thumbnail = (
-    <Image
-      style={{borderRadius: "35%"}}
-      height={250}
-      width={250}
-      preview={false}
-      src={(img) ? img : ""}
-      fallback={DefaultImg}
-    />
-  );
-
   const skilltray = (skills !== undefined && skills !== null && skills.length > 0) ? (<SkillTray skills={skills} />) : null;
   
   let layout;
@@ -51,7 +40,7 @@ const ItemCardTemplate = (props) => {
       <Fragment>
         <Row>
           <Col span={6} offset={2}>
-            {thumbnail}
+            <ThumbnailImage img={img} />
           </Col>
           <Col span={16}>
             <div style={{fontSize: "14px"}}>
@@ -65,7 +54,7 @@ const ItemCardTemplate = (props) => {
   } else {
     layout = (
       <Fragment>
-        {thumbnail}
+        <ThumbnailImage img={img} />
         <div style={{fontSize: "14px"}}>
           {brief}
         </div>
