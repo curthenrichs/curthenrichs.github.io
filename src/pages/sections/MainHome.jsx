@@ -1,5 +1,4 @@
 import React, { useState, useContext, Fragment } from "react";
-import DefaultImg from "../../components/DefaultImg";
 import SocialTray from "../../components/SocialTray";
 import MarkdownContent from "../../components/MarkdownContent";
 import ExpandSection from "../../components/ExpandSection";
@@ -9,7 +8,8 @@ import educationData from "../../content/education";
 import careerData from "../../content/career";
 import { WidthContext } from "../../contexts";
 import { CaretRightOutlined, DownloadOutlined } from "@ant-design/icons";
-import { Row, Col, Typography, Image, Button } from "antd";
+import { Row, Col, Typography, Button } from "antd";
+import ThumbnailImage from "../../components/ThumbnailImage";
 
  
 const { Title, Text, Link } = Typography;
@@ -29,13 +29,7 @@ const BioDigest = () => {
 
   return (
     <div style={{textAlign: "center"}}>
-      <Image
-        style={{borderRadius: "35%"}}
-        width={250}
-        preview={false}
-        src={(bioData.img) ? bioData.img : ""}
-        fallback={DefaultImg}
-      />
+      <ThumbnailImage img={bioData.img} />
       <div style={{fontSize: "18px"}}>
         <Text style={{fontSize: "20px"}} strong>{bioData.name}</Text>
         <br/>
