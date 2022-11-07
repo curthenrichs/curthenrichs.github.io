@@ -1,29 +1,48 @@
 import React from "react";
-import { CareerDigests as data } from "../../content/career";
-import CareerCard from "../../components/CareerCard";
-import { Typography } from "antd";
+import data from "../../content/career";
+import ItemCardTemplate from "../../components/ItemCardTemplate";
+import { Divider, Typography } from "antd";
+import MarkdownContent from "../../components/MarkdownContent";
+import ImageCarousel from "../../components/ImageCarousel";
 
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 
 const SectionCareer = () => {
+  const list = data.slice().reverse();
+
   return (
     <div>
       <Title>Career</Title>
       <br/>
       <br/>
-
-        {data.map((entry, idx) => (
-            <CareerCard
-            key={idx}
-            digest={entry}
-            style={{
-              paddingBottom: "1em",
-              margin: "auto"
-            }}
+      
+      {list.map((entry, idx) => (
+        <ItemCardTemplate
+          id={entry._id}
+          key={idx}
+          digest={entry}
+          style={{
+            paddingBottom: "1em",
+            margin: "auto"
+          }}
+          title={entry.company}
+          icon={(<div></div>)}
+          img={entry.thumbnail}
+          brief={(<Text>{entry.brief}</Text>)}
+        >
+          <div style={{textAlign: "center"}}>
+            <ImageCarousel 
+              options={entry.images}
             />
-        ))}
+          </div>
+          <Divider />
+          <MarkdownContent
+            markdownPath={entry.markdownPath}
+          />
+        </ItemCardTemplate>
+      ))}
     </div>
   );
 };

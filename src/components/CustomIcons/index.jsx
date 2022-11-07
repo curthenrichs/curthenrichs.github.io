@@ -1,32 +1,32 @@
 import Icon from "@ant-design/icons";
 import { WarningOutlined } from "@ant-design/icons";
-import { ReactComponent as AngularIcon } from "../icons/angular.svg";
-import { ReactComponent as ArduinoIcon } from "../icons/arduino.svg";
-import { ReactComponent as CPPIcon } from "../icons/cplusplus.svg";
-import { ReactComponent as CSharpIcon } from "../icons/csharp.svg";
-import { ReactComponent as GitIcon } from "../icons/git.svg";
-import { ReactComponent as GraduateCapIcon } from "../icons/graduation-cap-solid.svg";
-import { ReactComponent as JavaIcon } from "../icons/java.svg";
-import { ReactComponent as LinuxIcon } from "../icons/linux.svg";
-import { ReactComponent as RobotIcon } from "../icons/mechanical-arm.svg";
-import { ReactComponent as MicrochipIcon } from "../icons/microchip-solid.svg";
-import { ReactComponent as MenuIcon } from "../icons/menu.svg";
-import { ReactComponent as MicrosoftIcon } from "../icons/microsoft.svg";
-import { ReactComponent as NodeJSIcon } from "../icons/node-dot-js.svg";
-import { ReactComponent as PythonIcon } from "../icons/python.svg";
-import { ReactComponent as ReactIcon } from "../icons/react.svg";
-import { ReactComponent as ROSIcon } from "../icons/ros.svg";
-import { ReactComponent as SketchIcon } from "../icons/sketch.svg";
-import { ReactComponent as UnityIcon } from "../icons/unity.svg";
-import { ReactComponent as JavascriptIcon } from "../icons/javascript.svg";
-import { ReactComponent as KerasIcon } from "../icons/keras.svg";
-import { ReactComponent as MongoDBIcon } from "../icons/mongodb.svg";
-import { ReactComponent as OverleafIcon } from "../icons/overleaf.svg";
-import { ReactComponent as ProjectIcon } from "../icons/project.svg";
-import { ReactComponent as MatlabIcon } from "../icons/matlab.svg";
-import { ReactComponent as AtlassianIcon } from "../icons/atlassian.svg";
-import { ReactComponent as AutodeskIcon } from "../icons/autodesk.svg";
-import { ReactComponent as CIcon } from "../icons/c.svg";
+import { ReactComponent as AngularIcon } from "./svg/angular.svg";
+import { ReactComponent as ArduinoIcon } from "./svg/arduino.svg";
+import { ReactComponent as CPPIcon } from "./svg/cplusplus.svg";
+import { ReactComponent as CSharpIcon } from "./svg/csharp.svg";
+import { ReactComponent as GitIcon } from "./svg/git.svg";
+import { ReactComponent as GraduateCapIcon } from "./svg/graduation-cap-solid.svg";
+import { ReactComponent as JavaIcon } from "./svg/java.svg";
+import { ReactComponent as LinuxIcon } from "./svg/linux.svg";
+import { ReactComponent as RobotIcon } from "./svg/mechanical-arm.svg";
+import { ReactComponent as MicrochipIcon } from "./svg/microchip-solid.svg";
+import { ReactComponent as MenuIcon } from "./svg/menu.svg";
+import { ReactComponent as MicrosoftIcon } from "./svg/microsoft.svg";
+import { ReactComponent as NodeJSIcon } from "./svg/node-dot-js.svg";
+import { ReactComponent as PythonIcon } from "./svg/python.svg";
+import { ReactComponent as ReactIcon } from "./svg/react.svg";
+import { ReactComponent as ROSIcon } from "./svg/ros.svg";
+import { ReactComponent as SketchIcon } from "./svg/sketch.svg";
+import { ReactComponent as UnityIcon } from "./svg/unity.svg";
+import { ReactComponent as JavascriptIcon } from "./svg/javascript.svg";
+import { ReactComponent as KerasIcon } from "./svg/keras.svg";
+import { ReactComponent as MongoDBIcon } from "./svg/mongodb.svg";
+import { ReactComponent as OverleafIcon } from "./svg/overleaf.svg";
+import { ReactComponent as ProjectIcon } from "./svg/project.svg";
+import { ReactComponent as MatlabIcon } from "./svg/matlab.svg";
+import { ReactComponent as AtlassianIcon } from "./svg/atlassian.svg";
+import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
+import { ReactComponent as CIcon } from "./svg/c.svg";
 
 
 function Angular() {
@@ -100,7 +100,6 @@ function Sketch() {
 function Unity() {
   return (<Icon component={UnityIcon} />);
 }
-
 
 function Javascript() {
   return (<Icon component={JavascriptIcon} />);

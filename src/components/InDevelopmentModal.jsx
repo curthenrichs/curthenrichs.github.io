@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sketch as SketchIcon } from "../content/customIcons";
+import { Sketch as SketchIcon } from "./CustomIcons";
 import { Modal, Button } from "antd";
 
 

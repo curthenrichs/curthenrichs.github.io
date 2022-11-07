@@ -27,7 +27,7 @@ const SectionContact = () => {
           &nbsp;
           <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer"><LinkedinFilled /></Link>
           &nbsp;
-          <Link href={data.twitter.link}><TwitterOutlined /></Link>
+          <Link href={data.twitter.link} target="_blank" rel="noopener noreferrer"><TwitterOutlined /></Link>
         </div>
       </div>
 

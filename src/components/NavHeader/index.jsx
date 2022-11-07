@@ -1,6 +1,6 @@
 import React, { useContext, Fragment } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Menu as MenuIcon } from "../../content/customIcons";
+import { Menu as MenuIcon } from "../CustomIcons";
 import { WidthContext } from "../../contexts";
 import { Row, Col, Typography, Divider } from "antd";
 import "./index.css";

@@ -6,7 +6,7 @@ import { Button, Tooltip, Modal } from "antd";
 
 const InfoButton = (props) => {
 
-  const { style, children, tooltipProps } = props;
+  const { style, children, tooltipProps, title } = props;
 
   const [visible, setVisible] = useState(false);
 
@@ -22,7 +22,7 @@ const InfoButton = (props) => {
       </Tooltip>
 
       <Modal
-        title="Skills Explained"
+        title={title}
         centered
         visible={visible}
         width={modalWidth}

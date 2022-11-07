@@ -1,23 +1,19 @@
 import React, { useState, Fragment } from "react";
 import DefaultImg from "./DefaultImg";
-import CareerModal from "./CareerModal";
-import { ToolFilled } from "@ant-design/icons";
-import { Card, Typography, Image } from "antd";
+import { Card, Image } from "antd";
+import ItemModalTemplate from "./ItemModalTemplate";
 
 
-const { Text } = Typography;
-
-
-const CareerCard = (props) => {
-
-  const { digest, style } = props;
-  const { title, brief, img, job } = digest;
-
+const ItemCardTemplate = (props) => {
   const [visible, setVisible] = useState(false);
+
+  const { id, style, title, icon, img, brief, children } = props;
+  //TODO need to work on alt layouts (mobile vs. desktop)
 
   return (
     <Fragment>
       <div 
+        id={id}
         role="button"
         tabIndex="0"
         onClick={() => { setVisible(true); }} 
@@ -35,7 +31,7 @@ const CareerCard = (props) => {
             textAlign: "center"
           }}
           hoverable={true}
-          extra={(<ToolFilled />)}
+          extra={icon}
           className="type-c"
         >
           <Image
@@ -43,24 +39,25 @@ const CareerCard = (props) => {
             height={250}
             width={250}
             preview={false}
-            src={img}
+            src={(img) ? img : ""}
             fallback={DefaultImg}
           />
           <div style={{fontSize: "14px"}}>
-            <Text>{brief}</Text>
+            {brief}
           </div>
         </Card>
       </div>
-      <CareerModal
-        job={job}
-        digest={digest}
+      <ItemModalTemplate 
+        title={title}
         visible={visible}
         closeCallback={() => { setVisible(false); }}
         className="type-c"
-      />
+      >
+        {children}
+      </ItemModalTemplate>
     </Fragment>
   );
 };
 
 
-export default CareerCard;
+export default ItemCardTemplate;
