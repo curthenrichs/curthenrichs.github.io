@@ -16,6 +16,7 @@ const data = [
     "_id": "project-authr",
     "markdownPath": AuthrProject,
     "notable": true,
+    "skills": [],
     "images": [
       {
         "img": "/img/authr-setup.png",
@@ -45,6 +46,7 @@ const data = [
     "_id": "project-coframe",
     "markdownPath": EvDProject,
     "notable": true,
+    "skills": [],
     "images": [
       {
         "img": "/img/evd-authoring-ui.jpg",
@@ -64,6 +66,7 @@ const data = [
     "_id": "project-iter",
     "markdownPath": ITERProject,
     "notable": true,
+    "skills": [],
     "images": [
       {
         "img": "/img/iter-seq-task.png",
@@ -94,6 +97,7 @@ const data = [
     "_id": "project-hobby",
     "markdownPath": HobbyProject,
     "notable": true,
+    "skills": [],
     "images": [
       {
         "img": "/img/hobby-taltosoid.jpg",
@@ -120,6 +124,7 @@ const data = [
     "_id": "project-vision",
     "markdownPath": ComputerVisionProject,
     "notable": false,
+    "skills": [],
     "images": [
       {
         "img": "/img/computer-vision-iter.png",
@@ -146,6 +151,7 @@ const data = [
     "_id": "project-embedded",
     "markdownPath": EmbeddedProject,
     "notable": false,
+    "skills": [],
     "images": [
       {
         "img": "/img/embedded-networking.jpg",
@@ -177,6 +183,7 @@ const data = [
     "_id": "project-hci",
     "markdownPath": HCIProject,
     "notable": false,
+    "skills": [],
     "images": [
       {
         "img": "/img/hci-hifi-mockup.jpg",

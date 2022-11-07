@@ -6,6 +6,7 @@ import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { GraduateCap } from "../../components/CustomIcons";
 import { ExperimentFilled, StarFilled } from "@ant-design/icons";
+import { IconLookupFromName } from "../../components/CustomIcons";
 
 
 const { Title, Text } = Typography;
@@ -45,6 +46,10 @@ const SectionProjects = () => {
           icon={typeToIcon(entry.type)}
           img={entry.thumbnail}
           brief={(<Text>{entry.brief}</Text>)}
+          long={(<Text>Hello World</Text>)}
+          skills={entry.skills.map((skill) => (
+            IconLookupFromName[skill]
+          ))}
         >
           <div style={{textAlign: "center"}}>
             <ImageCarousel 

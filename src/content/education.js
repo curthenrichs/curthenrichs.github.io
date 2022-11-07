@@ -16,6 +16,18 @@ const data = [
     "projects": [
       "project-embedded"
     ],
+    "skills": [
+      "arduino",
+      "microchip",
+      "atlassian",
+      "matlab",
+      "angular",
+      "git",
+      "java",
+      "python",
+      "c",
+      "linux"
+    ],
     "publications": []
   },
   {
@@ -31,6 +43,14 @@ const data = [
     "projects": [
       "project-hci",
       "project-vision"
+    ],
+    "skills": [
+      "python",
+      "keras",
+      "matlab",
+      "overleaf",
+      "microchip",
+      "robot"
     ],
     "publications": []
   }

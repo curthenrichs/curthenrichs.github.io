@@ -5,6 +5,7 @@ import { Divider, Typography } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { ToolFilled } from "@ant-design/icons";
+import { IconLookupFromName } from "../../components/CustomIcons";
 
 
 const { Title, Text } = Typography;
@@ -32,6 +33,10 @@ const SectionCareer = () => {
           icon={(<ToolFilled />)}
           img={entry.thumbnail}
           brief={(<Text>{entry.brief}</Text>)}
+          long={(<Text>Hello World</Text>)}
+          skills={entry.skills.map((skill) => (
+            IconLookupFromName[skill]
+          ))}
         >
           <div style={{textAlign: "center"}}>
             <ImageCarousel 
