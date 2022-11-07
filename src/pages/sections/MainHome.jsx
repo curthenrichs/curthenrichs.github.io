@@ -109,7 +109,7 @@ const Education = (props) => {
             shouldCollapse: abbreviate,
             children: list.map((education, idx) => (
               <div key={idx} style={{ paddingBottom: "10px"}}>
-                <Text strong={true}>{education.time}</Text>&nbsp;-&nbsp;
+                <Text strong={true}>{education.end}</Text>&nbsp;-&nbsp;
                 <Text>{education.title}</Text>
                 <br/>
                 <Text style={{padding: "0 30px"}} type="secondary" >{education.school}</Text>

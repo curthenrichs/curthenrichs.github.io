@@ -4,6 +4,7 @@ import ItemCardTemplate from "../../components/ItemCardTemplate";
 import { Divider, Typography } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
+import { ToolFilled } from "@ant-design/icons";
 
 
 const { Title, Text } = Typography;
@@ -28,7 +29,7 @@ const SectionCareer = () => {
             margin: "auto"
           }}
           title={entry.company}
-          icon={(<div></div>)}
+          icon={(<ToolFilled />)}
           img={entry.thumbnail}
           brief={(<Text>{entry.brief}</Text>)}
         >
