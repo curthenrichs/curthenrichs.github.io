@@ -175,9 +175,9 @@ class PageTemplate extends Component {
                   <div 
                     className={`${entry.notApplyInnerSection ? "" : "sect-inner"}`} 
                     style={{ 
-                        position: "relative", 
-                        paddingTop: `${ entry.paddingTop !== undefined ? entry.paddingTop : 0 }px`,
-                        paddingBottom: `${ entry.paddingBottom !== undefined ? entry.paddingBottom : 0 }px` 
+                      position: "relative", 
+                      paddingTop: `${ entry.paddingTop !== undefined ? entry.paddingTop : 0 }px`,
+                      paddingBottom: `${ entry.paddingBottom !== undefined ? entry.paddingBottom : 0 }px` 
                     }}
                   >
                     {entry.content}

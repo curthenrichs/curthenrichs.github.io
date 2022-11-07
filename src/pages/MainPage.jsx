@@ -93,7 +93,7 @@ const MainPage = () => {
           content: (<SectionCareer/>)
         },
         {
-            name: "sect-education",
+          name: "sect-education",
           navItem: "education-btn",
           sectionType: "type-b",
           scrollProperties: {
@@ -101,7 +101,7 @@ const MainPage = () => {
             smooth: true,
             offset: -100,
           },
-            content: (<SectionEducation />)
+          content: (<SectionEducation />)
         },
         {
           name: "sect-projects",

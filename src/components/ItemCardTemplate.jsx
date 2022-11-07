@@ -1,7 +1,8 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useContext } from "react";
 import DefaultImg from "./DefaultImg";
 import { Card, Image } from "antd";
 import ItemModalTemplate from "./ItemModalTemplate";
+import { WidthContext } from "../contexts";
 
 
 const ItemCardTemplate = (props) => {
@@ -9,6 +10,33 @@ const ItemCardTemplate = (props) => {
 
   const { id, style, title, icon, img, brief, children } = props;
   //TODO need to work on alt layouts (mobile vs. desktop)
+
+  const width = useContext(WidthContext);
+
+  const thumbnail = (
+    <Image
+      style={{borderRadius: "35%"}}
+      height={250}
+      width={250}
+      preview={false}
+      src={(img) ? img : ""}
+      fallback={DefaultImg}
+    />
+  );
+  
+  let layout;
+  if (width >= 1000) {
+    layout = null;
+  } else {
+    layout = (
+      <Fragment>
+        {thumbnail}
+        <div style={{fontSize: "14px"}}>
+          {brief}
+        </div>
+      </Fragment>
+    );
+  }
 
   return (
     <Fragment>
@@ -34,17 +62,7 @@ const ItemCardTemplate = (props) => {
           extra={icon}
           className="type-c"
         >
-          <Image
-            style={{borderRadius: "35%"}}
-            height={250}
-            width={250}
-            preview={false}
-            src={(img) ? img : ""}
-            fallback={DefaultImg}
-          />
-          <div style={{fontSize: "14px"}}>
-            {brief}
-          </div>
+          {layout}
         </Card>
       </div>
       <ItemModalTemplate 
