@@ -12,7 +12,7 @@ const { Title, Text } = Typography;
 
 
 const SectionProjects = () => {
-  const list = data.slice();
+  const list = data.slice().filter((project) => (project.notable));
 
   const typeToIcon = (type) => {
     switch (type.toLowerCase()) {

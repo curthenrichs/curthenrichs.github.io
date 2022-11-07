@@ -15,6 +15,7 @@ const data = [
     "type": "Research",
     "_id": "project-authr",
     "markdownPath": AuthrProject,
+    "notable": true,
     "images": [
       {
         "img": "/img/authr-setup.png",
@@ -43,6 +44,7 @@ const data = [
     "type": "Research",
     "_id": "project-coframe",
     "markdownPath": EvDProject,
+    "notable": true,
     "images": [
       {
         "img": "/img/evd-authoring-ui.jpg",
@@ -61,6 +63,7 @@ const data = [
     "type": "Research",
     "_id": "project-iter",
     "markdownPath": ITERProject,
+    "notable": true,
     "images": [
       {
         "img": "/img/iter-seq-task.png",
@@ -90,6 +93,7 @@ const data = [
     "type": "Personal",
     "_id": "project-hobby",
     "markdownPath": HobbyProject,
+    "notable": true,
     "images": [
       {
         "img": "/img/hobby-taltosoid.jpg",
@@ -115,6 +119,7 @@ const data = [
     "type": "Coursework",
     "_id": "project-vision",
     "markdownPath": ComputerVisionProject,
+    "notable": false,
     "images": [
       {
         "img": "/img/computer-vision-iter.png",
@@ -140,6 +145,7 @@ const data = [
     "type": "Coursework",
     "_id": "project-embedded",
     "markdownPath": EmbeddedProject,
+    "notable": false,
     "images": [
       {
         "img": "/img/embedded-networking.jpg",
@@ -170,6 +176,7 @@ const data = [
     "type": "Coursework",
     "_id": "project-hci",
     "markdownPath": HCIProject,
+    "notable": false,
     "images": [
       {
         "img": "/img/hci-hifi-mockup.jpg",
