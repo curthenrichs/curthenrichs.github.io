@@ -3,6 +3,7 @@ import PageTemplate from "../components/PageTemplate";
 import SectionHome from "./sections/MainHome";
 import SectionSkills from "./sections/Skills";
 import SectionCareer from "./sections/Career";
+import SectionEducation from "./sections/Education";
 import SectionProjects from "./sections/Projects";
 import SectionPublications from "./sections/Publications";
 import SectionContact from "./sections/Contact";
@@ -25,6 +26,11 @@ const MainPage = () => {
             id: "career-btn",
             flexPx: 150,
             content: "Career"
+          },
+          {
+            id: "education-btn",
+            flexPx: 150,
+            content: "Education"
           },
           {
             id: "projects-btn",
@@ -78,12 +84,24 @@ const MainPage = () => {
           name: "sect-career",
           navItem: "career-btn",
           sectionType: "type-b",
+          paddingTop: 30,
           scrollProperties: {
             duration: 500,
             smooth: true,
             offset: -100,
           },
           content: (<SectionCareer/>)
+        },
+        {
+            name: "sect-education",
+          navItem: "education-btn",
+          sectionType: "type-b",
+          scrollProperties: {
+            duration: 500,
+            smooth: true,
+            offset: -100,
+          },
+            content: (<SectionEducation />)
         },
         {
           name: "sect-projects",

@@ -172,7 +172,14 @@ class PageTemplate extends Component {
                   style={entry.style}
                   className={`sect ${entry.sectionType}`}
                 >
-                  <div className={`${entry.notApplyInnerSection ? "" : "sect-inner"}`} style={{ position: "relative" }}>
+                  <div 
+                    className={`${entry.notApplyInnerSection ? "" : "sect-inner"}`} 
+                    style={{ 
+                        position: "relative", 
+                        paddingTop: `${ entry.paddingTop !== undefined ? entry.paddingTop : 0 }px`,
+                        paddingBottom: `${ entry.paddingBottom !== undefined ? entry.paddingBottom : 0 }px` 
+                    }}
+                  >
                     {entry.content}
                   </div>
                 </ScrollElement>

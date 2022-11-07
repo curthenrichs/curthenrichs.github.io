@@ -1,35 +1,21 @@
 import React from "react";
-import data from "../../content/projects";
+import data from "../../content/education";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
 import { Divider, Typography } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { GraduateCap } from "../../components/CustomIcons";
-import { ExperimentFilled, StarFilled } from "@ant-design/icons";
 
 
 const { Title, Text } = Typography;
 
 
-const SectionProjects = () => {
-  const list = data.slice();
-
-  const typeToIcon = (type) => {
-    switch (type.toLowerCase()) {
-    case "research":
-      return (<ExperimentFilled />);
-    case "personal":
-      return (<StarFilled />);
-    case "coursework":
-      return (<GraduateCap />);
-    default:
-      return null;
-    }
-  };
+const SectionEducation = () => {
+  const list = data.slice().reverse();
 
   return (
     <div>
-      <Title>Notable Projects</Title>
+      <Title>Education</Title>
       <br/>
       <br/>
       
@@ -42,7 +28,7 @@ const SectionProjects = () => {
             margin: "auto"
           }}
           title={entry.title}
-          icon={typeToIcon(entry.type)}
+          icon={(<GraduateCap />)}
           img={entry.thumbnail}
           brief={(<Text>{entry.brief}</Text>)}
         >
@@ -62,4 +48,4 @@ const SectionProjects = () => {
 };
 
 
-export default SectionProjects;
+export default SectionEducation;
