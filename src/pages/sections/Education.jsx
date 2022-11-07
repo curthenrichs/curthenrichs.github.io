@@ -5,6 +5,7 @@ import { Divider, Typography } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { GraduateCap } from "../../components/CustomIcons";
+import { IconLookupFromName } from "../../components/CustomIcons";
 
 
 const { Title, Text } = Typography;
@@ -30,7 +31,11 @@ const SectionEducation = () => {
           title={entry.title}
           icon={(<GraduateCap />)}
           img={entry.thumbnail}
-          brief={(<Text>{entry.brief}</Text>)}
+          brief={(<Text>{entry.school}</Text>)}
+          long={(<Text>Hello World</Text>)}
+          skills={entry.skills.map((skill) => (
+            IconLookupFromName[skill]
+          ))}
         >
           <div style={{textAlign: "center"}}>
             <ImageCarousel 

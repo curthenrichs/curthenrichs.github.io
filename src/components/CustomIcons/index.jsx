@@ -1,5 +1,5 @@
 import Icon from "@ant-design/icons";
-import { WarningOutlined } from "@ant-design/icons";
+import { WarningOutlined, ToolFilled, ExperimentFilled, StarFilled } from "@ant-design/icons";
 import { ReactComponent as AngularIcon } from "./svg/angular.svg";
 import { ReactComponent as ArduinoIcon } from "./svg/arduino.svg";
 import { ReactComponent as CPPIcon } from "./svg/cplusplus.svg";
@@ -165,7 +165,11 @@ const lookup = {
   "matlab": <Matlab />,
   "atlassian": <Atlassian />,
   "autodesk": <Autodesk />,
-  "c": <C />
+  "c": <C />,
+  "warning": <WarningOutlined />,
+  "experiment": <ExperimentFilled />,
+  "star": <StarFilled />,
+  "tool": <ToolFilled />,
 };
 
 
@@ -211,5 +215,9 @@ export {
   Atlassian,
   Autodesk,
   C,
+  WarningOutlined,
+  ExperimentFilled,
+  StarFilled,
+  ToolFilled,
   IconLookupFromName
 };

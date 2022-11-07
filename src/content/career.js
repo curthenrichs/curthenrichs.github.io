@@ -9,7 +9,18 @@ const data = [
     "markdownPath": InternshipProject,
     "company": "Dedicated Computing",
     "brief": "A brief discussion of several projects I worked on during my internship.",
-    "skills": [],
+    "skills": [
+      "arduino",
+      "microchip",
+      "linux",
+      "c",
+      "python",
+      "nodejs",
+      "git",
+      "javascript",
+      "atlassian",
+      "mongodb"
+    ],
     "thumbnail": "/img/teaser-internship.jpg",
     "web": "https://www.dedicatedcomputing.com/",
     "positions": [
@@ -47,7 +58,23 @@ const data = [
     "markdownPath": ResearchCareer,
     "company": "University of Wisconsin - Madison, HCI Lab",
     "brief": "A brief discussion of my work during graduate school",
-    "skills": [],
+    "skills": [
+      "linux",
+      "ros",
+      "python",
+      "git",
+      "nodejs",
+      "robot",
+      "unity",
+      "csharp",
+      "microsoft",
+      "react",
+      "angular",
+      "javascript",
+      "keras",
+      "matlab",
+      "overleaf"
+    ],
     "thumbnail": null,
     "web": "https://peopleandrobots.wisc.edu/",
     "positions": [
@@ -79,7 +106,14 @@ const data = [
     "markdownPath": IDESCareer,
     "company": "Integrated Dynamic Electron Solutions",
     "brief": "A brief discussion of my work at IDES",
-    "skills": [],
+    "skills": [
+      "arduino",
+      "microchip",
+      "linux",
+      "c",
+      "python",
+      "git"
+    ],
     "thumbnail": null,
     "web": "https://www.ides-inc.com/",
     "positions": [

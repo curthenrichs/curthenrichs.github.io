@@ -1,16 +1,35 @@
 import React, { useState, Fragment, useContext } from "react";
 import DefaultImg from "./DefaultImg";
-import { Card, Image } from "antd";
+import { Row, Col, Card, Image, Tooltip } from "antd";
 import ItemModalTemplate from "./ItemModalTemplate";
 import { WidthContext } from "../contexts";
 
 
+const SkillTray = (props) => {
+  const { skills } = props;
+    
+  return (
+    <div style={{overflow: "hidden", backgroundColor: "#E8E8E8", borderRadius: "15px", marginTop: "10px"}}>
+      <Tooltip title="Skills">
+        <Row justify="center" style={{paddingTop: "2px", paddingBottom: "1px"}}>
+          {skills.map((skill, idx) => (
+            <Col
+              key={idx}
+            >
+              <div style={{paddingLeft: "2px", paddingRight: "2px"}}>{skill}</div>
+            </Col>
+          ))}
+        </Row>
+      </Tooltip>
+    </div>
+  );
+};
+
+
 const ItemCardTemplate = (props) => {
+
   const [visible, setVisible] = useState(false);
-
-  const { id, style, title, icon, img, brief, children } = props;
-  //TODO need to work on alt layouts (mobile vs. desktop)
-
+  const { id, style, title, icon, img, brief, long, skills, children } = props;
   const width = useContext(WidthContext);
 
   const thumbnail = (
@@ -23,10 +42,26 @@ const ItemCardTemplate = (props) => {
       fallback={DefaultImg}
     />
   );
+
+  const skilltray = (skills !== undefined && skills !== null && skills.length > 0) ? (<SkillTray skills={skills} />) : null;
   
   let layout;
   if (width >= 1000) {
-    layout = null;
+    layout = (
+      <Fragment>
+        <Row>
+          <Col span={6} offset={2}>
+            {thumbnail}
+          </Col>
+          <Col span={16}>
+            <div style={{fontSize: "14px"}}>
+              {long}
+            </div>
+          </Col>
+        </Row>
+        {skilltray}
+      </Fragment>
+    );
   } else {
     layout = (
       <Fragment>
@@ -34,6 +69,7 @@ const ItemCardTemplate = (props) => {
         <div style={{fontSize: "14px"}}>
           {brief}
         </div>
+        {skilltray}
       </Fragment>
     );
   }
