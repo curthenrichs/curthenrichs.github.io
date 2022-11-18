@@ -7,10 +7,11 @@ import EmbeddedProject from "./markdown/EmbeddedProject.md";
 import HCIProject from "./markdown/HCIProject.md";
 
 
-const data = [
-  {
+const data = {
+    "project-authr": {
     "title": "Authr",
     "brief": "Human-robot task development tool based on Therbligs.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-authr.png",
     "type": "Research",
     "_id": "project-authr",
@@ -38,9 +39,10 @@ const data = [
       "publication-authr"
     ]
   },
-  {
+  "project-coframe": {
     "title": "CoFrame",
     "brief": "Training and authoring tool for operators to modify their cobot's programs.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-evd.jpg",
     "type": "Research",
     "_id": "project-coframe",
@@ -58,9 +60,10 @@ const data = [
       "publication-coframe"
     ]
   },
-  {
+  "project-iter": {
     "title": "Task Interdependence and pRAD",
     "brief": "Experiments to better understand how operators interact with cobots.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-iter.png",
     "type": "Research",
     "_id": "project-iter",
@@ -89,9 +92,10 @@ const data = [
       "publication-rad"
     ]
   },
-  {
+  "project-hobby": {
     "title": "Hobby Projects",
     "brief": "Personal robot, embedded systems, and home automation projects.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-hobby.jpg",
     "type": "Personal",
     "_id": "project-hobby",
@@ -114,11 +118,13 @@ const data = [
         "alt": "",
         "caption": "LEDs being controlled by lighting effects interface, back when I was at MSOE."
       }
-    ]
+    ],
+    "publications": []
   },
-  {
+  "project-vision": {
     "title": "Computer Vision and ML Projects",
     "brief": "Various computer vision and machine learning projects from coursework.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-computer-vision.png",
     "type": "Coursework",
     "_id": "project-vision",
@@ -141,11 +147,13 @@ const data = [
         "alt": "",
         "caption": "Sprite GAN learning body armor - single example."
       }
-    ]
+    ],
+    "publications": []
   },
-  {
+  "project-embedded": {
     "title": "Embedded System Projects",
     "brief": "Various embedded systems projects from my undergrad coursework.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-embedded.jpg",
     "type": "Coursework",
     "_id": "project-embedded",
@@ -173,11 +181,13 @@ const data = [
         "alt": "",
         "caption": "Embedded Systems III homework. I implemented a Atmel microcontroller PCB in Eagle."
       }
-    ]
+    ],
+    "publications": []
   },
-  {
+  "project-hci": {
     "title": "HCI and Data Visualization",
     "brief": "A few HCI and data visualization course projects.",
+    "long": "TEST",
     "thumbnail": "/img/teaser-hci.jpg",
     "type": "Coursework",
     "_id": "project-hci",
@@ -200,9 +210,10 @@ const data = [
         "alt": "",
         "caption": "Detail interactive visualization of Amazon product categories created by Plotly in Python."
       }
-    ]
+    ],
+    "publications": []
   }
-];
+};
 
 
 export default data;

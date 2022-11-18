@@ -15,7 +15,7 @@ import ThumbnailImage from "../../components/ThumbnailImage";
 const { Title, Text, Link } = Typography;
 const LAYOUT_WIDTH_DIGEST_INLINE = 1500;
 
-const currentCompany = careerData.slice().filter((company) => {
+const currentCompany = Object.values(careerData).filter((company) => {
   return company._id == bioData.currentEmploymentId.company;
 })[0];
 
@@ -93,7 +93,7 @@ const Education = (props) => {
         style={{padding: "0 20px", fontSize: "16px"}}
         generator={(expand) => {
 
-          let list = educationData.slice().reverse();
+          let list = Object.values(educationData).reverse();
         
           const sliceAmount = (list.length > numAbbrev) ? numAbbrev : list.length;
 
@@ -128,7 +128,7 @@ const Career = (props) => {
         style={{padding: "0 20px", fontSize: "16px"}}
         generator={(expand) => {
 
-          let list = careerData.slice().reduce((acc, company) => {
+          let list = Object.values(careerData).reduce((acc, company) => {
             return acc.concat(company.positions.map((job) => {
               return {
                 ...job,

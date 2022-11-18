@@ -1,5 +1,5 @@
-const data = [
-  {
+const data = {
+    "publication-interdependence": {
     "_id": "publication-interdependence",
     "short": "Task Interdependence",
     "title": "Task Interdependence in Human-Robot Teaming",
@@ -7,7 +7,7 @@ const data = [
     "link": "https://ieeexplore.ieee.org/abstract/document/9223555",
     "status": "Published"
   },
-  {
+  "publication-authr": {
     "_id": "publication-authr",
     "short": "Authr UI",
     "title": "Authr: A Task Authoring Environment for Human-Robot Teams",
@@ -15,7 +15,7 @@ const data = [
     "link": "https://dl.acm.org/doi/10.1145/3379337.3415872",
     "status": "Published"
   },
-  {
+  "publication-rad": {
     "_id": "publication-rad",
     "short": "Attention Management",
     "title": "Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management",
@@ -23,7 +23,7 @@ const data = [
     "link": "https://ieeexplore.ieee.org/document/9515519",
     "status": "Published"
   },
-  {
+  "publication-onet": {
     "_id": "publication-onet",
     "short": "Enhancing Work Activities",
     "title": "Human Robot Collaboration for Enhancing Work Activities",
@@ -31,7 +31,7 @@ const data = [
     "link": "https://journals.sagepub.com/doi/10.1177/00187208221077722",
     "status": "Published"
   },
-  {
+  "publication-coframe": {
     "_id": "publication-coframe",
     "short": "CoFrame UI",
     "title": "CoFrame: A System for Training Novice Cobot Programers",
@@ -39,7 +39,7 @@ const data = [
     "link": "https://dl.acm.org/doi/abs/10.5555/3523760.3523788",
     "status": "Published"
   },
-  {
+  "publication-syn-tem": {
     "_id": "publication-syn-tem",
     "short": "Spatiotemporal Dose Control",
     "title": "Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope",
@@ -47,7 +47,7 @@ const data = [
     "link": "https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/electrostatic-switching-for-spatiotemporal-dose-control-in-a-transmission-electron-microscope/C814A631FCD8F968290E892CA0D11A1D",
     "status": "Published"
   }
-];
+};
 
 
 export default data;

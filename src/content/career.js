@@ -3,12 +3,13 @@ import ResearchCareer from "./markdown/ResearchCareer.md";
 import IDESCareer from "./markdown/IDESCareer.md";
 
 
-const data = [
-  {
+const data = {
+    "career-internship": {
     "_id": "career-internship",
     "markdownPath": InternshipProject,
     "company": "Dedicated Computing",
     "brief": "A brief discussion of several projects I worked on during my internship.",
+    "long": "TEST",
     "skills": [
       "arduino",
       "microchip",
@@ -53,11 +54,12 @@ const data = [
     "projects": [],
     "publications": []
   },
-  {
+  "career-research": {
     "_id": "career-research",
     "markdownPath": ResearchCareer,
     "company": "University of Wisconsin - Madison, HCI Lab",
     "brief": "A brief discussion of my work during graduate school",
+    "long": "TEST",
     "skills": [
       "linux",
       "ros",
@@ -101,11 +103,12 @@ const data = [
       "publication-coframe"
     ]
   },
-  {
+  "career-ides": {
     "_id": "career-ides",
     "markdownPath": IDESCareer,
     "company": "Integrated Dynamic Electron Solutions",
     "brief": "A brief discussion of my work at IDES",
+    "long": "TEST",
     "skills": [
       "arduino",
       "microchip",
@@ -140,7 +143,7 @@ const data = [
       "publication-syn-tem"
     ]
   }
-];
+};
 
 
 export default data;

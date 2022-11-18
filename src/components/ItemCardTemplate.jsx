@@ -1,8 +1,48 @@
 import React, { useState, Fragment, useContext } from "react";
 import ThumbnailImage from "./ThumbnailImage";
-import { Row, Col, Card, Tooltip } from "antd";
+import { Row, Col, Card, Tooltip, Typography, Button } from "antd";
 import ItemModalTemplate from "./ItemModalTemplate";
 import { WidthContext } from "../contexts";
+
+
+const { Title, Text } = Typography;
+
+
+const ShortCardDescription = (props) => {
+    const { text } = props;
+    return (
+        <Text>{text}</Text>
+      );
+};
+
+
+const LongCardContent = (props) => {
+    const { text, publications } = props;
+
+    let pubList = [];
+    if (publications !== undefined && publications !== null) {
+        pubList= publications.map((pub, idx) => {
+            return (<div key={idx}><Button>{pub}</Button></div>);
+        });
+    }
+
+    let pubSect = undefined;
+    if (pubList.length > 0) {
+        pubSect = (
+            <Fragment>
+                <Title level={5}>Publications</Title>
+                {pubList}
+            </Fragment>
+        );
+    }
+
+    return (
+        <Fragment>
+            <Text>{text}</Text>
+            {pubSect}
+        </Fragment>
+      );
+};
 
 
 const SkillTray = (props) => {
@@ -11,12 +51,12 @@ const SkillTray = (props) => {
   return (
     <div style={{overflow: "hidden", backgroundColor: "#E8E8E8", borderRadius: "15px", marginTop: "10px"}}>
       <Tooltip title="Skills">
-        <Row justify="center" style={{paddingTop: "2px", paddingBottom: "1px"}}>
+        <Row justify="center" style={{padding: "2px 3px 1px 3px"}}>
           {skills.map((skill, idx) => (
             <Col
               key={idx}
             >
-              <div style={{paddingLeft: "2px", paddingRight: "2px"}}>{skill}</div>
+              <div style={{paddingLeft: "2px", paddingRight: "2px", fontSize: "18px"}}>{skill}</div>
             </Col>
           ))}
         </Row>
@@ -29,7 +69,7 @@ const SkillTray = (props) => {
 const ItemCardTemplate = (props) => {
 
   const [visible, setVisible] = useState(false);
-  const { id, style, title, icon, img, brief, long, skills, children } = props;
+  const { id, style, title, icon, img, brief, long, skills, children, publications } = props;
   const width = useContext(WidthContext);
 
   const skilltray = (skills !== undefined && skills !== null && skills.length > 0) ? (<SkillTray skills={skills} />) : null;
@@ -39,16 +79,23 @@ const ItemCardTemplate = (props) => {
     layout = (
       <Fragment>
         <Row>
-          <Col span={6} offset={2}>
+          <Col span={8} offset={1}>
             <ThumbnailImage img={img} />
-          </Col>
-          <Col span={16}>
             <div style={{fontSize: "14px"}}>
-              {long}
+              <ShortCardDescription text={brief}/>
+            </div>
+            {skilltray}
+          </Col>
+          <Col span={14} offset={1}>
+            <div style={{textAlign: "left", fontSize: "14px"}}>
+              <LongCardContent 
+                text={long}
+                publications={publications}
+              />
             </div>
           </Col>
         </Row>
-        {skilltray}
+        
       </Fragment>
     );
   } else {

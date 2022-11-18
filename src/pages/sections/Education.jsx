@@ -1,24 +1,21 @@
 import React from "react";
-import data from "../../content/education";
+import educationData from "../../content/education";
+import publicationData from "../../content/publications";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { Divider, Typography } from "antd";
+import { Divider } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { GraduateCap } from "../../components/CustomIcons";
 import { IconLookupFromName } from "../../components/CustomIcons";
-
-
-const { Title, Text } = Typography;
+import SectionTitle from "../../components/SectionTitle";
 
 
 const SectionEducation = () => {
-  const list = data.slice().reverse();
+  const list = Object.values(educationData).reverse();
 
   return (
     <div>
-      <Title>Education</Title>
-      <br/>
-      <br/>
+      <SectionTitle title="Education"/>
       
       {list.map((entry, idx) => (
         <ItemCardTemplate
@@ -31,8 +28,9 @@ const SectionEducation = () => {
           title={entry.title}
           icon={(<GraduateCap />)}
           img={entry.thumbnail}
-          brief={(<Text>{entry.school}</Text>)}
-          long={(<Text>Hello World</Text>)}
+          brief={entry.school}
+          long={entry.long}
+          publications={entry.publications.map((pub) => (publicationData[pub].short))}
           skills={entry.skills.map((skill) => (
             IconLookupFromName[skill]
           ))}
