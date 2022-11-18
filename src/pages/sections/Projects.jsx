@@ -1,19 +1,18 @@
 import React from "react";
-import data from "../../content/projects";
+import projectData from "../../content/projects";
+import publicationData from "../../content/publications";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { Divider, Typography } from "antd";
+import { Divider } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { GraduateCap } from "../../components/CustomIcons";
 import { ExperimentFilled, StarFilled } from "@ant-design/icons";
 import { IconLookupFromName } from "../../components/CustomIcons";
-
-
-const { Title, Text } = Typography;
+import SectionTitle from "../../components/SectionTitle";
 
 
 const SectionProjects = () => {
-  const list = data.slice().filter((project) => (project.notable));
+  const list = Object.values(projectData).filter((project) => (project.notable));
 
   const typeToIcon = (type) => {
     switch (type.toLowerCase()) {
@@ -30,9 +29,7 @@ const SectionProjects = () => {
 
   return (
     <div>
-      <Title>Notable Projects</Title>
-      <br/>
-      <br/>
+      <SectionTitle title="Notable Projects"/>
       
       {list.map((entry, idx) => (
         <ItemCardTemplate
@@ -45,8 +42,9 @@ const SectionProjects = () => {
           title={entry.title}
           icon={typeToIcon(entry.type)}
           img={entry.thumbnail}
-          brief={(<Text>{entry.brief}</Text>)}
-          long={(<Text>Hello World</Text>)}
+          brief={entry.brief}
+          long={entry.long}
+          publications={entry.publications.map((pub) => (publicationData[pub].short))}
           skills={entry.skills.map((skill) => (
             IconLookupFromName[skill]
           ))}

@@ -8,13 +8,15 @@ const { Title } = Typography;
 
 
 const SectionPublications = () => {
+    const list = Object.values(data);
+
   return (
     <div>
       <Title>Publications</Title>
       <br/>
       <br/>
 
-      {data.map((entry, idx) => (
+      {list.map((entry, idx) => (
         <PublicationCard
           key={idx}
           id={entry._id}

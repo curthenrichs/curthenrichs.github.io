@@ -1,24 +1,22 @@
 import React from "react";
-import data from "../../content/career";
+import careerData from "../../content/career";
+import publicationData from "../../content/publications";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { Divider, Typography } from "antd";
+import { Divider } from "antd";
 import MarkdownContent from "../../components/MarkdownContent";
 import ImageCarousel from "../../components/ImageCarousel";
 import { ToolFilled } from "@ant-design/icons";
 import { IconLookupFromName } from "../../components/CustomIcons";
+import SectionTitle from "../../components/SectionTitle";
 
-
-const { Title, Text } = Typography;
 
 
 const SectionCareer = () => {
-  const list = data.slice().reverse();
+  const list = Object.values(careerData).slice().reverse();
 
   return (
     <div>
-      <Title>Career</Title>
-      <br/>
-      <br/>
+      <SectionTitle title="Career"/>
       
       {list.map((entry, idx) => (
         <ItemCardTemplate
@@ -32,8 +30,9 @@ const SectionCareer = () => {
           title={entry.company}
           icon={(<ToolFilled />)}
           img={entry.thumbnail}
-          brief={(<Text>{entry.brief}</Text>)}
-          long={(<Text>Hello World</Text>)}
+          brief={entry.brief}
+          long={entry.long}
+          publications={entry.publications.map((pub) => (publicationData[pub].short))}
           skills={entry.skills.map((skill) => (
             IconLookupFromName[skill]
           ))}

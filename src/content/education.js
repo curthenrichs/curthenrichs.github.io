@@ -2,8 +2,8 @@ import UWM from "../content/markdown/UWM.md";
 import MSOE from "../content/markdown/MSOE.md";
 
 
-const data = [
-  {
+const data = {
+    "education-msoe": {
     "_id": "education-msoe",
     "markdownPath": MSOE,
     "title": "Bachelor of Science in Computer Engineering",
@@ -13,6 +13,7 @@ const data = [
     "start": "2014",
     "end": "2018",
     "images": [],
+    "long": "TEST",
     "projects": [
       "project-embedded"
     ],
@@ -30,8 +31,8 @@ const data = [
     ],
     "publications": []
   },
-  {
-    "_id": "education-uwm",
+  "education-uwmad": {
+    "_id": "education-uwmad",
     "markdownPath": UWM,
     "title": "Master of Science in Computer Science",
     "school": "University of Wisconsin - Madison",
@@ -40,6 +41,7 @@ const data = [
     "start": "2018",
     "end": "2021",
     "images": [],
+    "long": "TEST",
     "projects": [
       "project-hci",
       "project-vision"
@@ -54,7 +56,7 @@ const data = [
     ],
     "publications": []
   }
-];
+};
 
 
 export default data;
