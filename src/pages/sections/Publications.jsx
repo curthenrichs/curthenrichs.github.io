@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import PublicationCard from "../../components/PublicationCard";
 import data from "../../content/publications";
-import { Typography } from "antd";
-
-
-const { Title } = Typography;
+import SectionTitle from "../../components/SectionTitle";
+import { WidthContext } from "../../contexts";
 
 
 const SectionPublications = () => {
     const list = Object.values(data);
+    const width = useContext(WidthContext);
 
-  return (
-    <div>
-      <Title>Publications</Title>
-      <br/>
-      <br/>
+    const cardWidth = 1750;
+    const extraWidth = width - cardWidth;
+  
+    return (
+      <div style={{
+          paddingLeft: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
+          paddingRight: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
+      }}>
+        
+      <SectionTitle title="Publications"/>
 
       {list.map((entry, idx) => (
         <PublicationCard
