@@ -17,6 +17,7 @@ const data = {
     "projects": [
       "project-embedded"
     ],
+    "thumbnail": "/img/msoe-logo.jpg",
     "skills": [
       "arduino",
       "microchip",
@@ -42,6 +43,7 @@ const data = {
     "end": "2021",
     "images": [],
     "long": "TEST",
+    "thumbnail": "/img/uwmadison-crest.png",
     "projects": [
       "project-hci",
       "project-vision"
