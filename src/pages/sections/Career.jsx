@@ -18,8 +18,8 @@ const SectionCareer = () => {
 
   return (
     <div style={{
-        paddingLeft: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
-        paddingRight: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
+      paddingLeft: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
+      paddingRight: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
     }}>
       <SectionTitle title="Career"/>
       

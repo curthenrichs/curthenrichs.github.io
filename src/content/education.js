@@ -3,7 +3,7 @@ import MSOE from "../content/markdown/MSOE.md";
 
 
 const data = {
-    "education-msoe": {
+  "education-msoe": {
     "_id": "education-msoe",
     "markdownPath": MSOE,
     "title": "Bachelor of Science in Computer Engineering",

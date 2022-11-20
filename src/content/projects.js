@@ -8,7 +8,7 @@ import HCIProject from "./markdown/HCIProject.md";
 
 
 const data = {
-    "project-authr": {
+  "project-authr": {
     "title": "Authr",
     "brief": "Human-robot task development tool based on Therbligs.",
     "long": "TEST",

@@ -6,15 +6,15 @@ const { Title } = Typography;
 
 
 const SectionTitle = (props) => {
-    const { title } = props;
+  const { title } = props;
 
-    return (
-        <Fragment>
-            <Title level={2} underline={true}>{title}</Title>
-            <br/>
-            <br/>
-        </Fragment>
-    );
+  return (
+    <Fragment>
+      <Title level={2} underline={true}>{title}</Title>
+      <br/>
+      <br/>
+    </Fragment>
+  );
 };
 
 
