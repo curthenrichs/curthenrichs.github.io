@@ -22,7 +22,7 @@ const data = {
       "atlassian",
       "mongodb"
     ],
-    "thumbnail": "/img/teaser-internship.jpg",
+    "thumbnail": "/img/dc-logo.png",
     "web": "https://www.dedicatedcomputing.com/",
     "positions": [
       {
@@ -77,7 +77,7 @@ const data = {
       "matlab",
       "overleaf"
     ],
-    "thumbnail": null,
+    "thumbnail": "/img/uwmadison-crest.png",
     "web": "https://peopleandrobots.wisc.edu/",
     "positions": [
       {
@@ -117,7 +117,7 @@ const data = {
       "python",
       "git"
     ],
-    "thumbnail": null,
+    "thumbnail": "/img/ides-logo.png",
     "web": "https://www.ides-inc.com/",
     "positions": [
       {
