@@ -142,6 +142,18 @@ const data = [
     "percent": 30,
     "icon": "microchip",
     "hover": "NIOS, MIPS, ARM"
+  },
+  {
+    "name": "Katana MRP",
+    "percent": 40,
+    "icon": "gear",
+    "hover": "Manufacturing"
+  },
+  {
+    "name": "Labview",
+    "percent": 25,
+    "icon": "labview",
+    "hover": "Robotics, Coursework"
   }
 ];
 

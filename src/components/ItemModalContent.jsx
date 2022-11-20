@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Divider } from "antd";
-import MarkdownContent from "./MarkdownContent";
 import ImageCarousel from "./ImageCarousel";
+import MarkdownContent from "./MarkdownContent";
 
 
 const ItemModalContent = (props) => {

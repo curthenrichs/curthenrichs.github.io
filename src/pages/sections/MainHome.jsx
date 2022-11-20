@@ -7,7 +7,7 @@ import contactData from "../../content/contact";
 import educationData from "../../content/education";
 import careerData from "../../content/career";
 import { WidthContext } from "../../contexts";
-import { CaretRightOutlined, DownloadOutlined } from "@ant-design/icons";
+import { CaretRightOutlined, DownloadOutlined } from "../../components/IconManager";
 import { Row, Col, Typography, Button } from "antd";
 import ThumbnailImage from "../../components/ThumbnailImage";
 

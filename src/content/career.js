@@ -8,7 +8,7 @@ const data = {
     "_id": "career-internship",
     "markdownPath": InternshipProject,
     "company": "Dedicated Computing",
-    "brief": "A brief discussion of several projects I worked on during my internship.",
+    "brief": "A brief discussion of several projects I worked on during my internship",
     "long": "TEST",
     "skills": [
       "arduino",
@@ -57,8 +57,8 @@ const data = {
   "career-research": {
     "_id": "career-research",
     "markdownPath": ResearchCareer,
-    "company": "University of Wisconsin - Madison, HCI Lab",
-    "brief": "A brief discussion of my work during graduate school",
+    "company": "University of Wisconsin - Madison",
+    "brief": "Overview of research conducted at the People and Robots Lab",
     "long": "TEST",
     "skills": [
       "linux",
@@ -107,7 +107,7 @@ const data = {
     "_id": "career-ides",
     "markdownPath": IDESCareer,
     "company": "Integrated Dynamic Electron Solutions",
-    "brief": "A brief discussion of my work at IDES",
+    "brief": "High-level overview of my current engineering work at IDES",
     "long": "TEST",
     "skills": [
       "arduino",
@@ -115,7 +115,8 @@ const data = {
       "linux",
       "c",
       "python",
-      "git"
+      "git",
+      "atlassian"
     ],
     "thumbnail": "/img/ides-logo.png",
     "web": "https://www.ides-inc.com/",

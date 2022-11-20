@@ -1,5 +1,5 @@
 import Icon from "@ant-design/icons";
-import { WarningOutlined, ToolFilled, ExperimentFilled, StarFilled } from "@ant-design/icons";
+
 import { ReactComponent as AngularIcon } from "./svg/angular.svg";
 import { ReactComponent as ArduinoIcon } from "./svg/arduino.svg";
 import { ReactComponent as CPPIcon } from "./svg/cplusplus.svg";
@@ -27,6 +27,25 @@ import { ReactComponent as MatlabIcon } from "./svg/matlab.svg";
 import { ReactComponent as AtlassianIcon } from "./svg/atlassian.svg";
 import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
 import { ReactComponent as CIcon } from "./svg/c.svg";
+import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
+
+import { 
+  WarningOutlined, 
+  ToolFilled, 
+  ExperimentFilled, 
+  StarFilled,
+  GithubFilled, 
+  MailOutlined, 
+  LinkedinFilled, 
+  TwitterOutlined,
+  CaretRightOutlined,
+  QuestionOutlined,
+  DownCircleOutlined,
+  UpCircleOutlined,
+  DownloadOutlined,
+  EnvironmentFilled,
+  SettingOutlined
+} from "@ant-design/icons";
 
 
 function Angular() {
@@ -137,6 +156,14 @@ function C() {
   return (<Icon component={CIcon} />);
 }
 
+function Gear() {
+    return (<SettingOutlined />);
+}
+
+function Labview() {
+    return (<Icon component={LabviewIcon} />);
+}
+
 
 const lookup = {
   "angular": <Angular />,
@@ -170,6 +197,19 @@ const lookup = {
   "experiment": <ExperimentFilled />,
   "star": <StarFilled />,
   "tool": <ToolFilled />,
+  "github": <GithubFilled />,
+  "mail": <MailOutlined />,
+  "linkedin": <LinkedinFilled />,
+  "twitter": <TwitterOutlined />,
+  "caret": <CaretRightOutlined />,
+  "caretright": <CaretRightOutlined />,
+  "question": <QuestionOutlined />,
+  "downcircle": <DownCircleOutlined />,
+  "upcircle": <UpCircleOutlined />,
+  "download": <DownloadOutlined />,
+  "location": <EnvironmentFilled />,
+  "gear": <Gear />,
+  "labview": <Labview />
 };
 
 
@@ -188,6 +228,10 @@ const IconLookupFromName = new Proxy(lookup, handler);
 
 
 export {
+  // Lookup Handler
+  IconLookupFromName,
+
+  // Custom Icons
   Angular,
   Arduino,
   CPlusPlus,
@@ -215,9 +259,23 @@ export {
   Atlassian,
   Autodesk,
   C,
-  WarningOutlined,
-  ExperimentFilled,
+  Gear,
+  Labview,
+
+  // Antd Icons
+  WarningOutlined, 
+  ToolFilled, 
+  ExperimentFilled, 
   StarFilled,
-  ToolFilled,
-  IconLookupFromName
+  GithubFilled, 
+  MailOutlined, 
+  LinkedinFilled, 
+  TwitterOutlined,
+  CaretRightOutlined,
+  QuestionOutlined,
+  DownCircleOutlined,
+  UpCircleOutlined,
+  DownloadOutlined,
+  EnvironmentFilled,
+  SettingOutlined
 };

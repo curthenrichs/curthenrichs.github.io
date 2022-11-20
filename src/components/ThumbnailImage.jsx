@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultImg from "./DefaultImg";
 import { Image } from "antd";
+import DefaultImg from "./DefaultImg";
 
 
 const ThumbnailImage = (props) => {

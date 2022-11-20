@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { WidthContext } from "../contexts";
-import { QuestionOutlined } from "@ant-design/icons";
 import { Button, Tooltip, Modal } from "antd";
+import { QuestionOutlined } from "./IconManager";
 
 
 const InfoButton = (props) => {
