@@ -1,8 +1,9 @@
 import React, { useState, Fragment, useContext } from "react";
 import ThumbnailImage from "./ThumbnailImage";
-import { Row, Col, Card, Tooltip, Typography, Button } from "antd";
+import { Row, Col, Card, Tooltip, Typography } from "antd";
 import ItemModalTemplate from "./ItemModalTemplate";
 import { WidthContext } from "../contexts";
+import { CaretRightOutlined } from "@ant-design/icons";
 
 
 const { Title, Text } = Typography;
@@ -22,7 +23,12 @@ const LongCardContent = (props) => {
     let pubList = [];
     if (publications !== undefined && publications !== null) {
         pubList= publications.map((pub, idx) => {
-            return (<div key={idx}><Button>{pub}</Button></div>);
+            return (
+                <div key={idx} style={{ paddingBottom: "5px"}}>
+                    <CaretRightOutlined /> <Text>{pub}</Text>
+                    <br/>
+                </div>
+            );
         });
     }
 
@@ -31,14 +37,22 @@ const LongCardContent = (props) => {
         pubSect = (
             <Fragment>
                 <Title level={5}>Publications</Title>
-                {pubList}
+                <div style={{padding: "0 20px"}}>
+                    {pubList}
+                </div>
             </Fragment>
         );
     }
 
-    return (
+    let textSect = (
         <Fragment>
             <Text>{text}</Text>
+        </Fragment>
+    );
+
+    return (
+        <Fragment>
+            {textSect}
             {pubSect}
         </Fragment>
       );

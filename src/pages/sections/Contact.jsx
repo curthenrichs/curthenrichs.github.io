@@ -9,13 +9,13 @@ const { Title, Text, Link } = Typography;
 
 const SectionContact = () => {
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
 
-      <Title>Contact</Title>
+      <Title  level={3}>Contact</Title>
 
       <br/>
 
-      <div style={{textAlign: "center"}}>
+      <div>
         <div style={{fontSize: "20px", display: "inline-block", textAlign: "left"}} className="contact-details">
           <MailOutlined /> <Link href={data.email.link}>{data.email.text}</Link>
           <br/>

@@ -10,7 +10,7 @@ const SectionTitle = (props) => {
 
     return (
         <Fragment>
-            <Title>{title}</Title>
+            <Title level={2} underline={true}>{title}</Title>
             <br/>
             <br/>
         </Fragment>
