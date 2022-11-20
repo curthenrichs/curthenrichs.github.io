@@ -1,5 +1,5 @@
 const data = {
-    "publication-interdependence": {
+  "publication-interdependence": {
     "_id": "publication-interdependence",
     "short": "Task Interdependence",
     "venue": "RO-MAN",

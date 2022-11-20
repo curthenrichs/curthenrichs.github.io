@@ -4,7 +4,7 @@ import IDESCareer from "./markdown/IDESCareer.md";
 
 
 const data = {
-    "career-internship": {
+  "career-internship": {
     "_id": "career-internship",
     "markdownPath": InternshipProject,
     "company": "Dedicated Computing",

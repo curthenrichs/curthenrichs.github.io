@@ -10,52 +10,52 @@ const { Title, Text } = Typography;
 
 
 const ShortCardDescription = (props) => {
-    const { text } = props;
-    return (
-        <Text>{text}</Text>
-      );
+  const { text } = props;
+  return (
+    <Text>{text}</Text>
+  );
 };
 
 
 const LongCardContent = (props) => {
-    const { text, publications } = props;
+  const { text, publications } = props;
 
-    let pubList = [];
-    if (publications !== undefined && publications !== null) {
-        pubList= publications.map((pub, idx) => {
-            return (
-                <div key={idx} style={{ paddingBottom: "5px"}}>
-                    <CaretRightOutlined /> <Text>{pub}</Text>
-                    <br/>
-                </div>
-            );
-        });
-    }
-
-    let pubSect = undefined;
-    if (pubList.length > 0) {
-        pubSect = (
-            <Fragment>
-                <Title level={5}>Publications</Title>
-                <div style={{padding: "0 20px"}}>
-                    {pubList}
-                </div>
-            </Fragment>
-        );
-    }
-
-    let textSect = (
-        <Fragment>
-            <Text>{text}</Text>
-        </Fragment>
-    );
-
-    return (
-        <Fragment>
-            {textSect}
-            {pubSect}
-        </Fragment>
+  let pubList = [];
+  if (publications !== undefined && publications !== null) {
+    pubList= publications.map((pub, idx) => {
+      return (
+        <div key={idx} style={{ paddingBottom: "5px"}}>
+          <CaretRightOutlined /> <Text>{pub}</Text>
+          <br/>
+        </div>
       );
+    });
+  }
+
+  let pubSect = undefined;
+  if (pubList.length > 0) {
+    pubSect = (
+      <Fragment>
+        <Title level={5}>Publications</Title>
+        <div style={{padding: "0 20px"}}>
+          {pubList}
+        </div>
+      </Fragment>
+    );
+  }
+
+  let textSect = (
+    <Fragment>
+      <Text>{text}</Text>
+    </Fragment>
+  );
+
+  return (
+    <Fragment>
+      {textSect}
+      {pubSect}
+    </Fragment>
+  );
 };
 
 
