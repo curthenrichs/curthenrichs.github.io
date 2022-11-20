@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Element as ScrollElement, scroller} from "react-scroll";
+import { Layout } from "antd";
 import NavHeader from "./NavHeader";
 import Copyright from "./Copyright";
 import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
-import { Layout } from "antd";
+import { Element as ScrollElement, scroller} from "react-scroll";
+
 
 
 const { Header, Footer, Content } = Layout;

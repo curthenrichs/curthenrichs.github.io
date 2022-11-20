@@ -1,6 +1,12 @@
 import React from "react";
-import { GithubFilled, MailOutlined, LinkedinFilled, TwitterOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
+
+import { 
+    GithubFilled, 
+    MailOutlined, 
+    LinkedinFilled, 
+    TwitterOutlined 
+} from "./IconManager";
 
 
 const { Link } = Typography;

@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import careerData from "../../content/career";
 import publicationData from "../../content/publications";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { ToolFilled } from "@ant-design/icons";
-import { IconLookupFromName } from "../../components/CustomIcons";
+import { ToolFilled, IconLookupFromName } from "../../components/IconManager";
 import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import ItemModalContent from "../../components/ItemModalContent";
@@ -38,6 +37,7 @@ const SectionCareer = () => {
           brief={entry.brief}
           long={entry.long}
           publications={entry.publications.map((pub) => (`${publicationData[pub].short} (${publicationData[pub].venue})`))}
+          positions={entry.positions.map((pos) => (`${pos.title}`))}
           skills={entry.skills.map((skill) => (
             IconLookupFromName[skill]
           ))}

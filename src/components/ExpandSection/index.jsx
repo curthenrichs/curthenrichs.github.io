@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { DownCircleOutlined, UpCircleOutlined } from "@ant-design/icons";
 import { Button, Tooltip } from "antd";
 import "./index.css";
+
+import { 
+    DownCircleOutlined, 
+    UpCircleOutlined 
+} from "../IconManager";
 
 
 const ExpandButton = (props) => {

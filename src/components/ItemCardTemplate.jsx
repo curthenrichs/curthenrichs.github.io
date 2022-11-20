@@ -1,9 +1,9 @@
 import React, { useState, Fragment, useContext } from "react";
-import ThumbnailImage from "./ThumbnailImage";
-import { Row, Col, Card, Tooltip, Typography } from "antd";
-import ItemModalTemplate from "./ItemModalTemplate";
 import { WidthContext } from "../contexts";
-import { CaretRightOutlined } from "@ant-design/icons";
+import ThumbnailImage from "./ThumbnailImage";
+import ItemModalTemplate from "./ItemModalTemplate";
+import { CaretRightOutlined } from "./IconManager";
+import { Row, Col, Card, Tooltip, Typography } from "antd";
 
 
 const { Title, Text } = Typography;
@@ -18,11 +18,13 @@ const ShortCardDescription = (props) => {
 
 
 const LongCardContent = (props) => {
-  const { text, publications } = props;
+  const { text, publications, positions } = props;
+
+  console.log(positions);
 
   let pubList = [];
   if (publications !== undefined && publications !== null) {
-    pubList= publications.map((pub, idx) => {
+    pubList = publications.map((pub, idx) => {
       return (
         <div key={idx} style={{ paddingBottom: "5px"}}>
           <CaretRightOutlined /> <Text>{pub}</Text>
@@ -32,13 +34,37 @@ const LongCardContent = (props) => {
     });
   }
 
-  let pubSect = undefined;
+  let pubSect = null;
   if (pubList.length > 0) {
     pubSect = (
       <Fragment>
-        <Title level={5}>Publications</Title>
+        <Title level={5} style={{paddingTop: "5px"}}>Publications</Title>
         <div style={{padding: "0 20px"}}>
           {pubList}
+        </div>
+      </Fragment>
+    );
+  }
+
+  let positionList = [];
+  if (positions !== undefined && positions !== null) {
+    positionList = positions.map((pos, idx) => {
+      return (
+        <div key={idx} style={{ paddingBottom: "5px"}}>
+          <CaretRightOutlined /> <Text>{pos}</Text>
+          <br/>
+        </div>
+      );
+    });
+  }
+
+  let posSect = null;
+  if (positionList.length > 0) {
+    posSect = (
+      <Fragment>
+        <Title level={5} style={{paddingTop: "5px"}}>Positions</Title>
+        <div style={{padding: "0 20px"}}>
+          {positionList}
         </div>
       </Fragment>
     );
@@ -53,6 +79,7 @@ const LongCardContent = (props) => {
   return (
     <Fragment>
       {textSect}
+      {posSect}
       {pubSect}
     </Fragment>
   );
@@ -83,7 +110,7 @@ const SkillTray = (props) => {
 const ItemCardTemplate = (props) => {
 
   const [visible, setVisible] = useState(false);
-  const { id, style, title, icon, img, brief, long, skills, children, publications } = props;
+  const { id, style, title, icon, img, brief, long, skills, children, publications, positions } = props;
   const width = useContext(WidthContext);
 
   const skilltray = (skills !== undefined && skills !== null && skills.length > 0) ? (<SkillTray skills={skills} />) : null;
@@ -105,6 +132,7 @@ const ItemCardTemplate = (props) => {
               <LongCardContent 
                 text={long}
                 publications={publications}
+                positions={positions}
               />
             </div>
           </Col>

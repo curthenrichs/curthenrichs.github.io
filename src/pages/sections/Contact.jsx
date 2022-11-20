@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../../content/contact";
-import { TwitterOutlined, MailOutlined, EnvironmentFilled, GithubFilled, LinkedinFilled } from "@ant-design/icons";
+import { TwitterOutlined, MailOutlined, EnvironmentFilled, GithubFilled, LinkedinFilled } from "../../components/IconManager";
 import { Typography } from "antd";
 
 

@@ -10,7 +10,7 @@ const data = {
   },
   "publication-authr": {
     "_id": "publication-authr",
-    "short": "Authr UI",
+    "short": "Authr User Interface",
     "venue": "UIST",
     "title": "Authr: A Task Authoring Environment for Human-Robot Teams",
     "reference": "Schoen, A., Henrichs, C., Strohkirch, M., & Mutlu, B. (2020, October). Authr: A Task Authoring Environment for Human-Robot Teams. In Proceedings of the 33rd Annual ACM Symposium on User Interface Software and Technology (pp. 1194-1208).",
@@ -37,7 +37,7 @@ const data = {
   },
   "publication-coframe": {
     "_id": "publication-coframe",
-    "short": "CoFrame UI",
+    "short": "CoFrame User Interface",
     "venue": "HRI",
     "title": "CoFrame: A System for Training Novice Cobot Programers",
     "reference": "Schoen, A., White, N. T., Henrichs, C., Siebert-Evenstone, A., Shaffer, D. W., & Mutlu, B. (2022, March). CoFrame: A System for Training Novice Cobot Programmers. In HRI (pp. 185-194).",
