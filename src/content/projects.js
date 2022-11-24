@@ -1,21 +1,29 @@
-import AuthrProject from "./markdown/AuthrProject.md";
-import ITERProject from "./markdown/ITERProject.md";
-import EvDProject from "./markdown/EvDProject.md";
-import HobbyProject from "./markdown/HobbyProject.md";
-import ComputerVisionProject from "./markdown/VisionMLProject.md";
-import EmbeddedProject from "./markdown/EmbeddedProject.md";
-import HCIProject from "./markdown/HCIProject.md";
+import AuthrModal from "./markdown/modal/AuthrProject.md";
+import ITERModal from "./markdown/modal/ITERProject.md";
+import CoFrameModal from "./markdown/modal/EVDProject.md";
+import HobbyModal from "./markdown/modal/HobbyProject.md";
+import ComputerVisionModal from "./markdown/modal/VisionMLProject.md";
+import EmbeddedModal from "./markdown/modal/EmbeddedProject.md";
+import HCIModal from "./markdown/modal/HCIProject.md";
+
+import AuthrBrief from "./markdown/brief/AuthrProject.md";
+import ITERBrief from "./markdown/brief/ITERProject.md";
+import CoFrameBrief from "./markdown/brief/EVDProject.md";
+import HobbyBrief from "./markdown/brief/HobbyProject.md";
+import ComputerVisionBrief from "./markdown/brief/VisionMLProject.md";
+import EmbeddedBrief from "./markdown/brief/EmbeddedProject.md";
+import HCIBrief from "./markdown/brief/HCIProject.md";
 
 
 const data = {
   "project-authr": {
     "title": "Authr",
-    "brief": "Human-robot task development tool based on Therbligs.",
-    "long": "TEST",
+    "brief": "Human-robot task development tool based on Therbligs",
+    "descriptionMarkdownPath": AuthrBrief,
     "thumbnail": "/img/teaser-authr.png",
     "type": "Research",
     "_id": "project-authr",
-    "markdownPath": AuthrProject,
+    "modalMarkdownPath": AuthrModal,
     "notable": true,
     "skills": [],
     "images": [
@@ -41,12 +49,12 @@ const data = {
   },
   "project-coframe": {
     "title": "CoFrame",
-    "brief": "Training and authoring tool for operators to modify their cobot's programs.",
-    "long": "TEST",
+    "brief": "Cobot operator training environment",
+    "descriptionMarkdownPath": CoFrameBrief,
     "thumbnail": "/img/teaser-evd.jpg",
     "type": "Research",
     "_id": "project-coframe",
-    "markdownPath": EvDProject,
+    "modalMarkdownPath": CoFrameModal,
     "notable": true,
     "skills": [],
     "images": [
@@ -62,12 +70,12 @@ const data = {
   },
   "project-iter": {
     "title": "Task Interdependence and pRAD",
-    "brief": "Experiments to better understand how operators interact with cobots.",
-    "long": "TEST",
+    "brief": "Experiments to better understand how operators interact with cobots",
+    "descriptionMarkdownPath": ITERBrief,
     "thumbnail": "/img/teaser-iter.png",
     "type": "Research",
     "_id": "project-iter",
-    "markdownPath": ITERProject,
+    "modalMarkdownPath": ITERModal,
     "notable": true,
     "skills": [],
     "images": [
@@ -94,12 +102,12 @@ const data = {
   },
   "project-hobby": {
     "title": "Hobby Projects",
-    "brief": "Personal robot, embedded systems, and home automation projects.",
-    "long": "TEST",
+    "brief": "Hobby robotics and home automation projects",
+    "descriptionMarkdownPath": HobbyBrief,
     "thumbnail": "/img/teaser-hobby.jpg",
     "type": "Personal",
     "_id": "project-hobby",
-    "markdownPath": HobbyProject,
+    "modalMarkdownPath": HobbyModal,
     "notable": true,
     "skills": [],
     "images": [
@@ -124,11 +132,11 @@ const data = {
   "project-vision": {
     "title": "Computer Vision and ML Projects",
     "brief": "Various computer vision and machine learning projects from coursework.",
-    "long": "TEST",
+    "descriptionMarkdownPath": ComputerVisionBrief,
     "thumbnail": "/img/teaser-computer-vision.png",
     "type": "Coursework",
     "_id": "project-vision",
-    "markdownPath": ComputerVisionProject,
+    "modalMarkdownPath": ComputerVisionModal,
     "notable": false,
     "skills": [],
     "images": [
@@ -153,11 +161,11 @@ const data = {
   "project-embedded": {
     "title": "Embedded System Projects",
     "brief": "Various embedded systems projects from my undergrad coursework.",
-    "long": "TEST",
+    "descriptionMarkdownPath": EmbeddedBrief,
     "thumbnail": "/img/teaser-embedded.jpg",
     "type": "Coursework",
     "_id": "project-embedded",
-    "markdownPath": EmbeddedProject,
+    "modalMarkdownPath": EmbeddedModal,
     "notable": false,
     "skills": [],
     "images": [
@@ -187,11 +195,11 @@ const data = {
   "project-hci": {
     "title": "HCI and Data Visualization",
     "brief": "A few HCI and data visualization course projects.",
-    "long": "TEST",
+    "descriptionMarkdownPath": HCIBrief,
     "thumbnail": "/img/teaser-hci.jpg",
     "type": "Coursework",
     "_id": "project-hci",
-    "markdownPath": HCIProject,
+    "modalMarkdownPath": HCIModal,
     "notable": false,
     "skills": [],
     "images": [

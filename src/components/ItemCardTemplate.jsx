@@ -4,6 +4,7 @@ import ThumbnailImage from "./ThumbnailImage";
 import ItemModalTemplate from "./ItemModalTemplate";
 import { CaretRightOutlined } from "./IconManager";
 import { Row, Col, Card, Tooltip, Typography } from "antd";
+import MarkdownContent from "./MarkdownContent";
 
 
 const { Title, Text } = Typography;
@@ -18,7 +19,7 @@ const ShortCardDescription = (props) => {
 
 
 const LongCardContent = (props) => {
-  const { text, publications, positions } = props;
+  const { markdownPath, publications, positions } = props;
 
   console.log(positions);
 
@@ -70,12 +71,16 @@ const LongCardContent = (props) => {
     );
   }
 
-  let textSect = (
-    <Fragment>
-      <Text>{text}</Text>
-    </Fragment>
-  );
-
+  let textSect = null;
+  
+  if (markdownPath !== undefined && markdownPath !== null) {
+    textSect = (
+      <MarkdownContent
+        markdownPath={markdownPath}
+      />
+    );
+  }
+  
   return (
     <Fragment>
       {textSect}
@@ -110,7 +115,7 @@ const SkillTray = (props) => {
 const ItemCardTemplate = (props) => {
 
   const [visible, setVisible] = useState(false);
-  const { id, style, title, icon, img, brief, long, skills, children, publications, positions } = props;
+  const { id, style, title, icon, img, brief, descriptionMarkdownPath, skills, children, publications, positions } = props;
   const width = useContext(WidthContext);
 
   const skilltray = (skills !== undefined && skills !== null && skills.length > 0) ? (<SkillTray skills={skills} />) : null;
@@ -130,7 +135,7 @@ const ItemCardTemplate = (props) => {
           <Col span={14} offset={1}>
             <div style={{textAlign: "left", fontSize: "14px"}}>
               <LongCardContent 
-                text={long}
+                markdownPath={descriptionMarkdownPath}
                 publications={publications}
                 positions={positions}
               />

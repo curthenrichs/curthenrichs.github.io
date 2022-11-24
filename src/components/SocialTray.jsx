@@ -2,10 +2,10 @@ import React from "react";
 import { Typography } from "antd";
 
 import { 
-    GithubFilled, 
-    MailOutlined, 
-    LinkedinFilled, 
-    TwitterOutlined 
+  GithubFilled, 
+  MailOutlined, 
+  LinkedinFilled, 
+  TwitterOutlined 
 } from "./IconManager";
 
 

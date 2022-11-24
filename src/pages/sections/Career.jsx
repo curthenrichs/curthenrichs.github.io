@@ -35,7 +35,7 @@ const SectionCareer = () => {
           icon={(<ToolFilled />)}
           img={entry.thumbnail}
           brief={entry.brief}
-          long={entry.long}
+          descriptionMarkdownPath={entry.descriptionMarkdownPath}
           publications={entry.publications.map((pub) => (`${publicationData[pub].short} (${publicationData[pub].venue})`))}
           positions={entry.positions.map((pos) => (`${pos.title}`))}
           skills={entry.skills.map((skill) => (
@@ -44,7 +44,7 @@ const SectionCareer = () => {
         >
           <ItemModalContent 
             images={entry.images}
-            markdownPath={entry.markdownPath}
+            markdownPath={entry.modalMarkdownPath}
           />
         </ItemCardTemplate>
       ))}
