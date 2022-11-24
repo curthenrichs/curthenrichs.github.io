@@ -1,15 +1,17 @@
-import InternshipProject from "./markdown/InternshipCareer.md";
-import ResearchCareer from "./markdown/ResearchCareer.md";
-import IDESCareer from "./markdown/IDESCareer.md";
-
+import InternshipModal from "./markdown/modal/InternshipCareer.md";
+import ResearchModal from "./markdown/modal/ResearchCareer.md";
+import IDESModal from "./markdown/modal/IDESCareer.md";
+import InternshipBrief from "./markdown/brief/InternshipCareer.md";
+import ResearchBrief from "./markdown/brief/ResearchCareer.md";
+import IDESBrief from "./markdown/brief/IDESCareer.md";
 
 const data = {
   "career-internship": {
     "_id": "career-internship",
-    "markdownPath": InternshipProject,
+    "modalMarkdownPath": InternshipModal,
     "company": "Dedicated Computing",
     "brief": "A brief discussion of several projects I worked on during my internship",
-    "long": "TEST",
+    "descriptionMarkdownPath": InternshipBrief,
     "skills": [
       "arduino",
       "microchip",
@@ -56,10 +58,10 @@ const data = {
   },
   "career-research": {
     "_id": "career-research",
-    "markdownPath": ResearchCareer,
+    "modalMarkdownPath": ResearchModal,
     "company": "University of Wisconsin - Madison",
     "brief": "Overview of research conducted at the People and Robots Lab",
-    "long": "TEST",
+    "descriptionMarkdownPath": ResearchBrief,
     "skills": [
       "linux",
       "ros",
@@ -105,10 +107,10 @@ const data = {
   },
   "career-ides": {
     "_id": "career-ides",
-    "markdownPath": IDESCareer,
+    "modalMarkdownPath": IDESModal,
     "company": "Integrated Dynamic Electron Solutions",
     "brief": "High-level overview of my current engineering work at IDES",
-    "long": "TEST",
+    "descriptionMarkdownPath": IDESBrief,
     "skills": [
       "arduino",
       "microchip",
@@ -116,7 +118,8 @@ const data = {
       "c",
       "python",
       "git",
-      "atlassian"
+      "atlassian",
+      "gear"
     ],
     "thumbnail": "/img/ides-logo.png",
     "web": "https://www.ides-inc.com/",

@@ -3,8 +3,8 @@ import { Button, Tooltip } from "antd";
 import "./index.css";
 
 import { 
-    DownCircleOutlined, 
-    UpCircleOutlined 
+  DownCircleOutlined, 
+  UpCircleOutlined 
 } from "../IconManager";
 
 

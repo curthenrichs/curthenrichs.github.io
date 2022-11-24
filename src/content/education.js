@@ -1,11 +1,13 @@
-import UWM from "../content/markdown/UWM.md";
-import MSOE from "../content/markdown/MSOE.md";
+import UWMModal from "./markdown/modal/UWM.md";
+import MSOEModal from "./markdown/modal/MSOE.md";
+import UWMBrief from "./markdown/brief/UWM.md";
+import MSOEBrief from "./markdown/brief/MSOE.md";
 
 
 const data = {
   "education-msoe": {
     "_id": "education-msoe",
-    "markdownPath": MSOE,
+    "modalMarkdownPath": MSOEModal,
     "title": "Bachelor of Science in Computer Engineering",
     "school": "Milwaukee School of Engineering",
     "link": "https://www.msoe.edu/academics/undergraduate-degrees/engineering/computer-engineering/",
@@ -13,7 +15,7 @@ const data = {
     "start": "2014",
     "end": "2018",
     "images": [],
-    "long": "TEST",
+    "descriptionMarkdownPath": MSOEBrief,
     "projects": [
       "project-embedded"
     ],
@@ -34,7 +36,7 @@ const data = {
   },
   "education-uwmad": {
     "_id": "education-uwmad",
-    "markdownPath": UWM,
+    "modalMarkdownPath": UWMModal,
     "title": "Master of Science in Computer Science",
     "school": "University of Wisconsin - Madison",
     "link": "https://www.cs.wisc.edu/",
@@ -42,7 +44,7 @@ const data = {
     "start": "2018",
     "end": "2021",
     "images": [],
-    "long": "TEST",
+    "descriptionMarkdownPath": UWMBrief,
     "thumbnail": "/img/uwmadison-crest.png",
     "projects": [
       "project-hci",

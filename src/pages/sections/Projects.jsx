@@ -47,7 +47,7 @@ const SectionProjects = () => {
           icon={typeToIcon(entry.type)}
           img={entry.thumbnail}
           brief={entry.brief}
-          long={entry.long}
+          descriptionMarkdownPath={entry.descriptionMarkdownPath}
           publications={entry.publications.map((pub) => (`${publicationData[pub].short} (${publicationData[pub].venue})`))}
           skills={entry.skills.map((skill) => (
             IconLookupFromName[skill]
@@ -55,7 +55,7 @@ const SectionProjects = () => {
         >
           <ItemModalContent 
             images={entry.images}
-            markdownPath={entry.markdownPath}
+            markdownPath={entry.modalMarkdownPath}
           />
         </ItemCardTemplate>
       ))}

@@ -34,7 +34,7 @@ const SectionEducation = () => {
           icon={(<GraduateCap />)}
           img={entry.thumbnail}
           brief={entry.school}
-          long={entry.long}
+          descriptionMarkdownPath={entry.descriptionMarkdownPath}
           publications={entry.publications.map((pub) => (`${publicationData[pub].short} (${publicationData[pub].venue})`))}
           skills={entry.skills.map((skill) => (
             IconLookupFromName[skill]
@@ -42,7 +42,7 @@ const SectionEducation = () => {
         >
           <ItemModalContent 
             images={entry.images}
-            markdownPath={entry.markdownPath}
+            markdownPath={entry.modalMarkdownPath}
           />
         </ItemCardTemplate>
       ))}

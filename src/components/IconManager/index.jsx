@@ -157,11 +157,11 @@ function C() {
 }
 
 function Gear() {
-    return (<SettingOutlined />);
+  return (<SettingOutlined />);
 }
 
 function Labview() {
-    return (<Icon component={LabviewIcon} />);
+  return (<Icon component={LabviewIcon} />);
 }
 
 
