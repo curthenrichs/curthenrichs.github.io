@@ -2,25 +2,19 @@ import AuthrModal from "./markdown/modal/AuthrProject.md";
 import ITERModal from "./markdown/modal/ITERProject.md";
 import CoFrameModal from "./markdown/modal/EVDProject.md";
 import HobbyModal from "./markdown/modal/HobbyProject.md";
-import ComputerVisionModal from "./markdown/modal/VisionMLProject.md";
-import EmbeddedModal from "./markdown/modal/EmbeddedProject.md";
-import HCIModal from "./markdown/modal/HCIProject.md";
 
 import AuthrBrief from "./markdown/brief/AuthrProject.md";
 import ITERBrief from "./markdown/brief/ITERProject.md";
 import CoFrameBrief from "./markdown/brief/EVDProject.md";
 import HobbyBrief from "./markdown/brief/HobbyProject.md";
-import ComputerVisionBrief from "./markdown/brief/VisionMLProject.md";
-import EmbeddedBrief from "./markdown/brief/EmbeddedProject.md";
-import HCIBrief from "./markdown/brief/HCIProject.md";
 
 
 const data = {
   "project-authr": {
     "title": "Authr",
     "brief": "Human-robot task development tool based on Therbligs",
-    "descriptionMarkdownPath": AuthrBrief,
-    "thumbnail": "/img/teaser-authr.png",
+    "descriptionMarkdownPath":  AuthrBrief,
+    "thumbnail": "/static/img/thumbnail/project-authr.png",
     "type": "Research",
     "_id": "project-authr",
     "modalMarkdownPath": AuthrModal,
@@ -28,17 +22,17 @@ const data = {
     "skills": [],
     "images": [
       {
-        "img": "/img/authr-setup.png",
+        "img": "/static/img/projects/authr/authr-setup.png",
         "alt": "",
         "caption": "Authr setup view allows user to define Agents, Things, and Destinations."
       },
       {
-        "img": "/img/authr-task.png",
+        "img": "/static/img/projects/authr/authr-task.png",
         "alt": "",
         "caption": "Authr task view allows user to drag-and-drop Therbligs into tasks."
       },
       {
-        "img": "/img/authr-sim.png",
+        "img": "/static/img/projects/authr/authr-sim.png",
         "alt": "",
         "caption": "Authr simulation view allows user to inspect the program constructed."
       }
@@ -51,7 +45,7 @@ const data = {
     "title": "CoFrame",
     "brief": "Cobot operator training environment",
     "descriptionMarkdownPath": CoFrameBrief,
-    "thumbnail": "/img/teaser-evd.jpg",
+    "thumbnail": "/static/img/thumbnail/project-coframe.png",
     "type": "Research",
     "_id": "project-coframe",
     "modalMarkdownPath": CoFrameModal,
@@ -59,7 +53,7 @@ const data = {
     "skills": [],
     "images": [
       {
-        "img": "/img/evd-authoring-ui.jpg",
+        "img": "/static/img/projects/coframe/evd-authoring-ui.jpg",
         "alt": "",
         "caption": "CoFrame's authoring interface (still in development)."
       }
@@ -72,7 +66,7 @@ const data = {
     "title": "Task Interdependence and pRAD",
     "brief": "Experiments to better understand how operators interact with cobots",
     "descriptionMarkdownPath": ITERBrief,
-    "thumbnail": "/img/teaser-iter.png",
+    "thumbnail": "/static/img/thumbnail/project-iter.png",
     "type": "Research",
     "_id": "project-iter",
     "modalMarkdownPath": ITERModal,
@@ -80,19 +74,24 @@ const data = {
     "skills": [],
     "images": [
       {
-        "img": "/img/iter-seq-task.png",
+        "img": "/static/img/projects/iter/iter-seq-task.png",
         "alt": "",
         "caption": "Participant constructs wooden block structure with the robot."
       },
       {
-        "img": "/img/iter-displays.png",
+        "img": "/static/img/projects/iter/iter-displays.png",
         "alt": "",
         "caption": "Evaluated two interface widgets for communicating pRAD."
       },
       {
-        "img": "/img/iter-workspace.png",
+        "img": "/static/img/projects/iter/iter-workspace.png",
         "alt": "",
         "caption": "Sketch of participant's workspace for the two experiments."
+      },
+      {
+        "img": "/static/img/projects/iter/iter-computer-vision.png",
+        "alt": "",
+        "caption": "Demonstration of computer vision system capability in ITER system."
       }
     ],
     "publications": [
@@ -104,7 +103,7 @@ const data = {
     "title": "Hobby Projects",
     "brief": "Hobby robotics and home automation projects",
     "descriptionMarkdownPath": HobbyBrief,
-    "thumbnail": "/img/teaser-hobby.jpg",
+    "thumbnail": "/static/img/thumbnail/project-hobby.jpg",
     "type": "Personal",
     "_id": "project-hobby",
     "modalMarkdownPath": HobbyModal,
@@ -112,24 +111,42 @@ const data = {
     "skills": [],
     "images": [
       {
-        "img": "/img/hobby-taltosoid.jpg",
+        "img": "/static/img/projects/hobby/hobby-taltosoid.jpg",
         "alt": "",
         "caption": "First version of Taltosoid - A supernumerary robotic finger."
       },
       {
-        "img": "/img/hobby-robots.jpg",
+        "img": "/static/img/projects/hobby/hobby-robots.jpg",
         "alt": "",
         "caption": "Some of my older robots in a group photo."
       },
       {
-        "img": "/img/hobby-leds.jpg",
+        "img": "/static/img/projects/hobby/hobby-leds.jpg",
         "alt": "",
         "caption": "LEDs being controlled by lighting effects interface, back when I was at MSOE."
       }
     ],
     "publications": []
-  },
-  "project-vision": {
+  }
+};
+
+
+export default data;
+
+
+// Old data no longer needed but don't want to throw away just yet
+
+
+// import ComputerVisionModal from "./markdown/modal/VisionMLProject.md";
+// import EmbeddedModal from "./markdown/modal/EmbeddedProject.md";
+// import HCIModal from "./markdown/modal/HCIProject.md";
+
+// import ComputerVisionBrief from "./markdown/brief/VisionMLProject.md";
+// import EmbeddedBrief from "./markdown/brief/EmbeddedProject.md";
+// import HCIBrief from "./markdown/brief/HCIProject.md";
+
+/*
+"project-vision": {
     "title": "Computer Vision and ML Projects",
     "brief": "Various computer vision and machine learning projects from coursework.",
     "descriptionMarkdownPath": ComputerVisionBrief,
@@ -221,7 +238,4 @@ const data = {
     ],
     "publications": []
   }
-};
-
-
-export default data;
+*/

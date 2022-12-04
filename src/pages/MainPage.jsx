@@ -27,11 +27,11 @@ const MainPage = () => {
             flexPx: 150,
             content: "Career"
           },
-        //   {
-        //     id: "education-btn",
-        //     flexPx: 150,
-        //     content: "Education"
-        //   },
+          //   {
+          //     id: "education-btn",
+          //     flexPx: 150,
+          //     content: "Education"
+          //   },
           {
             id: "projects-btn",
             flexPx: 150,

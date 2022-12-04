@@ -16,10 +16,7 @@ const data = {
     "end": "2018",
     "images": [],
     "descriptionMarkdownPath": MSOEBrief,
-    "projects": [
-      "project-embedded"
-    ],
-    "thumbnail": "/img/msoe-logo.jpg",
+    "thumbnail": "/static/img/thumbnail/msoe-logo.jpg",
     "skills": [
       "arduino",
       "microchip",
@@ -45,11 +42,7 @@ const data = {
     "end": "2021",
     "images": [],
     "descriptionMarkdownPath": UWMBrief,
-    "thumbnail": "/img/uwmadison-crest.png",
-    "projects": [
-      "project-hci",
-      "project-vision"
-    ],
+    "thumbnail": "/static/img/thumbnail/uwmadison-crest.png",
     "skills": [
       "python",
       "keras",
