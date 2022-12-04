@@ -76,6 +76,11 @@ const data = {
         "img": "/static/img/projects/coframe/coframe-structure.png",
         "alt": "",
         "caption": ""
+      },
+      {
+        "img": "/static/img/projects/coframe/coframe-current.png",
+        "alt": "",
+        "caption": ""
       }
     ],
     "publications": [
