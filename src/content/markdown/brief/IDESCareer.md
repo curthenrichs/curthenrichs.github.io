@@ -1,1 +1,4 @@
-TEST IDES
+IDES (a JEOL subsidiary) is a small company with 10+ employees working in the transmission electron microscope (TEM) market. IDES sells a deflector sub-framing system called Relativity, an electrostatic dose modulation system (EDM), and related TEM peripherals to support scientific applications. 
+
+As the primary firmware engineer, I focus on extending existing firmware, developing new voltage control firmware, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ on baremetal Xilinx Zynq and Atmel/Microchip processor. 
+

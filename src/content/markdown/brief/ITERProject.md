@@ -1,1 +1,3 @@
-ITER TEST
+During graduate school, I investigated how human workers collaborate with the cobot. My colleagues and I developed two experiments, pRAD and Task Interdependence, within an experiment protocol. We used a Universal Robots UR3e cobot for this research.
+
+My contributions on both experiments were rather technical; developing experiment procedure, writing code, etc. I had the opportunity to build the experiment setup in ROS and had a chance to explore the Universal Robots platform / visual programming tool Polyscope.

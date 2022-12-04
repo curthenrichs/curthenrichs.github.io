@@ -21,8 +21,6 @@ const ShortCardDescription = (props) => {
 const LongCardContent = (props) => {
   const { markdownPath, publications, positions } = props;
 
-  console.log(positions);
-
   let pubList = [];
   if (publications !== undefined && publications !== null) {
     pubList = publications.map((pub, idx) => {
