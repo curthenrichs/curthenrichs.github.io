@@ -24,7 +24,7 @@ const data = {
       "atlassian",
       "mongodb"
     ],
-    "thumbnail": "/img/dc-logo.png",
+    "thumbnail": "/static/img/thumbnail/dc-logo.png",
     "web": "https://www.dedicatedcomputing.com/",
     "positions": [
       {
@@ -38,22 +38,21 @@ const data = {
     ],
     "images": [
       {
-        "img": "/img/internship-oled-covered.jpg",
+        "img": "/static/img/career/dc/dc-oled-covered.jpg",
         "alt": "",
         "caption": "Custom OLED node ID display that fits within 3.5\" bay."
       },
       {
-        "img": "/img/internship-oled.jpg",
+        "img": "/static/img/career/dc/dc-oled-pcb.jpg",
         "alt": "",
         "caption": "OLED display has two capacitive touch buttons, USB serial interface, and multi-page screen."
       },
       {
-        "img": "/img/internship-fan.jpg",
+        "img": "/static/img/career/dc/dc-fan.jpg",
         "alt": "",
         "caption": "Custom fan controller with a SAMD Atmel microcontroller."
       }
     ],
-    "projects": [],
     "publications": []
   },
   "career-research": {
@@ -79,7 +78,7 @@ const data = {
       "matlab",
       "overleaf"
     ],
-    "thumbnail": "/img/uwmadison-crest.png",
+    "thumbnail": "/static/img/thumbnail/uwmadison-crest.png",
     "web": "https://peopleandrobots.wisc.edu/",
     "positions": [
       {
@@ -92,11 +91,6 @@ const data = {
       }
     ],
     "images": [],
-    "projects": [
-      "project-authr",
-      "project-coframe",
-      "project-iter"
-    ],
     "publications": [
       "publication-interdependence",
       "publication-authr",
@@ -121,7 +115,7 @@ const data = {
       "atlassian",
       "gear"
     ],
-    "thumbnail": "/img/ides-logo.png",
+    "thumbnail": "/static/img/thumbnail/ides-logo.png",
     "web": "https://www.ides-inc.com/",
     "positions": [
       {
@@ -142,7 +136,6 @@ const data = {
       }
     ],
     "images": [],
-    "projects": [],
     "publications": [
       "publication-syn-tem"
     ]
