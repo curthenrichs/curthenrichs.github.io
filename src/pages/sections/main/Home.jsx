@@ -1,15 +1,15 @@
 import React, { useState, useContext, Fragment } from "react";
-import SocialTray from "../../components/SocialTray";
-import MarkdownContent from "../../components/MarkdownContent";
-import ExpandSection from "../../components/ExpandSection";
-import bioData from "../../content/biography";
-import contactData from "../../content/contact";
-import educationData from "../../content/education";
-import careerData from "../../content/career";
-import { WidthContext } from "../../contexts";
-import { CaretRightOutlined, DownloadOutlined } from "../../components/IconManager";
+import SocialTray from "../../../components/SocialTray";
+import MarkdownContent from "../../../components/MarkdownContent";
+import ExpandSection from "../../../components/ExpandSection";
+import bioData from "../../../content/biography";
+import contactData from "../../../content/contact";
+import educationData from "../../../content/education";
+import careerData from "../../../content/career";
+import { WidthContext } from "../../../contexts";
+import { CaretRightOutlined, DownloadOutlined } from "../../../components/IconManager";
 import { Row, Col, Typography, Button } from "antd";
-import ThumbnailImage from "../../components/ThumbnailImage";
+import ThumbnailImage from "../../../components/ThumbnailImage";
 
  
 const { Title, Text, Link } = Typography;

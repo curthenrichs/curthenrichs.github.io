@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import careerData from "../../content/career";
-import publicationData from "../../content/publications";
-import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { ToolFilled, IconLookupFromName } from "../../components/IconManager";
-import SectionTitle from "../../components/SectionTitle";
-import { WidthContext } from "../../contexts";
-import ItemModalContent from "../../components/ItemModalContent";
+import careerData from "../../../content/career";
+import publicationData from "../../../content/publications";
+import ItemCardTemplate from "../../../components/ItemCardTemplate";
+import { ToolFilled, IconLookupFromName } from "../../../components/IconManager";
+import SectionTitle from "../../../components/SectionTitle";
+import { WidthContext } from "../../../contexts";
+import ItemModalContent from "../../../components/ItemModalContent";
 
 
 const SectionCareer = () => {

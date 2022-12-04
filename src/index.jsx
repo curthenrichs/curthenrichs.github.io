@@ -7,8 +7,12 @@ import "./index.css";
 
 import MainPage from "./pages/MainPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import IconLicensesPage from "./pages/IconLicensesPage";
+import AttributionPage from "./pages/AttributionPage";
+import TermsOfUsePage from "./pages/TermsOfUsePage";
+import AccessibilityPolicyPage from "./pages/AccessibilityPolicyPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
+import ResumePage from "./pages/ResumePage";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -17,8 +21,11 @@ ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" component={MainPage} exact />
-        <Route path="/icon-licenses" component={IconLicensesPage} exact />
-        <Route path="/resume" component={NotFoundNoRoutingPage} exact />
+        <Route path="/attribution" component={AttributionPage} exact />
+        <Route path="/terms" component={TermsOfUsePage} exact />
+        <Route path="/accessibility" component={AccessibilityPolicyPage} exact />
+        <Route path="/privacy" component={PrivacyPolicyPage} exact />
+        <Route path="/resume" component={ResumePage} exact />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

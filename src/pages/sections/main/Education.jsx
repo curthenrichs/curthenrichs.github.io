@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import educationData from "../../content/education";
-import publicationData from "../../content/publications";
-import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { GraduateCap, IconLookupFromName } from "../../components/IconManager";
-import SectionTitle from "../../components/SectionTitle";
-import { WidthContext } from "../../contexts";
-import ItemModalContent from "../../components/ItemModalContent";
+import educationData from "../../../content/education";
+import publicationData from "../../../content/publications";
+import ItemCardTemplate from "../../../components/ItemCardTemplate";
+import { GraduateCap, IconLookupFromName } from "../../../components/IconManager";
+import SectionTitle from "../../../components/SectionTitle";
+import { WidthContext } from "../../../contexts";
+import ItemModalContent from "../../../components/ItemModalContent";
 
 
 const SectionEducation = () => {

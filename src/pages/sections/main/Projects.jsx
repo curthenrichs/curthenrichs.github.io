@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import projectData from "../../content/projects";
-import publicationData from "../../content/publications";
-import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { GraduateCap, ExperimentFilled, StarFilled, IconLookupFromName } from "../../components/IconManager";
-import SectionTitle from "../../components/SectionTitle";
-import { WidthContext } from "../../contexts";
-import ItemModalContent from "../../components/ItemModalContent";
+import projectData from "../../../content/projects";
+import publicationData from "../../../content/publications";
+import ItemCardTemplate from "../../../components/ItemCardTemplate";
+import { GraduateCap, ExperimentFilled, StarFilled, IconLookupFromName } from "../../../components/IconManager";
+import SectionTitle from "../../../components/SectionTitle";
+import { WidthContext } from "../../../contexts";
+import ItemModalContent from "../../../components/ItemModalContent";
 
 
 const SectionProjects = () => {
