@@ -14,7 +14,7 @@ const data = {
     "title": "Authr",
     "brief": "Human-robot task development tool based on Therbligs",
     "descriptionMarkdownPath":  AuthrBrief,
-    "thumbnail": "/static/img/thumbnail/project-authr.png",
+    "thumbnail": "/static/img/thumbnail/project-authr.jpg",
     "type": "Research",
     "_id": "project-authr",
     "modalMarkdownPath": AuthrModal,
@@ -45,7 +45,7 @@ const data = {
     "title": "CoFrame",
     "brief": "Cobot operator training environment",
     "descriptionMarkdownPath": CoFrameBrief,
-    "thumbnail": "/static/img/thumbnail/project-coframe.png",
+    "thumbnail": "/static/img/thumbnail/project-coframe.jpg",
     "type": "Research",
     "_id": "project-coframe",
     "modalMarkdownPath": CoFrameModal,
@@ -56,6 +56,26 @@ const data = {
         "img": "/static/img/projects/coframe/evd-authoring-ui.jpg",
         "alt": "",
         "caption": "CoFrame's authoring interface (still in development)."
+      },
+      {
+        "img": "/static/img/projects/coframe/coframe-banner.png",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "img": "/static/img/projects/coframe/coframe-frames.png",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "img": "/static/img/projects/coframe/coframe-mapping.png",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "img": "/static/img/projects/coframe/coframe-structure.png",
+        "alt": "",
+        "caption": ""
       }
     ],
     "publications": [
@@ -66,7 +86,7 @@ const data = {
     "title": "Task Interdependence and pRAD",
     "brief": "Experiments to better understand how operators interact with cobots",
     "descriptionMarkdownPath": ITERBrief,
-    "thumbnail": "/static/img/thumbnail/project-iter.png",
+    "thumbnail": "/static/img/thumbnail/project-iter.jpg",
     "type": "Research",
     "_id": "project-iter",
     "modalMarkdownPath": ITERModal,
