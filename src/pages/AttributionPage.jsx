@@ -1,18 +1,24 @@
-import React, { Fragment } from "react";
-import SectionIconLicenses from "./sections/IconLicenses";
-import SectionFaviconLicenses from "./sections/FaviconLicenses";
-import ReturnHomeButton from "../components/ReturnHomeButton";
+import React from "react";
+import SectionIconLicenses from "./sections/attribution/IconLicenses";
+import SectionFaviconLicenses from "./sections/attribution/FaviconLicenses";
+import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
+import SectionHome  from "./sections/attribution/Home";
 
 
-const IconLicensesPage = () => {
+const AttributionPage = () => {
   return (
     <PageTemplate
       header={{
         simple: true,
-        pageName: "Icon Licenses"
+        pageName: "Attribution and Licenses"
       }}
       sections={[
+        {
+            name: "sect-home",
+            sectionType: "type-a",
+            content: (<SectionHome />)
+        },
         {
           name: "sect-icons",
           sectionType: "type-a",
@@ -27,13 +33,7 @@ const IconLicensesPage = () => {
           name: "sect-return",
           sectionType: "type-a",
           style: { paddingTop: "3em" },
-          content: (
-            <Fragment>
-              <div style={{textAlign: "center"}}>
-                <ReturnHomeButton />
-              </div>
-            </Fragment>
-          )
+          content: (<ReturnHome />)
         }
       ]}
     />
@@ -41,4 +41,4 @@ const IconLicensesPage = () => {
 };
 
 
-export default IconLicensesPage;
+export default AttributionPage;
