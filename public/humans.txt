@@ -1,0 +1,10 @@
+/* TEAM */
+    Developer: Curt Henrichs
+    Contact: curthenrichs [at] gmail.com
+    Twitter: @curt_henrichs
+    From: California, USA
+
+/* SITE */
+    Last update: 2022-12-03
+    Language: English
+    Doctype: HTML5
