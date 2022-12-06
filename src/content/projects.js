@@ -22,17 +22,17 @@ const data = {
     "skills": [],
     "images": [
       {
-        "img": "/static/img/projects/authr/authr-setup.png",
+        "img": "/static/img/projects/authr/authr-setup.jpg",
         "alt": "",
         "caption": "Authr setup view allows user to define Agents, Things, and Destinations."
       },
       {
-        "img": "/static/img/projects/authr/authr-task.png",
+        "img": "/static/img/projects/authr/authr-task.jpg",
         "alt": "",
         "caption": "Authr task view allows user to drag-and-drop Therbligs into tasks."
       },
       {
-        "img": "/static/img/projects/authr/authr-sim.png",
+        "img": "/static/img/projects/authr/authr-sim.jpg",
         "alt": "",
         "caption": "Authr simulation view allows user to inspect the program constructed."
       }
@@ -58,7 +58,7 @@ const data = {
         "caption": "CoFrame's authoring interface (still in development)."
       },
       {
-        "img": "/static/img/projects/coframe/coframe-banner.png",
+        "img": "/static/img/projects/coframe/coframe-banner.jpg",
         "alt": "",
         "caption": ""
       },
@@ -68,17 +68,17 @@ const data = {
         "caption": ""
       },
       {
-        "img": "/static/img/projects/coframe/coframe-mapping.png",
+        "img": "/static/img/projects/coframe/coframe-mapping.jpg",
         "alt": "",
         "caption": ""
       },
       {
-        "img": "/static/img/projects/coframe/coframe-structure.png",
+        "img": "/static/img/projects/coframe/coframe-structure.jpg",
         "alt": "",
         "caption": ""
       },
       {
-        "img": "/static/img/projects/coframe/coframe-current.png",
+        "img": "/static/img/projects/coframe/coframe-current.jpg",
         "alt": "",
         "caption": ""
       }
@@ -99,7 +99,7 @@ const data = {
     "skills": [],
     "images": [
       {
-        "img": "/static/img/projects/iter/iter-seq-task.png",
+        "img": "/static/img/projects/iter/iter-seq-task.jpg",
         "alt": "",
         "caption": "Participant constructs wooden block structure with the robot."
       },
@@ -114,7 +114,7 @@ const data = {
         "caption": "Sketch of participant's workspace for the two experiments."
       },
       {
-        "img": "/static/img/projects/iter/iter-computer-vision.png",
+        "img": "/static/img/projects/iter/iter-computer-vision.jpg",
         "alt": "",
         "caption": "Demonstration of computer vision system capability in ITER system."
       }
