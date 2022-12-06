@@ -5,26 +5,26 @@ import SectionHome  from "./sections/accessibility/Home";
 
 
 const AccessibilityPolicyPage = () => {
-    return (
-      <PageTemplate
+  return (
+    <PageTemplate
       header={{
         simple: true,
         pageName: "Accessibility Policy"
       }}
       sections={[
         {
-            name: "sect-home",
-            sectionType: "type-a",
-            content: (<SectionHome />)
+          name: "sect-home",
+          sectionType: "type-a",
+          content: (<SectionHome />)
         },
         {
-            name: "sect-return",
-            sectionType: "type-a",
-            style: { paddingTop: "3em" },
-            content: (<ReturnHome />)
-          }
+          name: "sect-return",
+          sectionType: "type-a",
+          style: { paddingTop: "3em" },
+          content: (<ReturnHome />)
+        }
       ]}
-      />
+    />
   );
 };
 

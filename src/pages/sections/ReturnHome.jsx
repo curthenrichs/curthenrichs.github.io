@@ -3,13 +3,13 @@ import ReturnHomeButton from "../../components/ReturnHomeButton";
 
 
 const SectionReturnHome = () => {
-    return (
-        <Fragment>
-            <div style={{textAlign: "center"}}>
-                <ReturnHomeButton />
-            </div>
-        </Fragment>
-    );
+  return (
+    <Fragment>
+      <div style={{textAlign: "center"}}>
+        <ReturnHomeButton />
+      </div>
+    </Fragment>
+  );
 };
 
 

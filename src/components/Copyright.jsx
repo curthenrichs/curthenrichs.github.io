@@ -7,11 +7,11 @@ const { Text } = Typography;
 
 
 const Spacer = () => {
-    return (
-        <Fragment>
+  return (
+    <Fragment>
             &nbsp;|&nbsp;
-        </Fragment>
-    );
+    </Fragment>
+  );
 };
 
 

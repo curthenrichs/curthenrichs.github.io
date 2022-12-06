@@ -1,6 +1,4 @@
 import React from "react";
-import SectionIconLicenses from "./sections/attribution/IconLicenses";
-import SectionFaviconLicenses from "./sections/attribution/FaviconLicenses";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionHome  from "./sections/attribution/Home";
@@ -15,19 +13,9 @@ const AttributionPage = () => {
       }}
       sections={[
         {
-            name: "sect-home",
-            sectionType: "type-a",
-            content: (<SectionHome />)
-        },
-        {
-          name: "sect-icons",
+          name: "sect-home",
           sectionType: "type-a",
-          content: (<SectionIconLicenses />)
-        },
-        {
-          name: "sect-favicon",
-          sectionType: "type-a",
-          content: (<SectionFaviconLicenses />)
+          content: (<SectionHome />)
         },
         {
           name: "sect-return",
