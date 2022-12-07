@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { Layout } from "antd";
+import { Layout, Typography } from "antd";
 import NavHeader from "./NavHeader";
 import Copyright from "./Copyright";
 import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
 import { Element as ScrollElement, scroller} from "react-scroll";
+import CookieConsent from "react-cookie-consent";
 
 
-
+const { Text } = Typography;
 const { Header, Footer, Content } = Layout;
 
 
@@ -137,8 +138,26 @@ class PageTemplate extends Component {
   }
 
   render() {
-    const { header, sections, inDevelopment } = this.props;
+    const { header, sections, inDevelopment, displayCookieConsent } = this.props;
     const { width, height, activeNavItem } = this.state;
+
+    let cookieConsent = null;
+    if (displayCookieConsent) {
+      cookieConsent = (
+        <CookieConsent 
+          location="bottom"
+          buttonText="Accept"
+          style={{
+            background: "#fafafa" 
+          }}
+          buttonClasses="ant-btn ant-btn-primary ant-btn-lg cookie-btn-style"
+          expires={999}
+          visible="byCookieValue"
+        >
+          <Text>This website may use cookies to enhance user experience.</Text> <br /> <Text style={{fontSize:"10px"}}>To find out more read our <a href="/terms">terms of use</a> and <a href="/privacy">privacy policy</a>.</Text>.
+        </CookieConsent>
+      );
+    }
 
     return (
       <WidthContext.Provider value={width}>
@@ -187,6 +206,8 @@ class PageTemplate extends Component {
               ))}
 
             </Content>
+
+            {cookieConsent}
 
             <Footer style={{ textAlign: "center"}}>
               <Copyright />
