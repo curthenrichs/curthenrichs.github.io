@@ -7,7 +7,6 @@ import SectionTitle from "../../../components/SectionTitle";
 import { WidthContext } from "../../../contexts";
 import ItemModalContent from "../../../components/ItemModalContent";
 
-
 const SectionEducation = () => {
   const list = Object.values(educationData).reverse();
   const width = useContext(WidthContext);
@@ -16,12 +15,13 @@ const SectionEducation = () => {
   const extraWidth = width - cardWidth;
 
   return (
-    <div style={{
-      paddingLeft: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
-      paddingRight: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
-    }}>
-      <SectionTitle title="Education"/>
-      
+    <div
+      style={{
+        paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
+        paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
+      }}>
+      <SectionTitle title="Education" />
+
       {list.map((entry, idx) => (
         <ItemCardTemplate
           id={entry._id}
@@ -31,24 +31,19 @@ const SectionEducation = () => {
             margin: "auto"
           }}
           title={entry.title}
-          icon={(<GraduateCap />)}
+          icon={<GraduateCap />}
           img={entry.thumbnail}
           brief={entry.school}
           descriptionMarkdownPath={entry.descriptionMarkdownPath}
-          publications={entry.publications.map((pub) => (`${publicationData[pub].short} (${publicationData[pub].venue})`))}
-          skills={entry.skills.map((skill) => (
-            IconLookupFromName[skill]
-          ))}
-        >
-          <ItemModalContent 
-            images={entry.images}
-            markdownPath={entry.modalMarkdownPath}
-          />
+          publications={entry.publications.map(
+            (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
+          )}
+          skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
+          <ItemModalContent images={entry.images} markdownPath={entry.modalMarkdownPath} />
         </ItemCardTemplate>
       ))}
     </div>
   );
 };
-
 
 export default SectionEducation;

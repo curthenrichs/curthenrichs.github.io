@@ -11,7 +11,6 @@ import { CaretRightOutlined, DownloadOutlined } from "../../../components/IconMa
 import { Row, Col, Typography, Button } from "antd";
 import ThumbnailImage from "../../../components/ThumbnailImage";
 
- 
 const { Title, Text, Link } = Typography;
 const LAYOUT_WIDTH_DIGEST_INLINE = 1500;
 
@@ -23,34 +22,43 @@ const currentJob = currentCompany.positions.slice().filter((job) => {
   return job._id == bioData.currentEmploymentId.position;
 })[0];
 
-
 const BioDigest = () => {
-  const [size, ] = useState("large");
+  const [size] = useState("large");
 
   return (
-    <div style={{textAlign: "center"}}>
+    <div style={{ textAlign: "center" }}>
       <ThumbnailImage img={bioData.img} />
-      <div style={{fontSize: "18px"}}>
-        <Text style={{fontSize: "20px"}} strong>{bioData.name}</Text>
-        <br/>
-        <Text type="secondary">{currentJob.title} <br/> {currentJob.field}</Text>
-        <br/>
-        <Link href={currentCompany.web} target="_blank" rel="noopener noreferrer">{currentCompany.company}</Link>
+      <div style={{ fontSize: "18px" }}>
+        <Text style={{ fontSize: "20px" }} strong>
+          {bioData.name}
+        </Text>
+        <br />
+        <Text type="secondary">
+          {currentJob.title} <br /> {currentJob.field}
+        </Text>
+        <br />
+        <Link href={currentCompany.web} target="_blank" rel="noopener noreferrer">
+          {currentCompany.company}
+        </Link>
       </div>
-      <SocialTray 
+      <SocialTray
         githubLink={contactData.github.link}
         emailLink={contactData.email.link}
         linkedinLink={contactData.linkedin.link}
         twitterLink={contactData.twitter.link}
       />
-      <br/>
-      <Button type="primary" href={contactData.resume.link} download icon={<DownloadOutlined />} size={size} >
+      <br />
+      <Button
+        type="primary"
+        href={contactData.resume.link}
+        download
+        icon={<DownloadOutlined />}
+        size={size}>
         Download Resume
       </Button>
     </div>
   );
 };
-
 
 const Interests = (props) => {
   const { abbreviate, numAbbrev } = props;
@@ -60,18 +68,21 @@ const Interests = (props) => {
       <Title level={4}>Interests</Title>
       <ExpandSection
         centerButton={true}
-        style={{padding: "0 20px", fontSize: "16px"}}
+        style={{ padding: "0 20px", fontSize: "16px" }}
         generator={(expand) => {
-
-          const sliceAmount = (bioData.interests.length > numAbbrev) ? numAbbrev : bioData.interests.length;
-          const list = (abbreviate  && !expand) ? bioData.interests.slice(0, sliceAmount) : bioData.interests.slice();
+          const sliceAmount =
+            bioData.interests.length > numAbbrev ? numAbbrev : bioData.interests.length;
+          const list =
+            abbreviate && !expand
+              ? bioData.interests.slice(0, sliceAmount)
+              : bioData.interests.slice();
 
           return {
             shouldCollapse: abbreviate,
             children: list.map((interest, idx) => (
-              <div key={idx} style={{ paddingBottom: "5px"}}>
+              <div key={idx} style={{ paddingBottom: "5px" }}>
                 <CaretRightOutlined /> <Text>{interest}</Text>
-                <br/>
+                <br />
               </div>
             ))
           };
@@ -80,7 +91,6 @@ const Interests = (props) => {
     </Fragment>
   );
 };
-
 
 const Education = (props) => {
   const { abbreviate, numAbbrev } = props;
@@ -90,23 +100,24 @@ const Education = (props) => {
       <Title level={4}>Education</Title>
       <ExpandSection
         centerButton={true}
-        style={{padding: "0 20px", fontSize: "16px"}}
+        style={{ padding: "0 20px", fontSize: "16px" }}
         generator={(expand) => {
-
           let list = Object.values(educationData).reverse();
-        
-          const sliceAmount = (list.length > numAbbrev) ? numAbbrev : list.length;
 
-          list = (abbreviate  && !expand) ? list.slice(0, sliceAmount) : list;
+          const sliceAmount = list.length > numAbbrev ? numAbbrev : list.length;
+
+          list = abbreviate && !expand ? list.slice(0, sliceAmount) : list;
 
           return {
             shouldCollapse: abbreviate,
             children: list.map((education, idx) => (
-              <div key={idx} style={{ paddingBottom: "10px"}}>
+              <div key={idx} style={{ paddingBottom: "10px" }}>
                 <Text strong={true}>{education.end}</Text>&nbsp;-&nbsp;
                 <Text>{education.title}</Text>
-                <br/>
-                <Text style={{padding: "0 30px"}} type="secondary" >{education.school}</Text>
+                <br />
+                <Text style={{ padding: "0 30px" }} type="secondary">
+                  {education.school}
+                </Text>
               </div>
             ))
           };
@@ -115,7 +126,6 @@ const Education = (props) => {
     </Fragment>
   );
 };
-
 
 const Career = (props) => {
   const { abbreviate, numAbbrev } = props;
@@ -125,32 +135,35 @@ const Career = (props) => {
       <Title level={4}>Career</Title>
       <ExpandSection
         centerButton={true}
-        style={{padding: "0 20px", fontSize: "16px"}}
+        style={{ padding: "0 20px", fontSize: "16px" }}
         generator={(expand) => {
-
           let list = Object.values(careerData).reduce((acc, company) => {
-            return acc.concat(company.positions.map((job) => {
-              return {
-                ...job,
-                company: company.company,
-                link: company.web
-              };
-            }));
+            return acc.concat(
+              company.positions.map((job) => {
+                return {
+                  ...job,
+                  company: company.company,
+                  link: company.web
+                };
+              })
+            );
           }, []);
 
           list = list.reverse();
 
-          const sliceAmount = (list.length > numAbbrev) ? numAbbrev : list.length;
-          list = (abbreviate  && !expand) ? list.slice(0, sliceAmount) : list;
+          const sliceAmount = list.length > numAbbrev ? numAbbrev : list.length;
+          list = abbreviate && !expand ? list.slice(0, sliceAmount) : list;
 
           return {
             shouldCollapse: abbreviate,
             children: list.map((job, idx) => (
-              <div key={idx} style={{ paddingBottom: "10px"}}>
+              <div key={idx} style={{ paddingBottom: "10px" }}>
                 <Text strong={true}>{job.start}</Text>&nbsp;-&nbsp;
                 <Text>{job.title}</Text>
-                <br/>
-                <Text style={{padding: "0 30px"}} type="secondary">{job.company}</Text>
+                <br />
+                <Text style={{ padding: "0 30px" }} type="secondary">
+                  {job.company}
+                </Text>
               </div>
             ))
           };
@@ -160,16 +173,13 @@ const Career = (props) => {
   );
 };
 
-
 const BioDetail = (props) => {
-
   let innerLayout = null;
-  const { width,  digestInline } = props;
-
+  const { width, digestInline } = props;
 
   if ((digestInline && width >= 1800) || (!digestInline && width >= 1375)) {
     innerLayout = (
-      <Row>  
+      <Row>
         <Col flex="auto">
           <Career />
         </Col>
@@ -181,29 +191,28 @@ const BioDetail = (props) => {
         </Col>
       </Row>
     );
-  } else if ((digestInline) || (width >= 850)) {
+  } else if (digestInline || width >= 850) {
     innerLayout = (
       <div>
         <Row>
           <Col flex="auto">
             <Career />
-            <br/>
+            <br />
             <Education />
           </Col>
-          <Col  flex="auto">
+          <Col flex="auto">
             <Interests />
           </Col>
         </Row>
-        
       </div>
     );
   } else {
     innerLayout = (
       <div>
         <Career abbreviate numAbbrev={1} />
-        <br/>
+        <br />
         <Education abbreviate numAbbrev={1} />
-        <br/>
+        <br />
         <Interests abbreviate numAbbrev={2} />
       </div>
     );
@@ -212,21 +221,17 @@ const BioDetail = (props) => {
   return (
     <Fragment>
       <Title level={3}>Biography</Title>
-      <div style={{fontSize: "16px"}}>
-        <MarkdownContent
-          markdownPath={bioData.markdownPath}
-        />
+      <div style={{ fontSize: "16px" }}>
+        <MarkdownContent markdownPath={bioData.markdownPath} />
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
       {innerLayout}
     </Fragment>
   );
 };
 
-
-const SectionHome = () => { 
-
+const SectionHome = () => {
   const width = useContext(WidthContext);
 
   let layout = null;
@@ -246,7 +251,7 @@ const SectionHome = () => {
     layout = (
       <div>
         <BioDigest />
-        <br/>
+        <br />
         <BioDetail width={width} digestInline={false} />
       </div>
     );
@@ -254,6 +259,5 @@ const SectionHome = () => {
 
   return layout;
 };
-
 
 export default SectionHome;

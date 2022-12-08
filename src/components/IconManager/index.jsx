@@ -29,14 +29,14 @@ import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
 import { ReactComponent as CIcon } from "./svg/c.svg";
 import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
 
-import { 
-  WarningOutlined, 
-  ToolFilled, 
-  ExperimentFilled, 
+import {
+  WarningOutlined,
+  ToolFilled,
+  ExperimentFilled,
   StarFilled,
-  GithubFilled, 
-  MailOutlined, 
-  LinkedinFilled, 
+  GithubFilled,
+  MailOutlined,
+  LinkedinFilled,
   TwitterOutlined,
   CaretRightOutlined,
   QuestionOutlined,
@@ -47,174 +47,171 @@ import {
   SettingOutlined
 } from "@ant-design/icons";
 
-
 function Angular() {
-  return (<Icon component={AngularIcon} />);
+  return <Icon component={AngularIcon} />;
 }
 
 function Arduino() {
-  return (<Icon component={ArduinoIcon} />);
+  return <Icon component={ArduinoIcon} />;
 }
 
 function CPlusPlus() {
-  return (<Icon component={CPPIcon} />);
+  return <Icon component={CPPIcon} />;
 }
 
 function CSharp() {
-  return (<Icon component={CSharpIcon} />);
+  return <Icon component={CSharpIcon} />;
 }
 
 function Git() {
-  return (<Icon component={GitIcon} />);
+  return <Icon component={GitIcon} />;
 }
 
 function GraduateCap() {
-  return (<Icon component={GraduateCapIcon} />);
+  return <Icon component={GraduateCapIcon} />;
 }
 
 function Java() {
-  return (<Icon component={JavaIcon} />);
+  return <Icon component={JavaIcon} />;
 }
 
 function Linux() {
-  return (<Icon component={LinuxIcon} />);
+  return <Icon component={LinuxIcon} />;
 }
 
 function Robot() {
-  return (<Icon component={RobotIcon} />);
+  return <Icon component={RobotIcon} />;
 }
 
 function Menu() {
-  return (<Icon component={MenuIcon} />);
+  return <Icon component={MenuIcon} />;
 }
 
 function Microchip() {
-  return (<Icon component={MicrochipIcon} />);
+  return <Icon component={MicrochipIcon} />;
 }
 
 function Microsoft() {
-  return (<Icon component={MicrosoftIcon} />);
+  return <Icon component={MicrosoftIcon} />;
 }
 
 function NodeJS() {
-  return (<Icon component={NodeJSIcon} />);
+  return <Icon component={NodeJSIcon} />;
 }
 
 function Python() {
-  return (<Icon component={PythonIcon} />);
+  return <Icon component={PythonIcon} />;
 }
 
 function React() {
-  return (<Icon component={ReactIcon} />);
+  return <Icon component={ReactIcon} />;
 }
 
 function ROS() {
-  return (<Icon component={ROSIcon} />);
+  return <Icon component={ROSIcon} />;
 }
 
 function Sketch() {
-  return (<Icon component={SketchIcon} />);
+  return <Icon component={SketchIcon} />;
 }
 
 function Unity() {
-  return (<Icon component={UnityIcon} />);
+  return <Icon component={UnityIcon} />;
 }
 
 function Javascript() {
-  return (<Icon component={JavascriptIcon} />);
+  return <Icon component={JavascriptIcon} />;
 }
 
 function Keras() {
-  return (<Icon component={KerasIcon} />);
+  return <Icon component={KerasIcon} />;
 }
 
 function MongoDB() {
-  return (<Icon component={MongoDBIcon} />);
+  return <Icon component={MongoDBIcon} />;
 }
 
 function Overleaf() {
-  return (<Icon component={OverleafIcon} />);
+  return <Icon component={OverleafIcon} />;
 }
 
 function Project() {
-  return (<Icon component={ProjectIcon} />);
+  return <Icon component={ProjectIcon} />;
 }
 
 function Matlab() {
-  return (<Icon component={MatlabIcon} />);
+  return <Icon component={MatlabIcon} />;
 }
 
 function Atlassian() {
-  return (<Icon component={AtlassianIcon} />);
+  return <Icon component={AtlassianIcon} />;
 }
 
 function Autodesk() {
-  return (<Icon component={AutodeskIcon} />);
+  return <Icon component={AutodeskIcon} />;
 }
 
 function C() {
-  return (<Icon component={CIcon} />);
+  return <Icon component={CIcon} />;
 }
 
 function Gear() {
-  return (<SettingOutlined />);
+  return <SettingOutlined />;
 }
 
 function Labview() {
-  return (<Icon component={LabviewIcon} />);
+  return <Icon component={LabviewIcon} />;
 }
 
-
 const lookup = {
-  "angular": <Angular />,
-  "arduino": <Arduino />,
-  "cplusplus": <CPlusPlus />,
-  "csharp": <CSharp />,
-  "git": <Git />,
-  "graduatecap": <GraduateCap />,
-  "java": <Java />,
-  "linux": <Linux />,
-  "menu": <Menu />,
-  "microchip": <Microchip />,
-  "microsoft": <Microsoft />,
-  "nodejs": <NodeJS />,
-  "python": <Python />,
-  "react": <React />,
-  "robot": <Robot />,
-  "ros": <ROS />,
-  "sketch": <Sketch />,
-  "unity": <Unity />,
-  "javascript": <Javascript />,
-  "keras": <Keras />,
-  "mongodb": <MongoDB />,
-  "overleaf": <Overleaf />,
-  "project": <Project />,
-  "matlab": <Matlab />,
-  "atlassian": <Atlassian />,
-  "autodesk": <Autodesk />,
-  "c": <C />,
-  "warning": <WarningOutlined />,
-  "experiment": <ExperimentFilled />,
-  "star": <StarFilled />,
-  "tool": <ToolFilled />,
-  "github": <GithubFilled />,
-  "mail": <MailOutlined />,
-  "linkedin": <LinkedinFilled />,
-  "twitter": <TwitterOutlined />,
-  "caret": <CaretRightOutlined />,
-  "caretright": <CaretRightOutlined />,
-  "question": <QuestionOutlined />,
-  "downcircle": <DownCircleOutlined />,
-  "upcircle": <UpCircleOutlined />,
-  "download": <DownloadOutlined />,
-  "location": <EnvironmentFilled />,
-  "gear": <Gear />,
-  "labview": <Labview />
+  angular: <Angular />,
+  arduino: <Arduino />,
+  cplusplus: <CPlusPlus />,
+  csharp: <CSharp />,
+  git: <Git />,
+  graduatecap: <GraduateCap />,
+  java: <Java />,
+  linux: <Linux />,
+  menu: <Menu />,
+  microchip: <Microchip />,
+  microsoft: <Microsoft />,
+  nodejs: <NodeJS />,
+  python: <Python />,
+  react: <React />,
+  robot: <Robot />,
+  ros: <ROS />,
+  sketch: <Sketch />,
+  unity: <Unity />,
+  javascript: <Javascript />,
+  keras: <Keras />,
+  mongodb: <MongoDB />,
+  overleaf: <Overleaf />,
+  project: <Project />,
+  matlab: <Matlab />,
+  atlassian: <Atlassian />,
+  autodesk: <Autodesk />,
+  c: <C />,
+  warning: <WarningOutlined />,
+  experiment: <ExperimentFilled />,
+  star: <StarFilled />,
+  tool: <ToolFilled />,
+  github: <GithubFilled />,
+  mail: <MailOutlined />,
+  linkedin: <LinkedinFilled />,
+  twitter: <TwitterOutlined />,
+  caret: <CaretRightOutlined />,
+  caretright: <CaretRightOutlined />,
+  question: <QuestionOutlined />,
+  downcircle: <DownCircleOutlined />,
+  upcircle: <UpCircleOutlined />,
+  download: <DownloadOutlined />,
+  location: <EnvironmentFilled />,
+  gear: <Gear />,
+  labview: <Labview />
 };
 
-
 const handler = {
-  get: function(target, name) {
+  get: function (target, name) {
     if (Object.keys(target).includes(name.toLowerCase())) {
       return target[name];
     } else {
@@ -223,9 +220,7 @@ const handler = {
   }
 };
 
-
 const IconLookupFromName = new Proxy(lookup, handler);
-
 
 export {
   // Lookup Handler
@@ -263,13 +258,13 @@ export {
   Labview,
 
   // Antd Icons
-  WarningOutlined, 
-  ToolFilled, 
-  ExperimentFilled, 
+  WarningOutlined,
+  ToolFilled,
+  ExperimentFilled,
   StarFilled,
-  GithubFilled, 
-  MailOutlined, 
-  LinkedinFilled, 
+  GithubFilled,
+  MailOutlined,
+  LinkedinFilled,
   TwitterOutlined,
   CaretRightOutlined,
   QuestionOutlined,

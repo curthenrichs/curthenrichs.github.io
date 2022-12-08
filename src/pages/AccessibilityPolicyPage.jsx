@@ -1,8 +1,7 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome  from "./sections/accessibility/Home";
-
+import SectionHome from "./sections/accessibility/Home";
 
 const AccessibilityPolicyPage = () => {
   return (
@@ -15,18 +14,17 @@ const AccessibilityPolicyPage = () => {
         {
           name: "sect-home",
           sectionType: "type-a",
-          content: (<SectionHome />)
+          content: <SectionHome />
         },
         {
           name: "sect-return",
           sectionType: "type-a",
           style: { paddingTop: "3em" },
-          content: (<ReturnHome />)
+          content: <ReturnHome />
         }
       ]}
     />
   );
 };
-
 
 export default AccessibilityPolicyPage;

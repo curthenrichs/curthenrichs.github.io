@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import { Sketch as SketchIcon } from "./IconManager";
 
-
-
 const InDevelopmentModal = () => {
-
   const [visible, setVisible] = useState(true);
 
   return (
@@ -13,16 +10,24 @@ const InDevelopmentModal = () => {
       title="Under Development"
       centered
       visible={visible}
-      onOk={() => { setVisible(false); }}
-      onCancel={() => { setVisible(false); }}
+      onOk={() => {
+        setVisible(false);
+      }}
+      onCancel={() => {
+        setVisible(false);
+      }}
       footer={[
-        <Button key="okay" type="primary" onClick={() => { setVisible(false); }}>
+        <Button
+          key="okay"
+          type="primary"
+          onClick={() => {
+            setVisible(false);
+          }}>
           Okay
         </Button>
-      ]}
-    >
-      <div style={{textAlign: "center"}}>
-        <div style={{fontSize: "100px"}}>
+      ]}>
+      <div style={{ textAlign: "center" }}>
+        <div style={{ fontSize: "100px" }}>
           <SketchIcon />
         </div>
         <p>Website is under development - Content is not final.</p>
@@ -30,6 +35,5 @@ const InDevelopmentModal = () => {
     </Modal>
   );
 };
-
 
 export default InDevelopmentModal;

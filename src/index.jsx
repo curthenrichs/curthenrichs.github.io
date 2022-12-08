@@ -25,10 +25,14 @@ ReactDOM.render(
         <Route exact path="/terms" component={TermsOfUsePage} />
         <Route exact path="/accessibility" component={AccessibilityPolicyPage} />
         <Route exact path="/privacy" component={PrivacyPolicyPage} />
-        <Route exact path="/resume" render={() => {
-          window.open(contactData.resume.link);
-          return (<Redirect to="/" />);
-        }} />
+        <Route
+          exact
+          path="/resume"
+          render={() => {
+            window.open(contactData.resume.link);
+            return <Redirect to="/" />;
+          }}
+        />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

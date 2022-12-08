@@ -1,8 +1,7 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome  from "./sections/terms/Home";
-
+import SectionHome from "./sections/terms/Home";
 
 const TermsOfUsePage = () => {
   return (
@@ -15,18 +14,17 @@ const TermsOfUsePage = () => {
         {
           name: "sect-home",
           sectionType: "type-a",
-          content: (<SectionHome />)
+          content: <SectionHome />
         },
         {
           name: "sect-return",
           sectionType: "type-a",
           style: { paddingTop: "3em" },
-          content: (<ReturnHome />)
+          content: <ReturnHome />
         }
       ]}
     />
   );
 };
-
 
 export default TermsOfUsePage;

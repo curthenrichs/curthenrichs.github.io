@@ -20,7 +20,7 @@ npm start
 ```
 
 ## Github Deployment
-I am using the [gh-pages]() package to deploy the static website to Github pages.
+I am using the [gh-pages](https://www.npmjs.com/package/gh-pages) package to deploy the static website to Github pages.
 To deploy, simply run:
 
 ```
@@ -37,30 +37,24 @@ files. I broke the content down by section on the webpage.
   - skills
     - customIcons
     - And add icons to icon directory
+  - career
+    - Engineer (markdown)
+    - Research (markdown)
+    - Internship (markdown)
   - projects
     - Authr (markdown)
-    - EvD (markdown)
+    - Coframe (markdown)
     - ITER (markdown)
-    - Internship (markdown)
     - Hobby (markdown)
-    - VisionML (markdown)
-    - Embedded (markdown)
-    - HCI (markdown)
   - publications
   - contact
-- Resume Page
-  - resumes
-    - ResumeDescription
-- Courses Page
-  - courses
-    - CoursesDescription
 
 If adding projects then simply update the projects content and add a markdown
 page with the writeup.
 
 All images are provided in public and should be added there.
 
-Icon SVGs should be added to the icons directory and the Ant Wrapper written in
+Icon SVGs should be added to the icon handler component and the Ant Wrapper written in
 customIcons (within content directory).
 
 ## Acknowledgements
