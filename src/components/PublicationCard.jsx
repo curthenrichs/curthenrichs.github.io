@@ -1,12 +1,9 @@
 import React from "react";
 import { Card, Typography, Tag } from "antd";
 
-
 const { Text } = Typography;
 
-
 const PublicationCard = (props) => {
-
   const { title, reference, link, status, style } = props;
 
   let color = undefined;
@@ -20,7 +17,8 @@ const PublicationCard = (props) => {
   case "in progress":
     color = "gold";
     break;
-  default: break;
+  default:
+    break;
   }
 
   return (
@@ -37,8 +35,7 @@ const PublicationCard = (props) => {
         if (event.key === "Enter" && link) {
           window.open(link);
         }
-      }}
-    >
+      }}>
       <Card
         title={title}
         bordered={true}
@@ -47,16 +44,14 @@ const PublicationCard = (props) => {
         style={{
           paddingLeft: "3em",
           paddingRight: "2em"
-        }}
-      >
+        }}>
         <Text>{reference}</Text>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <Tag color={color}>{status}</Tag>
       </Card>
     </div>
   );
 };
-
 
 export default PublicationCard;

@@ -4,21 +4,20 @@ import data from "../../../content/publications";
 import SectionTitle from "../../../components/SectionTitle";
 import { WidthContext } from "../../../contexts";
 
-
 const SectionPublications = () => {
   const list = Object.values(data);
   const width = useContext(WidthContext);
 
   const cardWidth = 1750;
   const extraWidth = width - cardWidth;
-  
+
   return (
-    <div style={{
-      paddingLeft: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
-      paddingRight: (width > cardWidth) ? `${extraWidth/2}px` : "0px",
-    }}>
-        
-      <SectionTitle title="Publications"/>
+    <div
+      style={{
+        paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
+        paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
+      }}>
+      <SectionTitle title="Publications" />
 
       {list.map((entry, idx) => (
         <PublicationCard
@@ -34,10 +33,8 @@ const SectionPublications = () => {
           }}
         />
       ))}
-
     </div>
   );
 };
-
 
 export default SectionPublications;

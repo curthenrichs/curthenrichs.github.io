@@ -6,17 +6,12 @@ import { CaretRightOutlined } from "./IconManager";
 import { Row, Col, Card, Tooltip, Typography } from "antd";
 import MarkdownContent from "./MarkdownContent";
 
-
 const { Title, Text } = Typography;
-
 
 const ShortCardDescription = (props) => {
   const { text } = props;
-  return (
-    <Text>{text}</Text>
-  );
+  return <Text>{text}</Text>;
 };
-
 
 const LongCardContent = (props) => {
   const { markdownPath, publications, positions } = props;
@@ -25,9 +20,9 @@ const LongCardContent = (props) => {
   if (publications !== undefined && publications !== null) {
     pubList = publications.map((pub, idx) => {
       return (
-        <div key={idx} style={{ paddingBottom: "5px"}}>
+        <div key={idx} style={{ paddingBottom: "5px" }}>
           <CaretRightOutlined /> <Text>{pub}</Text>
-          <br/>
+          <br />
         </div>
       );
     });
@@ -37,10 +32,10 @@ const LongCardContent = (props) => {
   if (pubList.length > 0) {
     pubSect = (
       <Fragment>
-        <Title level={5} style={{paddingTop: "5px"}}>Publications</Title>
-        <div style={{padding: "0 20px"}}>
-          {pubList}
-        </div>
+        <Title level={5} style={{ paddingTop: "5px" }}>
+          Publications
+        </Title>
+        <div style={{ padding: "0 20px" }}>{pubList}</div>
       </Fragment>
     );
   }
@@ -49,9 +44,9 @@ const LongCardContent = (props) => {
   if (positions !== undefined && positions !== null) {
     positionList = positions.map((pos, idx) => {
       return (
-        <div key={idx} style={{ paddingBottom: "5px"}}>
+        <div key={idx} style={{ paddingBottom: "5px" }}>
           <CaretRightOutlined /> <Text>{pos}</Text>
-          <br/>
+          <br />
         </div>
       );
     });
@@ -61,24 +56,20 @@ const LongCardContent = (props) => {
   if (positionList.length > 0) {
     posSect = (
       <Fragment>
-        <Title level={5} style={{paddingTop: "5px"}}>Positions</Title>
-        <div style={{padding: "0 20px"}}>
-          {positionList}
-        </div>
+        <Title level={5} style={{ paddingTop: "5px" }}>
+          Positions
+        </Title>
+        <div style={{ padding: "0 20px" }}>{positionList}</div>
       </Fragment>
     );
   }
 
   let textSect = null;
-  
+
   if (markdownPath !== undefined && markdownPath !== null) {
-    textSect = (
-      <MarkdownContent
-        markdownPath={markdownPath}
-      />
-    );
+    textSect = <MarkdownContent markdownPath={markdownPath} />;
   }
-  
+
   return (
     <Fragment>
       {textSect}
@@ -88,19 +79,24 @@ const LongCardContent = (props) => {
   );
 };
 
-
 const SkillTray = (props) => {
   const { skills } = props;
-    
+
   return (
-    <div style={{overflow: "hidden", backgroundColor: "#E8E8E8", borderRadius: "15px", marginTop: "10px"}}>
+    <div
+      style={{
+        overflow: "hidden",
+        backgroundColor: "#E8E8E8",
+        borderRadius: "15px",
+        marginTop: "10px"
+      }}>
       <Tooltip title="Skills">
-        <Row justify="center" style={{padding: "2px 3px 1px 3px"}}>
+        <Row justify="center" style={{ padding: "2px 3px 1px 3px" }}>
           {skills.map((skill, idx) => (
-            <Col
-              key={idx}
-            >
-              <div style={{paddingLeft: "2px", paddingRight: "2px", fontSize: "18px"}}>{skill}</div>
+            <Col key={idx}>
+              <div style={{ paddingLeft: "2px", paddingRight: "2px", fontSize: "18px" }}>
+                {skill}
+              </div>
             </Col>
           ))}
         </Row>
@@ -109,15 +105,28 @@ const SkillTray = (props) => {
   );
 };
 
-
 const ItemCardTemplate = (props) => {
-
   const [visible, setVisible] = useState(false);
-  const { id, style, title, icon, img, brief, descriptionMarkdownPath, skills, children, publications, positions } = props;
+  const {
+    id,
+    style,
+    title,
+    icon,
+    img,
+    brief,
+    descriptionMarkdownPath,
+    skills,
+    children,
+    publications,
+    positions
+  } = props;
   const width = useContext(WidthContext);
 
-  const skilltray = (skills !== undefined && skills !== null && skills.length > 0) ? (<SkillTray skills={skills} />) : null;
-  
+  const skilltray =
+    skills !== undefined && skills !== null && skills.length > 0 ? (
+      <SkillTray skills={skills} />
+    ) : null;
+
   let layout;
   if (width >= 1000) {
     layout = (
@@ -125,14 +134,14 @@ const ItemCardTemplate = (props) => {
         <Row>
           <Col span={8} offset={1}>
             <ThumbnailImage img={img} />
-            <div style={{fontSize: "14px"}}>
-              <ShortCardDescription text={brief}/>
+            <div style={{ fontSize: "14px" }}>
+              <ShortCardDescription text={brief} />
             </div>
             {skilltray}
           </Col>
           <Col span={14} offset={1}>
-            <div style={{textAlign: "left", fontSize: "14px"}}>
-              <LongCardContent 
+            <div style={{ textAlign: "left", fontSize: "14px" }}>
+              <LongCardContent
                 markdownPath={descriptionMarkdownPath}
                 publications={publications}
                 positions={positions}
@@ -140,16 +149,13 @@ const ItemCardTemplate = (props) => {
             </div>
           </Col>
         </Row>
-        
       </Fragment>
     );
   } else {
     layout = (
       <Fragment>
         <ThumbnailImage img={img} />
-        <div style={{fontSize: "14px"}}>
-          {brief}
-        </div>
+        <div style={{ fontSize: "14px" }}>{brief}</div>
         {skilltray}
       </Fragment>
     );
@@ -157,18 +163,19 @@ const ItemCardTemplate = (props) => {
 
   return (
     <Fragment>
-      <div 
+      <div
         id={id}
         role="button"
         tabIndex="0"
-        onClick={() => { setVisible(true); }} 
+        onClick={() => {
+          setVisible(true);
+        }}
         onKeyPress={(event) => {
           if (event.key === "Enter") {
             setVisible(true);
           }
-        }} 
-        style={style}
-      >
+        }}
+        style={style}>
         <Card
           title={title}
           bordered={true}
@@ -177,22 +184,21 @@ const ItemCardTemplate = (props) => {
           }}
           hoverable={true}
           extra={icon}
-          className="type-c"
-        >
+          className="type-c">
           {layout}
         </Card>
       </div>
-      <ItemModalTemplate 
+      <ItemModalTemplate
         title={title}
         visible={visible}
-        closeCallback={() => { setVisible(false); }}
-        className="type-c"
-      >
+        closeCallback={() => {
+          setVisible(false);
+        }}
+        className="type-c">
         {children}
       </ItemModalTemplate>
     </Fragment>
   );
 };
-
 
 export default ItemCardTemplate;

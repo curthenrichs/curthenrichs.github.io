@@ -9,10 +9,10 @@ import SectionPublications from "./sections/main/Publications";
 import SectionContact from "./sections/main/Contact";
 import contactData from "../content/contact";
 
-
 const MainPage = () => {
   return (
     <PageTemplate
+      displayCookieConsent={false}
       header={{
         simple: false,
         pageName: "Main",
@@ -67,9 +67,9 @@ const MainPage = () => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -100,
+            offset: -100
           },
-          content: (<SectionHome/>)
+          content: <SectionHome />
         },
         {
           name: "sect-skills",
@@ -78,7 +78,7 @@ const MainPage = () => {
           style: { textAlign: "center" },
           scrollProperties: null,
           notApplyInnerSection: true,
-          content: (<SectionSkills/>)
+          content: <SectionSkills />
         },
         {
           name: "sect-career",
@@ -88,9 +88,9 @@ const MainPage = () => {
           scrollProperties: {
             duration: 500,
             smooth: true,
-            offset: -100,
+            offset: -100
           },
-          content: (<SectionCareer/>)
+          content: <SectionCareer />
         },
         // {
         //   name: "sect-education",
@@ -112,7 +112,7 @@ const MainPage = () => {
             smooth: true,
             offset: -100
           },
-          content: (<SectionProjects/>)
+          content: <SectionProjects />
         },
         {
           name: "sect-publications",
@@ -123,7 +123,7 @@ const MainPage = () => {
             smooth: true,
             offset: -100
           },
-          content: (<SectionPublications/>)
+          content: <SectionPublications />
         },
         {
           name: "sect-contact",
@@ -134,12 +134,11 @@ const MainPage = () => {
             smooth: true,
             offset: 0
           },
-          content: (<SectionContact/>)
+          content: <SectionContact />
         }
       ]}
     />
   );
 };
-
 
 export default MainPage;

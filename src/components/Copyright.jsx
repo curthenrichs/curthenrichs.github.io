@@ -1,28 +1,21 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { Typography , Divider } from "antd";
-
+import { Typography, Divider } from "antd";
 
 const { Text } = Typography;
 
-
 const Spacer = () => {
-  return (
-    <Fragment>
-            &nbsp;|&nbsp;
-    </Fragment>
-  );
+  return <Fragment>&nbsp;|&nbsp;</Fragment>;
 };
-
 
 const Copyright = () => {
   return (
     <Fragment>
       <Divider type="horizontal" />
-      <Text strong>Curt Henrichs © {(new Date()).getFullYear()}</Text>
-      <br/>
+      <Text strong>Curt Henrichs © {new Date().getFullYear()}</Text>
+      <br />
       <Text>Created with Reactjs and Ant Design</Text>
-      <br/>
+      <br />
       <Text>
         <Link to="/">Home</Link>
         <Spacer />
@@ -39,6 +32,5 @@ const Copyright = () => {
     </Fragment>
   );
 };
-
 
 export default Copyright;

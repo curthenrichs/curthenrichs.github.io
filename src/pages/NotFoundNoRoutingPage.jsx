@@ -1,7 +1,6 @@
 import React from "react";
 import { Result } from "antd";
 
-
 const NotFoundNoRoutingPage = () => {
   return (
     <Result
@@ -11,6 +10,5 @@ const NotFoundNoRoutingPage = () => {
     />
   );
 };
-
 
 export default NotFoundNoRoutingPage;

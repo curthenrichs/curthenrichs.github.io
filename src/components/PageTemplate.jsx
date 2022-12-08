@@ -4,16 +4,13 @@ import NavHeader from "./NavHeader";
 import Copyright from "./Copyright";
 import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
-import { Element as ScrollElement, scroller} from "react-scroll";
+import { Element as ScrollElement, scroller } from "react-scroll";
 import CookieConsent from "react-cookie-consent";
-
 
 const { Text } = Typography;
 const { Header, Footer, Content } = Layout;
 
-
 class PageTemplate extends Component {
-
   constructor(props) {
     super(props);
 
@@ -32,7 +29,7 @@ class PageTemplate extends Component {
   }
 
   handleResize() {
-    this.setState({width: window.innerWidth, height: window.innerHeight });
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   trackScrolling() {
@@ -47,30 +44,34 @@ class PageTemplate extends Component {
       if (!entry.navItem) {
         area = -1; // No nav item then give it failing score
         point = false;
-
       } else {
         const { top, bottom } = document.getElementById(entry.name).getBoundingClientRect();
 
-        if (top > height || bottom < 0) {               // section not in viewport
-          area = 0; 
-        } else if (top < 0 && bottom > height) {        // section within viewport (and larger than viewport)
+        if (top > height || bottom < 0) {
+          // section not in viewport
+          area = 0;
+        } else if (top < 0 && bottom > height) {
+          // section within viewport (and larger than viewport)
           area = (bottom - top) / height;
-        } else if (top < 0) {                           // section partialy within viewport
-          area = (bottom - 0) / height;    
-        } else if (bottom > height) {                   // section partialy within viewport
+        } else if (top < 0) {
+          // section partialy within viewport
+          area = (bottom - 0) / height;
+        } else if (bottom > height) {
+          // section partialy within viewport
           area = (height - top) / height;
-        } else {                                        // section fully within viewport
+        } else {
+          // section fully within viewport
           area = 1;
         }
 
         // section contains interestion point - used for tie break
-        point = intersectPoint > top && intersectPoint < bottom; 
+        point = intersectPoint > top && intersectPoint < bottom;
       }
 
-      return { 
-        ...acc, 
+      return {
+        ...acc,
         [entry.navItem]: {
-          area, 
+          area,
           point
         }
       };
@@ -95,8 +96,11 @@ class PageTemplate extends Component {
         newNavItem = clickedNavItem;
       } else {
         //iterate through data for point intersect
-        const intersect = Object.keys(data).map((key) => ({key, point: data[key].point})).filter(({point}) => (point));
-        if (intersect.length < 1) {         // Failed - select current nav itme
+        const intersect = Object.keys(data)
+          .map((key) => ({ key, point: data[key].point }))
+          .filter(({ point }) => point);
+        if (intersect.length < 1) {
+          // Failed - select current nav itme
           newNavItem = activeNavItem;
         } else {
           newNavItem = intersect[0].key;
@@ -106,7 +110,7 @@ class PageTemplate extends Component {
       newNavItem = nextChoice[0];
     }
 
-    this.setState({activeNavItem: newNavItem});
+    this.setState({ activeNavItem: newNavItem });
   }
 
   componentDidMount() {
@@ -116,11 +120,10 @@ class PageTemplate extends Component {
     const { sections } = this.props;
 
     if (sections.length) {
-
       const firstSection = sections[0];
 
       let scrollProperties = firstSection.scrollProperties;
-      if (! scrollProperties) {
+      if (!scrollProperties) {
         scrollProperties = {
           duration: 500,
           smooth: true,
@@ -144,17 +147,21 @@ class PageTemplate extends Component {
     let cookieConsent = null;
     if (displayCookieConsent) {
       cookieConsent = (
-        <CookieConsent 
+        <CookieConsent
           location="bottom"
           buttonText="Accept"
           style={{
-            background: "#fafafa" 
+            background: "#fafafa"
           }}
           buttonClasses="ant-btn ant-btn-primary ant-btn-lg cookie-btn-style"
           expires={999}
-          visible="byCookieValue"
-        >
-          <Text>This website may use cookies to enhance user experience.</Text> <br /> <Text style={{fontSize:"10px"}}>To find out more read our <a href="/terms">terms of use</a> and <a href="/privacy">privacy policy</a>.</Text>.
+          visible="byCookieValue">
+          <Text>This website may use cookies to enhance user experience.</Text> <br />{" "}
+          <Text style={{ fontSize: "10px" }}>
+            To find out more read our <a href="/terms">terms of use</a> and{" "}
+            <a href="/privacy">privacy policy</a>.
+          </Text>
+          .
         </CookieConsent>
       );
     }
@@ -162,10 +169,8 @@ class PageTemplate extends Component {
     return (
       <WidthContext.Provider value={width}>
         <HeightContext.Provider value={height}>
-
           <Layout className="layout">
-
-            <Header className="header-style" >
+            <Header className="header-style">
               <NavHeader
                 {...header}
                 callback={(e) => {
@@ -174,7 +179,7 @@ class PageTemplate extends Component {
 
                     if (entry.navItem === e.target.id) {
                       scroller.scrollTo(entry.name, entry.scrollProperties);
-                      this.setState({clickedNavItem: entry.navItem});
+                      this.setState({ clickedNavItem: entry.navItem });
                     }
                   }
                 }}
@@ -183,46 +188,40 @@ class PageTemplate extends Component {
             </Header>
 
             <Content style={{ padding: "20px 0 0 0", marginTop: 64 }}>
-
               {sections.map((entry) => (
                 <ScrollElement
                   key={entry.name}
                   name={entry.name}
                   id={entry.name}
                   style={entry.style}
-                  className={`sect ${entry.sectionType}`}
-                >
-                  <div 
-                    className={`${entry.notApplyInnerSection ? "" : "sect-inner"}`} 
-                    style={{ 
-                      position: "relative", 
-                      paddingTop: `${ entry.paddingTop !== undefined ? entry.paddingTop : 0 }px`,
-                      paddingBottom: `${ entry.paddingBottom !== undefined ? entry.paddingBottom : 0 }px` 
-                    }}
-                  >
+                  className={`sect ${entry.sectionType}`}>
+                  <div
+                    className={`${entry.notApplyInnerSection ? "" : "sect-inner"}`}
+                    style={{
+                      position: "relative",
+                      paddingTop: `${entry.paddingTop !== undefined ? entry.paddingTop : 0}px`,
+                      paddingBottom: `${
+                        entry.paddingBottom !== undefined ? entry.paddingBottom : 0
+                      }px`
+                    }}>
                     {entry.content}
                   </div>
                 </ScrollElement>
               ))}
-
             </Content>
 
             {cookieConsent}
 
-            <Footer style={{ textAlign: "center"}}>
+            <Footer style={{ textAlign: "center" }}>
               <Copyright />
             </Footer>
 
             {inDevelopment ? <InDevelopmentModal /> : undefined}
-
           </Layout>
-
         </HeightContext.Provider>
       </WidthContext.Provider>
     );
   }
-
 }
-
 
 export default PageTemplate;

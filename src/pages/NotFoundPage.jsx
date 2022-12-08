@@ -3,7 +3,6 @@ import PageTemplate from "../components/PageTemplate";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import { Result } from "antd";
 
-
 const NotFoundPage = () => {
   return (
     <PageTemplate
@@ -28,6 +27,5 @@ const NotFoundPage = () => {
     />
   );
 };
-
 
 export default NotFoundPage;
