@@ -3,7 +3,8 @@ import React, { Fragment } from "react";
 const SectionHome = () => {
   return (
     <Fragment>
-      <h2>General Attribution</h2>
+      <h2>Attribution and Licenses</h2>
+      <h3>General Attribution</h3>
       <p>Website created by Curt Henrich using React and Ant Design.</p>
       <p>
         Deployed on Github Pages static hosting. Deployment handled with{" "}
@@ -22,11 +23,11 @@ const SectionHome = () => {
         </a>
         , hard refreshes are managed when deployed on Github Pages.
       </p>
-      <h2>Icons</h2>
+      <h3>Icons</h3>
       The following sources were used for icons on this website:
       <br />
       <br />
-      <h3>Ant Design Icons</h3>
+      <h4>Ant Design Icons</h4>
       <a href="https://ant.design/components/icon/" target="_blank" rel="noopener noreferrer">
         ant.design
       </a>
@@ -47,7 +48,7 @@ const SectionHome = () => {
         <li>EnvironmentFilled</li>
         <li>SettingOutlined</li>
       </ul>
-      <h3>Flaticon Icons</h3>
+      <h4>Flaticon Icons</h4>
       <ul>
         <li>
           <div>
@@ -90,7 +91,7 @@ const SectionHome = () => {
           </div>
         </li>
       </ul>
-      <h3>Font Awesome Icons</h3>
+      <h4>Font Awesome Icons</h4>
       <ul>
         <li>
           <div>
@@ -115,7 +116,7 @@ const SectionHome = () => {
           </div>
         </li>
       </ul>
-      <h3>Simple-Icons Icons</h3>
+      <h4>Simple-Icons Icons</h4>
       <a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">
         simpleicons.org
       </a>
@@ -141,12 +142,12 @@ const SectionHome = () => {
         <li>autodesk.svg</li>
         <li>c.svg</li>
       </ul>
-      <h3>Others</h3>
+      <h4>Others</h4>
       <ul>
         <li>Icon (matlab.svg) was drawn by me using the original jpg icon as reference.</li>
         <li>Icon (labview.svg) was drawn by me using png icon as reference.</li>
       </ul>
-      <h2>Favicon</h2>
+      <h3>Favicon</h3>
       <p>Website favicon was generated using the following:</p>
       <ul>
         <li>Font Title: Iceland</li>
@@ -162,7 +163,7 @@ const SectionHome = () => {
             href="http://fonts.gstatic.com/s/iceland/v9/rax9HiuFsdMNOnWPWKxGADBbg0s.ttf"
             target="_blank"
             rel="noopener noreferrer">
-            http://fonts.gstatic.com/s/iceland/v9/rax9HiuFsdMNOnWPWKxGADBbg0s.ttf
+            fonts.gstatic.com
           </a>
         </li>
         <li>
@@ -173,7 +174,7 @@ const SectionHome = () => {
           )
         </li>
       </ul>
-      <h2>Logos</h2>
+      <h3>Logos</h3>
       <p>The following third-party logos are used as thumbnail images in relevant sections.</p>
       <ul>
         <li>UW Madison Crest is the copyrighted property of University of Wisconsin Madison</li>
@@ -184,7 +185,7 @@ const SectionHome = () => {
           (IDES)
         </li>
       </ul>
-      <h2>Images</h2>
+      <h3>Images</h3>
       <p>
         All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from
         publications produced in whole/part by Curt Henrichs.
