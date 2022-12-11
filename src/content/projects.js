@@ -46,7 +46,7 @@ const data = {
     type: "Research",
     _id: "project-coframe",
     modalMarkdownPath: CoFrameModal,
-    notable: true,
+    notable: false,
     skills: [],
     images: [
       {

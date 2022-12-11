@@ -33,6 +33,7 @@ ReactDOM.render(
             return <Redirect to="/" />;
           }}
         />
+        <Route exact path="/contract" component={NotFoundPage} />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
