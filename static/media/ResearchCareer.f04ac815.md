@@ -1,0 +1,1 @@
+During my graduate research position, I developed several robot user interfaces and researched interaction between robots and humans within the collaborative manufacturing context. Outside of research, I contributed to lab infrastructure and processes, e.g., maintaining centralized robot description/configuration repository.
