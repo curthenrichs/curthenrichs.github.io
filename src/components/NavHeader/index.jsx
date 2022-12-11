@@ -76,12 +76,20 @@ const NavHeader = (props) => {
 
   let contents = null;
   if (simple) {
-    contents = (
-      <Col flex="auto">
-        <NavDivider />
-        <Text className="nav-bar-text">{pageName}</Text>
-      </Col>
-    );
+    if (width >= 450) {
+      contents = (
+        <Col flex="auto">
+          <NavDivider />
+          <Text className="nav-bar-text">{pageName}</Text>
+        </Col>
+      );
+    } else {
+      contents = (
+        <Col flex="auto">
+          <Text className="nav-bar-text">&nbsp;</Text>
+        </Col>
+      );
+    }
   } else {
     const innerBtns = innerButtons.map((entry) => (
       <Col flex={`${entry.flexPx}px`} key={entry.id}>
