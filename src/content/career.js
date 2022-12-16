@@ -24,7 +24,7 @@ const data = {
       "atlassian",
       "mongodb"
     ],
-    thumbnail: "/static/img/thumbnail/dc-logo.png",
+    thumbnail: "/static/img/thumbnail/career-dc.jpg",
     web: "https://www.dedicatedcomputing.com/",
     positions: [
       {
@@ -78,7 +78,7 @@ const data = {
       "matlab",
       "overleaf"
     ],
-    thumbnail: "/static/img/thumbnail/uwmadison-crest.png",
+    thumbnail: "/static/img/thumbnail/career-uwmad.jpg",
     web: "https://peopleandrobots.wisc.edu/",
     positions: [
       {
@@ -90,7 +90,13 @@ const data = {
         brief: ""
       }
     ],
-    images: [],
+    images: [
+      {
+        img: "/static/img/career/uwmad/uwmad-lab.jpg",
+        alt: "",
+        caption: "Lab experiment room with multiple robot arms (UR3e, Franka Emkika Panda, Kinova Mico)."
+      }
+    ],
     publications: [
       "publication-interdependence",
       "publication-authr",
