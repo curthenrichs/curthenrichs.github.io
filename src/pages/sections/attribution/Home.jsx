@@ -174,18 +174,15 @@ const SectionHome = () => {
           )
         </li>
       </ul>
-      <h3>Logos</h3>
-      <p>The following third-party logos are used as thumbnail images in relevant sections.</p>
-      <ul>
-        <li>UW Madison Crest is the copyrighted property of University of Wisconsin Madison</li>
-        <li>MSOE Logo is the copyrighted property of Milwaukee School of Engineering</li>
-        <li>DC Logo is the copyrighted property of Dedicated Computing</li>
-        <li>
-          IDES Spiral Logo is the copyrighted property of Integrated Dynamic Electron Solutions Inc.
-          (IDES)
-        </li>
-      </ul>
       <h3>Images</h3>
+      <p>
+        Images presented for IDES were taken / published with permission from supervisor during time
+        with the company.
+      </p>
+      <p>
+        Dedicated Computing internship images were taken with permission from my supervisor during
+        my time as an intern.
+      </p>
       <p>
         All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from
         publications produced in whole/part by Curt Henrichs.
