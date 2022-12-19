@@ -1,7 +1,9 @@
 # Hobby Projects
+
 I am an avid MAKER. I have had the privilege to build several robotic and home automation systems in my personal time over the years. My journey started in middle school when I started building simple analog BEAM robots to now where I have multiple challenging systems projects.
 
 ## Robotics
+
 My first robots were small BEAM (analog controlled) systems. The circuits were a rats nest of wires and discrete components. The mechanical systems held together with hot glue. I hesitantly graduated to microcontroller robots. After overcoming the initial overwhelming fear of programming (in BASIC no less), I found that I really enjoyed the craft. With the various small robots I built in my formative years (plus competing in FIRST robotics on [FRC Team 930](https://www.team930.com/)) I gained fundamental electronic and programming skills that serve me to this day. 
 
 When I went to graduate school my work, study, and hobby mixed. I focused my efforts on understanding collaborative robotics. Two distinctively hobby projects come to mind: a robot motion “playground” and an abstract trajectory visualization. 
@@ -18,6 +20,7 @@ I am also interested in augmenting humans with symbiotic, supernumerary robotic
 limbs. I have built a robotic finger called Taltosoid (a play on the Hungarian word Taltos) to start exploring control modalities and use cases of wearing an extra digit. My long-term vision for this system is a functional robotic finger that provides dynamic grasp support for arbitrary objects. I am approaching this space as a human-robot interaction, shared-control problem instead of as a direct control problem (commonly found in the literature).
 
 ## Home Automation
+
 In addition to robotics, I also dabble in home automation since my undergraduate degree (when I actually had a place of my own). Most of my systems are commercial off the shelf smart switches, bulbs, cameras, etc. communicating with Amazon Alexa and Google Home. I am actively building my own server to integrate various DIY embedded smart devices with Amazon / Google.
 
 This home automation server is called Okos Polip (another Hungarian inspired name) that exposes device data ingest services for my various DIY devices and routes to external home automation APIs (e.g., Alexa). There is significant work still to be done. The following devices I am building support for:
@@ -30,6 +33,7 @@ This home automation server is called Okos Polip (another Hungarian inspired nam
 Previously, I built a RESTful LED light strip service that ran on an ESP8266 (translating REST commands into IR blasts). I also did some LED automation effects for lighting in my apartment (communicating with the predecessor to Okos Polip).
 
 ## Links
+
 Feel free to check out my Github for the various projects discussed above.
 
 Github Links:
