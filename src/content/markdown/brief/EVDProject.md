@@ -1,0 +1,3 @@
+CoFrame is a training environment for novice cobot operators to learn how to safely modify their existing cobot program with proper scaffolding to guide them toward expert-acceptable solutions. The system was built to provide this automated expert feedback to address the lack of autonomy operators have in modifying systems while maintaining high standards of safety and quality that stakeholders demand from these systems. Our expert feedback comes in four “frames”: safety, code quality, robot performance, and business objectives. 
+
+My contribution was both conceptual, e.g., deriving the expert frames from existing data, and technical, e.g., developing ROS backend and prototyping user interfaces.
