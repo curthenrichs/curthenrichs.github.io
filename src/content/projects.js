@@ -11,50 +11,50 @@ import HobbyBrief from "./markdown/brief/HobbyProject.md";
 import WebsiteBrief from "./markdown/brief/WebsiteProject.md";
 
 const data = {
-    "project-coframe": {
-        title: "CoFrame",
-        brief: "Cobot operator training environment",
-        descriptionMarkdownPath: CoFrameBrief,
-        thumbnail: "/static/img/thumbnail/project-coframe.jpg",
-        type: "Research",
-        _id: "project-coframe",
-        modalMarkdownPath: CoFrameModal,
-        notable: true,
-        skills: [],
-        images: [
-          {
-            img: "/static/img/projects/coframe/evd-authoring-ui.jpg",
-            alt: "",
-            caption: "CoFrame's authoring interface (still in development)."
-          },
-          {
-            img: "/static/img/projects/coframe/coframe-banner.jpg",
-            alt: "",
-            caption: ""
-          },
-          {
-            img: "/static/img/projects/coframe/coframe-frames.png",
-            alt: "",
-            caption: ""
-          },
-          {
-            img: "/static/img/projects/coframe/coframe-mapping.jpg",
-            alt: "",
-            caption: ""
-          },
-          {
-            img: "/static/img/projects/coframe/coframe-structure.jpg",
-            alt: "",
-            caption: ""
-          },
-          {
-            img: "/static/img/projects/coframe/coframe-current.jpg",
-            alt: "",
-            caption: ""
-          }
-        ],
-        publications: ["publication-coframe"]
+  "project-coframe": {
+    title: "CoFrame",
+    brief: "Cobot operator training environment",
+    descriptionMarkdownPath: CoFrameBrief,
+    thumbnail: "/static/img/thumbnail/project-coframe.jpg",
+    type: "Research",
+    _id: "project-coframe",
+    modalMarkdownPath: CoFrameModal,
+    notable: true,
+    skills: [],
+    images: [
+      {
+        img: "/static/img/projects/coframe/evd-authoring-ui.jpg",
+        alt: "",
+        caption: "CoFrame's authoring interface (still in development)."
       },
+      {
+        img: "/static/img/projects/coframe/coframe-banner.jpg",
+        alt: "",
+        caption: ""
+      },
+      {
+        img: "/static/img/projects/coframe/coframe-frames.png",
+        alt: "",
+        caption: ""
+      },
+      {
+        img: "/static/img/projects/coframe/coframe-mapping.jpg",
+        alt: "",
+        caption: ""
+      },
+      {
+        img: "/static/img/projects/coframe/coframe-structure.jpg",
+        alt: "",
+        caption: ""
+      },
+      {
+        img: "/static/img/projects/coframe/coframe-current.jpg",
+        alt: "",
+        caption: ""
+      }
+    ],
+    publications: ["publication-coframe"]
+  },
   "project-authr": {
     title: "Authr",
     brief: "Human-robot task development tool based on Therbligs",
@@ -158,11 +158,11 @@ const data = {
     notable: false,
     skills: [],
     images: [
-        {
-            img: "/static/img/projects/portfolio/portfolio-home.jpg",
-            alt: "",
-            caption: "Desktop view ~ Home section and skills section"
-        }
+      {
+        img: "/static/img/projects/portfolio/portfolio-home.jpg",
+        alt: "",
+        caption: "Desktop view ~ Home section and skills section"
+      }
     ],
     publications: []
   }
