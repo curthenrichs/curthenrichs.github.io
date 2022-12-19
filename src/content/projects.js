@@ -155,7 +155,7 @@ const data = {
     type: "Personal",
     _id: "project-website",
     modalMarkdownPath: WebsiteModal,
-    notable: true,
+    notable: false,
     skills: [],
     images: [
         {
