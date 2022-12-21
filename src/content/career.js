@@ -33,23 +33,23 @@ const data = {
         field: "Storage / Compute",
         start: "2016",
         end: "2018",
-        brief: ""
+        brief: "R&D Software Engineering Intern"
       }
     ],
     images: [
       {
         img: "/static/img/career/dc/dc-oled-covered.jpg",
-        alt: "",
+        alt: "Custom OLED node ID display that fits within 3.5 inch bay. Shown with 3D printed cover. Text on OLED shows alphabet printed on two lines.",
         caption: "Custom OLED node ID display that fits within 3.5\" bay."
       },
       {
         img: "/static/img/career/dc/dc-oled-pcb.jpg",
-        alt: "",
+        alt: "OLED display has two capacitive touch buttons, USB serial interface, and multi-page OLED screen.",
         caption: "OLED display has two capacitive touch buttons, USB serial interface, and multi-page screen."
       },
       {
         img: "/static/img/career/dc/dc-fan.jpg",
-        alt: "",
+        alt: "Custom fan controller with 4 4-wire fan connectors with a SAMD Atmel microcontroller. Power supplied with a 4-pin Molex. USB port for external control.",
         caption: "Custom fan controller with a SAMD Atmel microcontroller."
       }
     ],
@@ -87,13 +87,13 @@ const data = {
         field: "Human-Robot Interaction",
         start: "2019",
         end: "2021",
-        brief: ""
+        brief: "Graduate Research Assistant"
       }
     ],
     images: [
       {
         img: "/static/img/career/uwmad/uwmad-lab.jpg",
-        alt: "",
+        alt: "Lab experiment room with multiple robot arms (UR3e on the left, Franka Emkika Panda in the middle, Kinova Mico on the right).",
         caption: "Lab experiment room with multiple robot arms (UR3e, Franka Emkika Panda, Kinova Mico)."
       }
     ],
@@ -121,7 +121,7 @@ const data = {
         field: "Electron Microscopy",
         start: "2021",
         end: "2022",
-        brief: ""
+        brief: "Firmware Engineer"
       },
       {
         _id: "career-ides-position-se",
@@ -129,7 +129,7 @@ const data = {
         field: "Electron Microscopy",
         start: "2022",
         end: null,
-        brief: ""
+        brief: "Senior Embedded Systems Engineer"
       }
     ],
     images: [],
