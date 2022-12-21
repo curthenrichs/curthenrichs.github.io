@@ -24,33 +24,33 @@ const data = {
     images: [
       {
         img: "/static/img/projects/coframe/evd-authoring-ui.jpg",
-        alt: "",
+        alt: "CoFrame's authoring interface (still in development).",
         caption: "CoFrame's authoring interface (still in development)."
       },
       {
         img: "/static/img/projects/coframe/coframe-banner.jpg",
-        alt: "",
-        caption: ""
+        alt: "CoFrame paper banner, decent visual summary of each feedback frame.",
+        caption: "CoFrame paper banner, decent visual summary of each feedback frame."
       },
       {
         img: "/static/img/projects/coframe/coframe-frames.png",
-        alt: "",
-        caption: ""
+        alt: "Visuals showing the \"skill tree\" that operators work through while modifying programs broken down by frame.",
+        caption: "Visuals showing the \"skill tree\" that operators work through while modifying programs broken down by frame."
       },
       {
         img: "/static/img/projects/coframe/coframe-mapping.jpg",
-        alt: "",
-        caption: ""
+        alt: "Visual mapping the CoFrame frames compared to the themes identified via ENA on ethnography.",
+        caption: "Visual mapping the CoFrame frames compared to the themes identified via ENA on ethnography."
       },
       {
         img: "/static/img/projects/coframe/coframe-structure.jpg",
-        alt: "",
-        caption: ""
+        alt: "Structure breakdown of CoFrame, showing expert feedback, simulation, and programming sections.",
+        caption: "Structure breakdown of CoFrame, showing expert feedback, simulation, and programming sections."
       },
       {
         img: "/static/img/projects/coframe/coframe-current.jpg",
-        alt: "",
-        caption: ""
+        alt: "CoFrame interface (current demo application) with machine tending task.",
+        caption: "CoFrame interface (current demo application) with machine tending task."
       }
     ],
     publications: ["publication-coframe"]
@@ -68,17 +68,17 @@ const data = {
     images: [
       {
         img: "/static/img/projects/authr/authr-setup.jpg",
-        alt: "",
+        alt: "Authr setup view allows user to define Agents, Things, and Destinations.",
         caption: "Authr setup view allows user to define Agents, Things, and Destinations."
       },
       {
         img: "/static/img/projects/authr/authr-task.jpg",
-        alt: "",
+        alt: "Authr task view allows user to drag-and-drop Therbligs into tasks.",
         caption: "Authr task view allows user to drag-and-drop Therbligs into tasks."
       },
       {
         img: "/static/img/projects/authr/authr-sim.jpg",
-        alt: "",
+        alt: "Authr simulation view allows user to inspect the program constructed.",
         caption: "Authr simulation view allows user to inspect the program constructed."
       }
     ],
@@ -97,22 +97,22 @@ const data = {
     images: [
       {
         img: "/static/img/projects/iter/iter-seq-task.jpg",
-        alt: "",
+        alt: "Participant constructs wooden block structure with the robot.",
         caption: "Participant constructs wooden block structure with the robot."
       },
       {
         img: "/static/img/projects/iter/iter-displays.png",
-        alt: "",
+        alt: "Evaluated two interface widgets for communicating pRAD.",
         caption: "Evaluated two interface widgets for communicating pRAD."
       },
       {
         img: "/static/img/projects/iter/iter-workspace.png",
-        alt: "",
+        alt: "Sketch of participant's workspace for the two experiments.",
         caption: "Sketch of participant's workspace for the two experiments."
       },
       {
         img: "/static/img/projects/iter/iter-computer-vision.jpg",
-        alt: "",
+        alt: "Demonstration of computer vision system capability in ITER system.",
         caption: "Demonstration of computer vision system capability in ITER system."
       }
     ],
@@ -131,17 +131,17 @@ const data = {
     images: [
       {
         img: "/static/img/projects/hobby/hobby-taltosoid.jpg",
-        alt: "",
+        alt: "First version of my sumpernumerary robotic finger named Taltosioid shown worn on my hand with capatitive flex detection glove.",
         caption: "First version of Taltosoid - A supernumerary robotic finger."
       },
       {
         img: "/static/img/projects/hobby/hobby-robots.jpg",
-        alt: "",
+        alt: "Small hobby robots shown in a group photo (left to right): YAM, Beta-Rex, Roverbot, BOE-Bot, Hexbug Larva, Solar Roller, Symet, NBB, Spinbot, Photoflower, Herbie, Beetle (large), Beetle (small), and Bubbles.",
         caption: "Some of my older robots in a group photo."
       },
       {
         img: "/static/img/projects/hobby/hobby-leds.jpg",
-        alt: "",
+        alt: "LED strips on ceiling of apartment with lighting effect control.",
         caption: "LEDs being controlled by lighting effects interface, back when I was at MSOE."
       }
     ],
@@ -155,12 +155,12 @@ const data = {
     type: "Personal",
     _id: "project-website",
     modalMarkdownPath: WebsiteModal,
-    notable: false,
+    notable: true,
     skills: [],
     images: [
       {
         img: "/static/img/projects/portfolio/portfolio-home.jpg",
-        alt: "",
+        alt: "Desktop view of website portfolio home section and skills section.",
         caption: "Desktop view ~ Home section and skills section"
       }
     ],
