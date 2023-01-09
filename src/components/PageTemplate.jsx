@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Typography } from "antd";
-import NavHeader from "./NavHeader";
+import { NavHeader, NavDrawer } from "./Navigation";
 import Copyright from "./Copyright";
 import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
@@ -21,7 +21,8 @@ class PageTemplate extends Component {
       width: window.innerWidth,
       height: window.innerHeight,
       activeNavItem: initNavItem,
-      clickedNavItem: initNavItem
+      clickedNavItem: initNavItem,
+      menuOpen: false,
     };
 
     this.handleResize = this.handleResize.bind(this);
@@ -142,7 +143,7 @@ class PageTemplate extends Component {
 
   render() {
     const { header, sections, inDevelopment, displayCookieConsent } = this.props;
-    const { width, height, activeNavItem } = this.state;
+    const { width, height, activeNavItem, menuOpen } = this.state;
 
     let cookieConsent = null;
     if (displayCookieConsent) {
@@ -166,23 +167,37 @@ class PageTemplate extends Component {
       );
     }
 
+    const sectionNavCallback = (e) => {
+      for (let key in sections) {
+        const entry = sections[key];
+
+        if (entry.navItem === e.target.id) {
+          scroller.scrollTo(entry.name, entry.scrollProperties);
+          this.setState({ clickedNavItem: entry.navItem });
+        }
+      }
+    };
+
+    const menuClickedCallback = () => {
+      console.log("Menu Button Clicked!");
+      this.setState({ menuOpen: !this.state.menuOpen });
+    };
+
+    const menuCloseCallback = () => {
+      console.log("Menu is Closed...");
+      this.setState({ menuOpen: false });
+    };
+
     return (
       <WidthContext.Provider value={width}>
         <HeightContext.Provider value={height}>
           <Layout className="layout">
+            
             <Header className="header-style">
               <NavHeader
                 {...header}
-                callback={(e) => {
-                  for (let key in sections) {
-                    const entry = sections[key];
-
-                    if (entry.navItem === e.target.id) {
-                      scroller.scrollTo(entry.name, entry.scrollProperties);
-                      this.setState({ clickedNavItem: entry.navItem });
-                    }
-                  }
-                }}
+                optionSelectCallback={sectionNavCallback}
+                menuClickedCallback={menuClickedCallback}
                 selected={activeNavItem}
               />
             </Header>
@@ -210,14 +225,24 @@ class PageTemplate extends Component {
               ))}
             </Content>
 
-            {cookieConsent}
-
             <Footer style={{ textAlign: "center" }}>
               <Copyright />
             </Footer>
 
-            {inDevelopment ? <InDevelopmentModal /> : undefined}
           </Layout>
+
+          {inDevelopment ? <InDevelopmentModal /> : undefined}
+
+          <NavDrawer 
+            {...header}
+            optionSelectCallback={sectionNavCallback}
+            selected={activeNavItem}
+            menuCloseCallback={menuCloseCallback}
+            open={menuOpen}
+          />
+
+          {cookieConsent}
+
         </HeightContext.Provider>
       </WidthContext.Provider>
     );
