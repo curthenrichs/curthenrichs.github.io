@@ -8,13 +8,13 @@ const ImageCarousel = (props) => {
 
   return (
     <Carousel 
-        autoPlay 
-        infiniteLoop 
-        interval={5000} 
-        emulateTouch 
-        className="carousel"
-        stopOnHover={true}
-        showStatus={false}
+      autoPlay 
+      infiniteLoop 
+      interval={5000} 
+      emulateTouch 
+      className="carousel"
+      stopOnHover={true}
+      showStatus={false}
     >
       {options.map((entry, idx) => (
         <div key={idx} style={{ display: "flex", justifyContent: "center" }}>

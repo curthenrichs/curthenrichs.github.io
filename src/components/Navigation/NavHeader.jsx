@@ -1,94 +1,87 @@
 import React, { useContext, Fragment } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu as MenuIcon } from "../IconManager";
 import { WidthContext } from "../../contexts";
 import { Row, Col, Typography, Divider } from "antd";
+import InnerNavButton from "./InnerNavButton";
+import PageNavButton from "./PageNavButton";
+import LinkNavButton from "./LinkNavButton";
 import "./index.css";
 
 const { Title, Text } = Typography;
 
-const NavDivider = () => {
+const NavHeaderDivider = () => {
   return <Divider className="nav-bar nav-bar-divider" type="vertical" />;
 };
 
-const InnerNavButton = (props) => {
-  const { active, id, content, callback } = props;
-
+const HomeTitleLink = () => {
   return (
-    <div
+    <Col flex="200px">
+      <Title level={2} style={{ overflow: "hidden" }}>
+        <Link to="/" style={{ color: "#fff" }}>
+                    Curt Henrichs
+        </Link>
+      </Title>
+    </Col>
+  );
+};
+
+const MenuButton = (props) => {
+  const {callback} = props;
+  return (
+    <div 
+      className="nav-bar nav-bar-dropdown" 
+      id="collapsed-menu"
       role="button"
       tabIndex="0"
-      className={`nav-bar nav-bar-btn ${active ? "nav-bar-btn-selected" : ""}`}
-      id={id}
       onClick={callback}
       onKeyPress={(event) => {
         if (event.key === "Enter") {
           callback(event);
         }
-      }}>
-      {content}
-    </div>
-  );
-};
-
-const PageNavButton = (props) => {
-  const { id, content, route } = props;
-  const history = useHistory();
-
-  return (
-    <div
-      role="button"
-      tabIndex="0"
-      className="nav-bar nav-bar-ext-link"
-      id={id}
-      onClick={() => {
-        history.push(route);
       }}
-      onKeyPress={(event) => {
-        if (event.key === "Enter") {
-          history.push(route);
-        }
-      }}>
-      {content}
+    >
+      <div style={{ fontSize: "30px" }}>
+        <MenuIcon/>
+      </div>
     </div>
-  );
-};
-
-const LinkNavButton = (props) => {
-  const { id, content, route } = props;
-
-  return (
-    <a
-      style={{ display: "block" }}
-      className="nav-bar nav-bar-ext-link"
-      id={id}
-      href={route}
-      target="_blank"
-      rel="noopener noreferrer">
-      {content}
-    </a>
   );
 };
 
 const NavHeader = (props) => {
-  const { simple, callback, selected, pageName, innerButtons, pageButtons, collapseWidth } = props;
+  const { 
+    simple, 
+    optionSelectCallback, 
+    selected, 
+    pageName, 
+    innerButtons, 
+    pageButtons, 
+    collapseWidth, 
+    menuClickedCallback 
+  } = props;
   const width = useContext(WidthContext);
 
   let contents = null;
   if (simple) {
     if (width >= 450) {
-      contents = (
+      contents = (<Fragment>
         <Col flex="auto">
-          <NavDivider />
+          <NavHeaderDivider />
           <Text className="nav-bar-text">{pageName}</Text>
         </Col>
-      );
+        <Col flex="100px">
+          <MenuButton callback={menuClickedCallback} />
+        </Col>
+      </Fragment>);
     } else {
-      contents = (
+      contents = (<Fragment>
         <Col flex="auto">
           <Text className="nav-bar-text">&nbsp;</Text>
         </Col>
-      );
+        <Col flex="100px">
+          <MenuButton callback={menuClickedCallback} />
+        </Col>
+      </Fragment>);
     }
   } else {
     const innerBtns = innerButtons.map((entry) => (
@@ -97,7 +90,7 @@ const NavHeader = (props) => {
           active={selected === entry.id}
           id={entry.id}
           content={entry.content}
-          callback={callback}
+          callback={optionSelectCallback}
         />
       </Col>
     ));
@@ -122,13 +115,20 @@ const NavHeader = (props) => {
       contents = (
         <Fragment>
           <Col flex="25px">
-            <NavDivider />
+            <NavHeaderDivider />
           </Col>
           {innerBtns}
           <Col flex="25px">
-            <NavDivider />
+            <NavHeaderDivider />
           </Col>
           {pageBtns}
+          <Col flex="auto">
+            <Row justify="end">
+              <Col flex="100px">
+                <MenuButton callback={menuClickedCallback} />
+              </Col>
+            </Row>
+          </Col>
         </Fragment>
       );
     } else {
@@ -136,16 +136,7 @@ const NavHeader = (props) => {
         <Col flex="auto">
           <Row justify="end">
             <Col flex="100px">
-              <div className="nav-bar nav-bar-dropdown" id="collapsed-menu">
-                <div style={{ fontSize: "30px" }}>
-                  <MenuIcon />
-                </div>
-                <div className="nav-bar nav-bar-dropdown-content">
-                  {innerBtns}
-                  <Divider />
-                  {pageBtns}
-                </div>
-              </div>
+              <MenuButton callback={menuClickedCallback} />
             </Col>
           </Row>
         </Col>
@@ -153,16 +144,9 @@ const NavHeader = (props) => {
     }
   }
 
-  return (
+  return (  
     <Row align="bottom" wrap={false}>
-      <Col flex="200px">
-        <Title level={2} style={{ overflow: "hidden" }}>
-          <Link to="/" style={{ color: "#fff" }}>
-            Curt Henrichs
-          </Link>
-        </Title>
-      </Col>
-
+      <HomeTitleLink />
       {contents}
     </Row>
   );
