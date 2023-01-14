@@ -5,7 +5,7 @@ const SectionHome = () => {
     <Fragment>
       <h2>Attribution and Licenses</h2>
       <h3>General Attribution</h3>
-      <p>Website created by Curt Henrich using React and Ant Design.</p>
+      <p>Website created by Curt Henrich (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</p>
       <p>
         Deployed on Github Pages static hosting. Deployment handled with{" "}
         <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">

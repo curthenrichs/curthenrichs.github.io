@@ -132,7 +132,7 @@ const data = [
     hover: "Web (various)"
   },
   {
-    name: "FPGA / SOC",
+    name: "FPGA / SoC",
     percent: 30,
     icon: "microchip",
     hover: "Verilog, VHDL for Intel Cyclone and Xilinx Zynq"

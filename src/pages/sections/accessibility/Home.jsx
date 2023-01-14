@@ -6,7 +6,7 @@ const SectionHome = () => {
     <Fragment>
       <h2>Accessibility Policy</h2>
 
-      <p>This is an accessibility statement from developer and maintainer Curt Henrichs.</p>
+      <p>This is an accessibility statement from Curt Henrichs LLC.</p>
 
       <h3>Conformance status</h3>
 

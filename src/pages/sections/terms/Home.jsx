@@ -13,7 +13,7 @@ const SectionHome = () => {
         <a href="https://curthenrichs.github.io/" target="_blank" rel="noopener noreferrer">
           https://curthenrichs.github.io/
         </a>{" "}
-        is a copyrighted work belonging to Curt Henrichs (hereby referred to as Company). Certain
+        is a copyrighted work belonging to Curt Henrichs LLC (hereby referred to as Company). Certain
         features of the Curt Henrichs&lsquo; Portfolio website (hereby shortened to Site) may be
         subject to additional guidelines, terms, or rules, which will be posted on the Site in
         connection with such features.
