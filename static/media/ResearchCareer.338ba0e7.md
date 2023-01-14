@@ -8,11 +8,11 @@ These projects focused on exploring how human workers collaborate with cobots. F
 
 ## Authr and CoFrame Projects
 
-Authr focused on building an authoring environment for human-robot work. CoFrame was designed as a training environment for cobot operators.
+Authr focused on building an authoring environment for human-robot work. CoFrame was designed as a training environment for cobot operators. Both are documented further in the *Notable Projects* section.
 
 ## ONET Project
 
-For this project I worked with several colleagues outside of the lab (in Human Factors and Optimization) to investigate cobot effectiveness when deployed on a variety of manual work activities; contributing robot capability analysis as inputs into our allocation algorithm. We performed this study during COVID, using a pre-existing dataset of human work from ONET. 
+For this project I worked with several colleagues outside of the lab (in Human Factors and Optimization) to investigate cobot effectiveness when deployed on a variety of manual work activities; contributing robot capability analysis as inputs into our allocation algorithm. We performed this study during COVID lockdown, using a pre-existing dataset of human work from ONET. 
 
 My contribution was on rating collaborative robot capability (using a decision flowchart designed by a colleague and I). These ratings were derived from a significant literature review into collaborative robots at the current state-of-industry.
 
