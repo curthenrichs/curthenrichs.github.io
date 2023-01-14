@@ -159,10 +159,20 @@ const data = {
     skills: [],
     images: [
       {
-        img: "/static/img/projects/portfolio/portfolio-home.jpg",
+        img: "/static/img/projects/website/portfolio-home-desktop.jpg",
         alt: "Desktop view of website portfolio home section and skills section.",
         caption: "Desktop view ~ Home section and skills section"
-      }
+      },
+      {
+        img: "/static/img/projects/website/portfolio-home-tablet.png",
+        alt: "Tablet view of website portfolio home section.",
+        caption: "Tablet view ~ Home section"
+      },
+      {
+        img: "/static/img/projects/website/portfolio-home-mobile.png",
+        alt: "Mobile view of website portfolio home section.",
+        caption: "Mobile view ~ Home section"
+      },
     ],
     publications: []
   }
