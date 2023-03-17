@@ -149,7 +149,7 @@ const data = {
   },
   "project-website": {
     title: "Portfolio Website",
-    brief: "Background on the development for this portfolio webiste",
+    brief: "Background on the development of this website",
     descriptionMarkdownPath: WebsiteBrief,
     thumbnail: "/static/img/thumbnail/project-website.jpg",
     type: "Personal",
