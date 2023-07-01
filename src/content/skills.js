@@ -154,6 +154,12 @@ const data = [
     percent: 25,
     icon: "labview",
     hover: "Robotics, Coursework"
+  },
+  {
+    name: "FreeRTOS",
+    percent: 35,
+    icon: "microchip",
+    hover: "For Xilinx Zynq"
   }
 ];
 
