@@ -48,7 +48,7 @@ const NavDrawer = (props) => {
       placement="right" 
       onClose={menuCloseCallback} 
       visible={open}
-      getContainer={false}
+      // getContainer={false} // Was needed for older versions due to bug - removed for updated lib
       closable={true}
       width={size}
     >
