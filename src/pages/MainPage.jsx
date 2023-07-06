@@ -7,7 +7,8 @@ import SectionCareer from "./sections/main/Career";
 import SectionProjects from "./sections/main/Projects";
 import SectionPublications from "./sections/main/Publications";
 import SectionContact from "./sections/main/Contact";
-import contactData from "../content/contact";
+import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const MainPage = () => {
   return (
@@ -16,7 +17,7 @@ const MainPage = () => {
       header={{
         simple: false,
         pageName: "Main",
-        innerButtons: [
+        sectionButtons: [
           {
             id: "home-btn",
             flexPx: 150,
@@ -48,15 +49,8 @@ const MainPage = () => {
             content: "Contact"
           }
         ],
-        pageButtons: [
-          {
-            id: "resume-btn",
-            flexPx: 150,
-            content: "Resume",
-            route: contactData.resume.link,
-            isLink: true
-          }
-        ],
+        primaryRouteButtons: primaryRouteOptions.filter((value) => (value.id !== "home-btn")),
+        secondaryRouteButtons: secondaryRouteOptions,
         collapseWidth: 1500
       }}
       sections={[

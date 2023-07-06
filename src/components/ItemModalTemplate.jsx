@@ -12,7 +12,7 @@ const ItemModalTemplate = (props) => {
     <Modal
       title={title}
       centered
-      visible={visible}
+      open={visible}
       width={modalWidth}
       onOk={closeCallback}
       onCancel={closeCallback}

@@ -7,22 +7,26 @@
     bottom: 0;
     margin-top: 0;
 
-    background: rgba(0, 0, 0, 0.2) !important;
+    background: rgba(0, 21, 41, 0.2) !important;
     border-radius: 5px !important;
 }
 
 .carousel .control-arrow:hover {
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(0, 21, 41, 0.8) !important;
 }
 
 .carousel .slide .legend {
     left: 60% !important;
     margin-left: -45% !important;
     width: 70% !important;
-    opacity: 0.1 !important;
     border-radius: 5px !important;
+    background: rgba(0, 21, 41, 0.1) !important;
 }
 
 .carousel .slide .legend:hover {
-    opacity: 0.8 !important;
+    background: rgba(0, 21, 41, 0.8) !important;
+}
+
+.carousel .thumb.selected, .carousel .thumb:hover {
+    border-color: rgba(24, 144, 255, 1) !important;
 }

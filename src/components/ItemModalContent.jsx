@@ -11,7 +11,7 @@ const ItemModalContent = (props) => {
     imageCarouselSect = (
       <Fragment>
         <div style={{ textAlign: "center" }}>
-          <ImageCarousel options={images} />
+            <ImageCarousel options={images} />
         </div>
         <Divider />
       </Fragment>
