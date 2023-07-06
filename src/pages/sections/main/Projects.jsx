@@ -56,7 +56,8 @@ const SectionProjects = () => {
           publications={entry.publications.map(
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
-          skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
+          skills={entry.skills.map((skill) => IconLookupFromName[skill])}
+        >
           <ItemModalContent images={entry.images} markdownPath={entry.modalMarkdownPath} />
         </ItemCardTemplate>
       ))}

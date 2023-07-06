@@ -39,7 +39,7 @@ const SectionCareer = () => {
           publications={entry.publications.map(
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
-          positions={entry.positions.map((pos) => `${pos.title}`)}
+          positions={entry.positions.map((pos) => `${pos.title}`).reverse()}
           skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
           <ItemModalContent images={entry.images} markdownPath={entry.modalMarkdownPath} />
         </ItemCardTemplate>
