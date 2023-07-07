@@ -16,7 +16,12 @@ const ItemModalTemplate = (props) => {
       width={modalWidth}
       onOk={closeCallback}
       onCancel={closeCallback}
-      footer={null}>
+      footer={null}
+      maskStyle={{
+        overflowY: "scroll",
+        width: width
+      }}
+    >
       {children}
     </Modal>
   );
