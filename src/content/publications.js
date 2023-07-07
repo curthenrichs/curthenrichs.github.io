@@ -53,7 +53,7 @@ const data = {
   "publication-syn-tem": {
     _id: "publication-syn-tem",
     short: "Spatiotemporal Dose Control",
-    venue: "Microsc.",
+    venue: "M&M",
     title:
       "Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope",
     reference:
