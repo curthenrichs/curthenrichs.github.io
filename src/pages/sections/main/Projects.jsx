@@ -13,7 +13,7 @@ import { WidthContext } from "../../../contexts";
 import ItemModalContent from "../../../components/ItemModalContent";
 
 const SectionProjects = () => {
-  const list = Object.values(projectData).filter((project) => project.notable);
+  const list = Object.values(projectData).filter((project) => (project.notable));
   const width = useContext(WidthContext);
 
   const typeToIcon = (type) => {

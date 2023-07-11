@@ -11,6 +11,7 @@ import AttributionPage from "./pages/AttributionPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
 import AccessibilityPolicyPage from "./pages/AccessibilityPolicyPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import ContractingPage from "./pages/ContractingPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
 
 import reportWebVitals from "./reportWebVitals";
@@ -33,7 +34,7 @@ ReactDOM.render(
             return <Redirect to="/" />;
           }}
         />
-        <Route exact path="/contract" component={NotFoundPage} />
+        <Route exact path="/contract" component={ContractingPage} />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
