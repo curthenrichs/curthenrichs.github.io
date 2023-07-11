@@ -3,7 +3,6 @@ import PageTemplate from "../components/PageTemplate";
 import SectionHome from "./sections/main/Home";
 import SectionSkills from "./sections/main/Skills";
 import SectionCareer from "./sections/main/Career";
-//import SectionEducation from "./sections/Education";
 import SectionProjects from "./sections/main/Projects";
 import SectionPublications from "./sections/main/Publications";
 import SectionContact from "./sections/main/Contact";
@@ -28,11 +27,6 @@ const MainPage = () => {
             flexPx: 150,
             content: "Career"
           },
-          //   {
-          //     id: "education-btn",
-          //     flexPx: 150,
-          //     content: "Education"
-          //   },
           {
             id: "projects-btn",
             flexPx: 150,
@@ -86,17 +80,6 @@ const MainPage = () => {
           },
           content: <SectionCareer />
         },
-        // {
-        //   name: "sect-education",
-        //   navItem: "education-btn",
-        //   sectionType: "type-b",
-        //   scrollProperties: {
-        //     duration: 500,
-        //     smooth: true,
-        //     offset: -100,
-        //   },
-        //   content: (<SectionEducation />)
-        // },
         {
           name: "sect-projects",
           navItem: "projects-btn",

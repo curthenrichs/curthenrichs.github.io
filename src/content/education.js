@@ -5,7 +5,7 @@ import MSOEBrief from "./markdown/brief/MSOE.md";
 
 const data = {
   "education-msoe": {
-    _id: "education-msoe",
+    id: "education-msoe",
     modalMarkdownPath: MSOEModal,
     title: "Bachelor of Science in Computer Engineering",
     school: "Milwaukee School of Engineering",
@@ -31,7 +31,7 @@ const data = {
     publications: []
   },
   "education-uwmad": {
-    _id: "education-uwmad",
+    id: "education-uwmad",
     modalMarkdownPath: UWMModal,
     title: "Master of Science in Computer Science",
     school: "University of Wisconsin - Madison",
@@ -42,7 +42,14 @@ const data = {
     images: [],
     descriptionMarkdownPath: UWMBrief,
     thumbnail: "/static/img/thumbnail/uwmadison-crest.png",
-    skills: ["python", "keras", "matlab", "overleaf", "microchip", "robot"],
+    skills: [
+      "python", 
+      "keras", 
+      "matlab", 
+      "overleaf", 
+      "microchip", 
+      "robot"
+    ],
     publications: []
   }
 };

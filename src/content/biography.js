@@ -1,7 +1,7 @@
 import Biography from "./markdown/Biography.md";
 
 const data = {
-  _id: "biography",
+  id: "biography",
   markdownPath: Biography,
   name: "Curt Henrichs",
   currentEmploymentId: {
