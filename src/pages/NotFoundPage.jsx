@@ -3,6 +3,7 @@ import PageTemplate from "../components/PageTemplate";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import { Result } from "antd";
 import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const NotFoundPage = () => {
   return (
@@ -17,7 +18,8 @@ const NotFoundPage = () => {
             content: "Not Found"
           }
         ],
-        primaryRouteButtons: primaryRouteOptions
+        primaryRouteButtons: primaryRouteOptions,
+        secondaryRouteButtons: secondaryRouteOptions
       }}
       sections={[
         {

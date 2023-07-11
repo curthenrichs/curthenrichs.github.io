@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu as MenuIcon } from "../IconManager";
 import { WidthContext } from "../../contexts";
 import { Row, Col, Typography, Divider } from "antd";
-import { RouteButtonFactory, SectionButtonFactory } from "./ButtonFactory";
+import { SectionButtonFactory } from "./ButtonFactory";
 import "./index.css";
 
 const { Title, Text } = Typography;
@@ -53,7 +53,7 @@ const NavHeader = (props) => {
     selected, 
     pageName, 
     sectionButtons, 
-    primaryRouteButtons,
+    // primaryRouteButtons,
     collapseWidth, 
     menuClickedCallback 
   } = props;
@@ -88,13 +88,13 @@ const NavHeader = (props) => {
       </Col>
     ));
 
-    const pageBtns = primaryRouteButtons.map((entry) => {
-      return (
-        <Col flex={`${entry.flexPx}px`} key={entry.id}>
-          {RouteButtonFactory(entry)}
-        </Col>
-      );
-    });
+    // const pageBtns = primaryRouteButtons.map((entry) => {
+    //   return (
+    //     <Col flex={`${entry.flexPx}px`} key={entry.id}>
+    //       {RouteButtonFactory(entry)}
+    //     </Col>
+    //   );
+    // });
 
     if (width >= collapseWidth) {
       contents = (
@@ -103,10 +103,10 @@ const NavHeader = (props) => {
             <NavHeaderDivider />
           </Col>
           {innerBtns}
-          <Col flex="25px">
+          {/* <Col flex="25px">
             <NavHeaderDivider />
           </Col>
-          {pageBtns}
+          {pageBtns} */}
           <Col flex="auto">
             <Row justify="end">
               <Col flex="100px">
