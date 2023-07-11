@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import "./index.css";
 
 const ImageCarousel = (props) => {
-  const { options, showArrows, showIndicators } = props;
+  const { options, showArrows } = props;
 
   return (
     <Carousel 
@@ -17,7 +17,7 @@ const ImageCarousel = (props) => {
       showStatus={false}
       showArrows={showArrows}
       showThumbs={options.length > 1}
-      showIndicators={showIndicators}
+      showIndicators={options.length > 1}
     >
       {options.map((entry, idx) => (
         <div key={idx} style={{ display: "flex", justifyContent: "center" }}>

@@ -153,21 +153,21 @@ const data = {
         img: "/static/img/projects/hobby/hobby-taltosoid.jpg",
         alt: "First version of my sumpernumerary robotic finger named Taltosioid shown worn on my hand with capatitive flex detection glove.",
         caption: "First version of Taltosoid - A supernumerary robotic finger.",
-        carousel: true
+        carousel: false
       },
       {
-        id: "img-hobby-robots",
+        id: "img-hobby-small-robots",
         img: "/static/img/projects/hobby/hobby-robots.jpg",
         alt: "Small hobby robots shown in a group photo (left to right): YAM, Beta-Rex, Roverbot, BOE-Bot, Hexbug Larva, Solar Roller, Symet, NBB, Spinbot, Photoflower, Herbie, Beetle (large), Beetle (small), and Bubbles.",
         caption: "Some of my older robots in a group photo.",
-        carousel: true
+        carousel: false
       },
       {
         id: "img-hobby-leds",
         img: "/static/img/projects/hobby/hobby-leds.jpg",
         alt: "LED strips on ceiling of apartment with lighting effect control.",
         caption: "LEDs being controlled by lighting effects interface, back when I was at MSOE.",
-        carousel: true
+        carousel: false
       }
     ],
     publications: []
