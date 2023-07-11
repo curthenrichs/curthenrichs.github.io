@@ -11,7 +11,7 @@ const ItemModalContent = (props) => {
     imageCarouselSect = (
       <Fragment>
         <div style={{ textAlign: "center" }}>
-            <ImageCarousel options={images} />
+            <ImageCarousel options={images.filter((obj) => (obj.carousel))} />
         </div>
         <Divider />
       </Fragment>
@@ -21,7 +21,7 @@ const ItemModalContent = (props) => {
   return (
     <Fragment>
       {imageCarouselSect}
-      <MarkdownContent markdownPath={markdownPath} />
+      <MarkdownContent markdownPath={markdownPath} images={images} />
     </Fragment>
   );
 };

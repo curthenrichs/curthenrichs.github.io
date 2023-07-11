@@ -15,11 +15,11 @@ const { Title, Text, Link } = Typography;
 const LAYOUT_WIDTH_DIGEST_INLINE = 1500;
 
 const currentCompany = Object.values(careerData).filter((company) => {
-  return company._id == bioData.currentEmploymentId.company;
+  return company.id == bioData.currentEmploymentId.company;
 })[0];
 
 const currentJob = currentCompany.positions.slice().filter((job) => {
-  return job._id == bioData.currentEmploymentId.position;
+  return job.id == bioData.currentEmploymentId.position;
 })[0];
 
 const BioDigest = () => {

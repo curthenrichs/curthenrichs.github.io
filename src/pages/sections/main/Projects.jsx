@@ -42,7 +42,7 @@ const SectionProjects = () => {
 
       {list.map((entry, idx) => (
         <ItemCardTemplate
-          id={entry._id}
+          id={entry.id}
           key={idx}
           style={{
             paddingBottom: "1em",

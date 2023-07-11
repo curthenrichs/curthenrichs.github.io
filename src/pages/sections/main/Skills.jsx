@@ -69,7 +69,7 @@ const SectionSkills = () => {
                 {row.map((entry, idx) => (
                   <Col span={span} key={idx}>
                     <SkillTile
-                      id={entry._id}
+                      id={entry.id}
                       name={entry.name}
                       percent={entry.percent}
                       icon={entry.icon}

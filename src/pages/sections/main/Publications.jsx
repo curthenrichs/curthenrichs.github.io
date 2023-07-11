@@ -22,7 +22,7 @@ const SectionPublications = () => {
       {list.map((entry, idx) => (
         <PublicationCard
           key={idx}
-          id={entry._id}
+          id={entry.id}
           title={entry.title}
           reference={entry.reference}
           link={entry.link}
