@@ -39,7 +39,7 @@ const SectionHome = () => {
         <li>GithubFilled</li>
         <li>MailOutlined</li>
         <li>LinkedinFilled</li>
-        <li>TwitterOutlined</li>
+        <li>TwitterOutlined (Bird)</li>
         <li>CaretRightOutlined</li>
         <li>QuestionOutlined</li>
         <li>DownCircleOutlined</li>
@@ -146,6 +146,7 @@ const SectionHome = () => {
       <ul>
         <li>Icon (matlab.svg) was drawn by me using the original jpg icon as reference.</li>
         <li>Icon (labview.svg) was drawn by me using png icon as reference.</li>
+        <li>Icon (twitter-x.svg) from <a href="https://logowik.com/twitter-x-logo-vector-59293.html" target="_blank" rel="noopener noreferrer">logowink</a></li>
       </ul>
       <h3>Favicon</h3>
       <p>Website favicon was generated using the following:</p>
