@@ -28,6 +28,7 @@ import { ReactComponent as AtlassianIcon } from "./svg/atlassian.svg";
 import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
 import { ReactComponent as CIcon } from "./svg/c.svg";
 import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
+import { ReactComponent as TwitterXIcon } from "./svg/twitter-x.svg";
 
 import {
   WarningOutlined,
@@ -37,7 +38,7 @@ import {
   GithubFilled,
   MailOutlined,
   LinkedinFilled,
-  TwitterOutlined,
+  TwitterOutlined as TwitterBird,
   CaretRightOutlined,
   QuestionOutlined,
   DownCircleOutlined,
@@ -163,6 +164,14 @@ function Labview() {
   return <Icon component={LabviewIcon} />;
 }
 
+function TwitterX() {
+  return <Icon component={TwitterXIcon} />;
+}
+
+function Twitter() {
+  return <TwitterX />;
+}
+
 const lookup = {
   angular: <Angular />,
   arduino: <Arduino />,
@@ -198,7 +207,9 @@ const lookup = {
   github: <GithubFilled />,
   mail: <MailOutlined />,
   linkedin: <LinkedinFilled />,
-  twitter: <TwitterOutlined />,
+  twitter: <TwitterX />,      // Thanks Elon
+  twitterBird: <TwitterBird />,
+  twitterX: <TwitterX />,
   caret: <CaretRightOutlined />,
   caretright: <CaretRightOutlined />,
   question: <QuestionOutlined />,
@@ -256,6 +267,8 @@ export {
   C,
   Gear,
   Labview,
+  TwitterX,
+  Twitter,
 
   // Antd Icons
   WarningOutlined,
@@ -265,7 +278,7 @@ export {
   GithubFilled,
   MailOutlined,
   LinkedinFilled,
-  TwitterOutlined,
+  TwitterBird,
   CaretRightOutlined,
   QuestionOutlined,
   DownCircleOutlined,
