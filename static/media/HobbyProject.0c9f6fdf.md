@@ -25,9 +25,9 @@ limbs. I have built a robotic finger called Taltosoid (a play on the Hungarian w
 
 ## Home Automation
 
-In addition to robotics, I also dabble in home automation since my undergraduate degree (when I actually had a place of my own). Most of my systems are commercial off the shelf smart switches, bulbs, cameras, etc. communicating with Amazon Alexa and Google Home. I am actively building my own server to integrate various DIY embedded smart devices with Amazon / Google.
+In addition to robotics, I also dabble in home automation since my undergraduate degree (when I actually had a place of my own). Most of my systems are commercial-off-the-shelf smart switches, bulbs, cameras, etc. communicating with Amazon Alexa and Google Home. though I am actively building my own server to integrate various DIY embedded smart devices with Amazon / Google.
 
-This home automation server is called [Okos Polip]{https://www.okospolip.com/} (another Hungarian inspired name) that exposes device data ingest services for my various DIY devices and routes to external home automation APIs (e.g., Alexa). There is significant work still to be done. The following devices I am building support for:
+This service is called [Okos Polip](https://www.okospolip.com/) (another Hungarian inspired name), which exposes device data ingest services for my various DIY devices and routes to external home automation APIs (e.g., Alexa). There is significant work still to be done. The following devices I am building support for:
 
 - LED plant grow light
 - DIY WiFi air filter
