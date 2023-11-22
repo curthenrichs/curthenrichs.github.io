@@ -1,11 +1,11 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/main/Home";
-import SectionSkills from "./sections/main/Skills";
-import SectionCareer from "./sections/main/Career";
-import SectionProjects from "./sections/main/Projects";
-import SectionPublications from "./sections/main/Publications";
-import SectionContact from "./sections/main/Contact";
+import SectionHome from "./sections/Home";
+import SectionSkills from "./sections/Skills";
+import SectionCareer from "./sections/Career";
+import SectionProjects from "./sections/Projects";
+import SectionPublications from "./sections/Publications";
+import SectionContact from "./sections/Contact";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 

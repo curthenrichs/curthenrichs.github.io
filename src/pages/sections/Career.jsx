@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import careerData from "../../../content/career";
-import publicationData from "../../../content/publications";
-import ItemCardTemplate from "../../../components/ItemCardTemplate";
-import { ToolFilled, IconLookupFromName } from "../../../components/IconManager";
-import SectionTitle from "../../../components/SectionTitle";
-import { WidthContext } from "../../../contexts";
-import ItemModalContent from "../../../components/ItemModalContent";
+import careerData from "../../content/career";
+import publicationData from "../../content/publications";
+import ItemCardTemplate from "../../components/ItemCardTemplate";
+import { ToolFilled, IconLookupFromName } from "../../components/IconManager";
+import SectionTitle from "../../components/SectionTitle";
+import { WidthContext } from "../../contexts";
+import ItemModalContent from "../../components/ItemModalContent";
 
 const SectionCareer = () => {
   const list = Object.values(careerData).slice().reverse();
@@ -41,7 +41,11 @@ const SectionCareer = () => {
           )}
           positions={entry.positions.map((pos) => `${pos.title}`).reverse()}
           skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
-          <ItemModalContent images={entry.images} markdownPath={entry.modalMarkdownPath} />
+          <ItemModalContent 
+            images={entry.images} 
+            markdownPath={entry.modalMarkdownPath} 
+            primaryLink={entry.primaryLink} 
+          />
         </ItemCardTemplate>
       ))}
     </div>

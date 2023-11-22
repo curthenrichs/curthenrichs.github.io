@@ -9,7 +9,7 @@ const data = {
     modalMarkdownPath: MSOEModal,
     title: "Bachelor of Science in Computer Engineering",
     school: "Milwaukee School of Engineering",
-    link: "https://www.msoe.edu/academics/undergraduate-degrees/engineering/computer-engineering/",
+    web: "https://www.msoe.edu/academics/undergraduate-degrees/engineering/computer-engineering/",
     address: "1025 N Broadway, Milwaukee, WI 53202",
     start: "2014",
     end: "2018",
@@ -28,14 +28,15 @@ const data = {
       "c",
       "linux"
     ],
-    publications: []
+    publications: [],
+    primaryLink: null
   },
   "education-uwmad": {
     id: "education-uwmad",
     modalMarkdownPath: UWMModal,
     title: "Master of Science in Computer Science",
     school: "University of Wisconsin - Madison",
-    link: "https://www.cs.wisc.edu/",
+    web: "https://www.cs.wisc.edu/",
     address: "1210 W Dayton St, Madison, WI 53706",
     start: "2018",
     end: "2021",
@@ -50,7 +51,8 @@ const data = {
       "microchip", 
       "robot"
     ],
-    publications: []
+    publications: [],
+    primaryLink: null
   }
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/contract/Home";
+import SectionHome from "./sections/Contract";
 import ReturnHome from "./sections/ReturnHome";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";

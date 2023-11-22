@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import educationData from "../../../content/education";
-import publicationData from "../../../content/publications";
-import ItemCardTemplate from "../../../components/ItemCardTemplate";
-import { GraduateCap, IconLookupFromName } from "../../../components/IconManager";
-import SectionTitle from "../../../components/SectionTitle";
-import { WidthContext } from "../../../contexts";
-import ItemModalContent from "../../../components/ItemModalContent";
+import educationData from "../../content/education";
+import publicationData from "../../content/publications";
+import ItemCardTemplate from "../../components/ItemCardTemplate";
+import { GraduateCap, IconLookupFromName } from "../../components/IconManager";
+import SectionTitle from "../../components/SectionTitle";
+import { WidthContext } from "../../contexts";
+import ItemModalContent from "../../components/ItemModalContent";
 
 const SectionEducation = () => {
   const list = Object.values(educationData).reverse();
@@ -39,7 +39,11 @@ const SectionEducation = () => {
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
           skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
-          <ItemModalContent images={entry.images} markdownPath={entry.modalMarkdownPath} />
+          <ItemModalContent 
+            images={entry.images} 
+            markdownPath={entry.modalMarkdownPath} 
+            primaryLink={entry.primaryLink} 
+          />
         </ItemCardTemplate>
       ))}
     </div>

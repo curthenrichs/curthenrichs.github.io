@@ -1,7 +1,7 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/privacy/Home";
+import SectionHome from "./sections/Privacy";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
