@@ -7,7 +7,13 @@ import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import ItemModalContent from "../../components/ItemModalContent";
 
-const SectionEducation = () => {
+const SectionEducation = (props) => {
+  let { title } = props;
+
+  if (title === undefined) {
+    title = "Education";
+  }
+
   const list = Object.values(educationData).reverse();
   const width = useContext(WidthContext);
 
@@ -20,7 +26,7 @@ const SectionEducation = () => {
         paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
         paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
       }}>
-      <SectionTitle title="Education" />
+      <SectionTitle title={title} />
 
       {list.map((entry, idx) => (
         <ItemCardTemplate

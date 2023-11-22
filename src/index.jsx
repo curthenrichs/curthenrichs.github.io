@@ -12,6 +12,10 @@ import TermsOfUsePage from "./pages/TermsOfUsePage";
 import AccessibilityPolicyPage from "./pages/AccessibilityPolicyPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import ContractingPage from "./pages/ContractingPage";
+import CareerPage from "./pages/CareerPage";
+import EducationPage from "./pages/EducationPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import PublicationsPage from "./pages/PublicationsPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
 
 import reportWebVitals from "./reportWebVitals";
@@ -35,6 +39,10 @@ ReactDOM.render(
           }}
         />
         <Route exact path="/contract" component={ContractingPage} />
+        <Route exact path="/career" component={CareerPage} />
+        <Route exact path="/education" component={EducationPage} />
+        <Route exact path="/projects" component={ProjectsPage} />
+        <Route exact path="/publications" component={PublicationsPage} />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
