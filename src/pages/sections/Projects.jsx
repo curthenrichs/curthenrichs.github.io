@@ -12,23 +12,34 @@ import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import ItemModalContent from "../../components/ItemModalContent";
 
-const SectionProjects = () => {
-  const list = Object.values(projectData).filter((project) => (project.notable));
+
+const TypeToIcon = (type) => {
+  switch (type.toLowerCase()) {
+  case "research":
+    return <ExperimentFilled />;
+  case "personal":
+    return <StarFilled />;
+  case "coursework":
+    return <GraduateCap />;
+  default:
+    return null;
+  }
+};
+
+
+const SectionProjects = (props) => {
+  let { title, notableOnly } = props;
+
+  if (title === undefined) {
+    title = "Projects";
+  }
+
+  let list = Object.values(projectData);
+  if (notableOnly) {
+    list = list.filter((project) => (project.notable));
+  }
+  
   const width = useContext(WidthContext);
-
-  const typeToIcon = (type) => {
-    switch (type.toLowerCase()) {
-    case "research":
-      return <ExperimentFilled />;
-    case "personal":
-      return <StarFilled />;
-    case "coursework":
-      return <GraduateCap />;
-    default:
-      return null;
-    }
-  };
-
   const cardWidth = 1750;
   const extraWidth = width - cardWidth;
 
@@ -38,7 +49,7 @@ const SectionProjects = () => {
         paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
         paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
       }}>
-      <SectionTitle title="Notable Projects" />
+      <SectionTitle title={title} />
 
       {list.map((entry, idx) => (
         <ItemCardTemplate
@@ -49,7 +60,7 @@ const SectionProjects = () => {
             margin: "auto"
           }}
           title={entry.title}
-          icon={typeToIcon(entry.type)}
+          icon={TypeToIcon(entry.type)}
           img={entry.thumbnail}
           brief={entry.brief}
           descriptionMarkdownPath={entry.descriptionMarkdownPath}

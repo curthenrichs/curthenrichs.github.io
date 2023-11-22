@@ -7,7 +7,13 @@ import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import ItemModalContent from "../../components/ItemModalContent";
 
-const SectionCareer = () => {
+const SectionCareer = (props) => {
+  let { title } = props;
+
+  if (title === undefined) {
+    title = "Career";
+  }
+
   const list = Object.values(careerData).slice().reverse();
   const width = useContext(WidthContext);
 
@@ -20,7 +26,8 @@ const SectionCareer = () => {
         paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
         paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
       }}>
-      <SectionTitle title="Career" />
+
+      <SectionTitle title={title}/>
 
       {list.map((entry, idx) => (
         <ItemCardTemplate

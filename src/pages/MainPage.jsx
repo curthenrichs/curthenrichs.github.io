@@ -1,6 +1,6 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/Home";
+import SectionHome from "./sections/Biography";
 import SectionSkills from "./sections/Skills";
 import SectionCareer from "./sections/Career";
 import SectionProjects from "./sections/Projects";
@@ -89,7 +89,10 @@ const MainPage = () => {
             smooth: true,
             offset: -100
           },
-          content: <SectionProjects />
+          content: <SectionProjects 
+            title="Notable Projects"
+            notableOnly={true}
+          />
         },
         {
           name: "sect-publications",
