@@ -59,7 +59,8 @@ const data = {
         carousel: true
       }
     ],
-    publications: []
+    publications: [],
+    primaryLink: null
   },
   "career-research": {
     id: "career-research",
@@ -111,7 +112,8 @@ const data = {
       "publication-rad",
       "publication-onet",
       "publication-coframe"
-    ]
+    ],
+    primaryLink: null
   },
   "career-ides": {
     id: "career-ides",
@@ -141,7 +143,10 @@ const data = {
       }
     ],
     images: [],
-    publications: ["publication-syn-tem"]
+    publications: [
+      "publication-syn-tem"
+    ],
+    primaryLink: null
   }
 };
 

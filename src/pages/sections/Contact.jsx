@@ -1,12 +1,12 @@
 import React from "react";
-import data from "../../../content/contact";
+import data from "../../content/contact";
 import {
   Twitter,
   MailOutlined,
   EnvironmentFilled,
   GithubFilled,
   LinkedinFilled
-} from "../../../components/IconManager";
+} from "../../components/IconManager";
 import { Typography } from "antd";
 
 const { Title, Text, Link } = Typography;

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import PublicationCard from "../../../components/PublicationCard";
-import data from "../../../content/publications";
-import SectionTitle from "../../../components/SectionTitle";
-import { WidthContext } from "../../../contexts";
+import PublicationCard from "../../components/PublicationCard";
+import data from "../../content/publications";
+import SectionTitle from "../../components/SectionTitle";
+import { WidthContext } from "../../contexts";
 
 const SectionPublications = () => {
   const list = Object.values(data);

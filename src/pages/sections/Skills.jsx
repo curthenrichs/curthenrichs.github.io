@@ -1,8 +1,8 @@
 import React, { Fragment, useContext } from "react";
-import data from "../../../content/skills";
-import { WidthContext } from "../../../contexts";
-import ExpandSection from "../../../components/ExpandSection";
-import { IconLookupFromName } from "../../../components/IconManager";
+import data from "../../content/skills";
+import { WidthContext } from "../../contexts";
+import ExpandSection from "../../components/ExpandSection";
+import { IconLookupFromName } from "../../components/IconManager";
 import { Row, Col, Typography, Progress, Tooltip } from "antd";
 
 const { Text, Title } = Typography;

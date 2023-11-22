@@ -3,14 +3,44 @@ import ITERModal from "./markdown/modal/ITERProject.md";
 import CoFrameModal from "./markdown/modal/EVDProject.md";
 import HobbyModal from "./markdown/modal/HobbyProject.md";
 import WebsiteModal from "./markdown/modal/WebsiteProject.md";
+import OkosModal from "./markdown/modal/OkosProject.md";
 
 import AuthrBrief from "./markdown/brief/AuthrProject.md";
 import ITERBrief from "./markdown/brief/ITERProject.md";
 import CoFrameBrief from "./markdown/brief/EVDProject.md";
 import HobbyBrief from "./markdown/brief/HobbyProject.md";
 import WebsiteBrief from "./markdown/brief/WebsiteProject.md";
+import OkosBrief from "./markdown/brief/OkosProject.md";
 
 const data = {
+  "project-okos": {
+    title: "Okos Polip",
+    brief: "Home automation device state ingest platform as a service",
+    descriptionMarkdownPath: OkosBrief,
+    thumbnail: "/static/img/thumbnail/project-okos.jpg",
+    type: "Personal",
+    id: "project-okos",
+    modalMarkdownPath: OkosModal,
+    notable: true,
+    skills: [
+      "arduino",
+      "linux",
+      "ros",
+      "c",
+      "python",
+      "nodejs",
+      "react",
+      "javascript",
+      "mongodb"
+    ],
+    images: [],
+    publications: [],
+    primaryLink: {
+      link: "https://www.okospolip.com/",
+      description: "Check out Okos Polip PaaS",
+      text: "Click Here"
+    }
+  },
   "project-coframe": {
     title: "CoFrame",
     brief: "Cobot operator training environment",
@@ -20,7 +50,15 @@ const data = {
     id: "project-coframe",
     modalMarkdownPath: CoFrameModal,
     notable: true,
-    skills: [],
+    skills: [
+      "robot",
+      "ros",
+      "overleaf",
+      "python",
+      "linux",
+      "javascript",
+      "react"
+    ],
     images: [
       {
         id: "img-coframe-current",
@@ -58,7 +96,14 @@ const data = {
         carousel: false
       }
     ],
-    publications: ["publication-coframe"]
+    publications: [
+      "publication-coframe"
+    ],
+    primaryLink: {
+      link: "https://wisc-hci.github.io/CoFrame/",
+      description: null,
+      text: "Launch CoFrame"
+    }
   },
   "project-authr": {
     title: "Authr",
@@ -69,7 +114,15 @@ const data = {
     id: "project-authr",
     modalMarkdownPath: AuthrModal,
     notable: true,
-    skills: [],
+    skills: [
+      "robot",
+      "ros",
+      "overleaf",
+      "python",
+      "linux",
+      "javascript",
+      "angular"
+    ],
     images: [
       {
         id: "img-authr-setup",
@@ -93,7 +146,10 @@ const data = {
         carousel: true
       }
     ],
-    publications: ["publication-authr"]
+    publications: [
+      "publication-authr"
+    ],
+    primaryLink: null
   },
   "project-iter": {
     title: "Task Interdependence and pRAD",
@@ -104,7 +160,13 @@ const data = {
     id: "project-iter",
     modalMarkdownPath: ITERModal,
     notable: true,
-    skills: [],
+    skills: [
+      "robot",
+      "ros",
+      "overleaf",
+      "python",
+      "linux"
+    ],
     images: [
       {
         id: "img-iter-task",
@@ -135,10 +197,14 @@ const data = {
         carousel: true
       }
     ],
-    publications: ["publication-interdependence", "publication-rad"]
+    publications: [
+      "publication-interdependence", 
+      "publication-rad"
+    ],
+    primaryLink: null
   },
   "project-hobby": {
-    title: "Hobby Projects",
+    title: "Hobby Projects & Blog",
     brief: "Hobby robotics and home automation projects",
     descriptionMarkdownPath: HobbyBrief,
     thumbnail: "/static/img/thumbnail/project-hobby.jpg",
@@ -146,7 +212,13 @@ const data = {
     id: "project-hobby",
     modalMarkdownPath: HobbyModal,
     notable: true,
-    skills: [],
+    skills: [
+      "arduino",
+      "ros",
+      "c",
+      "python",
+      "robot",
+    ],
     images: [
       {
         id: "img-hobby-taltosoid",
@@ -170,7 +242,12 @@ const data = {
         carousel: false
       }
     ],
-    publications: []
+    publications: [],
+    primaryLink: {
+      link: "https://homebuiltrobotics.blogspot.com/",
+      description: "Checkout my blog \"Home-Built-Robotics\"",
+      text: "Go To Blog"
+    }
   },
   "project-website": {
     title: "Portfolio Website",
@@ -181,7 +258,10 @@ const data = {
     id: "project-website",
     modalMarkdownPath: WebsiteModal,
     notable: true,
-    skills: [],
+    skills: [
+      "react",
+      "javascript"
+    ],
     images: [
       {
         id: "img-web-large",
@@ -205,7 +285,8 @@ const data = {
         carousel: true
       },
     ],
-    publications: []
+    publications: [],
+    primaryLink: null
   }
 };
 
