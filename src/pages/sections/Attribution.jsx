@@ -185,6 +185,10 @@ const SectionHome = () => {
         my time as an intern.
       </p>
       <p>
+        University of Wisconsin Madison logo and Milwaukee School of Engineering logo are owned by 
+        their respective institutions.
+      </p>
+      <p>
         All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from
         publications produced in whole/part by Curt Henrichs.
       </p>
