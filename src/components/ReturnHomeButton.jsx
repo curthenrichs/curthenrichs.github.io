@@ -3,7 +3,7 @@ import { Button } from "antd";
 
 const ReturnHomeButton = () => {
   return (
-    <Button type="primary" href="/">
+    <Button type="primary" href="/home">
       Take Me Back Home
     </Button>
   );

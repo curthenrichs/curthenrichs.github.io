@@ -26,13 +26,16 @@ ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={MainPage} />
+        <Route exact path="/home" 
+          render={() => {
+            return <Redirect to="/" />;
+          }} 
+        />
         <Route exact path="/attribution" component={AttributionPage} />
         <Route exact path="/terms" component={TermsOfUsePage} />
         <Route exact path="/accessibility" component={AccessibilityPolicyPage} />
         <Route exact path="/privacy" component={PrivacyPolicyPage} />
-        <Route
-          exact
-          path="/resume"
+        <Route exact path="/resume"
           render={() => {
             window.open(contactData.resume.link);
             return <Redirect to="/" />;
