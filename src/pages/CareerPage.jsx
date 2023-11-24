@@ -24,7 +24,7 @@ const CareerPage = () => {
       }}
       sections={[
         {
-          name: "sect-list",
+          name: "sect-inspiration",
           navItem: "career-btn",
           scrollProperties: {
             duration: 500,
@@ -32,7 +32,7 @@ const CareerPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionInspiration />
+          content: <SectionInspiration title="Career" />
         },
         {
           name: "sect-list",

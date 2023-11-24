@@ -24,7 +24,7 @@ const EducationPage = () => {
       }}
       sections={[
         {
-          name: "sect-list",
+          name: "sect-inspiration",
           navItem: "education-btn",
           scrollProperties: {
             duration: 500,
@@ -32,7 +32,7 @@ const EducationPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionInspiration />
+          content: <SectionInspiration title="Education" />
         },
         {
           name: "sect-list",

@@ -24,7 +24,7 @@ const ProjectsPage = () => {
       }}
       sections={[
         {
-          name: "sect-list",
+          name: "sect-inspiration",
           navItem: "projects-btn",
           scrollProperties: {
             duration: 500,
@@ -32,7 +32,7 @@ const ProjectsPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionInspiration />
+          content: <SectionInspiration title="Projects" />
         },
         {
           name: "sect-list",
