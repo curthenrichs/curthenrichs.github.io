@@ -4,4 +4,4 @@ In graduate school I studied *Computer Science* with a focus on how humans can e
 
 I am passionate about building real things for real people, whether it be robots, embedded devices, or software tools. In my free time one can find me tinkering with hobby robotics / home-automation projects or curled up reading a good non-fiction book. 
 
-If you would like to chat feel free to connect with me on social media.
+If you would like to chat, feel free to connect with me on social media.
