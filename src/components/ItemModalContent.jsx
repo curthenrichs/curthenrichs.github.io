@@ -1,34 +1,8 @@
 import React, { Fragment } from "react";
-import { Button, Divider } from "antd";
+import { Divider } from "antd";
 import ImageCarousel from "./ImageCarousel";
 import MarkdownContent from "./MarkdownContent";
-
-
-const PrimaryButton = (props) => {
-  const { link, description, text } = props;
-  return (
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center"
-    }}>
-      {description && (<h3><i>{description}</i></h3>)}
-      
-      <Button 
-        type="primary" 
-        href={link} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        shape="round"
-        size="large"
-      >
-        {text}
-      </Button>
-    </div>
-  );
-};
-
+import CenteredActionButton from "./CenteredActionButton";
 
 const ItemModalContent = (props) => {
   const { images, markdownPath, primaryLink } = props;
@@ -54,7 +28,7 @@ const ItemModalContent = (props) => {
 
       {imageCarouselSect}
 
-      {(primaryLink) && (<> <PrimaryButton {...primaryLink}/> <br/></>)}
+      {(primaryLink) && (<> <CenteredActionButton {...primaryLink}/> <br/></>)}
 
       <MarkdownContent markdownPath={markdownPath} images={images} />
     </Fragment>
