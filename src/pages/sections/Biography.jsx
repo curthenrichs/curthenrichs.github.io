@@ -53,6 +53,7 @@ const BioDigest = () => {
         href={contactData.resume.link}
         download
         icon={<DownloadOutlined />}
+        shape="round"
         size={size}>
         Download Resume
       </Button>
