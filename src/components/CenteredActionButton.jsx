@@ -17,7 +17,9 @@ const PrimaryButton = (props) => {
         target: "_blank" ,
         rel: "noopener noreferrer"
       };
-    } else {
+    } 
+    
+    if (callback) {
       btnProps = {
         ...btnProps,
         onClick: () => { if (callback) callback(); }
