@@ -223,7 +223,7 @@ const data = {
       {
         id: "img-hobby-taltosoid",
         img: "/static/img/projects/hobby/hobby-taltosoid.jpg",
-        alt: "First version of my sumpernumerary robotic finger named Taltosioid shown worn on my hand with capatitive flex detection glove.",
+        alt: "First version of my sumpernumerary robotic finger named Taltosioid shown worn on my hand with capacitive flex detection glove.",
         caption: "First version of Taltosoid - A supernumerary robotic finger.",
         carousel: false
       },
