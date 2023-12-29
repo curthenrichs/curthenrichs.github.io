@@ -1,5 +1,5 @@
 # Okos Polip
-Okos Polip is a device state ingester platform as a service, acting as the middleman between various hardware devices (e.g., my various DIY projects) and external integrations (e.g., Amazon Alexa, Google Home). The motivation for this work was a realization that home automation state ingest is often reimplemented due to hard coupling to various firmware/hardware constaints or external integrations. My goal is to provide a _descriptive_ general purpose ingest service regardless of whether the physical device implementation is a ROS-based robot running on linux or a baremetal ESP8266.
+Okos Polip is a device state ingester platform as a service, acting as the middleman between various hardware devices (e.g., my various DIY projects) and external integrations (e.g., Amazon Alexa, Google Home). The motivation for this work was a realization that home automation state ingest is often reimplemented due to hard coupling to various firmware/hardware constraints or external integrations. My goal is to provide a _descriptive_ general purpose ingest service regardless of whether the physical device implementation is a ROS-based robot running on linux or a baremetal ESP8266.
 
 Okos Polip is composed of the following microservices:
 - Device Ingest V1 (service) : Generalized RESTful state protocol for hardware devices
