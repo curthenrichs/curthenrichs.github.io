@@ -30,6 +30,10 @@ const quotes = [
     {
         quote: "We can only see a short distance ahead, but we can see plenty there that needs to be done",
         attribution: "Alan Turing"
+    },
+    {
+        quote: "Robotics is not just a field of science; it's a canvas for art, innovation, and progress",
+        attribution: "Rodney Brooks"
     }
 ];
 

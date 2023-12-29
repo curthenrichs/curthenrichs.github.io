@@ -97,6 +97,13 @@ const data = {
         alt: "Interactive overview visualization of Amazon dataset for HCI coursework",
         caption: "Interactive overview visualization of Amazon dataset for HCI coursework",
         carousel: true
+      },
+      {
+        id: "img-hobby-taltosoid",
+        img: "/static/img/projects/hobby/hobby-taltosoid.jpg",
+        alt: "First version of my sumpernumerary robotic finger named Taltosioid shown worn on my hand with capacitive flex detection glove.",
+        caption: "First version of Taltosoid - A supernumerary robotic finger. Prototyped in my wearable course.",
+        carousel: true
       }
     ],
     descriptionMarkdownPath: UWMBrief,

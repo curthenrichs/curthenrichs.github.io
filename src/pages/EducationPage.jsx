@@ -5,7 +5,6 @@ import SectionList from "./sections/Education";
 import SectionInspiration from "./sections/Inspiration";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
-import SectionHelix from "./sections/Helix";
 
 const EducationPage = () => {
   return (
@@ -34,13 +33,6 @@ const EducationPage = () => {
           },
           sectionType: "type-a",
           content: <SectionInspiration title="Education" noBr={true} />
-        },
-        {
-          name: "sect-helix",
-          navItem: "education-btn",
-          scrollProperties: null,
-          sectionType: "type-a",
-          content: <SectionHelix />
         },
         {
           name: "sect-list",

@@ -5,7 +5,6 @@ import SectionList from "./sections/Career";
 import SectionInspiration from "./sections/Inspiration";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
-import SectionHelix from "./sections/Helix";
 
 const CareerPage = () => {
   return (
@@ -34,13 +33,6 @@ const CareerPage = () => {
           },
           sectionType: "type-a",
           content: <SectionInspiration title="Career" noBr={true} />
-        },
-        {
-          name: "sect-helix",
-          navItem: "career-btn",
-          scrollProperties: null,
-          sectionType: "type-a",
-          content: <SectionHelix />
         },
         {
           name: "sect-list",

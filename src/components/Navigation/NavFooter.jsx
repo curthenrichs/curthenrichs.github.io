@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Typography, Divider } from "antd";
-import { WidthContext } from "../contexts";
+import { WidthContext } from "../../contexts";
 
 const { Text } = Typography;
 
@@ -9,7 +9,7 @@ const Spacer = () => {
   return <Fragment>&nbsp;|&nbsp;</Fragment>;
 };
 
-const Copyright = () => {
+const Footer = () => {
 
   const width = useContext(WidthContext);
 
@@ -32,7 +32,7 @@ const Copyright = () => {
         </Text>
         <br/>
         <Text>
-        <Link to="/career">Career</Link>
+          <Link to="/career">Career</Link>
           <Spacer />
           <Link to="/education">Education</Link>
           <Spacer />
@@ -61,6 +61,16 @@ const Copyright = () => {
           <Spacer />
           <Link to="/attribution">Attribution</Link>
         </Text>
+        <br />
+        <Text>
+          <Link to="/career">Career</Link>
+          <Spacer />
+          <Link to="/education">Education</Link>
+          <Spacer />
+          <Link to="/projects">Projects</Link>
+          <Spacer />
+          <Link to="/publications">Publications</Link>
+        </Text>
       </Fragment>
     );
   }
@@ -77,4 +87,4 @@ const Copyright = () => {
   );
 };
 
-export default Copyright;
+export default Footer;

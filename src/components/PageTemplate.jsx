@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Typography } from "antd";
-import { NavHeader, NavDrawer } from "./Navigation";
-import Copyright from "./Copyright";
+import { NavHeader, NavDrawer, NavFooter } from "./Navigation";
 import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
 import { Element as ScrollElement, scroller } from "react-scroll";
@@ -225,7 +224,7 @@ class _PageTemplate extends Component {
             </Content>
 
             <Footer style={{ textAlign: "center" }}>
-              <Copyright />
+              <NavFooter />
             </Footer>
 
           </Layout>
