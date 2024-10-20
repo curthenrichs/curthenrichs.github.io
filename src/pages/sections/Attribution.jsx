@@ -196,7 +196,7 @@ const SectionHome = () => {
         my time as an intern.
       </p>
       <p>
-        University of Wisconsin Madison logo and Milwaukee School of Engineering logo are owned by 
+        IDES logo, Dedicated Computing logo, University of Wisconsin Madison logo and Milwaukee School of Engineering logo are owned by 
         their respective institutions.
       </p>
       <p>
