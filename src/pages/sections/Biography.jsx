@@ -1,4 +1,4 @@
-import React, { useState, useContext, Fragment } from "react";
+import React, { useContext, Fragment } from "react";
 import SocialTray from "../../components/SocialTray";
 import MarkdownContent from "../../components/MarkdownContent";
 import ExpandSection from "../../components/ExpandSection";
@@ -6,6 +6,7 @@ import bioData from "../../content/biography";
 import contactData from "../../content/contact";
 import educationData from "../../content/education";
 import careerData from "../../content/career";
+import contractingData from "../../content/contracting";
 import { WidthContext } from "../../contexts";
 import { CaretRightOutlined, DownloadOutlined } from "../../components/IconManager";
 import { Row, Col, Typography, Button } from "antd";
@@ -22,8 +23,40 @@ const currentJob = currentCompany.positions.slice().filter((job) => {
   return job.id == bioData.currentEmploymentId.position;
 })[0];
 
+const CallToAction = (props) => {
+  const { openToWork } = props;
+
+  return (
+    <Fragment>
+      {openToWork && (
+        <Button
+          type="primary"
+          href="/contract"
+          icon={<CaretRightOutlined />}
+          shape="round"
+          size="large"
+        >
+          Available for Work
+        </Button>
+      )}
+
+      {openToWork && "    "}
+
+      <Button
+        type={(openToWork)? "secondary" : "primary"}
+        href={contactData.resume.link}
+        download
+        icon={<DownloadOutlined />}
+        shape="round"
+        size="large"
+      >
+        Download Resume
+      </Button>
+    </Fragment>
+  );
+};
+
 const BioDigest = () => {
-  const [size] = useState("large");
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -48,15 +81,9 @@ const BioDigest = () => {
         twitterLink={contactData.twitter.link}
       />
       <br />
-      <Button
-        type="primary"
-        href={contactData.resume.link}
-        download
-        icon={<DownloadOutlined />}
-        shape="round"
-        size={size}>
-        Download Resume
-      </Button>
+      <CallToAction 
+        openToWork={contractingData.available}
+      />
     </div>
   );
 };

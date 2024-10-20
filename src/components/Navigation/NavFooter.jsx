@@ -32,6 +32,8 @@ const Footer = () => {
         </Text>
         <br/>
         <Text>
+          <Link to="/contract">Contracting</Link>
+          <Spacer />
           <Link to="/terms">Terms of Use</Link>
           <Spacer />
           <Link to="/accessibility">Accessibility Policy</Link>
@@ -52,6 +54,8 @@ const Footer = () => {
           <Link to="/resume">Resume</Link>
           <Spacer />
           <Link to="/terms">Terms of Use</Link>
+          <Spacer />
+          <Link to="/contract">Contracting</Link>
         </Text>
         <br />
         <Text>

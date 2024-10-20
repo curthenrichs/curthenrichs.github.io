@@ -1,6 +1,7 @@
 import contactData from "./contact";
+import contractingData from "./contracting";
 
-const data = [
+let data = [
     {
         id: "home-btn",
         flexPx: 150,
@@ -14,14 +15,17 @@ const data = [
         content: "Resume",
         route: contactData.resume.link,
         isLink: true
-    },
-    // {
-    //     id: "contract-btn",
-    //     flexPx: 150,
-    //     content: "Contracting",
-    //     route: "/contract",
-    //     isLink: false
-    // }
+    }
 ];
+
+if (contractingData.available) {
+    data.push(   {
+        id: "contract-btn",
+        flexPx: 150,
+        content: "Contracting",
+        route: "/contract",
+        isLink: false
+    });
+}
 
 export default data;
