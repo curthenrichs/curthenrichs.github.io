@@ -1,3 +1,0 @@
-I am an avid MAKER. I have had the privilege to build several robotic and home automation systems in my personal time over the years. My journey started in middle school when I started building simple analog BEAM robots to now where I have multiple challenging systems projects.
-
-I have several active projects, two robotics projects and a home automation project. My first robotics project is a mobile ROS-enabled robot called YAM. The second is a supernumerary robotic finger called Taltosoid. My home automation project extends my other work Okos Polip to control "hacked" hardware to tend to my plants.
