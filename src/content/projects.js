@@ -23,6 +23,7 @@ const data = {
     modalMarkdownPath: OkosModal,
     notable: true,
     skills: [
+      "okos",
       "arduino",
       "linux",
       "ros",

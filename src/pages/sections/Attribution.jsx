@@ -5,7 +5,7 @@ const SectionHome = () => {
     <Fragment>
       <h2>Attribution and Licenses</h2>
       <h3>General Attribution</h3>
-      <p>Website created by Curt Henrich (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</p>
+      <p>Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</p>
       <p>
         Deployed on Github Pages static hosting. Deployment handled with{" "}
         <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">
@@ -109,6 +109,17 @@ const SectionHome = () => {
             Icon (microchip-solid.svg) from{" "}
             <a
               href="https://fontawesome.com/icons/microchip?style=solid"
+              target="_blank"
+              rel="noopener noreferrer">
+              fontawesome.com
+            </a>
+          </div>
+        </li>
+        <li>
+          <div>
+            Icon (usb.svg) from{" "}
+            <a
+              href="https://fontawesome.com/icons/usb?f=brands&s=solid"
               target="_blank"
               rel="noopener noreferrer">
               fontawesome.com
