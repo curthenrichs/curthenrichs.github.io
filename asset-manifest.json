@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.aa48dd72.chunk.css",
-    "main.js": "/static/js/main.45e9ca9b.chunk.js",
-    "main.js.map": "/static/js/main.45e9ca9b.chunk.js.map",
+    "main.js": "/static/js/main.5f63bd45.chunk.js",
+    "main.js.map": "/static/js/main.5f63bd45.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3084b784.js",
     "runtime-main.js.map": "/static/js/runtime-main.3084b784.js.map",
     "static/css/2.05a4cd72.chunk.css": "/static/css/2.05a4cd72.chunk.css",
@@ -16,7 +16,7 @@
     "static/js/2.f9e5498d.chunk.js.LICENSE.txt": "/static/js/2.f9e5498d.chunk.js.LICENSE.txt",
     "static/media/AuthrProject.0a0cd565.md": "/static/media/AuthrProject.0a0cd565.md",
     "static/media/AuthrProject.e2d971b6.md": "/static/media/AuthrProject.e2d971b6.md",
-    "static/media/Biography.bb9a7730.md": "/static/media/Biography.bb9a7730.md",
+    "static/media/Biography.24637a5d.md": "/static/media/Biography.24637a5d.md",
     "static/media/EVDProject.365d4a62.md": "/static/media/EVDProject.365d4a62.md",
     "static/media/EVDProject.6480b1c8.md": "/static/media/EVDProject.6480b1c8.md",
     "static/media/HobbyProject.5a5a7967.md": "/static/media/HobbyProject.5a5a7967.md",
@@ -58,6 +58,7 @@
     "static/media/microsoft.61cfa7e9.svg": "/static/media/microsoft.61cfa7e9.svg",
     "static/media/mongodb.7ca038ec.svg": "/static/media/mongodb.7ca038ec.svg",
     "static/media/node-dot-js.351cbfb3.svg": "/static/media/node-dot-js.351cbfb3.svg",
+    "static/media/okos-polip.cd7f224e.svg": "/static/media/okos-polip.cd7f224e.svg",
     "static/media/overleaf.cd284847.svg": "/static/media/overleaf.cd284847.svg",
     "static/media/project.819e8c25.svg": "/static/media/project.819e8c25.svg",
     "static/media/python.bf900dfe.svg": "/static/media/python.bf900dfe.svg",
@@ -65,13 +66,14 @@
     "static/media/ros.2b3d7037.svg": "/static/media/ros.2b3d7037.svg",
     "static/media/sketch.94c50742.svg": "/static/media/sketch.94c50742.svg",
     "static/media/twitter-x.4bcf5629.svg": "/static/media/twitter-x.4bcf5629.svg",
-    "static/media/unity.c65a3beb.svg": "/static/media/unity.c65a3beb.svg"
+    "static/media/unity.c65a3beb.svg": "/static/media/unity.c65a3beb.svg",
+    "static/media/usb.81e9501e.svg": "/static/media/usb.81e9501e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3084b784.js",
     "static/css/2.05a4cd72.chunk.css",
     "static/js/2.f9e5498d.chunk.js",
     "static/css/main.aa48dd72.chunk.css",
-    "static/js/main.45e9ca9b.chunk.js"
+    "static/js/main.5f63bd45.chunk.js"
   ]
 }
