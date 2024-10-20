@@ -22,7 +22,8 @@ const data = {
       "git",
       "javascript",
       "atlassian",
-      "mongodb"
+      "mongodb",
+      "usb"
     ],
     thumbnail: "/static/img/thumbnail/career-dc.jpg",
     web: "https://www.dedicatedcomputing.com/",
@@ -121,7 +122,17 @@ const data = {
     company: "Integrated Dynamic Electron Solutions",
     brief: "High-level overview of my current engineering work at IDES",
     descriptionMarkdownPath: IDESBrief,
-    skills: ["arduino", "microchip", "linux", "c", "python", "git", "atlassian", "gear"],
+    skills: [
+      "arduino", 
+      "microchip", 
+      "linux", 
+      "c", 
+      "python", 
+      "git", 
+      "atlassian", 
+      "gear",
+      "usb"
+    ],
     thumbnail: "/static/img/thumbnail/ides-logo.png",
     web: "https://www.ides-inc.com/",
     positions: [

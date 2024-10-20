@@ -187,6 +187,13 @@ const data = [
     icon: "microchip",
     hover: "For Xilinx Zynq",
     id: "freertos"
+  },
+  {
+    name: "USB",
+    percent: 20,
+    icon: "usb",
+    hover: "Vendor Class, CDC Class, FTDI Bridge",
+    id: "usb"
   }
 ];
 

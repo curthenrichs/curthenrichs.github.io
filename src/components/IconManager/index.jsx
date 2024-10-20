@@ -29,6 +29,8 @@ import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
 import { ReactComponent as CIcon } from "./svg/c.svg";
 import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
 import { ReactComponent as TwitterXIcon } from "./svg/twitter-x.svg";
+import { ReactComponent as USBIcon } from "./svg/usb.svg";
+import { ReactComponent as OkosPolipIcon } from "./svg/okos-polip.svg";
 
 import {
   WarningOutlined,
@@ -172,6 +174,14 @@ function Twitter() {
   return <TwitterX />;
 }
 
+function USB() {
+  return <Icon component={USBIcon} />;
+}
+
+function OkosPolip() {
+  return <Icon component={OkosPolipIcon} />;
+}
+
 const lookup = {
   angular: <Angular />,
   arduino: <Arduino />,
@@ -218,7 +228,9 @@ const lookup = {
   download: <DownloadOutlined />,
   location: <EnvironmentFilled />,
   gear: <Gear />,
-  labview: <Labview />
+  labview: <Labview />,
+  usb: <USB />,
+  okos: <OkosPolip />
 };
 
 const handler = {
@@ -269,6 +281,8 @@ export {
   Labview,
   TwitterX,
   Twitter,
+  USB,
+  OkosPolip,
 
   // Antd Icons
   WarningOutlined,
