@@ -131,7 +131,8 @@ const data = {
       "git", 
       "atlassian", 
       "gear",
-      "usb"
+      "usb",
+      "microsoft"
     ],
     thumbnail: "/static/img/thumbnail/ides-logo.png",
     web: "https://www.ides-inc.com/",

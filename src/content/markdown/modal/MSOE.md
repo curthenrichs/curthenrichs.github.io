@@ -98,7 +98,7 @@ CS3841 - Design of Operating Systems
 
 CS321 - Computer Graphics
 - Survey course in fundamentals of computer graphics 2D to 3D
-- Also served as na introduction to C++
+- Also served as an introduction to C++
 
 EE484 - Neural Networks
 - Topic survey course on neural networks
