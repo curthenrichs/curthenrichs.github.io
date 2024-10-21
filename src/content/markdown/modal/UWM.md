@@ -51,10 +51,10 @@ CS540 - Intro to Artificial Intelligence
     - Formal logic, Bayesian, search, game theory, etc.
 
 CS760 - Machine Learning
-- Dive into the mathematical underpinning of ML
+- Dove into the mathematical underpinning of ML
 
 CS766 - Computer Vision
-- Dive into algorithms and techniques used in computer vision
+- Dove into algorithms and techniques used in computer vision
     - Various feature construction techniques, SIFT, Convolutional nets, etc. 
 - Final Project : Gestalt informed classification of various facial anomalies to known syndromes using closed-access medical data
 
