@@ -154,7 +154,15 @@ const data = {
         brief: "Senior Embedded Systems Engineer"
       }
     ],
-    images: [],
+    images: [
+      {
+        id: "img-ides-career-viz",
+        img: "/static/img/career/ides/IDES-career-viz.jpg",
+        alt: "Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details.",
+        caption: "Visualization of my roles and responsibilities at IDES.",
+        carousel: true
+      }
+    ],
     publications: [
       "publication-syn-tem"
     ],
