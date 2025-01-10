@@ -1,8 +1,9 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/terms/Home";
-import contactData from "../content/contact";
+import SectionHome from "./sections/Terms";
+import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const TermsOfUsePage = () => {
   return (
@@ -10,29 +11,15 @@ const TermsOfUsePage = () => {
       header={{
         simple: true,
         pageName: "Terms of Use",
-        innerButtons: [
+        sectionButtons: [
           {
             id: "policy-btn",
             flexPx: 150,
             content: "Policy"
           }
         ],
-        pageButtons: [
-          {
-            id: "home-btn",
-            flexPx: 150,
-            content: "Home",
-            route: "/",
-            isLink: false
-          },
-          {
-            id: "resume-btn",
-            flexPx: 150,
-            content: "Resume",
-            route: contactData.resume.link,
-            isLink: true
-          }
-        ]
+        primaryRouteButtons: primaryRouteOptions,
+        secondaryRouteButtons: secondaryRouteOptions.filter((value) => (value.id !== "terms-btn"))
       }}
       sections={[
         {

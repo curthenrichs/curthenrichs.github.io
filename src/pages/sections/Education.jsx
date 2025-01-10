@@ -1,13 +1,19 @@
 import React, { useContext } from "react";
-import educationData from "../../../content/education";
-import publicationData from "../../../content/publications";
-import ItemCardTemplate from "../../../components/ItemCardTemplate";
-import { GraduateCap, IconLookupFromName } from "../../../components/IconManager";
-import SectionTitle from "../../../components/SectionTitle";
-import { WidthContext } from "../../../contexts";
-import ItemModalContent from "../../../components/ItemModalContent";
+import educationData from "../../content/education";
+import publicationData from "../../content/publications";
+import ItemCardTemplate from "../../components/ItemCardTemplate";
+import { GraduateCap, IconLookupFromName } from "../../components/IconManager";
+import SectionTitle from "../../components/SectionTitle";
+import { WidthContext } from "../../contexts";
+import ItemModalContent from "../../components/ItemModalContent";
 
-const SectionEducation = () => {
+const SectionEducation = (props) => {
+  let { title } = props;
+
+  if (title === undefined) {
+    title = "Education";
+  }
+
   const list = Object.values(educationData).reverse();
   const width = useContext(WidthContext);
 
@@ -20,11 +26,11 @@ const SectionEducation = () => {
         paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
         paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
       }}>
-      <SectionTitle title="Education" />
+      <SectionTitle title={title} />
 
       {list.map((entry, idx) => (
         <ItemCardTemplate
-          id={entry._id}
+          id={entry.id}
           key={idx}
           style={{
             paddingBottom: "1em",
@@ -39,7 +45,11 @@ const SectionEducation = () => {
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
           skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
-          <ItemModalContent images={entry.images} markdownPath={entry.modalMarkdownPath} />
+          <ItemModalContent 
+            images={entry.images} 
+            markdownPath={entry.modalMarkdownPath} 
+            primaryLink={entry.primaryLink} 
+          />
         </ItemCardTemplate>
       ))}
     </div>

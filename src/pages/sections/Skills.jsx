@@ -1,8 +1,8 @@
 import React, { Fragment, useContext } from "react";
-import data from "../../../content/skills";
-import { WidthContext } from "../../../contexts";
-import ExpandSection from "../../../components/ExpandSection";
-import { IconLookupFromName } from "../../../components/IconManager";
+import data from "../../content/skills";
+import { WidthContext } from "../../contexts";
+import ExpandSection from "../../components/ExpandSection";
+import { IconLookupFromName } from "../../components/IconManager";
 import { Row, Col, Typography, Progress, Tooltip } from "antd";
 
 const { Text, Title } = Typography;
@@ -69,7 +69,7 @@ const SectionSkills = () => {
                 {row.map((entry, idx) => (
                   <Col span={span} key={idx}>
                     <SkillTile
-                      id={entry._id}
+                      id={entry.id}
                       name={entry.name}
                       percent={entry.percent}
                       icon={entry.icon}

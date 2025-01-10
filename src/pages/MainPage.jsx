@@ -1,13 +1,13 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/main/Home";
-import SectionSkills from "./sections/main/Skills";
-import SectionCareer from "./sections/main/Career";
-//import SectionEducation from "./sections/Education";
-import SectionProjects from "./sections/main/Projects";
-import SectionPublications from "./sections/main/Publications";
-import SectionContact from "./sections/main/Contact";
-import contactData from "../content/contact";
+import SectionHome from "./sections/Biography";
+import SectionSkills from "./sections/Skills";
+import SectionCareer from "./sections/Career";
+import SectionProjects from "./sections/Projects";
+import SectionPublications from "./sections/Publications";
+import SectionContact from "./sections/Contact";
+import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const MainPage = () => {
   return (
@@ -16,7 +16,7 @@ const MainPage = () => {
       header={{
         simple: false,
         pageName: "Main",
-        innerButtons: [
+        sectionButtons: [
           {
             id: "home-btn",
             flexPx: 150,
@@ -27,11 +27,6 @@ const MainPage = () => {
             flexPx: 150,
             content: "Career"
           },
-          //   {
-          //     id: "education-btn",
-          //     flexPx: 150,
-          //     content: "Education"
-          //   },
           {
             id: "projects-btn",
             flexPx: 150,
@@ -48,15 +43,8 @@ const MainPage = () => {
             content: "Contact"
           }
         ],
-        pageButtons: [
-          {
-            id: "resume-btn",
-            flexPx: 150,
-            content: "Resume",
-            route: contactData.resume.link,
-            isLink: true
-          }
-        ],
+        primaryRouteButtons: primaryRouteOptions.filter((value) => (value.id !== "home-btn")),
+        secondaryRouteButtons: secondaryRouteOptions,
         collapseWidth: 1500
       }}
       sections={[
@@ -92,17 +80,6 @@ const MainPage = () => {
           },
           content: <SectionCareer />
         },
-        // {
-        //   name: "sect-education",
-        //   navItem: "education-btn",
-        //   sectionType: "type-b",
-        //   scrollProperties: {
-        //     duration: 500,
-        //     smooth: true,
-        //     offset: -100,
-        //   },
-        //   content: (<SectionEducation />)
-        // },
         {
           name: "sect-projects",
           navItem: "projects-btn",
@@ -112,7 +89,10 @@ const MainPage = () => {
             smooth: true,
             offset: -100
           },
-          content: <SectionProjects />
+          content: <SectionProjects 
+            title="Notable Projects"
+            notableOnly={true}
+          />
         },
         {
           name: "sect-publications",
