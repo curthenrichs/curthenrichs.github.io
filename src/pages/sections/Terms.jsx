@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import contactData from "../../../content/contact";
+import contactData from "../../content/contact";
 
 const SectionHome = () => {
   return (
@@ -26,7 +26,7 @@ const SectionHome = () => {
 
       <p>
         These Terms of Use described the legally binding terms and conditions that oversee your use
-        of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you
+        of the Site. BY USING THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you
         represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE
         AT LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISION OF
         THESE TERMS, DO NOT LOG INTO AND/OR USE THE SITE.

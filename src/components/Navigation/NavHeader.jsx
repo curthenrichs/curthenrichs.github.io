@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu as MenuIcon } from "../IconManager";
 import { WidthContext } from "../../contexts";
 import { Row, Col, Typography, Divider } from "antd";
-import InnerNavButton from "./InnerNavButton";
-import PageNavButton from "./PageNavButton";
-import LinkNavButton from "./LinkNavButton";
+import { SectionButtonFactory } from "./ButtonFactory";
 import "./index.css";
 
 const { Title, Text } = Typography;
@@ -18,7 +16,7 @@ const HomeTitleLink = () => {
   return (
     <Col flex="200px">
       <Title level={2} style={{ overflow: "hidden" }}>
-        <Link to="/" style={{ color: "#fff" }}>
+        <Link to="/home" style={{ color: "#fff" }}>
                     Curt Henrichs
         </Link>
       </Title>
@@ -54,8 +52,8 @@ const NavHeader = (props) => {
     optionSelectCallback, 
     selected, 
     pageName, 
-    innerButtons, 
-    pageButtons, 
+    sectionButtons, 
+    // primaryRouteButtons,
     collapseWidth, 
     menuClickedCallback 
   } = props;
@@ -84,32 +82,19 @@ const NavHeader = (props) => {
       </Fragment>);
     }
   } else {
-    const innerBtns = innerButtons.map((entry) => (
+    const innerBtns = sectionButtons.map((entry) => (
       <Col flex={`${entry.flexPx}px`} key={entry.id}>
-        <InnerNavButton
-          active={selected === entry.id}
-          id={entry.id}
-          content={entry.content}
-          callback={optionSelectCallback}
-        />
+        {SectionButtonFactory(entry, selected, optionSelectCallback)}
       </Col>
     ));
 
-    const pageBtns = pageButtons.map((entry) => {
-      if (entry.isLink) {
-        return (
-          <Col flex={`${entry.flexPx}px`} key={entry.id}>
-            <LinkNavButton id={entry.id} content={entry.content} route={entry.route} />
-          </Col>
-        );
-      } else {
-        return (
-          <Col flex={`${entry.flexPx}px`} key={entry.id}>
-            <PageNavButton id={entry.id} content={entry.content} route={entry.route} />
-          </Col>
-        );
-      }
-    });
+    // const pageBtns = primaryRouteButtons.map((entry) => {
+    //   return (
+    //     <Col flex={`${entry.flexPx}px`} key={entry.id}>
+    //       {RouteButtonFactory(entry)}
+    //     </Col>
+    //   );
+    // });
 
     if (width >= collapseWidth) {
       contents = (
@@ -118,10 +103,10 @@ const NavHeader = (props) => {
             <NavHeaderDivider />
           </Col>
           {innerBtns}
-          <Col flex="25px">
+          {/* <Col flex="25px">
             <NavHeaderDivider />
           </Col>
-          {pageBtns}
+          {pageBtns} */}
           <Col flex="auto">
             <Row justify="end">
               <Col flex="100px">

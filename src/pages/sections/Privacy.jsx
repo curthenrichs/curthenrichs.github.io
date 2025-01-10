@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import contactData from "../../../content/contact";
+import contactData from "../../content/contact";
 
 const SectionHome = () => {
   return (

@@ -9,6 +9,7 @@ body {
   min-width: 400px;
   min-height: 100%;
   padding: 0;
+  overflow-y: scroll; /* Show scrollbars */
 }
 
 #root {

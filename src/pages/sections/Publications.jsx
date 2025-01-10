@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
-import PublicationCard from "../../../components/PublicationCard";
-import data from "../../../content/publications";
-import SectionTitle from "../../../components/SectionTitle";
-import { WidthContext } from "../../../contexts";
+import PublicationCard from "../../components/PublicationCard";
+import data from "../../content/publications";
+import SectionTitle from "../../components/SectionTitle";
+import { WidthContext } from "../../contexts";
 
-const SectionPublications = () => {
+const SectionPublications = (props) => {
+  let { title } = props;
+
+  if (title === undefined) {
+    title = "Publications";
+  }
+
   const list = Object.values(data);
   const width = useContext(WidthContext);
 
@@ -17,12 +23,12 @@ const SectionPublications = () => {
         paddingLeft: width > cardWidth ? `${extraWidth / 2}px` : "0px",
         paddingRight: width > cardWidth ? `${extraWidth / 2}px` : "0px"
       }}>
-      <SectionTitle title="Publications" />
+      <SectionTitle title={title} />
 
       {list.map((entry, idx) => (
         <PublicationCard
           key={idx}
-          id={entry._id}
+          id={entry.id}
           title={entry.title}
           reference={entry.reference}
           link={entry.link}
