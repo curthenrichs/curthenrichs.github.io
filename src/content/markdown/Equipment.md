@@ -1,9 +1,9 @@
-Every artisan has their tools. As an embedded systems engineer and hobby robotics enthusiast I have picked up a few things over the years. Below I have documented the most useful pieces but it is by no means a complete (or necessarily up-to-date) list.
+_Every artisan has their tools. As an embedded systems engineer and hobby robotics enthusiast I have picked up a few things over the years. Below I have documented the most useful pieces but it is by no means a complete (or necessarily up-to-date) list._
 
 &nbsp;
 
 ## Computers and Peripherals
-I spend way too much time on the computer with my projects. Here are some system and peripherals I stand behind.
+I spend way too much time with computers for my projects. Here are some system and peripherals I stand behind.
 
 ### Dell XPS 13 2-in-1 Laptop/Tablet
 My new travel / business laptop. It has decent CPU and RAM specs but a lack-luster GPU config. I wouldn't use it for CAD or heavy gaming but it works well for VSCode and document management. 
@@ -19,9 +19,7 @@ I also tend to use it as a frontend for my Analog Discovery oscilloscope (seem m
 - OS : Windows 11
 
 ### HP ZBook Laptop (from undergrad)
-During freshman undergrad at MSOE, each engineering student was issued a laptop. Junior year we were offered a new refreshed system, which we could keep upon graduation. 
-
-I then proceeded to use this same laptop throughout grad-school as my day-to-day machine. 
+During freshman undergrad at MSOE, each engineering student was issued a laptop. Junior year we were offered a new refreshed system, which we could keep upon graduation. I proceeded to use this same laptop throughout grad-school as my day-to-day machine. 
 
 This laptop served me well (with the stuck keys, slow operation, and failing RAM to prove it). It now serves as the frontend for my Analog Discovery if I am doing work in the garage. 
 
@@ -34,7 +32,7 @@ This laptop served me well (with the stuck keys, slow operation, and failing RAM
 - OS : Windows 10 + WSL Ubuntu
 
 ### Desktop - Custom Build
-After grad school, moving to California, and starting my full-time career I finally had the discretionary income to spend on a gaming machine (even though I use it more as a workstation than not).
+After grad school, moving to California, and starting my full-time career I finally had the discretionary income to spend on a gaming machine (even though I use it more as a workstation than video games).
 
 #### System Config
 
@@ -69,7 +67,8 @@ I got these noise cancelling headphones as a gift. They work pretty well but som
 ### Monitors
 I have several cheap monitors that I have collected over the years. I am not too partial to any of them. When one dies I tend to scrounge up, borrow, or purchase another cheap one. 
 
-Current Config
+Current Config,
+
 - ASUS VG289 as primary monitor
 - ASUS VG245 as secondary monitor (portrait orientation)
 - DELL S2419NX as secondary monitor
@@ -87,8 +86,7 @@ Model Number : CyberPower CP1500PFCLCD
 Below are some software systems I have found particularly useful.
 
 ### Affinity Suite (Designer, Publisher, Photo)
-I am not a graphic artist by any means but sometimes I need to touch up a photo or whip up an illustration for an article. In the past I used to use Adobe's products but the subscription model does not make sense for someone who only used Illustrator once every two months. I found Affinity Suite to
-be a great alternative at an even better one-time cost value. 
+I am not a graphic artist by any means but sometimes I need to touch up a photo or whip up an illustration for an article. In the past I used to use Adobe's products but the subscription model does not make sense for someone who only used Illustrator once every two months. I found Affinity Suite to be a great alternative at an even better value with its one-time purchase. 
 
 ### Visual Studio Code
 I almost exclusively use VSCode for software development at this point. If I need to use a vendor specific tool like Xilinx Vitis its only for the tooling but I still tend to have Code open on the side.
@@ -105,7 +103,7 @@ When I first got real adult money I had to spend it on a nice soldering iron. Bo
 I love this little reflow heatgun, perhaps because I became proficient with it at work. 
 
 ### Air Filter
-An off-brand air filter from Amazon but it along with a cracked window does the job.
+An off-brand air filter from Amazon but it along with a cracked window it does the job.
 
 &nbsp;
 
