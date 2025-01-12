@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import contactData from "../../content/contact";
 
-const SectionHome = () => {
+const SectionAccessibilityPolicy = () => {
   return (
     <Fragment>
       <h2>Accessibility Policy</h2>
@@ -111,4 +111,4 @@ const SectionHome = () => {
   );
 };
 
-export default SectionHome;
+export default SectionAccessibilityPolicy;

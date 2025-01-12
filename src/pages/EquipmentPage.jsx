@@ -1,9 +1,8 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate";
+import SectionEquipment from "./sections/Equipment";
 import ReturnHome from "./sections/ReturnHome";
 import SectionInspiration from "./sections/Inspiration";
-import primaryRouteOptions from "../content/primaryRouteOptions";
-import secondaryRouteOptions from "../content/secondaryRouteOptions";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
@@ -15,7 +14,7 @@ const EquipmentPage = () => {
                 pageName: "Equipment",
                 sectionButtons: [
                     {
-                        id: 'equipment-btn',
+                        id: "equipment-btn",
                         flexPx: 150,
                         content: "Equipment"
                     }
@@ -26,21 +25,21 @@ const EquipmentPage = () => {
             sections={[
                 {
                     name: "sect-inspiration",
-                    navItem: "education-btn",
+                    navItem: "equipment-btn",
                     scrollProperties: {
                       duration: 500,
                       smooth: true,
                       offset: -100
                     },
                     sectionType: "type-a",
-                    content: <SectionInspiration title="Education" noBr={true} />
+                    content: <SectionInspiration title="Equipment" noBr={true} />
                 },
                 {
                     name: "sect-equipment",
                     navItem: "equipment-btn",
                     scrollProperties: null,
-                    sectionType: "type-b",
-                    content: null
+                    sectionType: "type-a",
+                    content: <SectionEquipment />
                 },
                 {
                     name: "sect-return",
@@ -54,3 +53,5 @@ const EquipmentPage = () => {
         />
     );
 };
+
+export default EquipmentPage;

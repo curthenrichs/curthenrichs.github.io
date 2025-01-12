@@ -17,6 +17,7 @@ import EducationPage from "./pages/EducationPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import PublicationsPage from "./pages/PublicationsPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
+import EquipmentPage from "./pages/EquipmentPage";
 
 import reportWebVitals from "./reportWebVitals";
 import contactData from "./content/contact";
@@ -46,6 +47,7 @@ ReactDOM.render(
         <Route exact path="/education" component={EducationPage} />
         <Route exact path="/projects" component={ProjectsPage} />
         <Route exact path="/publications" component={PublicationsPage} />
+        <Route exact path="/equipment" component={EquipmentPage} />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

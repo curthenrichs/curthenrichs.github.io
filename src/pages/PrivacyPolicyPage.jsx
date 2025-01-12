@@ -1,7 +1,7 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/Privacy";
+import SectionPrivacyPolicy from "./sections/Privacy";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
@@ -31,7 +31,7 @@ const PrivacyPolicyPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionHome />
+          content: <SectionPrivacyPolicy />
         },
         {
           name: "sect-return",

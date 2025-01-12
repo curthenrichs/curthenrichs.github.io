@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const SectionHome = () => {
+const SectionAttribution = () => {
   return (
     <Fragment>
       <h2>Attribution and Licenses</h2>
@@ -207,4 +207,4 @@ const SectionHome = () => {
   );
 };
 
-export default SectionHome;
+export default SectionAttribution;

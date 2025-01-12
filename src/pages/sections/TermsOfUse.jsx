@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import contactData from "../../content/contact";
 
-const SectionHome = () => {
+const SectionTermsOfUse = () => {
   return (
     <Fragment>
       <h2>Terms of Use</h2>
@@ -454,4 +454,4 @@ const SectionHome = () => {
   );
 };
 
-export default SectionHome;
+export default SectionTermsOfUse;
