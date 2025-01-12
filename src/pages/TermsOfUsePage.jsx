@@ -1,7 +1,7 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/Terms";
+import SectionTermsOfUse from "./sections/TermsOfUse";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
@@ -31,7 +31,7 @@ const TermsOfUsePage = () => {
             smooth: true,
             offset: -100
           },
-          content: <SectionHome />
+          content: <SectionTermsOfUse />
         },
         {
           name: "sect-return",

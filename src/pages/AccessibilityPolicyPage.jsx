@@ -1,7 +1,7 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/Accessibility";
+import SectionAccessibilityPolicy from "./sections/Accessibility";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
@@ -31,7 +31,7 @@ const AccessibilityPolicyPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionHome />
+          content: <SectionAccessibilityPolicy />
         },
         {
           name: "sect-return",

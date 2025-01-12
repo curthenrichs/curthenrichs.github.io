@@ -2,68 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://curthenrichs.github.io/</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/resume</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/attribution</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/terms</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/accessibility</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/privacy</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/docs/resume.pdf</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/career</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/education</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/projects</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://curthenrichs.github.io/publications</loc>
-    <lastmod>2024-10-21</lastmod>
+    <lastmod>2025-01-11</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://curthenrichs.github.io/equipment</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>
