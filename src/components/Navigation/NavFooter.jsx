@@ -34,7 +34,7 @@ const Footer = () => {
         </Text>
         <br/>
         <Text>
-          <Link to="/contract">Contracting</Link>
+          <Link to="/contract">Work with Me</Link>
           <Spacer />
           <Link to="/terms">Terms of Use</Link>
           <Spacer />
@@ -57,7 +57,7 @@ const Footer = () => {
           <Spacer />
           <Link to="/terms">Terms of Use</Link>
           <Spacer />
-          <Link to="/contract">Contracting</Link>
+          <Link to="/contract">Work with Me</Link>
         </Text>
         <br />
         <Text>

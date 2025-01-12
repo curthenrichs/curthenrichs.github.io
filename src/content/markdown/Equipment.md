@@ -1,4 +1,4 @@
-_Every artisan has their tools. As an embedded systems engineer and hobby robotics enthusiast I have picked up a few things over the years. Below I have documented the most useful pieces but it is by no means a complete (or necessarily up-to-date) list._
+Every artisan has their tools. As an embedded systems engineer and hobby robotics enthusiast I have picked up a few things over the years. Below I have documented the most useful pieces but it is by no means a complete (or necessarily up-to-date) list.
 
 &nbsp;
 
