@@ -1,36 +1,6 @@
 # IDES
 
-IDES (a JEOL group subsidiary) is a small company with 10+ employees working in the transmission electron microscope (TEM) market. IDES acts as a de-facto R&D group within JEOL Ltd. IDES sells a deflector sub-framing system called Relativity, an electrostatic dose modulation system (EDM), and various other related TEM peripherals to support scientific applications. 
-
-As an overview of my experience:
-- Multi-purpose Control Knob
-    - Elicited requirements / specification and clarified hardware concept
-    - Schematic capture and layout in Altium.
-    - Designed the mechanical enclosure, managed contract manufacturing
-    - Managed PCBA manufacture and performed board bringup
-    - Wrote USB vendor class firmware on baremetal Microchip SAMD for animation table / image streaming
-    - Set up Windows driver with JEOL VID / PID
-    - Wrote Python interface driver 
-    - Integrated Knob into next generation EDM software
-- Synchrony  / Movie-Mode Controller
-    - Various Xilinx Firmware and embedded application development
-    - Baremetal to FreeRTOS port
-    - Performance optimizations
-    - Managed intern who focused on developing service dashboard
-- EDM Generation Two
-    - Includes Multi-Purpose Control Knob integration
-    - Refactored generation one devices and focused on extensive unit and integration tests
-    - Developing generation two hardware, firmware, and software
-        - Common Control System with SAMD microcontroller running FreeRTOS and WIZnet W5500 Ethernet bridge
-        - Leverages existing shared firmware libraries and knowledge built from generation one hardware
-    - Updating backend to pubsub model for drivers
-    - Managed intern who focused on reworking the REST API for the backend
-- Miscellaneous
-    - Nvidia Jetson Xavier images
-    - Contract manufacturing management
-    - Manufacturing tasks as needed
-    - Electrical and Firmware maintenance tasks for EDM and Relativity
-    - Trained incoming manufacturing engineers and procurement specialists
+IDES (a JEOL group subsidiary) is a small company with 10+ employees working in the transmission electron microscope (TEM) market. IDES acts as a de-facto R&D group within JEOL Ltd. IDES develops a deflector sub-framing system called Relativity, an electrostatic dose modulation system (EDM), and various other related TEM peripherals to support scientific applications. 
 
 ## Firmware Engineer
 
@@ -38,7 +8,7 @@ During my role as the primary firmware engineer at IDES, back in 2021, I focused
 
 Due to the nature of working at a small company, I also have worked on projects outside of my narrowly defined firmware role. I have built out both R&D and production EDM, Relativity, and Luminary electronic components. I assisted in ECAD development tasks and PCBA / component procurement. Additionally, I have worked on user facing software in python that interfaces with our various hardware products. Finally, I performed manufacturing duties for electronic components within our products.
 
-My hard work payed off, IDES recognized my contributions and I was quickly promoted to senior engineer.
+IDES recognized my contributions and I was quickly promoted to senior engineer.
 
 ## Senior Embedded Systems Engineer
 
@@ -54,7 +24,7 @@ On the manufacturing side, I assisted in the hiring process for our manufacturin
 
 ### Area : Gen 2 Hardware
 
-I am also working on selecting new microcontrollers, ethernet controllers, and I2C components for the next generation of our EDM products. For microcontrollers and ethernet controllers I am steering toward easy to build / maintain solutions with minimal rework risk (primarily motivated by manpower constraints). My focus is on producing better integrations through refining our existing products. 
+I am also working on selecting new microcontrollers, ethernet controllers, and I2C components for the next generation of our EDM products. For microcontrollers and ethernet controllers I am steering toward easy to build / maintain solutions with minimal rework risk (primarily motivated by manpower constraints). My focus is on producing better integrations through refinement of our existing products. 
 
 A couple of our boards are rather sensitive to supply-chain disruption and have a decent amount of extra real-estate on the PCBA. I have been working to select new components for a dual population scheme; with different component families/manufacturers. At board spin we can "mix-and-match" the various IC options that are known to work together and DNP the alternatives. Ideally, this hedges against future supply shortages. 
 
