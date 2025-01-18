@@ -1,7 +1,7 @@
 import descriptionText from "./markdown/Equipment.md";
 
 const data = {
-    descriptionText
+  descriptionText
 };
 
 export default data;
