@@ -1,1 +1,0 @@
-Fulltime Text - Coming Soon
