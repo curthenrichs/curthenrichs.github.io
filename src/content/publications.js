@@ -58,7 +58,7 @@ const data = {
       "Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope",
     reference:
       "Reed, B. W., Bloom, R. S., Eyzaguirre, G., Henrichs, C., Moghadam, A. A., & Masiel, D. J. (2022). Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope. Microscopy and Microanalysis, 28(S1), 2230-2231.",
-    link: "https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/electrostatic-switching-for-spatiotemporal-dose-control-in-a-transmission-electron-microscope/C814A631FCD8F968290E892CA0D11A1D",
+    link: "https://academic.oup.com/mam/article-abstract/28/S1/2230/6996948",
     status: "Published"
   }
 };
