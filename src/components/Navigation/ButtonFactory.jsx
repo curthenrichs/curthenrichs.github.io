@@ -17,13 +17,13 @@ const RouteButtonFactory = (btnData) => {
 };
 
 const SectionButtonFactory = (btnData, selectedId, optionSelectCallback) => {
-    return (<InnerNavButton
-      key={btnData.id}
-      active={selectedId === btnData.id}
-      id={btnData.id}
-      content={btnData.content}
-      callback={optionSelectCallback}
-    />);
+  return (<InnerNavButton
+    key={btnData.id}
+    active={selectedId === btnData.id}
+    id={btnData.id}
+    content={btnData.content}
+    callback={optionSelectCallback}
+  />);
 };
 
 export {
