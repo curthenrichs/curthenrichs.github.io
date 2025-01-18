@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Row, Col, Card } from "antd";
 import contractingData from "../../content/contracting";
+import contactData from "../../content/contact";
 
 const { Text, Title } = Typography;
 
@@ -10,13 +11,13 @@ const HeaderSubsection = (props) => {
 
     let availabilityText = null;
     if (availableFullTime && availableContract) {
-        availabilityText = (<Text>Available for Full-Time Employment, Consulting, or Contract Work</Text>);
+        availabilityText = (<Text>Available for Full-Time Employment, Consulting, or Contract Work.</Text>);
     } else if (availableFullTime) {
-        availabilityText = (<Text>Seeking Full-Time Employment</Text>);
+        availabilityText = (<Text>Seeking Full-Time Employment. Let&apos;s collaborate on your next project.</Text>);
     } else if (availableContract) {
-        availabilityText = (<Text>Available for Consulting and Contract Work</Text>);
+        availabilityText = (<Text>Available for Consulting and Contract Work.</Text>);
     } else {
-        availabilityText = (<Text>Currently employed Full-Time; reach out to discuss new opportunities</Text>);
+        availabilityText = (<Text>Currently employed Full-Time; reach out to discuss new opportunities with me.</Text>);
     }
 
     return (
@@ -27,13 +28,28 @@ const HeaderSubsection = (props) => {
 
             <br/>
 
-            <div>
-                {(availableFullTime || availableContract) && (<br/>) }
-                {availableFullTime && (<Button>Hire for Full-Time</Button>)}
-                {availableContract && (<Button>Consult on a Project</Button>)}
-            </div>
-            
-            {/* Add Call to Action buttons here (and have interchangable content above) */}
+            <Row
+                justify="center" // Centers horizontally
+                align="middle"   // Centers vertically
+            >
+                <Col>
+                    <div style={{ textAlign: "center" }}>
+                    {(availableFullTime || availableContract) && (
+                        <Fragment>
+                            <br/>
+                            <Button 
+                                type="primary" 
+                                shape="round" 
+                                href={`${contactData.email.link}?subject=Request%20for%20Hire%20from%20Portfolio%20Website&body=I%20would%20like%20to%20discuss%20a%20project.`}
+                            >
+                                Hire Now
+                            </Button>
+                        </Fragment>
+                    )}
+                    </div>
+                </Col>
+            </Row>
+
         </Fragment>
     );
 };
@@ -44,7 +60,7 @@ const ServiceCard = (props) => {
 
     return (
         <Card
-            style={{minHeight: "200px"}}
+            style={{ height: "100%" }}
         >
             <Title level={5}>{title}</Title>
             <Text>{description}</Text>
@@ -98,19 +114,10 @@ const ServicesSubsection = (props) => {
     );
 };
 
-const CollaborateSubsection = () => {
-    return (
-        <Fragment>
-            <Title level={3}>Let&apos;s Collaborate</Title>
-            <Text>Currently open for new opportunities, send me a message to discuss</Text>
-        </Fragment>
-    );
-};
-
 const SectionContracting = () => {
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <div style={{ maxWidth: "1200px", width: "100%", padding: "20px" }}>
+            <div style={{ maxWidth: "1000px", width: "100%", padding: "20px" }}>
                 <HeaderSubsection 
                     availableFullTime={contractingData.renderFulltime}
                     availableContract={contractingData.renderConsulting}
@@ -122,24 +129,9 @@ const SectionContracting = () => {
                     availableFullTime={contractingData.renderFulltime}
                     availableContract={contractingData.renderConsulting}
                 />
-
-                <br/><br/>
-
-                <CollaborateSubsection />
             </div>
         </div>
     );
 };
-
-/*
-
-
-            {!contractingData.available && (<MarkdownContent markdownPath={contractingData.unavailableText} />)}
-
-            {contractingData.available && contractingData.renderFulltime && (<MarkdownContent markdownPath={contractingData.fulltimeText} />)}
-
-            {contractingData.available && contractingData.renderConsulting && (<MarkdownContent markdownPath={contractingData.consultingText} />)}
-
-*/
 
 export default SectionContracting;
