@@ -1,7 +1,7 @@
 const data = {
     available: false,
-    renderFulltime: true,
-    renderConsulting: true
+    renderFulltime: false,
+    renderConsulting: false
 };
 
 export default data;

@@ -40,7 +40,7 @@ const CallToAction = (props) => {
         </Button>
       )}
 
-      {openToWork && "    "}
+      {openToWork && "    "}  {/* Should not be a span, will mess up line-fold */}
 
       <Button
         type={(openToWork)? "secondary" : "primary"}
