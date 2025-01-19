@@ -26,7 +26,7 @@ const data = {
   },
   resume: {
     id: "contact-resume",
-    link: "/docs/resume.pdf",
+    link: "/docs/curt-henrichs-resume.pdf",
     text: "Resume"
   }
 };
