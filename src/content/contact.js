@@ -28,6 +28,11 @@ const data = {
     id: "contact-resume",
     link: "/docs/curt-henrichs-resume.pdf",
     text: "Resume"
+  },
+  blog: {
+    id: "contact-blog",
+    link: "https://www.half-built-robots.com/",
+    text: "Blog (Half-Built-Robots)"
   }
 };
 

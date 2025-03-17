@@ -29,12 +29,12 @@ const Footer = () => {
           <Link to="/projects">Projects</Link>
           <Spacer />
           <Link to="/publications">Publications</Link>
-          <Spacer />
-          <Link to="/equipment">Equipment</Link>
         </Text>
         <br/>
         <Text>
           <Link to="/contract">Work with Me</Link>
+          <Spacer />
+          <Link to="/blog">Blog</Link>
           <Spacer />
           <Link to="/terms">Terms of Use</Link>
           <Spacer />
@@ -69,7 +69,7 @@ const Footer = () => {
           <Spacer />
           <Link to="/publications">Publications</Link>
           <Spacer />
-          <Link to="/equipment">Equipment</Link>
+          <Link to="/blog">Blog</Link>
         </Text>
         <br />
         <Text>
