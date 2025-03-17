@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.aa48dd72.chunk.css",
-    "main.js": "/static/js/main.67af23d1.chunk.js",
-    "main.js.map": "/static/js/main.67af23d1.chunk.js.map",
+    "main.js": "/static/js/main.3033a3f7.chunk.js",
+    "main.js.map": "/static/js/main.3033a3f7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5543b34e.js",
     "runtime-main.js.map": "/static/js/runtime-main.5543b34e.js.map",
     "static/css/2.f5cc3477.chunk.css": "/static/css/2.f5cc3477.chunk.css",
@@ -19,7 +19,6 @@
     "static/media/Biography.24637a5d.md": "/static/media/Biography.24637a5d.md",
     "static/media/EVDProject.365d4a62.md": "/static/media/EVDProject.365d4a62.md",
     "static/media/EVDProject.6480b1c8.md": "/static/media/EVDProject.6480b1c8.md",
-    "static/media/Equipment.143abc04.md": "/static/media/Equipment.143abc04.md",
     "static/media/HobbyProject.589ec43b.md": "/static/media/HobbyProject.589ec43b.md",
     "static/media/HobbyProject.62fcf86c.md": "/static/media/HobbyProject.62fcf86c.md",
     "static/media/IDESCareer.084a852a.md": "/static/media/IDESCareer.084a852a.md",
@@ -75,6 +74,6 @@
     "static/css/2.f5cc3477.chunk.css",
     "static/js/2.d803ee5c.chunk.js",
     "static/css/main.aa48dd72.chunk.css",
-    "static/js/main.67af23d1.chunk.js"
+    "static/js/main.3033a3f7.chunk.js"
   ]
 }
