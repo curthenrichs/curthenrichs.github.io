@@ -205,7 +205,7 @@ const data = {
     primaryLink: null
   },
   "project-hobby": {
-    title: "Hobby Projects & Blog",
+    title: "Hobby Projects & Half-Built-Robots Blog",
     brief: "Hobby robotics and home automation projects",
     descriptionMarkdownPath: HobbyBrief,
     thumbnail: "/static/img/thumbnail/project-hobby.jpg",
@@ -245,8 +245,8 @@ const data = {
     ],
     publications: [],
     primaryLink: {
-      link: "https://homebuiltrobotics.blogspot.com/",
-      description: "Checkout my blog \"Home-Built-Robotics\"",
+      link: "https://www.half-built-robots.com/",
+      description: "Checkout my blog \"Half-Built-Robots\"",
       text: "Go To Blog"
     }
   },

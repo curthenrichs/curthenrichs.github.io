@@ -12,8 +12,15 @@ let data = [
   {
     id: "resume-btn",
     flexPx: 150,
-    content: "Resume",
+    content: contactData.resume.text,
     route: contactData.resume.link,
+    isLink: true
+  },
+  {
+    id: "blog-btn",
+    flexPx: 150,
+    content: contactData.blog.text,
+    route: contactData.blog.link,
     isLink: true
   }
 ];
