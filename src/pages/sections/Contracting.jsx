@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { Button, Typography, Row, Col, Card } from "antd";
 import contractingData from "../../content/contracting";
 import contactData from "../../content/contact";
+import { WidthContext } from "../../contexts";
 
 const { Text, Title } = Typography;
+const LAYOUT_WIDTH_OPTIONS_INLINE = 800;
 
 const HeaderSubsection = (props) => {
 
@@ -71,6 +73,49 @@ const ServiceCard = (props) => {
 const ServicesSubsection = (props) => {
 
   const { availableFullTime, availableContract } = props;
+  const width = useContext(WidthContext);
+
+  const fullTimeCard = (<ServiceCard 
+    title={"Full-Time Roles"} 
+    description={"Dedicated long-term contributions as a full-time Embedded Systems Engineer, focusing on end-to-end product development, firmware optimization, and hardware/software integration."} 
+  />);
+
+  const contractCard = (<ServiceCard
+    title={"Contracting Work"} 
+    description={"Short-term contracts to support your project at critical phases, helping you meet deadlines with confidence."} 
+  />);
+
+  const consultCard = (<ServiceCard
+    title={"Consulting"} 
+    description={"Expert consulting for system design reviews, debugging, and optimization; guiding your team to build efficient, scalable solutions."} 
+  />);
+
+  let card_layout = null;
+  if (width >= LAYOUT_WIDTH_OPTIONS_INLINE) {
+    card_layout = (<Row>
+      <Col span={1}></Col>
+      <Col span={7}>
+        {fullTimeCard}
+      </Col>
+      <Col span={1}></Col>
+      <Col span={7}>
+        {contractCard}
+      </Col>
+      <Col span={1}></Col>
+      <Col span={7}>
+        {consultCard}
+      </Col>
+      <Col span={1}></Col>
+    </Row>);
+  } else {
+    card_layout = (<div>
+      {fullTimeCard}
+      <br />
+      {contractCard}
+      <br />
+      {consultCard}
+    </div>); 
+  }
 
   return (
     <Fragment>
@@ -78,30 +123,7 @@ const ServicesSubsection = (props) => {
 
       <br/>
 
-      <Row>
-        <Col span={1}></Col>
-        <Col span={7}>
-          <ServiceCard 
-            title={"Full-Time Roles"} 
-            description={"Dedicated long-term contributions as a full-time Embedded Systems Engineer, focusing on end-to-end product development, firmware optimization, and hardware/software integration."} 
-          />
-        </Col>
-        <Col span={1}></Col>
-        <Col span={7}>
-          <ServiceCard
-            title={"Contracting Work"} 
-            description={"Short-term contracts to support your project at critical phases, helping you meet deadlines with confidence."} 
-          />
-        </Col>
-        <Col span={1}></Col>
-        <Col span={7}>
-          <ServiceCard
-            title={"Consulting"} 
-            description={"Expert consulting for system design reviews, debugging, and optimization; guiding your team to build efficient, scalable solutions."} 
-          />
-        </Col>
-        <Col span={1}></Col>
-      </Row>
+      {card_layout}
 
       {availableFullTime}
 

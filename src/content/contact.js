@@ -22,7 +22,7 @@ const data = {
   location: {
     id: "contact-location",
     link: null,
-    text: "Fremont, California, USA"
+    text: "San Francisco Bay Area, California, USA"
   },
   resume: {
     id: "contact-resume",
