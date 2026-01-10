@@ -3,45 +3,45 @@ import ITERModal from "./markdown/modal/ITERProject.md";
 import CoFrameModal from "./markdown/modal/EVDProject.md";
 import HobbyModal from "./markdown/modal/HobbyProject.md";
 import WebsiteModal from "./markdown/modal/WebsiteProject.md";
-import OkosModal from "./markdown/modal/OkosProject.md";
+//import OkosModal from "./markdown/modal/OkosProject.md";
 
 import AuthrBrief from "./markdown/brief/AuthrProject.md";
 import ITERBrief from "./markdown/brief/ITERProject.md";
 import CoFrameBrief from "./markdown/brief/EVDProject.md";
 import HobbyBrief from "./markdown/brief/HobbyProject.md";
 import WebsiteBrief from "./markdown/brief/WebsiteProject.md";
-import OkosBrief from "./markdown/brief/OkosProject.md";
+//import OkosBrief from "./markdown/brief/OkosProject.md";
 
 const data = {
-  "project-okos": {
-    title: "Okos Polip",
-    brief: "Home automation device state ingest platform as a service",
-    descriptionMarkdownPath: OkosBrief,
-    thumbnail: "/static/img/thumbnail/project-okos.jpg",
-    type: "Personal",
-    id: "project-okos",
-    modalMarkdownPath: OkosModal,
-    notable: true,
-    skills: [
-      "okos",
-      "arduino",
-      "linux",
-      "ros",
-      "c",
-      "python",
-      "nodejs",
-      "react",
-      "javascript",
-      "mongodb"
-    ],
-    images: [],
-    publications: [],
-    primaryLink: {
-      link: "https://www.okospolip.com/",
-      description: "Check out Okos Polip PaaS",
-      text: "Click Here"
-    }
-  },
+  // "project-okos": {
+  //   title: "Okos Polip",
+  //   brief: "Home automation device state ingest platform as a service",
+  //   descriptionMarkdownPath: OkosBrief,
+  //   thumbnail: "/static/img/thumbnail/project-okos.jpg",
+  //   type: "Personal",
+  //   id: "project-okos",
+  //   modalMarkdownPath: OkosModal,
+  //   notable: true,
+  //   skills: [
+  //     "okos",
+  //     "arduino",
+  //     "linux",
+  //     "ros",
+  //     "c",
+  //     "python",
+  //     "nodejs",
+  //     "react",
+  //     "javascript",
+  //     "mongodb"
+  //   ],
+  //   images: [],
+  //   publications: [],
+  //   primaryLink: {
+  //     link: "https://www.okospolip.com/",
+  //     description: "Check out Okos Polip PaaS",
+  //     text: "Click Here"
+  //   }
+  // },
   "project-coframe": {
     title: "CoFrame",
     brief: "Cobot operator training environment",
