@@ -20,7 +20,7 @@ const SectionContact = () => {
 
       <div>
         <div
-          style={{ fontSize: "var(--fs-xl)", display: "inline-block", textAlign: "left" }}
+          style={{ fontSize: "var(--fs-xl)", display: "inline-block" }}
           className="contact-details">
           <MailOutlined /> <Link href={data.email.link}>{data.email.text}</Link>
           <br />
