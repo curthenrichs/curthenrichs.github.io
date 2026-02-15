@@ -1,18 +1,19 @@
 import React, { useState, useContext, Fragment } from "react";
 import SocialTray from "../../../components/SocialTray";
 import MarkdownContent from "../../../components/MarkdownContent";
+import ErrorBoundary from "../../../components/ErrorBoundary";
 import ExpandSection from "../../../components/ExpandSection";
 import bioData from "../../../content/biography";
 import contactData from "../../../content/contact";
 import educationData from "../../../content/education";
 import careerData from "../../../content/career";
 import { WidthContext } from "../../../contexts";
+import { BP_BIO_TWO_COL, BP_BIO_THREE_COL, BP_BIO_DIGEST_INLINE, BP_BIO_THREE_COL_DIGEST } from "../../../breakpoints";
 import { CaretRightOutlined, DownloadOutlined } from "../../../components/IconManager";
 import { Row, Col, Typography, Button } from "antd";
 import ThumbnailImage from "../../../components/ThumbnailImage";
 
 const { Title, Text, Link } = Typography;
-const LAYOUT_WIDTH_DIGEST_INLINE = 1500;
 
 const currentCompany = Object.values(careerData).filter((company) => {
   return company._id == bioData.currentEmploymentId.company;
@@ -28,8 +29,8 @@ const BioDigest = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <ThumbnailImage img={bioData.img} />
-      <div style={{ fontSize: "18px" }}>
-        <Text style={{ fontSize: "20px" }} strong>
+      <div style={{ fontSize: "var(--fs-lg)" }}>
+        <Text style={{ fontSize: "var(--fs-xl)" }} strong>
           {bioData.name}
         </Text>
         <br />
@@ -68,7 +69,7 @@ const Interests = (props) => {
       <Title level={4}>Interests</Title>
       <ExpandSection
         centerButton={true}
-        style={{ padding: "0 20px", fontSize: "16px" }}
+        style={{ padding: "0 20px", fontSize: "var(--fs-md)" }}
         generator={(expand) => {
           const sliceAmount =
             bioData.interests.length > numAbbrev ? numAbbrev : bioData.interests.length;
@@ -100,7 +101,7 @@ const Education = (props) => {
       <Title level={4}>Education</Title>
       <ExpandSection
         centerButton={true}
-        style={{ padding: "0 20px", fontSize: "16px" }}
+        style={{ padding: "0 20px", fontSize: "var(--fs-md)" }}
         generator={(expand) => {
           let list = Object.values(educationData).reverse();
 
@@ -135,7 +136,7 @@ const Career = (props) => {
       <Title level={4}>Career</Title>
       <ExpandSection
         centerButton={true}
-        style={{ padding: "0 20px", fontSize: "16px" }}
+        style={{ padding: "0 20px", fontSize: "var(--fs-md)" }}
         generator={(expand) => {
           let list = Object.values(careerData).reduce((acc, company) => {
             return acc.concat(
@@ -177,7 +178,7 @@ const BioDetail = (props) => {
   let innerLayout = null;
   const { width, digestInline } = props;
 
-  if ((digestInline && width >= 1800) || (!digestInline && width >= 1375)) {
+  if ((digestInline && width >= BP_BIO_THREE_COL_DIGEST) || (!digestInline && width >= BP_BIO_THREE_COL)) {
     innerLayout = (
       <Row>
         <Col flex="auto">
@@ -191,7 +192,7 @@ const BioDetail = (props) => {
         </Col>
       </Row>
     );
-  } else if (digestInline || width >= 850) {
+  } else if (digestInline || width >= BP_BIO_TWO_COL) {
     innerLayout = (
       <div>
         <Row>
@@ -221,8 +222,10 @@ const BioDetail = (props) => {
   return (
     <Fragment>
       <Title level={3}>Biography</Title>
-      <div style={{ fontSize: "16px" }}>
-        <MarkdownContent markdownPath={bioData.markdownPath} />
+      <div style={{ fontSize: "var(--fs-md)" }}>
+        <ErrorBoundary>
+          <MarkdownContent markdownPath={bioData.markdownPath} />
+        </ErrorBoundary>
       </div>
       <br />
       <br />
@@ -235,7 +238,7 @@ const SectionHome = () => {
   const width = useContext(WidthContext);
 
   let layout = null;
-  if (width >= LAYOUT_WIDTH_DIGEST_INLINE) {
+  if (width >= BP_BIO_DIGEST_INLINE) {
     layout = (
       <Row align="center">
         <Col span={4}>

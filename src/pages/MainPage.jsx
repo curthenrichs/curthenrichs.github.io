@@ -8,6 +8,7 @@ import SectionProjects from "./sections/main/Projects";
 import SectionPublications from "./sections/main/Publications";
 import SectionContact from "./sections/main/Contact";
 import contactData from "../content/contact";
+import { BP_NAV_COLLAPSE } from "../breakpoints";
 
 const MainPage = () => {
   return (
@@ -57,7 +58,7 @@ const MainPage = () => {
             isLink: true
           }
         ],
-        collapseWidth: 1500
+        collapseWidth: BP_NAV_COLLAPSE
       }}
       sections={[
         {

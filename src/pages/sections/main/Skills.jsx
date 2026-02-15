@@ -15,7 +15,7 @@ const SkillTile = (props) => {
       <div style={{ width: 150, margin: "0 auto" }} id={id}>
         <Tooltip title={hover}>
           <div style={{ fontSize: "50px" }}>{IconLookupFromName[icon]}</div>
-          <div style={{ fontSize: "20px" }}>
+          <div style={{ fontSize: "var(--fs-xl)" }}>
             <Text type="secondary">{name}</Text>
           </div>
           <Progress
@@ -23,7 +23,7 @@ const SkillTile = (props) => {
             percent={percent}
             size="small"
             showInfo={false}
-            trailColor="#E8E8E8"
+            trailColor="var(--color-bg-alt)"
             status="active"
           />
         </Tooltip>
