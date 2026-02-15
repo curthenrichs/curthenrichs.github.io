@@ -6,6 +6,8 @@ I am an avid MAKER. I have had the privilege to build several robotic and home a
 
 My first robots were small BEAM (analog controlled) systems. The circuits were a rats nest of wires and discrete components. The mechanical systems held together with hot glue. I hesitantly graduated to microcontroller robots. After overcoming the initial overwhelming fear of programming (in BASIC no less), I found that I really enjoyed the craft. With the various small robots I built in my formative years (plus competing in FIRST robotics on [FRC Team 930](https://www.team930.com/)) I gained fundamental electronic and programming skills that serve me to this day. 
 
+:image[]{id="img-hobby-small-robots"}
+
 When I went to graduate school my work, study, and hobby mixed. I focused my efforts on understanding collaborative robotics. Two distinctively hobby projects come to mind: a robot motion “playground” and an abstract trajectory visualization. 
 
 First, the robot motion playground was inspired by my need to control the Universal Robots UR3e cobot arm for my research. I wanted to learn how to use the new ROS driver with my colleagues’ real-time motion controllers ([Relaxed-IK](https://github.com/uwgraphics/relaxed_ik) and [Lively-TK](https://github.com/Wisc-HCI/lively_tk_ros)). The goal was to serve as a reference project in the lab. To that end I built the ur3e_real_time_motion_playground.
@@ -19,11 +21,13 @@ My goal with YAM is to continue improving my understanding of robotic subsystems
 I am also interested in augmenting humans with symbiotic, supernumerary robotic
 limbs. I have built a robotic finger called Taltosoid (a play on the Hungarian word Taltos) to start exploring control modalities and use cases of wearing an extra digit. My long-term vision for this system is a functional robotic finger that provides dynamic grasp support for arbitrary objects. I am approaching this space as a human-robot interaction, shared-control problem instead of as a direct control problem (commonly found in the literature).
 
+:image[]{id="img-hobby-taltosoid"}
+
 ## Home Automation
 
-In addition to robotics, I also dabble in home automation since my undergraduate degree (when I actually had a place of my own). Most of my systems are commercial off the shelf smart switches, bulbs, cameras, etc. communicating with Amazon Alexa and Google Home. I am actively building my own server to integrate various DIY embedded smart devices with Amazon / Google.
+In addition to robotics, I also dabble in home automation since my undergraduate degree (when I actually had a place of my own). Most of my systems are commercial-off-the-shelf smart switches, bulbs, cameras, etc. communicating with Amazon Alexa and Google Home. though I am actively building my own server to integrate various DIY embedded smart devices with Amazon / Google (see my other project Okos Polip).
 
-This home automation server is called Okos Polip (another Hungarian inspired name) that exposes device data ingest services for my various DIY devices and routes to external home automation APIs (e.g., Alexa). There is significant work still to be done. The following devices I am building support for:
+ I have built (and/or actively building) the following devices with integration into Okos Polip:
 
 - LED plant grow light
 - DIY WiFi air filter
@@ -31,6 +35,8 @@ This home automation server is called Okos Polip (another Hungarian inspired nam
 - YAM
 
 Previously, I built a RESTful LED light strip service that ran on an ESP8266 (translating REST commands into IR blasts). I also did some LED automation effects for lighting in my apartment (communicating with the predecessor to Okos Polip).
+
+:image[]{id="img-hobby-leds"}
 
 ## Links
 

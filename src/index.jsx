@@ -11,6 +11,11 @@ import AttributionPage from "./pages/AttributionPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
 import AccessibilityPolicyPage from "./pages/AccessibilityPolicyPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import ContractingPage from "./pages/ContractingPage";
+import CareerPage from "./pages/CareerPage";
+import EducationPage from "./pages/EducationPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import PublicationsPage from "./pages/PublicationsPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
 
 import reportWebVitals from "./reportWebVitals";
@@ -21,19 +26,32 @@ ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={MainPage} />
+        <Route exact path="/home" 
+          render={() => {
+            return <Redirect to="/" />;
+          }} 
+        />
         <Route exact path="/attribution" component={AttributionPage} />
         <Route exact path="/terms" component={TermsOfUsePage} />
         <Route exact path="/accessibility" component={AccessibilityPolicyPage} />
         <Route exact path="/privacy" component={PrivacyPolicyPage} />
-        <Route
-          exact
-          path="/resume"
+        <Route exact path="/resume"
           render={() => {
             window.open(contactData.resume.link);
             return <Redirect to="/" />;
           }}
         />
-        <Route exact path="/contract" component={NotFoundPage} />
+        <Route exact path="/blog"
+          render={() => {
+            window.open(contactData.blog.link);
+            return <Redirect to="/" />;
+          }}
+        />
+        <Route exact path="/contract" component={ContractingPage} />
+        <Route exact path="/career" component={CareerPage} />
+        <Route exact path="/education" component={EducationPage} />
+        <Route exact path="/projects" component={ProjectsPage} />
+        <Route exact path="/publications" component={PublicationsPage} />
         <Route path="/docs/*" component={NotFoundNoRoutingPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

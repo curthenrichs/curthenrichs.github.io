@@ -1,12 +1,12 @@
 import React from "react";
-import data from "../../../content/contact";
+import data from "../../content/contact";
 import {
-  TwitterOutlined,
+  Twitter,
   MailOutlined,
   EnvironmentFilled,
   GithubFilled,
   LinkedinFilled
-} from "../../../components/IconManager";
+} from "../../components/IconManager";
 import { Typography } from "antd";
 
 const { Title, Text, Link } = Typography;
@@ -37,7 +37,7 @@ const SectionContact = () => {
           </Link>
           &nbsp;
           <Link href={data.twitter.link} target="_blank" rel="noopener noreferrer">
-            <TwitterOutlined />
+            <Twitter />
           </Link>
         </div>
       </div>

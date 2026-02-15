@@ -1,0 +1,5 @@
+My goal during my Masters degree at the University of Wisconsin - Madison was to take the engineering acumen developed in undergrad and build on top with robotics, research, computer science, and user experience skills.
+
+I have found my interest is heavily within application over developing theory. I am not interested in being a mathematician, who happens to think about compute problems. I enjoy tackling engineering problems utilizing mathematics, science, and practical knowledge to build a real system that interacts with real users with all of the messy bits that happens when a system is physically situated.
+
+During graduate school I also worked as a research assistant and teaching assistant. Please see my career section - UW Madison for details regarding this as it heavily shaped my experience during this degree.

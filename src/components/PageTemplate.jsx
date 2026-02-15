@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { Layout, Typography } from "antd";
-import { NavHeader, NavDrawer } from "./Navigation";
-import Copyright from "./Copyright";
+import { NavHeader, NavDrawer, NavFooter } from "./Navigation";
 import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
 import { Element as ScrollElement, scroller } from "react-scroll";
 import CookieConsent from "react-cookie-consent";
+import useScrollbarSize from "react-scrollbar-size";
 
 const { Text } = Typography;
 const { Header, Footer, Content } = Layout;
 
-class PageTemplate extends Component {
+class _PageTemplate extends Component {
   constructor(props) {
     super(props);
+
+    this.handleResize = this.handleResize.bind(this);
+    this.trackScrolling = this.trackScrolling.bind(this);
 
     const { sections } = this.props;
     const initNavItem = sections.length ? sections[0].navItem : "";
@@ -24,9 +27,6 @@ class PageTemplate extends Component {
       clickedNavItem: initNavItem,
       menuOpen: false,
     };
-
-    this.handleResize = this.handleResize.bind(this);
-    this.trackScrolling = this.trackScrolling.bind(this);
   }
 
   handleResize() {
@@ -142,7 +142,7 @@ class PageTemplate extends Component {
   }
 
   render() {
-    const { header, sections, inDevelopment, displayCookieConsent } = this.props;
+    const { header, sections, inDevelopment, displayCookieConsent, scrollbar } = this.props;
     const { width, height, activeNavItem, menuOpen } = this.state;
 
     let cookieConsent = null;
@@ -179,12 +179,10 @@ class PageTemplate extends Component {
     };
 
     const menuClickedCallback = () => {
-      console.log("Menu Button Clicked!");
       this.setState({ menuOpen: !this.state.menuOpen });
     };
 
     const menuCloseCallback = () => {
-      console.log("Menu is Closed...");
       this.setState({ menuOpen: false });
     };
 
@@ -193,7 +191,7 @@ class PageTemplate extends Component {
         <HeightContext.Provider value={height}>
           <Layout className="layout">
             
-            <Header className="header-style">
+            <Header className="header-style" style={{width: width - scrollbar.width}}>
               <NavHeader
                 {...header}
                 optionSelectCallback={sectionNavCallback}
@@ -226,7 +224,7 @@ class PageTemplate extends Component {
             </Content>
 
             <Footer style={{ textAlign: "center" }}>
-              <Copyright />
+              <NavFooter />
             </Footer>
 
           </Layout>
@@ -248,5 +246,10 @@ class PageTemplate extends Component {
     );
   }
 }
+
+const PageTemplate = (props) => {
+  const scrollbar = useScrollbarSize();
+  return (<_PageTemplate {...props} scrollbar={scrollbar}></_PageTemplate>);
+};
 
 export default PageTemplate;

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import contactData from "../../../content/contact";
+import contactData from "../../content/contact";
 
-const SectionHome = () => {
+const SectionPrivacyPolicy = () => {
   return (
     <Fragment>
       <h1>Privacy Policy</h1>
@@ -454,4 +454,4 @@ const SectionHome = () => {
   );
 };
 
-export default SectionHome;
+export default SectionPrivacyPolicy;

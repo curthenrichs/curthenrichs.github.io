@@ -28,6 +28,9 @@ import { ReactComponent as AtlassianIcon } from "./svg/atlassian.svg";
 import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
 import { ReactComponent as CIcon } from "./svg/c.svg";
 import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
+import { ReactComponent as TwitterXIcon } from "./svg/twitter-x.svg";
+import { ReactComponent as USBIcon } from "./svg/usb.svg";
+import { ReactComponent as OkosPolipIcon } from "./svg/okos-polip.svg";
 
 import {
   WarningOutlined,
@@ -37,7 +40,7 @@ import {
   GithubFilled,
   MailOutlined,
   LinkedinFilled,
-  TwitterOutlined,
+  TwitterOutlined as TwitterBird,
   CaretRightOutlined,
   QuestionOutlined,
   DownCircleOutlined,
@@ -163,6 +166,22 @@ function Labview() {
   return <Icon component={LabviewIcon} />;
 }
 
+function TwitterX() {
+  return <Icon component={TwitterXIcon} />;
+}
+
+function Twitter() {
+  return <TwitterX />;
+}
+
+function USB() {
+  return <Icon component={USBIcon} />;
+}
+
+function OkosPolip() {
+  return <Icon component={OkosPolipIcon} />;
+}
+
 const lookup = {
   angular: <Angular />,
   arduino: <Arduino />,
@@ -198,7 +217,9 @@ const lookup = {
   github: <GithubFilled />,
   mail: <MailOutlined />,
   linkedin: <LinkedinFilled />,
-  twitter: <TwitterOutlined />,
+  twitter: <TwitterX />,      // Thanks Elon
+  twitterBird: <TwitterBird />,
+  twitterX: <TwitterX />,
   caret: <CaretRightOutlined />,
   caretright: <CaretRightOutlined />,
   question: <QuestionOutlined />,
@@ -207,7 +228,9 @@ const lookup = {
   download: <DownloadOutlined />,
   location: <EnvironmentFilled />,
   gear: <Gear />,
-  labview: <Labview />
+  labview: <Labview />,
+  usb: <USB />,
+  okos: <OkosPolip />
 };
 
 const handler = {
@@ -256,6 +279,10 @@ export {
   C,
   Gear,
   Labview,
+  TwitterX,
+  Twitter,
+  USB,
+  OkosPolip,
 
   // Antd Icons
   WarningOutlined,
@@ -265,7 +292,7 @@ export {
   GithubFilled,
   MailOutlined,
   LinkedinFilled,
-  TwitterOutlined,
+  TwitterBird,
   CaretRightOutlined,
   QuestionOutlined,
   DownCircleOutlined,

@@ -3,27 +3,36 @@ import { Divider } from "antd";
 import ImageCarousel from "./ImageCarousel";
 import MarkdownContent from "./MarkdownContent";
 import ErrorBoundary from "./ErrorBoundary";
+import CenteredActionButton from "./CenteredActionButton";
 
 const ItemModalContent = (props) => {
-  const { images, markdownPath } = props;
+  const { images, markdownPath, primaryLink } = props;
 
   let imageCarouselSect = null;
-  if (images !== undefined && images !== null && images.length > 0) {
-    imageCarouselSect = (
-      <Fragment>
-        <div style={{ textAlign: "center" }}>
-          <ImageCarousel options={images} />
-        </div>
-        <Divider />
-      </Fragment>
-    );
+  if (images !== undefined && images !== null) {
+    const carouselImgs = images.filter((obj) => (obj.carousel));
+
+    if (carouselImgs.length > 0) {
+      imageCarouselSect = (
+        <Fragment>
+          <div style={{ textAlign: "center" }}>
+            <ImageCarousel options={carouselImgs} />
+          </div>
+          <Divider />
+        </Fragment>
+      );
+    }
   }
 
   return (
     <Fragment>
+
       {imageCarouselSect}
+
+      {(primaryLink) && (<> <CenteredActionButton {...primaryLink}/> <br/></>)}
+
       <ErrorBoundary>
-        <MarkdownContent markdownPath={markdownPath} />
+        <MarkdownContent markdownPath={markdownPath} images={images} />
       </ErrorBoundary>
     </Fragment>
   );
