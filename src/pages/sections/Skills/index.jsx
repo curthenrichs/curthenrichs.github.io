@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Typography, Radio } from "antd";
+import SkillOverview from "./SkillOverview";
 import DomainCards from "./DomainCards";
 import SkillTags from "./SkillTags";
 import "./Skills.css";
@@ -7,7 +8,11 @@ import "./Skills.css";
 const { Title } = Typography;
 
 const SectionSkills = () => {
-  const [view, setView] = useState("domains");
+  const [view, setView] = useState("overview");
+
+  const handleNavigate = useCallback((target) => {
+    setView(target);
+  }, []);
 
   return (
     <React.Fragment>
@@ -20,13 +25,16 @@ const SectionSkills = () => {
           value={view}
           onChange={(e) => setView(e.target.value)}
           options={[
+            { label: "Overview", value: "overview" },
             { label: "Domains", value: "domains" },
             { label: "Technologies", value: "technologies" }
           ]}
         />
       </div>
 
-      {view === "domains" ? <DomainCards /> : <SkillTags />}
+      {view === "overview" && <SkillOverview onNavigate={handleNavigate} />}
+      {view === "domains" && <DomainCards />}
+      {view === "technologies" && <SkillTags />}
     </React.Fragment>
   );
 };
