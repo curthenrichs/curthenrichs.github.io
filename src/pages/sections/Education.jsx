@@ -45,7 +45,8 @@ const SectionEducation = (props) => {
           publications={entry.publications.map(
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
-          skills={entry.skills.map((skill) => IconLookupFromName[skill])}>
+          skills={entry.skills.map((skill) => IconLookupFromName[skill])}
+          preloadImages={entry.images.map((img) => img.img)}>
           <ItemModalContent
             images={entry.images}
             markdownPath={entry.modalMarkdownPath}
