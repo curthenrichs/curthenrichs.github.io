@@ -10,7 +10,7 @@ Within this page, I will discuss the project in a timeline fashion; starting wit
 
 Before my involvement on this project, my advisor and two colleagues from education sciences performed an ethnography on collaborative robots in the workspace. They interviewed managers, engineers, operators and instructors of collaborative robots with the goal of understanding how these systems are being used and the current challenges with adopting them in industry. 
 
-Two papers resulted from this ethnographic work. One focusing on high-level needs for cobots, operator trust, and autonomy that targeted practitioners. Two of my other projects: Author and pRAD draw inspiration from this work. The second paper performed an epistemic network analysis (ENA) to identify key concepts within the transcript useful in driving future educational material. This work became the inspiration for the CoFrame system. 
+Two papers resulted from this ethnographic work. One focused on high-level needs for cobots, operator trust, and autonomy that targeted practitioners. Two of my other projects: Author and pRAD draw inspiration from this work. The second paper performed an epistemic network analysis (ENA) to identify key concepts within the transcript useful in driving future educational material. This work became the inspiration for the CoFrame system. 
 
 ## Contribution
 
@@ -70,7 +70,7 @@ The system has subsequently evolved after my hand-off to collaborators. I will d
 
 I graduated from my masters program in May 2021. The CoFrame at this point, had gone through a first prototype iteration (after several pivots). I was transferring this project to my colleagues in the lab. Leading the next iteration was Andy who I collaborated on with Authr. We were still targeting the HRI paper deadline in October 2021.
 
-During the summer, while starting work at IDES, I first transferred the frontend system to Andy and Nate. They swapped out the Bockly system with a successor of the Authr task interface and swapped the simulation window from Unity to Three.js. Both of these technology changes addressed issues uncovered in the version one prototype. Minor point, the frontend framework was switched from Microsoft Fluent to Ant Design (in order to fit with the visual aesthetic of Andy’s other applications). Lastly, React contexts were replaced with a Zustand state management system. 
+During the summer, while starting work at IDES, I first transferred the frontend system to Andy and Nate. They swapped out the Blockly system with a successor of the Authr task interface and swapped the simulation window from Unity to Three.js. Both of these technology changes addressed issues uncovered in the version one prototype. Minor point, the frontend framework was switched from Microsoft Fluent to Ant Design (in order to fit with the visual aesthetic of Andy’s other applications). Lastly, React contexts were replaced with a Zustand state management system. 
 
 :image[]{id="img-coframe-structure"}
 

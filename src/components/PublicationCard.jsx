@@ -25,13 +25,13 @@ const PublicationCard = (props) => {
     <div
       role="button"
       tabIndex="0"
-      style={style}
+      style={{ ...style, cursor: link ? "pointer" : "default" }}
       onClick={() => {
         if (link) {
           window.open(link);
         }
       }}
-      onKeyPress={(event) => {
+      onKeyDown={(event) => {
         if (event.key === "Enter" && link) {
           window.open(link);
         }

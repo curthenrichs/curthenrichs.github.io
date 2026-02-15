@@ -22,7 +22,7 @@ class ErrorBoundary extends Component {
       if (this.props.fallback) {
         return this.props.fallback;
       }
-      return <Text type="danger">Something went wrong.</Text>;
+      return <Text type="danger">Oops, something broke. Probably not your fault... probably.</Text>;
     }
 
     return this.props.children;

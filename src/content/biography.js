@@ -16,7 +16,8 @@ const data = {
     "Collaborative Robotics",
     "Home Automation",
     "Hobby Robotics",
-    "Computer Vision / ML"
+    "Computer Vision / ML",
+    "Agentic AI / LLM Tooling"
   ]
 };
 

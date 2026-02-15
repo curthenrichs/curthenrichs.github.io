@@ -31,6 +31,31 @@ import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
 import { ReactComponent as TwitterXIcon } from "./svg/twitter-x.svg";
 import { ReactComponent as USBIcon } from "./svg/usb.svg";
 import { ReactComponent as OkosPolipIcon } from "./svg/okos-polip.svg";
+import { ReactComponent as DockerIcon } from "./svg/docker.svg";
+import { ReactComponent as RaspberryPiIcon } from "./svg/raspberrypi.svg";
+import { ReactComponent as VueIcon } from "./svg/vuedotjs.svg";
+import { ReactComponent as RedisIcon } from "./svg/redis.svg";
+import { ReactComponent as FlaskIcon } from "./svg/flask.svg";
+import { ReactComponent as AntDesignIcon } from "./svg/antdesign.svg";
+import { ReactComponent as NvidiaIcon } from "./svg/nvidia.svg";
+import { ReactComponent as IntelIcon } from "./svg/intel.svg";
+import { ReactComponent as ZigbeeIcon } from "./svg/zigbee.svg";
+import { ReactComponent as AltiumDesignerIcon } from "./svg/altiumdesigner.svg";
+import { ReactComponent as TypeScriptIcon } from "./svg/typescript.svg";
+import { ReactComponent as OpenCVIcon } from "./svg/opencv.svg";
+import { ReactComponent as XilinxIcon } from "./svg/xilinx.svg";
+import { ReactComponent as DnaIcon } from "./svg/dna.svg";
+import { ReactComponent as CircuitBoardIcon } from "./svg/circuit-board.svg";
+import { ReactComponent as AnthropicIcon } from "./svg/anthropic.svg";
+import { ReactComponent as OpenAIIcon } from "./svg/openai.svg";
+import { ReactComponent as GoogleGeminiIcon } from "./svg/googlegemini.svg";
+import { ReactComponent as VisualBasicIcon } from "./svg/visualbasic.svg";
+import { ReactComponent as UsersIcon } from "./svg/users.svg";
+import { ReactComponent as CodeXmlIcon } from "./svg/code-xml.svg";
+import { ReactComponent as Box3dIcon } from "./svg/box.svg";
+import { ReactComponent as FactoryIcon } from "./svg/factory.svg";
+import { ReactComponent as BrainIcon } from "./svg/brain.svg";
+import { ReactComponent as SparklesIcon } from "./svg/sparkles.svg";
 
 import {
   WarningOutlined,
@@ -182,6 +207,106 @@ function OkosPolip() {
   return <Icon component={OkosPolipIcon} />;
 }
 
+function Docker() {
+  return <Icon component={DockerIcon} />;
+}
+
+function RaspberryPi() {
+  return <Icon component={RaspberryPiIcon} />;
+}
+
+function Vue() {
+  return <Icon component={VueIcon} />;
+}
+
+function Redis() {
+  return <Icon component={RedisIcon} />;
+}
+
+function Flask() {
+  return <Icon component={FlaskIcon} />;
+}
+
+function AntDesign() {
+  return <Icon component={AntDesignIcon} />;
+}
+
+function Nvidia() {
+  return <Icon component={NvidiaIcon} />;
+}
+
+function Intel() {
+  return <Icon component={IntelIcon} />;
+}
+
+function Zigbee() {
+  return <Icon component={ZigbeeIcon} />;
+}
+
+function AltiumDesigner() {
+  return <Icon component={AltiumDesignerIcon} />;
+}
+
+function TypeScript() {
+  return <Icon component={TypeScriptIcon} />;
+}
+
+function OpenCV() {
+  return <Icon component={OpenCVIcon} />;
+}
+
+function Xilinx() {
+  return <Icon component={XilinxIcon} />;
+}
+
+function Dna() {
+  return <Icon component={DnaIcon} />;
+}
+
+function CircuitBoard() {
+  return <Icon component={CircuitBoardIcon} />;
+}
+
+function Anthropic() {
+  return <Icon component={AnthropicIcon} />;
+}
+
+function OpenAI() {
+  return <Icon component={OpenAIIcon} />;
+}
+
+function GoogleGemini() {
+  return <Icon component={GoogleGeminiIcon} />;
+}
+
+function VisualBasic() {
+  return <Icon component={VisualBasicIcon} />;
+}
+
+function Users() {
+  return <Icon component={UsersIcon} />;
+}
+
+function CodeXml() {
+  return <Icon component={CodeXmlIcon} />;
+}
+
+function Box3d() {
+  return <Icon component={Box3dIcon} />;
+}
+
+function Factory() {
+  return <Icon component={FactoryIcon} />;
+}
+
+function Brain() {
+  return <Icon component={BrainIcon} />;
+}
+
+function Sparkles() {
+  return <Icon component={SparklesIcon} />;
+}
+
 const lookup = {
   angular: <Angular />,
   arduino: <Arduino />,
@@ -230,7 +355,32 @@ const lookup = {
   gear: <Gear />,
   labview: <Labview />,
   usb: <USB />,
-  okos: <OkosPolip />
+  okos: <OkosPolip />,
+  docker: <Docker />,
+  raspberrypi: <RaspberryPi />,
+  vue: <Vue />,
+  redis: <Redis />,
+  flask: <Flask />,
+  antdesign: <AntDesign />,
+  nvidia: <Nvidia />,
+  intel: <Intel />,
+  zigbee: <Zigbee />,
+  altiumdesigner: <AltiumDesigner />,
+  typescript: <TypeScript />,
+  opencv: <OpenCV />,
+  xilinx: <Xilinx />,
+  dna: <Dna />,
+  circuitboard: <CircuitBoard />,
+  anthropic: <Anthropic />,
+  openai: <OpenAI />,
+  googlegemini: <GoogleGemini />,
+  visualbasic: <VisualBasic />,
+  users: <Users />,
+  codexml: <CodeXml />,
+  box3d: <Box3d />,
+  factory: <Factory />,
+  brain: <Brain />,
+  sparkles: <Sparkles />
 };
 
 const handler = {
@@ -283,6 +433,31 @@ export {
   Twitter,
   USB,
   OkosPolip,
+  Docker,
+  RaspberryPi,
+  Vue,
+  Redis,
+  Flask,
+  AntDesign,
+  Nvidia,
+  Intel,
+  Zigbee,
+  AltiumDesigner,
+  TypeScript,
+  OpenCV,
+  Xilinx,
+  Dna,
+  CircuitBoard,
+  Anthropic,
+  OpenAI,
+  GoogleGemini,
+  VisualBasic,
+  Users,
+  CodeXml,
+  Box3d,
+  Factory,
+  Brain,
+  Sparkles,
 
   // Antd Icons
   WarningOutlined,

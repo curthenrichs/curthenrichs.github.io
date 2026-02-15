@@ -15,7 +15,7 @@ const PageNavButton = (props) => {
       onClick={() => {
         navigate(route);
       }}
-      onKeyPress={(event) => {
+      onKeyDown={(event) => {
         if (event.key === "Enter") {
           navigate(route);
         }

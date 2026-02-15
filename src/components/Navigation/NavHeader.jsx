@@ -34,7 +34,7 @@ const MenuButton = (props) => {
       role="button"
       tabIndex="0"
       onClick={callback}
-      onKeyPress={(event) => {
+      onKeyDown={(event) => {
         if (event.key === "Enter") {
           callback(event);
         }

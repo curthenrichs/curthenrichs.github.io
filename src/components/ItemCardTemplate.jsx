@@ -183,14 +183,14 @@ const ItemCardTemplate = (props) => {
         onClick={() => {
           setVisible(true);
         }}
-        onKeyPress={(event) => {
+        onKeyDown={(event) => {
           if (event.key === "Enter") {
             setVisible(true);
           }
         }}
         onMouseEnter={handlePreload}
         onFocus={handlePreload}
-        style={style}>
+        style={{ ...style, cursor: "pointer" }}>
         <Card
           title={title}
           bordered={true}
