@@ -11,13 +11,11 @@ const data = {
   img: "/static/img/bio-main.jpg",
   interests: [
     "Embedded Systems",
-    "Software Development",
-    "Human-Robot Interaction",
-    "Collaborative Robotics",
+    "Software Development & HCI",
+    "Robotics & HRI",
     "Home Automation",
-    "Hobby Robotics",
-    "Computer Vision / ML",
-    "Agentic AI / LLM Tooling"
+    "Computer Vision & ML",
+    "Agentic AI & LLM Tooling"
   ]
 };
 
