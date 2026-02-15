@@ -1,11 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const PageNavButton = (props) => {
   const { id, content, route } = props;
-  const history = useHistory();
-  
+  const navigate = useNavigate();
+
   return (
     <div
       role="button"
@@ -13,11 +13,11 @@ const PageNavButton = (props) => {
       className="nav-bar nav-bar-ext-link"
       id={id}
       onClick={() => {
-        history.push(route);
+        navigate(route);
       }}
       onKeyPress={(event) => {
         if (event.key === "Enter") {
-          history.push(route);
+          navigate(route);
         }
       }}>
       {content}

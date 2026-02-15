@@ -9,7 +9,7 @@ const InDevelopmentModal = () => {
     <Modal
       title="Under Development"
       centered
-      visible={visible}
+      open={visible}
       onOk={() => {
         setVisible(false);
       }}
