@@ -1,8 +1,9 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/attribution/Home";
-import contactData from "../content/contact";
+import SectionAttribution from "./sections/Attribution";
+import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const AttributionPage = () => {
   return (
@@ -10,29 +11,15 @@ const AttributionPage = () => {
       header={{
         simple: true,
         pageName: "Attribution and Licenses",
-        innerButtons: [
+        sectionButtons: [
           {
             id: "policy-btn",
             flexPx: 150,
             content: "Attribution"
           }
         ],
-        pageButtons: [
-          {
-            id: "home-btn",
-            flexPx: 150,
-            content: "Home",
-            route: "/",
-            isLink: false
-          },
-          {
-            id: "resume-btn",
-            flexPx: 150,
-            content: "Resume",
-            route: contactData.resume.link,
-            isLink: true
-          }
-        ]
+        primaryRouteButtons: primaryRouteOptions,
+        secondaryRouteButtons: secondaryRouteOptions.filter((value) => (value.id !== "attribute-btn"))
       }}
       sections={[
         {
@@ -44,7 +31,7 @@ const AttributionPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionHome />
+          content: <SectionAttribution />
         },
         {
           name: "sect-return",

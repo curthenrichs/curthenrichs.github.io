@@ -1,8 +1,9 @@
 import React from "react";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
-import SectionHome from "./sections/accessibility/Home";
-import contactData from "../content/contact";
+import SectionAccessibilityPolicy from "./sections/Accessibility";
+import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const AccessibilityPolicyPage = () => {
   return (
@@ -10,29 +11,15 @@ const AccessibilityPolicyPage = () => {
       header={{
         simple: true,
         pageName: "Accessibility Policy",
-        innerButtons: [
+        sectionButtons: [
           {
             id: "policy-btn",
             flexPx: 150,
             content: "Policy"
           }
         ],
-        pageButtons: [
-          {
-            id: "home-btn",
-            flexPx: 150,
-            content: "Home",
-            route: "/",
-            isLink: false
-          },
-          {
-            id: "resume-btn",
-            flexPx: 150,
-            content: "Resume",
-            route: contactData.resume.link,
-            isLink: true
-          }
-        ]
+        primaryRouteButtons: primaryRouteOptions,
+        secondaryRouteButtons: secondaryRouteOptions.filter((value) => (value.id !== "access-btn"))
       }}
       sections={[
         {
@@ -44,7 +31,7 @@ const AccessibilityPolicyPage = () => {
             offset: -100
           },
           sectionType: "type-a",
-          content: <SectionHome />
+          content: <SectionAccessibilityPolicy />
         },
         {
           name: "sect-return",

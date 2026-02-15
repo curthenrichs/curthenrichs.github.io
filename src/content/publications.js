@@ -1,6 +1,6 @@
 const data = {
   "publication-interdependence": {
-    _id: "publication-interdependence",
+    id: "publication-interdependence",
     short: "Task Interdependence",
     venue: "RO-MAN",
     title: "Task Interdependence in Human-Robot Teaming",
@@ -10,7 +10,7 @@ const data = {
     status: "Published"
   },
   "publication-authr": {
-    _id: "publication-authr",
+    id: "publication-authr",
     short: "Authr User Interface",
     venue: "UIST",
     title: "Authr: A Task Authoring Environment for Human-Robot Teams",
@@ -20,7 +20,7 @@ const data = {
     status: "Published"
   },
   "publication-rad": {
-    _id: "publication-rad",
+    id: "publication-rad",
     short: "Operator Interface Aids",
     venue: "RO-MAN",
     title:
@@ -31,7 +31,7 @@ const data = {
     status: "Published"
   },
   "publication-onet": {
-    _id: "publication-onet",
+    id: "publication-onet",
     short: "Enhancing Work Activities",
     venue: "Human Factors",
     title: "Human Robot Collaboration for Enhancing Work Activities",
@@ -41,7 +41,7 @@ const data = {
     status: "Published"
   },
   "publication-coframe": {
-    _id: "publication-coframe",
+    id: "publication-coframe",
     short: "CoFrame User Interface",
     venue: "HRI",
     title: "CoFrame: A System for Training Novice Cobot Programers",
@@ -51,14 +51,14 @@ const data = {
     status: "Published"
   },
   "publication-syn-tem": {
-    _id: "publication-syn-tem",
+    id: "publication-syn-tem",
     short: "Spatiotemporal Dose Control",
-    venue: "Microsc.",
+    venue: "M&M",
     title:
       "Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope",
     reference:
       "Reed, B. W., Bloom, R. S., Eyzaguirre, G., Henrichs, C., Moghadam, A. A., & Masiel, D. J. (2022). Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope. Microscopy and Microanalysis, 28(S1), 2230-2231.",
-    link: "https://www.cambridge.org/core/journals/microscopy-and-microanalysis/article/electrostatic-switching-for-spatiotemporal-dose-control-in-a-transmission-electron-microscope/C814A631FCD8F968290E892CA0D11A1D",
+    link: "https://academic.oup.com/mam/article-abstract/28/S1/2230/6996948",
     status: "Published"
   }
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "antd";
 
-import { GithubFilled, MailOutlined, LinkedinFilled, TwitterOutlined } from "./IconManager";
+import { GithubFilled, MailOutlined, LinkedinFilled, Twitter } from "./IconManager";
 
 const { Link } = Typography;
 
@@ -23,7 +23,7 @@ const SocialTray = (props) => {
       </Link>
       &nbsp;
       <Link href={twitterLink} target="_blank" rel="noopener noreferrer">
-        <TwitterOutlined />
+        <Twitter />
       </Link>
     </div>
   );

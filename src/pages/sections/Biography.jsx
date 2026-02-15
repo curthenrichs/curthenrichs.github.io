@@ -1,30 +1,63 @@
-import React, { useState, useContext, Fragment } from "react";
-import SocialTray from "../../../components/SocialTray";
-import MarkdownContent from "../../../components/MarkdownContent";
-import ErrorBoundary from "../../../components/ErrorBoundary";
-import ExpandSection from "../../../components/ExpandSection";
-import bioData from "../../../content/biography";
-import contactData from "../../../content/contact";
-import educationData from "../../../content/education";
-import careerData from "../../../content/career";
-import { WidthContext } from "../../../contexts";
-import { BP_BIO_TWO_COL, BP_BIO_THREE_COL, BP_BIO_DIGEST_INLINE, BP_BIO_THREE_COL_DIGEST } from "../../../breakpoints";
-import { CaretRightOutlined, DownloadOutlined } from "../../../components/IconManager";
+import React, { useContext, Fragment } from "react";
+import SocialTray from "../../components/SocialTray";
+import MarkdownContent from "../../components/MarkdownContent";
+import ErrorBoundary from "../../components/ErrorBoundary";
+import ExpandSection from "../../components/ExpandSection";
+import bioData from "../../content/biography";
+import contactData from "../../content/contact";
+import educationData from "../../content/education";
+import careerData from "../../content/career";
+import contractingData from "../../content/contracting";
+import { WidthContext } from "../../contexts";
+import { BP_BIO_TWO_COL, BP_BIO_THREE_COL, BP_BIO_DIGEST_INLINE, BP_BIO_THREE_COL_DIGEST } from "../../breakpoints";
+import { CaretRightOutlined, DownloadOutlined } from "../../components/IconManager";
 import { Row, Col, Typography, Button } from "antd";
-import ThumbnailImage from "../../../components/ThumbnailImage";
+import ThumbnailImage from "../../components/ThumbnailImage";
 
 const { Title, Text, Link } = Typography;
 
 const currentCompany = Object.values(careerData).filter((company) => {
-  return company._id == bioData.currentEmploymentId.company;
+  return company.id == bioData.currentEmploymentId.company;
 })[0];
 
 const currentJob = currentCompany.positions.slice().filter((job) => {
-  return job._id == bioData.currentEmploymentId.position;
+  return job.id == bioData.currentEmploymentId.position;
 })[0];
 
+const CallToAction = (props) => {
+  const { openToWork } = props;
+
+  return (
+    <Fragment>
+      {openToWork && (
+        <Button
+          type="primary"
+          href="/contract"
+          icon={<CaretRightOutlined />}
+          shape="round"
+          size="large"
+        >
+          Available for Work
+        </Button>
+      )}
+
+      {openToWork && "    "}  {/* Should not be a span, will mess up line-fold */}
+
+      <Button
+        type={(openToWork)? "secondary" : "primary"}
+        href={contactData.resume.link}
+        download
+        icon={<DownloadOutlined />}
+        shape="round"
+        size="large"
+      >
+        Download Resume
+      </Button>
+    </Fragment>
+  );
+};
+
 const BioDigest = () => {
-  const [size] = useState("large");
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -49,14 +82,9 @@ const BioDigest = () => {
         twitterLink={contactData.twitter.link}
       />
       <br />
-      <Button
-        type="primary"
-        href={contactData.resume.link}
-        download
-        icon={<DownloadOutlined />}
-        size={size}>
-        Download Resume
-      </Button>
+      <CallToAction
+        openToWork={contractingData.available}
+      />
     </div>
   );
 };

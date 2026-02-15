@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
 
-const SectionHome = () => {
+const SectionAttribution = () => {
   return (
     <Fragment>
       <h2>Attribution and Licenses</h2>
       <h3>General Attribution</h3>
-      <p>Website created by Curt Henrich (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</p>
+      <p>Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</p>
       <p>
         Deployed on Github Pages static hosting. Deployment handled with{" "}
         <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">
@@ -39,7 +39,7 @@ const SectionHome = () => {
         <li>GithubFilled</li>
         <li>MailOutlined</li>
         <li>LinkedinFilled</li>
-        <li>TwitterOutlined</li>
+        <li>TwitterOutlined (Bird)</li>
         <li>CaretRightOutlined</li>
         <li>QuestionOutlined</li>
         <li>DownCircleOutlined</li>
@@ -115,6 +115,17 @@ const SectionHome = () => {
             </a>
           </div>
         </li>
+        <li>
+          <div>
+            Icon (usb.svg) from{" "}
+            <a
+              href="https://fontawesome.com/icons/usb?f=brands&s=solid"
+              target="_blank"
+              rel="noopener noreferrer">
+              fontawesome.com
+            </a>
+          </div>
+        </li>
       </ul>
       <h4>Simple-Icons Icons</h4>
       <a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">
@@ -146,6 +157,7 @@ const SectionHome = () => {
       <ul>
         <li>Icon (matlab.svg) was drawn by me using the original jpg icon as reference.</li>
         <li>Icon (labview.svg) was drawn by me using png icon as reference.</li>
+        <li>Icon (twitter-x.svg) from <a href="https://logowik.com/twitter-x-logo-vector-59293.html" target="_blank" rel="noopener noreferrer">logowink</a></li>
       </ul>
       <h3>Favicon</h3>
       <p>Website favicon was generated using the following:</p>
@@ -184,6 +196,10 @@ const SectionHome = () => {
         my time as an intern.
       </p>
       <p>
+        IDES logo, Dedicated Computing logo, University of Wisconsin Madison logo and Milwaukee School of Engineering logo are owned by 
+        their respective institutions.
+      </p>
+      <p>
         All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from
         publications produced in whole/part by Curt Henrichs.
       </p>
@@ -191,4 +207,4 @@ const SectionHome = () => {
   );
 };
 
-export default SectionHome;
+export default SectionAttribution;

@@ -2,7 +2,8 @@ import React from "react";
 import PageTemplate from "../components/PageTemplate";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import { Result } from "antd";
-import contactData from "../content/contact";
+import primaryRouteOptions from "../content/primaryRouteOptions";
+import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const NotFoundPage = () => {
   return (
@@ -10,29 +11,15 @@ const NotFoundPage = () => {
       header={{
         simple: true,
         pageName: "404 - Page Not Found",
-        innerButtons: [
+        sectionButtons: [
           {
             id: "found-btn",
             flexPx: 150,
             content: "Not Found"
           }
         ],
-        pageButtons: [
-          {
-            id: "home-btn",
-            flexPx: 150,
-            content: "Home",
-            route: "/",
-            isLink: false
-          },
-          {
-            id: "resume-btn",
-            flexPx: 150,
-            content: "Resume",
-            route: contactData.resume.link,
-            isLink: true
-          }
-        ]
+        primaryRouteButtons: primaryRouteOptions,
+        secondaryRouteButtons: secondaryRouteOptions
       }}
       sections={[
         {

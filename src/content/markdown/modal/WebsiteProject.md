@@ -10,9 +10,9 @@ My primary constraint was that I wanted to build a static-hosted website on Gith
 
 My website went through two major cycles of development. 
 
-In the first cycle, I accomplished an MVP of my project vision. It was clunky. The project section was laid out as a two-dimensional grid with each project sized to fit its particular contents. As one can imagine it was chaotic. Additionally, there wasn’t a clear separation of career from projects further muddling that section. Furthermore, I had rushed past defining policies (e.g., terms of use) to get it published. It wasn’t quite an asset yet but it did the job of aggregating information.
+In the first cycle, I accomplished an MVP of my project vision. It was clunky. The project section was laid out as a two-dimensional grid with each project sized to fit its particular contents. As one can imagine it was chaotic. Additionally, there wasn’t a clear separation of career from projects further muddling that section. I had also rushed past defining policies (e.g., terms of use) to get it published. It wasn’t quite an asset yet but it did the job of aggregating information.
 
-For the second cycle, my main goal was refinement and refactor. I have updated all content on the website to be up-to-date. I removed/consolidated smaller projects that just served to clutter the projects section. Career section was separated. Lastly, I tweaked the responsive layout to better adjust for most screen configurations.
+For the second cycle, my main goal was refinement and refactor. I have updated all content on the website to be current. I removed/consolidated smaller projects that just served to clutter the projects section. Career section was separated. Lastly, I tweaked the responsive layout to better adjust for most screen configurations.
 
 ## Accomplishments
 
