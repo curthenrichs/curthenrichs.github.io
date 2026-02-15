@@ -4,7 +4,7 @@ This website has been a project in its own right. Originally, I had planned on u
 
 ## Constraints
 
-My primary constraint was that I wanted to build a static-hosted website on Github Pages. The upside was that this meant no backend service and database maintenance. Github pages also was a good target given cost  and deployability. A secondary constraint was my target framework. During the time I started development of this website, I was also deeply involved in the development of CoFrame (see the project titled as such). CoFrame was built using React with Microsoft Fluent visual framework. My colleague and I wanted to move away from Fluent toward something he was more familiar with Ant Design. So I set a constraint that this website would make use of Ant Design as a forcing function to learn it.
+My primary constraint was that I wanted to build a static-hosted website on Github Pages. The upside was that this meant no backend service and database maintenance. Github pages also was a good target given cost and deployability. A secondary constraint was my target framework. During the time I started development of this website, I was also deeply involved in the development of CoFrame (see the project titled as such). CoFrame was built using React with Microsoft Fluent visual framework. My colleague and I wanted to move away from Fluent toward something he was more familiar with Ant Design. So I set a constraint that this website would make use of Ant Design as a forcing function to learn it.
 
 ## Development
 

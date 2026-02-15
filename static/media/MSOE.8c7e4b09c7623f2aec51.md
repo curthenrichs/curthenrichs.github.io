@@ -18,7 +18,7 @@ CE1910 - Digital Logic II : Sequential Systems
 - Adding registers / clocking; up to special purpose processor
 
 EE2050 - Linear Circuits - Steady State I
-- Stead state in the DC domain
+- Steady state in the DC domain
 
 CE2800 - Embedded Systems I
 - Introduction to Assembly on a NIOS soft-core processor (effectively MIPS)
@@ -167,7 +167,7 @@ OR3000 - Applied Servant Leadership
 - Studied the method of servant leadership versus other styles
 
 EN131 - Composition
-- Introduction to college english
+- Introduction to college English
 
 EN132 Technical Composition
 - Learned writing formats for a technical audience
