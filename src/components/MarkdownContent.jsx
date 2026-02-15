@@ -62,7 +62,7 @@ const MarkdownContent = (props) => {
   }, [markdownPath]);
 
   if (error) {
-    return <Text type="danger">Failed to load content.</Text>;
+    return <Text type="danger">Well, this is awkward. The content wandered off and we can&apos;t find it.</Text>;
   }
 
   const components = {

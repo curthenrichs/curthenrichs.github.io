@@ -152,6 +152,45 @@ const SectionAttribution = () => {
         <li>atlassian.svg</li>
         <li>autodesk.svg</li>
         <li>c.svg</li>
+        <li>docker.svg</li>
+        <li>raspberrypi.svg</li>
+        <li>vuedotjs.svg</li>
+        <li>redis.svg</li>
+        <li>flask.svg</li>
+        <li>antdesign.svg</li>
+        <li>nvidia.svg</li>
+        <li>intel.svg</li>
+        <li>zigbee.svg</li>
+        <li>altiumdesigner.svg</li>
+        <li>typescript.svg</li>
+        <li>opencv.svg</li>
+        <li>xilinx.svg</li>
+        <li>anthropic.svg</li>
+        <li>openai.svg</li>
+        <li>googlegemini.svg</li>
+      </ul>
+      <h4>Devicon Icons</h4>
+      <a href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">
+        devicon.dev
+      </a>{" "}
+      (MIT License)
+      <ul>
+        <li>visualbasic.svg</li>
+      </ul>
+      <h4>Lucide Icons</h4>
+      <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">
+        lucide.dev
+      </a>{" "}
+      (ISC License)
+      <ul>
+        <li>dna.svg</li>
+        <li>circuit-board.svg</li>
+        <li>users.svg</li>
+        <li>code-xml.svg</li>
+        <li>box.svg</li>
+        <li>factory.svg</li>
+        <li>brain.svg</li>
+        <li>sparkles.svg</li>
       </ul>
       <h4>Others</h4>
       <ul>

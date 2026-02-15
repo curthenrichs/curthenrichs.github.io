@@ -248,7 +248,7 @@ const data = {
     primaryLink: {
       link: "https://www.half-built-robots.com/",
       description: "Checkout my blog \"Half-Built-Robots\"",
-      text: "Go To Blog"
+      text: "Peek at the Workbench"
     }
   },
   "project-website": {

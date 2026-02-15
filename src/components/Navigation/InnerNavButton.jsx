@@ -11,7 +11,7 @@ const InnerNavButton = (props) => {
       className={`nav-bar nav-bar-btn ${active ? "nav-bar-btn-selected" : ""}`}
       id={id}
       onClick={callback}
-      onKeyPress={(event) => {
+      onKeyDown={(event) => {
         if (event.key === "Enter") {
           callback(event);
         }
