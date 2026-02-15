@@ -9,7 +9,7 @@ const SocialTray = (props) => {
   const { githubLink, emailLink, linkedinLink, twitterLink } = props;
 
   return (
-    <div className="social-tray" style={{ fontSize: "30px" }}>
+    <div className="social-tray" style={{ fontSize: "var(--fs-icon)" }}>
       <Link href={githubLink} target="_blank" rel="noopener noreferrer">
         <GithubFilled />
       </Link>

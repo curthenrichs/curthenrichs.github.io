@@ -2,6 +2,7 @@ import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Typography, Divider } from "antd";
 import { WidthContext } from "../contexts";
+import { BP_FOOTER_SITEMAP_INLINE } from "../breakpoints";
 
 const { Text } = Typography;
 
@@ -14,7 +15,7 @@ const Copyright = () => {
   const width = useContext(WidthContext);
 
   let sitemap;
-  if (width >= 700) {
+  if (width >= BP_FOOTER_SITEMAP_INLINE) {
     sitemap = (
       <Text>
         <Link to="/">Home</Link>

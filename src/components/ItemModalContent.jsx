@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Divider } from "antd";
 import ImageCarousel from "./ImageCarousel";
 import MarkdownContent from "./MarkdownContent";
+import ErrorBoundary from "./ErrorBoundary";
 
 const ItemModalContent = (props) => {
   const { images, markdownPath } = props;
@@ -21,7 +22,9 @@ const ItemModalContent = (props) => {
   return (
     <Fragment>
       {imageCarouselSect}
-      <MarkdownContent markdownPath={markdownPath} />
+      <ErrorBoundary>
+        <MarkdownContent markdownPath={markdownPath} />
+      </ErrorBoundary>
     </Fragment>
   );
 };

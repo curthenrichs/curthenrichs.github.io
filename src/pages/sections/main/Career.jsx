@@ -5,13 +5,14 @@ import ItemCardTemplate from "../../../components/ItemCardTemplate";
 import { ToolFilled, IconLookupFromName } from "../../../components/IconManager";
 import SectionTitle from "../../../components/SectionTitle";
 import { WidthContext } from "../../../contexts";
+import { BP_CONTENT_MAX_WIDTH } from "../../../breakpoints";
 import ItemModalContent from "../../../components/ItemModalContent";
 
 const SectionCareer = () => {
   const list = Object.values(careerData).slice().reverse();
   const width = useContext(WidthContext);
 
-  const cardWidth = 1750;
+  const cardWidth = BP_CONTENT_MAX_WIDTH;
   const extraWidth = width - cardWidth;
 
   return (

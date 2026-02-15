@@ -1,10 +1,12 @@
 import React, { useState, Fragment, useContext } from "react";
 import { WidthContext } from "../contexts";
+import { BP_CARD_HORIZONTAL } from "../breakpoints";
 import ThumbnailImage from "./ThumbnailImage";
 import ItemModalTemplate from "./ItemModalTemplate";
 import { CaretRightOutlined } from "./IconManager";
 import { Row, Col, Card, Tooltip, Typography } from "antd";
 import MarkdownContent from "./MarkdownContent";
+import ErrorBoundary from "./ErrorBoundary";
 
 const { Title, Text } = Typography;
 
@@ -67,7 +69,7 @@ const LongCardContent = (props) => {
   let textSect = null;
 
   if (markdownPath !== undefined && markdownPath !== null) {
-    textSect = <MarkdownContent markdownPath={markdownPath} />;
+    textSect = <ErrorBoundary><MarkdownContent markdownPath={markdownPath} /></ErrorBoundary>;
   }
 
   return (
@@ -86,7 +88,7 @@ const SkillTray = (props) => {
     <div
       style={{
         overflow: "hidden",
-        backgroundColor: "#E8E8E8",
+        backgroundColor: "var(--color-bg-alt)",
         borderRadius: "15px",
         marginTop: "10px"
       }}>
@@ -94,7 +96,7 @@ const SkillTray = (props) => {
         <Row justify="center" style={{ padding: "2px 3px 1px 3px" }}>
           {skills.map((skill, idx) => (
             <Col key={idx}>
-              <div style={{ paddingLeft: "2px", paddingRight: "2px", fontSize: "18px" }}>
+              <div style={{ paddingLeft: "2px", paddingRight: "2px", fontSize: "var(--fs-lg)" }}>
                 {skill}
               </div>
             </Col>
@@ -128,19 +130,19 @@ const ItemCardTemplate = (props) => {
     ) : null;
 
   let layout;
-  if (width >= 1000) {
+  if (width >= BP_CARD_HORIZONTAL) {
     layout = (
       <Fragment>
         <Row>
           <Col span={8} offset={1}>
             <ThumbnailImage img={img} />
-            <div style={{ fontSize: "14px" }}>
+            <div style={{ fontSize: "var(--fs-sm)" }}>
               <ShortCardDescription text={brief} />
             </div>
             {skilltray}
           </Col>
           <Col span={14} offset={1}>
-            <div style={{ textAlign: "left", fontSize: "14px" }}>
+            <div style={{ textAlign: "left", fontSize: "var(--fs-sm)" }}>
               <LongCardContent
                 markdownPath={descriptionMarkdownPath}
                 publications={publications}
@@ -155,7 +157,7 @@ const ItemCardTemplate = (props) => {
     layout = (
       <Fragment>
         <ThumbnailImage img={img} />
-        <div style={{ fontSize: "14px" }}>{brief}</div>
+        <div style={{ fontSize: "var(--fs-sm)" }}>{brief}</div>
         {skilltray}
       </Fragment>
     );

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Drawer, Divider } from "antd";
 import { WidthContext } from "../../contexts";
+import { BP_NAV_DRAWER_FULL } from "../../breakpoints";
 import InnerNavButton from "./InnerNavButton";
 import PageNavButton from "./PageNavButton";
 import LinkNavButton from "./LinkNavButton";
@@ -18,7 +19,7 @@ const NavDrawer = (props) => {
 
   const width = useContext(WidthContext);
 
-  const size = (width < 650) ? width : undefined;
+  const size = (width < BP_NAV_DRAWER_FULL) ? width : undefined;
 
   const innerBtns = innerButtons.map((entry) => (
     <InnerNavButton

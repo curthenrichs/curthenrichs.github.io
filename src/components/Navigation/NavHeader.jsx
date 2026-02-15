@@ -2,6 +2,7 @@ import React, { useContext, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Menu as MenuIcon } from "../IconManager";
 import { WidthContext } from "../../contexts";
+import { BP_NAV_HEADER_TEXT } from "../../breakpoints";
 import { Row, Col, Typography, Divider } from "antd";
 import InnerNavButton from "./InnerNavButton";
 import PageNavButton from "./PageNavButton";
@@ -41,7 +42,7 @@ const MenuButton = (props) => {
         }
       }}
     >
-      <div style={{ fontSize: "30px" }}>
+      <div style={{ fontSize: "var(--fs-icon)" }}>
         <MenuIcon/>
       </div>
     </div>
@@ -63,7 +64,7 @@ const NavHeader = (props) => {
 
   let contents = null;
   if (simple) {
-    if (width >= 450) {
+    if (width >= BP_NAV_HEADER_TEXT) {
       contents = (<Fragment>
         <Col flex="auto">
           <NavHeaderDivider />
