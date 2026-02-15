@@ -28,7 +28,7 @@ const InfoButton = (props) => {
       <Modal
         title={title}
         centered
-        visible={visible}
+        open={visible}
         width={modalWidth}
         onOk={() => {
           setVisible(false);

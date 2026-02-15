@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import "antd/dist/antd.css";
 import "./index.css";
@@ -21,43 +21,36 @@ import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
 import reportWebVitals from "./reportWebVitals";
 import contactData from "./content/contact";
 
-ReactDOM.render(
+const ExternalRedirect = ({ url }) => {
+  useEffect(() => {
+    window.open(url);
+  }, [url]);
+  return <Navigate to="/" replace />;
+};
+
+const root = createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route exact path="/home" 
-          render={() => {
-            return <Redirect to="/" />;
-          }} 
-        />
-        <Route exact path="/attribution" component={AttributionPage} />
-        <Route exact path="/terms" component={TermsOfUsePage} />
-        <Route exact path="/accessibility" component={AccessibilityPolicyPage} />
-        <Route exact path="/privacy" component={PrivacyPolicyPage} />
-        <Route exact path="/resume"
-          render={() => {
-            window.open(contactData.resume.link);
-            return <Redirect to="/" />;
-          }}
-        />
-        <Route exact path="/blog"
-          render={() => {
-            window.open(contactData.blog.link);
-            return <Redirect to="/" />;
-          }}
-        />
-        <Route exact path="/contract" component={ContractingPage} />
-        <Route exact path="/career" component={CareerPage} />
-        <Route exact path="/education" component={EducationPage} />
-        <Route exact path="/projects" component={ProjectsPage} />
-        <Route exact path="/publications" component={PublicationsPage} />
-        <Route path="/docs/*" component={NotFoundNoRoutingPage} />
-        <Route path="*" component={NotFoundPage} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/attribution" element={<AttributionPage />} />
+        <Route path="/terms" element={<TermsOfUsePage />} />
+        <Route path="/accessibility" element={<AccessibilityPolicyPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/resume" element={<ExternalRedirect url={contactData.resume.link} />} />
+        <Route path="/blog" element={<ExternalRedirect url={contactData.blog.link} />} />
+        <Route path="/contract" element={<ContractingPage />} />
+        <Route path="/career" element={<CareerPage />} />
+        <Route path="/education" element={<EducationPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/publications" element={<PublicationsPage />} />
+        <Route path="/docs/*" element={<NotFoundNoRoutingPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

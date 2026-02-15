@@ -4,7 +4,7 @@ import { BP_MODAL_SIZING } from "../breakpoints";
 import { Modal } from "antd";
 
 const ItemModalTemplate = (props) => {
-  const { children, visible, closeCallback, title } = props;
+  const { children, open, closeCallback, title } = props;
 
   const width = useContext(WidthContext);
   const modalWidth = width > BP_MODAL_SIZING ? 1000 : width * 0.9;
@@ -13,7 +13,7 @@ const ItemModalTemplate = (props) => {
     <Modal
       title={title}
       centered
-      open={visible}
+      open={open}
       width={modalWidth}
       onOk={closeCallback}
       onCancel={closeCallback}

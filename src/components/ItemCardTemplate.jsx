@@ -192,7 +192,7 @@ const ItemCardTemplate = (props) => {
       </div>
       <ItemModalTemplate
         title={title}
-        visible={visible}
+        open={visible}
         closeCallback={() => {
           setVisible(false);
         }}
