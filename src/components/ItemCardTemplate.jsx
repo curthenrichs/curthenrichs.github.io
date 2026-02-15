@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useContext } from "react";
+import React, { useState, useCallback, useRef, Fragment, useContext } from "react";
 import { WidthContext } from "../contexts";
 import { BP_CARD_HORIZONTAL } from "../breakpoints";
 import ThumbnailImage from "./ThumbnailImage";
@@ -109,6 +109,7 @@ const SkillTray = (props) => {
 
 const ItemCardTemplate = (props) => {
   const [visible, setVisible] = useState(false);
+  const preloaded = useRef(false);
   const {
     id,
     style,
@@ -120,8 +121,18 @@ const ItemCardTemplate = (props) => {
     skills,
     children,
     publications,
-    positions
+    positions,
+    preloadImages
   } = props;
+
+  const handlePreload = useCallback(() => {
+    if (preloaded.current || !preloadImages || preloadImages.length === 0) return;
+    preloaded.current = true;
+    preloadImages.forEach((src) => {
+      const image = new Image();
+      image.src = src;
+    });
+  }, [preloadImages]);
   const width = useContext(WidthContext);
 
   const skilltray =
@@ -177,6 +188,8 @@ const ItemCardTemplate = (props) => {
             setVisible(true);
           }
         }}
+        onMouseEnter={handlePreload}
+        onFocus={handlePreload}
         style={style}>
         <Card
           title={title}
