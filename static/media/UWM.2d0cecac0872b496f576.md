@@ -29,7 +29,7 @@ CS518 - Wearable Technology
 - Project focused course : developed version one of [Taltosoid](https://github.com/curthenrichs/taltosoid_srf)
 
 CS570 - Human-Computer Interaction (Application)
-- Learned how iteratively design / develop an existing system to be more user friendly
+- Learned how to iteratively design / develop an existing system to be more user friendly
     - Exploring breakdowns, wire-framing, high-fidelity prototypes, etc.
 - Project focused course : iterated over UR Polyscope software
 
@@ -44,7 +44,7 @@ CS839 - Core Topics in Computing : HCI Topics : Modeling User Interaction
     - Implicit machine-learning methods
 - Final project (self-selected) : Used several machine learning methods to predict synchrony within a dyad.
 
-### Artifical Intelligence and Machine Learning
+### Artificial Intelligence and Machine Learning
 
 CS540 - Intro to Artificial Intelligence
 - Overview course of various AI techniques

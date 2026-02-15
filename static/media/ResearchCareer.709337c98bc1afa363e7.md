@@ -14,7 +14,7 @@ Authr focused on building an authoring environment for human-robot work. CoFrame
 
 For this project I worked with several colleagues outside of the lab (in Human Factors and Optimization) to investigate cobot effectiveness when deployed on a variety of manual work activities; contributing robot capability analysis as inputs into our allocation algorithm. We performed this study during COVID lock-down, using a pre-existing dataset of human work from ONET. 
 
-My contribution was on rating collaborative robot capability (using a decision flowchart designed by a colleague and I). These ratings were derived from a significant literature review into collaborative robots at the current state-of-industry.
+My contribution was on rating collaborative robot capability (using a decision flowchart designed by a colleague and me). These ratings were derived from a significant literature review into collaborative robots at the current state-of-industry.
 
 ## Miscellaneous Lab Duties
 
