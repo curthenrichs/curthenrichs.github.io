@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.9ff09481.css",
+    "main.css": "/static/css/main.e271e5b2.css",
     "main.js": "/static/js/main.48e561c9.js",
     "static/js/685.9d1c2672.chunk.js": "/static/js/685.9d1c2672.chunk.js",
     "static/media/EVDProject.md": "/static/media/EVDProject.d16882e8712ef83a8fb2.md",
@@ -73,7 +73,7 @@
     "static/media/vuedotjs.svg": "/static/media/vuedotjs.e810a9a486ec54e5b07b25ce63c265a2.svg"
   },
   "entrypoints": [
-    "static/css/main.9ff09481.css",
+    "static/css/main.e271e5b2.css",
     "static/js/main.48e561c9.js"
   ]
 }
