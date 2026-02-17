@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import educationData from "../../content/education";
 import publicationData from "../../content/publications";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { GraduateCap, IconLookupFromName } from "../../components/IconManager";
+import { GraduateCap } from "../../components/IconManager";
 import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import { BP_CONTENT_MAX_WIDTH } from "../../breakpoints";
@@ -45,7 +45,7 @@ const SectionEducation = (props) => {
           publications={entry.publications.map(
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
-          skills={entry.skills.map((skill) => IconLookupFromName[skill])}
+          skills={entry.skills}
           preloadImages={entry.images.map((img) => img.img)}>
           <ItemModalContent
             images={entry.images}

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import careerData from "../../content/career";
 import publicationData from "../../content/publications";
 import ItemCardTemplate from "../../components/ItemCardTemplate";
-import { ToolFilled, IconLookupFromName } from "../../components/IconManager";
+import { ToolFilled } from "../../components/IconManager";
 import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import { BP_CONTENT_MAX_WIDTH } from "../../breakpoints";
@@ -48,7 +48,7 @@ const SectionCareer = (props) => {
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
           positions={entry.positions.map((pos) => `${pos.title}`).reverse()}
-          skills={entry.skills.map((skill) => IconLookupFromName[skill])}
+          skills={entry.skills}
           preloadImages={entry.images.map((img) => img.img)}>
           <ItemModalContent
             images={entry.images}

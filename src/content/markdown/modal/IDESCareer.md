@@ -32,3 +32,6 @@ I designed and developed a USB user-interface peripheral featuring integrated OL
 
 ### Area : Software
 I led a major refactor of our hardware control backend, replacing a tightly coupled architecture with a decoupled PubSub-based system (drawing on my experience with ROS). I built out a layered testing strategy spanning driver-level unit/integration tests through system-level QoS validation. I also mentored an intern who prototyped the new REST API layer.
+
+### Area : AI-Augmented Development
+More recently, my role has expanded to include exploring AI-augmented development workflows for firmware and software tasks. I've been evaluating agentic coding tools such as Gemini CLI to accelerate development cycles, assist with debugging, and support code generation across our embedded and application-level codebases.

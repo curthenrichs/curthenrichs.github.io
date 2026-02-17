@@ -107,7 +107,7 @@ export const domains = [
     title: "AR / 3D Visualization",
     icon: "box3d",
     description:
-      "Developing augmented reality interfaces for robot programming and training, including HoloLens applications and 3D simulation environments.",
+      "Developing augmented reality interfaces for robot programming and training, including HoloLens applications and 3D simulation environments. Also dabbled in game development.",
     skillIds: ["unity", "csharp", "hololens", "pybullet"]
   },
   {
