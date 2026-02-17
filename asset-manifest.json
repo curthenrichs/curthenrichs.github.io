@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e271e5b2.css",
-    "main.js": "/static/js/main.48e561c9.js",
+    "main.js": "/static/js/main.2fde36ab.js",
     "static/js/685.9d1c2672.chunk.js": "/static/js/685.9d1c2672.chunk.js",
     "static/media/EVDProject.md": "/static/media/EVDProject.d16882e8712ef83a8fb2.md",
     "static/media/MSOE.md": "/static/media/MSOE.7eb6025785870b1f9a6b.md",
@@ -11,9 +11,9 @@
     "static/media/sketch.svg": "/static/media/sketch.d57b81bd770f0a3175dfb62471aea100.svg",
     "static/media/HobbyProject.md": "/static/media/HobbyProject.cc129037dfe30328c286.md",
     "static/media/UWM.md": "/static/media/UWM.1a776beb2d860860e78a.md",
+    "static/media/IDESCareer.md": "/static/media/IDESCareer.b286dba61e79cea301a8.md",
     "static/media/WebsiteProject.md": "/static/media/WebsiteProject.011abb34cb05a8c5930b.md",
     "static/media/okos-polip.svg": "/static/media/okos-polip.cd7f224ef32e4234523361539bae6804.svg",
-    "static/media/IDESCareer.md": "/static/media/IDESCareer.b286dba61e79cea301a8.md",
     "static/media/react.svg": "/static/media/react.0c61afcfaae16211de87e968a94f3d45.svg",
     "static/media/InternshipCareer.md": "/static/media/InternshipCareer.4b80981d61694eefd2ed.md",
     "static/media/ResearchCareer.md": "/static/media/ResearchCareer.f04ac8156b0f8528d8dc.md",
@@ -74,6 +74,6 @@
   },
   "entrypoints": [
     "static/css/main.e271e5b2.css",
-    "static/js/main.48e561c9.js"
+    "static/js/main.2fde36ab.js"
   ]
 }
