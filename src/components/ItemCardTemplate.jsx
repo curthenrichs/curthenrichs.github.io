@@ -1,14 +1,18 @@
-import React, { useState, useCallback, useRef, Fragment, useContext } from "react";
+import React, { useState, useCallback, useRef, Fragment, useContext, useMemo } from "react";
 import { WidthContext } from "../contexts";
 import { BP_CARD_HORIZONTAL } from "../breakpoints";
 import ThumbnailImage from "./ThumbnailImage";
 import ItemModalTemplate from "./ItemModalTemplate";
-import { CaretRightOutlined } from "./IconManager";
+import { CaretRightOutlined, IconLookupFromName } from "./IconManager";
 import { Row, Col, Card, Tooltip, Typography } from "antd";
 import MarkdownContent from "./MarkdownContent";
 import ErrorBoundary from "./ErrorBoundary";
+import skillsData from "../content/skills";
 
 const { Title, Text } = Typography;
+
+const skillsById = {};
+skillsData.forEach((s) => { skillsById[s.id] = s; });
 
 const ShortCardDescription = (props) => {
   const { text } = props;
@@ -82,7 +86,20 @@ const LongCardContent = (props) => {
 };
 
 const SkillTray = (props) => {
-  const { skills } = props;
+  const { skillIds } = props;
+
+  const uniqueIcons = useMemo(() => {
+    const seen = new Set();
+    const icons = [];
+    skillIds.forEach((id) => {
+      const skill = skillsById[id];
+      if (!skill) return;
+      if (seen.has(skill.icon)) return;
+      seen.add(skill.icon);
+      icons.push({ key: skill.icon, element: IconLookupFromName[skill.icon] });
+    });
+    return icons;
+  }, [skillIds]);
 
   return (
     <div
@@ -94,10 +111,10 @@ const SkillTray = (props) => {
       }}>
       <Tooltip title="Skills">
         <Row justify="center" style={{ padding: "2px 3px 1px 3px" }}>
-          {skills.map((skill, idx) => (
-            <Col key={idx}>
+          {uniqueIcons.map((icon) => (
+            <Col key={icon.key}>
               <div style={{ paddingLeft: "2px", paddingRight: "2px", fontSize: "var(--fs-lg)" }}>
-                {skill}
+                {icon.element}
               </div>
             </Col>
           ))}
@@ -137,7 +154,7 @@ const ItemCardTemplate = (props) => {
 
   const skilltray =
     skills !== undefined && skills !== null && skills.length > 0 ? (
-      <SkillTray skills={skills} />
+      <SkillTray skillIds={skills} />
     ) : null;
 
   let layout;

@@ -5,8 +5,7 @@ import ItemCardTemplate from "../../components/ItemCardTemplate";
 import {
   GraduateCap,
   ExperimentFilled,
-  StarFilled,
-  IconLookupFromName
+  StarFilled
 } from "../../components/IconManager";
 import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
@@ -68,7 +67,7 @@ const SectionProjects = (props) => {
           publications={entry.publications.map(
             (pub) => `${publicationData[pub].short} (${publicationData[pub].venue})`
           )}
-          skills={entry.skills.map((skill) => IconLookupFromName[skill])}
+          skills={entry.skills}
           preloadImages={entry.images.map((img) => img.img)}
         >
           <ItemModalContent 

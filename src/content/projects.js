@@ -53,13 +53,20 @@ const data = {
     modalMarkdownPath: CoFrameModal,
     notable: true,
     skills: [
-      "robot",
+      "universal_robots",
       "ros",
-      "overleaf",
+      "latex_overleaf",
       "python",
       "linux",
       "javascript",
-      "react"
+      "react",
+      "zustand",
+      "ant_design",
+      "pybullet",
+      "unity",
+      "hololens",
+      "csharp",
+      "microsoft_fluent"
     ],
     images: [
       {
@@ -117,9 +124,9 @@ const data = {
     modalMarkdownPath: AuthrModal,
     notable: true,
     skills: [
-      "robot",
+      "universal_robots",
       "ros",
-      "overleaf",
+      "latex_overleaf",
       "python",
       "linux",
       "javascript",
@@ -163,11 +170,12 @@ const data = {
     modalMarkdownPath: ITERModal,
     notable: true,
     skills: [
-      "robot",
+      "universal_robots",
       "ros",
-      "overleaf",
+      "latex_overleaf",
       "python",
-      "linux"
+      "linux",
+      "polyscope"
     ],
     images: [
       {
@@ -217,9 +225,14 @@ const data = {
     skills: [
       "arduino",
       "ros",
-      "c",
+      "c_lang",
       "python",
-      "robot",
+      "basic",
+      "rest_apis",
+      "slam",
+      "nvidia_jetson",
+      "intel_realsense",
+      "iot_home_automation"
     ],
     images: [
       {
@@ -262,7 +275,8 @@ const data = {
     notable: true,
     skills: [
       "react",
-      "javascript"
+      "javascript",
+      "ant_design"
     ],
     images: [
       {

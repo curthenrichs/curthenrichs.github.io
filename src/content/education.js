@@ -47,15 +47,18 @@ const data = {
     thumbnail: "/static/img/thumbnail/msoe-logo.png",
     skills: [
       "arduino",
-      "microchip",
+      "microchip_atmel",
       "atlassian",
       "matlab",
       "angular",
       "git",
       "java",
       "python",
-      "c",
-      "linux"
+      "c_lang",
+      "linux",
+      "assembly",
+      "cypress_psoc",
+      "i2c_spi_uart"
     ],
     publications: [],
     primaryLink: null
@@ -109,12 +112,16 @@ const data = {
     descriptionMarkdownPath: UWMBrief,
     thumbnail: "/static/img/thumbnail/uw-logo.png",
     skills: [
-      "python", 
-      "keras", 
-      "matlab", 
-      "overleaf", 
-      "microchip", 
-      "robot"
+      "python",
+      "keras",
+      "matlab",
+      "latex_overleaf",
+      "microchip_atmel",
+      "hri_methods",
+      "computer_vision",
+      "cuda_openmp",
+      "mpi",
+      "ethnography"
     ],
     publications: [],
     primaryLink: null
