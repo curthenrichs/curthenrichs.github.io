@@ -27,6 +27,31 @@ To deploy, simply run:
 npm run deploy
 ```
 
+### Deployment Troubleshooting
+`npm run deploy` only pushes the build to the `gh-pages` branch; GitHub's internal
+"pages build and deployment" workflow then publishes it to the live site. If the
+live site stays stale after a deploy:
+
+1. Check the repo's Actions tab for the latest "pages build and deployment" run.
+   A failure at the "Deploy to GitHub Pages" step with "Timeout reached, aborting!"
+   (while the build and artifact upload succeed) is a transient GitHub-side outage,
+   not a problem with this repo. Observed 2026-07-02: three consecutive timeouts
+   that self-resolved roughly 8 hours later with no config changes.
+2. Retrigger publishing without rebuilding by pushing an empty commit to `gh-pages`:
+
+   ```
+   git fetch origin gh-pages
+   git push origin $(git commit-tree "origin/gh-pages^{tree}" -p origin/gh-pages -m "Retrigger Pages deployment"):refs/heads/gh-pages
+   ```
+
+3. To confirm what is actually live, compare the hashed bundle name in
+   `build/static/js/main.<hash>.js` against the one referenced by the live site's
+   HTML, and check `curl -sI https://curthenrichs.github.io/` for the
+   `last-modified` header (it reflects the last successful publish, not the last
+   attempt shown in Settings -> Pages).
+4. If failures persist beyond a day, verify Settings -> Pages still points at
+   `gh-pages` / root, then escalate to GitHub Support with the failed run links.
+
 ## Updating
 This project is structured such that I should be able to merely update the content
 files. I broke the content down by section on the webpage.
