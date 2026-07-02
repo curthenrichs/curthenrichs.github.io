@@ -1,248 +1,342 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { Typography, Tag } from "antd";
+import DocumentContainer from "../../components/DocumentContainer";
+
+const { Title, Paragraph, Link } = Typography;
+
+const ANT_DESIGN_ICONS = [
+  "WarningOutlined",
+  "ToolFilled",
+  "ExperimentFilled",
+  "StarFilled",
+  "GithubFilled",
+  "MailOutlined",
+  "LinkedinFilled",
+  "TwitterOutlined (Bird)",
+  "CaretRightOutlined",
+  "QuestionOutlined",
+  "DownCircleOutlined",
+  "UpCircleOutlined",
+  "DownloadOutlined",
+  "EnvironmentFilled",
+  "SettingOutlined"
+];
+
+const FLATICON_PIXEL_PERFECT_ICONS = ["mechanical-arm.svg", "menu.svg"];
+
+const FLATICON_FREEPIK_ICONS = ["sketch.svg", "project.svg"];
+
+const FONT_AWESOME_ICONS = [
+  {
+    name: "graduation-cap-solid.svg",
+    href: "https://fontawesome.com/icons/graduation-cap?style=solid"
+  },
+  {
+    name: "microchip-solid.svg",
+    href: "https://fontawesome.com/icons/microchip?style=solid"
+  },
+  {
+    name: "usb.svg",
+    href: "https://fontawesome.com/icons/usb?f=brands&s=solid"
+  }
+];
+
+const SIMPLE_ICONS = [
+  "angular.svg",
+  "arduino.svg",
+  "cplusplus",
+  "csharp.svg",
+  "git.svg",
+  "java.svg",
+  "linux.svg",
+  "microsoft.svg",
+  "node-dot-js.svg",
+  "python.svg",
+  "react.svg",
+  "ros.svg",
+  "unity.svg",
+  "javascript.svg",
+  "keras.svg",
+  "overleaf.svg",
+  "mongodb.svg",
+  "atlassian.svg",
+  "autodesk.svg",
+  "c.svg",
+  "docker.svg",
+  "raspberrypi.svg",
+  "vuedotjs.svg",
+  "redis.svg",
+  "flask.svg",
+  "antdesign.svg",
+  "nvidia.svg",
+  "intel.svg",
+  "zigbee.svg",
+  "altiumdesigner.svg",
+  "typescript.svg",
+  "opencv.svg",
+  "xilinx.svg",
+  "anthropic.svg",
+  "openai.svg",
+  "googlegemini.svg"
+];
+
+const DEVICON_ICONS = ["visualbasic.svg"];
+
+const LUCIDE_ICONS = [
+  "dna.svg",
+  "circuit-board.svg",
+  "users.svg",
+  "code-xml.svg",
+  "box.svg",
+  "factory.svg",
+  "brain.svg",
+  "sparkles.svg"
+];
+
+const HAND_DRAWN_ICONS = ["matlab.svg", "labview.svg"];
+
+const LOGOWIK_ICONS = ["twitter-x.svg"];
+
+const TAG_STYLE = { marginBottom: "8px" };
 
 const SectionAttribution = () => {
   return (
-    <Fragment>
-      <h2>Attribution and Licenses</h2>
-      <h3>General Attribution</h3>
-      <p>Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</p>
-      <p>
+    <DocumentContainer>
+      <Title level={2}>Attribution and Licenses</Title>
+
+      <Title level={3}>General Attribution</Title>
+
+      <Paragraph>
+        Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. Asset
+        managed by Curt Henrichs LLC.
+      </Paragraph>
+
+      <Paragraph>
         Deployed on Github Pages static hosting. Deployment handled with{" "}
-        <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">
+        <Link href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">
           gh-pages
-        </a>
+        </Link>
         .
-      </p>
-      <p>
+      </Paragraph>
+
+      <Paragraph>
         Thanks to{" "}
-        <a
+        <Link
           href="https://github.com/rafgraph/spa-github-pages"
           target="_blank"
           rel="noopener noreferrer">
           spa-github-pages
-        </a>
+        </Link>
         , hard refreshes are managed when deployed on Github Pages.
-      </p>
-      <h3>Icons</h3>
-      The following sources were used for icons on this website:
-      <br />
-      <br />
-      <h4>Ant Design Icons</h4>
-      <a href="https://ant.design/components/icon/" target="_blank" rel="noopener noreferrer">
-        ant.design
-      </a>
-      <ul>
-        <li>WarningOutlined</li>
-        <li>ToolFilled</li>
-        <li>ExperimentFilled</li>
-        <li>StarFilled</li>
-        <li>GithubFilled</li>
-        <li>MailOutlined</li>
-        <li>LinkedinFilled</li>
-        <li>TwitterOutlined (Bird)</li>
-        <li>CaretRightOutlined</li>
-        <li>QuestionOutlined</li>
-        <li>DownCircleOutlined</li>
-        <li>UpCircleOutlined</li>
-        <li>DownloadOutlined</li>
-        <li>EnvironmentFilled</li>
-        <li>SettingOutlined</li>
-      </ul>
-      <h4>Flaticon Icons</h4>
-      <ul>
-        <li>
-          <div>
-            Icons (mechanical-arm.svg, menu.svg) made by{" "}
-            <a
-              href="https://www.flaticon.com/authors/pixel-perfect"
-              title="Pixel perfect"
-              target="_blank"
-              rel="noopener noreferrer">
-              Pixel perfect
-            </a>{" "}
-            from{" "}
-            <a
-              href="https://www.flaticon.com/"
-              title="Flaticon"
-              target="_blank"
-              rel="noopener noreferrer">
-              www.flaticon.com
+      </Paragraph>
+
+      <Title level={3}>Icons</Title>
+
+      <Paragraph>The following sources were used for icons on this website:</Paragraph>
+
+      <Title level={4}>Ant Design Icons</Title>
+
+      <Paragraph>
+        <Link href="https://ant.design/components/icon/" target="_blank" rel="noopener noreferrer">
+          ant.design
+        </Link>
+      </Paragraph>
+
+      <Paragraph>
+        {ANT_DESIGN_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={4}>Flaticon Icons</Title>
+
+      <Paragraph>
+        Made by{" "}
+        <Link
+          href="https://www.flaticon.com/authors/pixel-perfect"
+          title="Pixel perfect"
+          target="_blank"
+          rel="noopener noreferrer">
+          Pixel perfect
+        </Link>{" "}
+        from{" "}
+        <Link
+          href="https://www.flaticon.com/"
+          title="Flaticon"
+          target="_blank"
+          rel="noopener noreferrer">
+          www.flaticon.com
+        </Link>
+        :
+      </Paragraph>
+
+      <Paragraph>
+        {FLATICON_PIXEL_PERFECT_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Paragraph>
+        Made by{" "}
+        <Link
+          href="https://www.freepik.com"
+          title="Freepik"
+          target="_blank"
+          rel="noopener noreferrer">
+          Freepik
+        </Link>{" "}
+        from{" "}
+        <Link
+          href="https://www.flaticon.com/"
+          title="Flaticon"
+          target="_blank"
+          rel="noopener noreferrer">
+          www.flaticon.com
+        </Link>
+        :
+      </Paragraph>
+
+      <Paragraph>
+        {FLATICON_FREEPIK_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={4}>Font Awesome Icons</Title>
+
+      <Paragraph>
+        {FONT_AWESOME_ICONS.map((icon) => (
+          <Tag key={icon.name} style={TAG_STYLE}>
+            <a href={icon.href} target="_blank" rel="noopener noreferrer">
+              {icon.name}
             </a>
-          </div>
-        </li>
-        <li>
-          <div>
-            Icons (sketch.svg, project.svg) made by{" "}
-            <a
-              href="https://www.freepik.com"
-              title="Freepik"
-              target="_blank"
-              rel="noopener noreferrer">
-              Freepik
-            </a>{" "}
-            from{" "}
-            <a
-              href="https://www.flaticon.com/"
-              title="Flaticon"
-              target="_blank"
-              rel="noopener noreferrer">
-              www.flaticon.com
-            </a>
-          </div>
-        </li>
-      </ul>
-      <h4>Font Awesome Icons</h4>
-      <ul>
-        <li>
-          <div>
-            Icon (graduation-cap-solid.svg) from{" "}
-            <a
-              href="https://fontawesome.com/icons/graduation-cap?style=solid"
-              target="_blank"
-              rel="noopener noreferrer">
-              fontawesome.com
-            </a>
-          </div>
-        </li>
-        <li>
-          <div>
-            Icon (microchip-solid.svg) from{" "}
-            <a
-              href="https://fontawesome.com/icons/microchip?style=solid"
-              target="_blank"
-              rel="noopener noreferrer">
-              fontawesome.com
-            </a>
-          </div>
-        </li>
-        <li>
-          <div>
-            Icon (usb.svg) from{" "}
-            <a
-              href="https://fontawesome.com/icons/usb?f=brands&s=solid"
-              target="_blank"
-              rel="noopener noreferrer">
-              fontawesome.com
-            </a>
-          </div>
-        </li>
-      </ul>
-      <h4>Simple-Icons Icons</h4>
-      <a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">
-        simpleicons.org
-      </a>
-      <ul>
-        <li>angular.svg</li>
-        <li>arduino.svg</li>
-        <li>cplusplus</li>
-        <li>csharp.svg</li>
-        <li>git.svg</li>
-        <li>java.svg</li>
-        <li>linux.svg</li>
-        <li>microsoft.svg</li>
-        <li>node-dot-js.svg</li>
-        <li>python.svg</li>
-        <li>react.svg</li>
-        <li>ros.svg</li>
-        <li>unity.svg</li>
-        <li>javascript.svg</li>
-        <li>keras.svg</li>
-        <li>overleaf.svg</li>
-        <li>mongodb.svg</li>
-        <li>atlassian.svg</li>
-        <li>autodesk.svg</li>
-        <li>c.svg</li>
-        <li>docker.svg</li>
-        <li>raspberrypi.svg</li>
-        <li>vuedotjs.svg</li>
-        <li>redis.svg</li>
-        <li>flask.svg</li>
-        <li>antdesign.svg</li>
-        <li>nvidia.svg</li>
-        <li>intel.svg</li>
-        <li>zigbee.svg</li>
-        <li>altiumdesigner.svg</li>
-        <li>typescript.svg</li>
-        <li>opencv.svg</li>
-        <li>xilinx.svg</li>
-        <li>anthropic.svg</li>
-        <li>openai.svg</li>
-        <li>googlegemini.svg</li>
-      </ul>
-      <h4>Devicon Icons</h4>
-      <a href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">
-        devicon.dev
-      </a>{" "}
-      (MIT License)
-      <ul>
-        <li>visualbasic.svg</li>
-      </ul>
-      <h4>Lucide Icons</h4>
-      <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">
-        lucide.dev
-      </a>{" "}
-      (ISC License)
-      <ul>
-        <li>dna.svg</li>
-        <li>circuit-board.svg</li>
-        <li>users.svg</li>
-        <li>code-xml.svg</li>
-        <li>box.svg</li>
-        <li>factory.svg</li>
-        <li>brain.svg</li>
-        <li>sparkles.svg</li>
-      </ul>
-      <h4>Others</h4>
-      <ul>
-        <li>Icon (matlab.svg) was drawn by me using the original jpg icon as reference.</li>
-        <li>Icon (labview.svg) was drawn by me using png icon as reference.</li>
-        <li>Icon (twitter-x.svg) from <a href="https://logowik.com/twitter-x-logo-vector-59293.html" target="_blank" rel="noopener noreferrer">logowink</a></li>
-      </ul>
-      <h3>Favicon</h3>
-      <p>Website favicon was generated using the following:</p>
+          </Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={4}>Simple-Icons Icons</Title>
+
+      <Paragraph>
+        <Link href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer">
+          simpleicons.org
+        </Link>
+      </Paragraph>
+
+      <Paragraph>
+        {SIMPLE_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={4}>Devicon Icons</Title>
+
+      <Paragraph>
+        <Link href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">
+          devicon.dev
+        </Link>{" "}
+        (MIT License)
+      </Paragraph>
+
+      <Paragraph>
+        {DEVICON_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={4}>Lucide Icons</Title>
+
+      <Paragraph>
+        <Link href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">
+          lucide.dev
+        </Link>{" "}
+        (ISC License)
+      </Paragraph>
+
+      <Paragraph>
+        {LUCIDE_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={4}>Others</Title>
+
+      <Paragraph>Drawn by me using the original jpg/png icons as reference:</Paragraph>
+
+      <Paragraph>
+        {HAND_DRAWN_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Paragraph>
+        From{" "}
+        <Link
+          href="https://logowik.com/twitter-x-logo-vector-59293.html"
+          target="_blank"
+          rel="noopener noreferrer">
+          logowink
+        </Link>
+        :
+      </Paragraph>
+
+      <Paragraph>
+        {LOGOWIK_ICONS.map((name) => (
+          <Tag key={name} style={TAG_STYLE}>{name}</Tag>
+        ))}
+      </Paragraph>
+
+      <Title level={3}>Favicon</Title>
+
+      <Paragraph>Website favicon was generated using the following:</Paragraph>
+
       <ul>
         <li>Font Title: Iceland</li>
         <li>
           Font Author:{" "}
-          <a href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
+          <Link href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
             http://scripts.sil.org/OFL
-          </a>
+          </Link>
         </li>
         <li>
           Font Source:{" "}
-          <a
+          <Link
             href="http://fonts.gstatic.com/s/iceland/v9/rax9HiuFsdMNOnWPWKxGADBbg0s.ttf"
             target="_blank"
             rel="noopener noreferrer">
             fonts.gstatic.com
-          </a>
+          </Link>
         </li>
         <li>
           Font License: SIL Open Font License, 1.1 (
-          <a href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
+          <Link href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
             http://scripts.sil.org/OFL
-          </a>
+          </Link>
           )
         </li>
       </ul>
-      <h3>Images</h3>
-      <p>
+
+      <Title level={3}>Images</Title>
+
+      <Paragraph>
         Images presented for IDES were taken / published with permission from supervisor during time
         with the company.
-      </p>
-      <p>
+      </Paragraph>
+
+      <Paragraph>
         Dedicated Computing internship images were taken with permission from my supervisor during
         my time as an intern.
-      </p>
-      <p>
-        IDES logo, Dedicated Computing logo, University of Wisconsin Madison logo and Milwaukee School of Engineering logo are owned by 
-        their respective institutions.
-      </p>
-      <p>
+      </Paragraph>
+
+      <Paragraph>
+        IDES logo, Dedicated Computing logo, University of Wisconsin Madison logo and Milwaukee
+        School of Engineering logo are owned by their respective institutions.
+      </Paragraph>
+
+      <Paragraph>
         All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from
         publications produced in whole/part by Curt Henrichs.
-      </p>
-    </Fragment>
+      </Paragraph>
+    </DocumentContainer>
   );
 };
 
