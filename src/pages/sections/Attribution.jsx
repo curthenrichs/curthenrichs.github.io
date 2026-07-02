@@ -318,8 +318,8 @@ const SectionAttribution = () => {
       <Title level={3}>Images</Title>
 
       <Paragraph>
-        Images presented for IDES were taken / published with permission from supervisor during time
-        with the company.
+        IDES photographs are published only with permission from the company. The visualization
+        diagram explaining my roles at IDES is my own work.
       </Paragraph>
 
       <Paragraph>
@@ -328,8 +328,8 @@ const SectionAttribution = () => {
       </Paragraph>
 
       <Paragraph>
-        IDES logo, Dedicated Computing logo, University of Wisconsin Madison logo and Milwaukee
-        School of Engineering logo are owned by their respective institutions.
+        The IDES logo, JEOL logo, Dedicated Computing logo, University of Wisconsin Madison logo,
+        and Milwaukee School of Engineering logo are owned by their respective institutions.
       </Paragraph>
 
       <Paragraph>
