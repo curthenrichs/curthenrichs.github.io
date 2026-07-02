@@ -27,11 +27,16 @@ I trained manufacturing engineers in electronics assembly processes and provided
 ### Area : Next-Gen Hardware
 I led component selection for next-generation products, evaluating microcontrollers, ethernet controllers, and I2C devices with a focus on maintainability and supply-chain resilience.
 
-#### Multi-Purpose Control Knob
-I designed and developed a USB user-interface peripheral featuring integrated OLED displays, a tactile encoder, and haptic/audio feedback. I took this product from requirements analysis through schematic capture in Altium, board bringup, firmware development, mechanical enclosure design, custom Windows driver development, Python interface development, integration into the existing software ecosystem, CE marking and productization.
+#### MiniConsole
+I designed and developed MiniConsole, a USB user-interface peripheral featuring integrated OLED displays, a tactile encoder, and haptic/audio feedback. I took this product from requirements analysis through schematic capture in Altium, board bringup, firmware development, mechanical enclosure design, custom Windows driver development, Python interface development, integration into the existing software ecosystem, CE marking and productization.
 
 ### Area : Software
 I led a major refactor of our hardware control backend, replacing a tightly coupled architecture with a decoupled PubSub-based system (drawing on my experience with ROS). I built out a layered testing strategy spanning driver-level unit/integration tests through system-level QoS validation. I also mentored an intern who prototyped the new REST API layer.
 
+### Area : Real-Time Vision
+My current focus is building a real-time vision system on the Nvidia Holoscan SDK for 4D-STEM applications. The system processes multiple concurrent image streams from high-speed detectors and generates signal control feedback to the microscope, keeping acquisition and instrument response in a tight loop. This work spans GPU pipeline development, multi-channel stream handling, and integration with our existing hardware control ecosystem.
+
 ### Area : AI-Augmented Development
-More recently, my role has expanded to include exploring AI-augmented development workflows for firmware and software tasks. I've been evaluating agentic coding tools such as Gemini CLI to accelerate development cycles, assist with debugging, and support code generation across our embedded and application-level codebases.
+My role has expanded to include AI-augmented development workflows for firmware and software tasks. I work daily with agentic coding tools, both Claude and Gemini CLI, choosing between them based on their aptitude for the task at hand. These tools assist with debugging, code generation, and maintenance across our embedded and application-level codebases.
+
+To bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system for the Holoscan vision project. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against microscope hardware resources without putting the instrument at risk.
