@@ -24,9 +24,11 @@ const HeaderSubsection = (props) => {
 
   return (
     <Fragment>
-      <Title level={3}>Empowering Your Embedded Systems with Precision and Performance</Title>
+      <div style={{ textAlign: "center" }}>
+        <Title level={3}>Building Real Things for Real People</Title>
 
-      {availabilityText}
+        {availabilityText}
+      </div>
 
       <br/>
 
@@ -119,7 +121,9 @@ const ServicesSubsection = (props) => {
 
   return (
     <Fragment>
-      <Title level={3}>Services Offered</Title>
+      <div style={{ textAlign: "center" }}>
+        <Title level={3}>Services Offered</Title>
+      </div>
 
       <br/>
 
