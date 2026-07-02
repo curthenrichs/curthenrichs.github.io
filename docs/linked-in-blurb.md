@@ -17,6 +17,8 @@ The value I have added to IDES:
 - Led component selection for next-gen products focused on supply-chain resilience.
 - Trained manufacturing engineers, authored build documentation, and maintained MRP system.
 - Exploring AI-augmented development workflows for firmware and software tasks using agentic coding tools.
+- Actively working with Nvidia Holoscan SDK for real-time, multi-channel vision pipelines within microscopy context.
+- Developed agentic-first MCP CI process for managing Nvidia Holoscan vision project from triggering builds, running benchmarks, to safely deploying against microscope hardware resources.
 
 ## Firmware Engineer
 Primary firmware engineer developing voltage control firmware for IDES flagship product on Xilinx Zynq SoC. Maintained and extended mixed C/C++ firmware across Zynq and Atmel/Microchip platforms. Prepared embedded Linux system images for edge computer vision platform production.
