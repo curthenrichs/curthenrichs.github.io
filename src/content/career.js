@@ -146,7 +146,8 @@ const data = {
       "altium",
       "pcb_design",
       "ai_augmented_dev",
-      "gemini"
+      "gemini",
+      "nvidia_holoscan"
     ],
     thumbnail: "/static/img/thumbnail/ides-logo.png",
     web: "https://www.ides-inc.com/",
