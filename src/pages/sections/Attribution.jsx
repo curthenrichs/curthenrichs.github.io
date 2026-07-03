@@ -112,22 +112,22 @@ const SectionAttribution = () => {
       </Paragraph>
 
       <Paragraph>
-        Deployed on Github Pages static hosting. Deployment handled with{" "}
+        {"Deployed on Github Pages static hosting. Deployment handled with "}
         <Link href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">
           gh-pages
         </Link>
-        .
+        {"."}
       </Paragraph>
 
       <Paragraph>
-        Thanks to{" "}
+        {"Thanks to "}
         <Link
           href="https://github.com/rafgraph/spa-github-pages"
           target="_blank"
           rel="noopener noreferrer">
           spa-github-pages
         </Link>
-        , hard refreshes are managed when deployed on Github Pages.
+        {", hard refreshes are managed when deployed on Github Pages."}
       </Paragraph>
 
       <Title level={3}>Icons</Title>
@@ -151,15 +151,15 @@ const SectionAttribution = () => {
       <Title level={4}>Flaticon Icons</Title>
 
       <Paragraph>
-        Made by{" "}
+        {"Made by "}
         <Link
           href="https://www.flaticon.com/authors/pixel-perfect"
           title="Pixel perfect"
           target="_blank"
           rel="noopener noreferrer">
           Pixel perfect
-        </Link>{" "}
-        from{" "}
+        </Link>
+        {" from "}
         <Link
           href="https://www.flaticon.com/"
           title="Flaticon"
@@ -167,7 +167,7 @@ const SectionAttribution = () => {
           rel="noopener noreferrer">
           www.flaticon.com
         </Link>
-        :
+        {":"}
       </Paragraph>
 
       <Paragraph>
@@ -177,15 +177,15 @@ const SectionAttribution = () => {
       </Paragraph>
 
       <Paragraph>
-        Made by{" "}
+        {"Made by "}
         <Link
           href="https://www.freepik.com"
           title="Freepik"
           target="_blank"
           rel="noopener noreferrer">
           Freepik
-        </Link>{" "}
-        from{" "}
+        </Link>
+        {" from "}
         <Link
           href="https://www.flaticon.com/"
           title="Flaticon"
@@ -193,7 +193,7 @@ const SectionAttribution = () => {
           rel="noopener noreferrer">
           www.flaticon.com
         </Link>
-        :
+        {":"}
       </Paragraph>
 
       <Paragraph>
@@ -233,8 +233,8 @@ const SectionAttribution = () => {
       <Paragraph>
         <Link href="https://devicon.dev/" target="_blank" rel="noopener noreferrer">
           devicon.dev
-        </Link>{" "}
-        (MIT License)
+        </Link>
+        {" (MIT License)"}
       </Paragraph>
 
       <Paragraph>
@@ -248,8 +248,8 @@ const SectionAttribution = () => {
       <Paragraph>
         <Link href="https://lucide.dev/" target="_blank" rel="noopener noreferrer">
           lucide.dev
-        </Link>{" "}
-        (ISC License)
+        </Link>
+        {" (ISC License)"}
       </Paragraph>
 
       <Paragraph>
@@ -269,14 +269,14 @@ const SectionAttribution = () => {
       </Paragraph>
 
       <Paragraph>
-        From{" "}
+        {"From "}
         <Link
           href="https://logowik.com/twitter-x-logo-vector-59293.html"
           target="_blank"
           rel="noopener noreferrer">
           logowink
         </Link>
-        :
+        {":"}
       </Paragraph>
 
       <Paragraph>
@@ -292,13 +292,13 @@ const SectionAttribution = () => {
       <ul>
         <li>Font Title: Iceland</li>
         <li>
-          Font Author:{" "}
+          {"Font Author: "}
           <Link href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
             http://scripts.sil.org/OFL
           </Link>
         </li>
         <li>
-          Font Source:{" "}
+          {"Font Source: "}
           <Link
             href="http://fonts.gstatic.com/s/iceland/v9/rax9HiuFsdMNOnWPWKxGADBbg0s.ttf"
             target="_blank"
@@ -307,11 +307,11 @@ const SectionAttribution = () => {
           </Link>
         </li>
         <li>
-          Font License: SIL Open Font License, 1.1 (
+          {"Font License: SIL Open Font License, 1.1 ("}
           <Link href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
             http://scripts.sil.org/OFL
           </Link>
-          )
+          {")"}
         </li>
       </ul>
 

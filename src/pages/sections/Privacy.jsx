@@ -15,12 +15,12 @@ const SectionPrivacyPolicy = () => {
       </Paragraph>
 
       <Paragraph>
-        This Privacy Policy describes how Curt Henrichs&apos; Portfolio website, accessible from{" "}
+        {"This Privacy Policy describes how Curt Henrichs' Portfolio website, accessible from "}
         <Link href="https://curthenrichs.github.io/" target="_blank" rel="noopener noreferrer">
           https://curthenrichs.github.io/
-        </Link>{" "}
-        (the &quot;Site&quot;), handles your information. The short version: the Site is a static
-        portfolio and collects nothing.
+        </Link>
+        {" (the \"Site\"), handles your information. The short version: the Site is a static " +
+          "portfolio and collects nothing."}
       </Paragraph>
 
       <Title level={3}>What This Site Is</Title>
@@ -33,16 +33,16 @@ const SectionPrivacyPolicy = () => {
       <Title level={3}>Data Collected</Title>
 
       <Paragraph>
-        I do not collect, store, or process any personal data through the Site. As with most web
-        hosting, GitHub may log technical information server-side (such as IP addresses) when
-        serving pages. That logging is governed by the{" "}
+        {"I do not collect, store, or process any personal data through the Site. As with most " +
+          "web hosting, GitHub may log technical information server-side (such as IP addresses) " +
+          "when serving pages. That logging is governed by the "}
         <Link
           href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
           target="_blank"
           rel="noopener noreferrer">
           GitHub Privacy Statement
         </Link>
-        .
+        {"."}
       </Paragraph>
 
       <Title level={3}>Cookies</Title>

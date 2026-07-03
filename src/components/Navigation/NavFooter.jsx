@@ -86,7 +86,7 @@ const Footer = () => {
   return (
     <Fragment>
       <Divider type="horizontal" />
-      <Text strong>Curt Henrichs LLC © {new Date().getFullYear()}</Text>
+      <Text strong>{`Curt Henrichs LLC © ${new Date().getFullYear()}`}</Text>
       <br />
       <Text>Created with Reactjs and Ant Design</Text>
       <br />

@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+.nav-title-link {
+  color: #fff;
+}
+
+.nav-title-heading {
+  overflow: hidden;
+}
+
 .nav-bar-divider {
   border-left: 1px solid #8f8f8f;
 }

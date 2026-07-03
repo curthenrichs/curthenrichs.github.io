@@ -15,21 +15,23 @@ const SectionTermsOfUse = () => {
       </Paragraph>
 
       <Paragraph>
-        Welcome to Curt Henrichs&apos; Portfolio website, located at{" "}
+        {"Welcome to Curt Henrichs' Portfolio website, located at "}
         <Link href="https://curthenrichs.github.io/" target="_blank" rel="noopener noreferrer">
           https://curthenrichs.github.io/
-        </Link>{" "}
-        (the &quot;Site&quot;). These terms describe the conditions for using the Site. By using
-        the Site, you accept these terms.
+        </Link>
+        {" (the \"Site\"). These terms describe the conditions for using the Site. By using " +
+          "the Site, you accept these terms."}
       </Paragraph>
 
       <Title level={3}>Ownership and Copyright</Title>
 
       <Paragraph>
-        The Site and its content are the copyrighted work of Curt Henrichs LLC unless otherwise
-        attributed. Copyright &copy; 2022-2026 Curt Henrichs LLC. All rights reserved. Third-party
-        icons, logos, and other assets remain the property of their respective owners; see the{" "}
-        <Link href="/attribution">Attribution and Licenses</Link> page for details.
+        {"The Site and its content are the copyrighted work of Curt Henrichs LLC unless otherwise " +
+          "attributed. Copyright © 2022-2026 Curt Henrichs LLC. All rights reserved. " +
+          "Third-party icons, logos, and other assets remain the property of their respective " +
+          "owners; see the "}
+        <Link href="/attribution">Attribution and Licenses</Link>
+        {" page for details."}
       </Paragraph>
 
       <Title level={3}>License to View</Title>

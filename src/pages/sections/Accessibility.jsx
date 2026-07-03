@@ -22,17 +22,17 @@ const SectionAccessibilityPolicy = () => {
       <Title level={3}>Conformance Status</Title>
 
       <Paragraph>
-        The{" "}
+        {"The "}
         <Link
           href="https://www.w3.org/WAI/standards-guidelines/wcag/"
           target="_blank"
           rel="noopener noreferrer">
           Web Content Accessibility Guidelines (WCAG)
-        </Link>{" "}
-        define requirements for designers and developers to improve accessibility for people with
-        disabilities, at three levels of conformance: Level A, Level AA, and Level AAA. This
-        website has not been formally assessed against WCAG 2.1 Level AA, meaning the content has
-        not been evaluated or the evaluation results are not available.
+        </Link>
+        {" define requirements for designers and developers to improve accessibility for people " +
+          "with disabilities, at three levels of conformance: Level A, Level AA, and Level AAA. " +
+          "This website has not been formally assessed against WCAG 2.1 Level AA, meaning the " +
+          "content has not been evaluated or the evaluation results are not available."}
       </Paragraph>
 
       <Title level={3}>Feedback</Title>
@@ -92,14 +92,14 @@ const SectionAccessibilityPolicy = () => {
       <Title level={3}>Date</Title>
 
       <Paragraph>
-        This statement was created on 4 December 2022 using the{" "}
+        {"This statement was created on 4 December 2022 using the "}
         <Link
           href="https://www.w3.org/WAI/planning/statements/"
           target="_blank"
           rel="noopener noreferrer">
           W3C Accessibility Statement Generator Tool
         </Link>
-        . It was last reviewed and updated on 1 July 2026.
+        {". It was last reviewed and updated on 1 July 2026."}
       </Paragraph>
     </DocumentContainer>
   );
