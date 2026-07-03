@@ -287,33 +287,11 @@ const SectionAttribution = () => {
 
       <Title level={3}>Favicon</Title>
 
-      <Paragraph>Website favicon was generated using the following:</Paragraph>
-
-      <ul>
-        <li>Font Title: Iceland</li>
-        <li>
-          {"Font Author: "}
-          <Link href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
-            http://scripts.sil.org/OFL
-          </Link>
-        </li>
-        <li>
-          {"Font Source: "}
-          <Link
-            href="http://fonts.gstatic.com/s/iceland/v9/rax9HiuFsdMNOnWPWKxGADBbg0s.ttf"
-            target="_blank"
-            rel="noopener noreferrer">
-            fonts.gstatic.com
-          </Link>
-        </li>
-        <li>
-          {"Font License: SIL Open Font License, 1.1 ("}
-          <Link href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer">
-            http://scripts.sil.org/OFL
-          </Link>
-          {")"}
-        </li>
-      </ul>
+      <Paragraph>
+        The website favicon is original artwork: a robot mark created for this site. It is
+        maintained as SVG sources in the repository and rasterized into the icon files at
+        generation time.
+      </Paragraph>
 
       <Title level={3}>Images</Title>
 
