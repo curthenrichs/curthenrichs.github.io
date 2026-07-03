@@ -18,6 +18,11 @@ const SECTION_LABEL = {
   career: "Full Career",
   education: "All Education"
 };
+const SECTION_BANNER = {
+  projects: "Projects",
+  career: "Career",
+  education: "Education"
+};
 const SITE_ORIGIN = "https://curthenrichs.github.io";
 
 const ItemDetailPage = ({ route }) => {
@@ -39,7 +44,9 @@ const ItemDetailPage = ({ route }) => {
       <PageTemplate
         header={{
           simple: true,
-          pageName: route.name,
+          // Banner is a "where am I" affordance: group + item. The nav button
+          // and document title keep the bare item name.
+          pageName: `${SECTION_BANNER[route.section]} - ${route.name}`,
           sectionButtons: [
             {
               id: "detail-btn",
