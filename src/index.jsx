@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
@@ -29,8 +29,8 @@ const ExternalRedirect = ({ url }) => {
   return <Navigate to="/" replace />;
 };
 
-const root = createRoot(document.getElementById("root"));
-root.render(
+const container = document.getElementById("root");
+const app = (
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -55,6 +55,13 @@ root.render(
     </HelmetProvider>
   </React.StrictMode>
 );
+
+// Prerendered pages ship HTML inside #root; hydrate it. Dev server starts empty.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, app);
+} else {
+  createRoot(container).render(app);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
