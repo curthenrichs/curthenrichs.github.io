@@ -2,21 +2,19 @@ import React from "react";
 import PageMeta from "../components/PageMeta";
 import PageTemplate from "../components/PageTemplate";
 import ItemModalContent from "../components/ItemModalContent";
-import { Typography } from "antd";
-import { Link } from "react-router-dom";
+import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 import projects from "../content/projects";
 import career from "../content/career";
 import education from "../content/education";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
-const { Text } = Typography;
-
 const CONTENT = { projects, career, education };
-const SECTION_LABEL = {
+const BACK_LABEL = {
   projects: "All Projects",
-  career: "Full Career",
-  education: "All Education"
+  career: "Career",
+  education: "Education"
 };
 const SECTION_BANNER = {
   projects: "Projects",
@@ -26,6 +24,7 @@ const SECTION_BANNER = {
 const SITE_ORIGIN = "https://curthenrichs.github.io";
 
 const ItemDetailPage = ({ route }) => {
+  const navigate = useNavigate();
   const entry = CONTENT[route.section][route.contentId];
   const images = entry.images || [];
   const ogImageEntry =
@@ -75,9 +74,28 @@ const ItemDetailPage = ({ route }) => {
                   primaryLink={entry.primaryLink}
                 />
                 <div style={{ paddingTop: "1.5em", textAlign: "center" }}>
-                  <Link to={`/${route.section}`}>
-                    <Text underline>{`← ${SECTION_LABEL[route.section]}`}</Text>
-                  </Link>
+                  {/* Outlined (default) button: back-nav is secondary to the
+                      item's primary-link CTA. Real href for agents; plain
+                      click navigates SPA-style, modifier-clicks fall through. */}
+                  <Button
+                    href={`/${route.section}`}
+                    shape="round"
+                    size="large"
+                    onClick={(event) => {
+                      if (
+                        event.metaKey ||
+                        event.ctrlKey ||
+                        event.shiftKey ||
+                        event.altKey ||
+                        event.button !== 0
+                      ) {
+                        return;
+                      }
+                      event.preventDefault();
+                      navigate(`/${route.section}`);
+                    }}>
+                    {`Back to ${BACK_LABEL[route.section]}`}
+                  </Button>
                 </div>
               </div>
             )
