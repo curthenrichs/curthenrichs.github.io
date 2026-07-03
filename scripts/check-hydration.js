@@ -36,6 +36,9 @@ const ROUTES = [
   "/privacy"
 ];
 
+const detailRoutes = require(path.join(__dirname, "..", "src", "content", "detailRoutes.json"));
+detailRoutes.forEach((r) => ROUTES.push(r.path));
+
 // Routes checked for prerender marker consumption (window.__PRERENDERED_WIDTH__
 // deleted by PageTemplate.componentDidMount after hydration).
 const MARKER_CHECK_ROUTES = ["/", "/career"];

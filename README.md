@@ -105,6 +105,11 @@ Prerendering requires each route to be registered in four places:
 3. `scripts/prerender.js` — add the route to `ROUTES` (title must match pageMeta exactly).
 4. `public/sitemap.xml` — add the URL.
 
+- Item detail pages: add the entry to `src/content/detailRoutes.json`; routes,
+  prerender, and hydration checks pick it up automatically (a content item
+  with `modalMarkdownPath` and no manifest entry fails `detailRoutes.test.js`).
+  Also add the URL to `sitemap.xml` and `llms.txt`.
+
 `npm run build` runs the prerenderer automatically (`postbuild`) and fails if a
 route renders empty or with the wrong title. Dev server (`npm start`) and
 deploy (`npm run deploy`) are unchanged.

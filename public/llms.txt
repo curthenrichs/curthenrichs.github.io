@@ -18,10 +18,23 @@ Note: this site is a client-side React application, so its pages require JavaScr
 - [Home](https://curthenrichs.github.io/): Biography and overview
 - [Resume](https://curthenrichs.github.io/resume): Interactive resume
 - [Career](https://curthenrichs.github.io/career): IDES (2021-present), UW-Madison research (2019-2021), Dedicated Computing internship
+- [IDES](https://curthenrichs.github.io/career/ides): Engineering work at Integrated Dynamic Electron Solutions
+- [UW-Madison Research](https://curthenrichs.github.io/career/uw-madison): Research at the People and Robots Lab
+- [Dedicated Computing](https://curthenrichs.github.io/career/dedicated-computing): Embedded software and hardware internship projects
 - [Education](https://curthenrichs.github.io/education): UW-Madison (M.S. Computer Science), MSOE (B.S. Computer Engineering)
+- [Milwaukee School of Engineering](https://curthenrichs.github.io/education/msoe): B.S. Computer Engineering
+- [University of Wisconsin - Madison](https://curthenrichs.github.io/education/uw-madison): M.S. Computer Science
 - [Projects](https://curthenrichs.github.io/projects): Research systems (Authr, CoFrame, ITER) and hobby robotics
 - [Publications](https://curthenrichs.github.io/publications): Peer-reviewed papers
 - [Contract Work](https://curthenrichs.github.io/contract): Contracting and consulting information
+
+## Project Pages
+
+- [Authr](https://curthenrichs.github.io/projects/authr): Authr is a human-robot task development tool based on Therbligs, helping engineers plan work allocation between operators and cobots.
+- [CoFrame](https://curthenrichs.github.io/projects/coframe): CoFrame is a cobot operator training environment that helps manufacturing staff learn to configure and work alongside collaborative robots.
+- [Task Interdependence and pRAD](https://curthenrichs.github.io/projects/iter): This research ran experiments to better understand how operators interact with cobots under varying task interdependence and predicted robot attention demand.
+- [Hobby Projects & Half-Built-Robots Blog](https://curthenrichs.github.io/projects/hobby-blog): A collection of hobby robotics and home automation projects documented on the Half-Built-Robots blog, from small bots to supernumerary robotic fingers.
+- [Portfolio Website](https://curthenrichs.github.io/projects/website): Background on the development of this portfolio website, covering its React and Ant Design implementation and design decisions.
 
 ## Publications
 

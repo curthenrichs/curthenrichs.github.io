@@ -32,6 +32,16 @@ const ROUTES = [
   { path: "/__prerender-404__", file: "404.html", title: "Curt Henrichs | Portfolio | Page Not Found" }
 ];
 
+// Detail pages: single-sourced from the app's route manifest.
+const detailRoutes = require(path.join(__dirname, "..", "src", "content", "detailRoutes.json"));
+detailRoutes.forEach((r) => {
+  ROUTES.push({
+    path: r.path,
+    file: `${r.path.slice(1)}/index.html`,
+    title: r.title
+  });
+});
+
 // Routes whose components call window.open — served as static redirect pages instead.
 const REDIRECTS = [
   {
