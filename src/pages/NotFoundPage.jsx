@@ -39,7 +39,7 @@ const NotFoundPage = () => {
             content: (
               <Result
                 icon={<CuteRobot question />}
-                title="404"
+                title="404 - Page Not Found"
                 subTitle="Apologies, but I don't know what you are looking for."
                 extra={<ReturnHomeButton />}
               />

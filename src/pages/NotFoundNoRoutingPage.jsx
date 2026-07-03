@@ -22,7 +22,7 @@ const NotFoundNoRoutingPage = () => {
       <PageMeta {...pageMeta.docsNotFound} />
       <Result
         icon={<CuteRobot question />}
-        title="404"
+        title="404 - Document Not Found"
         subTitle="Apologies, but I don't know what you are looking for."
       />
     </>
