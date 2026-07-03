@@ -1,0 +1,92 @@
+[
+  {
+    "key": "projects-authr",
+    "path": "/projects/authr",
+    "title": "Curt Henrichs | Portfolio | Authr",
+    "name": "Authr",
+    "description": "Authr is a human-robot task development tool based on Therbligs, helping engineers plan work allocation between operators and cobots.",
+    "section": "projects",
+    "contentId": "project-authr"
+  },
+  {
+    "key": "projects-coframe",
+    "path": "/projects/coframe",
+    "title": "Curt Henrichs | Portfolio | CoFrame",
+    "name": "CoFrame",
+    "description": "CoFrame is a cobot operator training environment that helps manufacturing staff learn to configure and work alongside collaborative robots.",
+    "section": "projects",
+    "contentId": "project-coframe"
+  },
+  {
+    "key": "projects-iter",
+    "path": "/projects/iter",
+    "title": "Curt Henrichs | Portfolio | Task Interdependence and pRAD",
+    "name": "Task Interdependence and pRAD",
+    "description": "This research ran experiments to better understand how operators interact with cobots under varying task interdependence and predicted robot attention demand.",
+    "section": "projects",
+    "contentId": "project-iter"
+  },
+  {
+    "key": "projects-hobby-blog",
+    "path": "/projects/hobby-blog",
+    "title": "Curt Henrichs | Portfolio | Hobby Projects & Half-Built-Robots Blog",
+    "name": "Hobby Projects & Half-Built-Robots Blog",
+    "description": "A collection of hobby robotics and home automation projects documented on the Half-Built-Robots blog, from small bots to supernumerary robotic fingers.",
+    "section": "projects",
+    "contentId": "project-hobby"
+  },
+  {
+    "key": "projects-website",
+    "path": "/projects/website",
+    "title": "Curt Henrichs | Portfolio | Portfolio Website",
+    "name": "Portfolio Website",
+    "description": "Background on the development of this portfolio website, covering its React and Ant Design implementation and design decisions.",
+    "section": "projects",
+    "contentId": "project-website"
+  },
+  {
+    "key": "career-ides",
+    "path": "/career/ides",
+    "title": "Curt Henrichs | Portfolio | IDES",
+    "name": "IDES",
+    "description": "A high-level overview of Curt's engineering work at Integrated Dynamic Electron Solutions (IDES), spanning firmware and embedded systems for electron microscopy.",
+    "section": "career",
+    "contentId": "career-ides"
+  },
+  {
+    "key": "career-uw-madison",
+    "path": "/career/uw-madison",
+    "title": "Curt Henrichs | Portfolio | UW-Madison Research",
+    "name": "UW-Madison Research",
+    "description": "An overview of research conducted at the People and Robots Lab at the University of Wisconsin - Madison, focused on human-robot interaction.",
+    "section": "career",
+    "contentId": "career-research"
+  },
+  {
+    "key": "career-dedicated-computing",
+    "path": "/career/dedicated-computing",
+    "title": "Curt Henrichs | Portfolio | Dedicated Computing",
+    "name": "Dedicated Computing",
+    "description": "A brief discussion of several embedded software and hardware projects Curt worked on during his internship at Dedicated Computing.",
+    "section": "career",
+    "contentId": "career-internship"
+  },
+  {
+    "key": "education-msoe",
+    "path": "/education/msoe",
+    "title": "Curt Henrichs | Portfolio | Milwaukee School of Engineering",
+    "name": "Milwaukee School of Engineering",
+    "description": "Curt earned a Bachelor of Science in Computer Engineering at the Milwaukee School of Engineering, studying embedded systems and networking.",
+    "section": "education",
+    "contentId": "education-msoe"
+  },
+  {
+    "key": "education-uw-madison",
+    "path": "/education/uw-madison",
+    "title": "Curt Henrichs | Portfolio | University of Wisconsin - Madison",
+    "name": "University of Wisconsin - Madison",
+    "description": "Curt earned a Master of Science in Computer Science at the University of Wisconsin - Madison, focused on human-robot interaction research.",
+    "section": "education",
+    "contentId": "education-uwmad"
+  }
+]
