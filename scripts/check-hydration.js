@@ -110,8 +110,16 @@ async function waitForVeilDismissed(page, timeoutMs) {
         timeout: 60000
       });
 
+      // Keep listeners attached through the veil wait: hydration errors can
+      // surface during this window, after networkidle0.
+      const veilState = await waitForVeilDismissed(page, VEIL_TIMEOUT_MS);
+
       page.off("console", onConsole);
       page.off("pageerror", onPageError);
+
+      if (veilState === "present") {
+        fail(`${route}: prerender veil never dismissed within ${VEIL_TIMEOUT_MS}ms`);
+      }
 
       const resourceWarnings = messages.filter(
         (m) =>
@@ -129,11 +137,6 @@ async function waitForVeilDismissed(page, timeoutMs) {
       }
       if (bad.length > 0) {
         fail(`${route}: console error(s):\n  ${bad.map((m) => `[${m.kind}] ${m.text}`).join("\n  ")}`);
-      }
-
-      const veilState = await waitForVeilDismissed(page, VEIL_TIMEOUT_MS);
-      if (veilState === "present") {
-        fail(`${route}: prerender veil never dismissed within ${VEIL_TIMEOUT_MS}ms`);
       }
 
       if (MARKER_CHECK_ROUTES.includes(route)) {

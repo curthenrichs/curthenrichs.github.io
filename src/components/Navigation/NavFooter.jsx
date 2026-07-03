@@ -86,7 +86,10 @@ const Footer = () => {
   return (
     <Fragment>
       <Divider type="horizontal" />
-      <Text strong suppressHydrationWarning>{`Curt Henrichs LLC © ${new Date().getFullYear()}`}</Text>
+      {/* suppressHydrationWarning must sit on the text node's DIRECT parent;
+          antd's <Text strong> wraps children in an inner <strong>, so the
+          prop would be inert on <Text> itself. */}
+      <Text strong><span suppressHydrationWarning>{`Curt Henrichs LLC © ${new Date().getFullYear()}`}</span></Text>
       <br />
       <Text>Created with Reactjs and Ant Design</Text>
       <br />

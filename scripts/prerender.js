@@ -74,7 +74,7 @@ const VEIL_STYLE = `<style>
 .prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
 .prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
 @keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-@media (prefers-reduced-motion:reduce){.prv-robot,.prv-antenna::before,.prv-eye{animation-play-state:paused}}
+@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}}
 </style>`;
 
 const VEIL_HTML =
