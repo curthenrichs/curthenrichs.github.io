@@ -139,7 +139,8 @@ const ItemCardTemplate = (props) => {
     children,
     publications,
     positions,
-    preloadImages
+    preloadImages,
+    detailPath
   } = props;
 
   const handlePreload = useCallback(() => {
@@ -191,35 +192,59 @@ const ItemCardTemplate = (props) => {
     );
   }
 
+  const openModal = () => setVisible(true);
+
+  const cardInner = (
+    <Card
+      title={title}
+      bordered={true}
+      style={{
+        textAlign: "center"
+      }}
+      hoverable={true}
+      extra={icon}
+      className="type-c">
+      {layout}
+    </Card>
+  );
+
+  const wrapperStyle = { ...style, cursor: "pointer" };
+
+  const cardWrapper = detailPath ? (
+    <a
+      id={id}
+      href={detailPath}
+      onClick={(event) => {
+        // Real link for agents/no-JS/right-click; browsing humans get the modal
+        event.preventDefault();
+        openModal();
+      }}
+      onMouseEnter={handlePreload}
+      onFocus={handlePreload}
+      style={{ ...wrapperStyle, display: "block", color: "inherit", textDecoration: "none" }}>
+      {cardInner}
+    </a>
+  ) : (
+    <div
+      id={id}
+      role="button"
+      tabIndex="0"
+      onClick={openModal}
+      onKeyDown={(event) => {
+        if (event.key === "Enter") {
+          openModal();
+        }
+      }}
+      onMouseEnter={handlePreload}
+      onFocus={handlePreload}
+      style={wrapperStyle}>
+      {cardInner}
+    </div>
+  );
+
   return (
     <Fragment>
-      <div
-        id={id}
-        role="button"
-        tabIndex="0"
-        onClick={() => {
-          setVisible(true);
-        }}
-        onKeyDown={(event) => {
-          if (event.key === "Enter") {
-            setVisible(true);
-          }
-        }}
-        onMouseEnter={handlePreload}
-        onFocus={handlePreload}
-        style={{ ...style, cursor: "pointer" }}>
-        <Card
-          title={title}
-          bordered={true}
-          style={{
-            textAlign: "center"
-          }}
-          hoverable={true}
-          extra={icon}
-          className="type-c">
-          {layout}
-        </Card>
-      </div>
+      {cardWrapper}
       <ItemModalTemplate
         title={title}
         open={visible}
