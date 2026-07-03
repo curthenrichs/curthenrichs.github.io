@@ -42,6 +42,12 @@ const MARKER_CHECK_ROUTES = ["/", "/career"];
 
 const MISMATCH_PATTERN = /hydrat|did not match|#418|#423|#425/i;
 
+// Resource-load failures (missing images etc.) are pre-existing content
+// issues, not hydration defects: surfaced as warnings, exempt from failing
+// the run. Only applies to console-type "error" messages; page JS errors
+// and any MISMATCH_PATTERN match at any level still fail.
+const RESOURCE_LOAD_PATTERN = /Failed to load resource.*(404|net::)/i;
+
 let failed = false;
 
 function fail(message) {
@@ -89,7 +95,12 @@ async function waitForVeilDismissed(page, timeoutMs) {
 
     for (const route of ROUTES) {
       const messages = [];
-      const onConsole = (msg) => messages.push({ kind: msg.type(), text: msg.text() });
+      const onConsole = (msg) => {
+        // Resource-load failures carry the failing URL in location(), not text().
+        const url = (msg.location() || {}).url;
+        const text = url ? `${msg.text()} (${url})` : msg.text();
+        messages.push({ kind: msg.type(), text });
+      };
       const onPageError = (err) => messages.push({ kind: "pageerror", text: String(err) });
       page.on("console", onConsole);
       page.on("pageerror", onPageError);
@@ -102,9 +113,20 @@ async function waitForVeilDismissed(page, timeoutMs) {
       page.off("console", onConsole);
       page.off("pageerror", onPageError);
 
-      const bad = messages.filter(
-        (m) => m.kind === "error" || m.kind === "pageerror" || MISMATCH_PATTERN.test(m.text)
+      const resourceWarnings = messages.filter(
+        (m) =>
+          m.kind === "error" &&
+          RESOURCE_LOAD_PATTERN.test(m.text) &&
+          !MISMATCH_PATTERN.test(m.text)
       );
+      const bad = messages.filter(
+        (m) =>
+          !resourceWarnings.includes(m) &&
+          (m.kind === "error" || m.kind === "pageerror" || MISMATCH_PATTERN.test(m.text))
+      );
+      for (const m of resourceWarnings) {
+        console.warn(`warn: [${route}] ${m.text}`);
+      }
       if (bad.length > 0) {
         fail(`${route}: console error(s):\n  ${bad.map((m) => `[${m.kind}] ${m.text}`).join("\n  ")}`);
       }
@@ -123,8 +145,10 @@ async function waitForVeilDismissed(page, timeoutMs) {
         }
       }
 
+      const warnNote =
+        resourceWarnings.length > 0 ? `, ${resourceWarnings.length} resource warning(s)` : "";
       console.log(
-        `checked ${route} -- veil ${veilState}, ${bad.length === 0 ? "no console errors" : `${bad.length} console error(s)`}`
+        `checked ${route} -- veil ${veilState}, ${bad.length === 0 ? "no console errors" : `${bad.length} console error(s)`}${warnNote}`
       );
     }
   } finally {
