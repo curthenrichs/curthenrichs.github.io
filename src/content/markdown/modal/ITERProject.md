@@ -1,4 +1,4 @@
-# Experiments
+﻿# Cobot Interaction Experiments
 
 During graduate school, I investigated how human workers collaborate with the cobot. My colleagues and I developed two experiments, pRAD and Task Interdependence, within an experiment protocol. We used a Universal Robots UR3e cobot for this research. Check out the repo [here](https://github.com/Wisc-HCI/ITER).
 
