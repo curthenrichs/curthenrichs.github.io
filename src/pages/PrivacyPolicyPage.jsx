@@ -1,4 +1,6 @@
 import React from "react";
+import PageMeta from "../components/PageMeta";
+import pageMeta from "../content/pageMeta";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionPrivacyPolicy from "./sections/Privacy";
@@ -7,42 +9,45 @@ import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const PrivacyPolicyPage = () => {
   return (
-    <PageTemplate
-      header={{
-        simple: true,
-        pageName: "Privacy Policy",
-        sectionButtons: [
+    <>
+      <PageMeta {...pageMeta.privacy} />
+      <PageTemplate
+        header={{
+          simple: true,
+          pageName: "Privacy Policy",
+          sectionButtons: [
+            {
+              id: "policy-btn",
+              flexPx: 150,
+              content: "Policy"
+            }
+          ],
+          primaryRouteButtons: primaryRouteOptions,
+          secondaryRouteButtons: secondaryRouteOptions.filter((value) => (value.id !== "privacy-btn"))
+        }}
+        sections={[
           {
-            id: "policy-btn",
-            flexPx: 150,
-            content: "Policy"
-          }
-        ],
-        primaryRouteButtons: primaryRouteOptions,
-        secondaryRouteButtons: secondaryRouteOptions.filter((value) => (value.id !== "privacy-btn"))
-      }}
-      sections={[
-        {
-          name: "sect-home",
-          navItem: "policy-btn",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
+            name: "sect-home",
+            navItem: "policy-btn",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            sectionType: "type-a",
+            content: <SectionPrivacyPolicy />
           },
-          sectionType: "type-a",
-          content: <SectionPrivacyPolicy />
-        },
-        {
-          name: "sect-return",
-          navItem: "policy-btn",
-          scrollProperties: null,
-          sectionType: "type-a",
-          style: { paddingTop: "3em" },
-          content: <ReturnHome />
-        }
-      ]}
-    />
+          {
+            name: "sect-return",
+            navItem: "policy-btn",
+            scrollProperties: null,
+            sectionType: "type-a",
+            style: { paddingTop: "3em" },
+            content: <ReturnHome />
+          }
+        ]}
+      />
+    </>
   );
 };
 

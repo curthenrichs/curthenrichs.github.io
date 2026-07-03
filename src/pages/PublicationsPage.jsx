@@ -1,4 +1,6 @@
 import React from "react";
+import PageMeta from "../components/PageMeta";
+import pageMeta from "../content/pageMeta";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionList from "./sections/Publications";
@@ -8,49 +10,52 @@ import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const PublicationsPage = () => {
   return (
-    <PageTemplate
-      header={{
-        simple: true,
-        pageName: "Publications",
-        sectionButtons: [
+    <>
+      <PageMeta {...pageMeta.publications} />
+      <PageTemplate
+        header={{
+          simple: true,
+          pageName: "Publications",
+          sectionButtons: [
+            {
+              id: "publication-btn",
+              flexPx: 150,
+              content: "Publications"
+            }
+          ],
+          primaryRouteButtons: primaryRouteOptions,
+          secondaryRouteButtons: secondaryRouteOptions
+        }}
+        sections={[
           {
-            id: "publication-btn",
-            flexPx: 150,
-            content: "Publications"
-          }
-        ],
-        primaryRouteButtons: primaryRouteOptions,
-        secondaryRouteButtons: secondaryRouteOptions
-      }}
-      sections={[
-        {
-          name: "sect-inspiration",
-          navItem: "publication-btn",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
+            name: "sect-inspiration",
+            navItem: "publication-btn",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            sectionType: "type-a",
+            content: <SectionInspiration title="Publications" />
           },
-          sectionType: "type-a",
-          content: <SectionInspiration title="Publications" />
-        },
-        {
-          name: "sect-list",
-          navItem: "publication-btn",
-          scrollProperties: null,
-          sectionType: "type-b",
-          content: <SectionList title="" />
-        },
-        {
-          name: "sect-return",
-          navItem: "publication-btn",
-          scrollProperties: null,
-          sectionType: "type-a",
-          style: { paddingTop: "3em" },
-          content: <ReturnHome />
-        }
-      ]}
-    />
+          {
+            name: "sect-list",
+            navItem: "publication-btn",
+            scrollProperties: null,
+            sectionType: "type-b",
+            content: <SectionList title="" />
+          },
+          {
+            name: "sect-return",
+            navItem: "publication-btn",
+            scrollProperties: null,
+            sectionType: "type-a",
+            style: { paddingTop: "3em" },
+            content: <ReturnHome />
+          }
+        ]}
+      />
+    </>
   );
 };
 

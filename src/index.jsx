@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 import "antd/dist/antd.css";
 import "./index.css";
@@ -31,25 +32,27 @@ const ExternalRedirect = ({ url }) => {
 const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="/attribution" element={<AttributionPage />} />
-        <Route path="/terms" element={<TermsOfUsePage />} />
-        <Route path="/accessibility" element={<AccessibilityPolicyPage />} />
-        <Route path="/privacy" element={<PrivacyPolicyPage />} />
-        <Route path="/resume" element={<ExternalRedirect url={contactData.resume.link} />} />
-        <Route path="/blog" element={<ExternalRedirect url={contactData.blog.link} />} />
-        <Route path="/contract" element={<ContractingPage />} />
-        <Route path="/career" element={<CareerPage />} />
-        <Route path="/education" element={<EducationPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/publications" element={<PublicationsPage />} />
-        <Route path="/docs/*" element={<NotFoundNoRoutingPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/attribution" element={<AttributionPage />} />
+          <Route path="/terms" element={<TermsOfUsePage />} />
+          <Route path="/accessibility" element={<AccessibilityPolicyPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/resume" element={<ExternalRedirect url={contactData.resume.link} />} />
+          <Route path="/blog" element={<ExternalRedirect url={contactData.blog.link} />} />
+          <Route path="/contract" element={<ContractingPage />} />
+          <Route path="/career" element={<CareerPage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/publications" element={<PublicationsPage />} />
+          <Route path="/docs/*" element={<NotFoundNoRoutingPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );
 

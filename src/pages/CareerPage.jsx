@@ -1,4 +1,6 @@
 import React from "react";
+import PageMeta from "../components/PageMeta";
+import pageMeta from "../content/pageMeta";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionList from "./sections/Career";
@@ -8,49 +10,52 @@ import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const CareerPage = () => {
   return (
-    <PageTemplate
-      header={{
-        simple: true,
-        pageName: "Career",
-        sectionButtons: [
+    <>
+      <PageMeta {...pageMeta.career} />
+      <PageTemplate
+        header={{
+          simple: true,
+          pageName: "Career",
+          sectionButtons: [
+            {
+              id: "career-btn",
+              flexPx: 150,
+              content: "Career"
+            }
+          ],
+          primaryRouteButtons: primaryRouteOptions,
+          secondaryRouteButtons: secondaryRouteOptions
+        }}
+        sections={[
           {
-            id: "career-btn",
-            flexPx: 150,
-            content: "Career"
-          }
-        ],
-        primaryRouteButtons: primaryRouteOptions,
-        secondaryRouteButtons: secondaryRouteOptions
-      }}
-      sections={[
-        {
-          name: "sect-inspiration",
-          navItem: "career-btn",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
+            name: "sect-inspiration",
+            navItem: "career-btn",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            sectionType: "type-a",
+            content: <SectionInspiration title="Career" noBr={true} />
           },
-          sectionType: "type-a",
-          content: <SectionInspiration title="Career" noBr={true} />
-        },
-        {
-          name: "sect-list",
-          navItem: "career-btn",
-          scrollProperties: null,
-          sectionType: "type-b",
-          content: <SectionList title=""/>
-        },
-        {
-          name: "sect-return",
-          navItem: "career-btn",
-          scrollProperties: null,
-          sectionType: "type-a",
-          style: { paddingTop: "3em" },
-          content: <ReturnHome />
-        }
-      ]}
-    />
+          {
+            name: "sect-list",
+            navItem: "career-btn",
+            scrollProperties: null,
+            sectionType: "type-b",
+            content: <SectionList title=""/>
+          },
+          {
+            name: "sect-return",
+            navItem: "career-btn",
+            scrollProperties: null,
+            sectionType: "type-a",
+            style: { paddingTop: "3em" },
+            content: <ReturnHome />
+          }
+        ]}
+      />
+    </>
   );
 };
 
