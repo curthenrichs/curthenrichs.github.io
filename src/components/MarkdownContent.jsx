@@ -29,6 +29,29 @@ const htmlDirective = () => {
   return transform;
 };
 
+// react-markdown can emit adjacent text nodes (e.g. nested lists: item text +
+// newline). Browsers coalesce them when re-parsing prerendered HTML, which
+// desyncs hydration. Merging them in the tree makes render match parse.
+function rehypeMergeAdjacentText() {
+  const merge = (node) => {
+    if (!node.children) return;
+    node.children.forEach(merge);
+    const merged = [];
+    node.children.forEach((child) => {
+      const prev = merged[merged.length - 1];
+      if (prev && prev.type === "text" && child.type === "text") {
+        prev.value += child.value;
+      } else {
+        merged.push(child);
+      }
+    });
+    node.children = merged;
+  };
+  return (tree) => {
+    merge(tree);
+  };
+}
+
 // Prerender markdown cache: scripts/prerender.js snapshots this map (fetched
 // markdown text keyed by the same URL used to fetch it) into each captured
 // page's <head>. On hydration the first render can then produce the markdown
@@ -132,7 +155,11 @@ const MarkdownContent = (props) => {
   };
 
   return (
-    <ReactMarkdown components={components} remarkPlugins={[remarkGfm, remarkDirective, htmlDirective]}>
+    <ReactMarkdown
+      components={components}
+      remarkPlugins={[remarkGfm, remarkDirective, htmlDirective]}
+      rehypePlugins={[rehypeMergeAdjacentText]}
+    >
       {markdown}
     </ReactMarkdown>
   );
