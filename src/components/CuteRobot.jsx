@@ -10,14 +10,19 @@ import "./CuteRobot.css";
 const CuteRobot = ({ question = false }) => {
   return (
     <span
-      className="cute-robot-container"
+      className={`cute-robot-container${question ? " cute-robot-has-question" : ""}`}
       role="img"
       aria-label={question ? "A confused robot" : "A friendly robot"}
     >
       {question && (
-        <span className="cute-robot-question" aria-hidden="true">
-          ?
-        </span>
+        <>
+          <span className="cute-robot-q cute-robot-q-main" aria-hidden="true">
+            ?
+          </span>
+          <span className="cute-robot-q cute-robot-q-small" aria-hidden="true">
+            ?
+          </span>
+        </>
       )}
       <span className="cute-robot-robot" aria-hidden="true">
         <span className="cute-robot-antenna" />
