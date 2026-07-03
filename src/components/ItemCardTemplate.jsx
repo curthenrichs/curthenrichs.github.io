@@ -215,6 +215,10 @@ const ItemCardTemplate = (props) => {
       id={id}
       href={detailPath}
       onClick={(event) => {
+        // Let modifier-clicks (new tab/window) fall through to the real link
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+          return;
+        }
         // Real link for agents/no-JS/right-click; browsing humans get the modal
         event.preventDefault();
         openModal();
