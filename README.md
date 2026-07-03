@@ -95,3 +95,16 @@ made this possible. I truly am standing on the shoulders of giants.
 ## Notes
 My resume and cover letter design files are in the root's docs directory. This is
 to make my life easier when updating my profile in the future.
+
+## Adding a New Page
+
+Prerendering requires each route to be registered in four places:
+
+1. `src/index.jsx` — add the `<Route>`.
+2. `src/content/pageMeta.js` — add a metadata entry (title format `Curt Henrichs | Portfolio | <Page>`); render `<PageMeta {...pageMeta.<key>} />` inside the new page component.
+3. `scripts/prerender.js` — add the route to `ROUTES` (title must match pageMeta exactly).
+4. `public/sitemap.xml` — add the URL.
+
+`npm run build` runs the prerenderer automatically (`postbuild`) and fails if a
+route renders empty or with the wrong title. Dev server (`npm start`) and
+deploy (`npm run deploy`) are unchanged.
