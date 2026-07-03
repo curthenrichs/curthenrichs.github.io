@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Result } from "antd";
 import PageMeta from "../components/PageMeta";
 import pageMeta from "../content/pageMeta";
+import CuteRobot from "../components/CuteRobot";
 import { dismissPrerenderVeil } from "../utils/prerenderVeil";
 
 const NotFoundNoRoutingPage = () => {
@@ -20,7 +21,7 @@ const NotFoundNoRoutingPage = () => {
     <>
       <PageMeta {...pageMeta.docsNotFound} />
       <Result
-        status="404"
+        icon={<CuteRobot question />}
         title="404"
         subTitle="Apologies, but I don't know what you are looking for."
       />

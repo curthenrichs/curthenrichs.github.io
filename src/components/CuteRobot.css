@@ -1,0 +1,124 @@
+/* Reusable CSS-drawn robot illustration. Visually matches the loading-veil
+ * robot injected by scripts/prerender.js (same proportions/colors) but is a
+ * fully independent component -- classes are prefixed cute-robot- and must
+ * never be renamed to prv- (that prefix is reserved for the prerender veil's
+ * injected inline <style>, which lives outside React and cannot see this
+ * file). */
+.cute-robot-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 160px;
+}
+
+.cute-robot-question {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #1890ff;
+  line-height: 1;
+  margin-bottom: 14px;
+  transform: translateX(16px) rotate(8deg) translateY(0);
+  animation: cute-robot-question-bob 1.6s ease-in-out 0.8s infinite;
+}
+
+@keyframes cute-robot-question-bob {
+  0%,
+  100% {
+    transform: translateX(16px) rotate(8deg) translateY(0);
+  }
+  50% {
+    transform: translateX(16px) rotate(8deg) translateY(-8px);
+  }
+}
+
+.cute-robot-robot {
+  position: relative;
+  display: inline-block;
+  animation: cute-robot-bob 1.6s ease-in-out infinite;
+}
+
+@keyframes cute-robot-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.cute-robot-antenna {
+  display: block;
+  width: 7px;
+  height: 24px;
+  background: #555;
+  margin: 0 auto;
+  border-radius: 3px;
+  position: relative;
+}
+
+.cute-robot-antenna::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -5.5px;
+  width: 17px;
+  height: 17px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: cute-robot-glow 1.6s ease-in-out infinite;
+}
+
+@keyframes cute-robot-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cute-robot-head {
+  width: 109px;
+  height: 78px;
+  border: 5px solid #555;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.cute-robot-eye {
+  width: 17px;
+  height: 17px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: cute-robot-blink 3.2s infinite;
+}
+
+@keyframes cute-robot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cute-robot-question,
+  .cute-robot-robot,
+  .cute-robot-antenna::before,
+  .cute-robot-eye {
+    animation: none;
+  }
+}

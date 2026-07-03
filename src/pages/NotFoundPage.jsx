@@ -3,6 +3,7 @@ import PageMeta from "../components/PageMeta";
 import pageMeta from "../content/pageMeta";
 import PageTemplate from "../components/PageTemplate";
 import ReturnHomeButton from "../components/ReturnHomeButton";
+import CuteRobot from "../components/CuteRobot";
 import { Result } from "antd";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
@@ -37,7 +38,7 @@ const NotFoundPage = () => {
             },
             content: (
               <Result
-                status="404"
+                icon={<CuteRobot question />}
                 title="404"
                 subTitle="Apologies, but I don't know what you are looking for."
                 extra={<ReturnHomeButton />}

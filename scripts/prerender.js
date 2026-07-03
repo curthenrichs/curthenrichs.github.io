@@ -62,7 +62,7 @@ const MARKER =
 // noscript hides it entirely, and a 5s keyframe auto-fades it if JS never runs.
 // The robot fades in after 300ms so fast loads see only a blank blink.
 const VEIL_STYLE = `<style>
-#prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 5s forwards}
+#prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 5s forwards}
 #prerender-veil.prv-hidden{opacity:0;pointer-events:none}
 @keyframes prv-timeout{to{opacity:0;visibility:hidden}}
 .prv-robot{position:relative;opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
@@ -74,14 +74,17 @@ const VEIL_STYLE = `<style>
 .prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
 .prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
 @keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}}
+.prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
+@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}.prv-label{opacity:1;animation:none}}
 </style>`;
 
 const VEIL_HTML =
   `<div id="prerender-veil" aria-hidden="true">` +
   `<div class="prv-robot"><div class="prv-antenna"></div>` +
   `<div class="prv-head"><div class="prv-eye"></div><div class="prv-eye"></div></div>` +
-  `</div></div>` +
+  `</div>` +
+  `<div class="prv-label">Loading&#8230;</div>` +
+  `</div>` +
   `<noscript><style>#prerender-veil{display:none}</style></noscript>`;
 
 function fail(message) {
