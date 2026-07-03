@@ -1,4 +1,4 @@
-# MSOE
+﻿# Milwaukee School of Engineering
 During my time at MSOE I achieved the following degree:
 
 Bachelor of Science
