@@ -27,8 +27,18 @@ const SectionInspirationPublications = (props) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       {(title !== null) && (<SectionTitle title={title} />)}
-      <Paragraph italic style={{ textAlign: "center" }} suppressHydrationWarning>&quot;{selected.quote}&quot;</Paragraph>
-      <Paragraph italic style={{ textAlign: "center" }} suppressHydrationWarning>- {selected.attribution}</Paragraph>
+      {/* Each quote line must be a SINGLE text node (template string, not
+          adjacent JSX text+expression children, which the HTML parser merges
+          and hydration then miscounts), and suppressHydrationWarning must
+          sit on the element that DIRECTLY contains the text (antd's `italic`
+          prop wraps children in an <i>, so the Paragraph itself is the
+          wrong element for it). */}
+      <Paragraph italic style={{ textAlign: "center" }}>
+        <span suppressHydrationWarning>{`"${selected.quote}"`}</span>
+      </Paragraph>
+      <Paragraph italic style={{ textAlign: "center" }}>
+        <span suppressHydrationWarning>{`- ${selected.attribution}`}</span>
+      </Paragraph>
       {(!noBr) && <br />}
     </div>
   );

@@ -29,13 +29,46 @@ const htmlDirective = () => {
   return transform;
 };
 
+// Prerender markdown cache: scripts/prerender.js snapshots this map (fetched
+// markdown text keyed by the same URL used to fetch it) into each captured
+// page's <head>. On hydration the first render can then produce the markdown
+// synchronously, matching the snapshot's already-rendered content instead of
+// racing an empty first render against it (which aborts hydration). The map
+// is intentionally never deleted after mount: client-side navigation simply
+// reuses entries (harmless; saves a refetch), and unknown keys fall through
+// to the normal fetch path.
+const readPrerenderMdCache = (src) => {
+  if (typeof window === "undefined" || !window.__PRERENDER_MD__) {
+    return undefined;
+  }
+  return window.__PRERENDER_MD__[src];
+};
+
+const recordPrerenderMdCache = (src, text) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+  window.__PRERENDER_MD__ = window.__PRERENDER_MD__ || {};
+  window.__PRERENDER_MD__[src] = text;
+};
+
 const MarkdownContent = (props) => {
   const { markdownPath, images } = props;
 
-  const [markdown, setMarkdown] = useState("");
+  const cached = readPrerenderMdCache(markdownPath);
+  const [markdown, setMarkdown] = useState(cached !== undefined ? cached : "");
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    const cachedText = readPrerenderMdCache(markdownPath);
+    if (cachedText !== undefined) {
+      // Covers markdownPath changing after mount to an already-cached key;
+      // on first mount this is a same-value set (React bails out).
+      setMarkdown(cachedText);
+      setError(false);
+      return undefined;
+    }
+
     const abortController = new AbortController();
 
     fetch(markdownPath, { signal: abortController.signal })
@@ -46,6 +79,7 @@ const MarkdownContent = (props) => {
         return res.text();
       })
       .then((text) => {
+        recordPrerenderMdCache(markdownPath, text);
         setMarkdown(text);
         setError(false);
       })

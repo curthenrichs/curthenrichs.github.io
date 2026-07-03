@@ -147,8 +147,21 @@ function startServer() {
         fail(`${route.path}: #root has only ${rootChars} chars of content`);
       }
 
+      // Markdown fetched during this capture (recorded by MarkdownContent
+      // into window.__PRERENDER_MD__, keyed by fetch URL). Baked into the
+      // head so the client's first hydration render emits the same markdown
+      // synchronously instead of racing an async fetch (an empty first
+      // render vs. the populated snapshot aborts hydration). Injected only
+      // when non-empty to keep markdown-free pages clean.
+      const mdCache = await page.evaluate(() => window.__PRERENDER_MD__ || {});
+      // Escape "<" so markdown content can never break out via </script>.
+      const mdScript =
+        Object.keys(mdCache).length > 0
+          ? `<script>window.__PRERENDER_MD__=${JSON.stringify(mdCache).replace(/</g, "\\u003c")};</script>`
+          : "";
+
       let html = await page.content();
-      html = html.replace("<head>", `<head>${MARKER}${VEIL_STYLE}`);
+      html = html.replace("<head>", `<head>${mdScript}${MARKER}${VEIL_STYLE}`);
       // Veil sits OUTSIDE #root so hydration never sees it
       html = html.replace("</body>", `${VEIL_HTML}</body>`);
       captures.push({ route, html, rootChars });
