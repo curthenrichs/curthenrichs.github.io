@@ -17,8 +17,6 @@ const onDirective = (node) => {
     hName: hast.tagName,
     hProperties: hast.properties
   };
-
-  console.log(node);
 };
 
 const transform = (tree) => {
@@ -76,7 +74,7 @@ const recordPrerenderMdCache = (src, text) => {
 };
 
 const MarkdownContent = (props) => {
-  const { markdownPath, images } = props;
+  const { markdownPath, images, disableLinks } = props;
 
   const cached = readPrerenderMdCache(markdownPath);
   const [markdown, setMarkdown] = useState(cached !== undefined ? cached : "");
@@ -137,6 +135,13 @@ const MarkdownContent = (props) => {
       );
     },
     a: (props) => {
+      if (disableLinks) {
+        // Card context: markdown links would nest an <a> inside the card's
+        // own anchor wrapper, which browsers split apart and desyncs
+        // hydration. Render plain text instead; modals/detail pages (which
+        // don't set this prop) keep real links.
+        return <span>{props.children}</span>;
+      }
       // Update target / metadata path info
       return (
         <a href={props.href} target="_blank" rel="noopener noreferrer">

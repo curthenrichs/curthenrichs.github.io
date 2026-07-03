@@ -77,5 +77,28 @@ describe("PageMeta", () => {
     expect(
       document.querySelector("meta[property=\"og:image\"]").getAttribute("content")
     ).toBe("https://curthenrichs.github.io/static/img/projects/authr/authr-setup.jpg");
+    expect(
+      document.querySelector("meta[property=\"og:image:alt\"]").getAttribute("content")
+    ).toBe("Portrait of Curt Henrichs");
+  });
+
+  test("supports ogImageAlt override", async () => {
+    render(
+      <HelmetProvider>
+        <PageMeta
+          title="Curt Henrichs | Portfolio | Test4"
+          description="D."
+          path="/y"
+          ogImage="https://curthenrichs.github.io/static/img/projects/authr/authr-setup.jpg"
+          ogImageAlt="Image from Authr"
+        />
+      </HelmetProvider>
+    );
+    await waitFor(() =>
+      expect(document.title).toBe("Curt Henrichs | Portfolio | Test4")
+    );
+    expect(
+      document.querySelector("meta[property=\"og:image:alt\"]").getAttribute("content")
+    ).toBe("Image from Authr");
   });
 });

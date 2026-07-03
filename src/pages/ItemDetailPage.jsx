@@ -22,12 +22,20 @@ const SITE_ORIGIN = "https://curthenrichs.github.io";
 
 const ItemDetailPage = ({ route }) => {
   const entry = CONTENT[route.section][route.contentId];
-  const firstCarouselImg = (entry.images || []).filter((i) => i.carousel)[0];
-  const ogImage = firstCarouselImg ? `${SITE_ORIGIN}${firstCarouselImg.img}` : undefined;
+  const images = entry.images || [];
+  const ogImageEntry =
+    images.filter((i) => i.carousel)[0] || images.filter((i) => i.img)[0];
+  const ogImage = ogImageEntry ? `${SITE_ORIGIN}${ogImageEntry.img}` : undefined;
 
   return (
     <>
-      <PageMeta {...route} ogImage={ogImage} />
+      <PageMeta
+        title={route.title}
+        description={route.description}
+        path={route.path}
+        ogImage={ogImage}
+        ogImageAlt={ogImage ? `Image from ${route.name}` : undefined}
+      />
       <PageTemplate
         header={{
           simple: true,

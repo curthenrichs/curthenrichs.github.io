@@ -73,7 +73,7 @@ const LongCardContent = (props) => {
   let textSect = null;
 
   if (markdownPath !== undefined && markdownPath !== null) {
-    textSect = <ErrorBoundary><MarkdownContent markdownPath={markdownPath} /></ErrorBoundary>;
+    textSect = <ErrorBoundary><MarkdownContent markdownPath={markdownPath} disableLinks /></ErrorBoundary>;
   }
 
   return (

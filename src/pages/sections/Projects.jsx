@@ -11,12 +11,7 @@ import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import { BP_CONTENT_MAX_WIDTH } from "../../breakpoints";
 import ItemModalContent from "../../components/ItemModalContent";
-import detailRoutes from "../../content/detailRoutes.json";
-
-const detailPathByContentId = {};
-detailRoutes.forEach((r) => {
-  detailPathByContentId[r.contentId] = r.path;
-});
+import detailPathByContentId from "../../content/detailPaths";
 
 const TypeToIcon = (type) => {
   switch (type.toLowerCase()) {
