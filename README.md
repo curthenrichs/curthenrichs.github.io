@@ -108,3 +108,11 @@ Prerendering requires each route to be registered in four places:
 `npm run build` runs the prerenderer automatically (`postbuild`) and fails if a
 route renders empty or with the wrong title. Dev server (`npm start`) and
 deploy (`npm run deploy`) are unchanged.
+
+- `npm run serve` uses a blanket SPA rewrite and does not emulate GitHub
+  Pages' real per-route file serving — use `npm run check:hydration` for
+  local verification.
+- Puppeteer (used by both the prerenderer and `check:hydration`) requires
+  Node >= 22.12.
+- GitHub Pages 301-redirects `/career` to `/career/` (and similarly for other
+  routes), so post-deploy `curl` checks need `-L` to follow the redirect.

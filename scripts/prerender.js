@@ -43,8 +43,15 @@ const REDIRECTS = [
     file: "blog/index.html",
     target: "https://www.half-built-robots.com/",
     label: "Half-Built Robots, Curt Henrichs' blog"
+  },
+  {
+    file: "home/index.html",
+    target: "/",
+    label: "Curt Henrichs' portfolio home"
   }
 ];
+
+const SITE_ORIGIN = "https://curthenrichs.github.io";
 
 const MARKER =
   `<script>window.__PRERENDERED_WIDTH__=${VIEWPORT.width};` +
@@ -67,6 +74,7 @@ const VEIL_STYLE = `<style>
 .prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
 .prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
 @keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@media (prefers-reduced-motion:reduce){.prv-robot,.prv-antenna::before,.prv-eye{animation-play-state:paused}}
 </style>`;
 
 const VEIL_HTML =
@@ -82,13 +90,16 @@ function fail(message) {
 }
 
 function redirectHtml(target, label) {
+  // <link rel="canonical"> must be an absolute URL per spec; relative
+  // targets (e.g. the /resume PDF, /home) need the site origin prefixed.
+  const canonical = target.startsWith("/") ? `${SITE_ORIGIN}${target}` : target;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="refresh" content="0;url=${target}">
-<link rel="canonical" href="${target}">
+<link rel="canonical" href="${canonical}">
 <title>Redirecting to ${label}</title>
 </head>
 <body>
@@ -161,9 +172,17 @@ function startServer() {
           : "";
 
       let html = await page.content();
-      html = html.replace("<head>", `<head>${mdScript}${MARKER}${VEIL_STYLE}`);
+      // Replacer-function form: a plain string replacement would treat any
+      // "$&"/"$`"/"$'"/"$$" inside the injected content (markdown cache is
+      // arbitrary text) as a special pattern and silently corrupt the output.
+      html = html.replace("<head>", () => `<head>${mdScript}${MARKER}${VEIL_STYLE}`);
       // Veil sits OUTSIDE #root so hydration never sees it
-      html = html.replace("</body>", `${VEIL_HTML}</body>`);
+      html = html.replace("</body>", () => `${VEIL_HTML}</body>`);
+
+      if (!html.includes("__PRERENDERED_WIDTH__") || !html.includes('id="prerender-veil"')) {
+        fail(`${route.path}: marker/veil injection self-check failed`);
+      }
+
       captures.push({ route, html, rootChars });
       console.log(`prerendered ${route.path} (${rootChars} chars)`);
     }
