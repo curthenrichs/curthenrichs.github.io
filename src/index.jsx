@@ -48,6 +48,8 @@ const app = (
           <Route path="/education" element={<EducationPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/publications" element={<PublicationsPage />} />
+          {/* Bare /docs is a page miss; /docs/<anything> is a document miss */}
+          <Route path="/docs" element={<NotFoundPage />} />
           <Route path="/docs/*" element={<NotFoundNoRoutingPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
