@@ -59,4 +59,23 @@ describe("PageMeta", () => {
       document.querySelector("meta[name=\"robots\"]").getAttribute("content")
     ).toBe("noindex");
   });
+
+  test("supports ogImage override", async () => {
+    render(
+      <HelmetProvider>
+        <PageMeta
+          title="Curt Henrichs | Portfolio | Test3"
+          description="D."
+          path="/x"
+          ogImage="https://curthenrichs.github.io/static/img/projects/authr/authr-setup.jpg"
+        />
+      </HelmetProvider>
+    );
+    await waitFor(() =>
+      expect(document.title).toBe("Curt Henrichs | Portfolio | Test3")
+    );
+    expect(
+      document.querySelector("meta[property=\"og:image\"]").getAttribute("content")
+    ).toBe("https://curthenrichs.github.io/static/img/projects/authr/authr-setup.jpg");
+  });
 });

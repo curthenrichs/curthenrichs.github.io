@@ -18,9 +18,11 @@ import EducationPage from "./pages/EducationPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import PublicationsPage from "./pages/PublicationsPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
+import ItemDetailPage from "./pages/ItemDetailPage";
 
 import reportWebVitals from "./reportWebVitals";
 import contactData from "./content/contact";
+import detailRoutes from "./content/detailRoutes.json";
 
 const ExternalRedirect = ({ url }) => {
   useEffect(() => {
@@ -48,6 +50,9 @@ const app = (
           <Route path="/education" element={<EducationPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/publications" element={<PublicationsPage />} />
+          {detailRoutes.map((r) => (
+            <Route key={r.key} path={r.path} element={<ItemDetailPage route={r} />} />
+          ))}
           {/* Bare /docs is a page miss; /docs/<anything> is a document miss */}
           <Route path="/docs" element={<NotFoundPage />} />
           <Route path="/docs/*" element={<NotFoundNoRoutingPage />} />
