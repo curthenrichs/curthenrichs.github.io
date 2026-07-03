@@ -29,6 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "node scripts/prerender.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
@@ -76,7 +77,9 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "gh-pages": "^6.3.0",
-    "serve": "^14.1.2"
+    "puppeteer": "^25.3.0",
+    "serve": "^14.1.2",
+    "serve-handler": "^6.1.7"
   },
   "homepage": "https://curthenrichs.github.io/"
 }
