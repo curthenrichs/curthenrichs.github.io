@@ -1,0 +1,178 @@
+{
+  "/static/img/bio-main-old.jpg": {
+    "w": 558,
+    "h": 558
+  },
+  "/static/img/bio-main.jpg": {
+    "w": 929,
+    "h": 945
+  },
+  "/static/img/career/dc/dc-fan.jpg": {
+    "w": 3264,
+    "h": 2448
+  },
+  "/static/img/career/dc/dc-oled-covered.jpg": {
+    "w": 3264,
+    "h": 2448
+  },
+  "/static/img/career/dc/dc-oled-pcb.jpg": {
+    "w": 2448,
+    "h": 2028
+  },
+  "/static/img/career/ides/IDES-career-viz.jpg": {
+    "w": 1611,
+    "h": 717
+  },
+  "/static/img/career/uwmad/uwmad-lab.jpg": {
+    "w": 4160,
+    "h": 2340
+  },
+  "/static/img/education/msoe/embedded-networking.jpg": {
+    "w": 3264,
+    "h": 2448
+  },
+  "/static/img/education/msoe/embedded-pcb.jpg": {
+    "w": 607,
+    "h": 456
+  },
+  "/static/img/education/msoe/embedded-tracking.jpg": {
+    "w": 3264,
+    "h": 2448
+  },
+  "/static/img/education/msoe/embedded-treadmill.jpg": {
+    "w": 3264,
+    "h": 2448
+  },
+  "/static/img/education/uwmad/computer-vision-gan-learning.gif": {
+    "w": 486,
+    "h": 486
+  },
+  "/static/img/education/uwmad/hci-hifi-mockup.jpg": {
+    "w": 1431,
+    "h": 913
+  },
+  "/static/img/education/uwmad/hci-vis-detail.jpg": {
+    "w": 992,
+    "h": 661
+  },
+  "/static/img/education/uwmad/hci-vis-overview.jpg": {
+    "w": 999,
+    "h": 644
+  },
+  "/static/img/projects/authr/authr-setup.jpg": {
+    "w": 1491,
+    "h": 844
+  },
+  "/static/img/projects/authr/authr-sim.jpg": {
+    "w": 1489,
+    "h": 928
+  },
+  "/static/img/projects/authr/authr-task.jpg": {
+    "w": 5982,
+    "h": 3318
+  },
+  "/static/img/projects/coframe/coframe-banner.jpg": {
+    "w": 3564,
+    "h": 1539
+  },
+  "/static/img/projects/coframe/coframe-current.jpg": {
+    "w": 3835,
+    "h": 1917
+  },
+  "/static/img/projects/coframe/coframe-frames.png": {
+    "w": 9843,
+    "h": 3938
+  },
+  "/static/img/projects/coframe/coframe-mapping.jpg": {
+    "w": 10125,
+    "h": 7782
+  },
+  "/static/img/projects/coframe/coframe-structure.jpg": {
+    "w": 9016,
+    "h": 4686
+  },
+  "/static/img/projects/coframe/evd-authoring-ui.jpg": {
+    "w": 1920,
+    "h": 971
+  },
+  "/static/img/projects/hobby/hobby-leds.jpg": {
+    "w": 3264,
+    "h": 2448
+  },
+  "/static/img/projects/hobby/hobby-robots.jpg": {
+    "w": 2281,
+    "h": 1372
+  },
+  "/static/img/projects/hobby/hobby-taltosoid.jpg": {
+    "w": 4160,
+    "h": 3120
+  },
+  "/static/img/projects/iter/iter-computer-vision.jpg": {
+    "w": 640,
+    "h": 480
+  },
+  "/static/img/projects/iter/iter-displays.png": {
+    "w": 2146,
+    "h": 1428
+  },
+  "/static/img/projects/iter/iter-seq-task.jpg": {
+    "w": 2592,
+    "h": 1728
+  },
+  "/static/img/projects/iter/iter-workspace.png": {
+    "w": 2159,
+    "h": 1836
+  },
+  "/static/img/projects/website/portfolio-home-desktop.jpg": {
+    "w": 3457,
+    "h": 1930
+  },
+  "/static/img/projects/website/portfolio-home-mobile.png": {
+    "w": 3457,
+    "h": 1930
+  },
+  "/static/img/projects/website/portfolio-home-tablet.png": {
+    "w": 3457,
+    "h": 1930
+  },
+  "/static/img/thumbnail/career-dc.jpg": {
+    "w": 2497,
+    "h": 2448
+  },
+  "/static/img/thumbnail/career-uwmad.jpg": {
+    "w": 2340,
+    "h": 2366
+  },
+  "/static/img/thumbnail/msoe-logo.png": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/project-authr.jpg": {
+    "w": 800,
+    "h": 801
+  },
+  "/static/img/thumbnail/project-coframe.jpg": {
+    "w": 1577,
+    "h": 1539
+  },
+  "/static/img/thumbnail/project-hobby.jpg": {
+    "w": 2512,
+    "h": 2065
+  },
+  "/static/img/thumbnail/project-iter.jpg": {
+    "w": 1960,
+    "h": 1728
+  },
+  "/static/img/thumbnail/project-okos.jpg": {
+    "w": 1605,
+    "h": 1603
+  },
+  "/static/img/thumbnail/project-website.jpg": {
+    "w": 1063,
+    "h": 991
+  },
+  "/static/img/thumbnail/uw-logo.png": {
+    "w": 600,
+    "h": 600
+  }
+}
