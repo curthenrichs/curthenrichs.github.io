@@ -1,0 +1,51 @@
+# Curt Henrichs
+
+> Personal portfolio of Curt Henrichs, a Senior Embedded Systems Engineer at Integrated Dynamic Electron Solutions, Inc. (IDES), building peripherals for time-resolved transmission electron microscopes. Based in the San Francisco Bay Area, California, USA.
+
+Curt's work spans board bringup, PCB EDA, firmware development and maintenance, and FPGA / SoC firmware (primarily Xilinx and Microchip-Atmel ecosystems), with small-batch manufacturing and QA mixed in. He holds an M.S. in Computer Science from the University of Wisconsin - Madison, where he was a graduate research assistant in the People and Robots Lab studying human-robot interaction in manufacturing, and a B.S. in Computer Engineering from the Milwaukee School of Engineering (MSOE). His interests include embedded systems, robotics and HRI, home automation, computer vision and ML, and agentic AI / LLM tooling.
+
+Note: this site is a client-side React application, so its pages require JavaScript to render. The resume PDF and the external links below are the most reliable sources for agents that do not execute JavaScript.
+
+## Key Resources
+
+- [Resume (PDF)](https://curthenrichs.github.io/docs/curt-henrichs-resume.pdf): Full professional history in a directly readable format
+- [GitHub](https://github.com/curthenrichs): Open-source projects and code
+- [LinkedIn](https://www.linkedin.com/in/curt-henrichs/): Professional profile
+- [Blog — Half-Built Robots](https://www.half-built-robots.com/): Writing on hobby robotics and embedded projects
+
+## Site Pages
+
+- [Home](https://curthenrichs.github.io/): Biography and overview
+- [Resume](https://curthenrichs.github.io/resume): Interactive resume
+- [Career](https://curthenrichs.github.io/career): IDES (2021-present), UW-Madison research (2019-2021), Dedicated Computing internship
+- [IDES](https://curthenrichs.github.io/career/ides): Engineering work at Integrated Dynamic Electron Solutions
+- [UW-Madison Research](https://curthenrichs.github.io/career/uw-madison): Research at the People and Robots Lab
+- [Dedicated Computing](https://curthenrichs.github.io/career/dedicated-computing): Embedded software and hardware internship projects
+- [Education](https://curthenrichs.github.io/education): UW-Madison (M.S. Computer Science), MSOE (B.S. Computer Engineering)
+- [Milwaukee School of Engineering](https://curthenrichs.github.io/education/msoe): B.S. Computer Engineering
+- [University of Wisconsin - Madison](https://curthenrichs.github.io/education/uw-madison): M.S. Computer Science
+- [Projects](https://curthenrichs.github.io/projects): Research systems (Authr, CoFrame, ITER) and hobby robotics
+- [Publications](https://curthenrichs.github.io/publications): Peer-reviewed papers
+- [Contract Work](https://curthenrichs.github.io/contract): Contracting and consulting information
+
+## Project Pages
+
+- [Authr](https://curthenrichs.github.io/projects/authr): Authr is a human-robot task development tool based on Therbligs, helping engineers plan work allocation between operators and cobots.
+- [CoFrame](https://curthenrichs.github.io/projects/coframe): CoFrame is a cobot operator training environment that helps manufacturing staff learn to configure and work alongside collaborative robots.
+- [Task Interdependence and pRAD](https://curthenrichs.github.io/projects/iter): This research ran experiments to better understand how operators interact with cobots under varying task interdependence and predicted robot attention demand.
+- [Hobby Projects & Half-Built-Robots Blog](https://curthenrichs.github.io/projects/hobby-blog): A collection of hobby robotics and home automation projects documented on the Half-Built-Robots blog, from small bots to supernumerary robotic fingers.
+- [Portfolio Website](https://curthenrichs.github.io/projects/website): Background on the development of this portfolio website, covering its React and Ant Design implementation and design decisions.
+
+## Publications
+
+- [Authr: A Task Authoring Environment for Human-Robot Teams (UIST 2020)](https://dl.acm.org/doi/10.1145/3379337.3415872)
+- [Task Interdependence in Human-Robot Teaming (RO-MAN 2020)](https://ieeexplore.ieee.org/abstract/document/9223555)
+- [Designing Interface Aids to Assist Collaborative Robot Operators in Attention Management (RO-MAN 2021)](https://ieeexplore.ieee.org/document/9515519)
+- [Human Robot Collaboration for Enhancing Work Activities (Human Factors, 2022)](https://journals.sagepub.com/doi/10.1177/00187208221077722)
+- [CoFrame: A System for Training Novice Cobot Programmers (HRI 2022)](https://dl.acm.org/doi/abs/10.5555/3523760.3523788)
+- [Electrostatic Switching for Spatiotemporal Dose Control in a Transmission Electron Microscope (M&M 2022)](https://academic.oup.com/mam/article-abstract/28/S1/2230/6996948)
+
+## Contact
+
+- Email: curthenrichs@gmail.com
+- X / Twitter: @curt_henrichs

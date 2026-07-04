@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><script>window.__PRERENDER_MD__={"/static/media/WebsiteProject.5a678ca58852afcd791f.md":"# Portfolio Website\n\nThis website has been a project in its own right. Originally, I had planned on using a no-code / low-code tool to generate my portfolio website. However, I couldn’t quite find a tool with the flexibility / configurability I had in mind for my website. More specifically, I wanted a place to aggregate my projects, skills, publications, social media profiles, etc. into one place that I had complete creative control over. To build this website, I tapped into my experience building robot user interfaces (a skill I picked up in graduate school). \n\n## Constraints\n\nMy primary constraint was that I wanted to build a static-hosted website on Github Pages. The upside was that this meant no backend service and database maintenance. Github pages also was a good target given cost and deployability. A secondary constraint was my target framework. During the time I started development of this website, I was also deeply involved in the development of CoFrame (see the project titled as such). CoFrame was built using React with Microsoft Fluent visual framework. My colleague and I wanted to move away from Fluent toward something he was more familiar with Ant Design. So I set a constraint that this website would make use of Ant Design as a forcing function to learn it.\n\n## Development\n\nMy website went through two major cycles of development. \n\nIn the first cycle, I accomplished an MVP of my project vision. It was clunky. The project section was laid out as a two-dimensional grid with each project sized to fit its particular contents. As one can imagine it was chaotic. Additionally, there wasn’t a clear separation of career from projects further muddling that section. I had also rushed past defining policies (e.g., terms of use) to get it published. It wasn’t quite an asset yet but it did the job of aggregating information.\n\nFor the second cycle, my main goal was refinement and refactor. I have updated all content on the website to be current. I removed/consolidated smaller projects that just served to clutter the projects section. Career section was separated. Lastly, I tweaked the responsive layout to better adjust for most screen configurations.\n\n## Accomplishments\n\nI am rather pleased with the responsive design solution, given my lack of expertise in the area. My vision was to have a dynamic summary section and skills section dependent on screen width. First this required me to track width. I implemented this via a React context that monitors the screen width (allowing for real-time resizing) within a page template component. Then in the summary section, I dynamically adjust between three major layouts: phone, tablet vertical, and landscape. \n\nFor the skills section, I wanted to have multiple rows, aligned page center. The standard grid element of Ant Design does not handle this when overflowing past a single line. To get around this, I wrote an algorithm that splits the list of skill tiles into a set of rows accounting for screen width. Each row is displayed in a centered Ant Design grid. Furthermore, if the number of rows is greater than two, then a drop down button is rendered allowing for expand/collapse of skills instead of forcing users to scroll through the entire list.\n\nThere are also some other small changes based on width. I will quickly list a few examples:\n\n- Header collapses section navigation for mobile view.\n- Footer adjusts sitemap for mobile view.\n- Content cards and modals adjust displayed content, scaling, etc. based on width.\n"};</script><script>window.__PRERENDERED_WIDTH__=390;window.__PRERENDERED_HEIGHT__=844;</script><style>
+#prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 20s forwards}
+#prerender-veil.prv-hidden{opacity:0;pointer-events:none}
+@keyframes prv-timeout{to{opacity:0;visibility:hidden}}
+.prv-robot{position:relative;opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
+@keyframes prv-appear{to{opacity:1}}
+@keyframes prv-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.prv-antenna{width:4px;height:14px;background:#555;margin:0 auto;border-radius:2px;position:relative}
+.prv-antenna::before{content:"";position:absolute;top:-10px;left:-3px;width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-glow 1.6s ease-in-out infinite}
+@keyframes prv-glow{0%,100%{opacity:.5}50%{opacity:1}}
+.prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
+.prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
+@keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
+@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}.prv-label{opacity:1;animation:none}}
+</style><style data-rc-order="prepend" rc-util-key="@ant-design-icons">
+.anticon {
+  display: inline-flex;
+  alignItems: center;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.anticon > * {
+  line-height: 1;
+}
+
+.anticon svg {
+  display: inline-block;
+}
+
+.anticon::before {
+  display: none;
+}
+
+.anticon .anticon-icon {
+  display: block;
+}
+
+.anticon[tabindex] {
+  cursor: pointer;
+}
+
+.anticon-spin::before,
+.anticon-spin {
+  display: inline-block;
+  -webkit-animation: loadingCircle 1s infinite linear;
+  animation: loadingCircle 1s infinite linear;
+}
+
+@-webkit-keyframes loadingCircle {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingCircle {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+</style><meta charset="utf-8"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><meta name="google-site-verification" content="Pm28Vw1GxdNXIx59dyh-_PXzkCSYKPNniC8uOUKmC-Q"><meta name="viewport" content="width=device-width"><meta name="theme-color" content="#112244"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.json"><title>Curt Henrichs | Portfolio | Portfolio Website</title><script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Curt Henrichs",
+        "url": "https://curthenrichs.github.io/",
+        "jobTitle": "Senior Embedded Systems Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Integrated Dynamic Electron Solutions, Inc.",
+          "alternateName": "IDES"
+        },
+        "description": "Embedded systems engineer currently working on peripherals for electron microscopes. Passionate about building real things for real people, whether it be robots, embedded devices, or software tools.",
+        "image": "https://curthenrichs.github.io/static/img/bio-main.jpg",
+        "email": "mailto:curthenrichs@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco Bay Area",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://github.com/curthenrichs",
+          "https://www.linkedin.com/in/curt-henrichs/",
+          "https://twitter.com/curt_henrichs",
+          "https://www.half-built-robots.com/"
+        ]
+      }</script><script defer="defer" src="/static/js/main.f0a75faa.js"></script><link href="/static/css/main.4bb1bd83.css" rel="stylesheet"><link rel="canonical" href="https://curthenrichs.github.io/projects/website" data-rh="true"><meta name="description" content="Background on the development of this portfolio website, covering its React and Ant Design implementation and design decisions." data-rh="true"><meta property="og:type" content="website" data-rh="true"><meta property="og:title" content="Curt Henrichs | Portfolio | Portfolio Website" data-rh="true"><meta property="og:description" content="Background on the development of this portfolio website, covering its React and Ant Design implementation and design decisions." data-rh="true"><meta property="og:url" content="https://curthenrichs.github.io/projects/website" data-rh="true"><meta property="og:image" content="https://curthenrichs.github.io/static/img/projects/website/portfolio-home-desktop.jpg" data-rh="true"><meta property="og:image:alt" content="Image from Portfolio Website" data-rh="true"><meta name="twitter:card" content="summary_large_image" data-rh="true"><meta name="twitter:creator" content="@curt_henrichs" data-rh="true"></head><body><noscript>This site is fully interactive with JavaScript enabled; without it you are viewing a static snapshot.</noscript><div id="root"><section class="ant-layout layout"><header class="ant-layout-header header-style" style="width: 390px;"><div class="ant-row ant-row-no-wrap ant-row-bottom"><div class="ant-col" style="flex: 0 0 200px; min-width: 0px;"><h2 class="ant-typography nav-title-heading"><a class="nav-title-link" href="/home">Curt Henrichs</a></h2></div><div class="ant-col" style="flex: 1 1 auto; min-width: 0px;"><span class="ant-typography nav-bar-text">&nbsp;</span></div><div class="ant-col" style="flex: 0 0 100px; min-width: 0px;"><div class="nav-bar nav-bar-dropdown" id="collapsed-menu" role="button" tabindex="0"><div style="font-size: var(--fs-icon);"><span role="img" class="anticon"><svg height="1em" viewBox="0 -53 384 384" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg></span></div></div></div></div></header><main class="ant-layout-content" style="padding: 20px 0px 0px; margin-top: 64px;"><div id="sect-detail" class="sect type-a"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="display: flex; justify-content: center;"><div style="max-width: 900px; width: 100%;"><div style="text-align: left;"><div style="text-align: center;"><div class="carousel-root carousel"><div class="carousel carousel-slider" style="width: 100%;"><ul class="control-dots"><li class="dot selected" value="0" role="button" tabindex="0" aria-label="slide item 1"></li><li class="dot" value="1" role="button" tabindex="0" aria-label="slide item 2"></li><li class="dot" value="2" role="button" tabindex="0" aria-label="slide item 3"></li></ul><button type="button" aria-label="previous slide / item" class="control-arrow control-prev"></button><div class="slider-wrapper axis-horizontal"><ul class="slider animated" style="transform: translate3d(-100%, 0px, 0px); transition-duration: 350ms;"><li class="slide"><div style="display: flex; justify-content: center;"><img src="/static/img/projects/website/portfolio-home-mobile.png" alt="Mobile view of website portfolio home section." style="max-height: 500px; max-width: 800px;"><p class="legend">Mobile view ~ Home section</p></div></li><li class="slide selected previous"><div style="display: flex; justify-content: center;"><img src="/static/img/projects/website/portfolio-home-desktop.jpg" alt="Desktop view of website portfolio home section and skills section." style="max-height: 500px; max-width: 800px;"><p class="legend">Desktop view ~ Home section and skills section</p></div></li><li class="slide"><div style="display: flex; justify-content: center;"><img src="/static/img/projects/website/portfolio-home-tablet.png" alt="Tablet view of website portfolio home section." style="max-height: 500px; max-width: 800px;"><p class="legend">Tablet view ~ Home section</p></div></li><li class="slide"><div style="display: flex; justify-content: center;"><img src="/static/img/projects/website/portfolio-home-mobile.png" alt="Mobile view of website portfolio home section." style="max-height: 500px; max-width: 800px;"><p class="legend">Mobile view ~ Home section</p></div></li><li class="slide selected previous"><div style="display: flex; justify-content: center;"><img src="/static/img/projects/website/portfolio-home-desktop.jpg" alt="Desktop view of website portfolio home section and skills section." style="max-height: 500px; max-width: 800px;"><p class="legend">Desktop view ~ Home section and skills section</p></div></li></ul></div><button type="button" aria-label="next slide / item" class="control-arrow control-next"></button></div><div class="carousel"><div class="thumbs-wrapper axis-vertical"><button type="button" class="control-arrow control-prev control-disabled" aria-label="previous slide / item"></button><ul class="thumbs animated" style="transform: translate3d(0px, 0px, 0px); transition-duration: 350ms;"><li class="thumb selected" aria-label="slide item 1" role="button" tabindex="0" style="width: 80px;"><img src="/static/img/projects/website/portfolio-home-desktop.jpg" alt="Desktop view of website portfolio home section and skills section." style="max-height: 500px; max-width: 800px;"></li><li class="thumb" aria-label="slide item 2" role="button" tabindex="0" style="width: 80px;"><img src="/static/img/projects/website/portfolio-home-tablet.png" alt="Tablet view of website portfolio home section." style="max-height: 500px; max-width: 800px;"></li><li class="thumb" aria-label="slide item 3" role="button" tabindex="0" style="width: 80px;"><img src="/static/img/projects/website/portfolio-home-mobile.png" alt="Mobile view of website portfolio home section." style="max-height: 500px; max-width: 800px;"></li></ul><button type="button" class="control-arrow control-next control-disabled" aria-label="next slide / item"></button></div></div></div></div><div class="ant-divider ant-divider-horizontal" role="separator"></div><h1>Portfolio Website</h1>
+<div style="padding-bottom: 1em;">This website has been a project in its own right. Originally, I had planned on using a no-code / low-code tool to generate my portfolio website. However, I couldn’t quite find a tool with the flexibility / configurability I had in mind for my website. More specifically, I wanted a place to aggregate my projects, skills, publications, social media profiles, etc. into one place that I had complete creative control over. To build this website, I tapped into my experience building robot user interfaces (a skill I picked up in graduate school).</div>
+<h2>Constraints</h2>
+<div style="padding-bottom: 1em;">My primary constraint was that I wanted to build a static-hosted website on Github Pages. The upside was that this meant no backend service and database maintenance. Github pages also was a good target given cost and deployability. A secondary constraint was my target framework. During the time I started development of this website, I was also deeply involved in the development of CoFrame (see the project titled as such). CoFrame was built using React with Microsoft Fluent visual framework. My colleague and I wanted to move away from Fluent toward something he was more familiar with Ant Design. So I set a constraint that this website would make use of Ant Design as a forcing function to learn it.</div>
+<h2>Development</h2>
+<div style="padding-bottom: 1em;">My website went through two major cycles of development.</div>
+<div style="padding-bottom: 1em;">In the first cycle, I accomplished an MVP of my project vision. It was clunky. The project section was laid out as a two-dimensional grid with each project sized to fit its particular contents. As one can imagine it was chaotic. Additionally, there wasn’t a clear separation of career from projects further muddling that section. I had also rushed past defining policies (e.g., terms of use) to get it published. It wasn’t quite an asset yet but it did the job of aggregating information.</div>
+<div style="padding-bottom: 1em;">For the second cycle, my main goal was refinement and refactor. I have updated all content on the website to be current. I removed/consolidated smaller projects that just served to clutter the projects section. Career section was separated. Lastly, I tweaked the responsive layout to better adjust for most screen configurations.</div>
+<h2>Accomplishments</h2>
+<div style="padding-bottom: 1em;">I am rather pleased with the responsive design solution, given my lack of expertise in the area. My vision was to have a dynamic summary section and skills section dependent on screen width. First this required me to track width. I implemented this via a React context that monitors the screen width (allowing for real-time resizing) within a page template component. Then in the summary section, I dynamically adjust between three major layouts: phone, tablet vertical, and landscape.</div>
+<div style="padding-bottom: 1em;">For the skills section, I wanted to have multiple rows, aligned page center. The standard grid element of Ant Design does not handle this when overflowing past a single line. To get around this, I wrote an algorithm that splits the list of skill tiles into a set of rows accounting for screen width. Each row is displayed in a centered Ant Design grid. Furthermore, if the number of rows is greater than two, then a drop down button is rendered allowing for expand/collapse of skills instead of forcing users to scroll through the entire list.</div>
+<div style="padding-bottom: 1em;">There are also some other small changes based on width. I will quickly list a few examples:</div>
+<ul>
+<li>Header collapses section navigation for mobile view.</li>
+<li>Footer adjusts sitemap for mobile view.</li>
+<li>Content cards and modals adjust displayed content, scaling, etc. based on width.</li>
+</ul><div style="padding-top: 1.5em; text-align: center;"><a href="/projects" class="ant-btn ant-btn-round ant-btn-default ant-btn-lg"><span>Back to All Projects</span></a></div></div></div></div></div></div></main><footer class="ant-layout-footer" style="text-align: center;"><div class="ant-divider ant-divider-horizontal" role="separator"></div><span class="ant-typography"><strong><span>Curt Henrichs LLC © 2026</span></strong></span><br><span class="ant-typography">Created with Reactjs and Ant Design</span><br><br><span class="ant-typography"><a href="/">Home</a>&nbsp;|&nbsp;<a href="/resume">Resume</a>&nbsp;|&nbsp;<a href="/terms">Terms of Use</a>&nbsp;|&nbsp;<a href="/contract">Work with Me</a></span><br><span class="ant-typography"><a href="/career">Career</a>&nbsp;|&nbsp;<a href="/education">Education</a>&nbsp;|&nbsp;<a href="/projects">Projects</a>&nbsp;|&nbsp;<a href="/publications">Publications</a>&nbsp;|&nbsp;<a href="/blog">Blog</a></span><br><span class="ant-typography"><a href="/accessibility">Accessibility Policy</a>&nbsp;|&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;|&nbsp;<a href="/attribution">Attribution</a></span></footer></section></div><div aria-hidden="true" role="presentation" style="width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;"></div><div id="prerender-veil" aria-hidden="true"><div class="prv-robot"><div class="prv-antenna"></div><div class="prv-head"><div class="prv-eye"></div><div class="prv-eye"></div></div></div><div class="prv-label">Loading&#8230;</div></div><noscript><style>#prerender-veil{display:none}</style></noscript></body></html>

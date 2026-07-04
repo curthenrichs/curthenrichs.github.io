@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e271e5b2.css",
-    "main.js": "/static/js/main.c645646f.js",
+    "main.css": "/static/css/main.4bb1bd83.css",
+    "main.js": "/static/js/main.f0a75faa.js",
     "static/js/685.9d1c2672.chunk.js": "/static/js/685.9d1c2672.chunk.js",
     "static/media/EVDProject.md": "/static/media/EVDProject.d16882e8712ef83a8fb2.md",
     "static/media/MSOE.md": "/static/media/MSOE.7eb6025785870b1f9a6b.md",
@@ -15,17 +15,22 @@
     "static/media/WebsiteProject.md": "/static/media/WebsiteProject.011abb34cb05a8c5930b.md",
     "static/media/okos-polip.svg": "/static/media/okos-polip.cd7f224ef32e4234523361539bae6804.svg",
     "static/media/react.svg": "/static/media/react.0c61afcfaae16211de87e968a94f3d45.svg",
+    "static/media/TermsOfUse.md": "/static/media/TermsOfUse.19e559c0446d95ef8103.md",
     "static/media/InternshipCareer.md": "/static/media/InternshipCareer.4b80981d61694eefd2ed.md",
+    "index.html": "/index.html",
+    "static/media/Attribution.md": "/static/media/Attribution.bed1473af32b6fab5664.md",
     "static/media/ResearchCareer.md": "/static/media/ResearchCareer.f04ac8156b0f8528d8dc.md",
+    "static/media/PrivacyPolicy.md": "/static/media/PrivacyPolicy.2e8bdba58c1dadc701e6.md",
     "static/media/matlab.svg": "/static/media/matlab.8ed6fd1eecfeec661af9a04ff8997bb2.svg",
     "static/media/intel.svg": "/static/media/intel.d13e2adaff127642c77fa7a2b5989179.svg",
     "static/media/mechanical-arm.svg": "/static/media/mechanical-arm.9bd46a27b34b192776143088d764e311.svg",
+    "static/media/AccessibilityPolicy.md": "/static/media/AccessibilityPolicy.22b611132e7d23378c57.md",
     "static/media/docker.svg": "/static/media/docker.0c0999b7624d2bfcb7710aa3f22b1cf2.svg",
     "static/media/AuthrProject.md": "/static/media/AuthrProject.83e43c7ed89669db93ca.md",
     "static/media/altiumdesigner.svg": "/static/media/altiumdesigner.8ea711b89c3203454964082e031f4697.svg",
     "static/media/node-dot-js.svg": "/static/media/node-dot-js.351cbfb37f89fb4fda6e5ca889eb8203.svg",
-    "static/media/openai.svg": "/static/media/openai.7cbf39b08f508de52c81ca321b33d1c6.svg",
     "static/media/ITERProject.md": "/static/media/ITERProject.501ae1e883a519f101ef.md",
+    "static/media/openai.svg": "/static/media/openai.7cbf39b08f508de52c81ca321b33d1c6.svg",
     "static/media/python.svg": "/static/media/python.bf900dfeb830369ba450a80d1addf07b.svg",
     "static/media/opencv.svg": "/static/media/opencv.5fd12c99f9e43d178d887de59c03877b.svg",
     "static/media/typescript.svg": "/static/media/typescript.1b46c028879d6c94a56e6dfc1fd6797b.svg",
@@ -33,7 +38,6 @@
     "static/media/ros.svg": "/static/media/ros.049e8b9ea80897646e10c828d9266fa9.svg",
     "static/media/Biography.md": "/static/media/Biography.120d66d7ebd2f97c8401.md",
     "static/media/arduino.svg": "/static/media/arduino.ed036a7044091ab7f9e3ebf8b51aa2ce.svg",
-    "index.html": "/index.html",
     "static/media/microchip-solid.svg": "/static/media/microchip-solid.ddabd144887dd47a1096e4fa355157bb.svg",
     "static/media/labview.svg": "/static/media/labview.6dbb65b415325a5a86bb64a346c19d18.svg",
     "static/media/javascript.svg": "/static/media/javascript.c981b61177658a0c7bafd04a411e1c2c.svg",
@@ -73,7 +77,7 @@
     "static/media/vuedotjs.svg": "/static/media/vuedotjs.e810a9a486ec54e5b07b25ce63c265a2.svg"
   },
   "entrypoints": [
-    "static/css/main.e271e5b2.css",
-    "static/js/main.c645646f.js"
+    "static/css/main.4bb1bd83.css",
+    "static/js/main.f0a75faa.js"
   ]
 }

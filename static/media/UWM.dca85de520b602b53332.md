@@ -1,4 +1,4 @@
-# UW Madison
+﻿# University of Wisconsin - Madison
 During my time at UW Madison, I achieved the following degree:
 
 Master of Science
