@@ -1,6 +1,7 @@
 import React from "react";
 import PageMeta from "../components/PageMeta";
 import PageTemplate from "../components/PageTemplate";
+import DocumentContainer from "../components/DocumentContainer";
 import ItemModalContent from "../components/ItemModalContent";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -67,37 +68,39 @@ const ItemDetailPage = ({ route }) => {
               offset: -100
             },
             content: (
-              <div style={{ textAlign: "left" }}>
-                <ItemModalContent
-                  images={entry.images}
-                  markdownPath={entry.modalMarkdownPath}
-                  primaryLink={entry.primaryLink}
-                />
-                <div style={{ paddingTop: "1.5em", textAlign: "center" }}>
-                  {/* Outlined (default) button: back-nav is secondary to the
+              <DocumentContainer>
+                <div style={{ textAlign: "left" }}>
+                  <ItemModalContent
+                    images={entry.images}
+                    markdownPath={entry.modalMarkdownPath}
+                    primaryLink={entry.primaryLink}
+                  />
+                  <div style={{ paddingTop: "1.5em", textAlign: "center" }}>
+                    {/* Outlined (default) button: back-nav is secondary to the
                       item's primary-link CTA. Real href for agents; plain
                       click navigates SPA-style, modifier-clicks fall through. */}
-                  <Button
-                    href={`/${route.section}`}
-                    shape="round"
-                    size="large"
-                    onClick={(event) => {
-                      if (
-                        event.metaKey ||
+                    <Button
+                      href={`/${route.section}`}
+                      shape="round"
+                      size="large"
+                      onClick={(event) => {
+                        if (
+                          event.metaKey ||
                         event.ctrlKey ||
                         event.shiftKey ||
                         event.altKey ||
                         event.button !== 0
-                      ) {
-                        return;
-                      }
-                      event.preventDefault();
-                      navigate(`/${route.section}`);
-                    }}>
-                    {`Back to ${BACK_LABEL[route.section]}`}
-                  </Button>
+                        ) {
+                          return;
+                        }
+                        event.preventDefault();
+                        navigate(`/${route.section}`);
+                      }}>
+                      {`Back to ${BACK_LABEL[route.section]}`}
+                    </Button>
+                  </div>
                 </div>
-              </div>
+              </DocumentContainer>
             )
           }
         ]}
