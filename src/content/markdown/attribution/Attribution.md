@@ -6,8 +6,6 @@ Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. 
 
 Deployed on Github Pages static hosting. Deployment handled with [gh-pages](https://www.npmjs.com/package/gh-pages).
 
-Thanks to [spa-github-pages](https://github.com/rafgraph/spa-github-pages), hard refreshes are managed when deployed on Github Pages.
-
 ### Icons
 
 The following sources were used for icons on this website:

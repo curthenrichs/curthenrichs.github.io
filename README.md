@@ -83,9 +83,6 @@ Icon SVGs should be added to the icon handler component, with the Ant wrapper
 written in `customIcons` (within the content directory).
 
 ## Acknowledgements
-Thanks to this [repo](https://github.com/rafgraph/spa-github-pages), hard refreshes
-work when the site is deployed on GitHub Pages.
-
 Thank you [Ant Design](https://ant.design/) for the amazing framework. I really
 love the design language it provides out of the box.
 
