@@ -74,7 +74,7 @@ const recordPrerenderMdCache = (src, text) => {
 };
 
 const MarkdownContent = (props) => {
-  const { markdownPath, images, disableLinks } = props;
+  const { markdownPath, images, disableLinks, extraComponents } = props;
 
   const cached = readPrerenderMdCache(markdownPath);
   const [markdown, setMarkdown] = useState(cached !== undefined ? cached : "");
@@ -142,7 +142,11 @@ const MarkdownContent = (props) => {
         // don't set this prop) keep real links.
         return <span>{props.children}</span>;
       }
-      // Update target / metadata path info
+      if (props.href && props.href.startsWith("/")) {
+        // Internal link: same-tab navigation (no new tab), matching the prior
+        // hand-written policy pages.
+        return <a href={props.href}>{props.children}</a>;
+      }
       return (
         <a href={props.href} target="_blank" rel="noopener noreferrer">
           {props.children}
@@ -156,7 +160,8 @@ const MarkdownContent = (props) => {
           {props.children}
         </div>
       );
-    }
+    },
+    ...(extraComponents || {})
   };
 
   return (
