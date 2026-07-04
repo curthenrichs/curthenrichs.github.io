@@ -43,18 +43,50 @@
         box-sizing: border-box;
       }
       main { max-width: 30rem; }
-      .robot { margin: 0 auto 28px; width: 64px; }
-      .antenna { width: 4px; height: 14px; background: #555; margin: 0 auto; border-radius: 2px; position: relative; }
-      .antenna::before {
-        content: ""; position: absolute; top: -10px; left: -3px;
-        width: 10px; height: 10px; background: #1890ff; border-radius: 50%;
+
+      /* Confused Henry — matches src/components/CuteRobot.jsx (question form),
+         which the real prerendered NotFoundPage renders, and the loading veil.
+         Duplicated as standalone CSS on purpose: this page must render with no
+         bundle or external asset. Keep proportions/colors in sync with
+         CuteRobot.css if that art ever changes. */
+      .robot {
+        display: inline-flex; flex-direction: column; align-items: center;
+        position: relative; width: 160px; padding-top: 52px; margin: 0 auto 24px;
       }
+      .q {
+        position: absolute; top: 0; left: 50%; display: block; font-weight: 700;
+        line-height: 1;
+        transform: translate(var(--q-x), var(--q-y)) rotate(var(--q-tilt));
+        animation: q-boing 3.2s ease-in-out infinite;
+      }
+      .q-main { --q-x: 35px; --q-y: 6px; --q-tilt: 10deg; font-size: 36px; color: #1890ff; }
+      .q-small { --q-x: 76px; --q-y: 0px; --q-tilt: 22deg; font-size: 20px; color: #40a9ff; animation-delay: -1.1s; }
+      @keyframes q-boing {
+        0%   { transform: translate(var(--q-x), var(--q-y)) rotate(calc(var(--q-tilt) - 5deg)) scale(0.85); }
+        7%   { transform: translate(var(--q-x), var(--q-y)) rotate(calc(var(--q-tilt) + 4deg)) scale(1.18); }
+        14%  { transform: translate(var(--q-x), var(--q-y)) rotate(var(--q-tilt)) scale(1); }
+        55%  { transform: translate(var(--q-x), calc(var(--q-y) - 4px)) rotate(calc(var(--q-tilt) + 6deg)) scale(1); }
+        92%  { transform: translate(var(--q-x), var(--q-y)) rotate(calc(var(--q-tilt) - 3deg)) scale(1); }
+        100% { transform: translate(var(--q-x), var(--q-y)) rotate(calc(var(--q-tilt) - 5deg)) scale(0.85); }
+      }
+      .robot-body { position: relative; display: inline-block; }
+      .antenna { width: 7px; height: 24px; background: #555; margin: 0 auto; border-radius: 3px; position: relative; }
+      .antenna::before {
+        content: ""; position: absolute; top: -15px; left: -5.5px;
+        width: 17px; height: 17px; background: #1890ff; border-radius: 50%;
+        animation: glow 1.6s ease-in-out infinite;
+      }
+      @keyframes glow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
       .head {
-        width: 64px; height: 46px; border: 3px solid #555; border-radius: 12px;
-        display: flex; align-items: center; justify-content: center; gap: 12px;
+        width: 109px; height: 78px; border: 5px solid #555; border-radius: 20px;
+        display: flex; align-items: center; justify-content: center; gap: 20px;
         background: #fff; box-sizing: border-box;
       }
-      .eye { width: 10px; height: 10px; background: #1890ff; border-radius: 50%; }
+      .eye { width: 17px; height: 17px; background: #1890ff; border-radius: 50%; animation: blink 3.2s infinite; }
+      @keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+      @media (prefers-reduced-motion: reduce) {
+        .q, .antenna::before, .eye { animation: none; }
+      }
       h1 { font-size: 1.5rem; margin: 0 0 0.6em; }
       p { font-size: 1rem; line-height: 1.5; color: #33415c; margin: 0 0 1.75em; }
       a.home {
@@ -66,9 +98,13 @@
   </head>
   <body>
     <main>
-      <div class="robot" aria-hidden="true">
-        <div class="antenna"></div>
-        <div class="head"><div class="eye"></div><div class="eye"></div></div>
+      <div class="robot" role="img" aria-label="A confused robot">
+        <span class="q q-main" aria-hidden="true">?</span>
+        <span class="q q-small" aria-hidden="true">?</span>
+        <span class="robot-body" aria-hidden="true">
+          <span class="antenna"></span>
+          <span class="head"><span class="eye"></span><span class="eye"></span></span>
+        </span>
       </div>
       <h1>This page didn&rsquo;t load</h1>
       <p>
