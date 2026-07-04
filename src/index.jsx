@@ -24,6 +24,7 @@ import ItemDetailPage from "./pages/ItemDetailPage";
 import reportWebVitals from "./reportWebVitals";
 import contactData from "./content/contact";
 import detailRoutes from "./content/detailRoutes.json";
+import { holdPrerenderVeil } from "./utils/prerenderVeil";
 
 const ExternalRedirect = ({ url }) => {
   useEffect(() => {
@@ -66,6 +67,9 @@ const app = (
 
 // Prerendered pages ship HTML inside #root; hydrate it. Dev server starts empty.
 if (container.hasChildNodes()) {
+  // The bundle is now executing, so the veil's CSS download-failsafe must not
+  // fire mid-hydration; hold the veil until PageTemplate dismisses it post-reflow.
+  holdPrerenderVeil();
   hydrateRoot(container, app);
 } else {
   createRoot(container).render(app);

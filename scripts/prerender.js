@@ -62,11 +62,15 @@ const MARKER =
   `window.__PRERENDERED_HEIGHT__=${VIEWPORT.height};</script>`;
 
 // Full-viewport veil: humans never see the mobile snapshot re-layout during
-// hydration. Dismissed by PageTemplate (prv-hidden class); pure-CSS failsafes:
-// noscript hides it entirely, and a 5s keyframe auto-fades it if JS never runs.
+// hydration. Normally dismissed by PageTemplate (prv-hidden class) once hydration
+// and the width reflow have painted. Failsafes: noscript hides it entirely when
+// JS is off; the app cancels the CSS keyframe below the moment its bundle boots
+// (src/utils/prerenderVeil.js holdPrerenderVeil) and arms a boot-relative timer
+// instead — so this 20s keyframe only fires if the bundle never boots at all
+// (kept long so a slow download can't lift the veil before hydration).
 // The robot fades in after 300ms so fast loads see only a blank blink.
 const VEIL_STYLE = `<style>
-#prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 5s forwards}
+#prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 20s forwards}
 #prerender-veil.prv-hidden{opacity:0;pointer-events:none}
 @keyframes prv-timeout{to{opacity:0;visibility:hidden}}
 .prv-robot{position:relative;opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
