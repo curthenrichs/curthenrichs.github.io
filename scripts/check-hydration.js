@@ -20,21 +20,11 @@ const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const VIEWPORT = { width: 1280, height: 800 };
 const VEIL_TIMEOUT_MS = 10000;
 
-// The 10 prerendered content routes (excludes the 404 pseudo-route and the
-// static redirect stubs in scripts/prerender.js). Keep in sync with that
-// file's ROUTES list.
-const ROUTES = [
-  "/",
-  "/career",
-  "/education",
-  "/projects",
-  "/publications",
-  "/contract",
-  "/attribution",
-  "/terms",
-  "/accessibility",
-  "/privacy"
-];
+// The prerendered content routes: the shared base list (the same file
+// scripts/prerender.js reads) plus the detail routes. Excludes the 404
+// pseudo-route and static redirect stubs, which are prerender-only.
+const baseRoutes = require(path.join(__dirname, "base-routes.json"));
+const ROUTES = baseRoutes.map((r) => r.path);
 
 const detailRoutes = require(path.join(__dirname, "..", "src", "content", "detailRoutes.json"));
 detailRoutes.forEach((r) => ROUTES.push(r.path));

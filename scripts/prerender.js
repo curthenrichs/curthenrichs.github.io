@@ -16,19 +16,13 @@ const VIEWPORT = { width: 390, height: 844 }; // must match PageTemplate's marke
 const SETTLE_MS = 500; // extra wait after network idle for animations/layout
 const MIN_ROOT_CHARS = 500; // captured #root smaller than this fails the build
 
-// Keep titles in sync with src/content/pageMeta.js and paths with src/index.jsx.
+// Base content routes are shared with scripts/check-hydration.js via
+// base-routes.json. Keep titles in sync with src/content/pageMeta.js and paths
+// with src/index.jsx.
 const ROUTES = [
-  { path: "/", file: "index.html", title: "Curt Henrichs | Portfolio | Home" },
-  { path: "/career", file: "career/index.html", title: "Curt Henrichs | Portfolio | Career" },
-  { path: "/education", file: "education/index.html", title: "Curt Henrichs | Portfolio | Education" },
-  { path: "/projects", file: "projects/index.html", title: "Curt Henrichs | Portfolio | Projects" },
-  { path: "/publications", file: "publications/index.html", title: "Curt Henrichs | Portfolio | Publications" },
-  { path: "/contract", file: "contract/index.html", title: "Curt Henrichs | Portfolio | Contracting" },
-  { path: "/attribution", file: "attribution/index.html", title: "Curt Henrichs | Portfolio | Attribution" },
-  { path: "/terms", file: "terms/index.html", title: "Curt Henrichs | Portfolio | Terms of Use" },
-  { path: "/accessibility", file: "accessibility/index.html", title: "Curt Henrichs | Portfolio | Accessibility" },
-  { path: "/privacy", file: "privacy/index.html", title: "Curt Henrichs | Portfolio | Privacy Policy" },
+  ...require("./base-routes.json"),
   // Any unknown path renders NotFoundPage; captured once as the real 404 page.
+  // Prerender-only (not a navigable route), so it lives here, not in the shared file.
   { path: "/__prerender-404__", file: "404.html", title: "Curt Henrichs | Portfolio | Page Not Found" }
 ];
 
