@@ -93,8 +93,9 @@ And thanks to all the other library developers and teams who have made this
 possible. I truly am standing on the shoulders of giants.
 
 ## Notes
-My resume and cover letter design files are in the `docs` directory at the root.
-This makes my life easier when I update my profile in the future.
+My résumé and cover-letter source documents now live in a separate private
+repository, so they are no longer tracked here. The `docs` directory keeps only
+web-facing material.
 
 ## Adding a New Page
 
