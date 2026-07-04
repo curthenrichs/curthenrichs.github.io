@@ -1,66 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
-    <meta name="google-site-verification" content="Pm28Vw1GxdNXIx59dyh-_PXzkCSYKPNniC8uOUKmC-Q" />
-    <meta name="viewport" content="width=device-width" />
+    <!--
+      FALLBACK 404 — you normally never see this file in production.
+
+      On `npm run build`, the postbuild hook runs scripts/prerender.js, which
+      captures the real React NotFoundPage and OVERWRITES build/404.html with
+      it. That prerendered page (styled, with in-app navigation) is what a
+      deployed unknown-route request actually serves.
+
+      This source file only reaches the live site when that prerender step was
+      skipped — e.g. a bare `react-scripts build` (postbuild only runs under
+      `npm run build`), `npm run build --ignore-scripts`, or a deploy that
+      bypasses `npm run deploy`. That means the publish was incomplete, so this
+      page says so plainly instead of using the old spa-github-pages redirect
+      hack to quietly limp along. (Removing that redirect also means a
+      skipped-prerender deploy no longer silently "works" for deep links — it
+      surfaces the broken deploy, which is the point.)
+
+      Keep this file self-contained: no bundle, no external assets beyond the
+      root favicon, so it renders even from an otherwise broken build.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#112244" />
-    <meta
-      name="description"
-      content="Hello, I'm Curt, an embedded systems engineer currently working on peripherals for TEMs. I am passionate about building real things for real people, whether it be robots, embedded devices, or software tools."
-    />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Curt Henrichs | Portfolio | 404</title>
-
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment,
-      // e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
-      // https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
-      // Note: this 404.html file must be at least 512 bytes for it to work
-      // with Internet Explorer (it is currently > 512 bytes)
-
-      // If you're creating a Project Pages site and NOT using a custom domain,
-      // then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
-      // This way the code will only replace the route part of the path, and not
-      // the real directory in which the app resides, for example:
-      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
-      // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
-      // Otherwise, leave pathSegmentsToKeep as 0.
-      var pathSegmentsToKeep = 0;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-
-    </script>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Curt Henrichs | Portfolio | Page Unavailable</title>
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: #112244;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        text-align: center;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      main { max-width: 30rem; }
+      .robot { margin: 0 auto 28px; width: 64px; }
+      .antenna { width: 4px; height: 14px; background: #555; margin: 0 auto; border-radius: 2px; position: relative; }
+      .antenna::before {
+        content: ""; position: absolute; top: -10px; left: -3px;
+        width: 10px; height: 10px; background: #1890ff; border-radius: 50%;
+      }
+      .head {
+        width: 64px; height: 46px; border: 3px solid #555; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center; gap: 12px;
+        background: #fff; box-sizing: border-box;
+      }
+      .eye { width: 10px; height: 10px; background: #1890ff; border-radius: 50%; }
+      h1 { font-size: 1.5rem; margin: 0 0 0.6em; }
+      p { font-size: 1rem; line-height: 1.5; color: #33415c; margin: 0 0 1.75em; }
+      a.home {
+        display: inline-block; padding: 10px 22px; border-radius: 999px;
+        background: #1890ff; color: #fff; text-decoration: none; font-size: 1rem;
+      }
+      a.home:hover { background: #40a9ff; }
+    </style>
   </head>
   <body>
+    <main>
+      <div class="robot" aria-hidden="true">
+        <div class="antenna"></div>
+        <div class="head"><div class="eye"></div><div class="eye"></div></div>
+      </div>
+      <h1>This page didn&rsquo;t load</h1>
+      <p>
+        Something went wrong while serving this page. This can happen when the
+        site is published without its full build step. Everything should work
+        again from the homepage.
+      </p>
+      <a class="home" href="/">Go to the homepage</a>
+    </main>
   </body>
 </html>
