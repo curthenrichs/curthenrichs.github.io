@@ -81,6 +81,9 @@ describe("PageMeta", () => {
     expect(
       document.querySelector("meta[property=\"og:image:alt\"]").getAttribute("content")
     ).toBe("Portrait of Curt Henrichs");
+    expect(
+      document.querySelector("meta[name=\"twitter:card\"]").getAttribute("content")
+    ).toBe("summary_large_image");
   });
 
   test("supports ogImageAlt override", async () => {

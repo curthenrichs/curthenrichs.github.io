@@ -11,6 +11,9 @@ const PageMeta = ({ title, description, path, ogType, robots, ogImage, ogImageAl
   const canonical = `${SITE_ORIGIN}${path}`;
   const image = ogImage || DEFAULT_OG_IMAGE;
   const imageAlt = ogImageAlt || DEFAULT_OG_IMAGE_ALT;
+  // Pages that supply their own image (detail pages) get the large card;
+  // the default is the square portrait, which reads better as a small card.
+  const twitterCard = ogImage ? "summary_large_image" : "summary";
   return (
     <Helmet>
       <title>{title}</title>
@@ -23,7 +26,7 @@ const PageMeta = ({ title, description, path, ogType, robots, ogImage, ogImageAl
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={image} />
       <meta property="og:image:alt" content={imageAlt} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:creator" content="@curt_henrichs" />
     </Helmet>
   );
