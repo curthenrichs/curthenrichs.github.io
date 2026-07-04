@@ -105,8 +105,11 @@ Prerendering requires each route to be registered in four places:
 2. Add a metadata entry in `src/content/pageMeta.js` (title format
    `Curt Henrichs | Portfolio | <Page>`), then render
    `<PageMeta {...pageMeta.<key>} />` inside the new page component.
-3. Add the route to `ROUTES` in `scripts/prerender.js`. The title must match
-   pageMeta exactly.
+3. Add the route to `ROUTES` in `scripts/prerender.js` (the title must match
+   pageMeta exactly), and to the base `ROUTES` list in
+   `scripts/check-hydration.js` so the hydration check covers it. (Item detail
+   routes are exempt from this step — both scripts read those from
+   `detailRoutes.json`.)
 4. Add the URL to `public/sitemap.xml`.
 
 - Item detail pages: add the entry to `src/content/detailRoutes.json`; routes,
