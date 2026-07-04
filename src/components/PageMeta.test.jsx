@@ -1,5 +1,6 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
+// eslint-disable-next-line import/namespace -- eslint-plugin-import cannot parse react-helmet-async's source
 import { HelmetProvider } from "react-helmet-async";
 import PageMeta from "./PageMeta";
 

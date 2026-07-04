@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+// eslint-disable-next-line import/namespace -- eslint-plugin-import cannot parse react-helmet-async's source
 import { HelmetProvider } from "react-helmet-async";
 
 import "antd/dist/antd.css";

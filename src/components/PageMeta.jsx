@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line import/namespace -- eslint-plugin-import cannot parse react-helmet-async's source
 import { Helmet } from "react-helmet-async";
 
 const SITE_ORIGIN = "https://curthenrichs.github.io";
