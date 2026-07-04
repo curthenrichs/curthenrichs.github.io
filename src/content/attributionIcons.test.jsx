@@ -2,6 +2,8 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import attributionIcons from "./attributionIcons";
 import IconChips from "../components/IconChips";
+import fs from "fs";
+import path from "path";
 
 test("attributionIcons: every group is a non-empty array of valid entries", () => {
   const groups = Object.values(attributionIcons);
@@ -34,4 +36,20 @@ test("IconChips renders plain and linked chips", () => {
 test("IconChips renders nothing for an empty group", () => {
   const { container } = render(<IconChips names={[]} />);
   expect(container).toBeEmptyDOMElement();
+});
+
+test("every :icons directive id in Attribution.md resolves to a non-empty attributionIcons group, with no orphan groups", () => {
+  const md = fs.readFileSync(
+    path.join(__dirname, "markdown", "attribution", "Attribution.md"),
+    "utf8"
+  );
+  const ids = [...md.matchAll(/:icons\[\]\{id="([^"]+)"\}/g)].map((m) => m[1]);
+  expect(ids.length).toBeGreaterThan(0);
+  ids.forEach((id) => {
+    expect(Array.isArray(attributionIcons[id])).toBe(true);
+    expect(attributionIcons[id].length).toBeGreaterThan(0);
+  });
+  Object.keys(attributionIcons).forEach((key) => {
+    expect(ids).toContain(key);
+  });
 });

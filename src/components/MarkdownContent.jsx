@@ -161,6 +161,7 @@ const MarkdownContent = (props) => {
         </div>
       );
     },
+    // Spread last: caller-supplied keys win, including over the built-in image/a/p overrides.
     ...(extraComponents || {})
   };
 
