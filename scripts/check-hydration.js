@@ -77,7 +77,7 @@ async function waitForVeilDismissed(page, timeoutMs) {
       if (!veil) return "gone";
       return veil.classList.contains("prv-hidden") ? "hidden" : "present";
     });
-    if (state !== "present" || Date.now() - start > timeoutMs) return state;
+    if (state === "gone" || Date.now() - start > timeoutMs) return state;
     await new Promise((r) => setTimeout(r, 100));
   }
 }
@@ -120,8 +120,12 @@ async function waitForVeilDismissed(page, timeoutMs) {
       page.off("console", onConsole);
       page.off("pageerror", onPageError);
 
-      if (veilState === "present") {
-        fail(`${route}: prerender veil never dismissed within ${VEIL_TIMEOUT_MS}ms`);
+      if (veilState !== "gone") {
+        const reason =
+          veilState === "hidden"
+            ? "hidden but never removed from the DOM"
+            : "never dismissed";
+        fail(`${route}: prerender veil ${reason} within ${VEIL_TIMEOUT_MS}ms`);
       }
 
       const resourceWarnings = messages.filter(
