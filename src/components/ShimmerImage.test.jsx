@@ -61,3 +61,40 @@ test("an already-complete image (cache) starts loaded", () => {
   spy.mockRestore();
   spyNat.mockRestore();
 });
+
+test("without fallbackSrc, no fallback image is rendered", () => {
+  const { container } = render(
+    <ShimmerImage src="/a.jpg" alt="a" reserve={{ height: 500 }} />
+  );
+  expect(container.querySelector(".shimmer-image__fallback")).toBeNull();
+});
+
+test("with fallbackSrc, an image error shows the errored fallback", () => {
+  const { container } = render(
+    <ShimmerImage
+      src="/broken.jpg"
+      alt="x"
+      reserve={{ width: 250, height: 250 }}
+      fallbackSrc="data:image/png;base64,ZZZ"
+    />
+  );
+  const wrap = container.querySelector(".shimmer-image");
+  const fallback = container.querySelector("img.shimmer-image__fallback");
+  expect(fallback).not.toBeNull();
+  expect(fallback.getAttribute("src")).toBe("data:image/png;base64,ZZZ");
+  expect(wrap.classList.contains("errored")).toBe(false);
+
+  fireEvent.error(container.querySelector("img.shimmer-image__img"));
+  expect(wrap.classList.contains("errored")).toBe(true);
+  expect(wrap.classList.contains("loaded")).toBe(false);
+});
+
+test("objectFit and reserve.width apply to the image and box", () => {
+  const { container } = render(
+    <ShimmerImage src="/a.jpg" alt="a" reserve={{ width: 250, height: 250 }} objectFit="cover" className="thumb" />
+  );
+  const wrap = container.querySelector(".shimmer-image");
+  expect(wrap.style.width).toBe("250px");
+  expect(wrap.classList.contains("thumb")).toBe(true);
+  expect(container.querySelector("img.shimmer-image__img").style.objectFit).toBe("cover");
+});

@@ -1,0 +1,7 @@
+.thumbnail-image {
+  border-radius: 35%;
+}
+
+.thumbnail-image__default {
+  object-fit: cover;
+}
