@@ -22,7 +22,8 @@ const ShimmerImage = ({
   eager = false,
   objectFit,
   className,
-  fallbackSrc
+  fallbackSrc,
+  webpSrc
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
@@ -63,6 +64,29 @@ const ShimmerImage = ({
 
   const fitStyle = objectFit ? { objectFit } : undefined;
 
+  const img = (
+    <img
+      ref={imgRef}
+      className="shimmer-image__img"
+      style={fitStyle}
+      src={src}
+      alt={alt}
+      loading={eager ? "eager" : "lazy"}
+      onLoad={() => {
+        setLoaded(true);
+        setErrored(false);
+      }}
+      onError={
+        fallbackSrc
+          ? () => {
+            setErrored(true);
+            setLoaded(false);
+          }
+          : undefined
+      }
+    />
+  );
+
   return (
     <div
       ref={wrapRef}
@@ -74,26 +98,14 @@ const ShimmerImage = ({
       suppressHydrationWarning
     >
       <Skeleton.Image active className="shimmer-image__skeleton" />
-      <img
-        ref={imgRef}
-        className="shimmer-image__img"
-        style={fitStyle}
-        src={src}
-        alt={alt}
-        loading={eager ? "eager" : "lazy"}
-        onLoad={() => {
-          setLoaded(true);
-          setErrored(false);
-        }}
-        onError={
-          fallbackSrc
-            ? () => {
-                setErrored(true);
-                setLoaded(false);
-              }
-            : undefined
-        }
-      />
+      {webpSrc ? (
+        <picture>
+          <source srcSet={webpSrc} type="image/webp" />
+          {img}
+        </picture>
+      ) : (
+        img
+      )}
       {fallbackSrc ? (
         <img
           className="shimmer-image__fallback"

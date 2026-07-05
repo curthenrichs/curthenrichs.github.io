@@ -119,3 +119,28 @@ test("objectFit and reserve.width apply to the image and box", () => {
   expect(wrap.classList.contains("thumb")).toBe(true);
   expect(container.querySelector("img.shimmer-image__img").style.objectFit).toBe("cover");
 });
+
+test("with webpSrc, renders a <picture> with a webp source and the img", () => {
+  const { container } = render(
+    <ShimmerImage
+      src="/a.jpg"
+      alt="a"
+      reserve={{ height: 500 }}
+      webpSrc="/a-full.webp"
+    />
+  );
+  const picture = container.querySelector("picture");
+  expect(picture).not.toBeNull();
+  const source = picture.querySelector("source[type=\"image/webp\"]");
+  expect(source).not.toBeNull();
+  expect(source.getAttribute("srcset")).toBe("/a-full.webp");
+  expect(picture.querySelector("img.shimmer-image__img").getAttribute("src")).toBe("/a.jpg");
+});
+
+test("without webpSrc, renders a bare img (no picture)", () => {
+  const { container } = render(
+    <ShimmerImage src="/a.jpg" alt="a" reserve={{ height: 500 }} />
+  );
+  expect(container.querySelector("picture")).toBeNull();
+  expect(container.querySelector("img.shimmer-image__img")).not.toBeNull();
+});
