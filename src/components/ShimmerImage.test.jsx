@@ -89,6 +89,27 @@ test("with fallbackSrc, an image error shows the errored fallback", () => {
   expect(wrap.classList.contains("loaded")).toBe(false);
 });
 
+test("without fallbackSrc, a complete-but-broken image drops a stale loaded class", () => {
+  const spy = jest
+    .spyOn(window.HTMLImageElement.prototype, "complete", "get")
+    .mockReturnValue(true);
+  const spyNat = jest
+    .spyOn(window.HTMLImageElement.prototype, "naturalWidth", "get")
+    .mockReturnValue(0); // completed with no dimensions = broken
+  const { container, rerender } = render(
+    <ShimmerImage src="/a.jpg" alt="a" reserve={{ height: 500 }} />
+  );
+  const wrap = container.querySelector(".shimmer-image");
+  // Simulate the prerender snapshot leaving a stale `loaded` class on hydration.
+  wrap.classList.add("loaded");
+  // A src change re-runs the effect; a broken image with no fallback must still
+  // strip the stale class (not leave the wrapper stuck "loaded").
+  rerender(<ShimmerImage src="/b.jpg" alt="b" reserve={{ height: 500 }} />);
+  expect(wrap.classList.contains("loaded")).toBe(false);
+  spy.mockRestore();
+  spyNat.mockRestore();
+});
+
 test("objectFit and reserve.width apply to the image and box", () => {
   const { container } = render(
     <ShimmerImage src="/a.jpg" alt="a" reserve={{ width: 250, height: 250 }} objectFit="cover" className="thumb" />

@@ -31,22 +31,20 @@ const ShimmerImage = ({
 
   useEffect(() => {
     const img = imgRef.current;
-    if (img && img.complete) {
-      if (img.naturalWidth > 0) {
-        // Cache/instant, or already loaded in the hydrated snapshot.
-        setLoaded(true);
-        setErrored(false);
-      } else if (fallbackSrc) {
-        // Completed with no dimensions = broken/missing (a 404 that fired before
-        // React attached onError, including during prerender). Show the fallback.
-        setErrored(true);
-        setLoaded(false);
-      }
+    if (img && img.complete && img.naturalWidth > 0) {
+      // Cache/instant, or already loaded in the hydrated snapshot.
+      setLoaded(true);
+      setErrored(false);
+    } else if (img && img.complete && fallbackSrc) {
+      // Completed with no dimensions = broken/missing (a 404 that fired before
+      // React attached onError, including during prerender). Show the fallback.
+      setErrored(true);
+      setLoaded(false);
     } else {
-      // (Re)loading: reset so a later onLoad/onError repaints even when src
-      // changed on a live instance, and imperatively drop any stale loaded/errored
-      // class the prerender snapshot left (React won't repaint a memoized-equal
-      // className during hydration).
+      // Still (re)loading, or broken with no fallback: reset so a later
+      // onLoad/onError repaints even when src changed on a live instance, and
+      // imperatively drop any stale loaded/errored class the prerender snapshot
+      // left (React won't repaint a memoized-equal className during hydration).
       setLoaded(false);
       setErrored(false);
       if (wrapRef.current) {
