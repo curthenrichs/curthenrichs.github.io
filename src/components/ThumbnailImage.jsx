@@ -1,6 +1,7 @@
 import React from "react";
 import ShimmerImage from "./ShimmerImage";
 import DefaultImg from "./DefaultImg";
+import imageVariants from "../content/imageVariants.json";
 import "./ThumbnailImage.css";
 
 /**
@@ -22,9 +23,11 @@ const ThumbnailImage = ({ img }) => {
     );
   }
 
+  const variant = imageVariants[img] && imageVariants[img].thumb;
   return (
     <ShimmerImage
-      src={img}
+      src={variant ? variant.fallback : img}
+      webpSrc={variant ? variant.webp : undefined}
       alt=""
       reserve={{ width: 250, height: 250 }}
       objectFit="cover"

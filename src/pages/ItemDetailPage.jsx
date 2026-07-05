@@ -10,6 +10,7 @@ import career from "../content/career";
 import education from "../content/education";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
+import imageVariants from "../content/imageVariants.json";
 
 const CONTENT = { projects, career, education };
 const BACK_LABEL = {
@@ -30,7 +31,12 @@ const ItemDetailPage = ({ route }) => {
   const images = entry.images || [];
   const ogImageEntry =
     images.filter((i) => i.carousel)[0] || images.filter((i) => i.img)[0];
-  const ogImage = ogImageEntry ? `${SITE_ORIGIN}${ogImageEntry.img}` : undefined;
+  const ogImagePath = ogImageEntry
+    ? (imageVariants[ogImageEntry.img] &&
+        imageVariants[ogImageEntry.img].full.fallback) ||
+      ogImageEntry.img
+    : undefined;
+  const ogImage = ogImagePath ? `${SITE_ORIGIN}${ogImagePath}` : undefined;
 
   return (
     <>

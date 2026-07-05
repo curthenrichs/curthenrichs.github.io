@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import ShimmerImage from "../ShimmerImage";
 import imageDimensions from "../../content/imageDimensions.json";
+import imageVariants from "../../content/imageVariants.json";
 import "./index.css";
 
 const ImageCarousel = (props) => {
@@ -30,10 +31,12 @@ const ImageCarousel = (props) => {
           options.length === 1 && dims
             ? { aspectRatio: dims.w / dims.h }
             : { height: 500 };
+        const variant = imageVariants[entry.img] && imageVariants[entry.img].full;
         return (
           <div key={idx} style={{ display: "flex", justifyContent: "center" }}>
             <ShimmerImage
-              src={entry["img"]}
+              src={variant ? variant.fallback : entry["img"]}
+              webpSrc={variant ? variant.webp : undefined}
               alt={entry["alt"]}
               reserve={reserve}
               maxWidth={800}
