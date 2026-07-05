@@ -30,6 +30,23 @@ test("reserve.height sets a fixed box height; reserve.aspectRatio sets aspect-ra
   expect(aspect.style.aspectRatio).toBe("1.5");
 });
 
+test("src change on a loaded instance returns to shimmer, then reloads on next onLoad", () => {
+  const { container, rerender } = render(
+    <ShimmerImage src="/a.jpg" alt="a" reserve={{ height: 500 }} />
+  );
+  const wrap = container.querySelector(".shimmer-image");
+
+  fireEvent.load(container.querySelector("img.shimmer-image__img")); // image A finishes
+  expect(wrap.classList.contains("loaded")).toBe(true);
+
+  // Same instance navigates to a new, not-yet-loaded image.
+  rerender(<ShimmerImage src="/b.jpg" alt="b" reserve={{ height: 500 }} />);
+  expect(wrap.classList.contains("loaded")).toBe(false); // back to the shimmer
+
+  fireEvent.load(container.querySelector("img.shimmer-image__img")); // image B finishes
+  expect(wrap.classList.contains("loaded")).toBe(true); // image shows (regression guard)
+});
+
 test("an already-complete image (cache) starts loaded", () => {
   const spy = jest
     .spyOn(window.HTMLImageElement.prototype, "complete", "get")

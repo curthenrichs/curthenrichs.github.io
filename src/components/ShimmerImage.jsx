@@ -10,7 +10,7 @@ import "./ShimmerImage.css";
  * snapshot (captured loaded) vs the client's first render (loading) — only this
  * wrapper's className differs between them.
  */
-const ShimmerImage = ({ src, alt, reserve, maxWidth, maxHeight, eager = false }) => {
+const ShimmerImage = ({ src, alt, reserve = {}, maxWidth, maxHeight, eager = false }) => {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef(null);
   const wrapRef = useRef(null);
@@ -20,13 +20,17 @@ const ShimmerImage = ({ src, alt, reserve, maxWidth, maxHeight, eager = false })
     if (img && img.complete && img.naturalWidth > 0) {
       // Cache/instant: onLoad won't fire, so mark loaded here.
       setLoaded(true);
-    } else if (wrapRef.current) {
-      // A prerendered page's snapshot renders this wrapper with `loaded` (its
-      // image loaded during capture). suppressHydrationWarning keeps that class,
-      // and React won't repaint a className equal to its memoized value — so for
-      // an image still downloading on the client, remove the stale class here
-      // imperatively, letting the shimmer show until onLoad fires.
-      wrapRef.current.classList.remove("loaded");
+    } else {
+      // The image is (re)loading. Reset React state so a later onLoad repaints
+      // even when src changes on a live, already-loaded instance (otherwise
+      // `loaded` stays true and onLoad's setLoaded(true) is a no-op, stranding
+      // the image behind the shimmer). Also imperatively drop any stale `loaded`
+      // class the prerender snapshot left — React won't repaint it during
+      // hydration when its memoized className already equals the client render.
+      setLoaded(false);
+      if (wrapRef.current) {
+        wrapRef.current.classList.remove("loaded");
+      }
     }
   }, [src]);
 
