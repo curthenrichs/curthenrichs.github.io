@@ -11,18 +11,23 @@ import "./ShimmerImage.css";
  * wrapper's className differs between them.
  */
 const ShimmerImage = ({ src, alt, reserve, maxWidth, maxHeight, eager = false }) => {
-  // null until mounted. On hydration of a prerendered page the wrapper carries a
-  // stale `loaded` class from the snapshot (kept by suppressHydrationWarning);
-  // setting the real boolean here (null -> boolean always re-renders) makes React
-  // reconcile that class to the client's true load state, so a still-downloading
-  // image shows the shimmer instead of a blank box. Also covers cache-complete
-  // images, which never fire onLoad.
-  const [loaded, setLoaded] = useState(null);
+  const [loaded, setLoaded] = useState(false);
   const imgRef = useRef(null);
+  const wrapRef = useRef(null);
 
   useEffect(() => {
     const img = imgRef.current;
-    setLoaded(!!(img && img.complete && img.naturalWidth > 0));
+    if (img && img.complete && img.naturalWidth > 0) {
+      // Cache/instant: onLoad won't fire, so mark loaded here.
+      setLoaded(true);
+    } else if (wrapRef.current) {
+      // A prerendered page's snapshot renders this wrapper with `loaded` (its
+      // image loaded during capture). suppressHydrationWarning keeps that class,
+      // and React won't repaint a className equal to its memoized value — so for
+      // an image still downloading on the client, remove the stale class here
+      // imperatively, letting the shimmer show until onLoad fires.
+      wrapRef.current.classList.remove("loaded");
+    }
   }, [src]);
 
   const style = {};
@@ -33,6 +38,7 @@ const ShimmerImage = ({ src, alt, reserve, maxWidth, maxHeight, eager = false })
 
   return (
     <div
+      ref={wrapRef}
       className={`shimmer-image${loaded ? " loaded" : ""}`}
       style={style}
       suppressHydrationWarning
