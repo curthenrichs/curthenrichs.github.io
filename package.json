@@ -39,7 +39,8 @@
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
     "check:hydration": "node scripts/check-hydration.js",
     "favicons": "node scripts/generate-favicons.js",
-    "image-dims": "node scripts/generate-image-dimensions.js"
+    "image-dims": "node scripts/generate-image-dimensions.js",
+    "image-variants": "node scripts/generate-image-variants.js"
   },
   "eslintConfig": {
     "extends": [
