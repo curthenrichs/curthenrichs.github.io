@@ -5,7 +5,7 @@ Bachelor of Science
 - Major: Computer Engineering
 - Minor: Mathematics
 
-Coming into undergrad, I had some exposure to engineering via FIRST robotics and high school level courses. My emphasis during this degree was to develop my embedded system engineering acumen. Developing systems requires a "triple-helix" of hardware, software, and user experience expertise. MSOE provided a base track for computer engineering with elective options in field (EE, CE, SW, or CS), which already worked two portions of the "triple-helix". Additionally, I needed to fulfill general humanities requirements and electives, which started rounding out the design / user experience portion.
+Coming into undergrad, I had some exposure to engineering via FIRST robotics and high school level courses. My emphasis during this degree was to develop my embedded system engineering acumen. Developing systems requires a "triple-helix" of hardware, software, and user experience expertise. MSOE provided a base track for computer engineering with in-field elective options (EE, CE, SW, or CS), which already covered two portions of the "triple-helix". Additionally, I needed to fulfill general humanities requirements and electives, which started rounding out the design / user experience portion.
 
 ## Courses
 Below are the courses taken during this degree. I have grouped them by major theme.
