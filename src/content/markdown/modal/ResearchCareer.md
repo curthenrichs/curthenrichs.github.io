@@ -1,23 +1,17 @@
 # Graduate Research Assistant
 
-During my graduate research position, I developed several robot user interfaces and researched interaction between robots and humans within the collaborative manufacturing context. Outside of research, I contributed to lab infrastructure and processes, e.g., maintaining centralized robot description/configuration repository.
+I spent my graduate research at the University of Wisconsin-Madison in the People and Robots Lab, studying how people and collaborative robots actually work together on the factory floor. Most of my work was building the robot user interfaces and experiment systems that let us ask those questions, and then running the studies around them.
 
-## Task Interdependence and pRAD Projects
+A lot of the lab's work traced back to one piece of groundwork: an ethnography of cobots in industry, where we interviewed the managers, engineers, operators, and instructors who live with these systems. An epistemic network analysis of those interviews surfaced the concepts that mattered to practitioners, and those concepts seeded most of what I worked on.
 
-These projects focused on exploring how human workers collaborate with cobots. Find a more detailed writeup in the *Notable Projects* section.
+## The Projects
 
-## Authr and CoFrame Projects
+My projects were each a different angle on the same question: how do you make a human-robot team work well. Authr was an authoring environment for splitting a task between a human and a robot. CoFrame was a training environment that coaches novice operators toward expert-quality cobot programs. Task Interdependence and pRAD were paired studies on how a cobot's demands on the operator shape the work, and how to communicate them. Each has a fuller writeup in the *Notable Projects* section.
 
-Authr focused on building an authoring environment for human-robot work. CoFrame was designed as a training environment for cobot operators. Both are documented further in the *Notable Projects* section.
+## ONET
 
-## ONET Project
+When the COVID lockdown made in-person human studies hard to run, we leaned on existing data instead. Working with colleagues in Human Factors and Optimization, we used the O*NET catalog of work activities as a test bed for studying where collaborative robots actually add value across manual work. My piece was rating collaborative-robot capability for each activity, using a decision flowchart a colleague and I built and grounding it in a sizable literature review of cobots at the current state of industry. Those ratings fed the allocation algorithm at the heart of the study, which was published in [Human Factors](https://journals.sagepub.com/doi/10.1177/00187208221077722).
 
-For this project I worked with several colleagues outside of the lab (in Human Factors and Optimization) to investigate cobot effectiveness when deployed on a variety of manual work activities; contributing robot capability analysis as inputs into our allocation algorithm. We performed this study during COVID lock-down, using a pre-existing dataset of human work from ONET. 
+## Lab Duties
 
-My contribution was on rating collaborative robot capability (using a decision flowchart designed by a colleague and me). These ratings were derived from a significant literature review into collaborative robots at the current state-of-industry.
-
-## Miscellaneous Lab Duties
-
-In addition to formal research projects, I contributed to lab infrastructure and processes. I worked to maintain a centralized robot description and configuration repository for robots within our lab. I developed extensive documentation and bringup code for Universal Robots UR3e and Microsoft Hololens. I also developed and updated the Robotiq gripper ROS driver under various conditions (e.g., support for serial tunnel on UR3e).
-
-In addition, it was expected to assist colleagues with their user studies, technical development, and paper writing.
+Beyond the formal projects, I did a fair amount to keep the lab running. I maintained a centralized robot description and configuration repository, wrote documentation and bringup code for our Universal Robots UR3e and Microsoft Hololens, and developed and patched the Robotiq gripper ROS driver for our setups (including serial-tunnel support on the UR3e). It was also just expected that you would help colleagues with their user studies, technical development, and paper writing, which I did often.
