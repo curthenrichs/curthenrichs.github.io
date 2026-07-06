@@ -33,6 +33,7 @@ const ItemDetailPage = ({ route }) => {
     images.filter((i) => i.carousel)[0] || images.filter((i) => i.img)[0];
   const ogImagePath = ogImageEntry
     ? (imageVariants[ogImageEntry.img] &&
+        imageVariants[ogImageEntry.img].full &&
         imageVariants[ogImageEntry.img].full.fallback) ||
       ogImageEntry.img
     : undefined;
