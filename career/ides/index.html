@@ -1,18 +1,169 @@
-<!DOCTYPE html><html lang="en"><head><script>window.__PRERENDER_MD__={"/static/media/IDESCareer.9f45bf46ac220226168a.md":"# IDES, Inc.\n\nIDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops Relativity sub-framing system, electrostatic dose modulation system, and various other TEM peripheral systems to support scientific applications.\n\n## Firmware Engineer\n\nAs the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for our flagship product, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of an edge computer vision platform.\n\nWorking at a small company, I also took on responsibilities outside of my core firmware role including electronics manufacturing, ECAD support, PCBA procurement, and developing user-facing Python software for hardware interfacing.\n\nIDES recognized my contributions and I was quickly promoted to senior engineer.\n\n## Senior Embedded Systems Engineer\n\nAs senior engineer, I continued supporting existing hardware/firmware shipped to customers, including working with our parent company to diagnose and test systems internationally. I also took on mentoring responsibilities, assisting in hiring and training of manufacturing and software engineers.\n\n### Area : FPGA / SoC\nMy major firmware project was transitioning our Xilinx codebase to support multiple SoC variants while maintaining a unified codebase. This involved building out a development process for multiple Vivado projects with shared Verilog HDL and a unified C/C++ system supporting multi-core Vitis projects.\n\nI developed a SCPI-based voltage instrument control service and implemented an AXI DMA transfer pipeline that improved memory throughput by 10x for a key application.\n\nI also led the transition from a bare-metal round-robin architecture to FreeRTOS, utilizing dual cores to enable onboard application-specific acceleration. This included spinning up a REST API and embedded web dashboard built on FreeRTOS+TCP.\n\n### Area : Manufacturing & QA\nI trained manufacturing engineers in electronics assembly processes and provided ongoing QA support. I authored extensive build documentation, standardized packing procedures, and maintained our MRP system. Over time I was able to transition out of active time on this role to be minorly supporting.\n\n### Area : Next-Gen Hardware\nI led component selection for next-generation products, evaluating microcontrollers, ethernet controllers, and I2C devices with a focus on maintainability and supply-chain resilience.\n\n#### MiniConsole\nI designed and developed MiniConsole, a USB user-interface peripheral featuring integrated OLED displays, a tactile encoder, and haptic/audio feedback. I took this product from requirements analysis through schematic capture in Altium, board bringup, firmware development, mechanical enclosure design, custom Windows driver development, Python interface development, integration into the existing software ecosystem, CE marking and productization.\n\n### Area : Software\nI led a major refactor of our hardware control backend, replacing a tightly coupled architecture with a decoupled PubSub-based system (drawing on my experience with ROS). I built out a layered testing strategy spanning driver-level unit/integration tests through system-level QoS validation. I also mentored an intern who prototyped the new REST API layer.\n\n### Area : Real-Time Vision\nMy current focus is building a real-time vision system on the Nvidia Holoscan SDK for 4D-STEM applications. The system processes multiple concurrent image streams from high-speed detectors and generates signal control feedback to the microscope, keeping acquisition and instrument response in a tight loop. This work spans GPU pipeline development, multi-channel stream handling, and integration with our existing hardware control ecosystem.\n\n### Area : AI-Augmented Development\nMy role has expanded to include AI-augmented development workflows for firmware and software tasks. I work daily with agentic coding tools, both Claude and Gemini CLI, choosing between them based on their aptitude for the task at hand. These tools assist with debugging, code generation, and maintenance across our embedded and application-level codebases.\n\nTo bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system for the Holoscan vision project. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against microscope hardware resources without putting the instrument at risk.\n"};</script><script>window.__PRERENDERED_WIDTH__=390;window.__PRERENDERED_HEIGHT__=844;</script><style>
+<!DOCTYPE html><html lang="en"><head><script>window.__PRERENDER_MD__={"/static/media/IDESCareer.7e80027b3c846e124793.md":"# IDES, Inc.\n\nIDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops the Relativity sub-framing system, an electrostatic dose modulation system, and various other TEM peripherals to support scientific applications.\n\n## Firmware Engineer\n\nAs the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for our flagship product, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of an edge computer vision platform.\n\nWorking at a small company, I also took on responsibilities outside of my core firmware role including electronics manufacturing, ECAD support, PCBA procurement, and developing user-facing Python software for hardware interfacing.\n\nI was promoted to senior engineer.\n\n## Senior Embedded Systems Engineer\n\nAs senior engineer, I continued supporting existing hardware/firmware shipped to customers, including working with our parent company to diagnose and test systems internationally. I also took on mentoring responsibilities, assisting in hiring and training of manufacturing and software engineers.\n\n### Area : FPGA / SoC\nMy major firmware project was transitioning our Xilinx firmware to support multiple SoC variants while maintaining a unified codebase. This involved building out a development process for multiple Vivado projects with shared Verilog HDL and a unified C/C++ system supporting multi-core Vitis projects.\n\nI developed a SCPI-based voltage instrument control service and implemented an AXI DMA transfer pipeline that improved memory throughput by 10x for a key application.\n\nI also led the transition from a bare-metal round-robin architecture to FreeRTOS, using dual cores to enable onboard application-specific acceleration. This included spinning up a REST API and embedded web dashboard built on FreeRTOS+TCP.\n\n### Area : Manufacturing & QA\nI trained manufacturing engineers in electronics assembly processes and provided ongoing QA support. I authored extensive build documentation, standardized packing procedures, and maintained our MRP system. Over time I was able to step back from active work in this area to a minor supporting role.\n\n### Area : Next-Gen Hardware\nI led component selection for next-generation products, evaluating microcontrollers, ethernet controllers, and I2C devices with a focus on maintainability and supply-chain resilience.\n\n#### MiniConsole\nI designed and developed MiniConsole, a USB user-interface peripheral featuring integrated OLED displays, a tactile encoder, and haptic/audio feedback. I took this product from requirements analysis through schematic capture in Altium, board bringup, firmware development, mechanical enclosure design, custom Windows driver development, Python interface development, integration into the existing software ecosystem, CE marking, and productization.\n\n### Area : Software\nI led a major refactor of our hardware control backend, replacing a tightly coupled architecture with a decoupled PubSub-based system (drawing on my experience with ROS). I built out a layered testing strategy spanning driver-level unit/integration tests through system-level QoS validation. I also mentored an intern who prototyped the new REST API layer.\n\n### Area : Real-Time Vision\nMy current focus is building a real-time vision system on the Nvidia Holoscan SDK for 4D-STEM applications. The system processes multiple concurrent image streams from high-speed detectors and generates signal control feedback to the microscope, keeping acquisition and instrument response in a tight loop. This work spans GPU pipeline development, multi-channel stream handling, and integration with our existing hardware control ecosystem.\n\n### Area : AI-Augmented Development\nMy role has expanded to include AI-augmented development workflows for firmware and software tasks. I work daily with agentic coding tools, both Claude Code and Gemini CLI, choosing between them based on their aptitude for the task at hand. These tools assist with debugging, code generation, and maintenance across our embedded and application-level codebases.\n\nTo bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system for the Holoscan vision project. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against microscope hardware resources without putting the instrument at risk.\n"};</script><script>window.__PRERENDERED_WIDTH__=390;window.__PRERENDERED_HEIGHT__=844;</script><style>
 #prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 20s forwards}
 #prerender-veil.prv-hidden{opacity:0;pointer-events:none}
 @keyframes prv-timeout{to{opacity:0;visibility:hidden}}
-.prv-robot{position:relative;opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
+#prerender-veil .prv-scale{transform:scale(.59);transform-origin:center}
+#prerender-veil .prv-robot{opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
 @keyframes prv-appear{to{opacity:1}}
 @keyframes prv-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.prv-antenna{width:4px;height:14px;background:#555;margin:0 auto;border-radius:2px;position:relative}
-.prv-antenna::before{content:"";position:absolute;top:-10px;left:-3px;width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-glow 1.6s ease-in-out infinite}
-@keyframes prv-glow{0%,100%{opacity:.5}50%{opacity:1}}
-.prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
-.prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
-@keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-.prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
-@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}.prv-label{opacity:1;animation:none}}
+#prerender-veil .prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
+@media (prefers-reduced-motion:reduce){#prerender-veil .prv-robot{opacity:1;animation:none}#prerender-veil .prv-label{opacity:1;animation:none}}
+/* Henry -- animated (living) form. Colorway-templated source: generate.js
+ * recolors #1890ff/#40a9ff per variant; #555 outline and #fff head are
+ * palette-invariant. Consumers render the cute-robot- markup (container >
+ * robot > antenna + head > 2 eyes, plus 2 question spans for the confused
+ * pose) documented here; that class contract is the interface. The
+ * portfolio's CuteRobot.jsx and its prerender veil both consume this. */
+.cute-robot-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 160px;
+}
+
+/* Reserve headroom for the absolutely-positioned question marks */
+.cute-robot-has-question {
+  padding-top: 52px;
+}
+
+/* Manga-style question marks: a big "?" with a smaller companion, tilted
+ * off-axis, popping with an overshoot "boing" timed just after the eye
+ * blink (both run on the same 3.2s cycle), then drifting before re-popping.
+ * Per-mark placement/tilt via CSS variables so both share one keyframe set. */
+.cute-robot-q {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  transform: translate(var(--q-x), var(--q-y)) rotate(var(--q-tilt));
+  animation: cute-robot-q-boing 3.2s ease-in-out infinite;
+}
+
+.cute-robot-q-main {
+  --q-x: 35px;
+  --q-y: 6px;
+  --q-tilt: 10deg;
+  font-size: 36px;
+  color: #1890ff;
+}
+
+.cute-robot-q-small {
+  --q-x: 76px;
+  --q-y: 0px;
+  --q-tilt: 22deg;
+  font-size: 20px;
+  color: #40a9ff;
+  animation-delay: -1.1s;
+}
+
+@keyframes cute-robot-q-boing {
+  0% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) - 5deg)) scale(0.85);
+  }
+  7% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) + 4deg)) scale(1.18);
+  }
+  14% {
+    transform: translate(var(--q-x), var(--q-y)) rotate(var(--q-tilt)) scale(1);
+  }
+  55% {
+    transform: translate(var(--q-x), calc(var(--q-y) - 4px))
+      rotate(calc(var(--q-tilt) + 6deg)) scale(1);
+  }
+  92% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) - 3deg)) scale(1);
+  }
+  100% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) - 5deg)) scale(0.85);
+  }
+}
+
+/* Body stays still (per design feedback) -- only eyes blink, antenna glows */
+.cute-robot-robot {
+  position: relative;
+  display: inline-block;
+}
+
+.cute-robot-antenna {
+  display: block;
+  width: 7px;
+  height: 24px;
+  background: #555;
+  margin: 0 auto;
+  border-radius: 3px;
+  position: relative;
+}
+
+.cute-robot-antenna::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -5.5px;
+  width: 17px;
+  height: 17px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: cute-robot-glow 1.6s ease-in-out infinite;
+}
+
+@keyframes cute-robot-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cute-robot-head {
+  width: 109px;
+  height: 78px;
+  border: 5px solid #555;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.cute-robot-eye {
+  width: 17px;
+  height: 17px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: cute-robot-blink 3.2s infinite;
+}
+
+@keyframes cute-robot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cute-robot-q,
+  .cute-robot-antenna::before,
+  .cute-robot-eye {
+    animation: none;
+  }
+}
+
 </style><style data-rc-order="prepend" rc-util-key="@ant-design-icons">
 .anticon {
   display: inline-flex;
@@ -94,28 +245,28 @@
           "https://twitter.com/curt_henrichs",
           "https://www.half-built-robots.com/"
         ]
-      }</script><script defer="defer" src="/static/js/main.f0a75faa.js"></script><link href="/static/css/main.4bb1bd83.css" rel="stylesheet"><link rel="canonical" href="https://curthenrichs.github.io/career/ides" data-rh="true"><meta name="description" content="A high-level overview of Curt's engineering work at Integrated Dynamic Electron Solutions (IDES), spanning firmware and embedded systems for electron microscopy." data-rh="true"><meta property="og:type" content="website" data-rh="true"><meta property="og:title" content="Curt Henrichs | Portfolio | IDES" data-rh="true"><meta property="og:description" content="A high-level overview of Curt's engineering work at Integrated Dynamic Electron Solutions (IDES), spanning firmware and embedded systems for electron microscopy." data-rh="true"><meta property="og:url" content="https://curthenrichs.github.io/career/ides" data-rh="true"><meta property="og:image" content="https://curthenrichs.github.io/static/img/career/ides/IDES-career-viz.jpg" data-rh="true"><meta property="og:image:alt" content="Image from IDES" data-rh="true"><meta name="twitter:card" content="summary_large_image" data-rh="true"><meta name="twitter:creator" content="@curt_henrichs" data-rh="true"></head><body><noscript>This site is fully interactive with JavaScript enabled; without it you are viewing a static snapshot.</noscript><div id="root"><section class="ant-layout layout"><header class="ant-layout-header header-style" style="width: 390px;"><div class="ant-row ant-row-no-wrap ant-row-bottom"><div class="ant-col" style="flex: 0 0 200px; min-width: 0px;"><h2 class="ant-typography nav-title-heading"><a class="nav-title-link" href="/home">Curt Henrichs</a></h2></div><div class="ant-col" style="flex: 1 1 auto; min-width: 0px;"><span class="ant-typography nav-bar-text">&nbsp;</span></div><div class="ant-col" style="flex: 0 0 100px; min-width: 0px;"><div class="nav-bar nav-bar-dropdown" id="collapsed-menu" role="button" tabindex="0"><div style="font-size: var(--fs-icon);"><span role="img" class="anticon"><svg height="1em" viewBox="0 -53 384 384" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg></span></div></div></div></div></header><main class="ant-layout-content" style="padding: 20px 0px 0px; margin-top: 64px;"><div id="sect-detail" class="sect type-a"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="display: flex; justify-content: center;"><div style="max-width: 900px; width: 100%;"><div style="text-align: left;"><div style="text-align: center;"><div class="carousel-root carousel"><div class="carousel carousel-slider" style="width: 100%;"><button type="button" aria-label="previous slide / item" class="control-arrow control-prev control-disabled"></button><div class="slider-wrapper axis-horizontal"><ul class="slider animated" style="transform: translate3d(-100%, 0px, 0px); transition-duration: 350ms;"><li class="slide selected previous"><div style="display: flex; justify-content: center;"><img src="/static/img/career/ides/IDES-career-viz.jpg" alt="Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details." style="max-height: 500px; max-width: 800px;"><p class="legend">Visualization of my roles and responsibilities at IDES.</p></div></li><li class="slide selected previous"><div style="display: flex; justify-content: center;"><img src="/static/img/career/ides/IDES-career-viz.jpg" alt="Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details." style="max-height: 500px; max-width: 800px;"><p class="legend">Visualization of my roles and responsibilities at IDES.</p></div></li></ul></div><button type="button" aria-label="next slide / item" class="control-arrow control-next control-disabled"></button></div></div></div><div class="ant-divider ant-divider-horizontal" role="separator"></div><h1>IDES, Inc.</h1>
-<div style="padding-bottom: 1em;">IDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops Relativity sub-framing system, electrostatic dose modulation system, and various other TEM peripheral systems to support scientific applications.</div>
+      }</script><script defer="defer" src="/static/js/main.f0fe7ccb.js"></script><link href="/static/css/main.c9cd92a4.css" rel="stylesheet"><link rel="canonical" href="https://curthenrichs.github.io/career/ides" data-rh="true"><meta name="description" content="A high-level overview of Curt's engineering work at Integrated Dynamic Electron Solutions (IDES), spanning firmware and embedded systems for electron microscopy." data-rh="true"><meta property="og:type" content="website" data-rh="true"><meta property="og:title" content="Curt Henrichs | Portfolio | IDES" data-rh="true"><meta property="og:description" content="A high-level overview of Curt's engineering work at Integrated Dynamic Electron Solutions (IDES), spanning firmware and embedded systems for electron microscopy." data-rh="true"><meta property="og:url" content="https://curthenrichs.github.io/career/ides" data-rh="true"><meta property="og:image" content="https://curthenrichs.github.io/static/img/career/ides/IDES-career-viz-full.jpg" data-rh="true"><meta property="og:image:alt" content="Image from IDES" data-rh="true"><meta name="twitter:card" content="summary_large_image" data-rh="true"><meta name="twitter:creator" content="@curt_henrichs" data-rh="true"></head><body><noscript>This site is fully interactive with JavaScript enabled; without it you are viewing a static snapshot.</noscript><div id="root"><section class="ant-layout layout"><header class="ant-layout-header header-style" style="width: 390px;"><div class="ant-row ant-row-no-wrap ant-row-bottom"><div class="ant-col" style="flex: 0 0 200px; min-width: 0px;"><h2 class="ant-typography nav-title-heading"><a class="nav-title-link" href="/home">Curt Henrichs</a></h2></div><div class="ant-col" style="flex: 1 1 auto; min-width: 0px;"><span class="ant-typography nav-bar-text">&nbsp;</span></div><div class="ant-col" style="flex: 0 0 100px; min-width: 0px;"><div class="nav-bar nav-bar-dropdown" id="collapsed-menu" role="button" tabindex="0"><div style="font-size: var(--fs-icon);"><span role="img" class="anticon"><svg height="1em" viewBox="0 -53 384 384" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg></span></div></div></div></div></header><main class="ant-layout-content" style="padding: 20px 0px 0px; margin-top: 64px;"><div id="sect-detail" class="sect type-a"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="display: flex; justify-content: center;"><div style="max-width: 900px; width: 100%;"><div style="text-align: left;"><div style="text-align: center;"><div class="carousel-root carousel"><div class="carousel carousel-slider" style="width: 100%;"><button type="button" aria-label="previous slide / item" class="control-arrow control-prev control-disabled"></button><div class="slider-wrapper axis-horizontal"><ul class="slider animated" style="transform: translate3d(-100%, 0px, 0px); transition-duration: 350ms;"><li class="slide selected previous"><div style="display: flex; justify-content: center;"><div class="shimmer-image loaded" style="aspect-ratio: 2.24686 / 1; max-width: 800px; max-height: 500px;"><div class="ant-skeleton ant-skeleton-element ant-skeleton-active shimmer-image__skeleton"><div class="ant-skeleton-image shimmer-image__skeleton"><svg viewBox="0 0 1098 1024" xmlns="http://www.w3.org/2000/svg" class="ant-skeleton-image-svg"><path d="M365.714286 329.142857q0 45.714286-32.036571 77.677714t-77.677714 32.036571-77.677714-32.036571-32.036571-77.677714 32.036571-77.677714 77.677714-32.036571 77.677714 32.036571 32.036571 77.677714zM950.857143 548.571429l0 256-804.571429 0 0-109.714286 182.857143-182.857143 91.428571 91.428571 292.571429-292.571429zM1005.714286 146.285714l-914.285714 0q-7.460571 0-12.873143 5.412571t-5.412571 12.873143l0 694.857143q0 7.460571 5.412571 12.873143t12.873143 5.412571l914.285714 0q7.460571 0 12.873143-5.412571t5.412571-12.873143l0-694.857143q0-7.460571-5.412571-12.873143t-12.873143-5.412571zM1097.142857 164.571429l0 694.857143q0 37.741714-26.843429 64.585143t-64.585143 26.843429l-914.285714 0q-37.741714 0-64.585143-26.843429t-26.843429-64.585143l0-694.857143q0-37.741714 26.843429-64.585143t64.585143-26.843429l914.285714 0q37.741714 0 64.585143 26.843429t26.843429 64.585143z" class="ant-skeleton-image-path"></path></svg></div></div><picture><source srcset="/static/img/career/ides/IDES-career-viz-full.webp" type="image/webp"><img class="shimmer-image__img" src="/static/img/career/ides/IDES-career-viz-full.jpg" alt="Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details." loading="eager"></picture></div><p class="legend">Visualization of my roles and responsibilities at IDES.</p></div></li><li class="slide selected previous"><div style="display: flex; justify-content: center;"><div class="shimmer-image loaded" style="aspect-ratio: 2.24686 / 1; max-width: 800px; max-height: 500px;"><div class="ant-skeleton ant-skeleton-element ant-skeleton-active shimmer-image__skeleton"><div class="ant-skeleton-image shimmer-image__skeleton"><svg viewBox="0 0 1098 1024" xmlns="http://www.w3.org/2000/svg" class="ant-skeleton-image-svg"><path d="M365.714286 329.142857q0 45.714286-32.036571 77.677714t-77.677714 32.036571-77.677714-32.036571-32.036571-77.677714 32.036571-77.677714 77.677714-32.036571 77.677714 32.036571 32.036571 77.677714zM950.857143 548.571429l0 256-804.571429 0 0-109.714286 182.857143-182.857143 91.428571 91.428571 292.571429-292.571429zM1005.714286 146.285714l-914.285714 0q-7.460571 0-12.873143 5.412571t-5.412571 12.873143l0 694.857143q0 7.460571 5.412571 12.873143t12.873143 5.412571l914.285714 0q7.460571 0 12.873143-5.412571t5.412571-12.873143l0-694.857143q0-7.460571-5.412571-12.873143t-12.873143-5.412571zM1097.142857 164.571429l0 694.857143q0 37.741714-26.843429 64.585143t-64.585143 26.843429l-914.285714 0q-37.741714 0-64.585143-26.843429t-26.843429-64.585143l0-694.857143q0-37.741714 26.843429-64.585143t64.585143-26.843429l914.285714 0q37.741714 0 64.585143 26.843429t26.843429 64.585143z" class="ant-skeleton-image-path"></path></svg></div></div><picture><source srcset="/static/img/career/ides/IDES-career-viz-full.webp" type="image/webp"><img class="shimmer-image__img" src="/static/img/career/ides/IDES-career-viz-full.jpg" alt="Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details." loading="eager"></picture></div><p class="legend">Visualization of my roles and responsibilities at IDES.</p></div></li></ul></div><button type="button" aria-label="next slide / item" class="control-arrow control-next control-disabled"></button></div></div></div><div class="ant-divider ant-divider-horizontal" role="separator"></div><h1>IDES, Inc.</h1>
+<div style="padding-bottom: 1em;">IDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops the Relativity sub-framing system, an electrostatic dose modulation system, and various other TEM peripherals to support scientific applications.</div>
 <h2>Firmware Engineer</h2>
 <div style="padding-bottom: 1em;">As the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for our flagship product, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of an edge computer vision platform.</div>
 <div style="padding-bottom: 1em;">Working at a small company, I also took on responsibilities outside of my core firmware role including electronics manufacturing, ECAD support, PCBA procurement, and developing user-facing Python software for hardware interfacing.</div>
-<div style="padding-bottom: 1em;">IDES recognized my contributions and I was quickly promoted to senior engineer.</div>
+<div style="padding-bottom: 1em;">I was promoted to senior engineer.</div>
 <h2>Senior Embedded Systems Engineer</h2>
 <div style="padding-bottom: 1em;">As senior engineer, I continued supporting existing hardware/firmware shipped to customers, including working with our parent company to diagnose and test systems internationally. I also took on mentoring responsibilities, assisting in hiring and training of manufacturing and software engineers.</div>
 <h3>Area : FPGA / SoC</h3>
-<div style="padding-bottom: 1em;">My major firmware project was transitioning our Xilinx codebase to support multiple SoC variants while maintaining a unified codebase. This involved building out a development process for multiple Vivado projects with shared Verilog HDL and a unified C/C++ system supporting multi-core Vitis projects.</div>
+<div style="padding-bottom: 1em;">My major firmware project was transitioning our Xilinx firmware to support multiple SoC variants while maintaining a unified codebase. This involved building out a development process for multiple Vivado projects with shared Verilog HDL and a unified C/C++ system supporting multi-core Vitis projects.</div>
 <div style="padding-bottom: 1em;">I developed a SCPI-based voltage instrument control service and implemented an AXI DMA transfer pipeline that improved memory throughput by 10x for a key application.</div>
-<div style="padding-bottom: 1em;">I also led the transition from a bare-metal round-robin architecture to FreeRTOS, utilizing dual cores to enable onboard application-specific acceleration. This included spinning up a REST API and embedded web dashboard built on FreeRTOS+TCP.</div>
+<div style="padding-bottom: 1em;">I also led the transition from a bare-metal round-robin architecture to FreeRTOS, using dual cores to enable onboard application-specific acceleration. This included spinning up a REST API and embedded web dashboard built on FreeRTOS+TCP.</div>
 <h3>Area : Manufacturing &amp; QA</h3>
-<div style="padding-bottom: 1em;">I trained manufacturing engineers in electronics assembly processes and provided ongoing QA support. I authored extensive build documentation, standardized packing procedures, and maintained our MRP system. Over time I was able to transition out of active time on this role to be minorly supporting.</div>
+<div style="padding-bottom: 1em;">I trained manufacturing engineers in electronics assembly processes and provided ongoing QA support. I authored extensive build documentation, standardized packing procedures, and maintained our MRP system. Over time I was able to step back from active work in this area to a minor supporting role.</div>
 <h3>Area : Next-Gen Hardware</h3>
 <div style="padding-bottom: 1em;">I led component selection for next-generation products, evaluating microcontrollers, ethernet controllers, and I2C devices with a focus on maintainability and supply-chain resilience.</div>
 <h4>MiniConsole</h4>
-<div style="padding-bottom: 1em;">I designed and developed MiniConsole, a USB user-interface peripheral featuring integrated OLED displays, a tactile encoder, and haptic/audio feedback. I took this product from requirements analysis through schematic capture in Altium, board bringup, firmware development, mechanical enclosure design, custom Windows driver development, Python interface development, integration into the existing software ecosystem, CE marking and productization.</div>
+<div style="padding-bottom: 1em;">I designed and developed MiniConsole, a USB user-interface peripheral featuring integrated OLED displays, a tactile encoder, and haptic/audio feedback. I took this product from requirements analysis through schematic capture in Altium, board bringup, firmware development, mechanical enclosure design, custom Windows driver development, Python interface development, integration into the existing software ecosystem, CE marking, and productization.</div>
 <h3>Area : Software</h3>
 <div style="padding-bottom: 1em;">I led a major refactor of our hardware control backend, replacing a tightly coupled architecture with a decoupled PubSub-based system (drawing on my experience with ROS). I built out a layered testing strategy spanning driver-level unit/integration tests through system-level QoS validation. I also mentored an intern who prototyped the new REST API layer.</div>
 <h3>Area : Real-Time Vision</h3>
 <div style="padding-bottom: 1em;">My current focus is building a real-time vision system on the Nvidia Holoscan SDK for 4D-STEM applications. The system processes multiple concurrent image streams from high-speed detectors and generates signal control feedback to the microscope, keeping acquisition and instrument response in a tight loop. This work spans GPU pipeline development, multi-channel stream handling, and integration with our existing hardware control ecosystem.</div>
 <h3>Area : AI-Augmented Development</h3>
-<div style="padding-bottom: 1em;">My role has expanded to include AI-augmented development workflows for firmware and software tasks. I work daily with agentic coding tools, both Claude and Gemini CLI, choosing between them based on their aptitude for the task at hand. These tools assist with debugging, code generation, and maintenance across our embedded and application-level codebases.</div>
-<div style="padding-bottom: 1em;">To bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system for the Holoscan vision project. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against microscope hardware resources without putting the instrument at risk.</div><div style="padding-top: 1.5em; text-align: center;"><a href="/career" class="ant-btn ant-btn-round ant-btn-default ant-btn-lg"><span>Back to Career</span></a></div></div></div></div></div></div></main><footer class="ant-layout-footer" style="text-align: center;"><div class="ant-divider ant-divider-horizontal" role="separator"></div><span class="ant-typography"><strong><span>Curt Henrichs LLC © 2026</span></strong></span><br><span class="ant-typography">Created with Reactjs and Ant Design</span><br><br><span class="ant-typography"><a href="/">Home</a>&nbsp;|&nbsp;<a href="/resume">Resume</a>&nbsp;|&nbsp;<a href="/terms">Terms of Use</a>&nbsp;|&nbsp;<a href="/contract">Work with Me</a></span><br><span class="ant-typography"><a href="/career">Career</a>&nbsp;|&nbsp;<a href="/education">Education</a>&nbsp;|&nbsp;<a href="/projects">Projects</a>&nbsp;|&nbsp;<a href="/publications">Publications</a>&nbsp;|&nbsp;<a href="/blog">Blog</a></span><br><span class="ant-typography"><a href="/accessibility">Accessibility Policy</a>&nbsp;|&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;|&nbsp;<a href="/attribution">Attribution</a></span></footer></section></div><div aria-hidden="true" role="presentation" style="width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;"></div><div id="prerender-veil" aria-hidden="true"><div class="prv-robot"><div class="prv-antenna"></div><div class="prv-head"><div class="prv-eye"></div><div class="prv-eye"></div></div></div><div class="prv-label">Loading&#8230;</div></div><noscript><style>#prerender-veil{display:none}</style></noscript></body></html>
+<div style="padding-bottom: 1em;">My role has expanded to include AI-augmented development workflows for firmware and software tasks. I work daily with agentic coding tools, both Claude Code and Gemini CLI, choosing between them based on their aptitude for the task at hand. These tools assist with debugging, code generation, and maintenance across our embedded and application-level codebases.</div>
+<div style="padding-bottom: 1em;">To bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system for the Holoscan vision project. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against microscope hardware resources without putting the instrument at risk.</div><div style="padding-top: 1.5em; text-align: center;"><a href="/career" class="ant-btn ant-btn-round ant-btn-default ant-btn-lg"><span>Back to Career</span></a></div></div></div></div></div></div></main><footer class="ant-layout-footer" style="text-align: center;"><div class="ant-divider ant-divider-horizontal" role="separator"></div><span class="ant-typography"><strong><span>Curt Henrichs LLC © 2026</span></strong></span><br><span class="ant-typography">Created with Reactjs and Ant Design</span><br><span class="ant-typography" style="display: block;"><a href="/home">Home</a>&nbsp;|&nbsp;<a href="/resume">Resume</a>&nbsp;|&nbsp;<a href="/career">Career</a>&nbsp;|&nbsp;<a href="/education">Education</a></span><span class="ant-typography" style="display: block;"><a href="/projects">Projects</a>&nbsp;|&nbsp;<a href="/publications">Publications</a></span><span class="ant-typography" style="display: block;"><a href="/contract">Work with Me</a>&nbsp;|&nbsp;<a href="/blog">Blog</a>&nbsp;|&nbsp;<a href="/terms">Terms of Use</a></span><span class="ant-typography" style="display: block;"><a href="/accessibility">Accessibility Policy</a></span><span class="ant-typography" style="display: block;"><a href="/privacy">Privacy Policy</a>&nbsp;|&nbsp;<a href="/attribution">Attribution</a></span></footer></section></div><div aria-hidden="true" role="presentation" style="width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;"></div><div id="prerender-veil" aria-hidden="true"><div class="prv-scale"><div class="prv-robot"><span class="cute-robot-container"><span class="cute-robot-robot"><span class="cute-robot-antenna"></span><span class="cute-robot-head"><span class="cute-robot-eye"></span><span class="cute-robot-eye"></span></span></span></span></div></div><div class="prv-label">Loading&#8230;</div></div><noscript><style>#prerender-veil{display:none}</style></noscript></body></html>

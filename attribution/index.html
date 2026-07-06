@@ -2,17 +2,168 @@
 #prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 20s forwards}
 #prerender-veil.prv-hidden{opacity:0;pointer-events:none}
 @keyframes prv-timeout{to{opacity:0;visibility:hidden}}
-.prv-robot{position:relative;opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
+#prerender-veil .prv-scale{transform:scale(.59);transform-origin:center}
+#prerender-veil .prv-robot{opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
 @keyframes prv-appear{to{opacity:1}}
 @keyframes prv-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.prv-antenna{width:4px;height:14px;background:#555;margin:0 auto;border-radius:2px;position:relative}
-.prv-antenna::before{content:"";position:absolute;top:-10px;left:-3px;width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-glow 1.6s ease-in-out infinite}
-@keyframes prv-glow{0%,100%{opacity:.5}50%{opacity:1}}
-.prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
-.prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
-@keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-.prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
-@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}.prv-label{opacity:1;animation:none}}
+#prerender-veil .prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
+@media (prefers-reduced-motion:reduce){#prerender-veil .prv-robot{opacity:1;animation:none}#prerender-veil .prv-label{opacity:1;animation:none}}
+/* Henry -- animated (living) form. Colorway-templated source: generate.js
+ * recolors #1890ff/#40a9ff per variant; #555 outline and #fff head are
+ * palette-invariant. Consumers render the cute-robot- markup (container >
+ * robot > antenna + head > 2 eyes, plus 2 question spans for the confused
+ * pose) documented here; that class contract is the interface. The
+ * portfolio's CuteRobot.jsx and its prerender veil both consume this. */
+.cute-robot-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 160px;
+}
+
+/* Reserve headroom for the absolutely-positioned question marks */
+.cute-robot-has-question {
+  padding-top: 52px;
+}
+
+/* Manga-style question marks: a big "?" with a smaller companion, tilted
+ * off-axis, popping with an overshoot "boing" timed just after the eye
+ * blink (both run on the same 3.2s cycle), then drifting before re-popping.
+ * Per-mark placement/tilt via CSS variables so both share one keyframe set. */
+.cute-robot-q {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  transform: translate(var(--q-x), var(--q-y)) rotate(var(--q-tilt));
+  animation: cute-robot-q-boing 3.2s ease-in-out infinite;
+}
+
+.cute-robot-q-main {
+  --q-x: 35px;
+  --q-y: 6px;
+  --q-tilt: 10deg;
+  font-size: 36px;
+  color: #1890ff;
+}
+
+.cute-robot-q-small {
+  --q-x: 76px;
+  --q-y: 0px;
+  --q-tilt: 22deg;
+  font-size: 20px;
+  color: #40a9ff;
+  animation-delay: -1.1s;
+}
+
+@keyframes cute-robot-q-boing {
+  0% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) - 5deg)) scale(0.85);
+  }
+  7% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) + 4deg)) scale(1.18);
+  }
+  14% {
+    transform: translate(var(--q-x), var(--q-y)) rotate(var(--q-tilt)) scale(1);
+  }
+  55% {
+    transform: translate(var(--q-x), calc(var(--q-y) - 4px))
+      rotate(calc(var(--q-tilt) + 6deg)) scale(1);
+  }
+  92% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) - 3deg)) scale(1);
+  }
+  100% {
+    transform: translate(var(--q-x), var(--q-y))
+      rotate(calc(var(--q-tilt) - 5deg)) scale(0.85);
+  }
+}
+
+/* Body stays still (per design feedback) -- only eyes blink, antenna glows */
+.cute-robot-robot {
+  position: relative;
+  display: inline-block;
+}
+
+.cute-robot-antenna {
+  display: block;
+  width: 7px;
+  height: 24px;
+  background: #555;
+  margin: 0 auto;
+  border-radius: 3px;
+  position: relative;
+}
+
+.cute-robot-antenna::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -5.5px;
+  width: 17px;
+  height: 17px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: cute-robot-glow 1.6s ease-in-out infinite;
+}
+
+@keyframes cute-robot-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cute-robot-head {
+  width: 109px;
+  height: 78px;
+  border: 5px solid #555;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.cute-robot-eye {
+  width: 17px;
+  height: 17px;
+  background: #1890ff;
+  border-radius: 50%;
+  animation: cute-robot-blink 3.2s infinite;
+}
+
+@keyframes cute-robot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cute-robot-q,
+  .cute-robot-antenna::before,
+  .cute-robot-eye {
+    animation: none;
+  }
+}
+
 </style><style data-rc-order="prepend" rc-util-key="@ant-design-icons">
 .anticon {
   display: inline-flex;
@@ -94,7 +245,7 @@
           "https://twitter.com/curt_henrichs",
           "https://www.half-built-robots.com/"
         ]
-      }</script><script defer="defer" src="/static/js/main.f0a75faa.js"></script><link href="/static/css/main.4bb1bd83.css" rel="stylesheet"><link rel="canonical" href="https://curthenrichs.github.io/attribution" data-rh="true"><meta name="description" content="Image, icon, and logo attribution for content used on curthenrichs.github.io." data-rh="true"><meta property="og:type" content="website" data-rh="true"><meta property="og:title" content="Curt Henrichs | Portfolio | Attribution" data-rh="true"><meta property="og:description" content="Image, icon, and logo attribution for content used on curthenrichs.github.io." data-rh="true"><meta property="og:url" content="https://curthenrichs.github.io/attribution" data-rh="true"><meta property="og:image" content="https://curthenrichs.github.io/static/img/bio-main.jpg" data-rh="true"><meta property="og:image:alt" content="Portrait of Curt Henrichs" data-rh="true"><meta name="twitter:card" content="summary" data-rh="true"><meta name="twitter:creator" content="@curt_henrichs" data-rh="true"></head><body><noscript>This site is fully interactive with JavaScript enabled; without it you are viewing a static snapshot.</noscript><div id="root"><section class="ant-layout layout"><header class="ant-layout-header header-style" style="width: 390px;"><div class="ant-row ant-row-no-wrap ant-row-bottom"><div class="ant-col" style="flex: 0 0 200px; min-width: 0px;"><h2 class="ant-typography nav-title-heading"><a class="nav-title-link" href="/home">Curt Henrichs</a></h2></div><div class="ant-col" style="flex: 1 1 auto; min-width: 0px;"><span class="ant-typography nav-bar-text">&nbsp;</span></div><div class="ant-col" style="flex: 0 0 100px; min-width: 0px;"><div class="nav-bar nav-bar-dropdown" id="collapsed-menu" role="button" tabindex="0"><div style="font-size: var(--fs-icon);"><span role="img" class="anticon"><svg height="1em" viewBox="0 -53 384 384" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg></span></div></div></div></div></header><main class="ant-layout-content" style="padding: 20px 0px 0px; margin-top: 64px;"><div id="sect-home" class="sect type-a"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="display: flex; justify-content: center;"><div style="max-width: 900px; width: 100%;"><h2>Attribution and Licenses</h2>
+      }</script><script defer="defer" src="/static/js/main.f0fe7ccb.js"></script><link href="/static/css/main.c9cd92a4.css" rel="stylesheet"><link rel="canonical" href="https://curthenrichs.github.io/attribution" data-rh="true"><meta name="description" content="Image, icon, and logo attribution for content used on curthenrichs.github.io." data-rh="true"><meta property="og:type" content="website" data-rh="true"><meta property="og:title" content="Curt Henrichs | Portfolio | Attribution" data-rh="true"><meta property="og:description" content="Image, icon, and logo attribution for content used on curthenrichs.github.io." data-rh="true"><meta property="og:url" content="https://curthenrichs.github.io/attribution" data-rh="true"><meta property="og:image" content="https://curthenrichs.github.io/static/img/bio-main.jpg" data-rh="true"><meta property="og:image:alt" content="Portrait of Curt Henrichs" data-rh="true"><meta name="twitter:card" content="summary" data-rh="true"><meta name="twitter:creator" content="@curt_henrichs" data-rh="true"></head><body><noscript>This site is fully interactive with JavaScript enabled; without it you are viewing a static snapshot.</noscript><div id="root"><section class="ant-layout layout"><header class="ant-layout-header header-style" style="width: 390px;"><div class="ant-row ant-row-no-wrap ant-row-bottom"><div class="ant-col" style="flex: 0 0 200px; min-width: 0px;"><h2 class="ant-typography nav-title-heading"><a class="nav-title-link" href="/home">Curt Henrichs</a></h2></div><div class="ant-col" style="flex: 1 1 auto; min-width: 0px;"><span class="ant-typography nav-bar-text">&nbsp;</span></div><div class="ant-col" style="flex: 0 0 100px; min-width: 0px;"><div class="nav-bar nav-bar-dropdown" id="collapsed-menu" role="button" tabindex="0"><div style="font-size: var(--fs-icon);"><span role="img" class="anticon"><svg height="1em" viewBox="0 -53 384 384" width="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"></path></svg></span></div></div></div></div></header><main class="ant-layout-content" style="padding: 20px 0px 0px; margin-top: 64px;"><div id="sect-home" class="sect type-a"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="display: flex; justify-content: center;"><div style="max-width: 900px; width: 100%;"><h2>Attribution and Licenses</h2>
 <h3>General Attribution</h3>
 <div style="padding-bottom: 1em;">Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.</div>
 <div style="padding-bottom: 1em;">Deployed on Github Pages static hosting. Deployment handled with <a href="https://www.npmjs.com/package/gh-pages" target="_blank" rel="noopener noreferrer">gh-pages</a>.</div>
@@ -130,4 +281,4 @@
 <div style="padding-bottom: 1em;">IDES photographs are published only with permission from the company. The visualization diagram explaining my roles at IDES is my own work.</div>
 <div style="padding-bottom: 1em;">Dedicated Computing internship images were taken with permission from my supervisor during my time as an intern.</div>
 <div style="padding-bottom: 1em;">The IDES logo, JEOL logo, Dedicated Computing logo, University of Wisconsin Madison logo, and Milwaukee School of Engineering logo are owned by their respective institutions.</div>
-<div style="padding-bottom: 1em;">All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from publications produced in whole/part by Curt Henrichs.</div></div></div></div></div><div id="sect-return" class="sect type-a" style="padding-top: 3em;"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="text-align: center;"><a href="/home" class="ant-btn ant-btn-round ant-btn-primary ant-btn-lg"><span>Take Me Back Home</span></a></div></div></div></main><footer class="ant-layout-footer" style="text-align: center;"><div class="ant-divider ant-divider-horizontal" role="separator"></div><span class="ant-typography"><strong><span>Curt Henrichs LLC © 2026</span></strong></span><br><span class="ant-typography">Created with Reactjs and Ant Design</span><br><br><span class="ant-typography"><a href="/">Home</a>&nbsp;|&nbsp;<a href="/resume">Resume</a>&nbsp;|&nbsp;<a href="/terms">Terms of Use</a>&nbsp;|&nbsp;<a href="/contract">Work with Me</a></span><br><span class="ant-typography"><a href="/career">Career</a>&nbsp;|&nbsp;<a href="/education">Education</a>&nbsp;|&nbsp;<a href="/projects">Projects</a>&nbsp;|&nbsp;<a href="/publications">Publications</a>&nbsp;|&nbsp;<a href="/blog">Blog</a></span><br><span class="ant-typography"><a href="/accessibility">Accessibility Policy</a>&nbsp;|&nbsp;<a href="/privacy">Privacy Policy</a>&nbsp;|&nbsp;<a href="/attribution">Attribution</a></span></footer></section></div><div aria-hidden="true" role="presentation" style="width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;"></div><div id="prerender-veil" aria-hidden="true"><div class="prv-robot"><div class="prv-antenna"></div><div class="prv-head"><div class="prv-eye"></div><div class="prv-eye"></div></div></div><div class="prv-label">Loading&#8230;</div></div><noscript><style>#prerender-veil{display:none}</style></noscript></body></html>
+<div style="padding-bottom: 1em;">All other images / graphics / figures are copyrighted work of Curt Henrichs and/or from publications produced in whole/part by Curt Henrichs.</div></div></div></div></div><div id="sect-return" class="sect type-a" style="padding-top: 3em;"><div class="sect-inner" style="position: relative; padding-top: 0px; padding-bottom: 0px;"><div style="text-align: center;"><a href="/home" class="ant-btn ant-btn-round ant-btn-primary ant-btn-lg"><span>Take Me Back Home</span></a></div></div></div></main><footer class="ant-layout-footer" style="text-align: center;"><div class="ant-divider ant-divider-horizontal" role="separator"></div><span class="ant-typography"><strong><span>Curt Henrichs LLC © 2026</span></strong></span><br><span class="ant-typography">Created with Reactjs and Ant Design</span><br><span class="ant-typography" style="display: block;"><a href="/home">Home</a>&nbsp;|&nbsp;<a href="/resume">Resume</a>&nbsp;|&nbsp;<a href="/career">Career</a>&nbsp;|&nbsp;<a href="/education">Education</a></span><span class="ant-typography" style="display: block;"><a href="/projects">Projects</a>&nbsp;|&nbsp;<a href="/publications">Publications</a></span><span class="ant-typography" style="display: block;"><a href="/contract">Work with Me</a>&nbsp;|&nbsp;<a href="/blog">Blog</a>&nbsp;|&nbsp;<a href="/terms">Terms of Use</a></span><span class="ant-typography" style="display: block;"><a href="/accessibility">Accessibility Policy</a></span><span class="ant-typography" style="display: block;"><a href="/privacy">Privacy Policy</a>&nbsp;|&nbsp;<a href="/attribution">Attribution</a></span></footer></section></div><div aria-hidden="true" role="presentation" style="width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;"></div><div id="prerender-veil" aria-hidden="true"><div class="prv-scale"><div class="prv-robot"><span class="cute-robot-container"><span class="cute-robot-robot"><span class="cute-robot-antenna"></span><span class="cute-robot-head"><span class="cute-robot-eye"></span><span class="cute-robot-eye"></span></span></span></span></div></div><div class="prv-label">Loading&#8230;</div></div><noscript><style>#prerender-veil{display:none}</style></noscript></body></html>

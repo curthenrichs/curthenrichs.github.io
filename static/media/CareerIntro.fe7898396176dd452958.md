@@ -1,0 +1,5 @@
+I think of skill-building as a triple helix with three strands: hardware, software, and users. The strands are deeply interlinked, so lengthening the helix means growing all three in roughly equal measure, though not necessarily at the same time. When a job kept me deep in firmware, I leaned into the human side of the machine. When research kept me in user studies, I built the hardware and software that ran them.
+
+So how do robots fit in? A robot is only useful when its mechanical, electrical, and software systems serve a real person in a real environment. Embedded systems are robots in all but name: hardware and software serving a person standing at the machine. Three intern summers at Dedicated Computing taught me to build them the industrial way. At UW-Madison's People and Robots Lab I built and studied collaborative robots that share manufacturing work with people. And at IDES I develop instrumentation for the transmission electron microscope, a weird "robot" that looks in on itself to observe a hidden world.
+
+My career is presented in reverse-chronological order below.
