@@ -18,6 +18,9 @@ const puppeteer = require("puppeteer");
 
 const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const VIEWPORT = { width: 1280, height: 800 };
+// WCAG 2.1 SC 1.4.10 (Reflow): content must not require horizontal
+// scrolling at 320 CSS px. Checked per-route after the hydration checks.
+const REFLOW_VIEWPORT = { width: 320, height: 844 };
 const VEIL_TIMEOUT_MS = 10000;
 
 // The prerendered content routes: the shared base list (the same file
@@ -72,6 +75,29 @@ async function waitForVeilDismissed(page, timeoutMs) {
   }
 }
 
+async function measureReflow(page) {
+  // Let resize listeners and CSS reflow settle before measuring.
+  await new Promise((r) => setTimeout(r, 300));
+  const m = await page.evaluate(() => {
+    const doc = document.documentElement;
+    const menu = document.getElementById("collapsed-menu");
+    return {
+      scrollWidth: doc.scrollWidth,
+      clientWidth: doc.clientWidth,
+      menuRight: menu ? Math.round(menu.getBoundingClientRect().right) : null
+    };
+  });
+  return {
+    ...m,
+    // The fixed header never contributes to scrollWidth, so its menu button
+    // (present on every content route) gets its own on-screen assertion.
+    ok:
+      m.scrollWidth <= m.clientWidth &&
+      m.menuRight !== null &&
+      m.menuRight <= m.clientWidth
+  };
+}
+
 (async () => {
   if (!fs.existsSync(path.join(BUILD_DIR, "index.html"))) {
     fail("build/index.html not found -- run `npm run build` first");
@@ -84,9 +110,10 @@ async function waitForVeilDismissed(page, timeoutMs) {
 
   try {
     const page = await browser.newPage();
-    await page.setViewport(VIEWPORT);
 
     for (const route of ROUTES) {
+      // Reset per route: the previous route's reflow check leaves 320px.
+      await page.setViewport(VIEWPORT);
       const messages = [];
       const onConsole = (msg) => {
         // Resource-load failures carry the failing URL in location(), not text().
@@ -143,6 +170,19 @@ async function waitForVeilDismissed(page, timeoutMs) {
         if (!markerConsumed) {
           fail(`${route}: __PRERENDERED_WIDTH__ marker not consumed`);
         }
+      }
+
+      await page.setViewport(REFLOW_VIEWPORT);
+      let reflow = await measureReflow(page);
+      if (!reflow.ok) {
+        // One settle retry: React resize listeners re-render asynchronously.
+        await new Promise((r) => setTimeout(r, 500));
+        reflow = await measureReflow(page);
+      }
+      if (!reflow.ok) {
+        fail(
+          `${route}: 320px reflow overflow -- scrollWidth=${reflow.scrollWidth} clientWidth=${reflow.clientWidth} menuRight=${reflow.menuRight}`
+        );
       }
 
       const warnNote =
