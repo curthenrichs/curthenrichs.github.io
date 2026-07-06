@@ -1,6 +1,6 @@
 ﻿# Dedicated Computing Internship
 
-I interned with Dedicated Computing for three summers on the R&D team. Through this opportunity I experienced agile development, frequent code reviews, and gained experience developing firmware with real end-users.
+I interned with Dedicated Computing for three summers on the R&D team. Through it, I got my first real taste of agile development, frequent code reviews, and building firmware for actual end-users.
 
 ## Storage Appliance Backplane
 
