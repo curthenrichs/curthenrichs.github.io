@@ -15,6 +15,7 @@
     "react": "^18.2.0",
     "react-cookie-consent": "^8.0.1",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-markdown": "^8.0.7",
     "react-responsive-carousel": "^3.2.12",
     "react-router-dom": "^6.20.0",
@@ -28,13 +29,22 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "node scripts/prerender.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix"
+    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "check:hydration": "node scripts/check-hydration.js",
+    "sync:henry": "node scripts/sync-henry.js",
+    "postinstall": "node scripts/sync-henry.js",
+    "prebuild": "node scripts/sync-henry.js",
+    "prestart": "node scripts/sync-henry.js",
+    "pretest": "node scripts/sync-henry.js",
+    "image-dims": "node scripts/generate-image-dimensions.js",
+    "image-variants": "node scripts/generate-image-variants.js"
   },
   "eslintConfig": {
     "extends": [
@@ -75,7 +85,11 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "gh-pages": "^6.3.0",
-    "serve": "^14.1.2"
+    "png-to-ico": "^2.1.8",
+    "puppeteer": "^25.3.0",
+    "serve": "^14.1.2",
+    "serve-handler": "^6.1.7",
+    "sharp": "^0.33.5"
   },
   "homepage": "https://curthenrichs.github.io/"
 }

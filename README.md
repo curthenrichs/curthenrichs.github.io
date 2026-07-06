@@ -2,8 +2,8 @@
 Development repo for my personal resume website using React and Ant Design. Check
 it out at [curthenrichs.github.io](https://curthenrichs.github.io/).
 
-For this project I am using [Ant Design](https://ant.design/), primarily for the
-clean, simplistic visual style it offers.
+For this project I am using [Ant Design](https://ant.design/), primarily for its
+clean, simple visual style.
 
 ## Local Build
 To build and test locally, first clone this repo and navigate to the root project
@@ -13,15 +13,15 @@ directory. Then run:
 npm install
 ```
 
-Next to run the development server:
+Then run the development server:
 
 ```
 npm start
 ```
 
-## Github Deployment
-I am using the [gh-pages](https://www.npmjs.com/package/gh-pages) package to deploy the static website to Github pages.
-To deploy, simply run:
+## GitHub Deployment
+I am using the [gh-pages](https://www.npmjs.com/package/gh-pages) package to deploy
+the static website to GitHub Pages. To deploy, simply run:
 
 ```
 npm run deploy
@@ -53,8 +53,8 @@ live site stays stale after a deploy:
    `gh-pages` / root, then escalate to GitHub Support with the failed run links.
 
 ## Updating
-This project is structured such that I should be able to merely update the content
-files. I broke the content down by section on the webpage.
+This project is structured so that I should be able to just update the content
+files. I broke the content down by section of the webpage:
 
 - Main Page
   - biography
@@ -74,24 +74,53 @@ files. I broke the content down by section on the webpage.
   - publications
   - contact
 
-If adding projects then simply update the projects content and add a markdown
+To add a project, simply update the projects content file and add a markdown
 page with the writeup.
 
-All images are provided in public and should be added there.
+All images live in `public`, and new ones should be added there too.
 
-Icon SVGs should be added to the icon handler component and the Ant Wrapper written in
-customIcons (within content directory).
+Icon SVGs should be added to the icon handler component, with the Ant wrapper
+written in `customIcons` (within the content directory).
 
 ## Acknowledgements
-Thanks to this [repo](https://github.com/rafgraph/spa-github-pages) hard refreshes are
-managed when deployed on Github Pages.
-
 Thank you [Ant Design](https://ant.design/) for the amazing framework. I really
-love the design language that is provided out of the box.
+love the design language it provides out of the box.
 
-And thanks to all other technical libraries and code developers / teams who have
-made this possible. I truly am standing on the shoulders of giants.
+And thanks to all the other library developers and teams who have made this
+possible. I truly am standing on the shoulders of giants.
 
 ## Notes
-My resume and cover letter design files are in the root's docs directory. This is
-to make my life easier when updating my profile in the future.
+My résumé and cover-letter source documents now live in a separate private
+repository, so they are no longer tracked here. The `docs` directory keeps only
+web-facing material.
+
+## Adding a New Page
+
+Prerendering requires each route to be registered in four places:
+
+1. Add the `<Route>` in `src/index.jsx`.
+2. Add a metadata entry in `src/content/pageMeta.js` (title format
+   `Curt Henrichs | Portfolio | <Page>`), then render
+   `<PageMeta {...pageMeta.<key>} />` inside the new page component.
+3. Add the route to `scripts/base-routes.json` (`path`, `file`, and `title`;
+   the title must match pageMeta exactly). Both the prerenderer and the
+   hydration check read this shared file. (Item detail routes are exempt —
+   they come from `src/content/detailRoutes.json`.)
+4. Add the URL to `public/sitemap.xml`.
+
+- Item detail pages: add the entry to `src/content/detailRoutes.json`; routes,
+  prerender, and hydration checks pick it up automatically (a content item
+  with `modalMarkdownPath` and no manifest entry fails `detailRoutes.test.js`).
+  Also add the URL to `sitemap.xml` and `llms.txt`.
+
+`npm run build` runs the prerenderer automatically (`postbuild`) and fails if a
+route renders empty or with the wrong title. Dev server (`npm start`) and
+deploy (`npm run deploy`) are unchanged.
+
+- `npm run serve` uses a blanket SPA rewrite and does not emulate GitHub
+  Pages' real per-route file serving, so use `npm run check:hydration` for
+  local verification instead.
+- Puppeteer (used by both the prerenderer and `check:hydration`) requires
+  Node >= 22.12.
+- GitHub Pages 301-redirects `/career` to `/career/` (and similarly for other
+  routes), so post-deploy `curl` checks need `-L` to follow the redirect.

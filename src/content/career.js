@@ -147,6 +147,7 @@ const data = {
       "pcb_design",
       "ai_augmented_dev",
       "gemini",
+      "claude_code",
       "nvidia_holoscan"
     ],
     thumbnail: "/static/img/thumbnail/ides-logo.png",

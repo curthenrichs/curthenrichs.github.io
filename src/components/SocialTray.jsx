@@ -14,7 +14,9 @@ const SocialTray = (props) => {
         <GithubFilled />
       </Link>
       &nbsp;
-      <Link href={emailLink} target="_blank" rel="noopener noreferrer">
+      {/* mailto: must not open a new tab -- with no mail handler it strands
+          the user on a blank page; same-tab lets the browser hand off cleanly */}
+      <Link href={emailLink}>
         <MailOutlined />
       </Link>
       &nbsp;

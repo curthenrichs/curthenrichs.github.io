@@ -1,56 +1,76 @@
 import React from "react";
+import PageMeta from "../components/PageMeta";
+import pageMeta from "../content/pageMeta";
 import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionList from "./sections/Education";
 import SectionInspiration from "./sections/Inspiration";
+import SectionIntro from "../components/SectionIntro";
+import EducationPhilosophyMarkdown from "../content/markdown/EducationPhilosophy.md";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
 const EducationPage = () => {
   return (
-    <PageTemplate
-      header={{
-        simple: true,
-        pageName: "Education",
-        sectionButtons: [
+    <>
+      <PageMeta {...pageMeta.education} />
+      <PageTemplate
+        header={{
+          simple: true,
+          pageName: "Education",
+          sectionButtons: [
+            {
+              id: "education-btn",
+              flexPx: 150,
+              content: "Education"
+            }
+          ],
+          primaryRouteButtons: primaryRouteOptions,
+          secondaryRouteButtons: secondaryRouteOptions
+        }}
+        sections={[
           {
-            id: "education-btn",
-            flexPx: 150,
-            content: "Education"
-          }
-        ],
-        primaryRouteButtons: primaryRouteOptions,
-        secondaryRouteButtons: secondaryRouteOptions
-      }}
-      sections={[
-        {
-          name: "sect-inspiration",
-          navItem: "education-btn",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
+            name: "sect-inspiration",
+            navItem: "education-btn",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            sectionType: "type-a",
+            content: <SectionInspiration title="Education" noBr={true} />
           },
-          sectionType: "type-a",
-          content: <SectionInspiration title="Education" noBr={true} />
-        },
-        {
-          name: "sect-list",
-          navItem: "education-btn",
-          scrollProperties: null,
-          sectionType: "type-b",
-          content: <SectionList title="" />
-        },
-        {
-          name: "sect-return",
-          navItem: "education-btn",
-          scrollProperties: null,
-          sectionType: "type-a",
-          style: { paddingTop: "3em" },
-          content: <ReturnHome />
-        }
-      ]}
-    />
+          {
+            name: "sect-philosophy",
+            navItem: "education-btn",
+            scrollProperties: null,
+            sectionType: "type-a",
+            content: (
+              <SectionIntro
+                title="A Triple Helix"
+                level={3}
+                markdownPath={EducationPhilosophyMarkdown}
+              />
+            )
+          },
+          {
+            name: "sect-list",
+            navItem: "education-btn",
+            scrollProperties: null,
+            sectionType: "type-b",
+            content: <SectionList title="" />
+          },
+          {
+            name: "sect-return",
+            navItem: "education-btn",
+            scrollProperties: null,
+            sectionType: "type-a",
+            style: { paddingTop: "3em" },
+            content: <ReturnHome />
+          }
+        ]}
+      />
+    </>
   );
 };
 

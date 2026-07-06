@@ -1,3 +1,3 @@
-IDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops Relativity sub-framing system, electrostatic dose modulation system, and various other TEM peripheral systems to support scientific applications.
+IDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops the Relativity sub-framing system, an electrostatic dose modulation system, and various other TEM peripherals to support scientific applications.
 
 As senior embedded systems engineer, I lead firmware architecture and hardware design across Xilinx Zynq SoC and Atmel/Microchip platforms. A favorite project was designing a USB user-interface peripheral end-to-end, from schematic capture through productization. Recently, I have been building real-time vision pipelines with the Nvidia Holoscan SDK, supported by an MCP-based CI process I developed for our agentic coding tools.

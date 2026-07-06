@@ -3,6 +3,20 @@
   text-align: center;
 }
 
+/* Must out-rank antd's `.ant-typography a` (and its :hover/:focus), which
+   otherwise paints the brand link blue. The pre-refactor inline style won
+   unconditionally, including on hover. */
+.nav-title-link,
+.ant-typography a.nav-title-link,
+.ant-typography a.nav-title-link:hover,
+.ant-typography a.nav-title-link:focus {
+  color: #fff;
+}
+
+.nav-title-heading {
+  overflow: hidden;
+}
+
 .nav-bar-divider {
   border-left: 1px solid #8f8f8f;
 }

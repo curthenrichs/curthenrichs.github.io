@@ -1,4 +1,6 @@
 import React from "react";
+import PageMeta from "../components/PageMeta";
+import pageMeta from "../content/pageMeta";
 import PageTemplate from "../components/PageTemplate";
 import SectionHome from "./sections/Biography";
 import SectionSkills from "./sections/Skills";
@@ -12,113 +14,116 @@ import { BP_NAV_COLLAPSE } from "../breakpoints";
 
 const MainPage = () => {
   return (
-    <PageTemplate
-      displayCookieConsent={false}
-      header={{
-        simple: false,
-        pageName: "Main",
-        sectionButtons: [
+    <>
+      <PageMeta {...pageMeta.home} />
+      <PageTemplate
+        displayCookieConsent={false}
+        header={{
+          simple: false,
+          pageName: "Main",
+          sectionButtons: [
+            {
+              id: "home-btn",
+              flexPx: 150,
+              content: "Home"
+            },
+            {
+              id: "career-btn",
+              flexPx: 150,
+              content: "Career"
+            },
+            {
+              id: "projects-btn",
+              flexPx: 150,
+              content: "Projects"
+            },
+            {
+              id: "publications-btn",
+              flexPx: 150,
+              content: "Publications"
+            },
+            {
+              id: "contact-btn",
+              flexPx: 150,
+              content: "Contact"
+            }
+          ],
+          primaryRouteButtons: primaryRouteOptions.filter((value) => (value.id !== "home-btn")),
+          secondaryRouteButtons: secondaryRouteOptions,
+          collapseWidth: BP_NAV_COLLAPSE
+        }}
+        sections={[
           {
-            id: "home-btn",
-            flexPx: 150,
-            content: "Home"
+            name: "sect-home",
+            navItem: "home-btn",
+            sectionType: "type-a",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            content: <SectionHome />
           },
           {
-            id: "career-btn",
-            flexPx: 150,
-            content: "Career"
+            name: "sect-skills",
+            navItem: "home-btn",
+            sectionType: "type-a",
+            style: { textAlign: "center" },
+            scrollProperties: null,
+            notApplyInnerSection: true,
+            content: <SectionSkills />
           },
           {
-            id: "projects-btn",
-            flexPx: 150,
-            content: "Projects"
+            name: "sect-career",
+            navItem: "career-btn",
+            sectionType: "type-b",
+            paddingTop: 30,
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            content: <SectionCareer />
           },
           {
-            id: "publications-btn",
-            flexPx: 150,
-            content: "Publications"
+            name: "sect-projects",
+            navItem: "projects-btn",
+            sectionType: "type-b",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            content: <SectionProjects
+              title="Notable Projects"
+              notableOnly={true}
+            />
           },
           {
-            id: "contact-btn",
-            flexPx: 150,
-            content: "Contact"
+            name: "sect-publications",
+            navItem: "publications-btn",
+            sectionType: "type-b",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: -100
+            },
+            content: <SectionPublications />
+          },
+          {
+            name: "sect-contact",
+            navItem: "contact-btn",
+            sectionType: "type-a",
+            scrollProperties: {
+              duration: 500,
+              smooth: true,
+              offset: 0
+            },
+            content: <SectionContact />
           }
-        ],
-        primaryRouteButtons: primaryRouteOptions.filter((value) => (value.id !== "home-btn")),
-        secondaryRouteButtons: secondaryRouteOptions,
-        collapseWidth: BP_NAV_COLLAPSE
-      }}
-      sections={[
-        {
-          name: "sect-home",
-          navItem: "home-btn",
-          sectionType: "type-a",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
-          },
-          content: <SectionHome />
-        },
-        {
-          name: "sect-skills",
-          navItem: "home-btn",
-          sectionType: "type-a",
-          style: { textAlign: "center" },
-          scrollProperties: null,
-          notApplyInnerSection: true,
-          content: <SectionSkills />
-        },
-        {
-          name: "sect-career",
-          navItem: "career-btn",
-          sectionType: "type-b",
-          paddingTop: 30,
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
-          },
-          content: <SectionCareer />
-        },
-        {
-          name: "sect-projects",
-          navItem: "projects-btn",
-          sectionType: "type-b",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
-          },
-          content: <SectionProjects
-            title="Notable Projects"
-            notableOnly={true}
-          />
-        },
-        {
-          name: "sect-publications",
-          navItem: "publications-btn",
-          sectionType: "type-b",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: -100
-          },
-          content: <SectionPublications />
-        },
-        {
-          name: "sect-contact",
-          navItem: "contact-btn",
-          sectionType: "type-a",
-          scrollProperties: {
-            duration: 500,
-            smooth: true,
-            offset: 0
-          },
-          content: <SectionContact />
-        }
-      ]}
-    />
+        ]}
+      />
+    </>
   );
 };
 

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Typography } from "antd";
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 import ImageCarousel from "./ImageCarousel";
-
-const { Text } = Typography;
+import GlitchedHenry from "./GlitchedHenry";
+import "./MarkdownContent.css";
 
 const onDirective = (node) => {
   let data = node.data || (node.data = {});
@@ -17,8 +16,6 @@ const onDirective = (node) => {
     hName: hast.tagName,
     hProperties: hast.properties
   };
-
-  console.log(node);
 };
 
 const transform = (tree) => {
@@ -29,13 +26,69 @@ const htmlDirective = () => {
   return transform;
 };
 
-const MarkdownContent = (props) => {
-  const { markdownPath, images } = props;
+// react-markdown can emit adjacent text nodes (e.g. nested lists: item text +
+// newline). Browsers coalesce them when re-parsing prerendered HTML, which
+// desyncs hydration. Merging them in the tree makes render match parse.
+function rehypeMergeAdjacentText() {
+  const merge = (node) => {
+    if (!node.children) return;
+    node.children.forEach(merge);
+    const merged = [];
+    node.children.forEach((child) => {
+      const prev = merged[merged.length - 1];
+      if (prev && prev.type === "text" && child.type === "text") {
+        prev.value += child.value;
+      } else {
+        merged.push(child);
+      }
+    });
+    node.children = merged;
+  };
+  return (tree) => {
+    merge(tree);
+  };
+}
 
-  const [markdown, setMarkdown] = useState("");
+// Prerender markdown cache: scripts/prerender.js snapshots this map (fetched
+// markdown text keyed by the same URL used to fetch it) into each captured
+// page's <head>. On hydration the first render can then produce the markdown
+// synchronously, matching the snapshot's already-rendered content instead of
+// racing an empty first render against it (which aborts hydration). The map
+// is intentionally never deleted after mount: client-side navigation simply
+// reuses entries (harmless; saves a refetch), and unknown keys fall through
+// to the normal fetch path.
+const readPrerenderMdCache = (src) => {
+  if (typeof window === "undefined" || !window.__PRERENDER_MD__) {
+    return undefined;
+  }
+  return window.__PRERENDER_MD__[src];
+};
+
+const recordPrerenderMdCache = (src, text) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+  window.__PRERENDER_MD__ = window.__PRERENDER_MD__ || {};
+  window.__PRERENDER_MD__[src] = text;
+};
+
+const MarkdownContent = (props) => {
+  const { markdownPath, images, disableLinks, extraComponents } = props;
+
+  const cached = readPrerenderMdCache(markdownPath);
+  const [markdown, setMarkdown] = useState(cached !== undefined ? cached : "");
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    const cachedText = readPrerenderMdCache(markdownPath);
+    if (cachedText !== undefined) {
+      // Covers markdownPath changing after mount to an already-cached key;
+      // on first mount this is a same-value set (React bails out).
+      setMarkdown(cachedText);
+      setError(false);
+      return undefined;
+    }
+
     const abortController = new AbortController();
 
     fetch(markdownPath, { signal: abortController.signal })
@@ -46,6 +99,7 @@ const MarkdownContent = (props) => {
         return res.text();
       })
       .then((text) => {
+        recordPrerenderMdCache(markdownPath, text);
         setMarkdown(text);
         setError(false);
       })
@@ -62,7 +116,14 @@ const MarkdownContent = (props) => {
   }, [markdownPath]);
 
   if (error) {
-    return <Text type="danger">Well, this is awkward. The content wandered off and we can&apos;t find it.</Text>;
+    return (
+      <div className="markdown-error-tile">
+        <GlitchedHenry className="markdown-error-tile__robot" />
+        <p className="markdown-error-tile__text">
+          Well, this is awkward. The content wandered off and we can&apos;t find it.
+        </p>
+      </div>
+    );
   }
 
   const components = {
@@ -80,7 +141,18 @@ const MarkdownContent = (props) => {
       );
     },
     a: (props) => {
-      // Update target / metadata path info
+      if (disableLinks) {
+        // Card context: markdown links would nest an <a> inside the card's
+        // own anchor wrapper, which browsers split apart and desyncs
+        // hydration. Render plain text instead; modals/detail pages (which
+        // don't set this prop) keep real links.
+        return <span>{props.children}</span>;
+      }
+      if (props.href && props.href.startsWith("/")) {
+        // Internal link: same-tab navigation (no new tab), matching the prior
+        // hand-written policy pages.
+        return <a href={props.href}>{props.children}</a>;
+      }
       return (
         <a href={props.href} target="_blank" rel="noopener noreferrer">
           {props.children}
@@ -94,11 +166,17 @@ const MarkdownContent = (props) => {
           {props.children}
         </div>
       );
-    }
+    },
+    // Spread last: caller-supplied keys win, including over the built-in image/a/p overrides.
+    ...(extraComponents || {})
   };
 
   return (
-    <ReactMarkdown components={components} remarkPlugins={[remarkGfm, remarkDirective, htmlDirective]}>
+    <ReactMarkdown
+      components={components}
+      remarkPlugins={[remarkGfm, remarkDirective, htmlDirective]}
+      rehypePlugins={[rehypeMergeAdjacentText]}
+    >
       {markdown}
     </ReactMarkdown>
   );

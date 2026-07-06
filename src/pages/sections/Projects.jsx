@@ -11,7 +11,7 @@ import SectionTitle from "../../components/SectionTitle";
 import { WidthContext } from "../../contexts";
 import { BP_CONTENT_MAX_WIDTH } from "../../breakpoints";
 import ItemModalContent from "../../components/ItemModalContent";
-
+import detailPathByContentId from "../../content/detailPaths";
 
 const TypeToIcon = (type) => {
   switch (type.toLowerCase()) {
@@ -69,6 +69,7 @@ const SectionProjects = (props) => {
           )}
           skills={entry.skills}
           preloadImages={entry.images.map((img) => img.img)}
+          detailPath={detailPathByContentId[entry.id]}
         >
           <ItemModalContent 
             images={entry.images} 

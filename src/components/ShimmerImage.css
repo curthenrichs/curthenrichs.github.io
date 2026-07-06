@@ -1,0 +1,53 @@
+.shimmer-image {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* antd Skeleton.Image fills the reserved box while loading. */
+.shimmer-image__skeleton,
+.shimmer-image__skeleton .ant-skeleton-image {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.shimmer-image__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shimmer-image.loaded .shimmer-image__img {
+  opacity: 1;
+}
+
+.shimmer-image.loaded .shimmer-image__skeleton {
+  display: none;
+}
+
+/* Missing/broken image: the always-present fallback (DefaultImg) replaces the
+   shimmer and the broken real image. */
+.shimmer-image__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+}
+
+.shimmer-image.errored .shimmer-image__fallback {
+  opacity: 1;
+}
+
+.shimmer-image.errored .shimmer-image__img,
+.shimmer-image.errored .shimmer-image__skeleton {
+  display: none;
+}

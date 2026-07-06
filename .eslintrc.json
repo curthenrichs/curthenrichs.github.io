@@ -11,6 +11,12 @@
         "plugin:jsx-a11y/recommended"
     ],
     "overrides": [
+        {
+            "files": ["**/*.test.js", "**/*.test.jsx"],
+            "env": {
+                "jest": true
+            }
+        }
     ],
     "parserOptions": {
         "sourceType": "module",

@@ -6,6 +6,7 @@ import { WidthContext, HeightContext } from "../contexts";
 import { Element as ScrollElement, scroller } from "react-scroll";
 import CookieConsent from "react-cookie-consent";
 import useScrollbarSize from "react-scrollbar-size";
+import { dismissPrerenderVeil } from "../utils/prerenderVeil";
 
 const { Text } = Typography;
 const { Header, Footer, Content } = Layout;
@@ -20,9 +21,14 @@ class _PageTemplate extends Component {
     const { sections } = this.props;
     const initNavItem = sections.length ? sections[0].navItem : "";
 
+    const prerenderWidth =
+      typeof window.__PRERENDERED_WIDTH__ === "number" ? window.__PRERENDERED_WIDTH__ : null;
+    const prerenderHeight =
+      typeof window.__PRERENDERED_HEIGHT__ === "number" ? window.__PRERENDERED_HEIGHT__ : null;
+
     this.state = {
-      width: window.innerWidth,
-      height: window.innerHeight,
+      width: prerenderWidth !== null ? prerenderWidth : window.innerWidth,
+      height: prerenderHeight !== null ? prerenderHeight : window.innerHeight,
       activeNavItem: initNavItem,
       clickedNavItem: initNavItem,
       menuOpen: false,
@@ -115,6 +121,13 @@ class _PageTemplate extends Component {
   }
 
   componentDidMount() {
+    if (window.__PRERENDERED_WIDTH__ !== undefined) {
+      delete window.__PRERENDERED_WIDTH__;
+      delete window.__PRERENDERED_HEIGHT__;
+      this.handleResize();
+      dismissPrerenderVeil();
+    }
+
     document.addEventListener("scroll", this.trackScrolling);
     window.addEventListener("resize", this.handleResize);
 

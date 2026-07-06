@@ -67,8 +67,14 @@ const BioDigest = () => {
           {bioData.name}
         </Text>
         <br />
+        {/* Keep the <br /> on its own line: `{expr} <br /> {expr}` creates
+            space text nodes adjacent to the expressions, which the HTML
+            parser merges in prerendered snapshots and hydration then
+            miscounts (fatal text-content mismatch). */}
         <Text type="secondary">
-          {currentJob.title} <br /> {currentJob.field}
+          {currentJob.title}
+          <br />
+          {currentJob.field}
         </Text>
         <br />
         <Link href={currentCompany.web} target="_blank" rel="noopener noreferrer">

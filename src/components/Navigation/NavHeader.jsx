@@ -16,8 +16,8 @@ const NavHeaderDivider = () => {
 const HomeTitleLink = () => {
   return (
     <Col flex="200px">
-      <Title level={2} style={{ overflow: "hidden" }}>
-        <Link to="/home" style={{ color: "#fff" }}>
+      <Title level={2} className="nav-title-heading">
+        <Link to="/home" className="nav-title-link">
                     Curt Henrichs
         </Link>
       </Title>
