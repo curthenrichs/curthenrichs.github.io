@@ -1,3 +1,3 @@
-During graduate school, I investigated how human workers collaborate with the cobot. My colleagues and I developed two experiments, pRAD and Task Interdependence, within an experiment protocol. We used a Universal Robots UR3e cobot for this research.
+During graduate school, I studied how human workers collaborate with a cobot. With my colleagues I ran two experiments, Task Interdependence and pRAD, on a shared framework we called ITER, using a Universal Robots UR3e. The two studies were two halves of one effort; a labmate and I each led one and stayed hands-on across both.
 
-My contributions on both experiments were rather technical; developing experiment procedure, writing code, etc. I had the opportunity to build the experiment setup in ROS and had a chance to explore the Universal Robots platform / visual programming tool Polyscope.
+My work was largely technical, building the experiment setup in ROS and getting deep into the Universal Robots platform and its Polyscope visual programming tool. On pRAD I took the lead as experimenter and author.
