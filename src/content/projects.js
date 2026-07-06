@@ -232,7 +232,9 @@ const data = {
       "slam",
       "nvidia_jetson",
       "intel_realsense",
-      "iot_home_automation"
+      "iot_home_automation",
+      "ai_augmented_dev",
+      "claude_code"
     ],
     images: [
       {
@@ -276,7 +278,9 @@ const data = {
     skills: [
       "react",
       "javascript",
-      "ant_design"
+      "ant_design",
+      "ai_augmented_dev",
+      "claude_code"
     ],
     images: [
       {
