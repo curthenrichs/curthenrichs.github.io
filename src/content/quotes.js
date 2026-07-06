@@ -34,6 +34,10 @@ const quotes = [
   {
     quote: "Robotics is not just a field of science; it's a canvas for art, innovation, and progress",
     attribution: "Rodney Brooks"
+  },
+  {
+    quote: "I was always very interested in science, and I knew that for me, science was a better long-term career than tennis",
+    attribution: "Sally Ride"
   }
 ];
 
