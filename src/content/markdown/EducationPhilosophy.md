@@ -1,0 +1,5 @@
+I think of skill-building as a triple helix with three strands: hardware, software, and users. The strands are deeply interlinked, so lengthening the helix means growing all three in roughly equal measure, though not necessarily at the same time. When coursework kept me deep in software, I balanced it with hardware side-projects. When I studied user interaction, I paired it with a technical dive into a new framework.
+
+At a larger timescale, the model explains my degrees. My computer engineering undergrad primarily built the hardware and software strands, while electives in philosophy, creative thinking, and business started me thinking about users as a diverse group. Graduate school evened the balance with a computer science degree weighted toward human-computer interaction and software applications.
+
+So how does robotics fit in? A robot is only useful when its mechanical, electrical, and software systems serve a real person in a real environment. I don't claim deep mechanical expertise, but I have diligently cultivated the electrical, software, and user-centered strands, along with the connections between them.
