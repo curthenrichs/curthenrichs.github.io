@@ -1,11 +1,11 @@
 import React from "react";
-import "./CuteRobot.css";
+import "../vendor/henry/henry-animated.css";
 
 /**
- * CSS-drawn robot illustration, visually consistent with the loading-veil
- * robot (scripts/prerender.js) but fully decoupled from it -- deterministic
- * markup only (no randomness/Date/window reads) so it hydrates cleanly when
- * captured by the prerenderer.
+ * Henry, animated. Renders the cute-robot- markup contract; all geometry,
+ * colors, and animation come from the vendored henry-animated.css (synced
+ * from the henry-mascot submodule -- the single source of truth). Deterministic
+ * markup only (no randomness/Date/window reads) so it hydrates cleanly.
  */
 const CuteRobot = ({ question = false }) => {
   return (
