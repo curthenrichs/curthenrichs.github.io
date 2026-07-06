@@ -81,10 +81,17 @@ async function measureReflow(page) {
   const m = await page.evaluate(() => {
     const doc = document.documentElement;
     const menu = document.getElementById("collapsed-menu");
+    // Card-content overflow (e.g. a fixed-width thumbnail wider than the
+    // card) never reaches the document's scrollWidth; assert each card
+    // contains its content horizontally.
+    const overflowingCards = Array.from(
+      document.querySelectorAll(".ant-card-body")
+    ).filter((b) => b.scrollWidth > b.clientWidth).length;
     return {
       scrollWidth: doc.scrollWidth,
       clientWidth: doc.clientWidth,
-      menuRight: menu ? Math.round(menu.getBoundingClientRect().right) : null
+      menuRight: menu ? Math.round(menu.getBoundingClientRect().right) : null,
+      overflowingCards
     };
   });
   return {
@@ -94,7 +101,8 @@ async function measureReflow(page) {
     ok:
       m.scrollWidth <= m.clientWidth &&
       m.menuRight !== null &&
-      m.menuRight <= m.clientWidth
+      m.menuRight <= m.clientWidth &&
+      m.overflowingCards === 0
   };
 }
 
@@ -181,7 +189,7 @@ async function measureReflow(page) {
       }
       if (!reflow.ok) {
         fail(
-          `${route}: 320px reflow overflow -- scrollWidth=${reflow.scrollWidth} clientWidth=${reflow.clientWidth} menuRight=${reflow.menuRight}`
+          `${route}: 320px reflow overflow -- scrollWidth=${reflow.scrollWidth} clientWidth=${reflow.clientWidth} menuRight=${reflow.menuRight} overflowingCards=${reflow.overflowingCards}`
         );
       }
 
