@@ -4,4 +4,9 @@
 
 .thumbnail-image__default {
   object-fit: cover;
+  /* The width/height attributes say 250; cap to the card's content width
+     and keep the box square when it shrinks. */
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }

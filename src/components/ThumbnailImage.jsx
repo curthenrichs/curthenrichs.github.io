@@ -5,10 +5,12 @@ import imageVariants from "../content/imageVariants.json";
 import "./ThumbnailImage.css";
 
 /**
- * Square 250x250 rounded thumbnail. A set image loads through ShimmerImage
- * (shimmer while downloading, DefaultImg if it errors/404s). No image yet
- * (author will add it later) shows DefaultImg directly — the missing-image
- * placeholder, kept distinct from the loading shimmer.
+ * Square rounded thumbnail, 250x250 at full size but shrinking with its
+ * container (narrow viewports leave cards less than 250px of content width).
+ * A set image loads through ShimmerImage (shimmer while downloading,
+ * DefaultImg if it errors/404s). No image yet (author will add it later)
+ * shows DefaultImg directly — the missing-image placeholder, kept distinct
+ * from the loading shimmer.
  */
 const ThumbnailImage = ({ img }) => {
   if (!img) {
@@ -29,7 +31,8 @@ const ThumbnailImage = ({ img }) => {
       src={variant ? variant.fallback : img}
       webpSrc={variant ? variant.webp : undefined}
       alt=""
-      reserve={{ width: 250, height: 250 }}
+      reserve={{ aspectRatio: 1 }}
+      maxWidth={250}
       objectFit="cover"
       className="thumbnail-image"
       fallbackSrc={DefaultImg}
