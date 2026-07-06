@@ -138,21 +138,21 @@ const data = {
         img: "/static/img/projects/authr/authr-setup.jpg",
         alt: "Authr setup view allows user to define Agents, Things, and Destinations.",
         caption: "Authr setup view allows user to define Agents, Things, and Destinations.",
-        carousel: true
+        carousel: false
       },
       {
         id: "img-authr-task",
         img: "/static/img/projects/authr/authr-task.jpg",
         alt: "Authr task view allows user to drag-and-drop Therbligs into tasks.",
         caption: "Authr task view allows user to drag-and-drop Therbligs into tasks.",
-        carousel: true
+        carousel: false
       },
       {
         id: "img-authr-sim",
         img: "/static/img/projects/authr/authr-sim.jpg",
         alt: "Authr simulation view allows user to inspect the program constructed.",
         caption: "Authr simulation view allows user to inspect the program constructed.",
-        carousel: true
+        carousel: false
       }
     ],
     publications: [
