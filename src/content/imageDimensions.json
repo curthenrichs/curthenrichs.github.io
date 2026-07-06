@@ -1,175 +1,879 @@
 {
+  "/static/img/bio-main-full.jpg": {
+    "w": 929,
+    "h": 945
+  },
+  "/static/img/bio-main-full.webp": {
+    "w": 929,
+    "h": 945
+  },
+  "/static/img/bio-main-old-full.jpg": {
+    "w": 558,
+    "h": 558
+  },
+  "/static/img/bio-main-old-full.webp": {
+    "w": 558,
+    "h": 558
+  },
+  "/static/img/bio-main-old-thumb.jpg": {
+    "w": 558,
+    "h": 558
+  },
+  "/static/img/bio-main-old-thumb.webp": {
+    "w": 558,
+    "h": 558
+  },
   "/static/img/bio-main-old.jpg": {
     "w": 558,
     "h": 558
+  },
+  "/static/img/bio-main-thumb.jpg": {
+    "w": 800,
+    "h": 814
+  },
+  "/static/img/bio-main-thumb.webp": {
+    "w": 800,
+    "h": 814
   },
   "/static/img/bio-main.jpg": {
     "w": 929,
     "h": 945
   },
+  "/static/img/career/dc/dc-fan-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/career/dc/dc-fan-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/career/dc/dc-fan-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/career/dc/dc-fan-thumb.webp": {
+    "w": 800,
+    "h": 600
+  },
   "/static/img/career/dc/dc-fan.jpg": {
     "w": 3264,
     "h": 2448
+  },
+  "/static/img/career/dc/dc-oled-covered-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/career/dc/dc-oled-covered-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/career/dc/dc-oled-covered-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/career/dc/dc-oled-covered-thumb.webp": {
+    "w": 800,
+    "h": 600
   },
   "/static/img/career/dc/dc-oled-covered.jpg": {
     "w": 3264,
     "h": 2448
   },
+  "/static/img/career/dc/dc-oled-pcb-full.jpg": {
+    "w": 1600,
+    "h": 1325
+  },
+  "/static/img/career/dc/dc-oled-pcb-full.webp": {
+    "w": 1600,
+    "h": 1325
+  },
+  "/static/img/career/dc/dc-oled-pcb-thumb.jpg": {
+    "w": 800,
+    "h": 663
+  },
+  "/static/img/career/dc/dc-oled-pcb-thumb.webp": {
+    "w": 800,
+    "h": 663
+  },
   "/static/img/career/dc/dc-oled-pcb.jpg": {
     "w": 2448,
     "h": 2028
+  },
+  "/static/img/career/ides/IDES-career-viz-full.jpg": {
+    "w": 1611,
+    "h": 717
+  },
+  "/static/img/career/ides/IDES-career-viz-full.webp": {
+    "w": 1611,
+    "h": 717
+  },
+  "/static/img/career/ides/IDES-career-viz-thumb.jpg": {
+    "w": 800,
+    "h": 356
+  },
+  "/static/img/career/ides/IDES-career-viz-thumb.webp": {
+    "w": 800,
+    "h": 356
   },
   "/static/img/career/ides/IDES-career-viz.jpg": {
     "w": 1611,
     "h": 717
   },
+  "/static/img/career/uwmad/uwmad-lab-full.jpg": {
+    "w": 1600,
+    "h": 900
+  },
+  "/static/img/career/uwmad/uwmad-lab-full.webp": {
+    "w": 1600,
+    "h": 900
+  },
+  "/static/img/career/uwmad/uwmad-lab-thumb.jpg": {
+    "w": 800,
+    "h": 450
+  },
+  "/static/img/career/uwmad/uwmad-lab-thumb.webp": {
+    "w": 800,
+    "h": 450
+  },
   "/static/img/career/uwmad/uwmad-lab.jpg": {
     "w": 4160,
     "h": 2340
+  },
+  "/static/img/education/msoe/embedded-networking-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/education/msoe/embedded-networking-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/education/msoe/embedded-networking-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/education/msoe/embedded-networking-thumb.webp": {
+    "w": 800,
+    "h": 600
   },
   "/static/img/education/msoe/embedded-networking.jpg": {
     "w": 3264,
     "h": 2448
   },
+  "/static/img/education/msoe/embedded-pcb-full.jpg": {
+    "w": 607,
+    "h": 456
+  },
+  "/static/img/education/msoe/embedded-pcb-full.webp": {
+    "w": 607,
+    "h": 456
+  },
+  "/static/img/education/msoe/embedded-pcb-thumb.jpg": {
+    "w": 607,
+    "h": 456
+  },
+  "/static/img/education/msoe/embedded-pcb-thumb.webp": {
+    "w": 607,
+    "h": 456
+  },
   "/static/img/education/msoe/embedded-pcb.jpg": {
     "w": 607,
     "h": 456
+  },
+  "/static/img/education/msoe/embedded-tracking-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/education/msoe/embedded-tracking-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/education/msoe/embedded-tracking-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/education/msoe/embedded-tracking-thumb.webp": {
+    "w": 800,
+    "h": 600
   },
   "/static/img/education/msoe/embedded-tracking.jpg": {
     "w": 3264,
     "h": 2448
   },
+  "/static/img/education/msoe/embedded-treadmill-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/education/msoe/embedded-treadmill-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/education/msoe/embedded-treadmill-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/education/msoe/embedded-treadmill-thumb.webp": {
+    "w": 800,
+    "h": 600
+  },
   "/static/img/education/msoe/embedded-treadmill.jpg": {
     "w": 3264,
     "h": 2448
+  },
+  "/static/img/education/uwmad/computer-vision-gan-learning-full.gif": {
+    "w": 486,
+    "h": 486
+  },
+  "/static/img/education/uwmad/computer-vision-gan-learning-full.webp": {
+    "w": 486,
+    "h": 486
+  },
+  "/static/img/education/uwmad/computer-vision-gan-learning-thumb.gif": {
+    "w": 486,
+    "h": 486
+  },
+  "/static/img/education/uwmad/computer-vision-gan-learning-thumb.webp": {
+    "w": 486,
+    "h": 486
   },
   "/static/img/education/uwmad/computer-vision-gan-learning.gif": {
     "w": 486,
     "h": 486
   },
+  "/static/img/education/uwmad/hci-hifi-mockup-full.jpg": {
+    "w": 1431,
+    "h": 913
+  },
+  "/static/img/education/uwmad/hci-hifi-mockup-full.webp": {
+    "w": 1431,
+    "h": 913
+  },
+  "/static/img/education/uwmad/hci-hifi-mockup-thumb.jpg": {
+    "w": 800,
+    "h": 510
+  },
+  "/static/img/education/uwmad/hci-hifi-mockup-thumb.webp": {
+    "w": 800,
+    "h": 510
+  },
   "/static/img/education/uwmad/hci-hifi-mockup.jpg": {
     "w": 1431,
     "h": 913
+  },
+  "/static/img/education/uwmad/hci-vis-detail-full.jpg": {
+    "w": 992,
+    "h": 661
+  },
+  "/static/img/education/uwmad/hci-vis-detail-full.webp": {
+    "w": 992,
+    "h": 661
+  },
+  "/static/img/education/uwmad/hci-vis-detail-thumb.jpg": {
+    "w": 800,
+    "h": 533
+  },
+  "/static/img/education/uwmad/hci-vis-detail-thumb.webp": {
+    "w": 800,
+    "h": 533
   },
   "/static/img/education/uwmad/hci-vis-detail.jpg": {
     "w": 992,
     "h": 661
   },
+  "/static/img/education/uwmad/hci-vis-overview-full.jpg": {
+    "w": 999,
+    "h": 644
+  },
+  "/static/img/education/uwmad/hci-vis-overview-full.webp": {
+    "w": 999,
+    "h": 644
+  },
+  "/static/img/education/uwmad/hci-vis-overview-thumb.jpg": {
+    "w": 800,
+    "h": 516
+  },
+  "/static/img/education/uwmad/hci-vis-overview-thumb.webp": {
+    "w": 800,
+    "h": 516
+  },
   "/static/img/education/uwmad/hci-vis-overview.jpg": {
     "w": 999,
     "h": 644
+  },
+  "/static/img/projects/authr/authr-setup-full.jpg": {
+    "w": 1491,
+    "h": 844
+  },
+  "/static/img/projects/authr/authr-setup-full.webp": {
+    "w": 1491,
+    "h": 844
+  },
+  "/static/img/projects/authr/authr-setup-thumb.jpg": {
+    "w": 800,
+    "h": 453
+  },
+  "/static/img/projects/authr/authr-setup-thumb.webp": {
+    "w": 800,
+    "h": 453
   },
   "/static/img/projects/authr/authr-setup.jpg": {
     "w": 1491,
     "h": 844
   },
+  "/static/img/projects/authr/authr-sim-full.jpg": {
+    "w": 1489,
+    "h": 928
+  },
+  "/static/img/projects/authr/authr-sim-full.webp": {
+    "w": 1489,
+    "h": 928
+  },
+  "/static/img/projects/authr/authr-sim-thumb.jpg": {
+    "w": 800,
+    "h": 499
+  },
+  "/static/img/projects/authr/authr-sim-thumb.webp": {
+    "w": 800,
+    "h": 499
+  },
   "/static/img/projects/authr/authr-sim.jpg": {
     "w": 1489,
     "h": 928
   },
+  "/static/img/projects/authr/authr-task-full.jpg": {
+    "w": 1600,
+    "h": 887
+  },
+  "/static/img/projects/authr/authr-task-full.webp": {
+    "w": 1600,
+    "h": 887
+  },
+  "/static/img/projects/authr/authr-task-thumb.jpg": {
+    "w": 800,
+    "h": 444
+  },
+  "/static/img/projects/authr/authr-task-thumb.webp": {
+    "w": 800,
+    "h": 444
+  },
   "/static/img/projects/authr/authr-task.jpg": {
     "w": 5982,
-    "h": 3318
+    "h": 2150
+  },
+  "/static/img/projects/coframe/coframe-banner-full.jpg": {
+    "w": 1600,
+    "h": 691
+  },
+  "/static/img/projects/coframe/coframe-banner-full.webp": {
+    "w": 1600,
+    "h": 691
+  },
+  "/static/img/projects/coframe/coframe-banner-thumb.jpg": {
+    "w": 800,
+    "h": 345
+  },
+  "/static/img/projects/coframe/coframe-banner-thumb.webp": {
+    "w": 800,
+    "h": 345
   },
   "/static/img/projects/coframe/coframe-banner.jpg": {
     "w": 3564,
     "h": 1539
   },
+  "/static/img/projects/coframe/coframe-current-full.jpg": {
+    "w": 1600,
+    "h": 800
+  },
+  "/static/img/projects/coframe/coframe-current-full.webp": {
+    "w": 1600,
+    "h": 800
+  },
+  "/static/img/projects/coframe/coframe-current-thumb.jpg": {
+    "w": 800,
+    "h": 400
+  },
+  "/static/img/projects/coframe/coframe-current-thumb.webp": {
+    "w": 800,
+    "h": 400
+  },
   "/static/img/projects/coframe/coframe-current.jpg": {
     "w": 3835,
     "h": 1917
+  },
+  "/static/img/projects/coframe/coframe-frames-full.png": {
+    "w": 3000,
+    "h": 1200
+  },
+  "/static/img/projects/coframe/coframe-frames-full.webp": {
+    "w": 3000,
+    "h": 1200
+  },
+  "/static/img/projects/coframe/coframe-frames-thumb.png": {
+    "w": 800,
+    "h": 320
+  },
+  "/static/img/projects/coframe/coframe-frames-thumb.webp": {
+    "w": 800,
+    "h": 320
   },
   "/static/img/projects/coframe/coframe-frames.png": {
     "w": 9843,
     "h": 3938
   },
+  "/static/img/projects/coframe/coframe-mapping-full.jpg": {
+    "w": 3000,
+    "h": 2306
+  },
+  "/static/img/projects/coframe/coframe-mapping-full.webp": {
+    "w": 3000,
+    "h": 2306
+  },
+  "/static/img/projects/coframe/coframe-mapping-thumb.jpg": {
+    "w": 800,
+    "h": 615
+  },
+  "/static/img/projects/coframe/coframe-mapping-thumb.webp": {
+    "w": 800,
+    "h": 615
+  },
   "/static/img/projects/coframe/coframe-mapping.jpg": {
     "w": 10125,
     "h": 7782
+  },
+  "/static/img/projects/coframe/coframe-structure-full.jpg": {
+    "w": 3000,
+    "h": 1559
+  },
+  "/static/img/projects/coframe/coframe-structure-full.webp": {
+    "w": 3000,
+    "h": 1559
+  },
+  "/static/img/projects/coframe/coframe-structure-thumb.jpg": {
+    "w": 800,
+    "h": 415
+  },
+  "/static/img/projects/coframe/coframe-structure-thumb.webp": {
+    "w": 800,
+    "h": 415
   },
   "/static/img/projects/coframe/coframe-structure.jpg": {
     "w": 9016,
     "h": 4686
   },
+  "/static/img/projects/coframe/evd-authoring-ui-full.jpg": {
+    "w": 1600,
+    "h": 809
+  },
+  "/static/img/projects/coframe/evd-authoring-ui-full.webp": {
+    "w": 1600,
+    "h": 809
+  },
+  "/static/img/projects/coframe/evd-authoring-ui-thumb.jpg": {
+    "w": 800,
+    "h": 405
+  },
+  "/static/img/projects/coframe/evd-authoring-ui-thumb.webp": {
+    "w": 800,
+    "h": 405
+  },
   "/static/img/projects/coframe/evd-authoring-ui.jpg": {
     "w": 1920,
     "h": 971
+  },
+  "/static/img/projects/hobby/hobby-leds-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/projects/hobby/hobby-leds-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/projects/hobby/hobby-leds-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/projects/hobby/hobby-leds-thumb.webp": {
+    "w": 800,
+    "h": 600
   },
   "/static/img/projects/hobby/hobby-leds.jpg": {
     "w": 3264,
     "h": 2448
   },
+  "/static/img/projects/hobby/hobby-robots-full.jpg": {
+    "w": 1600,
+    "h": 962
+  },
+  "/static/img/projects/hobby/hobby-robots-full.webp": {
+    "w": 1600,
+    "h": 962
+  },
+  "/static/img/projects/hobby/hobby-robots-thumb.jpg": {
+    "w": 800,
+    "h": 481
+  },
+  "/static/img/projects/hobby/hobby-robots-thumb.webp": {
+    "w": 800,
+    "h": 481
+  },
   "/static/img/projects/hobby/hobby-robots.jpg": {
     "w": 2281,
     "h": 1372
+  },
+  "/static/img/projects/hobby/hobby-taltosoid-full.jpg": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/projects/hobby/hobby-taltosoid-full.webp": {
+    "w": 1600,
+    "h": 1200
+  },
+  "/static/img/projects/hobby/hobby-taltosoid-thumb.jpg": {
+    "w": 800,
+    "h": 600
+  },
+  "/static/img/projects/hobby/hobby-taltosoid-thumb.webp": {
+    "w": 800,
+    "h": 600
   },
   "/static/img/projects/hobby/hobby-taltosoid.jpg": {
     "w": 4160,
     "h": 3120
   },
+  "/static/img/projects/iter/iter-computer-vision-full.jpg": {
+    "w": 640,
+    "h": 480
+  },
+  "/static/img/projects/iter/iter-computer-vision-full.webp": {
+    "w": 640,
+    "h": 480
+  },
+  "/static/img/projects/iter/iter-computer-vision-thumb.jpg": {
+    "w": 640,
+    "h": 480
+  },
+  "/static/img/projects/iter/iter-computer-vision-thumb.webp": {
+    "w": 640,
+    "h": 480
+  },
   "/static/img/projects/iter/iter-computer-vision.jpg": {
     "w": 640,
     "h": 480
+  },
+  "/static/img/projects/iter/iter-displays-full.png": {
+    "w": 2146,
+    "h": 1428
+  },
+  "/static/img/projects/iter/iter-displays-full.webp": {
+    "w": 2146,
+    "h": 1428
+  },
+  "/static/img/projects/iter/iter-displays-thumb.png": {
+    "w": 800,
+    "h": 532
+  },
+  "/static/img/projects/iter/iter-displays-thumb.webp": {
+    "w": 800,
+    "h": 532
   },
   "/static/img/projects/iter/iter-displays.png": {
     "w": 2146,
     "h": 1428
   },
+  "/static/img/projects/iter/iter-seq-task-full.jpg": {
+    "w": 1600,
+    "h": 1067
+  },
+  "/static/img/projects/iter/iter-seq-task-full.webp": {
+    "w": 1600,
+    "h": 1067
+  },
+  "/static/img/projects/iter/iter-seq-task-thumb.jpg": {
+    "w": 800,
+    "h": 533
+  },
+  "/static/img/projects/iter/iter-seq-task-thumb.webp": {
+    "w": 800,
+    "h": 533
+  },
   "/static/img/projects/iter/iter-seq-task.jpg": {
     "w": 2592,
     "h": 1728
+  },
+  "/static/img/projects/iter/iter-workspace-full.png": {
+    "w": 2159,
+    "h": 1836
+  },
+  "/static/img/projects/iter/iter-workspace-full.webp": {
+    "w": 2159,
+    "h": 1836
+  },
+  "/static/img/projects/iter/iter-workspace-thumb.png": {
+    "w": 800,
+    "h": 680
+  },
+  "/static/img/projects/iter/iter-workspace-thumb.webp": {
+    "w": 800,
+    "h": 680
   },
   "/static/img/projects/iter/iter-workspace.png": {
     "w": 2159,
     "h": 1836
   },
+  "/static/img/projects/website/portfolio-home-desktop-full.jpg": {
+    "w": 1600,
+    "h": 893
+  },
+  "/static/img/projects/website/portfolio-home-desktop-full.webp": {
+    "w": 1600,
+    "h": 893
+  },
+  "/static/img/projects/website/portfolio-home-desktop-thumb.jpg": {
+    "w": 800,
+    "h": 447
+  },
+  "/static/img/projects/website/portfolio-home-desktop-thumb.webp": {
+    "w": 800,
+    "h": 447
+  },
   "/static/img/projects/website/portfolio-home-desktop.jpg": {
     "w": 3457,
     "h": 1930
+  },
+  "/static/img/projects/website/portfolio-home-mobile-full.png": {
+    "w": 1600,
+    "h": 893
+  },
+  "/static/img/projects/website/portfolio-home-mobile-full.webp": {
+    "w": 1600,
+    "h": 893
+  },
+  "/static/img/projects/website/portfolio-home-mobile-thumb.png": {
+    "w": 800,
+    "h": 447
+  },
+  "/static/img/projects/website/portfolio-home-mobile-thumb.webp": {
+    "w": 800,
+    "h": 447
   },
   "/static/img/projects/website/portfolio-home-mobile.png": {
     "w": 3457,
     "h": 1930
   },
+  "/static/img/projects/website/portfolio-home-tablet-full.png": {
+    "w": 1600,
+    "h": 893
+  },
+  "/static/img/projects/website/portfolio-home-tablet-full.webp": {
+    "w": 1600,
+    "h": 893
+  },
+  "/static/img/projects/website/portfolio-home-tablet-thumb.png": {
+    "w": 800,
+    "h": 447
+  },
+  "/static/img/projects/website/portfolio-home-tablet-thumb.webp": {
+    "w": 800,
+    "h": 447
+  },
   "/static/img/projects/website/portfolio-home-tablet.png": {
     "w": 3457,
     "h": 1930
+  },
+  "/static/img/thumbnail/career-dc-full.jpg": {
+    "w": 1600,
+    "h": 1569
+  },
+  "/static/img/thumbnail/career-dc-full.webp": {
+    "w": 1600,
+    "h": 1569
+  },
+  "/static/img/thumbnail/career-dc-thumb.jpg": {
+    "w": 800,
+    "h": 785
+  },
+  "/static/img/thumbnail/career-dc-thumb.webp": {
+    "w": 800,
+    "h": 785
   },
   "/static/img/thumbnail/career-dc.jpg": {
     "w": 2497,
     "h": 2448
   },
+  "/static/img/thumbnail/career-uwmad-full.jpg": {
+    "w": 1600,
+    "h": 1618
+  },
+  "/static/img/thumbnail/career-uwmad-full.webp": {
+    "w": 1600,
+    "h": 1618
+  },
+  "/static/img/thumbnail/career-uwmad-thumb.jpg": {
+    "w": 800,
+    "h": 809
+  },
+  "/static/img/thumbnail/career-uwmad-thumb.webp": {
+    "w": 800,
+    "h": 809
+  },
   "/static/img/thumbnail/career-uwmad.jpg": {
     "w": 2340,
     "h": 2366
+  },
+  "/static/img/thumbnail/msoe-logo-full.png": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/msoe-logo-full.webp": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/msoe-logo-thumb.png": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/msoe-logo-thumb.webp": {
+    "w": 600,
+    "h": 600
   },
   "/static/img/thumbnail/msoe-logo.png": {
     "w": 600,
     "h": 600
   },
+  "/static/img/thumbnail/project-authr-full.jpg": {
+    "w": 800,
+    "h": 801
+  },
+  "/static/img/thumbnail/project-authr-full.webp": {
+    "w": 800,
+    "h": 801
+  },
+  "/static/img/thumbnail/project-authr-thumb.jpg": {
+    "w": 800,
+    "h": 801
+  },
+  "/static/img/thumbnail/project-authr-thumb.webp": {
+    "w": 800,
+    "h": 801
+  },
   "/static/img/thumbnail/project-authr.jpg": {
     "w": 800,
     "h": 801
+  },
+  "/static/img/thumbnail/project-coframe-full.jpg": {
+    "w": 1577,
+    "h": 1539
+  },
+  "/static/img/thumbnail/project-coframe-full.webp": {
+    "w": 1577,
+    "h": 1539
+  },
+  "/static/img/thumbnail/project-coframe-thumb.jpg": {
+    "w": 800,
+    "h": 781
+  },
+  "/static/img/thumbnail/project-coframe-thumb.webp": {
+    "w": 800,
+    "h": 781
   },
   "/static/img/thumbnail/project-coframe.jpg": {
     "w": 1577,
     "h": 1539
   },
+  "/static/img/thumbnail/project-hobby-full.jpg": {
+    "w": 1600,
+    "h": 1315
+  },
+  "/static/img/thumbnail/project-hobby-full.webp": {
+    "w": 1600,
+    "h": 1315
+  },
+  "/static/img/thumbnail/project-hobby-thumb.jpg": {
+    "w": 800,
+    "h": 657
+  },
+  "/static/img/thumbnail/project-hobby-thumb.webp": {
+    "w": 800,
+    "h": 657
+  },
   "/static/img/thumbnail/project-hobby.jpg": {
     "w": 2512,
     "h": 2065
+  },
+  "/static/img/thumbnail/project-iter-full.jpg": {
+    "w": 1600,
+    "h": 1411
+  },
+  "/static/img/thumbnail/project-iter-full.webp": {
+    "w": 1600,
+    "h": 1411
+  },
+  "/static/img/thumbnail/project-iter-thumb.jpg": {
+    "w": 800,
+    "h": 705
+  },
+  "/static/img/thumbnail/project-iter-thumb.webp": {
+    "w": 800,
+    "h": 705
   },
   "/static/img/thumbnail/project-iter.jpg": {
     "w": 1960,
     "h": 1728
   },
+  "/static/img/thumbnail/project-okos-full.jpg": {
+    "w": 1600,
+    "h": 1598
+  },
+  "/static/img/thumbnail/project-okos-full.webp": {
+    "w": 1600,
+    "h": 1598
+  },
+  "/static/img/thumbnail/project-okos-thumb.jpg": {
+    "w": 800,
+    "h": 799
+  },
+  "/static/img/thumbnail/project-okos-thumb.webp": {
+    "w": 800,
+    "h": 799
+  },
   "/static/img/thumbnail/project-okos.jpg": {
     "w": 1605,
     "h": 1603
   },
+  "/static/img/thumbnail/project-website-full.jpg": {
+    "w": 1063,
+    "h": 991
+  },
+  "/static/img/thumbnail/project-website-full.webp": {
+    "w": 1063,
+    "h": 991
+  },
+  "/static/img/thumbnail/project-website-thumb.jpg": {
+    "w": 800,
+    "h": 746
+  },
+  "/static/img/thumbnail/project-website-thumb.webp": {
+    "w": 800,
+    "h": 746
+  },
   "/static/img/thumbnail/project-website.jpg": {
     "w": 1063,
     "h": 991
+  },
+  "/static/img/thumbnail/uw-logo-full.png": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/uw-logo-full.webp": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/uw-logo-thumb.png": {
+    "w": 600,
+    "h": 600
+  },
+  "/static/img/thumbnail/uw-logo-thumb.webp": {
+    "w": 600,
+    "h": 600
   },
   "/static/img/thumbnail/uw-logo.png": {
     "w": 600,
