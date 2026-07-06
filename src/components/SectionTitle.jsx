@@ -4,11 +4,11 @@ import { Typography } from "antd";
 const { Title } = Typography;
 
 const SectionTitle = (props) => {
-  const { title } = props;
+  const { title, level } = props;
 
   return (
     <Fragment>
-      <Title level={2} underline={true}>
+      <Title level={level !== undefined ? level : 2} underline={true}>
         {title}
       </Title>
       <br />

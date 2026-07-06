@@ -5,7 +5,8 @@ import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionList from "./sections/Education";
 import SectionInspiration from "./sections/Inspiration";
-import SectionPhilosophy from "./sections/EducationPhilosophy";
+import SectionIntro from "../components/SectionIntro";
+import EducationPhilosophyMarkdown from "../content/markdown/EducationPhilosophy.md";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
@@ -44,7 +45,13 @@ const EducationPage = () => {
             navItem: "education-btn",
             scrollProperties: null,
             sectionType: "type-a",
-            content: <SectionPhilosophy />
+            content: (
+              <SectionIntro
+                title="A Triple Helix"
+                level={3}
+                markdownPath={EducationPhilosophyMarkdown}
+              />
+            )
           },
           {
             name: "sect-list",
