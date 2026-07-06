@@ -38,7 +38,11 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
     "check:hydration": "node scripts/check-hydration.js",
-    "favicons": "node scripts/generate-favicons.js",
+    "sync:henry": "node scripts/sync-henry.js",
+    "postinstall": "node scripts/sync-henry.js",
+    "prebuild": "node scripts/sync-henry.js",
+    "prestart": "node scripts/sync-henry.js",
+    "pretest": "node scripts/sync-henry.js",
     "image-dims": "node scripts/generate-image-dimensions.js",
     "image-variants": "node scripts/generate-image-variants.js"
   },

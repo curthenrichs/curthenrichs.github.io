@@ -133,3 +133,12 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Henry assets synced from the henry-mascot submodule (never committed here)
+/public/favicon.ico
+/public/favicon-16x16.png
+/public/favicon-32x32.png
+/public/apple-touch-icon.png
+/public/android-chrome-192x192.png
+/public/android-chrome-512x512.png
+/src/vendor/henry/
