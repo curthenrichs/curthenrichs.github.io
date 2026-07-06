@@ -21,6 +21,12 @@ const VIEWPORT = { width: 1280, height: 800 };
 // WCAG 2.1 SC 1.4.10 (Reflow): content must not require horizontal
 // scrolling at 320 CSS px. Checked per-route after the hydration checks.
 const REFLOW_VIEWPORT = { width: 320, height: 844 };
+// Desktop browsers with classic (non-overlay) scrollbars lose ~17px of
+// layout width to the always-on vertical scrollbar (body overflow-y:
+// scroll): a 320px window lays out at ~303px. Headless Chrome's overlay
+// scrollbars are zero-width, so the 320 check alone cannot catch overflow
+// against body's min-width floor — this narrower pass emulates it.
+const SCROLLBAR_REFLOW_VIEWPORT = { width: 303, height: 844 };
 const VEIL_TIMEOUT_MS = 10000;
 
 // The prerendered content routes: the shared base list (the same file
@@ -190,6 +196,24 @@ async function measureReflow(page) {
       if (!reflow.ok) {
         fail(
           `${route}: 320px reflow overflow -- scrollWidth=${reflow.scrollWidth} clientWidth=${reflow.clientWidth} menuRight=${reflow.menuRight} overflowingCards=${reflow.overflowingCards}`
+        );
+      }
+
+      // Document + cards must also fit the classic-scrollbar width. The
+      // fixed header is exempt here: it needs 316px and clips only the empty
+      // right end of its menu column below that (icon stays visible); the
+      // 320px pass above already bounds it.
+      const fitsScrollbarWidth = (m) =>
+        m.scrollWidth <= m.clientWidth && m.overflowingCards === 0;
+      await page.setViewport(SCROLLBAR_REFLOW_VIEWPORT);
+      let sbReflow = await measureReflow(page);
+      if (!fitsScrollbarWidth(sbReflow)) {
+        await new Promise((r) => setTimeout(r, 500));
+        sbReflow = await measureReflow(page);
+      }
+      if (!fitsScrollbarWidth(sbReflow)) {
+        fail(
+          `${route}: 303px (320 window minus classic scrollbar) reflow overflow -- scrollWidth=${sbReflow.scrollWidth} clientWidth=${sbReflow.clientWidth} overflowingCards=${sbReflow.overflowingCards}`
         );
       }
 
