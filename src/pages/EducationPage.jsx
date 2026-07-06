@@ -5,6 +5,7 @@ import ReturnHome from "./sections/ReturnHome";
 import PageTemplate from "../components/PageTemplate";
 import SectionList from "./sections/Education";
 import SectionInspiration from "./sections/Inspiration";
+import SectionPhilosophy from "./sections/EducationPhilosophy";
 import primaryRouteOptions from "../content/primaryRouteOptions";
 import secondaryRouteOptions from "../content/secondaryRouteOptions";
 
@@ -37,6 +38,13 @@ const EducationPage = () => {
             },
             sectionType: "type-a",
             content: <SectionInspiration title="Education" noBr={true} />
+          },
+          {
+            name: "sect-philosophy",
+            navItem: "education-btn",
+            scrollProperties: null,
+            sectionType: "type-a",
+            content: <SectionPhilosophy />
           },
           {
             name: "sect-list",
