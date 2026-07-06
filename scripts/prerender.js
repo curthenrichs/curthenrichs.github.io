@@ -16,6 +16,14 @@ const VIEWPORT = { width: 390, height: 844 }; // must match PageTemplate's marke
 const SETTLE_MS = 500; // extra wait after network idle for animations/layout
 const MIN_ROOT_CHARS = 500; // captured #root smaller than this fails the build
 
+// Henry's animated geometry/animation, vendored from the henry-mascot submodule
+// (synced to src/vendor/henry). Inlined into the veil below so the veil robot
+// and the React CuteRobot share one source of truth -- no hand-copied geometry.
+const VENDORED_HENRY_CSS = fs.readFileSync(
+  path.join(__dirname, "..", "src", "vendor", "henry", "henry-animated.css"),
+  "utf8"
+);
+
 // Base content routes are shared with scripts/check-hydration.js via
 // base-routes.json. Keep titles in sync with src/content/pageMeta.js and paths
 // with src/index.jsx.
@@ -69,28 +77,33 @@ const MARKER =
 // instead — so this 20s keyframe only fires if the bundle never boots at all
 // (kept long so a slow download can't lift the veil before hydration).
 // The robot fades in after 300ms so fast loads see only a blank blink.
+// Veil chrome (container, entrance, timeout, scale, label) -- NOT Henry. Henry's
+// geometry/animation is inlined from the vendored henry-animated.css below, so
+// there is one source of truth. Scale 0.59 matches the veil's prior 64px head
+// (vendored cute-robot-head is 109px). The cute-robot- rules only affect the
+// veil's own instance (the veil is removed at hydration).
 const VEIL_STYLE = `<style>
 #prerender-veil{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:1;transition:opacity .35s ease;animation:prv-timeout .35s ease 20s forwards}
 #prerender-veil.prv-hidden{opacity:0;pointer-events:none}
 @keyframes prv-timeout{to{opacity:0;visibility:hidden}}
-.prv-robot{position:relative;opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
+#prerender-veil .prv-scale{transform:scale(.59);transform-origin:center}
+#prerender-veil .prv-robot{opacity:0;animation:prv-appear .3s ease .3s forwards,prv-bob 1.6s ease-in-out .3s infinite}
 @keyframes prv-appear{to{opacity:1}}
 @keyframes prv-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.prv-antenna{width:4px;height:14px;background:#555;margin:0 auto;border-radius:2px;position:relative}
-.prv-antenna::before{content:"";position:absolute;top:-10px;left:-3px;width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-glow 1.6s ease-in-out infinite}
-@keyframes prv-glow{0%,100%{opacity:.5}50%{opacity:1}}
-.prv-head{width:64px;height:46px;border:3px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff}
-.prv-eye{width:10px;height:10px;background:#1890ff;border-radius:50%;animation:prv-blink 3.2s infinite}
-@keyframes prv-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
-.prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
-@media (prefers-reduced-motion:reduce){.prv-robot{opacity:1;animation:none}.prv-antenna::before,.prv-eye{animation:none}.prv-label{opacity:1;animation:none}}
+#prerender-veil .prv-label{margin-top:18px;opacity:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;color:#555;letter-spacing:.08em;animation:prv-appear .3s ease .3s forwards}
+@media (prefers-reduced-motion:reduce){#prerender-veil .prv-robot{opacity:1;animation:none}#prerender-veil .prv-label{opacity:1;animation:none}}
+${VENDORED_HENRY_CSS}
 </style>`;
 
+// Friendly pose (eyes + antenna, no question marks), vendored cute-robot- markup.
 const VEIL_HTML =
   `<div id="prerender-veil" aria-hidden="true">` +
-  `<div class="prv-robot"><div class="prv-antenna"></div>` +
-  `<div class="prv-head"><div class="prv-eye"></div><div class="prv-eye"></div></div>` +
-  `</div>` +
+  `<div class="prv-scale"><div class="prv-robot">` +
+  `<span class="cute-robot-container"><span class="cute-robot-robot">` +
+  `<span class="cute-robot-antenna"></span>` +
+  `<span class="cute-robot-head"><span class="cute-robot-eye"></span><span class="cute-robot-eye"></span></span>` +
+  `</span></span>` +
+  `</div></div>` +
   `<div class="prv-label">Loading&#8230;</div>` +
   `</div>` +
   `<noscript><style>#prerender-veil{display:none}</style></noscript>`;
