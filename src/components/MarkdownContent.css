@@ -1,0 +1,23 @@
+.markdown-error-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  max-width: 360px;
+  margin: 8px auto;
+  padding: 28px 24px;
+  border-radius: 15px;
+  background-color: var(--color-bg-alt);
+}
+
+.markdown-error-tile__robot {
+  width: 128px;
+  height: auto;
+}
+
+.markdown-error-tile__text {
+  margin: 0;
+  color: #595959;
+  font-size: var(--fs-md);
+}

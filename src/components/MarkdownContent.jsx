@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Typography } from "antd";
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
 import { visit } from "unist-util-visit";
 import { h } from "hastscript";
 import ImageCarousel from "./ImageCarousel";
-
-const { Text } = Typography;
+import GlitchedHenry from "./GlitchedHenry";
+import "./MarkdownContent.css";
 
 const onDirective = (node) => {
   let data = node.data || (node.data = {});
@@ -117,7 +116,14 @@ const MarkdownContent = (props) => {
   }, [markdownPath]);
 
   if (error) {
-    return <Text type="danger">Well, this is awkward. The content wandered off and we can&apos;t find it.</Text>;
+    return (
+      <div className="markdown-error-tile">
+        <GlitchedHenry className="markdown-error-tile__robot" />
+        <p className="markdown-error-tile__text">
+          Well, this is awkward. The content wandered off and we can&apos;t find it.
+        </p>
+      </div>
+    );
   }
 
   const components = {
