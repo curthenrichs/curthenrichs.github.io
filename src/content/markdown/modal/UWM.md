@@ -1,17 +1,17 @@
 ﻿# University of Wisconsin - Madison
-During my time at UW Madison, I achieved the following degree:
+During my time at UW Madison, I earned the following degree:
 
 Master of Science
 - Major: Computer Science
 
-My goal was to take the engineering acumen developed in undergrad and build on top various skills in robotics, research, additional computer science, and user experience.
+My goal was to take the engineering acumen developed in undergrad and build on it with skills in robotics, research, additional computer science, and user experience.
 
-I have found my interest is heavily within application over developing theory. I am not interested in being a mathematician, who happens to think about compute problems. I enjoy tackling engineering problems utilizing mathematics, science, and practical knowledge to build a real system that interacts with real users with all of the messy bits that happens when a system is physically situated.
+I have found my interest is heavily within application over developing theory. I am not interested in being a mathematician who happens to think about compute problems. I enjoy tackling engineering problems using mathematics, science, and practical knowledge to build a real system that interacts with real users with all of the messy bits that happen when a system is physically situated.
 
 During graduate school I also worked as a research assistant and teaching assistant. Please see my career section - UW Madison for details regarding this as it heavily shaped my experience during this degree.
 
 ## Courses
-Below are the courses taken during my time at UW Madison. I have broken them up by major theme for perusal.
+Below are the courses taken during my time at UW Madison. I have grouped them by major theme.
 
 ### HCI
 CS534 - Computational Photography
@@ -56,7 +56,7 @@ CS760 - Machine Learning
 CS766 - Computer Vision
 - Dove into algorithms and techniques used in computer vision
     - Various feature construction techniques, SIFT, Convolutional nets, etc. 
-- Final Project : Gestalt informed classification of various facial anomalies to known syndromes using closed-access medical data
+- Final Project : Gestalt-informed classification of various facial anomalies to known syndromes using closed-access medical data
 
 CS525 - Linear Optimization
 - Learned (and worked through proofs on) the mathematics behind linear optimization
@@ -68,14 +68,14 @@ CS759 - HPC for application in Engineering
     - GPU acceleration (CUDA)
     - CPU acceleration (OpenMP)
     - Cluster compute (MPI)
-- Various projects, final project was a large scale collision detection problem
+- Various projects, final project was a large-scale collision detection problem
 
 CS752 - Advanced Computer Architecture
 - Worked through single core super-scalar architecture and performed literature review
-- Final project developed a LSTM instruction predictor as an upper limit for feasible prediction
+- Final project developed an LSTM instruction predictor as an upper limit for feasible prediction
 
 CS642 - Intro to Information Security
-- Studies cryptography and various common vulnerabilities
+- Studied cryptography and various common vulnerabilities
 - Multiple projects, each requiring some exploit technique
 
 ### Independent Study / Masters Research
