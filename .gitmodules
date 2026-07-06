@@ -1,0 +1,3 @@
+[submodule "vendor/henry-mascot"]
+	path = vendor/henry-mascot
+	url = git@github.com:curthenrichs/henry-mascot.git
