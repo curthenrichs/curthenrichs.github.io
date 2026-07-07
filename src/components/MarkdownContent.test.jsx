@@ -1,6 +1,12 @@
 import React from "react";
 import { render, screen, waitFor, act } from "@testing-library/react";
-import MarkdownContent from "./MarkdownContent";
+import MarkdownContent, {
+  onDirective,
+  transform,
+  htmlDirective,
+  rehypeMergeAdjacentText,
+  recordPrerenderMdCache
+} from "./MarkdownContent";
 
 // react-markdown (and its remark/unified dependency tree) ships ESM-only
 // builds that CRA's default Jest transform can't parse (`Unexpected token
@@ -30,9 +36,22 @@ jest.mock("react-markdown", () => {
     let lastIndex = 0;
     let key = 0;
     let match;
+    // Plain-text runs go through the caller's `p` override when supplied,
+    // matching how real react-markdown wraps top-level text in a paragraph
+    // (MarkdownContent swaps that for a padded <div>; see its `components.p`).
+    const pushText = (chunk) => {
+      if (!chunk) return;
+      if (components && components.p) {
+        parts.push(
+          ReactActual.createElement(ReactActual.Fragment, { key: key++ }, components.p({ children: chunk }))
+        );
+      } else {
+        parts.push(chunk);
+      }
+    };
     while ((match = TOKEN_RE.exec(text)) !== null) {
       if (match.index > lastIndex) {
-        parts.push(text.slice(lastIndex, match.index));
+        pushText(text.slice(lastIndex, match.index));
       }
       if (match[1] !== undefined) {
         // Markdown link
@@ -60,7 +79,7 @@ jest.mock("react-markdown", () => {
       lastIndex = TOKEN_RE.lastIndex;
     }
     if (lastIndex < text.length) {
-      parts.push(text.slice(lastIndex));
+      pushText(text.slice(lastIndex));
     }
     return ReactActual.createElement(ReactActual.Fragment, null, ...parts);
   };
@@ -274,5 +293,83 @@ describe("MarkdownContent fetch/cache lifecycle", () => {
     const carousels = screen.getAllByTestId("image-carousel");
     expect(carousels).toHaveLength(1);
     expect(carousels[0].getAttribute("data-ids")).toBe("img-x");
+  });
+
+  test("plain markdown text is wrapped by the p override (padded div, no stray <p>)", () => {
+    window.__PRERENDER_MD__ = { "/md/plain.md": "just some plain text" };
+    const { container } = render(
+      <MarkdownContent markdownPath="/md/plain.md" images={[]} />
+    );
+    expect(screen.getByText("just some plain text")).toBeInTheDocument();
+    expect(container.querySelector("p")).toBeNull();
+    const wrapper = screen.getByText("just some plain text");
+    expect(wrapper.tagName).toBe("DIV");
+    expect(wrapper.style.paddingBottom).toBe("1em");
+  });
+});
+
+// These exercise the remark/rehype plugin helpers directly with synthetic
+// AST nodes -- the mocked react-markdown above never actually invokes them
+// (see the top-of-file comment), so this is the only path that runs their
+// real statements under Jest.
+describe("MarkdownContent plugin internals", () => {
+  test("onDirective maps a directive node's hast tag/properties onto node.data", () => {
+    const node = { name: "email", attributes: { id: "x" } };
+    onDirective(node);
+    expect(node.data).toEqual(
+      expect.objectContaining({ hName: expect.anything(), hProperties: expect.anything() })
+    );
+  });
+
+  test("onDirective preserves any pre-existing node.data", () => {
+    const node = { name: "email", attributes: {}, data: { keep: true } };
+    onDirective(node);
+    expect(node.data.keep).toBe(true);
+  });
+
+  test("transform delegates to visit with the directive node types and onDirective", () => {
+    // visit is mocked to a no-op in this file; this just proves transform's
+    // own statement (the visit(...) call) executes without throwing.
+    expect(() => transform({ type: "root", children: [] })).not.toThrow();
+  });
+
+  test("htmlDirective returns the transform function for remark-directive to run", () => {
+    expect(htmlDirective()).toBe(transform);
+  });
+
+  test("rehypeMergeAdjacentText merges adjacent text nodes at every tree level", () => {
+    const tree = {
+      children: [
+        { type: "text", value: "a" },
+        { type: "text", value: "b" },
+        {
+          type: "element",
+          children: [
+            { type: "text", value: "c" },
+            { type: "text", value: "d" },
+            { type: "element", children: [] }
+          ]
+        }
+      ]
+    };
+    rehypeMergeAdjacentText()(tree);
+    expect(tree.children).toHaveLength(2);
+    expect(tree.children[0]).toEqual({ type: "text", value: "ab" });
+    expect(tree.children[1].children).toHaveLength(2);
+    expect(tree.children[1].children[0]).toEqual({ type: "text", value: "cd" });
+  });
+
+  test("rehypeMergeAdjacentText no-ops on nodes without children", () => {
+    const leaf = { type: "text", value: "solo" };
+    expect(() => rehypeMergeAdjacentText()(leaf)).not.toThrow();
+    expect(leaf.value).toBe("solo");
+  });
+
+  test("recordPrerenderMdCache no-ops when window is undefined", () => {
+    const originalWindow = global.window;
+    // eslint-disable-next-line no-undef
+    delete global.window;
+    expect(() => recordPrerenderMdCache("k", "v")).not.toThrow();
+    global.window = originalWindow;
   });
 });

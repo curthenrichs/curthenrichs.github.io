@@ -8,7 +8,12 @@ import ImageCarousel from "./ImageCarousel";
 import GlitchedHenry from "./GlitchedHenry";
 import "./MarkdownContent.css";
 
-const onDirective = (node) => {
+// Exported alongside the default component so unit tests can exercise these
+// remark/rehype plugin internals directly with synthetic AST nodes: the real
+// react-markdown/remark/rehype packages are ESM-only and unparseable by CRA's
+// Jest transform (see MarkdownContent.test.jsx), so react-markdown itself is
+// mocked out there and never actually invokes these functions.
+export const onDirective = (node) => {
   let data = node.data || (node.data = {});
   let hast = h(node.name, node.attributes);
   node.data = {
@@ -18,18 +23,18 @@ const onDirective = (node) => {
   };
 };
 
-const transform = (tree) => {
+export const transform = (tree) => {
   visit(tree, ["textDirective", "leafDirective", "containerDirective"], onDirective);
 };
 
-const htmlDirective = () => {
+export const htmlDirective = () => {
   return transform;
 };
 
 // react-markdown can emit adjacent text nodes (e.g. nested lists: item text +
 // newline). Browsers coalesce them when re-parsing prerendered HTML, which
 // desyncs hydration. Merging them in the tree makes render match parse.
-function rehypeMergeAdjacentText() {
+export function rehypeMergeAdjacentText() {
   const merge = (node) => {
     if (!node.children) return;
     node.children.forEach(merge);
@@ -64,7 +69,7 @@ const readPrerenderMdCache = (src) => {
   return window.__PRERENDER_MD__[src];
 };
 
-const recordPrerenderMdCache = (src, text) => {
+export const recordPrerenderMdCache = (src, text) => {
   if (typeof window === "undefined") {
     return;
   }

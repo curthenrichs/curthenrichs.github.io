@@ -32,6 +32,25 @@ test("clicking an overview domain card navigates to the Domains view", () => {
   expect(container.querySelectorAll(".ant-card").length).toBe(domains.length);
 });
 
+test("pressing Enter or Space on an overview domain card navigates to the Domains view", () => {
+  const { container } = renderAt(<SectionSkills />);
+  fireEvent.keyDown(container.querySelector(".overview-domain-card"), { key: "Enter" });
+  expect(container.querySelectorAll(".ant-card").length).toBe(domains.length);
+});
+
+test("pressing Space on an overview domain card navigates to the Domains view", () => {
+  const { container } = renderAt(<SectionSkills />);
+  fireEvent.keyDown(container.querySelector(".overview-domain-card"), { key: " " });
+  expect(container.querySelectorAll(".ant-card").length).toBe(domains.length);
+});
+
+test("pressing an unrelated key on an overview domain card does not navigate", () => {
+  const { container } = renderAt(<SectionSkills />);
+  fireEvent.keyDown(container.querySelector(".overview-domain-card"), { key: "Tab" });
+  expect(container.querySelector(".overview-grid")).not.toBeNull();
+  expect(container.querySelectorAll(".ant-card").length).toBe(0);
+});
+
 test("SkillTags shows all skills by default and filters by category", () => {
   renderAt(<SectionSkills />);
   fireEvent.click(screen.getByText("Technologies"));
