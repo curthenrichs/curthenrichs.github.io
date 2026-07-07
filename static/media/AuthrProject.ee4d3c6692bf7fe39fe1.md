@@ -1,3 +1,0 @@
-Authr was designed to enable engineers to develop collaborative tasks with better allocations for the agents involved. Users could take their existing work descriptions and convert them into a human-robot collaborative process where the agent allocation was optimized by Authr. The interface consisted of three workflow phases: (1) Environment Setup, (2) Plan Description, (3) Simulation. We evaluated the interface with two user studies.
- 
-My contributions tended toward backend ROS integration, robot simulation, and data management. 

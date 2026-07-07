@@ -8,13 +8,13 @@ My first robots were small BEAM (analog controlled) systems. The circuits were a
 
 :image[]{id="img-hobby-small-robots"}
 
-When I went to graduate school my work, study, and hobby mixed. I focused my efforts on understanding collaborative robotics. Two distinctively hobby projects come to mind: a robot motion “playground” and an abstract trajectory visualization. 
+When I went to graduate school my work, study, and hobby mixed. I focused my efforts on understanding collaborative robotics. Two distinctively hobby projects come to mind: a robot motion "playground" and an abstract trajectory visualization. 
 
-First, the robot motion playground was inspired by my need to control the Universal Robots UR3e cobot arm for my research. I wanted to learn how to use the new ROS driver with my colleagues’ real-time motion controllers ([Relaxed-IK](https://github.com/uwgraphics/relaxed_ik) and [Lively-TK](https://github.com/Wisc-HCI/lively_tk_ros)). The goal was to serve as a reference project in the lab. To that end I built the ur3e_real_time_motion_playground.
+First, the robot motion playground was inspired by my need to control the Universal Robots UR3e cobot arm for my research. I wanted to learn how to use the new ROS driver with my colleagues' real-time motion controllers ([Relaxed-IK](https://github.com/uwgraphics/relaxed_ik) and [Lively-TK](https://github.com/Wisc-HCI/lively_tk_ros)). The goal was to serve as a reference project in the lab. To that end I built the ur3e_real_time_motion_playground.
 
-The second project builds off the playground with a retro-fitted 2D web fluid visualization tool to express robot end-effector position and orientation. I mostly built it on a whim over a weekend to relax. It doesn’t have any immediate academic or industry use though it is rather enjoyable to watch when a robot operates over a motion trajectory.
+The second project builds off the playground with a retro-fitted 2D web fluid visualization tool to express robot end-effector position and orientation. I mostly built it on a whim over a weekend to relax. It doesn't have any immediate academic or industry use though it is rather enjoyable to watch when a robot operates over a motion trajectory.
 
-That brings us to now. I have three robot projects in active progress, plus maintenance on the older ones. The first is a mobile robot called YAM, the second is a robotic finger named Taltosoid, and the third is a robot dog named Bubbles.
+That brings us to now. I have three robot projects in active progress, plus maintenance on the older ones. The first is a mobile robot named YAM, the second is a robotic finger named Taltosoid, and the third is a robot dog named Bubbles.
 
 My goal with YAM is to continue improving my understanding of robotic subsystems. The base platform consists of a simple differential drivetrain augmented with three ultrasonic sensors and two infrared sensors, all hooked up to an Arduino. The Arduino monitors sensors, commands the motor controller, and communicates with higher-level ROS control. The ROS subsystem uses a Nvidia Jetson Nano as controller connected to both an Intel RealSense Depth Camera and Tracking Camera. The tracking camera provides decent odometry data for SLAM (which is where I currently am at with the project). Next steps: (1) rework the power system so a home base handles automatic recharging, (2) upgrade the computer since the Jetson Nano is underpowered, and (3) move to ROS 2.
 
@@ -29,7 +29,7 @@ Bubbles, a robot dog, is the one pulling my attention back lately, even though i
 
 In addition to robotics, I also dabble in home automation since my undergraduate degree (when I actually had a place of my own). Most of my systems are commercial-off-the-shelf smart switches, bulbs, cameras, etc. communicating with Amazon Alexa and Google Home, though I am actively building my own server to integrate various DIY embedded smart devices with Amazon / Google (see my other project Okos Polip).
 
- I have built (and/or actively building) the following devices with integration into Okos Polip:
+I have built (or am actively building) the following devices with integration into Okos Polip:
 
 - LED plant grow light
 - DIY WiFi air filter
@@ -42,7 +42,7 @@ Previously, I built a RESTful LED light strip service that ran on an ESP8266 (tr
 
 Lately I've leaned on AI coding assistants like Claude Code to push these builds along, mostly for the firmware and the ROS glue that used to eat my weekends.
 
-I chronicle a lot of this tinkering on my blog, Half-Built-Robots, under the banner "Unfinished Creations, Unbridled Innovation." That name is honest: most of these builds are perpetual works in progress, and I like them that way.
+I write about a lot of this tinkering on my blog, Half-Built-Robots. The tagline, "Unfinished Creations, Unbridled Innovation," should tell you how often anything here actually gets finished.
 
 ## Links
 

@@ -1,1 +1,0 @@
-At the University of Wisconsin-Madison's People and Robots Lab, I studied how people and collaborative robots work together in manufacturing. Most of my work was building the robot interfaces and experiment systems behind our studies, running those studies, and keeping shared lab infrastructure in good shape.

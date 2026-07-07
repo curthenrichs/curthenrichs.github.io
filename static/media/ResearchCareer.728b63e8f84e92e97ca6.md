@@ -1,4 +1,4 @@
-# Graduate Research Assistant
+# Graduate Research & Teaching Assistant
 
 I spent my graduate research at the University of Wisconsin-Madison in the People and Robots Lab, studying how people and collaborative robots actually work together on the factory floor. Most of my work was building the robot user interfaces and experiment systems that let us ask those questions, and then running the studies around them.
 
@@ -15,3 +15,7 @@ When the COVID lockdown made in-person human studies hard to run, we leaned on e
 ## Lab Duties
 
 Beyond the formal projects, I did a fair amount to keep the lab running. I maintained a centralized robot description and configuration repository, wrote documentation and bringup code for our Universal Robots UR3e and Microsoft Hololens, and developed and patched the Robotiq gripper ROS driver for our setups (including serial-tunnel support on the UR3e). It was also just expected that you would help colleagues with their user studies, technical development, and paper writing, which I did often.
+
+## Teaching
+
+My first semester of graduate school (fall 2018) I was a teaching assistant for COMPSCI 506: Software Engineering, taught by Dr. Tracy Lewis-Williams. I mentored a subset of the project teams through the full engineering process: finding an external stakeholder and project, gathering requirements, writing user stories, implementing a prototype solution, and presenting at demo day. Beyond the teams, I graded, held office hours to explain concepts, and gave the lectures on version control.

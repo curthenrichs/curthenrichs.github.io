@@ -1,0 +1,3 @@
+Authr is a task authoring environment that helps an engineer turn an existing manual process into a human-robot collaborative plan, with the work sensibly split between the human and the robot. The interface moves through three phases: Environment Setup, Plan Description, and Simulation. We evaluated it with two user studies.
+ 
+My contributions tended toward backend ROS integration, robot simulation, and data management. 
