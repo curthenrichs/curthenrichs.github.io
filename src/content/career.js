@@ -94,6 +94,14 @@ const data = {
     web: "https://peopleandrobots.wisc.edu/",
     positions: [
       {
+        id: "career-research-position-ta",
+        title: "Graduate Teaching Assistant",
+        field: "Software Engineering",
+        start: "2018",
+        end: "2018",
+        brief: "Graduate Teaching Assistant"
+      },
+      {
         id: "career-research-position-ra",
         title: "Graduate Research Assistant",
         field: "Human-Robot Interaction",
