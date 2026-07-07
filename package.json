@@ -38,6 +38,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
     "check:hydration": "node scripts/check-hydration.js",
+    "check:interactions": "node scripts/check-interactions.js",
     "sync:henry": "node scripts/sync-henry.js",
     "postinstall": "node scripts/sync-henry.js",
     "prebuild": "node scripts/sync-henry.js",
