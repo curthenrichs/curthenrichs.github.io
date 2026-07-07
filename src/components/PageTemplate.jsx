@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Typography } from "antd";
 import { NavHeader, NavDrawer, NavFooter } from "./Navigation";
-import InDevelopmentModal from "./InDevelopmentModal";
 import { WidthContext, HeightContext } from "../contexts";
 import { Element as ScrollElement, scroller } from "react-scroll";
 import CookieConsent from "react-cookie-consent";
@@ -97,7 +96,7 @@ class _PageTemplate extends Component {
   }
 
   render() {
-    const { header, sections, inDevelopment, displayCookieConsent, scrollbar } = this.props;
+    const { header, sections, displayCookieConsent, scrollbar } = this.props;
     const { width, height, activeNavItem, menuOpen } = this.state;
 
     let cookieConsent = null;
@@ -183,8 +182,6 @@ class _PageTemplate extends Component {
             </Footer>
 
           </Layout>
-
-          {inDevelopment ? <InDevelopmentModal /> : undefined}
 
           <NavDrawer 
             {...header}
