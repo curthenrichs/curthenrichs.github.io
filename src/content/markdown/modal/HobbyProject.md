@@ -42,7 +42,7 @@ Previously, I built a RESTful LED light strip service that ran on an ESP8266 (tr
 
 Lately I've leaned on AI coding assistants like Claude Code to push these builds along, mostly for the firmware and the ROS glue that used to eat my weekends.
 
-I chronicle a lot of this tinkering on my blog, Half-Built-Robots, under the banner "Unfinished Creations, Unbridled Innovation." That name is honest: most of these builds are perpetual works in progress, and I like them that way.
+I write about a lot of this tinkering on my blog, Half-Built-Robots. The tagline, "Unfinished Creations, Unbridled Innovation," should tell you how often anything here actually gets finished.
 
 ## Links
 
