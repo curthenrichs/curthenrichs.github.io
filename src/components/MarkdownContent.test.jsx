@@ -263,7 +263,7 @@ describe("MarkdownContent fetch/cache lifecycle", () => {
 
   test(":image directive with a matching id renders the carousel; unmatched renders nothing", () => {
     window.__PRERENDER_MD__ = {
-      "/md/img.md": 'before :image[]{id="img-x"} after :image[]{id="img-missing"} end'
+      "/md/img.md": "before :image[]{id=\"img-x\"} after :image[]{id=\"img-missing\"} end"
     };
     render(
       <MarkdownContent
