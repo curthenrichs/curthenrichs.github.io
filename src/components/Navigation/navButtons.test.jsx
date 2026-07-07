@@ -1,0 +1,37 @@
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { MemoryRouter, Routes, Route, useLocation } from "react-router-dom";
+import PageNavButton from "./PageNavButton";
+import LinkNavButton from "./LinkNavButton";
+
+const LocationProbe = () => <div data-testid="loc">{useLocation().pathname}</div>;
+
+const renderPageBtn = () =>
+  render(
+    <MemoryRouter initialEntries={["/start"]}>
+      <Routes>
+        <Route path="/start" element={<PageNavButton id="go-btn" content="Go" route="/career" />} />
+        <Route path="/career" element={<LocationProbe />} />
+      </Routes>
+    </MemoryRouter>
+  );
+
+test("PageNavButton navigates on click", () => {
+  renderPageBtn();
+  fireEvent.click(screen.getByText("Go"));
+  expect(screen.getByTestId("loc").textContent).toBe("/career");
+});
+
+test("PageNavButton navigates on Enter", () => {
+  renderPageBtn();
+  fireEvent.keyDown(screen.getByText("Go"), { key: "Enter" });
+  expect(screen.getByTestId("loc").textContent).toBe("/career");
+});
+
+test("LinkNavButton renders a protected external anchor", () => {
+  render(<LinkNavButton id="ext" content="Blog" route="https://example.com" />);
+  const a = screen.getByText("Blog");
+  expect(a).toHaveAttribute("href", "https://example.com");
+  expect(a).toHaveAttribute("target", "_blank");
+  expect(a).toHaveAttribute("rel", "noopener noreferrer");
+});
