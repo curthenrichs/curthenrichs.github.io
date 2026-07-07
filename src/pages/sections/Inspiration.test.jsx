@@ -18,6 +18,17 @@ test("after mount, the effect swaps to the randomly selected quote", () => {
   randSpy.mockRestore();
 });
 
+test("noBr suppresses the trailing break; default includes it", () => {
+  // title={null} in both renders: SectionTitle itself emits <br/> elements
+  // after the title, so suppressing the title leaves the trailing break as
+  // the only <br> in play.
+  const { container, unmount } = render(<SectionInspiration title={null} />);
+  expect(container.querySelector("br")).not.toBeNull();
+  unmount();
+  const { container: c2 } = render(<SectionInspiration title={null} noBr />);
+  expect(c2.querySelector("br")).toBeNull();
+});
+
 test("title renders by default and is suppressed when null", () => {
   const { unmount } = render(<SectionInspiration />);
   expect(screen.getByText("Inspiration")).toBeInTheDocument();
