@@ -19,10 +19,10 @@ jest.mock("unist-util-visit", () => ({ visit: () => {} }));
 jest.mock("hastscript", () => ({ h: () => ({ tagName: "", properties: {} }) }));
 jest.mock("react-markdown", () => {
   const ReactActual = require("react");
-  // Matches either a markdown link `[label](href)` or a directive
-  // `:name[]{...attrs...}` (attrs ignored; the real directive parsing is
-  // covered by the parse-only check documented in the task report).
-  const TOKEN_RE = /\[([^\]]+)\]\(([^)]+)\)|:([a-zA-Z][\w-]*)(?:\[\])?(?:\{[^}]*\})?/g;
+  // Matches a markdown link `[label](href)` or a directive
+  // `:name[]{key="value" ...}` (attrs now parsed so `image` directives can
+  // resolve against the images prop).
+  const TOKEN_RE = /\[([^\]]+)\]\(([^)]+)\)|:([a-zA-Z][\w-]*)(?:\[\])?(?:\{([^}]*)\})?/g;
 
   return function ReactMarkdownMock({ children, components }) {
     const text = children || "";
@@ -45,10 +45,16 @@ jest.mock("react-markdown", () => {
           ReactActual.createElement(ReactActual.Fragment, { key: key++ }, A({ href, children: label }))
         );
       } else if (match[3] !== undefined) {
-        // Directive
         const Comp = components && components[match[3]];
         if (Comp) {
-          parts.push(ReactActual.createElement(ReactActual.Fragment, { key: key++ }, Comp({})));
+          const attrs = {};
+          const attrText = match[4] || "";
+          const ATTR_RE = /(\w+)="([^"]*)"/g;
+          let attrMatch;
+          while ((attrMatch = ATTR_RE.exec(attrText)) !== null) {
+            attrs[attrMatch[1]] = attrMatch[2];
+          }
+          parts.push(ReactActual.createElement(ReactActual.Fragment, { key: key++ }, Comp(attrs)));
         }
       }
       lastIndex = TOKEN_RE.lastIndex;
@@ -58,6 +64,14 @@ jest.mock("react-markdown", () => {
     }
     return ReactActual.createElement(ReactActual.Fragment, null, ...parts);
   };
+});
+
+jest.mock("./ImageCarousel", () => {
+  const M = (props) => (
+    <div data-testid="image-carousel" data-ids={props.options.map((o) => o.id).join(",")} />
+  );
+  M.displayName = "ImageCarousel";
+  return M;
 });
 
 const LINK_MARKDOWN = "[x](https://example.com)";
@@ -124,4 +138,89 @@ test("extraComponents supplies a custom directive renderer", async () => {
   });
   const link = (await screen.findByText("x@y.z")).closest("a");
   expect(link).toHaveAttribute("href", "mailto:x@y.z");
+});
+
+describe("MarkdownContent fetch/cache lifecycle", () => {
+  afterEach(() => {
+    delete window.__PRERENDER_MD__;
+    jest.restoreAllMocks();
+  });
+
+  test("cache miss fetches the path, renders it, and records it into the cache", async () => {
+    const fetchSpy = jest.spyOn(global, "fetch").mockResolvedValue({
+      ok: true,
+      text: () => Promise.resolve("fetched body")
+    });
+    render(<MarkdownContent markdownPath="/md/miss.md" images={[]} />);
+    await waitFor(() => expect(screen.getByText("fetched body")).toBeInTheDocument());
+    expect(fetchSpy).toHaveBeenCalledWith("/md/miss.md", expect.any(Object));
+    expect(window.__PRERENDER_MD__["/md/miss.md"]).toBe("fetched body");
+  });
+
+  test("cache hit renders synchronously with zero fetches", () => {
+    const fetchSpy = jest.spyOn(global, "fetch");
+    window.__PRERENDER_MD__ = { "/md/hit.md": "cached body" };
+    render(<MarkdownContent markdownPath="/md/hit.md" images={[]} />);
+    expect(screen.getByText("cached body")).toBeInTheDocument();
+    expect(fetchSpy).not.toHaveBeenCalled();
+  });
+
+  test("non-ok response renders the error tile instead of content", async () => {
+    jest.spyOn(global, "fetch").mockResolvedValue({ ok: false, status: 404 });
+    const { container } = render(
+      <MarkdownContent markdownPath="/md/broken.md" images={[]} />
+    );
+    await waitFor(() =>
+      expect(container.querySelector(".markdown-error-tile")).not.toBeNull()
+    );
+    expect(screen.getByText(/The content wandered off/)).toBeInTheDocument();
+  });
+
+  test("rejected fetch renders the error tile", async () => {
+    jest.spyOn(global, "fetch").mockRejectedValue(new TypeError("network down"));
+    const { container } = render(
+      <MarkdownContent markdownPath="/md/net.md" images={[]} />
+    );
+    await waitFor(() =>
+      expect(container.querySelector(".markdown-error-tile")).not.toBeNull()
+    );
+  });
+
+  test("unmount during fetch aborts the request without noise", async () => {
+    const abortSpy = jest.spyOn(AbortController.prototype, "abort");
+    let resolveFetch;
+    jest.spyOn(global, "fetch").mockReturnValue(new Promise((r) => { resolveFetch = r; }));
+    const { unmount } = render(
+      <MarkdownContent markdownPath="/md/slow.md" images={[]} />
+    );
+    unmount();
+    expect(abortSpy).toHaveBeenCalled();
+    // Resolve after unmount: the AbortError path must swallow silently.
+    resolveFetch({ ok: true, text: () => Promise.resolve("late") });
+    await Promise.resolve();
+  });
+
+  test("markdownPath change after mount switches to the new cached content", () => {
+    window.__PRERENDER_MD__ = { "/md/a.md": "alpha body", "/md/b.md": "beta body" };
+    const { rerender } = render(<MarkdownContent markdownPath="/md/a.md" images={[]} />);
+    expect(screen.getByText("alpha body")).toBeInTheDocument();
+    rerender(<MarkdownContent markdownPath="/md/b.md" images={[]} />);
+    expect(screen.getByText("beta body")).toBeInTheDocument();
+    expect(screen.queryByText("alpha body")).toBeNull();
+  });
+
+  test(":image directive with a matching id renders the carousel; unmatched renders nothing", () => {
+    window.__PRERENDER_MD__ = {
+      "/md/img.md": 'before :image[]{id="img-x"} after :image[]{id="img-missing"} end'
+    };
+    render(
+      <MarkdownContent
+        markdownPath="/md/img.md"
+        images={[{ id: "img-x", img: "/x.jpg", carousel: true }]}
+      />
+    );
+    const carousels = screen.getAllByTestId("image-carousel");
+    expect(carousels).toHaveLength(1);
+    expect(carousels[0].getAttribute("data-ids")).toBe("img-x");
+  });
 });
