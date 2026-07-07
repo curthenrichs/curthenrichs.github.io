@@ -9,10 +9,10 @@ Okos Polip is composed of the following microservices:
 - Authentication Server : OAuth login and session management
 - Factory API (service) : API to design device types and instantiate devices
 
-I chose a MERN (MongoDB, Express.js, React, and Node.js) stack for core services and dashboard. Passport.js used for OAuth login (Google and Amazon providers) with a Redis session. Using Python for test scripts. And of course, device libraries written in C/C++ (targeting Arduino ESP8266), Python (targeting ROS), and Javascript. 
+I chose a MERN (MongoDB, Express.js, React, and Node.js) stack for core services and dashboard. Passport.js handles OAuth login (Google and Amazon providers) with a Redis session, and Python covers the test scripts. And of course, the device libraries are written in C/C++ (targeting Arduino ESP8266), Python (targeting ROS), and Javascript.
 
 Landing and content pages make use of Wordpress. Why reinvent the wheel for a non-product system.
 
 There is still significant work to be done; stay tuned.
 
-Interested in learning more checkout the [Okos Polip Landing Page](https://www.okospolip.com/).
+Interested in learning more? Check out the [Okos Polip Landing Page](https://www.okospolip.com/).

@@ -1,12 +1,12 @@
 # Cobot Interaction Experiments
 
-During graduate school, I studied how human workers actually collaborate with a cobot. With my colleagues, I ran two experiments, Task Interdependence and pRAD, on a shared setup we called ITER (the Interdependence Task Experiment Runner). ITER drove a Universal Robots UR3e through a simplified job, building a small magnetic block house, and handled the experiment procedure around it. The two studies were really two halves of one effort: a labmate and I each took the lead on one, splitting them by which questions we were more drawn to, while both of us stayed hands-on across both. The code is on [Github](https://github.com/Wisc-HCI/ITER).
+During graduate school, I studied how human workers actually collaborate with a cobot. With my colleagues, I ran two experiments, Task Interdependence and pRAD, on a shared setup we called ITER (the Interdependence Task Experiment Runner). ITER drove a Universal Robots UR3e through a simplified job, building a small magnetic block house, and handled the experiment procedure around it. The two studies were really two halves of one effort: a colleague and I each took the lead on one, splitting them by which questions we were more drawn to, while both of us stayed hands-on across both. The code is on [Github](https://github.com/Wisc-HCI/ITER).
 
 ## Task Interdependence
 
 This experiment looked at how the *structure* of a collaboration shapes the people in it. We compared three levels of interdependence from organizational theory: pooled (human and robot work independently toward a shared result), sequential (one's output feeds the other), and reciprocal (they hand work back and forth). The human and robot shared a single job, building the block house, and we measured worker performance and social perception across the three. Our paper is [here](https://ieeexplore.ieee.org/document/9223555).
 
-My labmate led this one, but I was fully in it on the technical side, building the experiment procedure and running and monitoring the software during evaluation. This is also where I got comfortable with the Universal Robots platform and its Polyscope visual programming tool.
+My colleague led this one, but I was fully in it on the technical side, building the experiment procedure and running and monitoring the software during evaluation. This is also where I got comfortable with the Universal Robots platform and its Polyscope visual programming tool.
 
 ## pRAD
 
