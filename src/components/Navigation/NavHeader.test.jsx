@@ -45,7 +45,12 @@ test("non-simple wide: section buttons render, selection class applied, clicks c
   const alpha = screen.getByText("Alpha").closest("div[role='button']");
   expect(alpha).toHaveClass("nav-bar-btn-selected");
   fireEvent.click(screen.getByText("Beta").closest("div[role='button']"));
-  expect(cb).toHaveBeenCalled();
+  // InnerNavButton wires `callback` straight to onClick, so the callback
+  // receives the click EVENT (not the section entry). Pin which button was
+  // clicked via the event, not the (incorrect) entry-object shape.
+  expect(cb).toHaveBeenCalledTimes(1);
+  const event = cb.mock.calls[0][0];
+  expect(event.target.closest("[id]").id).toBe("sect-b-btn");
 });
 
 test("non-simple below collapseWidth: section buttons collapse away, menu remains", () => {

@@ -44,12 +44,29 @@ describe("skill references", () => {
 });
 
 test("biography currentEmploymentId resolves (module-scope dereference on /)", () => {
-  const company = careerData[bioData.currentEmploymentId.company];
+  // Mirrors production's lookup (Biography.jsx:19-25), which filters by the
+  // `.id` FIELD rather than indexing by object key -- the two happen to
+  // coincide today, but the guard should track the code path actually used.
+  const company = Object.values(careerData).filter(
+    (c) => c.id === bioData.currentEmploymentId.company
+  )[0];
   expect(company).toBeDefined();
   const position = company.positions.find(
     (p) => p.id === bioData.currentEmploymentId.position
   );
   expect(position).toBeDefined();
+});
+
+test("careerData, educationData, and projectData object keys match their entry ids", () => {
+  // Pins the invariant both the object-key lookup style and production's
+  // id-field filter style rely on: they only agree because keys === ids.
+  const sources = { careerData, educationData, projectData };
+  const mismatches = Object.entries(sources).flatMap(([sourceName, data]) =>
+    Object.entries(data)
+      .filter(([key, entry]) => entry.id !== key)
+      .map(([key, entry]) => ({ source: sourceName, key, entryId: entry.id }))
+  );
+  expect(mismatches).toEqual([]);
 });
 
 test("entry and position ids are unique site-wide", () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import SectionHome from "./Biography";
 import { WidthContext } from "../../contexts";
@@ -32,6 +32,13 @@ const currentJob = currentCompany.positions.find(
   (p) => p.id === bioData.currentEmploymentId.position
 );
 
+// Education.jsx (~line 140) renders `Object.values(educationData).reverse()`,
+// so the newest entry (last in module order) is the first item after
+// abbreviation and the oldest (first in module order) is dropped.
+const educationEntries = Object.values(educationData);
+const newestEducation = educationEntries[educationEntries.length - 1];
+const oldestEducation = educationEntries[0];
+
 test("digest shows name and the current role resolved from currentEmploymentId", () => {
   renderAt(1920);
   expect(screen.getAllByText(bioData.name).length).toBeGreaterThan(0);
@@ -43,16 +50,19 @@ test("wide layout lists every career position, newest first", () => {
   allPositions.forEach((p) => {
     expect(screen.getAllByText(p.title).length).toBeGreaterThan(0);
   });
-  // Newest-first ordering: the flattened list is rendered reversed. Career's
-  // summary renders each position's start year; it is the component that
-  // appears first in the DOM (Career, then Education, then Interests), so
-  // the first allPositions.length matches of the year regex are Career's.
-  const years = screen
+  // Newest-first ordering: the flattened list is rendered reversed. Scope
+  // the year lookup to the Career section itself (its heading's parent
+  // element, which also contains ExpandSection's rendered position rows)
+  // rather than trusting page-wide DOM order.
+  const careerScope = within(
+    screen.getByRole("heading", { name: "Career" }).parentElement
+  );
+  const years = careerScope
     .getAllByText(/^(19|20)\d{2}$/)
     .map((el) => Number(el.textContent));
-  const careerYears = years.slice(0, allPositions.length);
-  const sorted = [...careerYears].sort((a, b) => b - a);
-  expect(careerYears).toEqual(sorted);
+  expect(years.length).toBe(allPositions.length);
+  const sorted = [...years].sort((a, b) => b - a);
+  expect(years).toEqual(sorted);
 });
 
 test("wide layout lists every education entry", () => {
@@ -72,4 +82,17 @@ test("narrow layout abbreviates: newest career position only, plus expand afford
   const oldest = allPositions[0];
   expect(screen.queryByText(oldest.title)).toBeNull();
   expect(document.querySelectorAll(".anticon-down-circle").length).toBeGreaterThan(0);
+});
+
+test("narrow layout abbreviates education to the newest entry only", () => {
+  renderAt(390);
+  expect(screen.getAllByText(newestEducation.title).length).toBeGreaterThan(0);
+  expect(screen.queryByText(oldestEducation.title)).toBeNull();
+});
+
+test("narrow layout abbreviates interests to the first two entries", () => {
+  renderAt(390);
+  expect(screen.getAllByText(bioData.interests[0]).length).toBeGreaterThan(0);
+  expect(screen.getAllByText(bioData.interests[1]).length).toBeGreaterThan(0);
+  expect(screen.queryByText(bioData.interests[2])).toBeNull();
 });
