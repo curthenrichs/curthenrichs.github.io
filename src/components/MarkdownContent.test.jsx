@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, act } from "@testing-library/react";
 import MarkdownContent from "./MarkdownContent";
 
 // react-markdown (and its remark/unified dependency tree) ships ESM-only
@@ -186,18 +186,70 @@ describe("MarkdownContent fetch/cache lifecycle", () => {
     );
   });
 
-  test("unmount during fetch aborts the request without noise", async () => {
-    const abortSpy = jest.spyOn(AbortController.prototype, "abort");
-    let resolveFetch;
-    jest.spyOn(global, "fetch").mockReturnValue(new Promise((r) => { resolveFetch = r; }));
+  // Fetch mock that actually honors AbortSignal: it stays pending until the
+  // signal's "abort" event fires, then rejects with an AbortError, matching
+  // what a real aborted `fetch()` does. Asserting only that
+  // `AbortController.prototype.abort` was called doesn't exercise the
+  // component's `err.name !== "AbortError"` catch guard (MarkdownContent.jsx
+  // ~106-111) at all; these tests need the mock to reject the way a real
+  // browser fetch would so that guard's behavior is observable.
+  function mockAbortableFetch() {
+    return jest.fn((url, options) => {
+      return new Promise((resolve, reject) => {
+        const signal = options && options.signal;
+        if (!signal) {
+          return; // never resolves; unused by these tests
+        }
+        if (signal.aborted) {
+          reject(Object.assign(new Error("aborted"), { name: "AbortError" }));
+          return;
+        }
+        signal.addEventListener("abort", () => {
+          reject(Object.assign(new Error("aborted"), { name: "AbortError" }));
+        });
+      });
+    });
+  }
+
+  test("unmount during fetch aborts the request, and the rejection is a real AbortError", async () => {
+    const fetchImpl = mockAbortableFetch();
+    jest.spyOn(global, "fetch").mockImplementation(fetchImpl);
     const { unmount } = render(
       <MarkdownContent markdownPath="/md/slow.md" images={[]} />
     );
     unmount();
-    expect(abortSpy).toHaveBeenCalled();
-    // Resolve after unmount: the AbortError path must swallow silently.
-    resolveFetch({ ok: true, text: () => Promise.resolve("late") });
-    await Promise.resolve();
+    // The signal-aware mock only rejects once abort() actually fires the
+    // "abort" event, so this proves the real abort/AbortError path fired
+    // (not just that AbortController.prototype.abort was invoked) and that
+    // the rejection produces no unhandled-rejection noise.
+    await expect(fetchImpl.mock.results[0].value).rejects.toMatchObject({
+      name: "AbortError"
+    });
+  });
+
+  test("markdownPath change aborts the stale fetch without its AbortError surfacing the error tile", async () => {
+    const fetchImpl = mockAbortableFetch();
+    jest.spyOn(global, "fetch").mockImplementation(fetchImpl);
+    // Only the new path is cached, so the initial mount for /md/a.md takes
+    // the fetch branch (signal-aware, still pending) while the switch to
+    // /md/b.md resolves synchronously from the cache.
+    window.__PRERENDER_MD__ = { "/md/b.md": "beta body" };
+    const { rerender, container } = render(
+      <MarkdownContent markdownPath="/md/a.md" images={[]} />
+    );
+    rerender(<MarkdownContent markdownPath="/md/b.md" images={[]} />);
+    // Effect cleanup for /md/a.md aborts its fetch, whose AbortError
+    // rejection reaches the component's `.catch` a few microtask hops later
+    // while the component is still mounted (now showing /md/b.md). Flushing
+    // a macrotask guarantees that chain has fully settled before asserting.
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    });
+    // If the `err.name !== "AbortError"` guard were missing, this stale
+    // rejection would call setError(true) and replace beta body with the
+    // error tile even though nothing is actually broken.
+    expect(screen.getByText("beta body")).toBeInTheDocument();
+    expect(container.querySelector(".markdown-error-tile")).toBeNull();
   });
 
   test("markdownPath change after mount switches to the new cached content", () => {
