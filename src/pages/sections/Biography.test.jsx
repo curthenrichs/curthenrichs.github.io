@@ -32,7 +32,7 @@ const currentJob = currentCompany.positions.find(
   (p) => p.id === bioData.currentEmploymentId.position
 );
 
-// Education.jsx (~line 140) renders `Object.values(educationData).reverse()`,
+// Biography.jsx's Education generator renders `Object.values(educationData).reverse()`,
 // so the newest entry (last in module order) is the first item after
 // abbreviation and the oldest (first in module order) is dropped.
 const educationEntries = Object.values(educationData);
