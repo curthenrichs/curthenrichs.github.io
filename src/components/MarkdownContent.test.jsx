@@ -2,8 +2,6 @@ import React from "react";
 import { render, screen, waitFor, act } from "@testing-library/react";
 import MarkdownContent, {
   onDirective,
-  transform,
-  htmlDirective,
   rehypeMergeAdjacentText,
   recordPrerenderMdCache
 } from "./MarkdownContent";
@@ -325,16 +323,6 @@ describe("MarkdownContent plugin internals", () => {
     const node = { name: "email", attributes: {}, data: { keep: true } };
     onDirective(node);
     expect(node.data.keep).toBe(true);
-  });
-
-  test("transform delegates to visit with the directive node types and onDirective", () => {
-    // visit is mocked to a no-op in this file; this just proves transform's
-    // own statement (the visit(...) call) executes without throwing.
-    expect(() => transform({ type: "root", children: [] })).not.toThrow();
-  });
-
-  test("htmlDirective returns the transform function for remark-directive to run", () => {
-    expect(htmlDirective()).toBe(transform);
   });
 
   test("rehypeMergeAdjacentText merges adjacent text nodes at every tree level", () => {

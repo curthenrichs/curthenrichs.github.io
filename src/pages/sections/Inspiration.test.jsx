@@ -11,7 +11,12 @@ test("server render (no effects) always shows quotes[0] — the prerender-determ
 
 test("after mount, the effect swaps to the randomly selected quote", () => {
   const k = Math.min(2, quotes.length - 1);
-  const randSpy = jest.spyOn(Math, "random").mockReturnValue(k / quotes.length);
+  // Offset by 0.5 (rather than using k / quotes.length directly) so the
+  // stubbed value sits mid-bucket: Math.floor(rand * quotes.length) is then
+  // guaranteed to land on k regardless of IEEE-754 rounding, whereas an
+  // exact k / quotes.length can round up to k - epsilon for some future
+  // quotes.length and floor to k - 1.
+  const randSpy = jest.spyOn(Math, "random").mockReturnValue((k + 0.5) / quotes.length);
   render(<SectionInspiration />);
   expect(screen.getByText(`"${quotes[k].quote}"`)).toBeInTheDocument();
   expect(screen.getByText(`- ${quotes[k].attribution}`)).toBeInTheDocument();
