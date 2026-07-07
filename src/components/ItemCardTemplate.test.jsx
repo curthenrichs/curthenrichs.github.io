@@ -1,6 +1,8 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ItemCardTemplate from "./ItemCardTemplate";
+import { WidthContext } from "../contexts";
+import { BP_CARD_HORIZONTAL } from "../breakpoints";
 
 jest.mock("./MarkdownContent", () => {
   const M = (props) => <div data-testid="markdown-content" data-path={props.markdownPath} />;
@@ -105,4 +107,42 @@ test("skills tray dedupes icons and skips unknown skill ids without throwing", (
   renderCard({ skills: ["python", "python", "definitely-not-a-skill"] });
   // python maps to one icon; the unknown id contributes nothing.
   expect(document.querySelectorAll(".ant-row .ant-col").length).toBe(1);
+});
+
+describe("wide layout (>= BP_CARD_HORIZONTAL)", () => {
+  const renderWideCard = (extraProps = {}) =>
+    render(
+      <WidthContext.Provider value={BP_CARD_HORIZONTAL}>
+        <ItemCardTemplate
+          id="card-wide"
+          title="Card Wide"
+          brief="brief text"
+          descriptionMarkdownPath="/md/brief.md"
+          skills={["python"]}
+          detailPath="/projects/wide"
+          publications={["Publication One", "Publication Two"]}
+          positions={["Position One"]}
+          {...extraProps}
+        >
+          <div data-testid="modal-children">modal body</div>
+        </ItemCardTemplate>
+      </WidthContext.Provider>
+    );
+
+  test("renders short description, publications, and positions in the horizontal layout", () => {
+    renderWideCard();
+    expect(screen.getByText("brief text")).toBeInTheDocument();
+    expect(screen.getByText("Publications")).toBeInTheDocument();
+    expect(screen.getByText("Positions")).toBeInTheDocument();
+    expect(screen.getByText("Publication One")).toBeInTheDocument();
+    expect(screen.getByText("Position One")).toBeInTheDocument();
+    expect(screen.getByTestId("markdown-content")).toHaveAttribute("data-path", "/md/brief.md");
+  });
+
+  test("omits publications/positions sections and markdown when not provided", () => {
+    renderWideCard({ publications: undefined, positions: undefined, descriptionMarkdownPath: undefined });
+    expect(screen.queryByText("Publications")).toBeNull();
+    expect(screen.queryByText("Positions")).toBeNull();
+    expect(screen.queryByTestId("markdown-content")).toBeNull();
+  });
 });
