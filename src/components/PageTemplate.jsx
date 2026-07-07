@@ -7,6 +7,7 @@ import { Element as ScrollElement, scroller } from "react-scroll";
 import CookieConsent from "react-cookie-consent";
 import useScrollbarSize from "react-scrollbar-size";
 import { dismissPrerenderVeil } from "../utils/prerenderVeil";
+import { chooseActiveNavItem } from "./activeNavSelection";
 
 const { Text } = Typography;
 const { Header, Footer, Content } = Layout;
@@ -42,82 +43,23 @@ class _PageTemplate extends Component {
   trackScrolling() {
     const { sections } = this.props;
     const { height, clickedNavItem, activeNavItem } = this.state;
-    const intersectPoint = height * 1; //TODO some scalar [0 to 1 depending on where it is in the global screen]
 
-    // Generate area and intersection data
-    const data = sections.reduce((acc, entry) => {
-      let area, point;
-
+    const measured = sections.map((entry) => {
       if (!entry.navItem) {
-        area = -1; // No nav item then give it failing score
-        point = false;
-      } else {
-        const { top, bottom } = document.getElementById(entry.name).getBoundingClientRect();
-
-        if (top > height || bottom < 0) {
-          // section not in viewport
-          area = 0;
-        } else if (top < 0 && bottom > height) {
-          // section within viewport (and larger than viewport)
-          area = (bottom - top) / height;
-        } else if (top < 0) {
-          // section partialy within viewport
-          area = (bottom - 0) / height;
-        } else if (bottom > height) {
-          // section partialy within viewport
-          area = (height - top) / height;
-        } else {
-          // section fully within viewport
-          area = 1;
-        }
-
-        // section contains interestion point - used for tie break
-        point = intersectPoint > top && intersectPoint < bottom;
+        return { navItem: entry.navItem };
       }
+      const { top, bottom } = document.getElementById(entry.name).getBoundingClientRect();
+      return { navItem: entry.navItem, top, bottom };
+    });
 
-      return {
-        ...acc,
-        [entry.navItem]: {
-          area,
-          point
-        }
-      };
-    }, {});
-
-    // Find best area match
-    let nextChoice = [activeNavItem];
-    let nextArea = data[activeNavItem].area;
-    for (let key of Object.keys(data)) {
-      if (data[key].area > nextArea) {
-        nextChoice = [key];
-        nextArea = data[key].area;
-      } else if (data[key].area == nextArea && !nextChoice.includes(key)) {
-        nextChoice.push(key);
-      }
-    }
-
-    // Select nav item
-    let newNavItem;
-    if (nextChoice.length > 1) {
-      if (clickedNavItem != null && nextChoice.includes(clickedNavItem)) {
-        newNavItem = clickedNavItem;
-      } else {
-        //iterate through data for point intersect
-        const intersect = Object.keys(data)
-          .map((key) => ({ key, point: data[key].point }))
-          .filter(({ point }) => point);
-        if (intersect.length < 1) {
-          // Failed - select current nav itme
-          newNavItem = activeNavItem;
-        } else {
-          newNavItem = intersect[0].key;
-        }
-      }
-    } else {
-      newNavItem = nextChoice[0];
-    }
-
-    this.setState({ activeNavItem: newNavItem });
+    this.setState({
+      activeNavItem: chooseActiveNavItem({
+        sections: measured,
+        viewportHeight: height,
+        activeNavItem,
+        clickedNavItem
+      })
+    });
   }
 
   componentDidMount() {
