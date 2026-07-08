@@ -5,6 +5,10 @@ import publicationData from "./publications";
 import skillsData from "./skills";
 import bioData from "./biography";
 import detailRoutes from "./detailRoutes.json";
+import contactData from "./contact";
+import contractingData from "./contracting";
+import primaryRouteOptions from "./primaryRouteOptions";
+import secondaryRouteOptions from "./secondaryRouteOptions";
 
 // Content files cross-reference by string id and renderers dereference
 // without guards (e.g. publicationData[pub].short). A typo'd id crashes at
@@ -95,5 +99,32 @@ test("every detail route's contentId exists in content data", () => {
   const contentIds = new Set(contentEntries.map((e) => e.id));
   detailRoutes.forEach((r) => {
     expect(contentIds.has(r.contentId)).toBe(true);
+  });
+});
+
+// Contact and nav-route data feed anchors/buttons across the site (footer,
+// drawer, contact section, bio CTA); malformed links or an out-of-sync
+// contracting flag would ship as dead controls.
+describe("contact and route-option guards", () => {
+  test("every contact entry has an id and a well-formed link when present", () => {
+    Object.values(contactData).forEach((c) => {
+      expect(typeof c.id).toBe("string");
+      if (c.link !== null) {
+        expect(c.link).toMatch(/^(https?:\/\/|mailto:|\/)/);
+      }
+    });
+  });
+
+  test("route options carry ids and routable targets", () => {
+    [...primaryRouteOptions, ...secondaryRouteOptions].forEach((opt) => {
+      expect(typeof opt.id).toBe("string");
+      expect(opt.route).toMatch(/^(https?:\/\/|\/)/);
+      expect(typeof opt.content === "string" && opt.content.length > 0).toBe(true);
+    });
+  });
+
+  test("the contract nav button exists exactly when contracting is available", () => {
+    const hasContractBtn = primaryRouteOptions.some((o) => o.id === "contract-btn");
+    expect(hasContractBtn).toBe(Boolean(contractingData.available));
   });
 });
