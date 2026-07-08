@@ -158,7 +158,9 @@ const data = {
       "claude_code",
       "nvidia_holoscan"
     ],
-    thumbnail: "/static/img/thumbnail/ides-logo.png",
+    // No IDES logo asset yet: null renders the DefaultImg placeholder
+    // directly instead of 404-fetching a missing file on every page load.
+    thumbnail: null,
     web: "https://www.ides-inc.com/",
     positions: [
       {
