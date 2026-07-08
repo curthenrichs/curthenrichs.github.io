@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from "react";
 import { Row, Col, Card, Tag, Typography } from "antd";
 import { WidthContext } from "../../../contexts";
-import { BP_CARD_HORIZONTAL } from "../../../breakpoints";
+import { BP_CARD_HORIZONTAL, BP_CONTENT_MAX_WIDTH } from "../../../breakpoints";
 import { IconLookupFromName } from "../../../components/IconManager";
 import { domains, CATEGORY_COLORS } from "../../../content/domains";
 import skillsData from "../../../content/skills";
@@ -21,7 +21,10 @@ const DomainCards = () => {
   }, []);
 
   return (
-    <div style={{ padding: "0 5%" }}>
+    // Capped at the same max width as the career/project/education card
+    // columns so the two-up domain grid never grows wider than the item
+    // cards; the 5% side padding stays as-is.
+    <div style={{ padding: "0 5%", maxWidth: `${BP_CONTENT_MAX_WIDTH}px`, margin: "0 auto" }}>
       <Row gutter={[24, 24]}>
         {domains.map((domain) => (
           <Col span={colSpan} key={domain.key}>

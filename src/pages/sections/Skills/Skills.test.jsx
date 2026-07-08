@@ -86,3 +86,10 @@ test("DomainCards spans half-width columns wide and full-width narrow", () => {
   const { container: c2 } = renderAt(<DomainCards />, BP_CARD_HORIZONTAL - 100);
   expect(c2.querySelector(".ant-col-24")).not.toBeNull();
 });
+
+test("DomainCards caps at the same max width as the item-card columns", () => {
+  const { BP_CONTENT_MAX_WIDTH } = require("../../../breakpoints");
+  const { container } = renderAt(<DomainCards />);
+  expect(container.firstChild.style.maxWidth).toBe(`${BP_CONTENT_MAX_WIDTH}px`);
+  expect(container.firstChild.style.margin).toBe("0px auto");
+});
