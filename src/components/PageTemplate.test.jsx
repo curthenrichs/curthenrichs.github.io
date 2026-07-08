@@ -96,12 +96,16 @@ describe("PageTemplate prerender viewport handling", () => {
 
 describe("PageTemplate wiring", () => {
   let scrollToSpy;
+  const ORIGINAL_INNER_WIDTH = window.innerWidth;
   beforeEach(() => {
     scrollToSpy = jest.spyOn(window, "scrollTo").mockImplementation(() => {});
   });
   afterEach(() => {
     scrollToSpy.mockRestore();
     jest.restoreAllMocks();
+    // The resize test mutates window.innerWidth; restore so later tests in
+    // this file see jsdom's default width.
+    window.innerWidth = ORIGINAL_INNER_WIDTH;
   });
 
   const HEADER_WITH_BUTTONS = {
