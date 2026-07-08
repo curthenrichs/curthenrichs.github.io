@@ -9,7 +9,7 @@ import educationData from "../../content/education";
 import careerData from "../../content/career";
 import contractingData from "../../content/contracting";
 import { WidthContext } from "../../contexts";
-import { BP_BIO_TWO_COL, BP_BIO_THREE_COL, BP_BIO_DIGEST_INLINE, BP_BIO_THREE_COL_DIGEST } from "../../breakpoints";
+import { BP_BIO_TWO_COL, BP_BIO_THREE_COL, BP_BIO_DIGEST_INLINE, BP_BIO_THREE_COL_DIGEST, BP_CONTENT_MAX_WIDTH } from "../../breakpoints";
 import { CaretRightOutlined, DownloadOutlined } from "../../components/IconManager";
 import { Row, Col, Typography, Button } from "antd";
 import ThumbnailImage from "../../components/ThumbnailImage";
@@ -294,7 +294,13 @@ const SectionHome = () => {
     );
   }
 
-  return layout;
+  return (
+    // Capped at the same max width as the card columns so bio prose never
+    // stretches to unreadable line lengths on ultrawide displays.
+    <div style={{ maxWidth: `${BP_CONTENT_MAX_WIDTH}px`, margin: "0 auto" }}>
+      {layout}
+    </div>
+  );
 };
 
 export default SectionHome;

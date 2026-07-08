@@ -87,6 +87,12 @@ test("DomainCards spans half-width columns wide and full-width narrow", () => {
   expect(c2.querySelector(".ant-col-24")).not.toBeNull();
 });
 
+test("the Skills section root caps at the item-card column max width", () => {
+  const { BP_CONTENT_MAX_WIDTH } = require("../../../breakpoints");
+  const { container } = renderAt(<SectionSkills />);
+  expect(container.firstChild.style.maxWidth).toBe(`${BP_CONTENT_MAX_WIDTH}px`);
+});
+
 test("DomainCards caps at the same max width as the item-card columns", () => {
   const { BP_CONTENT_MAX_WIDTH } = require("../../../breakpoints");
   const { container } = renderAt(<DomainCards />);

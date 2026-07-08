@@ -39,6 +39,12 @@ const educationEntries = Object.values(educationData);
 const newestEducation = educationEntries[educationEntries.length - 1];
 const oldestEducation = educationEntries[0];
 
+test("the bio section root caps at the item-card column max width", () => {
+  const { BP_CONTENT_MAX_WIDTH } = require("../../breakpoints");
+  const { container } = renderAt(1920);
+  expect(container.firstChild.style.maxWidth).toBe(`${BP_CONTENT_MAX_WIDTH}px`);
+});
+
 test("digest shows name and the current role resolved from currentEmploymentId", () => {
   renderAt(1920);
   expect(screen.getAllByText(bioData.name).length).toBeGreaterThan(0);
