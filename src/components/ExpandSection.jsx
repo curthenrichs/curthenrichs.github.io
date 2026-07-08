@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Tooltip } from "antd";
-import "./index.css";
+import "./ExpandSection.css";
 
-import { DownCircleOutlined, UpCircleOutlined } from "../IconManager";
+import { DownCircleOutlined, UpCircleOutlined } from "./IconManager";
 
 const ExpandButton = (props) => {
   const { type, callback, visible } = props;

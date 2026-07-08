@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ExpandSection from "./index";
+import ExpandSection from "./ExpandSection";
 
 const generator = (expand) => ({
   shouldCollapse: true,

@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ImageCarousel from "./index";
-import imageDimensions from "../../content/imageDimensions.json";
-import imageVariants from "../../content/imageVariants.json";
+import ImageCarousel from "./ImageCarousel";
+import imageDimensions from "../content/imageDimensions.json";
+import imageVariants from "../content/imageVariants.json";
 
 const shimmerProps = [];
-jest.mock("../ShimmerImage", () => {
+jest.mock("./ShimmerImage", () => {
   const M = (props) => {
     globalThis.capturedShimmerProps.push(props);
     return <div data-testid="shimmer" />;

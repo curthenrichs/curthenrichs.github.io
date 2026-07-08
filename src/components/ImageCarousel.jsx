@@ -1,10 +1,10 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import ShimmerImage from "../ShimmerImage";
-import imageDimensions from "../../content/imageDimensions.json";
-import imageVariants from "../../content/imageVariants.json";
-import "./index.css";
+import ShimmerImage from "./ShimmerImage";
+import imageDimensions from "../content/imageDimensions.json";
+import imageVariants from "../content/imageVariants.json";
+import "./ImageCarousel.css";
 
 const ImageCarousel = (props) => {
   const { options, showArrows } = props;
