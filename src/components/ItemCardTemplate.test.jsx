@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ItemCardTemplate from "./ItemCardTemplate";
 import { WidthContext } from "../contexts";
-import { BP_CARD_HORIZONTAL } from "../breakpoints";
+import { BP_CARD_HORIZONTAL, BP_MODAL_SIZING } from "../breakpoints";
 
 jest.mock("./MarkdownContent", () => {
   const M = (props) => <div data-testid="markdown-content" data-path={props.markdownPath} />;
@@ -145,4 +145,22 @@ describe("wide layout (>= BP_CARD_HORIZONTAL)", () => {
     expect(screen.queryByText("Positions")).toBeNull();
     expect(screen.queryByTestId("markdown-content")).toBeNull();
   });
+});
+
+test("modal caps at 1000px on wide viewports and takes 90% width on narrow", () => {
+  const renderAt = (width) =>
+    render(
+      <WidthContext.Provider value={width}>
+        <ItemCardTemplate id="card-w" title="Card W" brief="b" detailPath="/projects/w">
+          <div data-testid="modal-children-w">modal body</div>
+        </ItemCardTemplate>
+      </WidthContext.Provider>
+    );
+  const { unmount } = renderAt(BP_MODAL_SIZING + 500);
+  fireEvent.click(document.querySelector("a#card-w"));
+  expect(document.querySelector(".ant-modal").style.width).toBe("1000px");
+  unmount();
+  renderAt(500);
+  fireEvent.click(document.querySelector("a#card-w"));
+  expect(document.querySelector(".ant-modal").style.width).toBe("450px");
 });

@@ -108,6 +108,48 @@ test("notableOnly actually excludes a non-notable project (injected entry)", () 
   }
 });
 
+test("sections render their default titles and wide-viewport centering padding", () => {
+  const { unmount } = render(<SectionEducation />);
+  expect(screen.getByText("Education")).toBeInTheDocument();
+  unmount();
+  // Above BP_CONTENT_MAX_WIDTH the section pads both sides to center the
+  // card column: (width - max) / 2.
+  const { container } = render(
+    <WidthContext.Provider value={2000}>
+      <SectionCareer />
+    </WidthContext.Provider>
+  );
+  expect(container.firstChild.style.paddingLeft).toBe("125px");
+  expect(container.firstChild.style.paddingRight).toBe("125px");
+});
+
+test("project type icons: coursework maps to an icon, unknown types render none (injected entries)", () => {
+  const stub = (id, type) => ({
+    id,
+    title: id,
+    type,
+    brief: "",
+    notable: true,
+    descriptionMarkdownPath: `/md/${id}.md`,
+    modalMarkdownPath: `/md/${id}-modal.md`,
+    publications: [],
+    skills: [],
+    images: [],
+    thumbnail: null,
+    primaryLink: null
+  });
+  projectData["p-course"] = stub("p-course", "coursework");
+  projectData["p-mystery"] = stub("p-mystery", "someday-a-new-type");
+  try {
+    const { container } = render(<SectionProjects />);
+    expect(container.querySelector("#p-course")).not.toBeNull();
+    expect(container.querySelector("#p-mystery")).not.toBeNull(); // null icon must not crash the card
+  } finally {
+    delete projectData["p-course"];
+    delete projectData["p-mystery"];
+  }
+});
+
 test("publications section renders a card per publication; click opens the link", () => {
   const openSpy = jest.spyOn(window, "open").mockImplementation(() => {});
   render(<SectionPublications />);

@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter, Routes, Route, useLocation } from "react-router-dom";
 import PageNavButton from "./PageNavButton";
 import LinkNavButton from "./LinkNavButton";
+import InnerNavButton from "./InnerNavButton";
 
 const LocationProbe = () => <div data-testid="loc">{useLocation().pathname}</div>;
 
@@ -26,6 +27,23 @@ test("PageNavButton navigates on Enter", () => {
   renderPageBtn();
   fireEvent.keyDown(screen.getByText("Go"), { key: "Enter" });
   expect(screen.getByTestId("loc").textContent).toBe("/career");
+});
+
+test("PageNavButton ignores non-Enter keys", () => {
+  renderPageBtn();
+  fireEvent.keyDown(screen.getByText("Go"), { key: "a" });
+  expect(screen.queryByTestId("loc")).toBeNull();
+});
+
+test("InnerNavButton fires its callback on click and Enter, ignores other keys", () => {
+  const cb = jest.fn();
+  render(<InnerNavButton id="inner-btn" content="Inner" active={false} callback={cb} />);
+  const btn = screen.getByText("Inner");
+  fireEvent.click(btn);
+  fireEvent.keyDown(btn, { key: "Enter" });
+  fireEvent.keyDown(btn, { key: "a" });
+  expect(cb).toHaveBeenCalledTimes(2);
+  expect(btn).not.toHaveClass("nav-bar-btn-selected");
 });
 
 test("LinkNavButton renders a protected external anchor", () => {

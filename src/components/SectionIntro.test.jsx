@@ -26,6 +26,13 @@ test("renders the title at the given level and wires the markdown path", () => {
   );
 });
 
+test("defaults the heading to level 2 when no level is given", () => {
+  render(<SectionIntro title="Default Level" markdownPath="/md/x.md" />);
+  expect(
+    screen.getByRole("heading", { name: "Default Level", level: 2 })
+  ).toBeInTheDocument();
+});
+
 test("omits the title when none is given", () => {
   render(<SectionIntro markdownPath="/md/only.md" />);
   expect(screen.queryByRole("heading")).toBeNull();
