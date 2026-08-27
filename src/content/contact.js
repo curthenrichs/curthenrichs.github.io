@@ -14,6 +14,11 @@ const data = {
     link: "https://twitter.com/curt_henrichs",
     text: "@curt_henrichs"
   },
+  bluesky: {
+    id: "contact-bluesky",
+    link: "https://bsky.app/profile/curt-henrichs.bsky.social",
+    text: "@curt-henrichs.bsky.social"
+  },
   email: {
     id: "contact-email",
     link: "mailto:curthenrichs@gmail.com",

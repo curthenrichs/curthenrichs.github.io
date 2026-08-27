@@ -59,9 +59,12 @@ test("contact section renders email, location, and protected social links", () =
   expect(screen.getByText(contactData.location.text)).toBeInTheDocument();
   const socials = Array.from(container.querySelectorAll("a[target='_blank']"));
   const hrefs = socials.map((a) => a.getAttribute("href"));
-  [contactData.github.link, contactData.linkedin.link, contactData.twitter.link].forEach(
-    (link) => expect(hrefs).toContain(link)
-  );
+  [
+    contactData.github.link,
+    contactData.linkedin.link,
+    contactData.twitter.link,
+    contactData.bluesky.link
+  ].forEach((link) => expect(hrefs).toContain(link));
   socials.forEach((a) => expect(a).toHaveAttribute("rel", "noopener noreferrer"));
 });
 

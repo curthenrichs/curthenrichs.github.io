@@ -29,6 +29,7 @@ import { ReactComponent as AutodeskIcon } from "./svg/autodesk.svg";
 import { ReactComponent as CIcon } from "./svg/c.svg";
 import { ReactComponent as LabviewIcon } from "./svg/labview.svg";
 import { ReactComponent as TwitterXIcon } from "./svg/twitter-x.svg";
+import { ReactComponent as BlueskyIcon } from "./svg/bluesky.svg";
 import { ReactComponent as USBIcon } from "./svg/usb.svg";
 import { ReactComponent as OkosPolipIcon } from "./svg/okos-polip.svg";
 import { ReactComponent as DockerIcon } from "./svg/docker.svg";
@@ -199,6 +200,10 @@ function Twitter() {
   return <TwitterX />;
 }
 
+function Bluesky() {
+  return <Icon component={BlueskyIcon} />;
+}
+
 function USB() {
   return <Icon component={USBIcon} />;
 }
@@ -345,6 +350,7 @@ const lookup = {
   twitter: <TwitterX />,      // Thanks Elon
   twitterBird: <TwitterBird />,
   twitterX: <TwitterX />,
+  bluesky: <Bluesky />,
   caret: <CaretRightOutlined />,
   caretright: <CaretRightOutlined />,
   question: <QuestionOutlined />,
@@ -431,6 +437,7 @@ export {
   Labview,
   TwitterX,
   Twitter,
+  Bluesky,
   USB,
   OkosPolip,
   Docker,

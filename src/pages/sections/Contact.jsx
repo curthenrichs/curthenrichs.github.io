@@ -2,6 +2,7 @@ import React from "react";
 import data from "../../content/contact";
 import {
   Twitter,
+  Bluesky,
   MailOutlined,
   EnvironmentFilled,
   GithubFilled,
@@ -34,6 +35,10 @@ const SectionContact = () => {
           &nbsp;
           <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer">
             <LinkedinFilled />
+          </Link>
+          &nbsp;
+          <Link href={data.bluesky.link} target="_blank" rel="noopener noreferrer">
+            <Bluesky />
           </Link>
           &nbsp;
           <Link href={data.twitter.link} target="_blank" rel="noopener noreferrer">

@@ -68,7 +68,8 @@ const data = {
     "xilinx.svg",
     "anthropic.svg",
     "openai.svg",
-    "googlegemini.svg"
+    "googlegemini.svg",
+    "bluesky.svg"
   ],
   devicon: ["visualbasic.svg"],
   lucide: [

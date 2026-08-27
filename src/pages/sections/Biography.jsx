@@ -86,6 +86,7 @@ const BioDigest = () => {
         emailLink={contactData.email.link}
         linkedinLink={contactData.linkedin.link}
         twitterLink={contactData.twitter.link}
+        blueskyLink={contactData.bluesky.link}
       />
       <br />
       <CallToAction

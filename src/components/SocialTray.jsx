@@ -1,12 +1,12 @@
 import React from "react";
 import { Typography } from "antd";
 
-import { GithubFilled, MailOutlined, LinkedinFilled, Twitter } from "./IconManager";
+import { GithubFilled, MailOutlined, LinkedinFilled, Twitter, Bluesky } from "./IconManager";
 
 const { Link } = Typography;
 
 const SocialTray = (props) => {
-  const { githubLink, emailLink, linkedinLink, twitterLink } = props;
+  const { githubLink, emailLink, linkedinLink, twitterLink, blueskyLink } = props;
 
   return (
     <div className="social-tray" style={{ fontSize: "var(--fs-icon)" }}>
@@ -22,6 +22,10 @@ const SocialTray = (props) => {
       &nbsp;
       <Link href={linkedinLink} target="_blank" rel="noopener noreferrer">
         <LinkedinFilled />
+      </Link>
+      &nbsp;
+      <Link href={blueskyLink} target="_blank" rel="noopener noreferrer">
+        <Bluesky />
       </Link>
       &nbsp;
       <Link href={twitterLink} target="_blank" rel="noopener noreferrer">
