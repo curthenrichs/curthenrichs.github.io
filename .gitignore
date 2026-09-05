@@ -142,3 +142,4 @@ yarn-error.log*
 /public/android-chrome-192x192.png
 /public/android-chrome-512x512.png
 /src/vendor/henry/
+/public/404.html

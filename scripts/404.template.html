@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      FALLBACK 404 — you normally never see this file in production.
+
+      GENERATED FILE. public/404.html is written by scripts/sync-henry.js from
+      scripts/404.template.html, with Henry's vendored henry-animated.css
+      (synced from the henry-mascot submodule) inlined in place of the
+      placeholder in the style block. Edit the template, not public/404.html;
+      the generated copy is gitignored like the other synced Henry files.
+
+      On `npm run build`, the postbuild hook runs scripts/prerender.js, which
+      captures the real React NotFoundPage and OVERWRITES build/404.html with
+      it. That prerendered page (styled, with in-app navigation) is what a
+      deployed unknown-route request actually serves.
+
+      This file only reaches the live site when that prerender step was
+      skipped — e.g. a bare `react-scripts build` (postbuild only runs under
+      `npm run build`), `npm run build --ignore-scripts`, or a deploy that
+      bypasses `npm run deploy`. That means the publish was incomplete, so this
+      page says so plainly instead of using the old spa-github-pages redirect
+      hack to quietly limp along. (Removing that redirect also means a
+      skipped-prerender deploy no longer silently "works" for deep links — it
+      surfaces the broken deploy, which is the point.)
+
+      Keep this file self-contained: no bundle, no external assets beyond the
+      root favicon, so it renders even from an otherwise broken build. The
+      sync step keeps that true while leaving Henry's geometry in one place.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#112244" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>Curt Henrichs | Portfolio | Page Unavailable</title>
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: #112244;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        text-align: center;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      main { max-width: 30rem; }
+      .robot { margin: 0 auto 24px; }
+
+      /* Henry (confused pose): the cute-robot- rules below are the vendored
+         henry-animated.css, inlined by scripts/sync-henry.js. Nothing about
+         his geometry, colors, or animation is authored in this file. */
+      /* @henry-animated-css */
+
+      h1 { font-size: 1.5rem; margin: 0 0 0.6em; }
+      p { font-size: 1rem; line-height: 1.5; color: #33415c; margin: 0 0 1.75em; }
+      a.home {
+        display: inline-block; padding: 10px 22px; border-radius: 999px;
+        background: #1890ff; color: #fff; text-decoration: none; font-size: 1rem;
+      }
+      a.home:hover { background: #40a9ff; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="robot">
+        <span class="cute-robot-container cute-robot-has-question" role="img" aria-label="A confused robot">
+          <span class="cute-robot-q cute-robot-q-main" aria-hidden="true">?</span>
+          <span class="cute-robot-q cute-robot-q-small" aria-hidden="true">?</span>
+          <span class="cute-robot-robot" aria-hidden="true">
+            <span class="cute-robot-antenna"></span>
+            <span class="cute-robot-head"><span class="cute-robot-eye"></span><span class="cute-robot-eye"></span></span>
+          </span>
+        </span>
+      </div>
+      <h1>This page didn&rsquo;t load</h1>
+      <p>
+        Something went wrong while serving this page. This can happen when the
+        site is published without its full build step. Everything should work
+        again from the homepage.
+      </p>
+      <a class="home" href="/">Go to the homepage</a>
+    </main>
+  </body>
+</html>

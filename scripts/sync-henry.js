@@ -43,6 +43,23 @@ for (const f of fs.readdirSync(DIST)) {
   }
 }
 
+// ---- fallback 404 page: template + inlined vendored CSS ----
+// public/404.html must stay self-contained (no bundle, no external asset), so
+// the vendored henry-animated.css is spliced into the template here rather
+// than hand-copied into the page. The generated file is gitignored.
+const TEMPLATE = path.join(__dirname, "404.template.html");
+const PLACEHOLDER = "/* @henry-animated-css */";
+const template = fs.readFileSync(TEMPLATE, "utf8");
+if (!template.includes(PLACEHOLDER)) {
+  console.error(`sync:henry FAILED: ${PLACEHOLDER} not found in scripts/404.template.html`);
+  process.exit(1);
+}
+const henryCss = fs.readFileSync(path.join(DIST, "henry-animated.css"), "utf8").trim();
+fs.writeFileSync(
+  path.join(PUBLIC, "404.html"),
+  template.replace(PLACEHOLDER, () => henryCss)
+);
+
 // ---- favicon validity (mirrors the retired generate-favicons.js checks) ----
 const ico = fs.readFileSync(path.join(PUBLIC, "favicon.ico"));
 const layers = ico.readUInt16LE(4);
@@ -65,4 +82,4 @@ for (const [f, size] of [
     process.exit(1);
   }
 }
-console.log("sync:henry: favicons + illustrations + henry-animated.css synced from submodule");
+console.log("sync:henry: favicons + illustrations + henry-animated.css synced from submodule; public/404.html generated");
