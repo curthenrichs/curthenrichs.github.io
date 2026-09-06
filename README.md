@@ -19,38 +19,54 @@ Then run the development server:
 npm start
 ```
 
+## Branches and CI
+`dev` is the working branch. `main` is production: a push to `main` builds,
+checks, and deploys the site (see below), so `main` moves only by a deliberate
+PR from `dev`. A committed hook refuses accidental direct pushes; activate it
+once per clone:
+
+```
+git config core.hooksPath .githooks
+```
+
+`.github/workflows/ci.yml` runs on every push to `main` or `dev` and on PRs:
+lint, the unit suite, `npm run build` (which syncs Henry from the submodule and
+prerenders every route), then `check:hydration`, `check:interactions`, and
+`check:a11y` against that build. The a11y check is report-only until the
+violations it found are fixed; the rest fail the run.
+
+`.github/workflows/production-smoke.yml` probes the live site after each
+successful `ci` run on `main`, weekly, and on demand from the Actions tab:
+route status codes, the trailing-slash redirect, that the served 404 is the
+prerendered page and not the fallback, and the privacy policy's no-cookies and
+no-third-party-scripts claims.
+
 ## GitHub Deployment
-I am using the [gh-pages](https://www.npmjs.com/package/gh-pages) package to deploy
-the static website to GitHub Pages. To deploy, simply run:
+On a green `ci` run for a push to `main`, the same `build/` that passed the
+checks is uploaded as the Pages artifact and deployed by `actions/deploy-pages`.
+This needs the repo's Settings -> Pages source set to **GitHub Actions** (not
+the `gh-pages` branch). Until that switch is made, the old path still works:
 
 ```
 npm run deploy
 ```
 
+which builds locally and pushes `build/` to the `gh-pages` branch. Once the
+Actions deploy is live, that branch and the `gh-pages` package are unused.
+
 ### Deployment Troubleshooting
-`npm run deploy` only pushes the build to the `gh-pages` branch; GitHub's internal
-"pages build and deployment" workflow then publishes it to the live site. If the
-live site stays stale after a deploy:
+The Actions run for the push shows the build, the checks, and the deploy step
+with its URL. If the live site stays stale after a green deploy:
 
-1. Check the repo's Actions tab for the latest "pages build and deployment" run.
-   A failure at the "Deploy to GitHub Pages" step with "Timeout reached, aborting!"
-   (while the build and artifact upload succeed) is a transient GitHub-side outage,
-   not a problem with this repo. Observed 2026-07-02: three consecutive timeouts
-   that self-resolved roughly 8 hours later with no config changes.
-2. Retrigger publishing without rebuilding by pushing an empty commit to `gh-pages`:
-
-   ```
-   git fetch origin gh-pages
-   git push origin $(git commit-tree "origin/gh-pages^{tree}" -p origin/gh-pages -m "Retrigger Pages deployment"):refs/heads/gh-pages
-   ```
-
-3. To confirm what is actually live, compare the hashed bundle name in
-   `build/static/js/main.<hash>.js` against the one referenced by the live site's
-   HTML, and check `curl -sI https://curthenrichs.github.io/` for the
-   `last-modified` header (it reflects the last successful publish, not the last
-   attempt shown in Settings -> Pages).
-4. If failures persist beyond a day, verify Settings -> Pages still points at
-   `gh-pages` / root, then escalate to GitHub Support with the failed run links.
+1. Give the Pages CDN a minute, then compare the hashed bundle name in
+   `build/static/js/main.<hash>.js` against the one in the live HTML, and check
+   `curl -sI https://curthenrichs.github.io/` for the `last-modified` header.
+2. Run `production-smoke` from the Actions tab; its output names the failing
+   invariant.
+3. Confirm Settings -> Pages still says GitHub Actions. A "Timeout reached,
+   aborting!" at the deploy step with a successful upload is a transient
+   GitHub-side outage (observed 2026-07-02, self-resolved in ~8 hours); re-run
+   the job.
 
 ## Updating
 This project is structured so that I should be able to just update the content
@@ -120,7 +136,10 @@ deploy (`npm run deploy`) are unchanged.
 - `npm run serve` uses a blanket SPA rewrite and does not emulate GitHub
   Pages' real per-route file serving, so use `npm run check:hydration` for
   local verification instead.
-- Puppeteer (used by both the prerenderer and `check:hydration`) requires
-  Node >= 22.12.
+- Puppeteer (used by the prerenderer and every `check:*` script) requires
+  Node >= 22.12; `.nvmrc` pins 22.
+- `npm run check:a11y` runs axe-core (WCAG 2.1 A/AA) over every prerendered
+  route in headless Chrome and walks the home page's Tab order. Needs a fresh
+  build, like the other checks.
 - GitHub Pages 301-redirects `/career` to `/career/` (and similarly for other
   routes), so post-deploy `curl` checks need `-L` to follow the redirect.
