@@ -32,6 +32,7 @@ const MenuButton = (props) => {
       className="nav-bar nav-bar-dropdown" 
       id="collapsed-menu"
       role="button"
+      aria-label="Menu"
       tabIndex="0"
       onClick={callback}
       onKeyDown={(event) => {

@@ -37,3 +37,14 @@ test("mailto link opens in the same tab", () => {
   const mail = container.querySelector(`a[href="${links.emailLink}"]`);
   expect(mail).not.toHaveAttribute("target");
 });
+
+// Icon-only links need their own name: the custom Bluesky and X icons carry
+// none, so without a label those anchors fail axe's link-name rule
+// (WCAG 2.4.4). Every link gets one so the tray reads consistently.
+test("every social link has an accessible name", () => {
+  const { container } = render(<SocialTray {...links} />);
+  const labels = Array.from(container.querySelectorAll("a")).map((a) =>
+    a.getAttribute("aria-label")
+  );
+  expect(labels).toEqual(["GitHub", "Email", "LinkedIn", "Bluesky", "X"]);
+});

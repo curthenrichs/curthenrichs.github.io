@@ -67,3 +67,10 @@ test("menu button fires on click and on Enter", () => {
   fireEvent.keyDown(menu, { key: "Enter" });
   expect(menuCb).toHaveBeenCalledTimes(2);
 });
+
+// The collapsed-menu control is a div with role=button and only an icon
+// inside, so it needs an explicit name (axe aria-command-name, WCAG 4.1.2).
+test("the menu button has an accessible name", () => {
+  renderHeader(BP_NAV_HEADER_TEXT + 100);
+  expect(document.querySelector("#collapsed-menu")).toHaveAttribute("aria-label", "Menu");
+});
