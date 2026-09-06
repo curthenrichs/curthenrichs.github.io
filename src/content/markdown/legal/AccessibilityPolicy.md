@@ -1,6 +1,6 @@
 ## Accessibility Policy
 
-_Last updated: July 1, 2026_
+_Last updated: September 6, 2026_
 
 This is an accessibility statement from Curt Henrichs LLC for Curt Henrichs' Portfolio website.
 
@@ -40,4 +40,4 @@ Curt Henrichs assessed the accessibility of this website by the following approa
 
 ### Date
 
-This statement was created on 4 December 2022 using the [W3C Accessibility Statement Generator Tool](https://www.w3.org/WAI/planning/statements/). It was last reviewed and updated on 1 July 2026.
+This statement was created on 4 December 2022 using the [W3C Accessibility Statement Generator Tool](https://www.w3.org/WAI/planning/statements/). It was last reviewed and updated on 6 September 2026.

@@ -1,6 +1,6 @@
 ## Terms of Use
 
-_Version 2.0. Last updated: July 1, 2026_
+_Version 2.0. Last updated: September 6, 2026_
 
 Welcome to Curt Henrichs' Portfolio website, located at [https://curthenrichs.github.io/](https://curthenrichs.github.io/) (the "Site"). These terms describe the conditions for using the Site. By using the Site, you accept these terms.
 
