@@ -41,3 +41,5 @@ These terms may be revised from time to time. Changes take effect when posted on
 If you have any questions about these Terms of Use, you can contact me:
 
 - Email: :email[]
+- X: :x[]
+- Bluesky: :bluesky[]

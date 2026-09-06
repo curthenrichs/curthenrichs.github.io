@@ -14,8 +14,8 @@ import { WidthContext } from "../../contexts";
 // Smoke coverage for the static prose/CTA sections. Rendering depth is
 // deliberately shallow: these wrappers carry no logic beyond wiring, and the
 // prerender + hydration gates exercise their real markdown end-to-end. The
-// mock renders any `email` extraComponent so LegalDocument's ContactEmailLink
-// wiring executes, and exposes the extraComponent keys for assertion.
+// mock renders every extraComponent so LegalDocument's contact-link wiring
+// executes, and exposes the extraComponent keys for assertion.
 jest.mock("../../components/MarkdownContent", () => {
   const M = (props) => (
     <div
@@ -23,8 +23,12 @@ jest.mock("../../components/MarkdownContent", () => {
       data-path={props.markdownPath}
       data-extra={props.extraComponents ? Object.keys(props.extraComponents).join(",") : ""}
     >
-      {props.extraComponents && props.extraComponents.email
-        ? props.extraComponents.email()
+      {props.extraComponents
+        ? Object.entries(props.extraComponents)
+          .filter(([, Render]) => Render.length === 0) // prop-taking ones (icons) need real markdown
+          .map(([key, Render]) => (
+            <span key={key} data-directive={key}>{Render()}</span>
+          ))
         : null}
     </div>
   );
@@ -95,4 +99,24 @@ test("return-home section renders the home link", () => {
     </MemoryRouter>
   );
   expect(screen.getByText("Take Me Back Home").closest("a")).toHaveAttribute("href", "/");
+});
+
+// The legal pages' Contact sections list email, X, and Bluesky through
+// directives so the handles come from contactData, not hand-typed markdown.
+test.each([
+  ["privacy", SectionPrivacyPolicy],
+  ["terms", SectionTermsOfUse],
+  ["accessibility", SectionAccessibilityPolicy]
+])("legal section %s wires x and bluesky directives from contactData", (_, Section) => {
+  render(<Section />);
+  const md = screen.getByTestId("markdown-content");
+  expect(md.getAttribute("data-extra").split(",")).toEqual(
+    expect.arrayContaining(["email", "x", "bluesky"])
+  );
+  const x = md.querySelector("[data-directive='x'] a");
+  const bsky = md.querySelector("[data-directive='bluesky'] a");
+  expect(x).toHaveAttribute("href", contactData.twitter.link);
+  expect(x).toHaveTextContent(contactData.twitter.text);
+  expect(bsky).toHaveAttribute("href", contactData.bluesky.link);
+  expect(bsky).toHaveTextContent(contactData.bluesky.text);
 });

@@ -13,6 +13,8 @@ The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standar
 I welcome your feedback on the accessibility of this website. Please let me know if you encounter accessibility barriers:
 
 - Email: :email[]
+- X: :x[]
+- Bluesky: :bluesky[]
 
 I try to respond to feedback as quickly as possible.
 
