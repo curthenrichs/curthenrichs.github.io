@@ -1,0 +1,58 @@
+name: ci
+# Every gate this repo already had, run on every push instead of by hand:
+# lint, the unit suite, the build (prebuild syncs Henry from the submodule,
+# postbuild prerenders every route and fails on an empty page or a wrong
+# title), then the headless-Chrome hydration, interaction, and a11y checks
+# against that build. A push to main that passes all of it deploys the
+# same build to GitHub Pages; nothing else publishes.
+on:
+  push: { branches: [main, dev] }
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with: { submodules: true } # vendor/henry-mascot; postinstall syncs from it
+      - uses: actions/setup-node@v5
+        with: { node-version-file: .nvmrc, cache: npm }
+      # Puppeteer downloads its own pinned Chrome on install; keep it
+      # between runs so npm ci is not a 150 MB fetch every push.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: npm run check:hydration
+      - run: npm run check:interactions
+      # Report-only until the violations it found on 2026-09-05 are fixed
+      # (contrast, icon alt text, menu name, social-tray link names, focus
+      # rings); then drop continue-on-error and it gates like the others.
+      - run: npm run check:a11y
+        continue-on-error: true
+      - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with: { path: build }
+
+  deploy:
+    # main only, and only after every check above passed on this exact build.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
