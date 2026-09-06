@@ -14,7 +14,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const handler = require("serve-handler");
-const puppeteer = require("puppeteer");
+const { launchBrowser } = require("./launch-browser");
 
 const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const AXE_PATH = require.resolve("axe-core/axe.min.js");
@@ -134,7 +134,7 @@ async function focusWalk(page) {
   }
   const server = await startServer();
   const port = server.address().port;
-  const browser = await puppeteer.launch();
+  const browser = await launchBrowser();
   try {
     const page = await browser.newPage();
     for (const route of ROUTES) {
