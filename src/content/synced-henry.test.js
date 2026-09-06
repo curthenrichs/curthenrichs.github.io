@@ -34,8 +34,8 @@ test("fallback 404 page inlines the vendored henry-animated.css verbatim", () =>
 test("fallback 404 page renders the cute-robot- markup contract (confused pose)", () => {
   const page = readPage();
   expect(page).toContain("cute-robot-container cute-robot-has-question");
-  expect(page).toContain('class="cute-robot-q cute-robot-q-main"');
-  expect(page).toContain('class="cute-robot-head"');
+  expect(page).toContain("class=\"cute-robot-q cute-robot-q-main\"");
+  expect(page).toContain("class=\"cute-robot-head\"");
 });
 
 test("fallback 404 page carries no hand-authored Henry geometry", () => {
