@@ -32,8 +32,7 @@ git config core.hooksPath .githooks
 `.github/workflows/ci.yml` runs on every push to `main` or `dev` and on PRs:
 lint, the unit suite, `npm run build` (which syncs Henry from the submodule and
 prerenders every route), then `check:hydration`, `check:interactions`, and
-`check:a11y` against that build. The a11y check is report-only until the
-violations it found are fixed; the rest fail the run.
+`check:a11y` against that build. Any failure fails the run.
 
 `.github/workflows/production-smoke.yml` probes the live site after each
 successful `ci` run on `main`, weekly, and on demand from the Actions tab:
@@ -138,8 +137,7 @@ deploy (`npm run deploy`) are unchanged.
   local verification instead.
 - Puppeteer (used by the prerenderer and every `check:*` script) requires
   Node >= 22.12; `.nvmrc` pins 22.
-- `npm run check:a11y` runs axe-core (WCAG 2.1 A/AA) over every prerendered
-  route in headless Chrome and walks the home page's Tab order. Needs a fresh
-  build, like the other checks.
+- `npm run check:a11y` runs axe-core (WCAG 2.1 Level A) over every prerendered
+  route in headless Chrome. Needs a fresh build, like the other checks.
 - GitHub Pages 301-redirects `/career` to `/career/` (and similarly for other
   routes), so post-deploy `curl` checks need `-L` to follow the redirect.

@@ -33,12 +33,7 @@ jobs:
       - run: npm run build
       - run: npm run check:hydration
       - run: npm run check:interactions
-      # Report-only until its remaining findings clear: the focus ring on
-      # plain links (antd 4 resets it) and the carousel indicator list, which
-      # is upstream in react-responsive-carousel. Then drop continue-on-error
-      # and it gates like the others.
       - run: npm run check:a11y
-        continue-on-error: true
       - if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with: { path: build }
