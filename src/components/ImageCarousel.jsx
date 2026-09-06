@@ -6,6 +6,24 @@ import imageDimensions from "../content/imageDimensions.json";
 import imageVariants from "../content/imageVariants.json";
 import "./ImageCarousel.css";
 
+// The library's default indicator is <li role="button">, which removes the li
+// from the list in the accessibility tree and fails axe's list rule (WCAG
+// 1.3.1). Upstream has known since 2020 (issue 504) and still ships it, so
+// the dot is rendered here: a plain li around a real button. The button
+// keeps the library's dot classes so its stylesheet still paints it.
+const renderIndicator = (onClickHandler, isSelected, index, label) => (
+  <li key={index}>
+    <button
+      type="button"
+      className={isSelected ? "dot selected" : "dot"}
+      onClick={onClickHandler}
+      onKeyDown={onClickHandler}
+      aria-label={`${label} ${index + 1}`}
+      aria-current={isSelected ? "true" : undefined}
+    />
+  </li>
+);
+
 const ImageCarousel = (props) => {
   const { options, showArrows } = props;
 
@@ -21,6 +39,7 @@ const ImageCarousel = (props) => {
       showArrows={showArrows}
       showThumbs={options.length > 1}
       showIndicators={options.length > 1}
+      renderIndicator={renderIndicator}
     >
       {options.map((entry, idx) => {
         const dims = imageDimensions[entry.img];
