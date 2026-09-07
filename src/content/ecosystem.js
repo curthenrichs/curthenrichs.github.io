@@ -4,6 +4,6 @@ import contactData from "./contact";
 // shape as the blog's ECOSYSTEM (config.ts), the schema a future shared footer
 // will own. An entry with href null is not shipped yet and renders unlinked.
 export const ECOSYSTEM = [
-  { key: "blog", label: "Half-Built Robots", href: contactData.blog.link },
+  { key: "blog", label: contactData.blog.text, href: contactData.blog.link },
   { key: "okospolip", label: "Okos Polip", href: null }
 ];

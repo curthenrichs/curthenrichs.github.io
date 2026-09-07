@@ -105,7 +105,7 @@ describe("Footer", () => {
   test("stacks copyright, credit, sitemap, then the Ecosystem group in that order", () => {
     const { container } = renderAt(1280);
     const text = container.textContent;
-    const order = ["Curt Henrichs LLC", "Created with", "Home", "Ecosystem", "Half-Built Robots"].map((s) =>
+    const order = ["Curt Henrichs LLC", "Created with", "Home", "Ecosystem", ECOSYSTEM[0].label].map((s) =>
       text.indexOf(s)
     );
     expect(order.every((i) => i >= 0)).toBe(true);
