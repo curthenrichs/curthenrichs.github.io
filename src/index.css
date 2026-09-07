@@ -85,3 +85,15 @@ code {
     padding-left: 16px !important;
   }
 }
+
+/* A card that is a link: block-level anchor that inherits the card's text
+   color and carries no underline, so antd's `a` styling never repaints it.
+   Used by PublicationCard. */
+.card-link,
+.card-link:hover,
+.card-link:focus {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}

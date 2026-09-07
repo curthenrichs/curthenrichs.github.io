@@ -17,22 +17,22 @@ const renderPageBtn = () =>
     </MemoryRouter>
   );
 
-test("PageNavButton navigates on click", () => {
+// PageNavButton is a real link (router Link): the browser gets an href for
+// hover, middle-click, and new-tab, while a plain click stays client-side.
+test("PageNavButton renders an anchor with the route as href", () => {
+  renderPageBtn();
+  const a = screen.getByText("Go");
+  expect(a.tagName).toBe("A");
+  expect(a).toHaveAttribute("href", "/career");
+  expect(a).toHaveAttribute("id", "go-btn");
+  expect(a).toHaveClass("nav-bar", "nav-bar-ext-link");
+  expect(a).not.toHaveAttribute("role");
+});
+
+test("PageNavButton navigates client-side on click", () => {
   renderPageBtn();
   fireEvent.click(screen.getByText("Go"));
   expect(screen.getByTestId("loc").textContent).toBe("/career");
-});
-
-test("PageNavButton navigates on Enter", () => {
-  renderPageBtn();
-  fireEvent.keyDown(screen.getByText("Go"), { key: "Enter" });
-  expect(screen.getByTestId("loc").textContent).toBe("/career");
-});
-
-test("PageNavButton ignores non-Enter keys", () => {
-  renderPageBtn();
-  fireEvent.keyDown(screen.getByText("Go"), { key: "a" });
-  expect(screen.queryByTestId("loc")).toBeNull();
 });
 
 test("InnerNavButton fires its callback on click and Enter, ignores other keys", () => {

@@ -1,27 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
+// A real link, not a div that calls navigate(): the browser shows the route
+// on hover and middle-click / "open in new tab" work, while a plain click
+// stays client-side through the router. Same classes as LinkNavButton, so
+// it paints exactly as before (.nav-bar out-ranks antd's `a` color).
 const PageNavButton = (props) => {
   const { id, content, route } = props;
-  const navigate = useNavigate();
-
   return (
-    <div
-      role="button"
-      tabIndex="0"
-      className="nav-bar nav-bar-ext-link"
-      id={id}
-      onClick={() => {
-        navigate(route);
-      }}
-      onKeyDown={(event) => {
-        if (event.key === "Enter") {
-          navigate(route);
-        }
-      }}>
+    <Link to={route} id={id} className="nav-bar nav-bar-ext-link" style={{ display: "block" }}>
       {content}
-    </div>
+    </Link>
   );
 };
 
