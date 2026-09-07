@@ -10,7 +10,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const handler = require("serve-handler");
-const puppeteer = require("puppeteer");
+const { launchBrowser } = require("./launch-browser");
 
 const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const DESKTOP = { width: 1280, height: 800 };
@@ -78,7 +78,7 @@ async function loadPage(page, base, route, viewport, errors) {
 
   const server = await startServer();
   const base = `http://localhost:${server.address().port}`;
-  const browser = await puppeteer.launch();
+  const browser = await launchBrowser();
 
   try {
     const page = await browser.newPage();

@@ -94,3 +94,43 @@ test("only the first slide loads eagerly", () => {
   expect(shimmerProps[0].eager).toBe(true);
   expect(shimmerProps[1].eager).toBe(false);
 });
+
+// react-responsive-carousel's default indicator is <li role="button">, which
+// takes the li out of the list in the accessibility tree and fails axe's
+// list rule (WCAG 1.3.1). Reported upstream in 2020 (issue 504), closed by
+// their stale bot without a reply, still in master in 2026. So the carousel
+// gets a local renderIndicator: a plain li wrapping a real button.
+describe("renderIndicator override", () => {
+  const renderDot = (isSelected, onClick = jest.fn()) => {
+    render(<ImageCarousel options={[{ img: FAKE_IMG, alt: "x", caption: "c" }, { img: FAKE_IMG, alt: "y", caption: "d" }]} />);
+    const el = globalThis.capturedCarouselProps.renderIndicator(onClick, isSelected, 0, "slide item");
+    const { container } = render(<ul>{el}</ul>);
+    return { li: container.querySelector("li"), button: container.querySelector("li > button"), onClick };
+  };
+
+  test("renders a plain list item wrapping a real button", () => {
+    const { li, button } = renderDot(false);
+    expect(li).not.toHaveAttribute("role");
+    expect(li).not.toHaveAttribute("tabindex");
+    expect(button).not.toBeNull();
+    expect(button).toHaveAttribute("type", "button");
+  });
+
+  test("button carries the library's dot classes so its styles still apply", () => {
+    expect(renderDot(false).button.className).toBe("dot");
+    expect(renderDot(true).button.className).toBe("dot selected");
+  });
+
+  test("button is named and marks the current slide", () => {
+    const { button } = renderDot(true);
+    expect(button).toHaveAttribute("aria-label", "slide item 1");
+    expect(button).toHaveAttribute("aria-current", "true");
+    expect(renderDot(false).button).not.toHaveAttribute("aria-current");
+  });
+
+  test("activating the button reaches the carousel's handler", () => {
+    const { button, onClick } = renderDot(false);
+    button.click();
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+});

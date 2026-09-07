@@ -19,3 +19,46 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+---
+
+BRAND ASSETS EXCEPTION
+
+The MIT License above applies to the software in this repository. It does NOT
+apply to the brand assets listed below, which are excluded from that grant:
+
+  - vendor/henry-mascot/            (the henry-mascot submodule, in full; it
+                                     carries its own all-rights-reserved LICENSE)
+  - src/vendor/henry/               (Henry's working files, synced from the
+                                     submodule by scripts/sync-henry.js)
+  - public/favicon.ico
+  - public/favicon-16x16.png
+  - public/favicon-32x32.png
+  - public/apple-touch-icon.png
+  - public/android-chrome-192x192.png
+  - public/android-chrome-512x512.png
+  - public/404.html                 (generated from scripts/404.template.html
+                                     with henry-animated.css inlined; the
+                                     template itself is software under the MIT
+                                     License, the generated page depicts Henry)
+  - every build output derived from the above: the favicons at the site root,
+    static/media/henry-illustration-*.svg, and the henry-animated.css rules
+    inlined into each prerendered HTML file, both in build/ and on the
+    gh-pages branch
+
+The synced copies under src/vendor/henry/ and public/, including the
+generated public/404.html, are gitignored and regenerated at install time, so they are absent from the tracked tree but
+present in every working checkout and every build. They are excluded
+wherever they appear.
+
+These files depict "Henry," a robot mascot that is Copyright (c) Curt Henrichs,
+all rights reserved. Henry is a brand mascot, not clip art.
+
+You may fork this repository, deploy your own site, and use the software
+freely under the MIT License. You may not use Henry as the identity of your
+own project, whether or not your copy is derived from this one.
+
+Removing or replacing these assets is expressly permitted, and is the intended
+path for a fork: the software carries no dependency on them that a substitute
+mark placed at the same paths cannot satisfy.

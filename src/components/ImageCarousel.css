@@ -30,3 +30,14 @@
 .carousel .thumb.selected, .carousel .thumb:hover {
     border-color: rgba(24, 144, 255, 1) !important;
 }
+/* Indicator dots are a real button inside a plain li (see renderIndicator in
+   ImageCarousel.jsx). The library styles .dot; the li and the button's own
+   chrome need resetting so the dot looks exactly as it did. */
+.carousel .control-dots li {
+    display: inline-block;
+}
+
+.carousel .control-dots .dot {
+    border: 0;
+    padding: 0;
+}

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Layout, Typography } from "antd";
+import { Layout } from "antd";
 import { NavHeader, NavDrawer, NavFooter } from "./Navigation";
 import { WidthContext, HeightContext } from "../contexts";
 import { Element as ScrollElement, scroller } from "react-scroll";
-import CookieConsent from "react-cookie-consent";
 import useScrollbarSize from "react-scrollbar-size";
 import { dismissPrerenderVeil } from "../utils/prerenderVeil";
 import { chooseActiveNavItem } from "./activeNavSelection";
 
-const { Text } = Typography;
 const { Header, Footer, Content } = Layout;
 
 class _PageTemplate extends Component {
@@ -96,30 +94,8 @@ class _PageTemplate extends Component {
   }
 
   render() {
-    const { header, sections, displayCookieConsent, scrollbar } = this.props;
+    const { header, sections, scrollbar } = this.props;
     const { width, height, activeNavItem, menuOpen } = this.state;
-
-    let cookieConsent = null;
-    if (displayCookieConsent) {
-      cookieConsent = (
-        <CookieConsent
-          location="bottom"
-          buttonText="Accept"
-          style={{
-            background: "#fafafa"
-          }}
-          buttonClasses="ant-btn ant-btn-primary ant-btn-lg cookie-btn-style"
-          expires={999}
-          visible="byCookieValue">
-          <Text>This website may use cookies to enhance user experience.</Text> <br />{" "}
-          <Text style={{ fontSize: "10px" }}>
-            To find out more read our <a href="/terms">terms of use</a> and{" "}
-            <a href="/privacy">privacy policy</a>.
-          </Text>
-          .
-        </CookieConsent>
-      );
-    }
 
     const sectionNavCallback = (e) => {
       for (let key in sections) {
@@ -190,8 +166,6 @@ class _PageTemplate extends Component {
             menuCloseCallback={menuCloseCallback}
             open={menuOpen}
           />
-
-          {cookieConsent}
 
         </HeightContext.Provider>
       </WidthContext.Provider>

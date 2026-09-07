@@ -1,6 +1,6 @@
 ## Accessibility Policy
 
-_Last updated: July 1, 2026_
+_Last updated: September 6, 2026_
 
 This is an accessibility statement from Curt Henrichs LLC for Curt Henrichs' Portfolio website.
 
@@ -13,6 +13,8 @@ The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standar
 I welcome your feedback on the accessibility of this website. Please let me know if you encounter accessibility barriers:
 
 - Email: :email[]
+- X: :x[]
+- Bluesky: :bluesky[]
 
 I try to respond to feedback as quickly as possible.
 
@@ -38,4 +40,4 @@ Curt Henrichs assessed the accessibility of this website by the following approa
 
 ### Date
 
-This statement was created on 4 December 2022 using the [W3C Accessibility Statement Generator Tool](https://www.w3.org/WAI/planning/statements/). It was last reviewed and updated on 1 July 2026.
+This statement was created on 4 December 2022 using the [W3C Accessibility Statement Generator Tool](https://www.w3.org/WAI/planning/statements/). It was last reviewed and updated on 6 September 2026.

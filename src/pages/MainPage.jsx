@@ -17,7 +17,6 @@ const MainPage = () => {
     <>
       <PageMeta {...pageMeta.home} />
       <PageTemplate
-        displayCookieConsent={false}
         header={{
           simple: false,
           pageName: "Main",

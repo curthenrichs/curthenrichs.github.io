@@ -21,7 +21,6 @@ import PublicationsPage from "./pages/PublicationsPage";
 import NotFoundNoRoutingPage from "./pages/NotFoundNoRoutingPage";
 import ItemDetailPage from "./pages/ItemDetailPage";
 
-import reportWebVitals from "./reportWebVitals";
 import contactData from "./content/contact";
 import detailRoutes from "./content/detailRoutes.json";
 import { holdPrerenderVeil } from "./utils/prerenderVeil";
@@ -74,8 +73,3 @@ if (container.hasChildNodes()) {
 } else {
   createRoot(container).render(app);
 }
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

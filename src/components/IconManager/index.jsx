@@ -76,112 +76,116 @@ import {
   SettingOutlined
 } from "@ant-design/icons";
 
+// Custom SVG icons are decorative: each sits beside visible text or inside a
+// labeled control, so the role="img" span antd wraps them in is hidden from
+// assistive tech. antd's own icons (GithubFilled etc.) carry an aria-label
+// from their name and are left alone.
 function Angular() {
-  return <Icon component={AngularIcon} />;
+  return <Icon component={AngularIcon} aria-hidden="true" />;
 }
 
 function Arduino() {
-  return <Icon component={ArduinoIcon} />;
+  return <Icon component={ArduinoIcon} aria-hidden="true" />;
 }
 
 function CPlusPlus() {
-  return <Icon component={CPPIcon} />;
+  return <Icon component={CPPIcon} aria-hidden="true" />;
 }
 
 function CSharp() {
-  return <Icon component={CSharpIcon} />;
+  return <Icon component={CSharpIcon} aria-hidden="true" />;
 }
 
 function Git() {
-  return <Icon component={GitIcon} />;
+  return <Icon component={GitIcon} aria-hidden="true" />;
 }
 
 function GraduateCap() {
-  return <Icon component={GraduateCapIcon} />;
+  return <Icon component={GraduateCapIcon} aria-hidden="true" />;
 }
 
 function Java() {
-  return <Icon component={JavaIcon} />;
+  return <Icon component={JavaIcon} aria-hidden="true" />;
 }
 
 function Linux() {
-  return <Icon component={LinuxIcon} />;
+  return <Icon component={LinuxIcon} aria-hidden="true" />;
 }
 
 function Robot() {
-  return <Icon component={RobotIcon} />;
+  return <Icon component={RobotIcon} aria-hidden="true" />;
 }
 
 function Menu() {
-  return <Icon component={MenuIcon} />;
+  return <Icon component={MenuIcon} aria-hidden="true" />;
 }
 
 function Microchip() {
-  return <Icon component={MicrochipIcon} />;
+  return <Icon component={MicrochipIcon} aria-hidden="true" />;
 }
 
 function Microsoft() {
-  return <Icon component={MicrosoftIcon} />;
+  return <Icon component={MicrosoftIcon} aria-hidden="true" />;
 }
 
 function NodeJS() {
-  return <Icon component={NodeJSIcon} />;
+  return <Icon component={NodeJSIcon} aria-hidden="true" />;
 }
 
 function Python() {
-  return <Icon component={PythonIcon} />;
+  return <Icon component={PythonIcon} aria-hidden="true" />;
 }
 
 function React() {
-  return <Icon component={ReactIcon} />;
+  return <Icon component={ReactIcon} aria-hidden="true" />;
 }
 
 function ROS() {
-  return <Icon component={ROSIcon} />;
+  return <Icon component={ROSIcon} aria-hidden="true" />;
 }
 
 function Sketch() {
-  return <Icon component={SketchIcon} />;
+  return <Icon component={SketchIcon} aria-hidden="true" />;
 }
 
 function Unity() {
-  return <Icon component={UnityIcon} />;
+  return <Icon component={UnityIcon} aria-hidden="true" />;
 }
 
 function Javascript() {
-  return <Icon component={JavascriptIcon} />;
+  return <Icon component={JavascriptIcon} aria-hidden="true" />;
 }
 
 function Keras() {
-  return <Icon component={KerasIcon} />;
+  return <Icon component={KerasIcon} aria-hidden="true" />;
 }
 
 function MongoDB() {
-  return <Icon component={MongoDBIcon} />;
+  return <Icon component={MongoDBIcon} aria-hidden="true" />;
 }
 
 function Overleaf() {
-  return <Icon component={OverleafIcon} />;
+  return <Icon component={OverleafIcon} aria-hidden="true" />;
 }
 
 function Project() {
-  return <Icon component={ProjectIcon} />;
+  return <Icon component={ProjectIcon} aria-hidden="true" />;
 }
 
 function Matlab() {
-  return <Icon component={MatlabIcon} />;
+  return <Icon component={MatlabIcon} aria-hidden="true" />;
 }
 
 function Atlassian() {
-  return <Icon component={AtlassianIcon} />;
+  return <Icon component={AtlassianIcon} aria-hidden="true" />;
 }
 
 function Autodesk() {
-  return <Icon component={AutodeskIcon} />;
+  return <Icon component={AutodeskIcon} aria-hidden="true" />;
 }
 
 function C() {
-  return <Icon component={CIcon} />;
+  return <Icon component={CIcon} aria-hidden="true" />;
 }
 
 function Gear() {
@@ -189,11 +193,11 @@ function Gear() {
 }
 
 function Labview() {
-  return <Icon component={LabviewIcon} />;
+  return <Icon component={LabviewIcon} aria-hidden="true" />;
 }
 
 function TwitterX() {
-  return <Icon component={TwitterXIcon} />;
+  return <Icon component={TwitterXIcon} aria-hidden="true" />;
 }
 
 function Twitter() {
@@ -201,115 +205,115 @@ function Twitter() {
 }
 
 function Bluesky() {
-  return <Icon component={BlueskyIcon} />;
+  return <Icon component={BlueskyIcon} aria-hidden="true" />;
 }
 
 function USB() {
-  return <Icon component={USBIcon} />;
+  return <Icon component={USBIcon} aria-hidden="true" />;
 }
 
 function OkosPolip() {
-  return <Icon component={OkosPolipIcon} />;
+  return <Icon component={OkosPolipIcon} aria-hidden="true" />;
 }
 
 function Docker() {
-  return <Icon component={DockerIcon} />;
+  return <Icon component={DockerIcon} aria-hidden="true" />;
 }
 
 function RaspberryPi() {
-  return <Icon component={RaspberryPiIcon} />;
+  return <Icon component={RaspberryPiIcon} aria-hidden="true" />;
 }
 
 function Vue() {
-  return <Icon component={VueIcon} />;
+  return <Icon component={VueIcon} aria-hidden="true" />;
 }
 
 function Redis() {
-  return <Icon component={RedisIcon} />;
+  return <Icon component={RedisIcon} aria-hidden="true" />;
 }
 
 function Flask() {
-  return <Icon component={FlaskIcon} />;
+  return <Icon component={FlaskIcon} aria-hidden="true" />;
 }
 
 function AntDesign() {
-  return <Icon component={AntDesignIcon} />;
+  return <Icon component={AntDesignIcon} aria-hidden="true" />;
 }
 
 function Nvidia() {
-  return <Icon component={NvidiaIcon} />;
+  return <Icon component={NvidiaIcon} aria-hidden="true" />;
 }
 
 function Intel() {
-  return <Icon component={IntelIcon} />;
+  return <Icon component={IntelIcon} aria-hidden="true" />;
 }
 
 function Zigbee() {
-  return <Icon component={ZigbeeIcon} />;
+  return <Icon component={ZigbeeIcon} aria-hidden="true" />;
 }
 
 function AltiumDesigner() {
-  return <Icon component={AltiumDesignerIcon} />;
+  return <Icon component={AltiumDesignerIcon} aria-hidden="true" />;
 }
 
 function TypeScript() {
-  return <Icon component={TypeScriptIcon} />;
+  return <Icon component={TypeScriptIcon} aria-hidden="true" />;
 }
 
 function OpenCV() {
-  return <Icon component={OpenCVIcon} />;
+  return <Icon component={OpenCVIcon} aria-hidden="true" />;
 }
 
 function Xilinx() {
-  return <Icon component={XilinxIcon} />;
+  return <Icon component={XilinxIcon} aria-hidden="true" />;
 }
 
 function Dna() {
-  return <Icon component={DnaIcon} />;
+  return <Icon component={DnaIcon} aria-hidden="true" />;
 }
 
 function CircuitBoard() {
-  return <Icon component={CircuitBoardIcon} />;
+  return <Icon component={CircuitBoardIcon} aria-hidden="true" />;
 }
 
 function Anthropic() {
-  return <Icon component={AnthropicIcon} />;
+  return <Icon component={AnthropicIcon} aria-hidden="true" />;
 }
 
 function OpenAI() {
-  return <Icon component={OpenAIIcon} />;
+  return <Icon component={OpenAIIcon} aria-hidden="true" />;
 }
 
 function GoogleGemini() {
-  return <Icon component={GoogleGeminiIcon} />;
+  return <Icon component={GoogleGeminiIcon} aria-hidden="true" />;
 }
 
 function VisualBasic() {
-  return <Icon component={VisualBasicIcon} />;
+  return <Icon component={VisualBasicIcon} aria-hidden="true" />;
 }
 
 function Users() {
-  return <Icon component={UsersIcon} />;
+  return <Icon component={UsersIcon} aria-hidden="true" />;
 }
 
 function CodeXml() {
-  return <Icon component={CodeXmlIcon} />;
+  return <Icon component={CodeXmlIcon} aria-hidden="true" />;
 }
 
 function Box3d() {
-  return <Icon component={Box3dIcon} />;
+  return <Icon component={Box3dIcon} aria-hidden="true" />;
 }
 
 function Factory() {
-  return <Icon component={FactoryIcon} />;
+  return <Icon component={FactoryIcon} aria-hidden="true" />;
 }
 
 function Brain() {
-  return <Icon component={BrainIcon} />;
+  return <Icon component={BrainIcon} aria-hidden="true" />;
 }
 
 function Sparkles() {
-  return <Icon component={SparklesIcon} />;
+  return <Icon component={SparklesIcon} aria-hidden="true" />;
 }
 
 const lookup = {

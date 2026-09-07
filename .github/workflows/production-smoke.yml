@@ -1,0 +1,94 @@
+name: production-smoke
+# Invariants only the deployed host can prove: GitHub Pages' per-route
+# file serving and trailing-slash redirects, that the published 404 is
+# the prerendered one (a skipped-prerender deploy ships the fallback
+# page instead), and the privacy policy's claims of no cookies and no
+# third-party scripts. Runs after each successful ci run on main (which
+# is what deploys), weekly, and on demand.
+on:
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "23 11 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: let the Pages CDN pick up the deploy
+        if: github.event_name == 'workflow_run'
+        run: sleep 60
+      - name: probe deployment invariants
+        run: |
+          set -u
+          base=https://curthenrichs.github.io
+          fail=0
+          expect() { # expect <code> <url> [substring-of-location]
+            local want=$1 url=$2 loc=${3:-}
+            local got redirect
+            got=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$url")
+            redirect=$(curl -s -o /dev/null -w '%{redirect_url}' --max-time 20 "$url")
+            if [ "$got" != "$want" ]; then echo "FAIL $url: got $got, want $want"; fail=1; return; fi
+            if [ -n "$loc" ] && [[ "$redirect" != *"$loc"* ]]; then
+              echo "FAIL $url: redirects to $redirect, want *$loc*"; fail=1; return
+            fi
+            echo "ok   $got $url"
+          }
+          expect 200 "$base/"
+          expect 301 "$base/career" "/career/"
+          expect 200 "$base/career/"
+          expect 200 "$base/projects/"
+          expect 200 "$base/privacy/"
+          expect 200 "$base/sitemap.xml"
+          expect 200 "$base/robots.txt"
+          expect 200 "$base/llms.txt"
+          expect 200 "$base/favicon.ico"
+          expect 200 "$base/docs/curt-henrichs-resume.pdf"
+          expect 404 "$base/nope"
+          expect 404 "$base/nope/"
+          # The deployed 404 must be the prerendered React page, not the
+          # self-contained fallback that only ships when prerender was skipped.
+          if curl -s --max-time 20 "$base/nope" | grep -q '<title>Curt Henrichs | Portfolio | Page Not Found</title>'; then
+            echo "ok   404 is the prerendered page"
+          else
+            echo "FAIL 404 is the fallback page: the deploy skipped prerender"; fail=1
+          fi
+          if curl -s --max-time 20 "$base/robots.txt" | grep -q "Sitemap: $base/sitemap.xml"; then
+            echo "ok   robots.txt carries the Sitemap line"
+          else
+            echo "FAIL robots.txt: Sitemap line missing"; fail=1
+          fi
+          if curl -s -o /dev/null -D - --max-time 20 "$base/" | grep -qi '^x-robots-tag:'; then
+            echo "FAIL production carries an x-robots-tag header"; fail=1
+          else
+            echo "ok   no x-robots-tag"
+          fi
+          exit $fail
+      # The privacy policy says the site sets no cookies and uses no
+      # analytics or tracking. Any script, iframe, or stylesheet from a
+      # host other than the site itself is an undisclosed third party.
+      - name: probe privacy-policy invariants
+        run: |
+          set -u
+          base=https://curthenrichs.github.io
+          fail=0
+          allowed='^curthenrichs\.github\.io$'
+          for path in / /career/ /privacy/; do
+            html=$(curl -s --max-time 20 "$base$path")
+            hosts=$(printf '%s' "$html" \
+              | grep -oiE '<(script|iframe)[^>]+src=["'"'"']?https?://[^/"'"'"' >]+|<link[^>]+rel=["'"'"']?stylesheet["'"'"']?[^>]+href=["'"'"']?https?://[^/"'"'"' >]+' \
+              | grep -oiE 'https?://[^/"'"'"' >]+$' | sed -E 's#https?://##' | sort -u)
+            for h in $hosts; do
+              if ! [[ "$h" =~ $allowed ]]; then echo "FAIL $path: undisclosed third-party host $h"; fail=1; fi
+            done
+            if curl -s -o /dev/null -D - --max-time 20 "$base$path" | grep -qi '^set-cookie:'; then
+              echo "FAIL $path: response sets a cookie; the privacy policy says the site sets none"; fail=1
+            fi
+            echo "ok   $path: third-party hosts [$(echo $hosts | tr '\n' ' ')], no cookies"
+          done
+          exit $fail

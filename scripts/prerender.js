@@ -8,7 +8,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const handler = require("serve-handler");
-const puppeteer = require("puppeteer");
+const { launchBrowser } = require("./launch-browser");
 
 const BUILD_DIR = path.resolve(__dirname, "..", "build");
 const PORT = 5050;
@@ -153,7 +153,7 @@ function startServer() {
   }
 
   const server = await startServer();
-  const browser = await puppeteer.launch();
+  const browser = await launchBrowser();
   const captures = [];
 
   try {

@@ -29,19 +29,19 @@ const SectionContact = () => {
         </div>
         <br />
         <div style={{ fontSize: "40px" }} className="social-tray">
-          <Link href={data.github.link} target="_blank" rel="noopener noreferrer">
+          <Link href={data.github.link} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <GithubFilled />
           </Link>
           &nbsp;
-          <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer">
+          <Link href={data.linkedin.link} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <LinkedinFilled />
           </Link>
           &nbsp;
-          <Link href={data.bluesky.link} target="_blank" rel="noopener noreferrer">
+          <Link href={data.bluesky.link} target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
             <Bluesky />
           </Link>
           &nbsp;
-          <Link href={data.twitter.link} target="_blank" rel="noopener noreferrer">
+          <Link href={data.twitter.link} target="_blank" rel="noopener noreferrer" aria-label="X">
             <Twitter />
           </Link>
         </div>
