@@ -4,7 +4,7 @@
 
 Website created by Curt Henrichs (owner/maintainer) using React and Ant Design. Asset managed by Curt Henrichs LLC.
 
-Deployed on Github Pages static hosting. Deployment handled with [gh-pages](https://www.npmjs.com/package/gh-pages).
+Deployed on GitHub Pages static hosting through GitHub Actions.
 
 ### Icons
 
