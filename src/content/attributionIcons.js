@@ -1,6 +1,7 @@
 const data = {
   antDesign: [
     "WarningOutlined",
+    "ExportOutlined",
     "ToolFilled",
     "ExperimentFilled",
     "StarFilled",

@@ -62,16 +62,10 @@ no-third-party-scripts claims.
 ## GitHub Deployment
 On a green `ci` run for a push to `main`, the same `build/` that passed the
 checks is uploaded as the Pages artifact and deployed by `actions/deploy-pages`.
-The repo's Settings -> Pages source is set to **GitHub Actions** (switched
-2026-09-06). The old path still exists as a fallback:
-
-```
-npm run deploy
-```
-
-which builds locally and pushes `build/` to the `gh-pages` branch. Once the
-Actions deploy has shipped once, that script, the `gh-pages` package, and the
-branch are unused and can go.
+The repo's Settings -> Pages source is **GitHub Actions**. There is no other
+publish path: the old `npm run deploy` script, the `gh-pages` package, and the
+`gh-pages` branch were retired at the 2026-09-07 cutover, the first deploy
+through Actions.
 
 ### Deployment Troubleshooting
 The Actions run for the push shows the build, the checks, and the deploy step

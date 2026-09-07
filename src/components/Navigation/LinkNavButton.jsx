@@ -1,19 +1,12 @@
 import React from "react";
-
+import ExternalLink from "../ExternalLink";
 
 const LinkNavButton = (props) => {
   const { id, content, route } = props;
-  
   return (
-    <a
-      style={{ display: "block" }}
-      className="nav-bar nav-bar-ext-link"
-      id={id}
-      href={route}
-      target="_blank"
-      rel="noopener noreferrer">
+    <ExternalLink href={route} id={id} className="nav-bar nav-bar-ext-link" style={{ display: "block" }}>
       {content}
-    </a>
+    </ExternalLink>
   );
 };
 

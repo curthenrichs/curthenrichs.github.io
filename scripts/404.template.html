@@ -18,10 +18,11 @@
 
       This file only reaches the live site when that prerender step was
       skipped — e.g. a bare `react-scripts build` (postbuild only runs under
-      `npm run build`), `npm run build --ignore-scripts`, or a deploy that
-      bypasses `npm run deploy`. That means the publish was incomplete, so this
-      page says so plainly instead of using the old spa-github-pages redirect
-      hack to quietly limp along. (Removing that redirect also means a
+      `npm run build`), `npm run build --ignore-scripts`, or a publish that
+      bypassed ci.yml (the only deploy path since the 2026-09-07 cutover).
+      That means the publish was incomplete, so this page says so plainly
+      instead of using the old spa-github-pages redirect hack to quietly
+      limp along. (Removing that redirect also means a
       skipped-prerender deploy no longer silently "works" for deep links — it
       surfaces the broken deploy, which is the point.)
 

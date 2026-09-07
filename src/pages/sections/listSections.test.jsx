@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SectionCareer from "./Career";
 import SectionEducation from "./Education";
 import SectionProjects from "./Projects";
@@ -150,15 +150,20 @@ test("project type icons: coursework maps to an icon, unknown types render none 
   }
 });
 
-test("publications section renders a card per publication; click opens the link", () => {
-  const openSpy = jest.spyOn(window, "open").mockImplementation(() => {});
+test("publications section renders a card per publication; each linked one is a real link", () => {
   render(<SectionPublications />);
   const pubs = Object.values(publicationData);
   pubs.forEach((p) => {
-    expect(screen.getByText(p.title)).toBeInTheDocument();
+    const title = screen.getByText(p.title);
+    expect(title).toBeInTheDocument();
     expect(screen.getAllByText(p.status).length).toBeGreaterThan(0);
+    const anchor = title.closest("a");
+    if (p.link) {
+      expect(anchor).toHaveAttribute("href", p.link);
+      expect(anchor).toHaveAttribute("target", "_blank");
+      expect(anchor).toHaveAttribute("rel", "noopener noreferrer");
+    } else {
+      expect(anchor).toBeNull();
+    }
   });
-  fireEvent.click(screen.getByText(pubs[0].title));
-  expect(openSpy).toHaveBeenCalledWith(pubs[0].link);
-  openSpy.mockRestore();
 });

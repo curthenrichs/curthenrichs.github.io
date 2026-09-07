@@ -85,3 +85,35 @@ code {
     padding-left: 16px !important;
   }
 }
+
+/* A card that is a link: block-level anchor that inherits the card's text
+   color and carries no underline, so antd's `a` styling never repaints it.
+   Used by PublicationCard. */
+.card-link,
+.card-link:hover,
+.card-link:focus {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Text for assistive tech only (e.g. "(opens in a new tab)" on exits). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The outward arrow after a link that leaves the site (ExternalLink). */
+.external-link-icon {
+  margin-left: 0.35em;
+  font-size: 0.85em;
+  vertical-align: -0.05em;
+}
