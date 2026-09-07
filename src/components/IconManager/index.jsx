@@ -73,7 +73,8 @@ import {
   UpCircleOutlined,
   DownloadOutlined,
   EnvironmentFilled,
-  SettingOutlined
+  SettingOutlined,
+  ExportOutlined
 } from "@ant-design/icons";
 
 // Custom SVG icons are decorative: each sits beside visible text or inside a
@@ -485,5 +486,6 @@ export {
   UpCircleOutlined,
   DownloadOutlined,
   EnvironmentFilled,
-  SettingOutlined
+  SettingOutlined,
+  ExportOutlined
 };

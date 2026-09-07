@@ -46,10 +46,14 @@ test("InnerNavButton fires its callback on click and Enter, ignores other keys",
   expect(btn).not.toHaveClass("nav-bar-btn-selected");
 });
 
-test("LinkNavButton renders a protected external anchor", () => {
-  render(<LinkNavButton id="ext" content="Blog" route="https://example.com" />);
-  const a = screen.getByText("Blog");
+test("LinkNavButton renders a protected external anchor marked as leaving the site", () => {
+  const { container } = render(<LinkNavButton id="ext" content="Blog" route="https://example.com" />);
+  const a = screen.getByText("Blog").closest("a");
   expect(a).toHaveAttribute("href", "https://example.com");
   expect(a).toHaveAttribute("target", "_blank");
   expect(a).toHaveAttribute("rel", "noopener noreferrer");
+  expect(a).toHaveAttribute("id", "ext");
+  expect(a).toHaveClass("nav-bar", "nav-bar-ext-link");
+  expect(container.querySelector(".external-link-icon")).not.toBeNull();
+  expect(a).toHaveAccessibleName("Blog (opens in a new tab)");
 });
