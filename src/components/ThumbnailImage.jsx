@@ -10,15 +10,17 @@ import "./ThumbnailImage.css";
  * A set image loads through ShimmerImage (shimmer while downloading,
  * DefaultImg if it errors/404s). No image yet (author will add it later)
  * shows DefaultImg directly — the missing-image placeholder, kept distinct
- * from the loading shimmer.
+ * from the loading shimmer. Cards leave `alt` empty (their title sits beside
+ * them); a thumbnail that carries meaning on its own, like the homepage
+ * portrait, passes one.
  */
-const ThumbnailImage = ({ img }) => {
+const ThumbnailImage = ({ img, alt = "" }) => {
   if (!img) {
     return (
       <img
         className="thumbnail-image thumbnail-image__default"
         src={DefaultImg}
-        alt=""
+        alt={alt}
         width={250}
         height={250}
       />
@@ -30,7 +32,7 @@ const ThumbnailImage = ({ img }) => {
     <ShimmerImage
       src={variant ? variant.fallback : img}
       webpSrc={variant ? variant.webp : undefined}
-      alt=""
+      alt={alt}
       reserve={{ aspectRatio: 1 }}
       maxWidth={250}
       objectFit="cover"

@@ -119,3 +119,36 @@ test("og:image derives from the entry's carousel image variant", async () => {
     document.querySelector("meta[property=\"og:image\"]").getAttribute("content")
   ).toBe(expected);
 });
+
+test("og:image:alt is the og image's own alt text", async () => {
+  const route = detailRoutes.find((r) => {
+    const entry = CONTENT[r.section][r.contentId];
+    return (entry.images || []).some((i) => i.carousel && i.alt);
+  });
+  expect(route).toBeDefined();
+  const entry = CONTENT[route.section][route.contentId];
+  const img = entry.images.filter((i) => i.carousel)[0];
+
+  renderRoute(route);
+
+  await waitFor(() =>
+    expect(document.querySelector("meta[property=\"og:image:alt\"]")).not.toBeNull()
+  );
+  expect(
+    document.querySelector("meta[property=\"og:image:alt\"]").getAttribute("content")
+  ).toBe(img.alt);
+});
+
+test("an entry without images keeps the site's default og:image:alt", async () => {
+  const route = detailRoutes.find(
+    (r) => (CONTENT[r.section][r.contentId].images || []).length === 0
+  );
+  if (!route) return; // every entry has images today; the fallback is PageMeta's
+  renderRoute(route);
+  await waitFor(() =>
+    expect(document.querySelector("meta[property=\"og:image:alt\"]")).not.toBeNull()
+  );
+  expect(
+    document.querySelector("meta[property=\"og:image:alt\"]").getAttribute("content")
+  ).toBe("Portrait of Curt Henrichs");
+});

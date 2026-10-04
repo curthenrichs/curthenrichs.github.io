@@ -61,7 +61,7 @@ const BioDigest = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <ThumbnailImage img={bioData.img} />
+      <ThumbnailImage img={bioData.img} alt="Portrait of Curt Henrichs" />
       <div style={{ fontSize: "var(--fs-lg)" }}>
         <Text style={{ fontSize: "var(--fs-xl)" }} strong>
           {bioData.name}
