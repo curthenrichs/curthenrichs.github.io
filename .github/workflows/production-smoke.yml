@@ -46,6 +46,7 @@ jobs:
           expect 200 "$base/privacy/"
           expect 200 "$base/sitemap.xml"
           expect 200 "$base/robots.txt"
+          expect 200 "$base/.well-known/security.txt"
           expect 200 "$base/llms.txt"
           expect 200 "$base/favicon.ico"
           expect 200 "$base/docs/curt-henrichs-resume.pdf"

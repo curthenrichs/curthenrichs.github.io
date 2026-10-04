@@ -341,43 +341,23 @@
   },
   "/static/img/projects/authr/authr-task-full.jpg": {
     "w": 1600,
-    "h": 887
+    "h": 575
   },
   "/static/img/projects/authr/authr-task-full.webp": {
     "w": 1600,
-    "h": 887
+    "h": 575
   },
   "/static/img/projects/authr/authr-task-thumb.jpg": {
     "w": 800,
-    "h": 444
+    "h": 287
   },
   "/static/img/projects/authr/authr-task-thumb.webp": {
     "w": 800,
-    "h": 444
+    "h": 287
   },
   "/static/img/projects/authr/authr-task.jpg": {
     "w": 5982,
     "h": 2150
-  },
-  "/static/img/projects/coframe/coframe-banner-full.jpg": {
-    "w": 1600,
-    "h": 691
-  },
-  "/static/img/projects/coframe/coframe-banner-full.webp": {
-    "w": 1600,
-    "h": 691
-  },
-  "/static/img/projects/coframe/coframe-banner-thumb.jpg": {
-    "w": 800,
-    "h": 345
-  },
-  "/static/img/projects/coframe/coframe-banner-thumb.webp": {
-    "w": 800,
-    "h": 345
-  },
-  "/static/img/projects/coframe/coframe-banner.jpg": {
-    "w": 3564,
-    "h": 1539
   },
   "/static/img/projects/coframe/coframe-current-full.jpg": {
     "w": 1600,

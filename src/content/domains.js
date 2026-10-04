@@ -135,7 +135,7 @@ export const domains = [
     icon: "brain",
     description:
       "Coursework, research, and professional work applying deep learning, computer vision, and parallel computing to problems in robotics, computational photography, and real-time electron microscopy.",
-    skillIds: ["keras", "python", "matlab", "computer_vision", "nvidia_holoscan", "cuda_openmp", "mpi", "evolutionary_algorithms"]
+    skillIds: ["keras", "python", "matlab", "computer_vision", "cuda_openmp", "mpi", "evolutionary_algorithms"]
   },
   {
     key: "llm_tooling",

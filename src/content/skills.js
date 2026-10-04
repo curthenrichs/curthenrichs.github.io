@@ -553,13 +553,6 @@ const data = [
     category: "tool"
   },
   {
-    name: "Nvidia Holoscan",
-    icon: "nvidia",
-    hover: "AI sensor processing platform for edge computing",
-    id: "nvidia_holoscan",
-    category: "framework"
-  },
-  {
     name: "Altera Quartus",
     icon: "intel",
     hover: "Intel FPGA design & synthesis suite",

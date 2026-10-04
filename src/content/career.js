@@ -156,7 +156,7 @@ const data = {
       "ai_augmented_dev",
       "gemini",
       "claude_code",
-      "nvidia_holoscan"
+      "computer_vision"
     ],
     // No IDES logo asset yet: null renders the DefaultImg placeholder
     // directly instead of 404-fetching a missing file on every page load.

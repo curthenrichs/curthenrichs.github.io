@@ -44,7 +44,7 @@ const data = {
     id: "publication-coframe",
     short: "CoFrame User Interface",
     venue: "HRI",
-    title: "CoFrame: A System for Training Novice Cobot Programers",
+    title: "CoFrame: A System for Training Novice Cobot Programmers",
     reference:
       "Schoen, A., White, N. T., Henrichs, C., Siebert-Evenstone, A., Shaffer, D. W., & Mutlu, B. (2022, March). CoFrame: A System for Training Novice Cobot Programmers. In HRI (pp. 185-194).",
     link: "https://dl.acm.org/doi/abs/10.5555/3523760.3523788",
