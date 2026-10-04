@@ -8,8 +8,10 @@ import { ECOSYSTEM } from "../../content/ecosystem";
 
 const { Text } = Typography;
 
+// The dot is decoration; aria-hidden keeps screen readers from reading it
+// out between every link.
 const Spacer = () => {
-  return <Fragment>&nbsp;|&nbsp;</Fragment>;
+  return <span className="footer-sep" aria-hidden="true">&nbsp;&middot;&nbsp;</span>;
 };
 
 // The site map: pages of this site (`to`, router links) plus the one file it
@@ -30,7 +32,7 @@ export const FOOTER_LINKS = [
 ];
 
 // Conservative average glyph width for the footer's 14px font, the rendered
-// "&nbsp;|&nbsp;" separator, and the exit icon an external link carries.
+// "&nbsp;&middot;&nbsp;" separator, and the exit icon an external link carries.
 // Deliberately estimated from string LENGTH, not real font metrics: font
 // measurement can differ between the prerender browser and a visitor's
 // browser, and a one-item packing difference would be a hydration mismatch.
@@ -43,7 +45,7 @@ const ICON_PX = 20;
 const itemWidth = (link) => link.label.length * CHAR_PX + (link.href ? ICON_PX : 0);
 
 // Greedily pack sitemap links into lines that fit the viewport, so the
-// pipe separators only ever appear BETWEEN links on the same line (a
+// dot separators only ever appear BETWEEN links on the same line (a
 // hardcoded grouping wraps mid-line at widths it wasn't written for).
 export const packFooterLines = (links, viewportWidth) => {
   const available = Math.max(viewportWidth - 100, 160);

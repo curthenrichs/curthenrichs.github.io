@@ -77,15 +77,19 @@ describe("Footer", () => {
       </MemoryRouter>
     );
 
-  test("renders every sitemap link once, with pipes only within lines", () => {
+  test("renders every sitemap link once, with dots only within lines", () => {
     const { container } = renderAt(320);
     for (const { label } of FOOTER_LINKS) {
       expect(screen.getAllByText(label)).toHaveLength(1);
     }
     const sitemapLines = packFooterLines(FOOTER_LINKS, 320);
-    const pipes = (container.textContent.match(/\|/g) || []).length;
-    // Sitemap: n links on a line -> n-1 pipes. Ecosystem: one line, so n-1 more.
-    expect(pipes).toBe(FOOTER_LINKS.length - sitemapLines.length + (ECOSYSTEM.length - 1));
+    const dots = container.querySelectorAll(".footer-sep");
+    for (const dot of dots) {
+      expect(dot.textContent).toBe("\u00a0\u00b7\u00a0");
+      expect(dot).toHaveAttribute("aria-hidden", "true");
+    }
+    // Sitemap: n links on a line -> n-1 dots. Ecosystem: one line, so n-1 more.
+    expect(dots.length).toBe(FOOTER_LINKS.length - sitemapLines.length + (ECOSYSTEM.length - 1));
   });
 
   test("Home links to /home through the router", () => {
