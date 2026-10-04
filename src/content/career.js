@@ -182,10 +182,10 @@ const data = {
     ],
     images: [
       {
-        id: "img-ides-career-viz",
-        img: "/static/img/career/ides/IDES-career-viz.jpg",
-        alt: "Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details.",
-        caption: "Visualization of my roles and responsibilities at IDES.",
+        id: "img-ides-flywheel",
+        img: "/static/img/career/ides/ides-flywheel.png",
+        alt: "Diagram of six labeled circles on a ring, with arrows running clockwise from Process and People to Hardware, Firmware, Software, Manufacturing and QA, Tooling, and back to Process and People. Curved lines cross the ring between groups. A gold ring outside the circles, labeled MiniConsole, is solid from Process and People through Manufacturing and QA and dotted through Tooling.",
+        caption: "How each part of my work at IDES feeds the next.",
         carousel: true
       }
     ],
