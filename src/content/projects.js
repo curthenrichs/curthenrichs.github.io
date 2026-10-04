@@ -188,7 +188,7 @@ const data = {
       {
         id: "img-iter-display",
         img: "/static/img/projects/iter/iter-displays.png",
-        alt: "A three-by-two grid. The columns are labeled Neglect, Warn, and Interact, with arrows between them. The top row shows a timeline bar of teal and purple segments with a marker that moves right, topped by a green check, then a yellow exclamation point, then a red people icon. The bottom row shows a countdown timer at 00:15 in green, 00:04 in yellow, and 00:00 in red.",
+        alt: "Two rows, Timeline and Timer, under three columns labeled Neglect, Warn, and Interact, with arrows between them. The Timeline row shows a timeline bar of teal and purple segments with a marker that moves right, topped by a green check, then a yellow exclamation point, then a red people icon. The Timer row shows a countdown at 00:15 in green, 00:04 in yellow, and 00:00 in red.",
         caption: "Evaluated two interface widgets for communicating pRAD. From Henrichs et al., RO-MAN 2021. © 2021 IEEE.",
         carousel: true
       },

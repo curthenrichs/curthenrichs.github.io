@@ -90,7 +90,7 @@ const data = {
       {
         id: "img-vis-detail",
         img: "/static/img/education/uwmad/hci-vis-detail.jpg",
-        alt: "A chart titled Amazon Categories Detail View, with three sliders and a dropdown set to Books above it. A gray bar labeled All splits into top-level categories such as Books, Clothing, Automotive, Toys & Games, and Electronics. From Books, red and cyan lines fan out through several columns of subcategories to a long column of end points on the right.",
+        alt: "A chart titled Amazon Categories Detail View, with three sliders and a dropdown set to Books above it. A gray bar labeled All* splits into top-level categories such as Books, Clothing, Shoes & Jewelry, Automotive, Toys & Games, and Electronics. From Books, red and cyan lines fan out through several columns of subcategories to a long column of end points on the right.",
         caption: "Detailed categorical interactive visualization of Amazon dataset for HCI coursework",
         carousel: true
       },
