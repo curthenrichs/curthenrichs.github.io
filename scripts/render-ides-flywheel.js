@@ -3,6 +3,12 @@
  * source) and public/static/img/career/ides/ides-flywheel.png (2400px,
  * white ground) for the IDES carousel. Run:
  * node scripts/render-ides-flywheel.js
+ *
+ * A one-time render, not a build step: the committed PNG is the artifact,
+ * and npm run image-variants / image-dims pick it up from there. Re-run
+ * only to change the diagram. The labels use the system font stack, so a
+ * re-render on another OS substitutes a different face and the PNG will
+ * differ slightly (the committed one used Segoe UI on Windows).
  */
 const fs = require("fs");
 const path = require("path");
