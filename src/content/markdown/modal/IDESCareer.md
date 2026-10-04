@@ -4,7 +4,7 @@ IDES is a JEOL group subsidiary working in the transmission electron microscope 
 
 ## Firmware Engineer
 
-As the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for our flagship product, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of an edge computer vision platform.
+As the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for our flagship product, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of our [Acuity Edge](https://www.jeol.com/products/scientific/tem/Relativity.php) computer vision platform.
 
 Working at a small company, I also took on responsibilities outside of my core firmware role including electronics manufacturing, ECAD support, PCBA procurement, and developing user-facing Python software for hardware interfacing.
 
@@ -34,9 +34,9 @@ I designed and developed MiniConsole, a USB user-interface peripheral featuring 
 I led a major refactor of our hardware control backend, replacing a tightly coupled architecture with a decoupled PubSub-based system (drawing on my experience with ROS). I built out a layered testing strategy spanning driver-level unit/integration tests through system-level QoS validation. I also mentored an intern who prototyped the new REST API layer.
 
 ### Area : Real-Time Vision
-My current focus is building a real-time vision system on the Nvidia Holoscan SDK for 4D-STEM applications. The system processes multiple concurrent image streams from high-speed detectors and generates signal control feedback to the microscope, keeping acquisition and instrument response in a tight loop. This work spans GPU pipeline development, multi-channel stream handling, and integration with our existing hardware control ecosystem.
+My current focus is real-time GPU image processing for high-speed detectors in 4D-STEM. The work spans GPU pipeline development and integration with our existing hardware control ecosystem.
 
 ### Area : AI-Augmented Development
 My role has expanded to include AI-augmented development workflows for firmware and software tasks. I work daily with agentic coding tools, both Claude Code and Gemini CLI, choosing between them based on their aptitude for the task at hand. These tools assist with debugging, code generation, and maintenance across our embedded and application-level codebases.
 
-To bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system for the Holoscan vision project. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against microscope hardware resources without putting the instrument at risk.
+To bring these tools into our engineering process safely, I developed an agentic-first, MCP-based CI system. It gives coding agents a controlled interface to trigger builds, run benchmarks, and deploy against our hardware resources without putting the equipment at risk.
