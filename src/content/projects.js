@@ -87,21 +87,21 @@ const data = {
         id: "img-coframe-frames",
         img: "/static/img/projects/coframe/coframe-mapping.jpg",
         alt: "Visual mapping the CoFrame frames compared to the themes identified via ENA on ethnography.",
-        caption: "Visual mapping the CoFrame frames compared to the themes identified via ENA on ethnography.",
+        caption: "Visual mapping the CoFrame frames compared to the themes identified via ENA on ethnography. From Schoen et al., HRI 2022, adapted from Siebert-Evenstone et al. © 2022 IEEE.",
         carousel: false
       },
       {
         id: "img-coframe-skills",
         img: "/static/img/projects/coframe/coframe-frames.png",
         alt: "\"Skill Tree\" that users work through when defining their cobot applications.",
-        caption: "\"Skill Tree\" that users work through when defining their cobot applications.",
+        caption: "\"Skill Tree\" that users work through when defining their cobot applications. From Schoen et al., HRI 2022. © 2022 IEEE.",
         carousel: false
       },
       {
         id: "img-coframe-structure",
         img: "/static/img/projects/coframe/coframe-structure.jpg",
         alt: "Structure of CoFrame application at time of paper submission.",
-        caption: "Structure of CoFrame application at time of paper submission.",
+        caption: "Structure of CoFrame application at time of paper submission. From Schoen et al., HRI 2022. © 2022 IEEE.",
         carousel: false
       }
     ],
@@ -182,21 +182,21 @@ const data = {
         id: "img-iter-task",
         img: "/static/img/projects/iter/iter-seq-task.jpg",
         alt: "Participant constructs wooden block structure with the robot.",
-        caption: "Participant constructs wooden block structure with the robot.",
+        caption: "Participant constructs wooden block structure with the robot. From Zhao et al., RO-MAN 2020. © 2020 IEEE.",
         carousel: true
       },
       {
         id: "img-iter-display",
         img: "/static/img/projects/iter/iter-displays.png",
         alt: "Evaluated two interface widgets for communicating pRAD.",
-        caption: "Evaluated two interface widgets for communicating pRAD.",
+        caption: "Evaluated two interface widgets for communicating pRAD. From Henrichs et al., RO-MAN 2021. © 2021 IEEE.",
         carousel: true
       },
       {
         id: "img-iter-workspace",
         img: "/static/img/projects/iter/iter-workspace.png",
         alt: "Sketch of participant's workspace for the two experiments.",
-        caption: "Sketch of participant's workspace for the two experiments.",
+        caption: "Sketch of participant's workspace for the two experiments. From Henrichs et al., RO-MAN 2021. © 2021 IEEE.",
         carousel: true
       },
       {
@@ -240,7 +240,7 @@ const data = {
       {
         id: "img-hobby-taltosoid",
         img: "/static/img/projects/hobby/hobby-taltosoid.jpg",
-        alt: "First version of my sumpernumerary robotic finger named Taltosioid shown worn on my hand with capacitive flex detection glove.",
+        alt: "First version of my supernumerary robotic finger named Taltosoid shown worn on my hand with capacitive flex detection glove.",
         caption: "First version of Taltosoid - A supernumerary robotic finger.",
         carousel: false
       },

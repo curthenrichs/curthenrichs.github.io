@@ -1,6 +1,6 @@
 ## Terms of Use
 
-_Version 2.1. Last updated: October 3, 2026_
+_Version 2.2. Last updated: October 3, 2026_
 
 Welcome to Curt Henrichs' Portfolio website, located at [https://curthenrichs.github.io/](https://curthenrichs.github.io/) (the "Site"). These terms describe the conditions for using the Site. By using the Site, you accept these terms.
 
@@ -18,7 +18,7 @@ The content is not covered by the MIT License. That includes the writing, the re
 
 Henry, the Site's robot mascot, is proprietary to Curt Henrichs LLC and excluded from the MIT License by the brand assets exception in the repository's LICENSE. You may not use Henry as the identity of your own project.
 
-Third-party icons, logos, and other assets remain the property of their respective owners; see the [Attribution and Licenses](/attribution) page for details.
+Third-party icons, logos, and other assets remain the property of their respective owners, and figures reproduced from published papers remain © their publishers. See the [Attribution and Licenses](/attribution) page for details.
 
 ### License to View
 

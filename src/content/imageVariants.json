@@ -179,16 +179,6 @@
       "fallback": "/static/img/projects/authr/authr-task-thumb.jpg"
     }
   },
-  "/static/img/projects/coframe/coframe-banner.jpg": {
-    "full": {
-      "webp": "/static/img/projects/coframe/coframe-banner-full.webp",
-      "fallback": "/static/img/projects/coframe/coframe-banner-full.jpg"
-    },
-    "thumb": {
-      "webp": "/static/img/projects/coframe/coframe-banner-thumb.webp",
-      "fallback": "/static/img/projects/coframe/coframe-banner-thumb.jpg"
-    }
-  },
   "/static/img/projects/coframe/coframe-current.jpg": {
     "full": {
       "webp": "/static/img/projects/coframe/coframe-current-full.webp",
