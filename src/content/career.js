@@ -42,22 +42,22 @@ const data = {
       {
         id: "img-dc-oled-cover",
         img: "/static/img/career/dc/dc-oled-covered.jpg",
-        alt: "Custom OLED node ID display that fits within 3.5 inch bay. Shown with 3D printed cover. Text on OLED shows alphabet printed on two lines.",
+        alt: "A black 3D-printed box on a desk with a small OLED screen set into its front. The screen shows a test pattern of numbers and letters on two lines in blue. Wiring and a clear acrylic plate sit on top of the box.",
         caption: "Custom OLED node ID display that fits within 3.5\" bay.",
         carousel: true
       },
       {
         id: "img-dc-oled-pcb",
         img: "/static/img/career/dc/dc-oled-pcb.jpg",
-        alt: "OLED display has two capacitive touch buttons, USB serial interface, and multi-page OLED screen.",
+        alt: "Close-up of the bare green circuit board held next to a quarter for scale. The OLED shows two lines of characters in blue, with twisted pairs of red, black, green, and orange wire behind it.",
         caption: "OLED display has two capacitive touch buttons, USB serial interface, and multi-page screen.",
         carousel: true
       },
       {
         id: "img-dc-fan",
         img: "/static/img/career/dc/dc-fan.jpg",
-        alt: "Custom fan controller with 4 4-wire fan connectors with a SAMD Atmel microcontroller. Power supplied with a 4-pin Molex. USB port for external control.",
-        caption: "Custom fan controller with a SAMD Atmel microcontroller.",
+        alt: "Two green fan controller boards on a clear acrylic plate. Each has a row of white fan headers and a white 4-pin Molex power connector. The front board has a USB cable plugged in and a ribbon cable running to jumper wires on a breadboard.",
+        caption: "Custom fan controller with a SAMD Atmel microcontroller. It drives 4-wire fans, takes Molex power, and has USB for external control.",
         carousel: true
       }
     ],
@@ -114,8 +114,8 @@ const data = {
       {
         id: "img-uwmad-lab",
         img: "/static/img/career/uwmad/uwmad-lab.jpg",
-        alt: "Lab experiment room with multiple robot arms (UR3e on the left, Franka Emkika Panda in the middle, Kinova Mico on the right).",
-        caption: "Lab experiment room with multiple robot arms (UR3e, Franka Emkika Panda, Kinova Mico).",
+        alt: "A lab room with three robot arms. A silver UR3e with a gripper is mounted at the end of a table on the left. A white Franka Emika Panda stands on a wooden workbench in the middle, beside a red box, a cardboard box, and a small green block. A black Kinova Mico sits on a smaller table on the right. Cameras on tripods watch from the corners, and blue tape marks the floor and the dark table in the foreground.",
+        caption: "Lab experiment room with multiple robot arms (UR3e, Franka Emika Panda, Kinova Mico).",
         carousel: true
       }
     ],
