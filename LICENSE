@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 Curt Henrichs
+Copyright (c) 2021-2026 Curt Henrichs LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -52,7 +52,7 @@ generated public/404.html, are gitignored and regenerated at install time, so th
 present in every working checkout and every build. They are excluded
 wherever they appear.
 
-These files depict "Henry," a robot mascot that is Copyright (c) Curt Henrichs,
+These files depict "Henry," a robot mascot that is Copyright (c) Curt Henrichs LLC,
 all rights reserved. Henry is a brand mascot, not clip art.
 
 You may fork this repository, deploy your own site, and use the software
