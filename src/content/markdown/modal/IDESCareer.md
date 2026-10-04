@@ -1,10 +1,10 @@
 # IDES, Inc.
 
-IDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops the Relativity sub-framing system, an electrostatic dose modulation system, and various other TEM peripherals to support scientific applications.
+IDES is a JEOL group subsidiary working in the transmission electron microscope (TEM) market. IDES develops the [Relativity](https://ides-inc.com/products/relativity/) sub-framing system, the [Electrostatic Dose Modulator (EDM)](https://ides-inc.com/products/edm/), and various other TEM peripherals to support scientific applications.
 
 ## Firmware Engineer
 
-As the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for our flagship product, and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of our [Acuity Edge](https://www.jeol.com/products/scientific/tem/Relativity.php) computer vision platform.
+As the primary firmware engineer at IDES, I focused on maintaining and extending existing firmware, developing new voltage control firmware for the movie mode (MM) deflector on our flagship [JEM-2100 Time-resolved TEM](https://ides-inc.com/products/jem-2100/), and performing hardware bringups. Our firmware ecosystem is mixed C/C++ across Xilinx Zynq SoC and Atmel/Microchip platforms. Additionally, I prepared embedded Linux system images for production of our [Acuity Edge](https://ides-inc.com/products/relativity/) computer vision platform.
 
 Working at a small company, I also took on responsibilities outside of my core firmware role including electronics manufacturing, ECAD support, PCBA procurement, and developing user-facing Python software for hardware interfacing.
 
