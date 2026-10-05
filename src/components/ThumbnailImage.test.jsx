@@ -35,3 +35,17 @@ test("a set image renders a ShimmerImage thumbnail with a DefaultImg fallback", 
     DefaultImg
   );
 });
+
+test("thumbnails stay decorative by default", () => {
+  const { container } = render(<ThumbnailImage img="/static/img/thumbnail/x.jpg" />);
+  expect(container.querySelector("img.shimmer-image__img").getAttribute("alt")).toBe("");
+});
+
+test("an alt prop reaches the image for meaningful thumbnails", () => {
+  const { container } = render(
+    <ThumbnailImage img="/static/img/thumbnail/x.jpg" alt="Portrait of Curt Henrichs" />
+  );
+  expect(container.querySelector("img.shimmer-image__img").getAttribute("alt")).toBe(
+    "Portrait of Curt Henrichs"
+  );
+});

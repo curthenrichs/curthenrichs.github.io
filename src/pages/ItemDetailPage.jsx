@@ -46,7 +46,9 @@ const ItemDetailPage = ({ route }) => {
         description={route.description}
         path={route.path}
         ogImage={ogImage}
-        ogImageAlt={ogImage ? `Image from ${route.name}` : undefined}
+        ogImageAlt={
+          ogImage ? (ogImageEntry && ogImageEntry.alt) || `Image from ${route.name}` : undefined
+        }
       />
       <PageTemplate
         header={{

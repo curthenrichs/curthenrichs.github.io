@@ -24,7 +24,7 @@ const PRESERVE_DETAIL = new Set([
   "/static/img/projects/coframe/coframe-structure.jpg",
   "/static/img/projects/iter/iter-displays.png",
   "/static/img/projects/iter/iter-workspace.png",
-  "/static/img/career/ides/IDES-career-viz.jpg"
+  "/static/img/career/ides/ides-flywheel.png"
 ]);
 
 function walk(dir) {

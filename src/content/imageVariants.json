@@ -49,14 +49,14 @@
       "fallback": "/static/img/career/dc/dc-oled-pcb-thumb.jpg"
     }
   },
-  "/static/img/career/ides/IDES-career-viz.jpg": {
+  "/static/img/career/ides/ides-flywheel.png": {
     "full": {
-      "webp": "/static/img/career/ides/IDES-career-viz-full.webp",
-      "fallback": "/static/img/career/ides/IDES-career-viz-full.jpg"
+      "webp": "/static/img/career/ides/ides-flywheel-full.webp",
+      "fallback": "/static/img/career/ides/ides-flywheel-full.png"
     },
     "thumb": {
-      "webp": "/static/img/career/ides/IDES-career-viz-thumb.webp",
-      "fallback": "/static/img/career/ides/IDES-career-viz-thumb.jpg"
+      "webp": "/static/img/career/ides/ides-flywheel-thumb.webp",
+      "fallback": "/static/img/career/ides/ides-flywheel-thumb.png"
     }
   },
   "/static/img/career/uwmad/uwmad-lab.jpg": {

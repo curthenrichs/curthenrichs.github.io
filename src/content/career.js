@@ -42,22 +42,22 @@ const data = {
       {
         id: "img-dc-oled-cover",
         img: "/static/img/career/dc/dc-oled-covered.jpg",
-        alt: "Custom OLED node ID display that fits within 3.5 inch bay. Shown with 3D printed cover. Text on OLED shows alphabet printed on two lines.",
+        alt: "A black 3D-printed box on a desk with a small OLED screen set into its front. The screen shows a test pattern of numbers and letters on two lines in blue. Wiring and a clear acrylic plate sit on top of the box.",
         caption: "Custom OLED node ID display that fits within 3.5\" bay.",
         carousel: true
       },
       {
         id: "img-dc-oled-pcb",
         img: "/static/img/career/dc/dc-oled-pcb.jpg",
-        alt: "OLED display has two capacitive touch buttons, USB serial interface, and multi-page OLED screen.",
+        alt: "Close-up of the bare green circuit board held next to a quarter for scale. The OLED shows two lines of characters in blue, with twisted pairs of red, black, green, and orange wire behind it.",
         caption: "OLED display has two capacitive touch buttons, USB serial interface, and multi-page screen.",
         carousel: true
       },
       {
         id: "img-dc-fan",
         img: "/static/img/career/dc/dc-fan.jpg",
-        alt: "Custom fan controller with 4 4-wire fan connectors with a SAMD Atmel microcontroller. Power supplied with a 4-pin Molex. USB port for external control.",
-        caption: "Custom fan controller with a SAMD Atmel microcontroller.",
+        alt: "Two green fan controller boards on a clear acrylic plate. Each has a row of white fan headers and a white 4-pin Molex power connector. The front board has a USB cable plugged in and a ribbon cable running to jumper wires on a breadboard.",
+        caption: "Custom fan controller with a SAMD Atmel microcontroller. It drives 4-wire fans, takes Molex power, and has USB for external control.",
         carousel: true
       }
     ],
@@ -114,8 +114,8 @@ const data = {
       {
         id: "img-uwmad-lab",
         img: "/static/img/career/uwmad/uwmad-lab.jpg",
-        alt: "Lab experiment room with multiple robot arms (UR3e on the left, Franka Emkika Panda in the middle, Kinova Mico on the right).",
-        caption: "Lab experiment room with multiple robot arms (UR3e, Franka Emkika Panda, Kinova Mico).",
+        alt: "A lab room with three robot arms. A silver UR3e with a gripper is mounted at the end of a table on the left. A white Franka Emika Panda stands on a wooden workbench in the middle, beside a red box, a cardboard box, and a small green block. A black Kinova Mico sits on a smaller table on the right. Cameras on tripods watch from the corners, and blue tape marks the floor and the dark table in the foreground.",
+        caption: "Lab experiment room with multiple robot arms (UR3e, Franka Emika Panda, Kinova Mico).",
         carousel: true
       }
     ],
@@ -182,10 +182,10 @@ const data = {
     ],
     images: [
       {
-        id: "img-ides-career-viz",
-        img: "/static/img/career/ides/IDES-career-viz.jpg",
-        alt: "Visualization of my roles and responsibilities at IDES. Career section lists 'Senior Embedded Systems Engineer', '2022 - Preset', 'Firmware Engineer', '2021 - 2022'. Below are five sections (project, electrical, firmware, software, and manufacturing). Each section list attributes regarding my role. See full textual description for details.",
-        caption: "Visualization of my roles and responsibilities at IDES.",
+        id: "img-ides-flywheel",
+        img: "/static/img/career/ides/ides-flywheel.png",
+        alt: "Diagram of six labeled circles on a ring, with arrows running clockwise from Process and People to Hardware, Firmware, Software, Manufacturing and QA, Tooling, and back to Process and People. Curved lines cross the ring between groups. A gold ring outside the circles, labeled MiniConsole, is solid from Process and People through Manufacturing and QA, with short gold marks into each of those five circles, and dotted through Tooling.",
+        caption: "How each part of my work at IDES feeds the next.",
         carousel: true
       }
     ],
